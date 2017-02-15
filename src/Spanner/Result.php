@@ -18,7 +18,7 @@
 namespace Google\Cloud\Spanner;
 
 /**
- * Represent a Google Cloud Spanner lookup result (either read or executeSql).
+ * Represent a Cloud Spanner lookup result (either read or executeSql).
  *
  * Example:
  * ```

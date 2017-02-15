@@ -27,7 +27,7 @@ use Google\Cloud\Spanner\Session\SessionPoolInterface;
 use google\spanner\admin\instance\v1\Instance\State;
 
 /**
- * Represents a Google Cloud Spanner instance
+ * Represents a Cloud Spanner instance
  *
  * Example:
  * ```
@@ -80,10 +80,10 @@ class Instance
     private $iam;
 
     /**
-     * Create an object representing a Google Cloud Spanner instance.
+     * Create an object representing a Cloud Spanner instance.
      *
      * @param ConnectionInterface $connection The connection to the
-     *        Google Cloud Spanner Admin API.
+     *        Cloud Spanner Admin API.
      * @param SessionPoolInterface $sessionPool The session pool implementation.
      * @param string $projectId The project ID.
      * @param string $name The instance name.

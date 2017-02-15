@@ -212,9 +212,9 @@ class ServiceBuilder
     }
 
     /**
-     * Google Cloud Spanner client. Google Cloud Spanner is a highly scalable,
-     * transactional, managed, NewSQL database service. Find more information
-     * at [Google Cloud Spanner API docs](https://cloud.google.com/spanner/).
+     * Cloud Spanner client. Cloud Spanner is a highly scalable, transactional,
+     * managed, NewSQL database service. Find more information at
+     * [Cloud Spanner API docs](https://cloud.google.com/spanner/).
      *
      * Example:
      * ```

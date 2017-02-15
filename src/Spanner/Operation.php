@@ -24,7 +24,7 @@ use Google\Cloud\Spanner\Session\SessionPoolInterface;
 use Google\Cloud\ValidateTrait;
 
 /**
- * Common interface for running operations against Google Cloud Spanner. This
+ * Common interface for running operations against Cloud Spanner. This
  * class is intended for internal use by the client library only. Implementors
  * should access these operations via {@see Google\Cloud\Spanner\Database} or
  * {@see Google\Cloud\Spanner\Transaction}.

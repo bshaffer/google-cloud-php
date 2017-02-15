@@ -300,7 +300,7 @@ class DatabaseAdminClient
      *           Default: a credentials object returned from
      *           \Grpc\ChannelCredentials::createSsl()
      *     @type array $scopes A string array of scopes to use when acquiring credentials.
-     *                         Default the scopes for the Google Cloud Spanner Database Admin API.
+     *                         Default the scopes for the Cloud Spanner Database Admin API.
      *     @type array $retryingOverride
      *           An associative array of string => RetryOptions, where the keys
      *           are method names (e.g. 'createFoo'), that overrides default retrying

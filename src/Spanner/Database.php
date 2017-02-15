@@ -28,7 +28,7 @@ use Google\Cloud\Spanner\Session\SessionPoolInterface;
 use Google\Cloud\Spanner\V1\SpannerClient as GrpcSpannerClient;
 
 /**
- * Represents a Google Cloud Spanner Database
+ * Represents a Cloud Spanner Database
  *
  * Example:
  * ```
@@ -96,7 +96,7 @@ class Database
      * Create an object representing a Database.
      *
      * @param ConnectionInterface $connection The connection to the
-     *        Google Cloud Spanner Admin API.
+     *        Cloud Spanner Admin API.
      * @param Instance $instance The instance in which the database exists.
      * @param SessionPoolInterface The session pool implementation.
      * @param string $projectId The project ID.
@@ -750,7 +750,7 @@ class Database
     /**
      * Replace a row.
      *
-     * Provide data for the entire row. Google Cloud Spanner will attempt to
+     * Provide data for the entire row. Cloud Spanner will attempt to
      * find a record matching the Primary Key, and will replace the entire row.
      * If a matching row is not found, it will be inserted.
      *
@@ -782,7 +782,7 @@ class Database
     /**
      * Replace multiple rows.
      *
-     * Provide data for the entire row. Google Cloud Spanner will attempt to
+     * Provide data for the entire row. Cloud Spanner will attempt to
      * find a record matching the Primary Key, and will replace the entire row.
      * If a matching row is not found, it will be inserted.
      *

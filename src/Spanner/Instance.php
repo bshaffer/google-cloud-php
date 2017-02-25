@@ -389,7 +389,7 @@ class Instance
             $pageToken = (isset($res['nextPageToken']))
                 ? $res['nextPageToken']
                 : null;
-        } while($pageToken);
+        } while ($pageToken);
     }
 
     /**

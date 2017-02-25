@@ -18,6 +18,7 @@
         "natural language",
         "pubsub",
         "pub sub",
+        "spanner",
         "speech",
         "storage",
         "gcs",
@@ -55,7 +56,7 @@
         "james-heinrich/getid3": "^1.9",
         "erusev/parsedown": "^1.6",
         "vierbergenlars/php-semver": "^3.0",
-        "google/proto-client-php": "^0.7",
+        "google/proto-client-php": "^0.8",
         "google/gax": "^0.6"
     },
     "suggest": {
@@ -77,11 +78,5 @@
     },
     "scripts": {
         "google-cloud": "dev/google-cloud"
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/jdpedrie/proto-client-php-spanner"
-        }
-    ]
+    }
 }

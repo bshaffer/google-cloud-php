@@ -472,7 +472,7 @@ class Database
             time_nanosleep($delay['seconds'], $delay['nanos']);
         };
 
-        $commitFn = function($operation, $session, $options) use ($startTransactionFn) {
+        $commitFn = function ($operation, $session, $options) use ($startTransactionFn) {
             $transaction = call_user_func_array($startTransactionFn, [
                 $session,
                 $options
@@ -1065,7 +1065,8 @@ class Database
      * @param string $context The session context.
      * @return Session
      */
-    private function selectSession($context = SessionPoolInterface::CONTEXT_READ) {
+    private function selectSession($context = SessionPoolInterface::CONTEXT_READ)
+    {
         return $this->sessionPool->session(
             $this->instance->name(),
             $this->name,

@@ -32,8 +32,8 @@ class GrpcTest extends \PHPUnit_Framework_TestCase
 
     const PROJECT = 'my-awesome-project';
 
-    private $requestWrapper;
-    private $successMessage;
+    private $_requestWrapper;
+    private $_successMessage;
 
     public function setUp()
     {
@@ -41,8 +41,8 @@ class GrpcTest extends \PHPUnit_Framework_TestCase
             $this->markTestSkipped('Must have the grpc extension installed to run this test.');
         }
 
-        $this->requestWrapper = $this->prophesize(GrpcRequestWrapper::class);
-        $this->successMessage = 'success';
+        $this->_requestWrapper = $this->prophesize(GrpcRequestWrapper::class);
+        $this->_successMessage = 'success';
     }
 
     /**
@@ -50,16 +50,16 @@ class GrpcTest extends \PHPUnit_Framework_TestCase
      */
     public function testCallBasicMethods($method, $args, $expectedArgs)
     {
-        $this->requestWrapper->send(
+        $this->_requestWrapper->send(
             Argument::type('callable'),
             $expectedArgs,
             Argument::type('array')
-        )->willReturn($this->successMessage);
+        )->willReturn($this->_successMessage);
 
         $grpc = new Grpc();
-        $grpc->setRequestWrapper($this->requestWrapper->reveal());
+        $grpc->setRequestWrapper($this->_requestWrapper->reveal());
 
-        $this->assertEquals($this->successMessage, $grpc->$method($args));
+        $this->assertEquals($this->_successMessage, $grpc->$method($args));
     }
 
     public function methodProvider()

@@ -22,6 +22,11 @@ namespace Google\Cloud\Exception;
  */
 class AbortedException extends ServiceException
 {
+    /**
+     * Return the time to wait before a retry.
+     *
+     * @return array [(int) $seconds, ($int) $nanos]
+     */
     public function getRetryDelay()
     {
         $metadata = array_filter($this->options, function ($metadataItem) {

@@ -17,6 +17,10 @@
 
 namespace Google\Cloud\Spanner\Connection;
 
+/**
+ * Represents a connection to
+ * [Cloud Spanner](https://cloud.google.com/spanner/).
+ */
 interface ConnectionInterface
 {
     /**

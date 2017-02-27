@@ -93,12 +93,12 @@ class Database
     private $iam;
 
     /**
-     * Create an object representing a Database.
+     * Create a Database representation.
      *
      * @param ConnectionInterface $connection The connection to the
      *        Cloud Spanner Admin API.
      * @param Instance $instance The instance in which the database exists.
-     * @param SessionPoolInterface The session pool implementation.
+     * @param SessionPoolInterface $sessionPool The session pool implementation.
      * @param string $projectId The project ID.
      * @param string $name The database name.
      * @param bool $returnInt64AsObject If true, 64 bit integers will be

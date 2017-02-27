@@ -21,6 +21,9 @@ use Google\Cloud\ArrayTrait;
 use Google\Cloud\Int64;
 use google\spanner\v1\TypeCode;
 
+/**
+ * Map Spanner values to PHP values, and vice versa
+ */
 class ValueMapper
 {
     use ArrayTrait;
@@ -43,6 +46,10 @@ class ValueMapper
      */
     private $returnInt64AsObject;
 
+    /**
+     * @param bool $returnInt64AsObject If true, Int64 types will be wrapped in
+     *        {@see Google\Cloud\Int64} for 32-bit compatibility.
+     */
     public function __construct($returnInt64AsObject)
     {
         $this->returnInt64AsObject = $returnInt64AsObject;

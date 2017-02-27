@@ -17,10 +17,22 @@
 
 namespace Google\Cloud\Spanner\Session;
 
+/**
+ * Describes a session pool implementation.
+ */
 interface SessionPoolInterface
 {
     const CONTEXT_READ = 'r';
     const CONTEXT_READWRITE = 'rw';
 
+    /**
+     * Retrieve a session from the pool.
+     *
+     * @param string $instance The instance name
+     * @param string $database The database name
+     * @param string $context The session context.
+     * @param array $options Configuration Options.
+     * @return Session
+     */
     public function session($instance, $database, $context, array $options = []);
 }

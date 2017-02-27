@@ -115,7 +115,8 @@ class Operation
      * @param array $options [optional] {
      *     Configuration options.
      *
-     *     @type string $transactionId
+     *     @type string $transactionId The transaction ID in which the commit
+     *           should be executed.
      * }
      * @return Timestamp The commit Timestamp.
      */

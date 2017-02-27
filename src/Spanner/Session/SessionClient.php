@@ -88,6 +88,12 @@ class SessionClient
         return $session;
     }
 
+    /**
+     * Return a session with the given session name.
+     *
+     * @param string $sessionName The session name.
+     * @return Session
+     */
     public function session($sessionName)
     {
         return new Session(
@@ -99,6 +105,9 @@ class SessionClient
         );
     }
 
+    /**
+     * @access private
+     */
     public function __debugInfo()
     {
         return [

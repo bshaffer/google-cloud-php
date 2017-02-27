@@ -157,6 +157,11 @@ class Session
         );
     }
 
+    /**
+     * Friendly representatiion of the session object.
+     *
+     * @access private
+     */
     public function __debugInfo()
     {
         return [

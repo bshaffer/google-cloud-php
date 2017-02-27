@@ -19,10 +19,19 @@ namespace Google\Cloud\Spanner\Connection;
 
 use Google\Cloud\Iam\IamConnectionInterface;
 
+/**
+ * Implementation of IAM for Cloud Spanner Databases.
+ */
 class IamDatabase implements IamConnectionInterface
 {
-    protected $connection;
+    /**
+     * @var ConnectionInterface
+     */
+    private $connection;
 
+    /**
+     * @param ConnectionInterface $connection A connection to Cloud Spanner.
+     */
     public function __construct(ConnectionInterface $connection)
     {
         $this->connection = $connection;

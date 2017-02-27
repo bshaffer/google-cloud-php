@@ -35,6 +35,10 @@ use google\spanner\v1\TransactionOptions;
 use google\spanner\v1\TransactionSelector;
 use google\spanner\v1\Type;
 
+/**
+ * Implementation of the
+ * [Cloud Spanner gRPC API](https://cloud.google.com/spanner/docs/reference/rpc/).
+ */
 class Grpc implements ConnectionInterface
 {
     use GrpcTrait;

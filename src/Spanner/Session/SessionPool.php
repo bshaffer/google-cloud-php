@@ -17,8 +17,14 @@
 
 namespace Google\Cloud\Spanner\Session;
 
+/**
+ * Represent a session pool
+ */
 class SessionPool implements SessionPoolInterface
 {
+    /**
+     * @var SessionClient
+     */
     private $sessionClient;
 
     /**
@@ -26,21 +32,41 @@ class SessionPool implements SessionPoolInterface
      */
     private $sessions = [];
 
+    /**
+     * @param SessionClient $sessionClient The session client.
+     */
     public function __construct(SessionClient $sessionClient)
     {
         $this->sessionClient = $sessionClient;
     }
 
+    /**
+     * Add a session to the pool.
+     *
+     * @param Session $session The session to add to the pool.
+     */
     public function addSession(Session $session)
     {
         $this->sessions[] = $sessions;
     }
 
+    /**
+     * Retrieve a session from the pool.
+     *
+     * @param string $instance The instance name
+     * @param string $database The database name
+     * @param string $context The session context.
+     * @param array $options Configuration Options.
+     * @return Session
+     */
     public function session($instance, $database, $context, array $options = [])
     {
         return array_rand($this->sessions);
     }
 
+    /**
+     * Refresh all the sessions
+     */
     public function refreshSessions()
     {
         // send a request from each session to keep it alive.

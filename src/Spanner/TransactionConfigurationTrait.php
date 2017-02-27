@@ -20,6 +20,9 @@ namespace Google\Cloud\Spanner;
 use Google\Cloud\ArrayTrait;
 use Google\Cloud\Spanner\Session\SessionPoolInterface;
 
+/**
+ * Handle configuration for Transactions and Snapshots.
+ */
 trait TransactionConfigurationTrait
 {
     use ArrayTrait;

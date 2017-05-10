@@ -17,19 +17,15 @@
 
 namespace Google\Cloud\Core;
 
-use DrSlump\Protobuf\Codec\Binary;
-use DrSlump\Protobuf\Codec\CodecInterface;
-use DrSlump\Protobuf\Message;
 use Google\Auth\FetchAuthTokenInterface;
 use Google\Auth\HttpHandler\HttpHandlerFactory;
 use Google\Cloud\Core\Exception;
-use Google\Cloud\Core\PhpArray;
-use Google\Cloud\Core\RequestWrapperTrait;
 use Google\GAX\ApiException;
 use Google\GAX\OperationResponse;
 use Google\GAX\PagedListResponse;
 use Google\GAX\RetrySettings;
 use Google\GAX\ServerStream;
+use Google\Protobuf\Internal\Message;
 use Grpc;
 
 /**
@@ -46,9 +42,9 @@ class GrpcRequestWrapper
     private $authHttpHandler;
 
     /**
-     * @var CodecInterface A codec used to encode responses.
+     * @var Serializer A serializer used to encode responses.
      */
-    private $codec;
+    private $serializer;
 
     /**
      * @var CodecInterface A codec used for binary deserialization.
@@ -87,7 +83,7 @@ class GrpcRequestWrapper
      *
      *     @type callable $authHttpHandler A handler used to deliver Psr7
      *           requests specifically for authentication.
-     *     @type CodecInterface $codec A codec used to encode responses.
+     *     @type Serializer $serializer A serializer used to encode responses.
      *     @type array $grpcOptions gRPC specific configuration options passed
      *           off to the GAX library.
      * }
@@ -97,12 +93,12 @@ class GrpcRequestWrapper
         $this->setCommonDefaults($config);
         $config += [
             'authHttpHandler' => null,
-            'codec' => new PhpArray(),
+            'serializer' => new Serializer(),
             'grpcOptions' => []
         ];
 
         $this->authHttpHandler = $config['authHttpHandler'] ?: HttpHandlerFactory::build();
-        $this->codec = $config['codec'];
+        $this->serializer = $config['serializer'];
         $this->grpcOptions = $config['grpcOptions'];
         $this->binaryCodec = new Binary;
     }
@@ -169,16 +165,7 @@ class GrpcRequestWrapper
         }
 
         if ($response instanceof Message) {
-            $res = $response->serialize($this->codec);
-            return $res;
-        }
-
-        if ($response instanceof OperationResponse) {
-            return $response;
-        }
-
-        if ($response instanceof ServerStream) {
-            return $this->handleStream($response);
+            return $this->serializer->encodeMessage($response);
         }
 
         return null;

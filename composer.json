@@ -68,7 +68,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Google\\Cloud\\": "src"
+            "Google\\Cloud\\": "src",
+            "": "src/proto"
         }
     },
     "autoload-dev": {
@@ -89,5 +90,12 @@
             "path": "src",
             "entry": "ServiceBuilder.php"
         }
-    }
+    },
+    "repositories": [{
+        "type": "vcs",
+        "url": "/usr/local/google/home/michaelbausor/dev/clean_generation/php_proto3/gax-php"
+    }, {
+        "type": "vcs",
+        "url": "/usr/local/google/home/michaelbausor/dev/clean_generation/php_proto3/proto-client-php"
+    }]
 }

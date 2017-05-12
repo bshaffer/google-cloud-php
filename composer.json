@@ -90,12 +90,5 @@
             "path": "src",
             "entry": "ServiceBuilder.php"
         }
-    },
-    "repositories": [{
-        "type": "vcs",
-        "url": "/usr/local/google/home/michaelbausor/dev/clean_generation/php_proto3/gax-php"
-    }, {
-        "type": "vcs",
-        "url": "/usr/local/google/home/michaelbausor/dev/clean_generation/php_proto3/proto-client-php"
-    }]
+    }
 }

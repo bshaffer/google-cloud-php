@@ -4,14 +4,7 @@
       "git": {
         "name": ".",
         "remote": "git@github.com:bshaffer/google-cloud-php",
-        "sha": "ac35b1990e26fffe4e4f0cebc6b5ad894036fb6d"
-      }
-    },
-    {
-      "git": {
-        "name": "googleapis-discovery",
-        "remote": "https://github.com/googleapis/googleapis-discovery.git",
-        "sha": "b89ae73cbbdafc261b9c3b8cd3199ff04fc96fdd"
+        "sha": "71d57e169f1c29fb264d98bb4123f9989fbdc4a0"
       }
     },
     {

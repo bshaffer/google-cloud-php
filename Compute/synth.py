@@ -26,7 +26,8 @@ common = gcp.CommonTemplates()
 library = gapic.php_library(
     service='compute',
     version='v1',
-    bazel_target='//google/cloud/compute/v1:google-cloud-compute-v1-php'
+    bazel_target='//google/cloud/compute/v1:google-cloud-compute-v1-php',
+    diregapic=True
 )
 
 # copy all src including partial veneer classes

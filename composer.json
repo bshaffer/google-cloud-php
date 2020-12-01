@@ -144,6 +144,7 @@
             "GPBMetadata\\Google\\Cloud\\Bigquery\\Reservation\\": "BigQueryReservation/metadata",
             "GPBMetadata\\Google\\Cloud\\Bigquery\\Storage\\": "BigQueryStorage/metadata",
             "GPBMetadata\\Google\\Cloud\\Billing\\": "Billing/metadata",
+            "GPBMetadata\\Google\\Cloud\\Compute\\": "Compute/metadata",
             "GPBMetadata\\Google\\Cloud\\Datacatalog\\": "DataCatalog/metadata",
             "GPBMetadata\\Google\\Cloud\\Dataproc\\": "Dataproc/metadata",
             "GPBMetadata\\Google\\Cloud\\Dialogflow\\": "Dialogflow/metadata",

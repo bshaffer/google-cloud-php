@@ -88,19 +88,6 @@ s.replace(
      */
     private $""")
 
-# prevent proto messages from being marked final
-s.replace(
-    "src/V*/**/*.php",
-    r"final class",
-    r"class")
-
-# Replace "Unwrapped" with "Value" for method names.
-s.replace(
-    "src/V*/**/*.php",
-    r"public function ([s|g]\w{3,})Unwrapped",
-    r"public function \1Value"
-)
-
 ### [END] protoc backwards compatibility fixes
 
 # fix relative cloud.google.com links

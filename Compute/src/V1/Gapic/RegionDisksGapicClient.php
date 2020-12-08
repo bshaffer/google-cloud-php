@@ -113,9 +113,8 @@ class RegionDisksGapicClient
             'apiEndpoint' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
             'clientConfig' => __DIR__.'/../resources/region_disks_client_config.json',
             'descriptorsConfigPath' => __DIR__.'/../resources/region_disks_descriptor_config.php',
-            'gcpApiConfigPath' => __DIR__.'/../resources/region_disks_grpc_config.json',
             'credentialsConfig' => [
-                'scopes' => self::$serviceScopes,
+                'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
@@ -123,6 +122,16 @@ class RegionDisksGapicClient
                 ],
             ],
         ];
+    }
+
+    private static function defaultTransport()
+    {
+        return 'rest';
+    }
+
+    private static function getSupportedTransports()
+    {
+        return ['rest'];
     }
 
     /**
@@ -158,8 +167,8 @@ class RegionDisksGapicClient
      *           By default this settings points to the default client config file, which is provided
      *           in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. May be either the string `rest`
-     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           The transport used for executing network requests. At the moment, only supports
+     *           `rest`.
      *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
      *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
      *           object is provided, any settings in $transportConfig, and any `$apiEndpoint`
@@ -169,11 +178,9 @@ class RegionDisksGapicClient
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
-     *               'grpc' => [...],
      *               'rest' => [...]
      *           ];
-     *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
-     *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
+     *           See the {@see \Google\ApiCore\Transport\RestTransport::build()} method for the
      *           supported options.
      * }
      *

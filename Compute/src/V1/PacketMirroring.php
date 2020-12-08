@@ -19,7 +19,7 @@ class PacketMirroring extends \Google\Protobuf\Internal\Message
     /**
      * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 158172397;</code>
      */
     private $collector_ilb = null;
     /**
@@ -31,20 +31,20 @@ class PacketMirroring extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
      * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
      * The default is TRUE.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 43328899;</code>
      */
     private $enable = 0;
     /**
      * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 67685240;</code>
      */
     private $filter = null;
     /**
@@ -81,7 +81,7 @@ class PacketMirroring extends \Google\Protobuf\Internal\Message
      * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins.
      * Default value is 1000. Valid range is 0 through 65535.
      *
-     * Generated from protobuf field <code>uint32 priority = 445151652;</code>
+     * Generated from protobuf field <code>uint32 priority = 176716196;</code>
      */
     private $priority = 0;
     /**
@@ -93,7 +93,7 @@ class PacketMirroring extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
 
@@ -141,7 +141,7 @@ class PacketMirroring extends \Google\Protobuf\Internal\Message
     /**
      * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 158172397;</code>
      * @return \Google\Cloud\Compute\V1\PacketMirroringForwardingRuleInfo
      */
     public function getCollectorIlb()
@@ -162,7 +162,7 @@ class PacketMirroring extends \Google\Protobuf\Internal\Message
     /**
      * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 158172397;</code>
      * @param \Google\Cloud\Compute\V1\PacketMirroringForwardingRuleInfo $var
      * @return $this
      */
@@ -203,7 +203,7 @@ class PacketMirroring extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -214,7 +214,7 @@ class PacketMirroring extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -230,7 +230,7 @@ class PacketMirroring extends \Google\Protobuf\Internal\Message
      * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
      * The default is TRUE.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 43328899;</code>
      * @return int
      */
     public function getEnable()
@@ -242,7 +242,7 @@ class PacketMirroring extends \Google\Protobuf\Internal\Message
      * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
      * The default is TRUE.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 43328899;</code>
      * @param int $var
      * @return $this
      */
@@ -257,7 +257,7 @@ class PacketMirroring extends \Google\Protobuf\Internal\Message
     /**
      * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 67685240;</code>
      * @return \Google\Cloud\Compute\V1\PacketMirroringFilter
      */
     public function getFilter()
@@ -278,7 +278,7 @@ class PacketMirroring extends \Google\Protobuf\Internal\Message
     /**
      * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 67685240;</code>
      * @param \Google\Cloud\Compute\V1\PacketMirroringFilter $var
      * @return $this
      */
@@ -444,7 +444,7 @@ class PacketMirroring extends \Google\Protobuf\Internal\Message
      * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins.
      * Default value is 1000. Valid range is 0 through 65535.
      *
-     * Generated from protobuf field <code>uint32 priority = 445151652;</code>
+     * Generated from protobuf field <code>uint32 priority = 176716196;</code>
      * @return int
      */
     public function getPriority()
@@ -456,7 +456,7 @@ class PacketMirroring extends \Google\Protobuf\Internal\Message
      * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins.
      * Default value is 1000. Valid range is 0 through 65535.
      *
-     * Generated from protobuf field <code>uint32 priority = 445151652;</code>
+     * Generated from protobuf field <code>uint32 priority = 176716196;</code>
      * @param int $var
      * @return $this
      */
@@ -497,7 +497,7 @@ class PacketMirroring extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -508,7 +508,7 @@ class PacketMirroring extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */

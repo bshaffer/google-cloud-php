@@ -34,7 +34,7 @@ class SetIamPolicyNodeGroupRequest extends \Google\Protobuf\Internal\Message
      */
     private $zone = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 382082107;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 113646651;</code>
      */
     private $zone_set_policy_request_resource = null;
 
@@ -137,7 +137,7 @@ class SetIamPolicyNodeGroupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 382082107;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 113646651;</code>
      * @return \Google\Cloud\Compute\V1\ZoneSetPolicyRequest
      */
     public function getZoneSetPolicyRequestResource()
@@ -156,7 +156,7 @@ class SetIamPolicyNodeGroupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 382082107;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 113646651;</code>
      * @param \Google\Cloud\Compute\V1\ZoneSetPolicyRequest $var
      * @return $this
      */

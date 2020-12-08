@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class LogConfigDataAccessOptions extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 134461886;</code>
      */
     private $log_mode = 0;
 
@@ -35,7 +35,7 @@ class LogConfigDataAccessOptions extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 134461886;</code>
      * @return int
      */
     public function getLogMode()
@@ -44,7 +44,7 @@ class LogConfigDataAccessOptions extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 134461886;</code>
      * @param int $var
      * @return $this
      */

@@ -27,6 +27,7 @@ namespace Google\Cloud\Compute\V1\Gapic;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
@@ -44,7 +45,6 @@ use Google\Cloud\Compute\V1\DisplayDevice;
 use Google\Cloud\Compute\V1\GetGuestAttributesInstanceRequest;
 use Google\Cloud\Compute\V1\GetIamPolicyInstanceRequest;
 use Google\Cloud\Compute\V1\GetInstanceRequest;
-use Google\Cloud\Compute\V1\GetScreenshotInstanceRequest;
 use Google\Cloud\Compute\V1\GetSerialPortOutputInstanceRequest;
 use Google\Cloud\Compute\V1\GetShieldedInstanceIdentityInstanceRequest;
 use Google\Cloud\Compute\V1\GuestAttributes;
@@ -70,7 +70,6 @@ use Google\Cloud\Compute\V1\Policy;
 use Google\Cloud\Compute\V1\RemoveResourcePoliciesInstanceRequest;
 use Google\Cloud\Compute\V1\ResetInstanceRequest;
 use Google\Cloud\Compute\V1\Scheduling;
-use Google\Cloud\Compute\V1\Screenshot;
 use Google\Cloud\Compute\V1\SerialPortOutput;
 use Google\Cloud\Compute\V1\SetDeletionProtectionInstanceRequest;
 use Google\Cloud\Compute\V1\SetDiskAutoDeleteInstanceRequest;
@@ -160,8 +159,9 @@ class InstancesGapicClient
             'apiEndpoint' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
             'clientConfig' => __DIR__.'/../resources/instances_client_config.json',
             'descriptorsConfigPath' => __DIR__.'/../resources/instances_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__.'/../resources/instances_grpc_config.json',
             'credentialsConfig' => [
-                'defaultScopes' => self::$serviceScopes,
+                'scopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
@@ -169,16 +169,6 @@ class InstancesGapicClient
                 ],
             ],
         ];
-    }
-
-    private static function defaultTransport()
-    {
-        return 'rest';
-    }
-
-    private static function getSupportedTransports()
-    {
-        return ['rest'];
     }
 
     /**
@@ -214,8 +204,8 @@ class InstancesGapicClient
      *           By default this settings points to the default client config file, which is provided
      *           in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. At the moment, only supports
-     *           `rest`.
+     *           The transport used for executing network requests. May be either the string `rest`
+     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
      *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
      *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
      *           object is provided, any settings in $transportConfig, and any `$apiEndpoint`
@@ -225,9 +215,11 @@ class InstancesGapicClient
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
+     *               'grpc' => [...],
      *               'rest' => [...]
      *           ];
-     *           See the {@see \Google\ApiCore\Transport\RestTransport::build()} method for the
+     *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
+     *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
      *           supported options.
      * }
      *
@@ -402,8 +394,6 @@ class InstancesGapicClient
      *          Currently, only sorting by `name` or `creationTimestamp desc` is supported.
      *     @type string $pageToken
      *          Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
-     *     @type bool $returnPartialSuccess
-     *          Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -434,9 +424,13 @@ class InstancesGapicClient
         if (isset($optionalArgs['pageToken'])) {
             $request->setPageToken($optionalArgs['pageToken']);
         }
-        if (isset($optionalArgs['returnPartialSuccess'])) {
-            $request->setReturnPartialSuccess($optionalArgs['returnPartialSuccess']);
-        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'project' => $request->getProject(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
 
         return $this->startCall(
             'AggregatedList',
@@ -470,7 +464,7 @@ class InstancesGapicClient
      *
      *     @type AttachedDisk $attachedDiskResource
      *     @type bool $forceAttach
-     *          Whether to force attach the regional disk even if it's currently attached to another instance. If you try to force attach a zonal disk to an instance, you will receive an error.
+     *          Whether to force attach the regional disk even if it's currently attached to another instance.
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -852,54 +846,6 @@ class InstancesGapicClient
     }
 
     /**
-     * Returns the screenshot from the specified instance.
-     *
-     * Sample code:
-     * ```
-     * $instancesClient = new InstancesClient();
-     * try {
-     *     $instance = '';
-     *     $project = '';
-     *     $zone = '';
-     *     $response = $instancesClient->getScreenshot($instance, $project, $zone);
-     * } finally {
-     *     $instancesClient->close();
-     * }
-     * ```
-     *
-     * @param string $instance     Name of the instance scoping this request.
-     * @param string $project      Project ID for this request.
-     * @param string $zone         The name of the zone for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Compute\V1\Screenshot
-     *
-     * @throws ApiException if the remote call fails
-     */
-    public function getScreenshot($instance, $project, $zone, array $optionalArgs = [])
-    {
-        $request = new GetScreenshotInstanceRequest();
-        $request->setInstance($instance);
-        $request->setProject($project);
-        $request->setZone($zone);
-
-        return $this->startCall(
-            'GetScreenshot',
-            Screenshot::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
      * Returns the last 1 MB of serial port output from the specified instance.
      *
      * Sample code:
@@ -1115,8 +1061,6 @@ class InstancesGapicClient
      *          Currently, only sorting by `name` or `creationTimestamp desc` is supported.
      *     @type string $pageToken
      *          Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
-     *     @type bool $returnPartialSuccess
-     *          Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -1145,9 +1089,6 @@ class InstancesGapicClient
         if (isset($optionalArgs['pageToken'])) {
             $request->setPageToken($optionalArgs['pageToken']);
         }
-        if (isset($optionalArgs['returnPartialSuccess'])) {
-            $request->setReturnPartialSuccess($optionalArgs['returnPartialSuccess']);
-        }
 
         return $this->startCall(
             'List',
@@ -1158,7 +1099,7 @@ class InstancesGapicClient
     }
 
     /**
-     * Retrieves a list of resources that refer to the VM instance specified in the request. For example, if the VM instance is part of a managed or unmanaged instance group, the referrers list includes the instance group. For more information, read Viewing referrers to VM instances.
+     * Retrieves a list of resources that refer to the VM instance specified in the request. For example, if the VM instance is part of a managed instance group, the referrers list includes the managed instance group. For more information, read Viewing Referrers to VM Instances.
      *
      * Sample code:
      * ```
@@ -1197,8 +1138,6 @@ class InstancesGapicClient
      *          Currently, only sorting by `name` or `creationTimestamp desc` is supported.
      *     @type string $pageToken
      *          Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
-     *     @type bool $returnPartialSuccess
-     *          Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -1227,9 +1166,6 @@ class InstancesGapicClient
         }
         if (isset($optionalArgs['pageToken'])) {
             $request->setPageToken($optionalArgs['pageToken']);
-        }
-        if (isset($optionalArgs['returnPartialSuccess'])) {
-            $request->setReturnPartialSuccess($optionalArgs['returnPartialSuccess']);
         }
 
         return $this->startCall(

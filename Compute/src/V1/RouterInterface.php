@@ -23,13 +23,13 @@ class RouterInterface extends \Google\Protobuf\Internal\Message
     /**
      * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
      *
-     * Generated from protobuf field <code>string linked_interconnect_attachment = 501085518;</code>
+     * Generated from protobuf field <code>string linked_interconnect_attachment = 232650062;</code>
      */
     private $linked_interconnect_attachment = '';
     /**
      * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
      *
-     * Generated from protobuf field <code>string linked_vpn_tunnel = 352296953;</code>
+     * Generated from protobuf field <code>string linked_vpn_tunnel = 83861497;</code>
      */
     private $linked_vpn_tunnel = '';
     /**
@@ -101,7 +101,7 @@ class RouterInterface extends \Google\Protobuf\Internal\Message
     /**
      * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
      *
-     * Generated from protobuf field <code>string linked_interconnect_attachment = 501085518;</code>
+     * Generated from protobuf field <code>string linked_interconnect_attachment = 232650062;</code>
      * @return string
      */
     public function getLinkedInterconnectAttachment()
@@ -112,7 +112,7 @@ class RouterInterface extends \Google\Protobuf\Internal\Message
     /**
      * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
      *
-     * Generated from protobuf field <code>string linked_interconnect_attachment = 501085518;</code>
+     * Generated from protobuf field <code>string linked_interconnect_attachment = 232650062;</code>
      * @param string $var
      * @return $this
      */
@@ -127,7 +127,7 @@ class RouterInterface extends \Google\Protobuf\Internal\Message
     /**
      * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
      *
-     * Generated from protobuf field <code>string linked_vpn_tunnel = 352296953;</code>
+     * Generated from protobuf field <code>string linked_vpn_tunnel = 83861497;</code>
      * @return string
      */
     public function getLinkedVpnTunnel()
@@ -138,7 +138,7 @@ class RouterInterface extends \Google\Protobuf\Internal\Message
     /**
      * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
      *
-     * Generated from protobuf field <code>string linked_vpn_tunnel = 352296953;</code>
+     * Generated from protobuf field <code>string linked_vpn_tunnel = 83861497;</code>
      * @param string $var
      * @return $this
      */

@@ -18,7 +18,7 @@ class DeleteFirewallRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the firewall rule to delete.
      *
-     * Generated from protobuf field <code>string firewall = 511016192 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string firewall = 242580736 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $firewall = '';
     /**
@@ -60,7 +60,7 @@ class DeleteFirewallRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the firewall rule to delete.
      *
-     * Generated from protobuf field <code>string firewall = 511016192 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string firewall = 242580736 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getFirewall()
@@ -71,7 +71,7 @@ class DeleteFirewallRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the firewall rule to delete.
      *
-     * Generated from protobuf field <code>string firewall = 511016192 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string firewall = 242580736 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

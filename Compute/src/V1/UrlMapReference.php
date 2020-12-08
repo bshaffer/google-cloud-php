@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class UrlMapReference extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string url_map = 367020684;</code>
+     * Generated from protobuf field <code>string url_map = 98585228;</code>
      */
     private $url_map = '';
 
@@ -34,7 +34,7 @@ class UrlMapReference extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string url_map = 367020684;</code>
+     * Generated from protobuf field <code>string url_map = 98585228;</code>
      * @return string
      */
     public function getUrlMap()
@@ -43,7 +43,7 @@ class UrlMapReference extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string url_map = 367020684;</code>
+     * Generated from protobuf field <code>string url_map = 98585228;</code>
      * @param string $var
      * @return $this
      */

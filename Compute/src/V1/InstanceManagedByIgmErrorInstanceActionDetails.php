@@ -29,7 +29,7 @@ class InstanceManagedByIgmErrorInstanceActionDetails extends \Google\Protobuf\In
     /**
      * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
      */
     private $version = null;
 
@@ -107,7 +107,7 @@ class InstanceManagedByIgmErrorInstanceActionDetails extends \Google\Protobuf\In
     /**
      * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
      * @return \Google\Cloud\Compute\V1\ManagedInstanceVersion
      */
     public function getVersion()
@@ -128,7 +128,7 @@ class InstanceManagedByIgmErrorInstanceActionDetails extends \Google\Protobuf\In
     /**
      * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
      * @param \Google\Cloud\Compute\V1\ManagedInstanceVersion $var
      * @return $this
      */

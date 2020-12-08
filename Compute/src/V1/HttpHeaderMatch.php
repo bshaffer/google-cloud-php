@@ -19,14 +19,13 @@ class HttpHeaderMatch extends \Google\Protobuf\Internal\Message
      * The value should exactly match contents of exactMatch.
      * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
      *
-     * Generated from protobuf field <code>string exact_match = 457641093;</code>
+     * Generated from protobuf field <code>string exact_match = 189205637;</code>
      */
     private $exact_match = '';
     /**
      * The name of the HTTP header to match.
      * For matching against the HTTP request's authority, use a headerMatch with the header name ":authority".
      * For matching a request's method, use the headerName ":method".
-     * When the URL map is bound to target gRPC proxy that has validateForProxyless field set to true, only non-binary user-specified custom metadata and the `content-type` header are supported. The following transport-level headers cannot be used in header matching rules: `:authority`, `:method`, `:path`, `:scheme`, `user-agent`, `accept-encoding`, `content-encoding`, `grpc-accept-encoding`, `grpc-encoding`, `grpc-previous-rpc-attempts`, `grpc-tags-bin`, `grpc-timeout` and `grpc-trace-bin.
      *
      * Generated from protobuf field <code>string header_name = 110223613;</code>
      */
@@ -35,7 +34,7 @@ class HttpHeaderMatch extends \Google\Protobuf\Internal\Message
      * If set to false, the headerMatch is considered a match if the match criteria above are met. If set to true, the headerMatch is considered a match if the match criteria above are NOT met.
      * The default setting is false.
      *
-     * Generated from protobuf field <code>bool invert_match = 501130268;</code>
+     * Generated from protobuf field <code>bool invert_match = 232694812;</code>
      */
     private $invert_match = false;
     /**
@@ -78,7 +77,7 @@ class HttpHeaderMatch extends \Google\Protobuf\Internal\Message
      * The value of the header must end with the contents of suffixMatch.
      * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
      *
-     * Generated from protobuf field <code>string suffix_match = 426488663;</code>
+     * Generated from protobuf field <code>string suffix_match = 158053207;</code>
      */
     private $suffix_match = '';
 
@@ -95,7 +94,6 @@ class HttpHeaderMatch extends \Google\Protobuf\Internal\Message
      *           The name of the HTTP header to match.
      *           For matching against the HTTP request's authority, use a headerMatch with the header name ":authority".
      *           For matching a request's method, use the headerName ":method".
-     *           When the URL map is bound to target gRPC proxy that has validateForProxyless field set to true, only non-binary user-specified custom metadata and the `content-type` header are supported. The following transport-level headers cannot be used in header matching rules: `:authority`, `:method`, `:path`, `:scheme`, `user-agent`, `accept-encoding`, `content-encoding`, `grpc-accept-encoding`, `grpc-encoding`, `grpc-previous-rpc-attempts`, `grpc-tags-bin`, `grpc-timeout` and `grpc-trace-bin.
      *     @type bool $invert_match
      *           If set to false, the headerMatch is considered a match if the match criteria above are met. If set to true, the headerMatch is considered a match if the match criteria above are NOT met.
      *           The default setting is false.
@@ -133,7 +131,7 @@ class HttpHeaderMatch extends \Google\Protobuf\Internal\Message
      * The value should exactly match contents of exactMatch.
      * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
      *
-     * Generated from protobuf field <code>string exact_match = 457641093;</code>
+     * Generated from protobuf field <code>string exact_match = 189205637;</code>
      * @return string
      */
     public function getExactMatch()
@@ -145,7 +143,7 @@ class HttpHeaderMatch extends \Google\Protobuf\Internal\Message
      * The value should exactly match contents of exactMatch.
      * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
      *
-     * Generated from protobuf field <code>string exact_match = 457641093;</code>
+     * Generated from protobuf field <code>string exact_match = 189205637;</code>
      * @param string $var
      * @return $this
      */
@@ -161,7 +159,6 @@ class HttpHeaderMatch extends \Google\Protobuf\Internal\Message
      * The name of the HTTP header to match.
      * For matching against the HTTP request's authority, use a headerMatch with the header name ":authority".
      * For matching a request's method, use the headerName ":method".
-     * When the URL map is bound to target gRPC proxy that has validateForProxyless field set to true, only non-binary user-specified custom metadata and the `content-type` header are supported. The following transport-level headers cannot be used in header matching rules: `:authority`, `:method`, `:path`, `:scheme`, `user-agent`, `accept-encoding`, `content-encoding`, `grpc-accept-encoding`, `grpc-encoding`, `grpc-previous-rpc-attempts`, `grpc-tags-bin`, `grpc-timeout` and `grpc-trace-bin.
      *
      * Generated from protobuf field <code>string header_name = 110223613;</code>
      * @return string
@@ -175,7 +172,6 @@ class HttpHeaderMatch extends \Google\Protobuf\Internal\Message
      * The name of the HTTP header to match.
      * For matching against the HTTP request's authority, use a headerMatch with the header name ":authority".
      * For matching a request's method, use the headerName ":method".
-     * When the URL map is bound to target gRPC proxy that has validateForProxyless field set to true, only non-binary user-specified custom metadata and the `content-type` header are supported. The following transport-level headers cannot be used in header matching rules: `:authority`, `:method`, `:path`, `:scheme`, `user-agent`, `accept-encoding`, `content-encoding`, `grpc-accept-encoding`, `grpc-encoding`, `grpc-previous-rpc-attempts`, `grpc-tags-bin`, `grpc-timeout` and `grpc-trace-bin.
      *
      * Generated from protobuf field <code>string header_name = 110223613;</code>
      * @param string $var
@@ -193,7 +189,7 @@ class HttpHeaderMatch extends \Google\Protobuf\Internal\Message
      * If set to false, the headerMatch is considered a match if the match criteria above are met. If set to true, the headerMatch is considered a match if the match criteria above are NOT met.
      * The default setting is false.
      *
-     * Generated from protobuf field <code>bool invert_match = 501130268;</code>
+     * Generated from protobuf field <code>bool invert_match = 232694812;</code>
      * @return bool
      */
     public function getInvertMatch()
@@ -205,7 +201,7 @@ class HttpHeaderMatch extends \Google\Protobuf\Internal\Message
      * If set to false, the headerMatch is considered a match if the match criteria above are met. If set to true, the headerMatch is considered a match if the match criteria above are NOT met.
      * The default setting is false.
      *
-     * Generated from protobuf field <code>bool invert_match = 501130268;</code>
+     * Generated from protobuf field <code>bool invert_match = 232694812;</code>
      * @param bool $var
      * @return $this
      */
@@ -359,7 +355,7 @@ class HttpHeaderMatch extends \Google\Protobuf\Internal\Message
      * The value of the header must end with the contents of suffixMatch.
      * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
      *
-     * Generated from protobuf field <code>string suffix_match = 426488663;</code>
+     * Generated from protobuf field <code>string suffix_match = 158053207;</code>
      * @return string
      */
     public function getSuffixMatch()
@@ -371,7 +367,7 @@ class HttpHeaderMatch extends \Google\Protobuf\Internal\Message
      * The value of the header must end with the contents of suffixMatch.
      * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
      *
-     * Generated from protobuf field <code>string suffix_match = 426488663;</code>
+     * Generated from protobuf field <code>string suffix_match = 158053207;</code>
      * @param string $var
      * @return $this
      */

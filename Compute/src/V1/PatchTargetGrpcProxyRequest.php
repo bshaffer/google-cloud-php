@@ -36,7 +36,7 @@ class PatchTargetGrpcProxyRequest extends \Google\Protobuf\Internal\Message
      */
     private $target_grpc_proxy = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 328922450;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 60486994;</code>
      */
     private $target_grpc_proxy_resource = null;
 
@@ -145,7 +145,7 @@ class PatchTargetGrpcProxyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 328922450;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 60486994;</code>
      * @return \Google\Cloud\Compute\V1\TargetGrpcProxy
      */
     public function getTargetGrpcProxyResource()
@@ -164,7 +164,7 @@ class PatchTargetGrpcProxyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 328922450;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 60486994;</code>
      * @param \Google\Cloud\Compute\V1\TargetGrpcProxy $var
      * @return $this
      */

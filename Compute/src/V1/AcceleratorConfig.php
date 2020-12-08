@@ -19,7 +19,7 @@ class AcceleratorConfig extends \Google\Protobuf\Internal\Message
     /**
      * The number of the guest accelerator cards exposed to this instance.
      *
-     * Generated from protobuf field <code>int32 accelerator_count = 504879675;</code>
+     * Generated from protobuf field <code>int32 accelerator_count = 236444219;</code>
      */
     private $accelerator_count = 0;
     /**
@@ -49,7 +49,7 @@ class AcceleratorConfig extends \Google\Protobuf\Internal\Message
     /**
      * The number of the guest accelerator cards exposed to this instance.
      *
-     * Generated from protobuf field <code>int32 accelerator_count = 504879675;</code>
+     * Generated from protobuf field <code>int32 accelerator_count = 236444219;</code>
      * @return int
      */
     public function getAcceleratorCount()
@@ -60,7 +60,7 @@ class AcceleratorConfig extends \Google\Protobuf\Internal\Message
     /**
      * The number of the guest accelerator cards exposed to this instance.
      *
-     * Generated from protobuf field <code>int32 accelerator_count = 504879675;</code>
+     * Generated from protobuf field <code>int32 accelerator_count = 236444219;</code>
      * @param int $var
      * @return $this
      */

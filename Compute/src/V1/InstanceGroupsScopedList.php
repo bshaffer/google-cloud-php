@@ -17,7 +17,7 @@ class InstanceGroupsScopedList extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The list of instance groups that are contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
      */
     private $instance_groups;
     /**
@@ -47,7 +47,7 @@ class InstanceGroupsScopedList extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The list of instance groups that are contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getInstanceGroups()
@@ -58,7 +58,7 @@ class InstanceGroupsScopedList extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The list of instance groups that are contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
      * @param \Google\Cloud\Compute\V1\InstanceGroup[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

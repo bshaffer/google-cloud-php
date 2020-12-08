@@ -30,7 +30,7 @@ class InsertTargetInstanceRequest extends \Google\Protobuf\Internal\Message
      */
     private $request_id = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetInstance target_instance_resource = 430453066;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetInstance target_instance_resource = 162017610;</code>
      */
     private $target_instance_resource = null;
     /**
@@ -119,7 +119,7 @@ class InsertTargetInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetInstance target_instance_resource = 430453066;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetInstance target_instance_resource = 162017610;</code>
      * @return \Google\Cloud\Compute\V1\TargetInstance
      */
     public function getTargetInstanceResource()
@@ -138,7 +138,7 @@ class InsertTargetInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetInstance target_instance_resource = 430453066;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetInstance target_instance_resource = 162017610;</code>
      * @param \Google\Cloud\Compute\V1\TargetInstance $var
      * @return $this
      */

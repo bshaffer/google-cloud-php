@@ -24,7 +24,7 @@ class InterconnectOutageNotification extends \Google\Protobuf\Internal\Message
     /**
      * A description about the purpose of the outage.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -38,7 +38,7 @@ class InterconnectOutageNotification extends \Google\Protobuf\Internal\Message
      * - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window.
      * - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InterconnectOutageNotification.IssueType issue_type = 369639136;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InterconnectOutageNotification.IssueType issue_type = 101203680;</code>
      */
     private $issue_type = 0;
     /**
@@ -132,7 +132,7 @@ class InterconnectOutageNotification extends \Google\Protobuf\Internal\Message
     /**
      * A description about the purpose of the outage.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -143,7 +143,7 @@ class InterconnectOutageNotification extends \Google\Protobuf\Internal\Message
     /**
      * A description about the purpose of the outage.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -186,7 +186,7 @@ class InterconnectOutageNotification extends \Google\Protobuf\Internal\Message
      * - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window.
      * - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InterconnectOutageNotification.IssueType issue_type = 369639136;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InterconnectOutageNotification.IssueType issue_type = 101203680;</code>
      * @return int
      */
     public function getIssueType()
@@ -199,7 +199,7 @@ class InterconnectOutageNotification extends \Google\Protobuf\Internal\Message
      * - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window.
      * - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InterconnectOutageNotification.IssueType issue_type = 369639136;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InterconnectOutageNotification.IssueType issue_type = 101203680;</code>
      * @param int $var
      * @return $this
      */

@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class InsertInterconnectRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 397611167;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 129175711;</code>
      */
     private $interconnect_resource = null;
     /**
@@ -55,7 +55,7 @@ class InsertInterconnectRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 397611167;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 129175711;</code>
      * @return \Google\Cloud\Compute\V1\Interconnect
      */
     public function getInterconnectResource()
@@ -74,7 +74,7 @@ class InsertInterconnectRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 397611167;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 129175711;</code>
      * @param \Google\Cloud\Compute\V1\Interconnect $var
      * @return $this
      */

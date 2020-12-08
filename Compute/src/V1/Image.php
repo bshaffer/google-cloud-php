@@ -19,7 +19,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
      *
-     * Generated from protobuf field <code>string archive_size_bytes = 381093450;</code>
+     * Generated from protobuf field <code>string archive_size_bytes = 112657994;</code>
      */
     private $archive_size_bytes = '';
     /**
@@ -31,25 +31,25 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * The deprecation status associated with this image.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     private $deprecated = null;
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
      * Size of the image when restored onto a persistent disk (in GB).
      *
-     * Generated from protobuf field <code>string disk_size_gb = 316263735;</code>
+     * Generated from protobuf field <code>string disk_size_gb = 47828279;</code>
      */
     private $disk_size_gb = '';
     /**
      * The name of the image family to which this image belongs. You can create disks by specifying an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
      *
-     * Generated from protobuf field <code>string family = 328751972;</code>
+     * Generated from protobuf field <code>string family = 60316516;</code>
      */
     private $family = '';
     /**
@@ -70,7 +70,7 @@ class Image extends \Google\Protobuf\Internal\Message
      * Customer-supplied encryption keys do not protect access to metadata of the disk.
      * If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 111077127;</code>
      */
     private $image_encryption_key = null;
     /**
@@ -89,7 +89,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * Labels to apply to this image. These can be later modified by the setLabels method.
      *
-     * Generated from protobuf field <code>map<string, string> labels = 500195327;</code>
+     * Generated from protobuf field <code>map<string, string> labels = 231759871;</code>
      */
     private $labels;
     /**
@@ -101,7 +101,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * Any applicable license URI.
      *
-     * Generated from protobuf field <code>repeated string licenses = 337642578;</code>
+     * Generated from protobuf field <code>repeated string licenses = 69207122;</code>
      */
     private $licenses;
     /**
@@ -113,13 +113,13 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * The parameters of the raw disk image.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RawDisk raw_disk = 503113556;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RawDisk raw_disk = 234678100;</code>
      */
     private $raw_disk = null;
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
@@ -134,19 +134,19 @@ class Image extends \Google\Protobuf\Internal\Message
      * - projects/project/zones/zone/disks/disk
      * - zones/zone/disks/disk
      *
-     * Generated from protobuf field <code>string source_disk = 451753793;</code>
+     * Generated from protobuf field <code>string source_disk = 183318337;</code>
      */
     private $source_disk = '';
     /**
      * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 263065697;</code>
      */
     private $source_disk_encryption_key = null;
     /**
      * [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
      *
-     * Generated from protobuf field <code>string source_disk_id = 454190809;</code>
+     * Generated from protobuf field <code>string source_disk_id = 185755353;</code>
      */
     private $source_disk_id = '';
     /**
@@ -163,7 +163,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;</code>
      */
     private $source_image_encryption_key = null;
     /**
@@ -187,7 +187,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;</code>
      */
     private $source_snapshot_encryption_key = null;
     /**
@@ -199,7 +199,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * The type of the image used to create this disk. The default and only value is RAW
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Image.SourceType source_type = 452245726;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Image.SourceType source_type = 183810270;</code>
      */
     private $source_type = 0;
     /**
@@ -211,7 +211,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * Cloud Storage bucket storage location of the image (regional or multi-regional).
      *
-     * Generated from protobuf field <code>repeated string storage_locations = 328005274;</code>
+     * Generated from protobuf field <code>repeated string storage_locations = 59569818;</code>
      */
     private $storage_locations;
 
@@ -309,7 +309,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
      *
-     * Generated from protobuf field <code>string archive_size_bytes = 381093450;</code>
+     * Generated from protobuf field <code>string archive_size_bytes = 112657994;</code>
      * @return string
      */
     public function getArchiveSizeBytes()
@@ -320,7 +320,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
      *
-     * Generated from protobuf field <code>string archive_size_bytes = 381093450;</code>
+     * Generated from protobuf field <code>string archive_size_bytes = 112657994;</code>
      * @param string $var
      * @return $this
      */
@@ -361,7 +361,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * The deprecation status associated with this image.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      * @return \Google\Cloud\Compute\V1\DeprecationStatus
      */
     public function getDeprecated()
@@ -382,7 +382,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * The deprecation status associated with this image.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      * @param \Google\Cloud\Compute\V1\DeprecationStatus $var
      * @return $this
      */
@@ -397,7 +397,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -408,7 +408,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -423,7 +423,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * Size of the image when restored onto a persistent disk (in GB).
      *
-     * Generated from protobuf field <code>string disk_size_gb = 316263735;</code>
+     * Generated from protobuf field <code>string disk_size_gb = 47828279;</code>
      * @return string
      */
     public function getDiskSizeGb()
@@ -434,7 +434,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * Size of the image when restored onto a persistent disk (in GB).
      *
-     * Generated from protobuf field <code>string disk_size_gb = 316263735;</code>
+     * Generated from protobuf field <code>string disk_size_gb = 47828279;</code>
      * @param string $var
      * @return $this
      */
@@ -449,7 +449,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * The name of the image family to which this image belongs. You can create disks by specifying an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
      *
-     * Generated from protobuf field <code>string family = 328751972;</code>
+     * Generated from protobuf field <code>string family = 60316516;</code>
      * @return string
      */
     public function getFamily()
@@ -460,7 +460,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * The name of the image family to which this image belongs. You can create disks by specifying an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
      *
-     * Generated from protobuf field <code>string family = 328751972;</code>
+     * Generated from protobuf field <code>string family = 60316516;</code>
      * @param string $var
      * @return $this
      */
@@ -530,7 +530,7 @@ class Image extends \Google\Protobuf\Internal\Message
      * Customer-supplied encryption keys do not protect access to metadata of the disk.
      * If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 111077127;</code>
      * @return \Google\Cloud\Compute\V1\CustomerEncryptionKey
      */
     public function getImageEncryptionKey()
@@ -554,7 +554,7 @@ class Image extends \Google\Protobuf\Internal\Message
      * Customer-supplied encryption keys do not protect access to metadata of the disk.
      * If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 111077127;</code>
      * @param \Google\Cloud\Compute\V1\CustomerEncryptionKey $var
      * @return $this
      */
@@ -623,7 +623,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * Labels to apply to this image. These can be later modified by the setLabels method.
      *
-     * Generated from protobuf field <code>map<string, string> labels = 500195327;</code>
+     * Generated from protobuf field <code>map<string, string> labels = 231759871;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getLabels()
@@ -634,7 +634,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * Labels to apply to this image. These can be later modified by the setLabels method.
      *
-     * Generated from protobuf field <code>map<string, string> labels = 500195327;</code>
+     * Generated from protobuf field <code>map<string, string> labels = 231759871;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
@@ -675,7 +675,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * Any applicable license URI.
      *
-     * Generated from protobuf field <code>repeated string licenses = 337642578;</code>
+     * Generated from protobuf field <code>repeated string licenses = 69207122;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getLicenses()
@@ -686,7 +686,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * Any applicable license URI.
      *
-     * Generated from protobuf field <code>repeated string licenses = 337642578;</code>
+     * Generated from protobuf field <code>repeated string licenses = 69207122;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -727,7 +727,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * The parameters of the raw disk image.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RawDisk raw_disk = 503113556;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RawDisk raw_disk = 234678100;</code>
      * @return \Google\Cloud\Compute\V1\RawDisk
      */
     public function getRawDisk()
@@ -748,7 +748,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * The parameters of the raw disk image.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RawDisk raw_disk = 503113556;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RawDisk raw_disk = 234678100;</code>
      * @param \Google\Cloud\Compute\V1\RawDisk $var
      * @return $this
      */
@@ -763,7 +763,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -774,7 +774,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */
@@ -828,7 +828,7 @@ class Image extends \Google\Protobuf\Internal\Message
      * - projects/project/zones/zone/disks/disk
      * - zones/zone/disks/disk
      *
-     * Generated from protobuf field <code>string source_disk = 451753793;</code>
+     * Generated from protobuf field <code>string source_disk = 183318337;</code>
      * @return string
      */
     public function getSourceDisk()
@@ -842,7 +842,7 @@ class Image extends \Google\Protobuf\Internal\Message
      * - projects/project/zones/zone/disks/disk
      * - zones/zone/disks/disk
      *
-     * Generated from protobuf field <code>string source_disk = 451753793;</code>
+     * Generated from protobuf field <code>string source_disk = 183318337;</code>
      * @param string $var
      * @return $this
      */
@@ -857,7 +857,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 263065697;</code>
      * @return \Google\Cloud\Compute\V1\CustomerEncryptionKey
      */
     public function getSourceDiskEncryptionKey()
@@ -878,7 +878,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 263065697;</code>
      * @param \Google\Cloud\Compute\V1\CustomerEncryptionKey $var
      * @return $this
      */
@@ -893,7 +893,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
      *
-     * Generated from protobuf field <code>string source_disk_id = 454190809;</code>
+     * Generated from protobuf field <code>string source_disk_id = 185755353;</code>
      * @return string
      */
     public function getSourceDiskId()
@@ -904,7 +904,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
      *
-     * Generated from protobuf field <code>string source_disk_id = 454190809;</code>
+     * Generated from protobuf field <code>string source_disk_id = 185755353;</code>
      * @param string $var
      * @return $this
      */
@@ -955,7 +955,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;</code>
      * @return \Google\Cloud\Compute\V1\CustomerEncryptionKey
      */
     public function getSourceImageEncryptionKey()
@@ -976,7 +976,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;</code>
      * @param \Google\Cloud\Compute\V1\CustomerEncryptionKey $var
      * @return $this
      */
@@ -1055,7 +1055,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;</code>
      * @return \Google\Cloud\Compute\V1\CustomerEncryptionKey
      */
     public function getSourceSnapshotEncryptionKey()
@@ -1076,7 +1076,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;</code>
      * @param \Google\Cloud\Compute\V1\CustomerEncryptionKey $var
      * @return $this
      */
@@ -1117,7 +1117,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * The type of the image used to create this disk. The default and only value is RAW
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Image.SourceType source_type = 452245726;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Image.SourceType source_type = 183810270;</code>
      * @return int
      */
     public function getSourceType()
@@ -1128,7 +1128,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * The type of the image used to create this disk. The default and only value is RAW
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Image.SourceType source_type = 452245726;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Image.SourceType source_type = 183810270;</code>
      * @param int $var
      * @return $this
      */
@@ -1169,7 +1169,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * Cloud Storage bucket storage location of the image (regional or multi-regional).
      *
-     * Generated from protobuf field <code>repeated string storage_locations = 328005274;</code>
+     * Generated from protobuf field <code>repeated string storage_locations = 59569818;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getStorageLocations()
@@ -1180,7 +1180,7 @@ class Image extends \Google\Protobuf\Internal\Message
     /**
      * Cloud Storage bucket storage location of the image (regional or multi-regional).
      *
-     * Generated from protobuf field <code>repeated string storage_locations = 328005274;</code>
+     * Generated from protobuf field <code>repeated string storage_locations = 59569818;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

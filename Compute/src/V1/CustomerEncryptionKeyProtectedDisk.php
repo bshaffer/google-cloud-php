@@ -17,7 +17,7 @@ class CustomerEncryptionKeyProtectedDisk extends \Google\Protobuf\Internal\Messa
     /**
      * Decrypts data associated with the disk with a customer-supplied encryption key.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      */
     private $disk_encryption_key = null;
     /**
@@ -47,7 +47,7 @@ class CustomerEncryptionKeyProtectedDisk extends \Google\Protobuf\Internal\Messa
     /**
      * Decrypts data associated with the disk with a customer-supplied encryption key.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      * @return \Google\Cloud\Compute\V1\CustomerEncryptionKey
      */
     public function getDiskEncryptionKey()
@@ -68,7 +68,7 @@ class CustomerEncryptionKeyProtectedDisk extends \Google\Protobuf\Internal\Messa
     /**
      * Decrypts data associated with the disk with a customer-supplied encryption key.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      * @param \Google\Cloud\Compute\V1\CustomerEncryptionKey $var
      * @return $this
      */

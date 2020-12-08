@@ -18,11 +18,11 @@ class UrlMapTest extends \Google\Protobuf\Internal\Message
     /**
      * Description of this test case.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
-     * Host portion of the URL. If headers contains a host header, then host must also match the header value.
+     * Host portion of the URL.
      *
      * Generated from protobuf field <code>string host = 3208616;</code>
      */
@@ -34,10 +34,9 @@ class UrlMapTest extends \Google\Protobuf\Internal\Message
      */
     private $path = '';
     /**
-     * Expected BackendService or BackendBucket resource the given URL should be mapped to.
-     * service cannot be set if expectedRedirectResponseCode is set.
+     * Expected BackendService resource the given URL should be mapped to.
      *
-     * Generated from protobuf field <code>string service = 373540533;</code>
+     * Generated from protobuf field <code>string service = 105105077;</code>
      */
     private $service = '';
 
@@ -50,12 +49,11 @@ class UrlMapTest extends \Google\Protobuf\Internal\Message
      *     @type string $description
      *           Description of this test case.
      *     @type string $host
-     *           Host portion of the URL. If headers contains a host header, then host must also match the header value.
+     *           Host portion of the URL.
      *     @type string $path
      *           Path portion of the URL.
      *     @type string $service
-     *           Expected BackendService or BackendBucket resource the given URL should be mapped to.
-     *           service cannot be set if expectedRedirectResponseCode is set.
+     *           Expected BackendService resource the given URL should be mapped to.
      * }
      */
     public function __construct($data = NULL) {
@@ -66,7 +64,7 @@ class UrlMapTest extends \Google\Protobuf\Internal\Message
     /**
      * Description of this test case.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -77,7 +75,7 @@ class UrlMapTest extends \Google\Protobuf\Internal\Message
     /**
      * Description of this test case.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -90,7 +88,7 @@ class UrlMapTest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Host portion of the URL. If headers contains a host header, then host must also match the header value.
+     * Host portion of the URL.
      *
      * Generated from protobuf field <code>string host = 3208616;</code>
      * @return string
@@ -101,7 +99,7 @@ class UrlMapTest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Host portion of the URL. If headers contains a host header, then host must also match the header value.
+     * Host portion of the URL.
      *
      * Generated from protobuf field <code>string host = 3208616;</code>
      * @param string $var
@@ -142,10 +140,9 @@ class UrlMapTest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Expected BackendService or BackendBucket resource the given URL should be mapped to.
-     * service cannot be set if expectedRedirectResponseCode is set.
+     * Expected BackendService resource the given URL should be mapped to.
      *
-     * Generated from protobuf field <code>string service = 373540533;</code>
+     * Generated from protobuf field <code>string service = 105105077;</code>
      * @return string
      */
     public function getService()
@@ -154,10 +151,9 @@ class UrlMapTest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Expected BackendService or BackendBucket resource the given URL should be mapped to.
-     * service cannot be set if expectedRedirectResponseCode is set.
+     * Expected BackendService resource the given URL should be mapped to.
      *
-     * Generated from protobuf field <code>string service = 373540533;</code>
+     * Generated from protobuf field <code>string service = 105105077;</code>
      * @param string $var
      * @return $this
      */

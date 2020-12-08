@@ -16,12 +16,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class Binding extends \Google\Protobuf\Internal\Message
 {
     /**
-     * A client-specified ID for this binding. Expected to be globally unique to support the internal bindings-by-ID API.
-     *
-     * Generated from protobuf field <code>string binding_id = 441088277;</code>
-     */
-    private $binding_id = '';
-    /**
      * The condition that is associated with this binding.
      * If the condition evaluates to `true`, then this binding applies to the current request.
      * If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the members in this binding.
@@ -42,7 +36,7 @@ class Binding extends \Google\Protobuf\Internal\Message
      * * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins&#64;example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding.
      * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
      *
-     * Generated from protobuf field <code>repeated string members = 412010777;</code>
+     * Generated from protobuf field <code>repeated string members = 143575321;</code>
      */
     private $members;
     /**
@@ -58,8 +52,6 @@ class Binding extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $binding_id
-     *           A client-specified ID for this binding. Expected to be globally unique to support the internal bindings-by-ID API.
      *     @type \Google\Cloud\Compute\V1\Expr $condition
      *           The condition that is associated with this binding.
      *           If the condition evaluates to `true`, then this binding applies to the current request.
@@ -83,32 +75,6 @@ class Binding extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Google\Cloud\Compute\V1\Compute::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * A client-specified ID for this binding. Expected to be globally unique to support the internal bindings-by-ID API.
-     *
-     * Generated from protobuf field <code>string binding_id = 441088277;</code>
-     * @return string
-     */
-    public function getBindingId()
-    {
-        return $this->binding_id;
-    }
-
-    /**
-     * A client-specified ID for this binding. Expected to be globally unique to support the internal bindings-by-ID API.
-     *
-     * Generated from protobuf field <code>string binding_id = 441088277;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setBindingId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->binding_id = $var;
-
-        return $this;
     }
 
     /**
@@ -165,7 +131,7 @@ class Binding extends \Google\Protobuf\Internal\Message
      * * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins&#64;example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding.
      * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
      *
-     * Generated from protobuf field <code>repeated string members = 412010777;</code>
+     * Generated from protobuf field <code>repeated string members = 143575321;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getMembers()
@@ -185,7 +151,7 @@ class Binding extends \Google\Protobuf\Internal\Message
      * * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins&#64;example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding.
      * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
      *
-     * Generated from protobuf field <code>repeated string members = 412010777;</code>
+     * Generated from protobuf field <code>repeated string members = 143575321;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

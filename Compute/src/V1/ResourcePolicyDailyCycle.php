@@ -18,7 +18,7 @@ class ResourcePolicyDailyCycle extends \Google\Protobuf\Internal\Message
     /**
      * Defines a schedule with units measured in months. The value determines how many months pass between the start of each cycle.
      *
-     * Generated from protobuf field <code>int32 days_in_cycle = 369790004;</code>
+     * Generated from protobuf field <code>int32 days_in_cycle = 101354548;</code>
      */
     private $days_in_cycle = 0;
     /**
@@ -56,7 +56,7 @@ class ResourcePolicyDailyCycle extends \Google\Protobuf\Internal\Message
     /**
      * Defines a schedule with units measured in months. The value determines how many months pass between the start of each cycle.
      *
-     * Generated from protobuf field <code>int32 days_in_cycle = 369790004;</code>
+     * Generated from protobuf field <code>int32 days_in_cycle = 101354548;</code>
      * @return int
      */
     public function getDaysInCycle()
@@ -67,7 +67,7 @@ class ResourcePolicyDailyCycle extends \Google\Protobuf\Internal\Message
     /**
      * Defines a schedule with units measured in months. The value determines how many months pass between the start of each cycle.
      *
-     * Generated from protobuf field <code>int32 days_in_cycle = 369790004;</code>
+     * Generated from protobuf field <code>int32 days_in_cycle = 101354548;</code>
      * @param int $var
      * @return $this
      */

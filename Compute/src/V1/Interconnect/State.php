@@ -23,13 +23,13 @@ class State
      */
     const UNDEFINED_STATE = 0;
     /**
-     * Generated from protobuf enum <code>ACTIVE = 314733318;</code>
+     * Generated from protobuf enum <code>ACTIVE = 46297862;</code>
      */
-    const ACTIVE = 314733318;
+    const ACTIVE = 46297862;
     /**
-     * Generated from protobuf enum <code>UNPROVISIONED = 517333979;</code>
+     * Generated from protobuf enum <code>UNPROVISIONED = 248898523;</code>
      */
-    const UNPROVISIONED = 517333979;
+    const UNPROVISIONED = 248898523;
 
     private static $valueToName = [
         self::UNDEFINED_STATE => 'UNDEFINED_STATE',

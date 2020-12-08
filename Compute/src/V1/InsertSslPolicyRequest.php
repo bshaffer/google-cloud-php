@@ -30,7 +30,7 @@ class InsertSslPolicyRequest extends \Google\Protobuf\Internal\Message
      */
     private $request_id = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392;</code>
      */
     private $ssl_policy_resource = null;
 
@@ -111,7 +111,7 @@ class InsertSslPolicyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392;</code>
      * @return \Google\Cloud\Compute\V1\SslPolicy
      */
     public function getSslPolicyResource()
@@ -130,7 +130,7 @@ class InsertSslPolicyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392;</code>
      * @param \Google\Cloud\Compute\V1\SslPolicy $var
      * @return $this
      */

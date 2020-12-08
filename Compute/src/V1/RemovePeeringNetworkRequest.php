@@ -22,7 +22,7 @@ class RemovePeeringNetworkRequest extends \Google\Protobuf\Internal\Message
      */
     private $network = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 421162494;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 152727038;</code>
      */
     private $networks_remove_peering_request_resource = null;
     /**
@@ -89,7 +89,7 @@ class RemovePeeringNetworkRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 421162494;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 152727038;</code>
      * @return \Google\Cloud\Compute\V1\NetworksRemovePeeringRequest
      */
     public function getNetworksRemovePeeringRequestResource()
@@ -108,7 +108,7 @@ class RemovePeeringNetworkRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 421162494;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 152727038;</code>
      * @param \Google\Cloud\Compute\V1\NetworksRemovePeeringRequest $var
      * @return $this
      */

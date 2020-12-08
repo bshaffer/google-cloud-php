@@ -17,19 +17,13 @@ class InstanceProperties extends \Google\Protobuf\Internal\Message
     /**
      * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
      *
-     * Generated from protobuf field <code>bool can_ip_forward = 467731324;</code>
+     * Generated from protobuf field <code>bool can_ip_forward = 199295868;</code>
      */
     private $can_ip_forward = false;
     /**
-     * Specifies the Confidential Instance options.
-     *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;</code>
-     */
-    private $confidential_instance_config = null;
-    /**
      * An optional text description for the instances that are created from these properties.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -41,13 +35,13 @@ class InstanceProperties extends \Google\Protobuf\Internal\Message
     /**
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;</code>
      */
     private $guest_accelerators;
     /**
      * Labels to apply to instances that are created from these properties.
      *
-     * Generated from protobuf field <code>map<string, string> labels = 500195327;</code>
+     * Generated from protobuf field <code>map<string, string> labels = 231759871;</code>
      */
     private $labels;
     /**
@@ -95,13 +89,13 @@ class InstanceProperties extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the scheduling options for the instances that are created from these properties.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
      */
     private $scheduling = null;
     /**
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
      */
     private $service_accounts;
     /**
@@ -123,8 +117,6 @@ class InstanceProperties extends \Google\Protobuf\Internal\Message
      *
      *     @type bool $can_ip_forward
      *           Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
-     *     @type \Google\Cloud\Compute\V1\ConfidentialInstanceConfig $confidential_instance_config
-     *           Specifies the Confidential Instance options.
      *     @type string $description
      *           An optional text description for the instances that are created from these properties.
      *     @type \Google\Cloud\Compute\V1\AttachedDisk[]|\Google\Protobuf\Internal\RepeatedField $disks
@@ -164,7 +156,7 @@ class InstanceProperties extends \Google\Protobuf\Internal\Message
     /**
      * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
      *
-     * Generated from protobuf field <code>bool can_ip_forward = 467731324;</code>
+     * Generated from protobuf field <code>bool can_ip_forward = 199295868;</code>
      * @return bool
      */
     public function getCanIpForward()
@@ -175,7 +167,7 @@ class InstanceProperties extends \Google\Protobuf\Internal\Message
     /**
      * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
      *
-     * Generated from protobuf field <code>bool can_ip_forward = 467731324;</code>
+     * Generated from protobuf field <code>bool can_ip_forward = 199295868;</code>
      * @param bool $var
      * @return $this
      */
@@ -188,45 +180,9 @@ class InstanceProperties extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specifies the Confidential Instance options.
-     *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;</code>
-     * @return \Google\Cloud\Compute\V1\ConfidentialInstanceConfig
-     */
-    public function getConfidentialInstanceConfig()
-    {
-        return isset($this->confidential_instance_config) ? $this->confidential_instance_config : null;
-    }
-
-    public function hasConfidentialInstanceConfig()
-    {
-        return isset($this->confidential_instance_config);
-    }
-
-    public function clearConfidentialInstanceConfig()
-    {
-        unset($this->confidential_instance_config);
-    }
-
-    /**
-     * Specifies the Confidential Instance options.
-     *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;</code>
-     * @param \Google\Cloud\Compute\V1\ConfidentialInstanceConfig $var
-     * @return $this
-     */
-    public function setConfidentialInstanceConfig($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Cloud\Compute\V1\ConfidentialInstanceConfig::class);
-        $this->confidential_instance_config = $var;
-
-        return $this;
-    }
-
-    /**
      * An optional text description for the instances that are created from these properties.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -237,7 +193,7 @@ class InstanceProperties extends \Google\Protobuf\Internal\Message
     /**
      * An optional text description for the instances that are created from these properties.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -278,7 +234,7 @@ class InstanceProperties extends \Google\Protobuf\Internal\Message
     /**
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getGuestAccelerators()
@@ -289,7 +245,7 @@ class InstanceProperties extends \Google\Protobuf\Internal\Message
     /**
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;</code>
      * @param \Google\Cloud\Compute\V1\AcceleratorConfig[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -304,7 +260,7 @@ class InstanceProperties extends \Google\Protobuf\Internal\Message
     /**
      * Labels to apply to instances that are created from these properties.
      *
-     * Generated from protobuf field <code>map<string, string> labels = 500195327;</code>
+     * Generated from protobuf field <code>map<string, string> labels = 231759871;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getLabels()
@@ -315,7 +271,7 @@ class InstanceProperties extends \Google\Protobuf\Internal\Message
     /**
      * Labels to apply to instances that are created from these properties.
      *
-     * Generated from protobuf field <code>map<string, string> labels = 500195327;</code>
+     * Generated from protobuf field <code>map<string, string> labels = 231759871;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
@@ -532,7 +488,7 @@ class InstanceProperties extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the scheduling options for the instances that are created from these properties.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
      * @return \Google\Cloud\Compute\V1\Scheduling
      */
     public function getScheduling()
@@ -553,7 +509,7 @@ class InstanceProperties extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the scheduling options for the instances that are created from these properties.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
      * @param \Google\Cloud\Compute\V1\Scheduling $var
      * @return $this
      */
@@ -568,7 +524,7 @@ class InstanceProperties extends \Google\Protobuf\Internal\Message
     /**
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getServiceAccounts()
@@ -579,7 +535,7 @@ class InstanceProperties extends \Google\Protobuf\Internal\Message
     /**
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
      * @param \Google\Cloud\Compute\V1\ServiceAccount[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

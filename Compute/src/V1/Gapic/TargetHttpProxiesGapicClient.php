@@ -27,6 +27,7 @@ namespace Google\Cloud\Compute\V1\Gapic;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
@@ -37,7 +38,6 @@ use Google\Cloud\Compute\V1\GetTargetHttpProxyRequest;
 use Google\Cloud\Compute\V1\InsertTargetHttpProxyRequest;
 use Google\Cloud\Compute\V1\ListTargetHttpProxiesRequest;
 use Google\Cloud\Compute\V1\Operation;
-use Google\Cloud\Compute\V1\PatchTargetHttpProxyRequest;
 use Google\Cloud\Compute\V1\SetUrlMapTargetHttpProxyRequest;
 use Google\Cloud\Compute\V1\TargetHttpProxy;
 use Google\Cloud\Compute\V1\TargetHttpProxyAggregatedList;
@@ -99,8 +99,9 @@ class TargetHttpProxiesGapicClient
             'apiEndpoint' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
             'clientConfig' => __DIR__.'/../resources/target_http_proxies_client_config.json',
             'descriptorsConfigPath' => __DIR__.'/../resources/target_http_proxies_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__.'/../resources/target_http_proxies_grpc_config.json',
             'credentialsConfig' => [
-                'defaultScopes' => self::$serviceScopes,
+                'scopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
@@ -108,16 +109,6 @@ class TargetHttpProxiesGapicClient
                 ],
             ],
         ];
-    }
-
-    private static function defaultTransport()
-    {
-        return 'rest';
-    }
-
-    private static function getSupportedTransports()
-    {
-        return ['rest'];
     }
 
     /**
@@ -153,8 +144,8 @@ class TargetHttpProxiesGapicClient
      *           By default this settings points to the default client config file, which is provided
      *           in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. At the moment, only supports
-     *           `rest`.
+     *           The transport used for executing network requests. May be either the string `rest`
+     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
      *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
      *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
      *           object is provided, any settings in $transportConfig, and any `$apiEndpoint`
@@ -164,9 +155,11 @@ class TargetHttpProxiesGapicClient
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
+     *               'grpc' => [...],
      *               'rest' => [...]
      *           ];
-     *           See the {@see \Google\ApiCore\Transport\RestTransport::build()} method for the
+     *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
+     *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
      *           supported options.
      * }
      *
@@ -216,8 +209,6 @@ class TargetHttpProxiesGapicClient
      *          Currently, only sorting by `name` or `creationTimestamp desc` is supported.
      *     @type string $pageToken
      *          Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
-     *     @type bool $returnPartialSuccess
-     *          Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -248,9 +239,13 @@ class TargetHttpProxiesGapicClient
         if (isset($optionalArgs['pageToken'])) {
             $request->setPageToken($optionalArgs['pageToken']);
         }
-        if (isset($optionalArgs['returnPartialSuccess'])) {
-            $request->setReturnPartialSuccess($optionalArgs['returnPartialSuccess']);
-        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'project' => $request->getProject(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
 
         return $this->startCall(
             'AggregatedList',
@@ -406,6 +401,13 @@ class TargetHttpProxiesGapicClient
             $request->setTargetHttpProxyResource($optionalArgs['targetHttpProxyResource']);
         }
 
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'project' => $request->getProject(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
         return $this->startCall(
             'Insert',
             Operation::class,
@@ -450,8 +452,6 @@ class TargetHttpProxiesGapicClient
      *          Currently, only sorting by `name` or `creationTimestamp desc` is supported.
      *     @type string $pageToken
      *          Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
-     *     @type bool $returnPartialSuccess
-     *          Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -479,71 +479,17 @@ class TargetHttpProxiesGapicClient
         if (isset($optionalArgs['pageToken'])) {
             $request->setPageToken($optionalArgs['pageToken']);
         }
-        if (isset($optionalArgs['returnPartialSuccess'])) {
-            $request->setReturnPartialSuccess($optionalArgs['returnPartialSuccess']);
-        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'project' => $request->getProject(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
 
         return $this->startCall(
             'List',
             TargetHttpProxyList::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Patches the specified TargetHttpProxy resource with the data included in the request. This method supports PATCH semantics and uses JSON merge patch format and processing rules.
-     *
-     * Sample code:
-     * ```
-     * $targetHttpProxiesClient = new TargetHttpProxiesClient();
-     * try {
-     *     $project = '';
-     *     $targetHttpProxy = '';
-     *     $response = $targetHttpProxiesClient->patch($project, $targetHttpProxy);
-     * } finally {
-     *     $targetHttpProxiesClient->close();
-     * }
-     * ```
-     *
-     * @param string $project         Project ID for this request.
-     * @param string $targetHttpProxy Name of the TargetHttpProxy resource to patch.
-     * @param array  $optionalArgs    {
-     *                                Optional.
-     *
-     *     @type string $requestId
-     *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-     *
-     *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-     *
-     *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type TargetHttpProxy $targetHttpProxyResource
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Compute\V1\Operation
-     *
-     * @throws ApiException if the remote call fails
-     */
-    public function patch($project, $targetHttpProxy, array $optionalArgs = [])
-    {
-        $request = new PatchTargetHttpProxyRequest();
-        $request->setProject($project);
-        $request->setTargetHttpProxy($targetHttpProxy);
-        if (isset($optionalArgs['requestId'])) {
-            $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['targetHttpProxyResource'])) {
-            $request->setTargetHttpProxyResource($optionalArgs['targetHttpProxyResource']);
-        }
-
-        return $this->startCall(
-            'Patch',
-            Operation::class,
             $optionalArgs,
             $request
         )->wait();

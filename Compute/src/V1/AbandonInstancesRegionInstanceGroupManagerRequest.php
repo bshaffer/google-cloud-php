@@ -34,7 +34,7 @@ class AbandonInstancesRegionInstanceGroupManagerRequest extends \Google\Protobuf
      */
     private $region = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 488499491;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 220064035;</code>
      */
     private $region_instance_group_managers_abandon_instances_request_resource = null;
     /**
@@ -149,7 +149,7 @@ class AbandonInstancesRegionInstanceGroupManagerRequest extends \Google\Protobuf
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 488499491;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 220064035;</code>
      * @return \Google\Cloud\Compute\V1\RegionInstanceGroupManagersAbandonInstancesRequest
      */
     public function getRegionInstanceGroupManagersAbandonInstancesRequestResource()
@@ -168,7 +168,7 @@ class AbandonInstancesRegionInstanceGroupManagerRequest extends \Google\Protobuf
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 488499491;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 220064035;</code>
      * @param \Google\Cloud\Compute\V1\RegionInstanceGroupManagersAbandonInstancesRequest $var
      * @return $this
      */

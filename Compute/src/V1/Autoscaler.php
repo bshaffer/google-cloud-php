@@ -36,7 +36,7 @@ class Autoscaler extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -72,7 +72,7 @@ class Autoscaler extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
@@ -88,7 +88,7 @@ class Autoscaler extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;</code>
      */
     private $status_details;
     /**
@@ -215,7 +215,7 @@ class Autoscaler extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -226,7 +226,7 @@ class Autoscaler extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -371,7 +371,7 @@ class Autoscaler extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -382,7 +382,7 @@ class Autoscaler extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */
@@ -431,7 +431,7 @@ class Autoscaler extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getStatusDetails()
@@ -442,7 +442,7 @@ class Autoscaler extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;</code>
      * @param \Google\Cloud\Compute\V1\AutoscalerStatusDetails[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

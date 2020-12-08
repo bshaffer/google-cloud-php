@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class SetIamPolicyLicenseRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 337048498;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042;</code>
      */
     private $global_set_policy_request_resource = null;
     /**
@@ -51,7 +51,7 @@ class SetIamPolicyLicenseRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 337048498;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042;</code>
      * @return \Google\Cloud\Compute\V1\GlobalSetPolicyRequest
      */
     public function getGlobalSetPolicyRequestResource()
@@ -70,7 +70,7 @@ class SetIamPolicyLicenseRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 337048498;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042;</code>
      * @param \Google\Cloud\Compute\V1\GlobalSetPolicyRequest $var
      * @return $this
      */

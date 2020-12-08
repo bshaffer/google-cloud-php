@@ -20,17 +20,17 @@ class Type
      */
     const UNDEFINED_TYPE = 0;
     /**
-     * Generated from protobuf enum <code>MANAGED = 479501183;</code>
+     * Generated from protobuf enum <code>MANAGED = 211065727;</code>
      */
-    const MANAGED = 479501183;
+    const MANAGED = 211065727;
     /**
-     * Generated from protobuf enum <code>SELF_MANAGED = 434437516;</code>
+     * Generated from protobuf enum <code>SELF_MANAGED = 166002060;</code>
      */
-    const SELF_MANAGED = 434437516;
+    const SELF_MANAGED = 166002060;
     /**
-     * Generated from protobuf enum <code>TYPE_UNSPECIFIED = 437714322;</code>
+     * Generated from protobuf enum <code>TYPE_UNSPECIFIED = 169278866;</code>
      */
-    const TYPE_UNSPECIFIED = 437714322;
+    const TYPE_UNSPECIFIED = 169278866;
 
     private static $valueToName = [
         self::UNDEFINED_TYPE => 'UNDEFINED_TYPE',

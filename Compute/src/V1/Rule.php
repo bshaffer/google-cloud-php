@@ -30,7 +30,7 @@ class Rule extends \Google\Protobuf\Internal\Message
     /**
      * Human-readable description of the rule.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -48,7 +48,7 @@ class Rule extends \Google\Protobuf\Internal\Message
     /**
      * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
      *
-     * Generated from protobuf field <code>repeated string not_ins = 518443138;</code>
+     * Generated from protobuf field <code>repeated string not_ins = 250007682;</code>
      */
     private $not_ins;
     /**
@@ -140,7 +140,7 @@ class Rule extends \Google\Protobuf\Internal\Message
     /**
      * Human-readable description of the rule.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -151,7 +151,7 @@ class Rule extends \Google\Protobuf\Internal\Message
     /**
      * Human-readable description of the rule.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -218,7 +218,7 @@ class Rule extends \Google\Protobuf\Internal\Message
     /**
      * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
      *
-     * Generated from protobuf field <code>repeated string not_ins = 518443138;</code>
+     * Generated from protobuf field <code>repeated string not_ins = 250007682;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getNotIns()
@@ -229,7 +229,7 @@ class Rule extends \Google\Protobuf\Internal\Message
     /**
      * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
      *
-     * Generated from protobuf field <code>repeated string not_ins = 518443138;</code>
+     * Generated from protobuf field <code>repeated string not_ins = 250007682;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

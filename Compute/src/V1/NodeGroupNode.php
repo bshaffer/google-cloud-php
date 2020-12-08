@@ -35,7 +35,7 @@ class NodeGroupNode extends \Google\Protobuf\Internal\Message
     /**
      * The type of this node.
      *
-     * Generated from protobuf field <code>string node_type = 465832791;</code>
+     * Generated from protobuf field <code>string node_type = 197397335;</code>
      */
     private $node_type = '';
     /**
@@ -47,7 +47,7 @@ class NodeGroupNode extends \Google\Protobuf\Internal\Message
     /**
      * Server ID associated with this node.
      *
-     * Generated from protobuf field <code>string server_id = 339433367;</code>
+     * Generated from protobuf field <code>string server_id = 70997911;</code>
      */
     private $server_id = '';
     /**
@@ -162,7 +162,7 @@ class NodeGroupNode extends \Google\Protobuf\Internal\Message
     /**
      * The type of this node.
      *
-     * Generated from protobuf field <code>string node_type = 465832791;</code>
+     * Generated from protobuf field <code>string node_type = 197397335;</code>
      * @return string
      */
     public function getNodeType()
@@ -173,7 +173,7 @@ class NodeGroupNode extends \Google\Protobuf\Internal\Message
     /**
      * The type of this node.
      *
-     * Generated from protobuf field <code>string node_type = 465832791;</code>
+     * Generated from protobuf field <code>string node_type = 197397335;</code>
      * @param string $var
      * @return $this
      */
@@ -224,7 +224,7 @@ class NodeGroupNode extends \Google\Protobuf\Internal\Message
     /**
      * Server ID associated with this node.
      *
-     * Generated from protobuf field <code>string server_id = 339433367;</code>
+     * Generated from protobuf field <code>string server_id = 70997911;</code>
      * @return string
      */
     public function getServerId()
@@ -235,7 +235,7 @@ class NodeGroupNode extends \Google\Protobuf\Internal\Message
     /**
      * Server ID associated with this node.
      *
-     * Generated from protobuf field <code>string server_id = 339433367;</code>
+     * Generated from protobuf field <code>string server_id = 70997911;</code>
      * @param string $var
      * @return $this
      */

@@ -25,7 +25,7 @@ class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
     /**
      * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 112775691;</code>
      */
     private $cpu_utilization = null;
     /**
@@ -37,7 +37,7 @@ class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
     /**
      * Configuration parameters of autoscaling based on load balancer.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 161310947;</code>
      */
     private $load_balancing_utilization = null;
     /**
@@ -49,7 +49,7 @@ class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
     /**
      * The minimum number of replicas that the autoscaler can scale down to. This cannot be less than 0. If not provided, autoscaler will choose a default value depending on maximum number of instances allowed.
      *
-     * Generated from protobuf field <code>int32 min_num_replicas = 535329825;</code>
+     * Generated from protobuf field <code>int32 min_num_replicas = 266894369;</code>
      */
     private $min_num_replicas = 0;
     /**
@@ -59,7 +59,7 @@ class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
      */
     private $mode = 0;
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 259235416;</code>
      */
     private $scale_in_control = null;
 
@@ -123,7 +123,7 @@ class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
     /**
      * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 112775691;</code>
      * @return \Google\Cloud\Compute\V1\AutoscalingPolicyCpuUtilization
      */
     public function getCpuUtilization()
@@ -144,7 +144,7 @@ class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
     /**
      * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 112775691;</code>
      * @param \Google\Cloud\Compute\V1\AutoscalingPolicyCpuUtilization $var
      * @return $this
      */
@@ -185,7 +185,7 @@ class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
     /**
      * Configuration parameters of autoscaling based on load balancer.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 161310947;</code>
      * @return \Google\Cloud\Compute\V1\AutoscalingPolicyLoadBalancingUtilization
      */
     public function getLoadBalancingUtilization()
@@ -206,7 +206,7 @@ class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
     /**
      * Configuration parameters of autoscaling based on load balancer.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 161310947;</code>
      * @param \Google\Cloud\Compute\V1\AutoscalingPolicyLoadBalancingUtilization $var
      * @return $this
      */
@@ -247,7 +247,7 @@ class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
     /**
      * The minimum number of replicas that the autoscaler can scale down to. This cannot be less than 0. If not provided, autoscaler will choose a default value depending on maximum number of instances allowed.
      *
-     * Generated from protobuf field <code>int32 min_num_replicas = 535329825;</code>
+     * Generated from protobuf field <code>int32 min_num_replicas = 266894369;</code>
      * @return int
      */
     public function getMinNumReplicas()
@@ -258,7 +258,7 @@ class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
     /**
      * The minimum number of replicas that the autoscaler can scale down to. This cannot be less than 0. If not provided, autoscaler will choose a default value depending on maximum number of instances allowed.
      *
-     * Generated from protobuf field <code>int32 min_num_replicas = 535329825;</code>
+     * Generated from protobuf field <code>int32 min_num_replicas = 266894369;</code>
      * @param int $var
      * @return $this
      */
@@ -297,7 +297,7 @@ class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 259235416;</code>
      * @return \Google\Cloud\Compute\V1\AutoscalingPolicyScaleInControl
      */
     public function getScaleInControl()
@@ -316,7 +316,7 @@ class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 259235416;</code>
      * @param \Google\Cloud\Compute\V1\AutoscalingPolicyScaleInControl $var
      * @return $this
      */

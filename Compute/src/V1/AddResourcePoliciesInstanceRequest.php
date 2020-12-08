@@ -22,7 +22,7 @@ class AddResourcePoliciesInstanceRequest extends \Google\Protobuf\Internal\Messa
      */
     private $instance = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 489351963;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 220916507;</code>
      */
     private $instances_add_resource_policies_request_resource = null;
     /**
@@ -97,7 +97,7 @@ class AddResourcePoliciesInstanceRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 489351963;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 220916507;</code>
      * @return \Google\Cloud\Compute\V1\InstancesAddResourcePoliciesRequest
      */
     public function getInstancesAddResourcePoliciesRequestResource()
@@ -116,7 +116,7 @@ class AddResourcePoliciesInstanceRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 489351963;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 220916507;</code>
      * @param \Google\Cloud\Compute\V1\InstancesAddResourcePoliciesRequest $var
      * @return $this
      */

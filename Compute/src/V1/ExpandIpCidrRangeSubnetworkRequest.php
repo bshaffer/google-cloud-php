@@ -38,11 +38,11 @@ class ExpandIpCidrRangeSubnetworkRequest extends \Google\Protobuf\Internal\Messa
     /**
      * Name of the Subnetwork resource to update.
      *
-     * Generated from protobuf field <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $subnetwork = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 477014110;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 208578654;</code>
      */
     private $subnetworks_expand_ip_cidr_range_request_resource = null;
 
@@ -155,7 +155,7 @@ class ExpandIpCidrRangeSubnetworkRequest extends \Google\Protobuf\Internal\Messa
     /**
      * Name of the Subnetwork resource to update.
      *
-     * Generated from protobuf field <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getSubnetwork()
@@ -166,7 +166,7 @@ class ExpandIpCidrRangeSubnetworkRequest extends \Google\Protobuf\Internal\Messa
     /**
      * Name of the Subnetwork resource to update.
      *
-     * Generated from protobuf field <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -179,7 +179,7 @@ class ExpandIpCidrRangeSubnetworkRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 477014110;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 208578654;</code>
      * @return \Google\Cloud\Compute\V1\SubnetworksExpandIpCidrRangeRequest
      */
     public function getSubnetworksExpandIpCidrRangeRequestResource()
@@ -198,7 +198,7 @@ class ExpandIpCidrRangeSubnetworkRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 477014110;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 208578654;</code>
      * @param \Google\Cloud\Compute\V1\SubnetworksExpandIpCidrRangeRequest $var
      * @return $this
      */

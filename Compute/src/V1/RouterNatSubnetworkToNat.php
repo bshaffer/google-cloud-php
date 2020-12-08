@@ -30,7 +30,7 @@ class RouterNatSubnetworkToNat extends \Google\Protobuf\Internal\Message
     /**
      * Specify the options for NAT ranges in the Subnetwork. All options of a single value are valid except NAT_IP_RANGE_OPTION_UNSPECIFIED. The only valid option with multiple values is: ["PRIMARY_IP_RANGE", "LIST_OF_SECONDARY_IP_RANGES"] Default: [ALL_IP_RANGES]
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;</code>
      */
     private $source_ip_ranges_to_nat;
 
@@ -108,7 +108,7 @@ class RouterNatSubnetworkToNat extends \Google\Protobuf\Internal\Message
     /**
      * Specify the options for NAT ranges in the Subnetwork. All options of a single value are valid except NAT_IP_RANGE_OPTION_UNSPECIFIED. The only valid option with multiple values is: ["PRIMARY_IP_RANGE", "LIST_OF_SECONDARY_IP_RANGES"] Default: [ALL_IP_RANGES]
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getSourceIpRangesToNat()
@@ -119,7 +119,7 @@ class RouterNatSubnetworkToNat extends \Google\Protobuf\Internal\Message
     /**
      * Specify the options for NAT ranges in the Subnetwork. All options of a single value are valid except NAT_IP_RANGE_OPTION_UNSPECIFIED. The only valid option with multiple values is: ["PRIMARY_IP_RANGE", "LIST_OF_SECONDARY_IP_RANGES"] Default: [ALL_IP_RANGES]
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;</code>
      * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

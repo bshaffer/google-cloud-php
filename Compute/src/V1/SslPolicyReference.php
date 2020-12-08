@@ -17,7 +17,7 @@ class SslPolicyReference extends \Google\Protobuf\Internal\Message
     /**
      * URL of the SSL policy resource. Set this to empty string to clear any existing SSL policy associated with the target proxy resource.
      *
-     * Generated from protobuf field <code>string ssl_policy = 295190213;</code>
+     * Generated from protobuf field <code>string ssl_policy = 26754757;</code>
      */
     private $ssl_policy = '';
 
@@ -39,7 +39,7 @@ class SslPolicyReference extends \Google\Protobuf\Internal\Message
     /**
      * URL of the SSL policy resource. Set this to empty string to clear any existing SSL policy associated with the target proxy resource.
      *
-     * Generated from protobuf field <code>string ssl_policy = 295190213;</code>
+     * Generated from protobuf field <code>string ssl_policy = 26754757;</code>
      * @return string
      */
     public function getSslPolicy()
@@ -50,7 +50,7 @@ class SslPolicyReference extends \Google\Protobuf\Internal\Message
     /**
      * URL of the SSL policy resource. Set this to empty string to clear any existing SSL policy associated with the target proxy resource.
      *
-     * Generated from protobuf field <code>string ssl_policy = 295190213;</code>
+     * Generated from protobuf field <code>string ssl_policy = 26754757;</code>
      * @param string $var
      * @return $this
      */

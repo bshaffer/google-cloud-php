@@ -37,7 +37,7 @@ class NetworkEndpoint extends \Google\Protobuf\Internal\Message
     /**
      * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
      *
-     * Generated from protobuf field <code>string ip_address = 406272220;</code>
+     * Generated from protobuf field <code>string ip_address = 137836764;</code>
      */
     private $ip_address = '';
     /**
@@ -154,7 +154,7 @@ class NetworkEndpoint extends \Google\Protobuf\Internal\Message
     /**
      * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
      *
-     * Generated from protobuf field <code>string ip_address = 406272220;</code>
+     * Generated from protobuf field <code>string ip_address = 137836764;</code>
      * @return string
      */
     public function getIpAddress()
@@ -165,7 +165,7 @@ class NetworkEndpoint extends \Google\Protobuf\Internal\Message
     /**
      * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
      *
-     * Generated from protobuf field <code>string ip_address = 406272220;</code>
+     * Generated from protobuf field <code>string ip_address = 137836764;</code>
      * @param string $var
      * @return $this
      */

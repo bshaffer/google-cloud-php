@@ -21,7 +21,7 @@ class ListManagedInstancesInstanceGroupManagersRequest extends \Google\Protobuf\
      * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      *
-     * Generated from protobuf field <code>string filter = 336120696;</code>
+     * Generated from protobuf field <code>string filter = 67685240;</code>
      */
     private $filter = '';
     /**
@@ -57,12 +57,6 @@ class ListManagedInstancesInstanceGroupManagersRequest extends \Google\Protobuf\
      */
     private $project = '';
     /**
-     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
-     *
-     * Generated from protobuf field <code>bool return_partial_success = 517198390;</code>
-     */
-    private $return_partial_success = false;
-    /**
      * The name of the zone where the managed instance group is located.
      *
      * Generated from protobuf field <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -92,8 +86,6 @@ class ListManagedInstancesInstanceGroupManagersRequest extends \Google\Protobuf\
      *           Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
      *     @type string $project
      *           Project ID for this request.
-     *     @type bool $return_partial_success
-     *           Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      *     @type string $zone
      *           The name of the zone where the managed instance group is located.
      * }
@@ -109,7 +101,7 @@ class ListManagedInstancesInstanceGroupManagersRequest extends \Google\Protobuf\
      * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      *
-     * Generated from protobuf field <code>string filter = 336120696;</code>
+     * Generated from protobuf field <code>string filter = 67685240;</code>
      * @return string
      */
     public function getFilter()
@@ -123,7 +115,7 @@ class ListManagedInstancesInstanceGroupManagersRequest extends \Google\Protobuf\
      * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      *
-     * Generated from protobuf field <code>string filter = 336120696;</code>
+     * Generated from protobuf field <code>string filter = 67685240;</code>
      * @param string $var
      * @return $this
      */
@@ -265,32 +257,6 @@ class ListManagedInstancesInstanceGroupManagersRequest extends \Google\Protobuf\
     {
         GPBUtil::checkString($var, True);
         $this->project = $var;
-
-        return $this;
-    }
-
-    /**
-     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
-     *
-     * Generated from protobuf field <code>bool return_partial_success = 517198390;</code>
-     * @return bool
-     */
-    public function getReturnPartialSuccess()
-    {
-        return $this->return_partial_success;
-    }
-
-    /**
-     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
-     *
-     * Generated from protobuf field <code>bool return_partial_success = 517198390;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setReturnPartialSuccess($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->return_partial_success = $var;
 
         return $this;
     }

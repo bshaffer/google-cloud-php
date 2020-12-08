@@ -24,13 +24,13 @@ class Status
      */
     const UNDEFINED_STATUS = 0;
     /**
-     * Generated from protobuf enum <code>ACTIVE = 314733318;</code>
+     * Generated from protobuf enum <code>ACTIVE = 46297862;</code>
      */
-    const ACTIVE = 314733318;
+    const ACTIVE = 46297862;
     /**
-     * Generated from protobuf enum <code>DELETING = 528602024;</code>
+     * Generated from protobuf enum <code>DELETING = 260166568;</code>
      */
-    const DELETING = 528602024;
+    const DELETING = 260166568;
     /**
      * Generated from protobuf enum <code>ERROR = 66247144;</code>
      */

@@ -31,7 +31,7 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -55,20 +55,20 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
     /**
      * Labels to use for node affinity, which will be used in instance scheduling.
      *
-     * Generated from protobuf field <code>map<string, string> node_affinity_labels = 339007161;</code>
+     * Generated from protobuf field <code>map<string, string> node_affinity_labels = 70571705;</code>
      */
     private $node_affinity_labels;
     /**
      * The node type to use for nodes group that are created from this template.
      *
-     * Generated from protobuf field <code>string node_type = 465832791;</code>
+     * Generated from protobuf field <code>string node_type = 197397335;</code>
      */
     private $node_type = '';
     /**
      * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
      * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 46822449;</code>
      */
     private $node_type_flexibility = null;
     /**
@@ -80,7 +80,7 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
@@ -101,7 +101,7 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An optional, human-readable explanation of the status.
      *
-     * Generated from protobuf field <code>string status_message = 297428154;</code>
+     * Generated from protobuf field <code>string status_message = 28992698;</code>
      */
     private $status_message = '';
 
@@ -205,7 +205,7 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -216,7 +216,7 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -309,7 +309,7 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
     /**
      * Labels to use for node affinity, which will be used in instance scheduling.
      *
-     * Generated from protobuf field <code>map<string, string> node_affinity_labels = 339007161;</code>
+     * Generated from protobuf field <code>map<string, string> node_affinity_labels = 70571705;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getNodeAffinityLabels()
@@ -320,7 +320,7 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
     /**
      * Labels to use for node affinity, which will be used in instance scheduling.
      *
-     * Generated from protobuf field <code>map<string, string> node_affinity_labels = 339007161;</code>
+     * Generated from protobuf field <code>map<string, string> node_affinity_labels = 70571705;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
@@ -335,7 +335,7 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
     /**
      * The node type to use for nodes group that are created from this template.
      *
-     * Generated from protobuf field <code>string node_type = 465832791;</code>
+     * Generated from protobuf field <code>string node_type = 197397335;</code>
      * @return string
      */
     public function getNodeType()
@@ -346,7 +346,7 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
     /**
      * The node type to use for nodes group that are created from this template.
      *
-     * Generated from protobuf field <code>string node_type = 465832791;</code>
+     * Generated from protobuf field <code>string node_type = 197397335;</code>
      * @param string $var
      * @return $this
      */
@@ -362,7 +362,7 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
      * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
      * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 46822449;</code>
      * @return \Google\Cloud\Compute\V1\NodeTemplateNodeTypeFlexibility
      */
     public function getNodeTypeFlexibility()
@@ -384,7 +384,7 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
      * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
      * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 46822449;</code>
      * @param \Google\Cloud\Compute\V1\NodeTemplateNodeTypeFlexibility $var
      * @return $this
      */
@@ -425,7 +425,7 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -436,7 +436,7 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */
@@ -519,7 +519,7 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An optional, human-readable explanation of the status.
      *
-     * Generated from protobuf field <code>string status_message = 297428154;</code>
+     * Generated from protobuf field <code>string status_message = 28992698;</code>
      * @return string
      */
     public function getStatusMessage()
@@ -530,7 +530,7 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An optional, human-readable explanation of the status.
      *
-     * Generated from protobuf field <code>string status_message = 297428154;</code>
+     * Generated from protobuf field <code>string status_message = 28992698;</code>
      * @param string $var
      * @return $this
      */

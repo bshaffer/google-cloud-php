@@ -22,7 +22,7 @@ class EnableXpnResourceProjectRequest extends \Google\Protobuf\Internal\Message
      */
     private $project = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ProjectsEnableXpnResourceRequest projects_enable_xpn_resource_request_resource = 421980207;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ProjectsEnableXpnResourceRequest projects_enable_xpn_resource_request_resource = 153544751;</code>
      */
     private $projects_enable_xpn_resource_request_resource = null;
     /**
@@ -81,7 +81,7 @@ class EnableXpnResourceProjectRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ProjectsEnableXpnResourceRequest projects_enable_xpn_resource_request_resource = 421980207;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ProjectsEnableXpnResourceRequest projects_enable_xpn_resource_request_resource = 153544751;</code>
      * @return \Google\Cloud\Compute\V1\ProjectsEnableXpnResourceRequest
      */
     public function getProjectsEnableXpnResourceRequestResource()
@@ -100,7 +100,7 @@ class EnableXpnResourceProjectRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ProjectsEnableXpnResourceRequest projects_enable_xpn_resource_request_resource = 421980207;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ProjectsEnableXpnResourceRequest projects_enable_xpn_resource_request_resource = 153544751;</code>
      * @param \Google\Cloud\Compute\V1\ProjectsEnableXpnResourceRequest $var
      * @return $this
      */

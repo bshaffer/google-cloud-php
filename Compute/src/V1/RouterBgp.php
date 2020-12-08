@@ -17,7 +17,7 @@ class RouterBgp extends \Google\Protobuf\Internal\Message
     /**
      * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 43698875;</code>
      */
     private $advertise_mode = 0;
     /**
@@ -63,7 +63,7 @@ class RouterBgp extends \Google\Protobuf\Internal\Message
     /**
      * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 43698875;</code>
      * @return int
      */
     public function getAdvertiseMode()
@@ -74,7 +74,7 @@ class RouterBgp extends \Google\Protobuf\Internal\Message
     /**
      * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 43698875;</code>
      * @param int $var
      * @return $this
      */

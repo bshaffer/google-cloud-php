@@ -17,8 +17,7 @@ use UnexpectedValueException;
  * This field is applicable to either:
  * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
  * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
- * If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect.
- * Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+ * If sessionAffinity is not NONE, and this field is not set to >MAGLEV or RING_HASH, session affinity settings will not take effect.
  *
  * Protobuf type <code>google.cloud.compute.v1.BackendService.LocalityLbPolicy</code>
  */
@@ -31,9 +30,9 @@ class LocalityLbPolicy
      */
     const UNDEFINED_LOCALITY_LB_POLICY = 0;
     /**
-     * Generated from protobuf enum <code>INVALID_LB_POLICY = 323318707;</code>
+     * Generated from protobuf enum <code>INVALID_LB_POLICY = 54883251;</code>
      */
-    const INVALID_LB_POLICY = 323318707;
+    const INVALID_LB_POLICY = 54883251;
     /**
      * Generated from protobuf enum <code>LEAST_REQUEST = 46604921;</code>
      */
@@ -51,9 +50,9 @@ class LocalityLbPolicy
      */
     const RANDOM = 262527171;
     /**
-     * Generated from protobuf enum <code>RING_HASH = 432795069;</code>
+     * Generated from protobuf enum <code>RING_HASH = 164359613;</code>
      */
-    const RING_HASH = 432795069;
+    const RING_HASH = 164359613;
     /**
      * Generated from protobuf enum <code>ROUND_ROBIN = 153895801;</code>
      */

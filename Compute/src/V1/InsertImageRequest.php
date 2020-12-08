@@ -22,7 +22,7 @@ class InsertImageRequest extends \Google\Protobuf\Internal\Message
      */
     private $force_create = false;
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Image image_resource = 371171954;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Image image_resource = 102736498;</code>
      */
     private $image_resource = null;
     /**
@@ -89,7 +89,7 @@ class InsertImageRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Image image_resource = 371171954;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Image image_resource = 102736498;</code>
      * @return \Google\Cloud\Compute\V1\Image
      */
     public function getImageResource()
@@ -108,7 +108,7 @@ class InsertImageRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Image image_resource = 371171954;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Image image_resource = 102736498;</code>
      * @param \Google\Cloud\Compute\V1\Image $var
      * @return $this
      */

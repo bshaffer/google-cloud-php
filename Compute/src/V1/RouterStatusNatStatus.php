@@ -18,25 +18,25 @@ class RouterStatusNatStatus extends \Google\Protobuf\Internal\Message
     /**
      * A list of IPs auto-allocated for NAT. Example: ["1.1.1.1", "129.2.16.89"]
      *
-     * Generated from protobuf field <code>repeated string auto_allocated_nat_ips = 510794246;</code>
+     * Generated from protobuf field <code>repeated string auto_allocated_nat_ips = 242358790;</code>
      */
     private $auto_allocated_nat_ips;
     /**
      * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
      *
-     * Generated from protobuf field <code>repeated string drain_auto_allocated_nat_ips = 309184557;</code>
+     * Generated from protobuf field <code>repeated string drain_auto_allocated_nat_ips = 40749101;</code>
      */
     private $drain_auto_allocated_nat_ips;
     /**
      * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
      *
-     * Generated from protobuf field <code>repeated string drain_user_allocated_nat_ips = 305268553;</code>
+     * Generated from protobuf field <code>repeated string drain_user_allocated_nat_ips = 36833097;</code>
      */
     private $drain_user_allocated_nat_ips;
     /**
      * The number of extra IPs to allocate. This will be greater than 0 only if user-specified IPs are NOT enough to allow all configured VMs to use NAT. This value is meaningful only when auto-allocation of NAT IPs is *not* used.
      *
-     * Generated from protobuf field <code>int32 min_extra_nat_ips_needed = 365786338;</code>
+     * Generated from protobuf field <code>int32 min_extra_nat_ips_needed = 97350882;</code>
      */
     private $min_extra_nat_ips_needed = 0;
     /**
@@ -48,7 +48,7 @@ class RouterStatusNatStatus extends \Google\Protobuf\Internal\Message
     /**
      * Number of VM endpoints (i.e., Nics) that can use NAT.
      *
-     * Generated from protobuf field <code>int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
+     * Generated from protobuf field <code>int32 num_vm_endpoints_with_nat_mappings = 243932012;</code>
      */
     private $num_vm_endpoints_with_nat_mappings = 0;
     /**
@@ -60,7 +60,7 @@ class RouterStatusNatStatus extends \Google\Protobuf\Internal\Message
     /**
      * A list of IPs user-allocated for NAT. They will be raw IP strings like "179.12.26.133".
      *
-     * Generated from protobuf field <code>repeated string user_allocated_nat_ips = 506878242;</code>
+     * Generated from protobuf field <code>repeated string user_allocated_nat_ips = 238442786;</code>
      */
     private $user_allocated_nat_ips;
 
@@ -96,7 +96,7 @@ class RouterStatusNatStatus extends \Google\Protobuf\Internal\Message
     /**
      * A list of IPs auto-allocated for NAT. Example: ["1.1.1.1", "129.2.16.89"]
      *
-     * Generated from protobuf field <code>repeated string auto_allocated_nat_ips = 510794246;</code>
+     * Generated from protobuf field <code>repeated string auto_allocated_nat_ips = 242358790;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getAutoAllocatedNatIps()
@@ -107,7 +107,7 @@ class RouterStatusNatStatus extends \Google\Protobuf\Internal\Message
     /**
      * A list of IPs auto-allocated for NAT. Example: ["1.1.1.1", "129.2.16.89"]
      *
-     * Generated from protobuf field <code>repeated string auto_allocated_nat_ips = 510794246;</code>
+     * Generated from protobuf field <code>repeated string auto_allocated_nat_ips = 242358790;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -122,7 +122,7 @@ class RouterStatusNatStatus extends \Google\Protobuf\Internal\Message
     /**
      * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
      *
-     * Generated from protobuf field <code>repeated string drain_auto_allocated_nat_ips = 309184557;</code>
+     * Generated from protobuf field <code>repeated string drain_auto_allocated_nat_ips = 40749101;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getDrainAutoAllocatedNatIps()
@@ -133,7 +133,7 @@ class RouterStatusNatStatus extends \Google\Protobuf\Internal\Message
     /**
      * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
      *
-     * Generated from protobuf field <code>repeated string drain_auto_allocated_nat_ips = 309184557;</code>
+     * Generated from protobuf field <code>repeated string drain_auto_allocated_nat_ips = 40749101;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -148,7 +148,7 @@ class RouterStatusNatStatus extends \Google\Protobuf\Internal\Message
     /**
      * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
      *
-     * Generated from protobuf field <code>repeated string drain_user_allocated_nat_ips = 305268553;</code>
+     * Generated from protobuf field <code>repeated string drain_user_allocated_nat_ips = 36833097;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getDrainUserAllocatedNatIps()
@@ -159,7 +159,7 @@ class RouterStatusNatStatus extends \Google\Protobuf\Internal\Message
     /**
      * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
      *
-     * Generated from protobuf field <code>repeated string drain_user_allocated_nat_ips = 305268553;</code>
+     * Generated from protobuf field <code>repeated string drain_user_allocated_nat_ips = 36833097;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -174,7 +174,7 @@ class RouterStatusNatStatus extends \Google\Protobuf\Internal\Message
     /**
      * The number of extra IPs to allocate. This will be greater than 0 only if user-specified IPs are NOT enough to allow all configured VMs to use NAT. This value is meaningful only when auto-allocation of NAT IPs is *not* used.
      *
-     * Generated from protobuf field <code>int32 min_extra_nat_ips_needed = 365786338;</code>
+     * Generated from protobuf field <code>int32 min_extra_nat_ips_needed = 97350882;</code>
      * @return int
      */
     public function getMinExtraNatIpsNeeded()
@@ -185,7 +185,7 @@ class RouterStatusNatStatus extends \Google\Protobuf\Internal\Message
     /**
      * The number of extra IPs to allocate. This will be greater than 0 only if user-specified IPs are NOT enough to allow all configured VMs to use NAT. This value is meaningful only when auto-allocation of NAT IPs is *not* used.
      *
-     * Generated from protobuf field <code>int32 min_extra_nat_ips_needed = 365786338;</code>
+     * Generated from protobuf field <code>int32 min_extra_nat_ips_needed = 97350882;</code>
      * @param int $var
      * @return $this
      */
@@ -226,7 +226,7 @@ class RouterStatusNatStatus extends \Google\Protobuf\Internal\Message
     /**
      * Number of VM endpoints (i.e., Nics) that can use NAT.
      *
-     * Generated from protobuf field <code>int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
+     * Generated from protobuf field <code>int32 num_vm_endpoints_with_nat_mappings = 243932012;</code>
      * @return int
      */
     public function getNumVmEndpointsWithNatMappings()
@@ -237,7 +237,7 @@ class RouterStatusNatStatus extends \Google\Protobuf\Internal\Message
     /**
      * Number of VM endpoints (i.e., Nics) that can use NAT.
      *
-     * Generated from protobuf field <code>int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
+     * Generated from protobuf field <code>int32 num_vm_endpoints_with_nat_mappings = 243932012;</code>
      * @param int $var
      * @return $this
      */
@@ -278,7 +278,7 @@ class RouterStatusNatStatus extends \Google\Protobuf\Internal\Message
     /**
      * A list of IPs user-allocated for NAT. They will be raw IP strings like "179.12.26.133".
      *
-     * Generated from protobuf field <code>repeated string user_allocated_nat_ips = 506878242;</code>
+     * Generated from protobuf field <code>repeated string user_allocated_nat_ips = 238442786;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getUserAllocatedNatIps()
@@ -289,7 +289,7 @@ class RouterStatusNatStatus extends \Google\Protobuf\Internal\Message
     /**
      * A list of IPs user-allocated for NAT. They will be raw IP strings like "179.12.26.133".
      *
-     * Generated from protobuf field <code>repeated string user_allocated_nat_ips = 506878242;</code>
+     * Generated from protobuf field <code>repeated string user_allocated_nat_ips = 238442786;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

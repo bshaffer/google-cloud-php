@@ -36,7 +36,7 @@ class UpdateShieldedInstanceConfigInstanceRequest extends \Google\Protobuf\Inter
      */
     private $request_id = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768;</code>
      */
     private $shielded_instance_config_resource = null;
     /**
@@ -153,7 +153,7 @@ class UpdateShieldedInstanceConfigInstanceRequest extends \Google\Protobuf\Inter
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768;</code>
      * @return \Google\Cloud\Compute\V1\ShieldedInstanceConfig
      */
     public function getShieldedInstanceConfigResource()
@@ -172,7 +172,7 @@ class UpdateShieldedInstanceConfigInstanceRequest extends \Google\Protobuf\Inter
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768;</code>
      * @param \Google\Cloud\Compute\V1\ShieldedInstanceConfig $var
      * @return $this
      */

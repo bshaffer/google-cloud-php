@@ -24,7 +24,7 @@ class SubnetworkLogConfig extends \Google\Protobuf\Internal\Message
     /**
      * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging.
      *
-     * Generated from protobuf field <code>bool enable = 311764355;</code>
+     * Generated from protobuf field <code>bool enable = 43328899;</code>
      */
     private $enable = false;
     /**
@@ -36,7 +36,7 @@ class SubnetworkLogConfig extends \Google\Protobuf\Internal\Message
     /**
      * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5, which means half of all collected logs are reported.
      *
-     * Generated from protobuf field <code>float flow_sampling = 530150360;</code>
+     * Generated from protobuf field <code>float flow_sampling = 261714904;</code>
      */
     private $flow_sampling = 0.0;
     /**
@@ -48,7 +48,7 @@ class SubnetworkLogConfig extends \Google\Protobuf\Internal\Message
     /**
      * Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set to CUSTOM_METADATA.
      *
-     * Generated from protobuf field <code>repeated string metadata_fields = 378461641;</code>
+     * Generated from protobuf field <code>repeated string metadata_fields = 110026185;</code>
      */
     private $metadata_fields;
 
@@ -106,7 +106,7 @@ class SubnetworkLogConfig extends \Google\Protobuf\Internal\Message
     /**
      * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging.
      *
-     * Generated from protobuf field <code>bool enable = 311764355;</code>
+     * Generated from protobuf field <code>bool enable = 43328899;</code>
      * @return bool
      */
     public function getEnable()
@@ -117,7 +117,7 @@ class SubnetworkLogConfig extends \Google\Protobuf\Internal\Message
     /**
      * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging.
      *
-     * Generated from protobuf field <code>bool enable = 311764355;</code>
+     * Generated from protobuf field <code>bool enable = 43328899;</code>
      * @param bool $var
      * @return $this
      */
@@ -158,7 +158,7 @@ class SubnetworkLogConfig extends \Google\Protobuf\Internal\Message
     /**
      * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5, which means half of all collected logs are reported.
      *
-     * Generated from protobuf field <code>float flow_sampling = 530150360;</code>
+     * Generated from protobuf field <code>float flow_sampling = 261714904;</code>
      * @return float
      */
     public function getFlowSampling()
@@ -169,7 +169,7 @@ class SubnetworkLogConfig extends \Google\Protobuf\Internal\Message
     /**
      * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5, which means half of all collected logs are reported.
      *
-     * Generated from protobuf field <code>float flow_sampling = 530150360;</code>
+     * Generated from protobuf field <code>float flow_sampling = 261714904;</code>
      * @param float $var
      * @return $this
      */
@@ -210,7 +210,7 @@ class SubnetworkLogConfig extends \Google\Protobuf\Internal\Message
     /**
      * Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set to CUSTOM_METADATA.
      *
-     * Generated from protobuf field <code>repeated string metadata_fields = 378461641;</code>
+     * Generated from protobuf field <code>repeated string metadata_fields = 110026185;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getMetadataFields()
@@ -221,7 +221,7 @@ class SubnetworkLogConfig extends \Google\Protobuf\Internal\Message
     /**
      * Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set to CUSTOM_METADATA.
      *
-     * Generated from protobuf field <code>repeated string metadata_fields = 378461641;</code>
+     * Generated from protobuf field <code>repeated string metadata_fields = 110026185;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

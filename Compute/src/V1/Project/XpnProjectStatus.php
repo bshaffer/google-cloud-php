@@ -7,7 +7,7 @@ namespace Google\Cloud\Compute\V1\Project;
 use UnexpectedValueException;
 
 /**
- * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+ * [Output Only] The role this project has in a shared VPC configuration. Currently only HOST projects are differentiated.
  *
  * Protobuf type <code>google.cloud.compute.v1.Project.XpnProjectStatus</code>
  */
@@ -24,9 +24,9 @@ class XpnProjectStatus
      */
     const HOST = 2223528;
     /**
-     * Generated from protobuf enum <code>UNSPECIFIED_XPN_PROJECT_STATUS = 340393257;</code>
+     * Generated from protobuf enum <code>UNSPECIFIED_XPN_PROJECT_STATUS = 71957801;</code>
      */
-    const UNSPECIFIED_XPN_PROJECT_STATUS = 340393257;
+    const UNSPECIFIED_XPN_PROJECT_STATUS = 71957801;
 
     private static $valueToName = [
         self::UNDEFINED_XPN_PROJECT_STATUS => 'UNDEFINED_XPN_PROJECT_STATUS',

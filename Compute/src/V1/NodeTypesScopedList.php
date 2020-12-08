@@ -17,7 +17,7 @@ class NodeTypesScopedList extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of node types contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
      */
     private $node_types;
     /**
@@ -47,7 +47,7 @@ class NodeTypesScopedList extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of node types contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getNodeTypes()
@@ -58,7 +58,7 @@ class NodeTypesScopedList extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of node types contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
      * @param \Google\Cloud\Compute\V1\NodeType[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

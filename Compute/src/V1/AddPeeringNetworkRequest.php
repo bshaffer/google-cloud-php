@@ -22,7 +22,7 @@ class AddPeeringNetworkRequest extends \Google\Protobuf\Internal\Message
      */
     private $network = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 388810421;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 120374965;</code>
      */
     private $networks_add_peering_request_resource = null;
     /**
@@ -89,7 +89,7 @@ class AddPeeringNetworkRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 388810421;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 120374965;</code>
      * @return \Google\Cloud\Compute\V1\NetworksAddPeeringRequest
      */
     public function getNetworksAddPeeringRequestResource()
@@ -108,7 +108,7 @@ class AddPeeringNetworkRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 388810421;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 120374965;</code>
      * @param \Google\Cloud\Compute\V1\NetworksAddPeeringRequest $var
      * @return $this
      */

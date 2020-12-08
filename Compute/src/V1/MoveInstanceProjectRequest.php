@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class MoveInstanceProjectRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 311664194;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 43228738;</code>
      */
     private $instance_move_request_resource = null;
     /**
@@ -55,7 +55,7 @@ class MoveInstanceProjectRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 311664194;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 43228738;</code>
      * @return \Google\Cloud\Compute\V1\InstanceMoveRequest
      */
     public function getInstanceMoveRequestResource()
@@ -74,7 +74,7 @@ class MoveInstanceProjectRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 311664194;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 43228738;</code>
      * @param \Google\Cloud\Compute\V1\InstanceMoveRequest $var
      * @return $this
      */

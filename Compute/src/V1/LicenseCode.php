@@ -25,7 +25,7 @@ class LicenseCode extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Description of this License Code.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -55,7 +55,7 @@ class LicenseCode extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
@@ -131,7 +131,7 @@ class LicenseCode extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Description of this License Code.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -142,7 +142,7 @@ class LicenseCode extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Description of this License Code.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -261,7 +261,7 @@ class LicenseCode extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -272,7 +272,7 @@ class LicenseCode extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */

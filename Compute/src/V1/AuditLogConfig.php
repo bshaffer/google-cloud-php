@@ -30,7 +30,7 @@ class AuditLogConfig extends \Google\Protobuf\Internal\Message
     /**
      * The log type that this config enables.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 134680405;</code>
      */
     private $log_type = 0;
 
@@ -103,7 +103,7 @@ class AuditLogConfig extends \Google\Protobuf\Internal\Message
     /**
      * The log type that this config enables.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 134680405;</code>
      * @return int
      */
     public function getLogType()
@@ -114,7 +114,7 @@ class AuditLogConfig extends \Google\Protobuf\Internal\Message
     /**
      * The log type that this config enables.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 134680405;</code>
      * @param int $var
      * @return $this
      */

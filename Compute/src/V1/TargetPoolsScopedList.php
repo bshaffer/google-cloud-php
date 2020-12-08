@@ -17,7 +17,7 @@ class TargetPoolsScopedList extends \Google\Protobuf\Internal\Message
     /**
      * A list of target pools contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
      */
     private $target_pools;
     /**
@@ -47,7 +47,7 @@ class TargetPoolsScopedList extends \Google\Protobuf\Internal\Message
     /**
      * A list of target pools contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTargetPools()
@@ -58,7 +58,7 @@ class TargetPoolsScopedList extends \Google\Protobuf\Internal\Message
     /**
      * A list of target pools contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
      * @param \Google\Cloud\Compute\V1\TargetPool[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

@@ -45,7 +45,7 @@ class ManagedInstance extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Health state of the instance per health-check.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;</code>
      */
     private $instance_health;
     /**
@@ -57,7 +57,7 @@ class ManagedInstance extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Information about the last attempt to create or delete the instance.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 166336036;</code>
      */
     private $last_attempt = null;
     /**
@@ -69,13 +69,13 @@ class ManagedInstance extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Preserved state generated based on stateful policy for this instance.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 202348498;</code>
      */
     private $preserved_state_from_policy = null;
     /**
      * [Output Only] Intended version of this instance.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
      */
     private $version = null;
 
@@ -218,7 +218,7 @@ class ManagedInstance extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Health state of the instance per health-check.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getInstanceHealth()
@@ -229,7 +229,7 @@ class ManagedInstance extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Health state of the instance per health-check.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;</code>
      * @param \Google\Cloud\Compute\V1\ManagedInstanceInstanceHealth[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -270,7 +270,7 @@ class ManagedInstance extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Information about the last attempt to create or delete the instance.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 166336036;</code>
      * @return \Google\Cloud\Compute\V1\ManagedInstanceLastAttempt
      */
     public function getLastAttempt()
@@ -291,7 +291,7 @@ class ManagedInstance extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Information about the last attempt to create or delete the instance.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 166336036;</code>
      * @param \Google\Cloud\Compute\V1\ManagedInstanceLastAttempt $var
      * @return $this
      */
@@ -342,7 +342,7 @@ class ManagedInstance extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Preserved state generated based on stateful policy for this instance.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 202348498;</code>
      * @return \Google\Cloud\Compute\V1\PreservedState
      */
     public function getPreservedStateFromPolicy()
@@ -363,7 +363,7 @@ class ManagedInstance extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Preserved state generated based on stateful policy for this instance.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 202348498;</code>
      * @param \Google\Cloud\Compute\V1\PreservedState $var
      * @return $this
      */
@@ -378,7 +378,7 @@ class ManagedInstance extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Intended version of this instance.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
      * @return \Google\Cloud\Compute\V1\ManagedInstanceVersion
      */
     public function getVersion()
@@ -399,7 +399,7 @@ class ManagedInstance extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Intended version of this instance.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
      * @param \Google\Cloud\Compute\V1\ManagedInstanceVersion $var
      * @return $this
      */

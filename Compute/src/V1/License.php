@@ -19,7 +19,7 @@ class License extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
      *
-     * Generated from protobuf field <code>bool charges_use_fee = 372412622;</code>
+     * Generated from protobuf field <code>bool charges_use_fee = 103977166;</code>
      */
     private $charges_use_fee = false;
     /**
@@ -31,7 +31,7 @@ class License extends \Google\Protobuf\Internal\Message
     /**
      * An optional textual description of the resource; provided by the client when the resource is created.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -65,7 +65,7 @@ class License extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
@@ -110,7 +110,7 @@ class License extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
      *
-     * Generated from protobuf field <code>bool charges_use_fee = 372412622;</code>
+     * Generated from protobuf field <code>bool charges_use_fee = 103977166;</code>
      * @return bool
      */
     public function getChargesUseFee()
@@ -121,7 +121,7 @@ class License extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
      *
-     * Generated from protobuf field <code>bool charges_use_fee = 372412622;</code>
+     * Generated from protobuf field <code>bool charges_use_fee = 103977166;</code>
      * @param bool $var
      * @return $this
      */
@@ -162,7 +162,7 @@ class License extends \Google\Protobuf\Internal\Message
     /**
      * An optional textual description of the resource; provided by the client when the resource is created.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -173,7 +173,7 @@ class License extends \Google\Protobuf\Internal\Message
     /**
      * An optional textual description of the resource; provided by the client when the resource is created.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -324,7 +324,7 @@ class License extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -335,7 +335,7 @@ class License extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */

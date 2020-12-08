@@ -31,19 +31,19 @@ class Firewall extends \Google\Protobuf\Internal\Message
     /**
      * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
      */
     private $denied;
     /**
      * An optional description of this resource. Provide this field when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
      * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
      *
-     * Generated from protobuf field <code>repeated string destination_ranges = 305699879;</code>
+     * Generated from protobuf field <code>repeated string destination_ranges = 37264423;</code>
      */
     private $destination_ranges;
     /**
@@ -55,7 +55,7 @@ class Firewall extends \Google\Protobuf\Internal\Message
     /**
      * Denotes whether the firewall rule is disabled. When set to true, the firewall rule is not enforced and the network behaves as if it did not exist. If this is unspecified, the firewall rule will be enabled.
      *
-     * Generated from protobuf field <code>bool disabled = 270940796;</code>
+     * Generated from protobuf field <code>bool disabled = 2505340;</code>
      */
     private $disabled = false;
     /**
@@ -73,7 +73,7 @@ class Firewall extends \Google\Protobuf\Internal\Message
     /**
      * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 82864285;</code>
      */
     private $log_config = null;
     /**
@@ -96,13 +96,13 @@ class Firewall extends \Google\Protobuf\Internal\Message
     /**
      * Priority for this rule. This is an integer between `0` and `65535`, both inclusive. The default value is `1000`. Relative priorities determine which rule takes effect if multiple rules apply. Lower values indicate higher priority. For example, a rule with priority `0` has higher precedence than a rule with priority `1`. DENY rules take precedence over ALLOW rules if they have equal priority. Note that VPC networks have implied rules with a priority of `65535`. To avoid conflicts with the implied rules, use a priority number less than `65535`.
      *
-     * Generated from protobuf field <code>int32 priority = 445151652;</code>
+     * Generated from protobuf field <code>int32 priority = 176716196;</code>
      */
     private $priority = 0;
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
@@ -120,13 +120,13 @@ class Firewall extends \Google\Protobuf\Internal\Message
     /**
      * If source tags are specified, the firewall rule applies only to traffic with source IPs that match the primary network interfaces of VM instances that have the tag and are in the same VPC network. Source tags cannot be used to control traffic to an instance's external IP address, it only applies to traffic between instances in the same virtual network. Because tags are associated with instances, not IP addresses. One or both of sourceRanges and sourceTags may be set. If both fields are set, the firewall applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the firewall to apply.
      *
-     * Generated from protobuf field <code>repeated string source_tags = 452222397;</code>
+     * Generated from protobuf field <code>repeated string source_tags = 183786941;</code>
      */
     private $source_tags;
     /**
      * A list of service accounts indicating sets of instances located in the network that may make network connections as specified in allowed[]. targetServiceAccounts cannot be used at the same time as targetTags or sourceTags. If neither targetServiceAccounts nor targetTags are specified, the firewall rule applies to all instances on the specified network.
      *
-     * Generated from protobuf field <code>repeated string target_service_accounts = 457639710;</code>
+     * Generated from protobuf field <code>repeated string target_service_accounts = 189204254;</code>
      */
     private $target_service_accounts;
     /**
@@ -247,7 +247,7 @@ class Firewall extends \Google\Protobuf\Internal\Message
     /**
      * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getDenied()
@@ -258,7 +258,7 @@ class Firewall extends \Google\Protobuf\Internal\Message
     /**
      * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
      * @param \Google\Cloud\Compute\V1\Denied[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -273,7 +273,7 @@ class Firewall extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this field when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -284,7 +284,7 @@ class Firewall extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this field when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -299,7 +299,7 @@ class Firewall extends \Google\Protobuf\Internal\Message
     /**
      * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
      *
-     * Generated from protobuf field <code>repeated string destination_ranges = 305699879;</code>
+     * Generated from protobuf field <code>repeated string destination_ranges = 37264423;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getDestinationRanges()
@@ -310,7 +310,7 @@ class Firewall extends \Google\Protobuf\Internal\Message
     /**
      * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
      *
-     * Generated from protobuf field <code>repeated string destination_ranges = 305699879;</code>
+     * Generated from protobuf field <code>repeated string destination_ranges = 37264423;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -351,7 +351,7 @@ class Firewall extends \Google\Protobuf\Internal\Message
     /**
      * Denotes whether the firewall rule is disabled. When set to true, the firewall rule is not enforced and the network behaves as if it did not exist. If this is unspecified, the firewall rule will be enabled.
      *
-     * Generated from protobuf field <code>bool disabled = 270940796;</code>
+     * Generated from protobuf field <code>bool disabled = 2505340;</code>
      * @return bool
      */
     public function getDisabled()
@@ -362,7 +362,7 @@ class Firewall extends \Google\Protobuf\Internal\Message
     /**
      * Denotes whether the firewall rule is disabled. When set to true, the firewall rule is not enforced and the network behaves as if it did not exist. If this is unspecified, the firewall rule will be enabled.
      *
-     * Generated from protobuf field <code>bool disabled = 270940796;</code>
+     * Generated from protobuf field <code>bool disabled = 2505340;</code>
      * @param bool $var
      * @return $this
      */
@@ -429,7 +429,7 @@ class Firewall extends \Google\Protobuf\Internal\Message
     /**
      * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 82864285;</code>
      * @return \Google\Cloud\Compute\V1\FirewallLogConfig
      */
     public function getLogConfig()
@@ -450,7 +450,7 @@ class Firewall extends \Google\Protobuf\Internal\Message
     /**
      * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 82864285;</code>
      * @param \Google\Cloud\Compute\V1\FirewallLogConfig $var
      * @return $this
      */
@@ -527,7 +527,7 @@ class Firewall extends \Google\Protobuf\Internal\Message
     /**
      * Priority for this rule. This is an integer between `0` and `65535`, both inclusive. The default value is `1000`. Relative priorities determine which rule takes effect if multiple rules apply. Lower values indicate higher priority. For example, a rule with priority `0` has higher precedence than a rule with priority `1`. DENY rules take precedence over ALLOW rules if they have equal priority. Note that VPC networks have implied rules with a priority of `65535`. To avoid conflicts with the implied rules, use a priority number less than `65535`.
      *
-     * Generated from protobuf field <code>int32 priority = 445151652;</code>
+     * Generated from protobuf field <code>int32 priority = 176716196;</code>
      * @return int
      */
     public function getPriority()
@@ -538,7 +538,7 @@ class Firewall extends \Google\Protobuf\Internal\Message
     /**
      * Priority for this rule. This is an integer between `0` and `65535`, both inclusive. The default value is `1000`. Relative priorities determine which rule takes effect if multiple rules apply. Lower values indicate higher priority. For example, a rule with priority `0` has higher precedence than a rule with priority `1`. DENY rules take precedence over ALLOW rules if they have equal priority. Note that VPC networks have implied rules with a priority of `65535`. To avoid conflicts with the implied rules, use a priority number less than `65535`.
      *
-     * Generated from protobuf field <code>int32 priority = 445151652;</code>
+     * Generated from protobuf field <code>int32 priority = 176716196;</code>
      * @param int $var
      * @return $this
      */
@@ -553,7 +553,7 @@ class Firewall extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -564,7 +564,7 @@ class Firewall extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */
@@ -631,7 +631,7 @@ class Firewall extends \Google\Protobuf\Internal\Message
     /**
      * If source tags are specified, the firewall rule applies only to traffic with source IPs that match the primary network interfaces of VM instances that have the tag and are in the same VPC network. Source tags cannot be used to control traffic to an instance's external IP address, it only applies to traffic between instances in the same virtual network. Because tags are associated with instances, not IP addresses. One or both of sourceRanges and sourceTags may be set. If both fields are set, the firewall applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the firewall to apply.
      *
-     * Generated from protobuf field <code>repeated string source_tags = 452222397;</code>
+     * Generated from protobuf field <code>repeated string source_tags = 183786941;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getSourceTags()
@@ -642,7 +642,7 @@ class Firewall extends \Google\Protobuf\Internal\Message
     /**
      * If source tags are specified, the firewall rule applies only to traffic with source IPs that match the primary network interfaces of VM instances that have the tag and are in the same VPC network. Source tags cannot be used to control traffic to an instance's external IP address, it only applies to traffic between instances in the same virtual network. Because tags are associated with instances, not IP addresses. One or both of sourceRanges and sourceTags may be set. If both fields are set, the firewall applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the firewall to apply.
      *
-     * Generated from protobuf field <code>repeated string source_tags = 452222397;</code>
+     * Generated from protobuf field <code>repeated string source_tags = 183786941;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -657,7 +657,7 @@ class Firewall extends \Google\Protobuf\Internal\Message
     /**
      * A list of service accounts indicating sets of instances located in the network that may make network connections as specified in allowed[]. targetServiceAccounts cannot be used at the same time as targetTags or sourceTags. If neither targetServiceAccounts nor targetTags are specified, the firewall rule applies to all instances on the specified network.
      *
-     * Generated from protobuf field <code>repeated string target_service_accounts = 457639710;</code>
+     * Generated from protobuf field <code>repeated string target_service_accounts = 189204254;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTargetServiceAccounts()
@@ -668,7 +668,7 @@ class Firewall extends \Google\Protobuf\Internal\Message
     /**
      * A list of service accounts indicating sets of instances located in the network that may make network connections as specified in allowed[]. targetServiceAccounts cannot be used at the same time as targetTags or sourceTags. If neither targetServiceAccounts nor targetTags are specified, the firewall rule applies to all instances on the specified network.
      *
-     * Generated from protobuf field <code>repeated string target_service_accounts = 457639710;</code>
+     * Generated from protobuf field <code>repeated string target_service_accounts = 189204254;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

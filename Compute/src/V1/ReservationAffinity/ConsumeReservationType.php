@@ -32,9 +32,9 @@ class ConsumeReservationType
      */
     const SPECIFIC_RESERVATION = 229889055;
     /**
-     * Generated from protobuf enum <code>UNSPECIFIED = 526786327;</code>
+     * Generated from protobuf enum <code>UNSPECIFIED = 258350871;</code>
      */
-    const UNSPECIFIED = 526786327;
+    const UNSPECIFIED = 258350871;
 
     private static $valueToName = [
         self::UNDEFINED_CONSUME_RESERVATION_TYPE => 'UNDEFINED_CONSUME_RESERVATION_TYPE',

@@ -24,9 +24,9 @@ class Purpose
      */
     const INTERNAL_HTTPS_LOAD_BALANCER = 248748889;
     /**
-     * Generated from protobuf enum <code>PRIVATE = 403485027;</code>
+     * Generated from protobuf enum <code>PRIVATE = 135049571;</code>
      */
-    const PBPRIVATE = 403485027;
+    const PBPRIVATE = 135049571;
     /**
      * Generated from protobuf enum <code>PRIVATE_RFC_1918 = 254902107;</code>
      */

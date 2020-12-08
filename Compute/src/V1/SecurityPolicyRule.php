@@ -24,7 +24,7 @@ class SecurityPolicyRule extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -48,7 +48,7 @@ class SecurityPolicyRule extends \Google\Protobuf\Internal\Message
     /**
      * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.
      *
-     * Generated from protobuf field <code>int32 priority = 445151652;</code>
+     * Generated from protobuf field <code>int32 priority = 176716196;</code>
      */
     private $priority = 0;
 
@@ -106,7 +106,7 @@ class SecurityPolicyRule extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -117,7 +117,7 @@ class SecurityPolicyRule extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -220,7 +220,7 @@ class SecurityPolicyRule extends \Google\Protobuf\Internal\Message
     /**
      * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.
      *
-     * Generated from protobuf field <code>int32 priority = 445151652;</code>
+     * Generated from protobuf field <code>int32 priority = 176716196;</code>
      * @return int
      */
     public function getPriority()
@@ -231,7 +231,7 @@ class SecurityPolicyRule extends \Google\Protobuf\Internal\Message
     /**
      * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.
      *
-     * Generated from protobuf field <code>int32 priority = 445151652;</code>
+     * Generated from protobuf field <code>int32 priority = 176716196;</code>
      * @param int $var
      * @return $this
      */

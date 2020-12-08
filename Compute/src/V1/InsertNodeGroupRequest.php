@@ -22,7 +22,7 @@ class InsertNodeGroupRequest extends \Google\Protobuf\Internal\Message
      */
     private $initial_node_count = 0;
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 505321899;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 236886443;</code>
      */
     private $node_group_resource = null;
     /**
@@ -97,7 +97,7 @@ class InsertNodeGroupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 505321899;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 236886443;</code>
      * @return \Google\Cloud\Compute\V1\NodeGroup
      */
     public function getNodeGroupResource()
@@ -116,7 +116,7 @@ class InsertNodeGroupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 505321899;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 236886443;</code>
      * @param \Google\Cloud\Compute\V1\NodeGroup $var
      * @return $this
      */

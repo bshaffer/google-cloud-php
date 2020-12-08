@@ -36,7 +36,7 @@ class SetSchedulingInstanceRequest extends \Google\Protobuf\Internal\Message
      */
     private $request_id = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Scheduling scheduling_resource = 463181401;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Scheduling scheduling_resource = 194745945;</code>
      */
     private $scheduling_resource = null;
     /**
@@ -153,7 +153,7 @@ class SetSchedulingInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Scheduling scheduling_resource = 463181401;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Scheduling scheduling_resource = 194745945;</code>
      * @return \Google\Cloud\Compute\V1\Scheduling
      */
     public function getSchedulingResource()
@@ -172,7 +172,7 @@ class SetSchedulingInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Scheduling scheduling_resource = 463181401;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Scheduling scheduling_resource = 194745945;</code>
      * @param \Google\Cloud\Compute\V1\Scheduling $var
      * @return $this
      */

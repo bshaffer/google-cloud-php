@@ -42,7 +42,7 @@ class SetLabelsDiskRequest extends \Google\Protobuf\Internal\Message
      */
     private $zone = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 364950798;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 96515342;</code>
      */
     private $zone_set_labels_request_resource = null;
 
@@ -179,7 +179,7 @@ class SetLabelsDiskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 364950798;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 96515342;</code>
      * @return \Google\Cloud\Compute\V1\ZoneSetLabelsRequest
      */
     public function getZoneSetLabelsRequestResource()
@@ -198,7 +198,7 @@ class SetLabelsDiskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 364950798;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 96515342;</code>
      * @param \Google\Cloud\Compute\V1\ZoneSetLabelsRequest $var
      * @return $this
      */

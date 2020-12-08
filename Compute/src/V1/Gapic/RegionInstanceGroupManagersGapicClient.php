@@ -124,8 +124,9 @@ class RegionInstanceGroupManagersGapicClient
             'apiEndpoint' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
             'clientConfig' => __DIR__.'/../resources/region_instance_group_managers_client_config.json',
             'descriptorsConfigPath' => __DIR__.'/../resources/region_instance_group_managers_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__.'/../resources/region_instance_group_managers_grpc_config.json',
             'credentialsConfig' => [
-                'defaultScopes' => self::$serviceScopes,
+                'scopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
@@ -133,16 +134,6 @@ class RegionInstanceGroupManagersGapicClient
                 ],
             ],
         ];
-    }
-
-    private static function defaultTransport()
-    {
-        return 'rest';
-    }
-
-    private static function getSupportedTransports()
-    {
-        return ['rest'];
     }
 
     /**
@@ -178,8 +169,8 @@ class RegionInstanceGroupManagersGapicClient
      *           By default this settings points to the default client config file, which is provided
      *           in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. At the moment, only supports
-     *           `rest`.
+     *           The transport used for executing network requests. May be either the string `rest`
+     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
      *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
      *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
      *           object is provided, any settings in $transportConfig, and any `$apiEndpoint`
@@ -189,9 +180,11 @@ class RegionInstanceGroupManagersGapicClient
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
+     *               'grpc' => [...],
      *               'rest' => [...]
      *           ];
-     *           See the {@see \Google\ApiCore\Transport\RestTransport::build()} method for the
+     *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
+     *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
      *           supported options.
      * }
      *
@@ -701,8 +694,6 @@ class RegionInstanceGroupManagersGapicClient
      *          Currently, only sorting by `name` or `creationTimestamp desc` is supported.
      *     @type string $pageToken
      *          Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
-     *     @type bool $returnPartialSuccess
-     *          Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -730,9 +721,6 @@ class RegionInstanceGroupManagersGapicClient
         }
         if (isset($optionalArgs['pageToken'])) {
             $request->setPageToken($optionalArgs['pageToken']);
-        }
-        if (isset($optionalArgs['returnPartialSuccess'])) {
-            $request->setReturnPartialSuccess($optionalArgs['returnPartialSuccess']);
         }
 
         return $this->startCall(
@@ -783,8 +771,6 @@ class RegionInstanceGroupManagersGapicClient
      *          Currently, only sorting by `name` or `creationTimestamp desc` is supported.
      *     @type string $pageToken
      *          Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
-     *     @type bool $returnPartialSuccess
-     *          Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -813,9 +799,6 @@ class RegionInstanceGroupManagersGapicClient
         }
         if (isset($optionalArgs['pageToken'])) {
             $request->setPageToken($optionalArgs['pageToken']);
-        }
-        if (isset($optionalArgs['returnPartialSuccess'])) {
-            $request->setReturnPartialSuccess($optionalArgs['returnPartialSuccess']);
         }
 
         return $this->startCall(
@@ -866,8 +849,6 @@ class RegionInstanceGroupManagersGapicClient
      *          Currently, only sorting by `name` or `creationTimestamp desc` is supported.
      *     @type string $pageToken
      *          Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
-     *     @type bool $returnPartialSuccess
-     *          Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -896,9 +877,6 @@ class RegionInstanceGroupManagersGapicClient
         }
         if (isset($optionalArgs['pageToken'])) {
             $request->setPageToken($optionalArgs['pageToken']);
-        }
-        if (isset($optionalArgs['returnPartialSuccess'])) {
-            $request->setReturnPartialSuccess($optionalArgs['returnPartialSuccess']);
         }
 
         return $this->startCall(
@@ -949,8 +927,6 @@ class RegionInstanceGroupManagersGapicClient
      *          Currently, only sorting by `name` or `creationTimestamp desc` is supported.
      *     @type string $pageToken
      *          Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
-     *     @type bool $returnPartialSuccess
-     *          Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -979,9 +955,6 @@ class RegionInstanceGroupManagersGapicClient
         }
         if (isset($optionalArgs['pageToken'])) {
             $request->setPageToken($optionalArgs['pageToken']);
-        }
-        if (isset($optionalArgs['returnPartialSuccess'])) {
-            $request->setReturnPartialSuccess($optionalArgs['returnPartialSuccess']);
         }
 
         return $this->startCall(

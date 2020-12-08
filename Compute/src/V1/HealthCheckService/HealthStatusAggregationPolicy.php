@@ -26,9 +26,9 @@ class HealthStatusAggregationPolicy
      */
     const PBAND = 64951;
     /**
-     * Generated from protobuf enum <code>NO_AGGREGATION = 426445124;</code>
+     * Generated from protobuf enum <code>NO_AGGREGATION = 158009668;</code>
      */
-    const NO_AGGREGATION = 426445124;
+    const NO_AGGREGATION = 158009668;
 
     private static $valueToName = [
         self::UNDEFINED_HEALTH_STATUS_AGGREGATION_POLICY => 'UNDEFINED_HEALTH_STATUS_AGGREGATION_POLICY',

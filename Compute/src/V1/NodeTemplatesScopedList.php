@@ -17,7 +17,7 @@ class NodeTemplatesScopedList extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of node templates contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
      */
     private $node_templates;
     /**
@@ -47,7 +47,7 @@ class NodeTemplatesScopedList extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of node templates contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getNodeTemplates()
@@ -58,7 +58,7 @@ class NodeTemplatesScopedList extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of node templates contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
      * @param \Google\Cloud\Compute\V1\NodeTemplate[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

@@ -25,9 +25,9 @@ class Continent
      */
     const UNDEFINED_CONTINENT = 0;
     /**
-     * Generated from protobuf enum <code>AFRICA = 317443706;</code>
+     * Generated from protobuf enum <code>AFRICA = 49008250;</code>
      */
-    const AFRICA = 317443706;
+    const AFRICA = 49008250;
     /**
      * Generated from protobuf enum <code>ASIA_PAC = 119782269;</code>
      */
@@ -37,29 +37,29 @@ class Continent
      */
     const C_AFRICA = 71993846;
     /**
-     * Generated from protobuf enum <code>C_ASIA_PAC = 465668089;</code>
+     * Generated from protobuf enum <code>C_ASIA_PAC = 197232633;</code>
      */
-    const C_ASIA_PAC = 465668089;
+    const C_ASIA_PAC = 197232633;
     /**
      * Generated from protobuf enum <code>C_EUROPE = 200369438;</code>
      */
     const C_EUROPE = 200369438;
     /**
-     * Generated from protobuf enum <code>C_NORTH_AMERICA = 275697048;</code>
+     * Generated from protobuf enum <code>C_NORTH_AMERICA = 7261592;</code>
      */
-    const C_NORTH_AMERICA = 275697048;
+    const C_NORTH_AMERICA = 7261592;
     /**
-     * Generated from protobuf enum <code>C_SOUTH_AMERICA = 397149792;</code>
+     * Generated from protobuf enum <code>C_SOUTH_AMERICA = 128714336;</code>
      */
-    const C_SOUTH_AMERICA = 397149792;
+    const C_SOUTH_AMERICA = 128714336;
     /**
-     * Generated from protobuf enum <code>EUROPE = 445819298;</code>
+     * Generated from protobuf enum <code>EUROPE = 177383842;</code>
      */
-    const EUROPE = 445819298;
+    const EUROPE = 177383842;
     /**
-     * Generated from protobuf enum <code>NORTH_AMERICA = 448015508;</code>
+     * Generated from protobuf enum <code>NORTH_AMERICA = 179580052;</code>
      */
-    const NORTH_AMERICA = 448015508;
+    const NORTH_AMERICA = 179580052;
     /**
      * Generated from protobuf enum <code>SOUTH_AMERICA = 32597340;</code>
      */

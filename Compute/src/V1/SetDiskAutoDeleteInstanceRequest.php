@@ -18,7 +18,7 @@ class SetDiskAutoDeleteInstanceRequest extends \Google\Protobuf\Internal\Message
     /**
      * Whether to auto-delete the disk when the instance is deleted.
      *
-     * Generated from protobuf field <code>bool auto_delete = 464761403 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>bool auto_delete = 196325947 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $auto_delete = false;
     /**
@@ -84,7 +84,7 @@ class SetDiskAutoDeleteInstanceRequest extends \Google\Protobuf\Internal\Message
     /**
      * Whether to auto-delete the disk when the instance is deleted.
      *
-     * Generated from protobuf field <code>bool auto_delete = 464761403 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>bool auto_delete = 196325947 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return bool
      */
     public function getAutoDelete()
@@ -95,7 +95,7 @@ class SetDiskAutoDeleteInstanceRequest extends \Google\Protobuf\Internal\Message
     /**
      * Whether to auto-delete the disk when the instance is deleted.
      *
-     * Generated from protobuf field <code>bool auto_delete = 464761403 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>bool auto_delete = 196325947 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param bool $var
      * @return $this
      */

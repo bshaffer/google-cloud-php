@@ -27,13 +27,13 @@ class Type
      */
     const DEDICATED = 258411983;
     /**
-     * Generated from protobuf enum <code>PARTNER = 461924520;</code>
+     * Generated from protobuf enum <code>PARTNER = 193489064;</code>
      */
-    const PARTNER = 461924520;
+    const PARTNER = 193489064;
     /**
-     * Generated from protobuf enum <code>PARTNER_PROVIDER = 483261352;</code>
+     * Generated from protobuf enum <code>PARTNER_PROVIDER = 214825896;</code>
      */
-    const PARTNER_PROVIDER = 483261352;
+    const PARTNER_PROVIDER = 214825896;
 
     private static $valueToName = [
         self::UNDEFINED_TYPE => 'UNDEFINED_TYPE',

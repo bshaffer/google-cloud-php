@@ -24,13 +24,13 @@ class OutlierDetection extends \Google\Protobuf\Internal\Message
     /**
      * Number of errors before a host is ejected from the connection pool. When the backend host is accessed over HTTP, a 5xx return code qualifies as an error. Defaults to 5.
      *
-     * Generated from protobuf field <code>int32 consecutive_errors = 387193248;</code>
+     * Generated from protobuf field <code>int32 consecutive_errors = 118757792;</code>
      */
     private $consecutive_errors = 0;
     /**
      * The number of consecutive gateway failures (502, 503, 504 status or connection errors that are mapped to one of those status codes) before a consecutive gateway failure ejection occurs. Defaults to 3.
      *
-     * Generated from protobuf field <code>int32 consecutive_gateway_failure = 417504250;</code>
+     * Generated from protobuf field <code>int32 consecutive_gateway_failure = 149068794;</code>
      */
     private $consecutive_gateway_failure = 0;
     /**
@@ -42,7 +42,7 @@ class OutlierDetection extends \Google\Protobuf\Internal\Message
     /**
      * The percentage chance that a host will be actually ejected when an outlier status is detected through consecutive gateway failures. This setting can be used to disable ejection or to ramp it up slowly. Defaults to 100.
      *
-     * Generated from protobuf field <code>int32 enforcing_consecutive_gateway_failure = 394440666;</code>
+     * Generated from protobuf field <code>int32 enforcing_consecutive_gateway_failure = 126005210;</code>
      */
     private $enforcing_consecutive_gateway_failure = 0;
     /**
@@ -66,13 +66,13 @@ class OutlierDetection extends \Google\Protobuf\Internal\Message
     /**
      * The number of hosts in a cluster that must have enough request volume to detect success rate outliers. If the number of hosts is less than this setting, outlier detection via success rate statistics is not performed for any host in the cluster. Defaults to 5.
      *
-     * Generated from protobuf field <code>int32 success_rate_minimum_hosts = 525766903;</code>
+     * Generated from protobuf field <code>int32 success_rate_minimum_hosts = 257331447;</code>
      */
     private $success_rate_minimum_hosts = 0;
     /**
      * The minimum number of total requests that must be collected in one interval (as defined by the interval duration above) to include this host in success rate based outlier detection. If the volume is lower than this setting, outlier detection via success rate statistics is not performed for that host. Defaults to 100.
      *
-     * Generated from protobuf field <code>int32 success_rate_request_volume = 281425357;</code>
+     * Generated from protobuf field <code>int32 success_rate_request_volume = 12989901;</code>
      */
     private $success_rate_request_volume = 0;
     /**
@@ -156,7 +156,7 @@ class OutlierDetection extends \Google\Protobuf\Internal\Message
     /**
      * Number of errors before a host is ejected from the connection pool. When the backend host is accessed over HTTP, a 5xx return code qualifies as an error. Defaults to 5.
      *
-     * Generated from protobuf field <code>int32 consecutive_errors = 387193248;</code>
+     * Generated from protobuf field <code>int32 consecutive_errors = 118757792;</code>
      * @return int
      */
     public function getConsecutiveErrors()
@@ -167,7 +167,7 @@ class OutlierDetection extends \Google\Protobuf\Internal\Message
     /**
      * Number of errors before a host is ejected from the connection pool. When the backend host is accessed over HTTP, a 5xx return code qualifies as an error. Defaults to 5.
      *
-     * Generated from protobuf field <code>int32 consecutive_errors = 387193248;</code>
+     * Generated from protobuf field <code>int32 consecutive_errors = 118757792;</code>
      * @param int $var
      * @return $this
      */
@@ -182,7 +182,7 @@ class OutlierDetection extends \Google\Protobuf\Internal\Message
     /**
      * The number of consecutive gateway failures (502, 503, 504 status or connection errors that are mapped to one of those status codes) before a consecutive gateway failure ejection occurs. Defaults to 3.
      *
-     * Generated from protobuf field <code>int32 consecutive_gateway_failure = 417504250;</code>
+     * Generated from protobuf field <code>int32 consecutive_gateway_failure = 149068794;</code>
      * @return int
      */
     public function getConsecutiveGatewayFailure()
@@ -193,7 +193,7 @@ class OutlierDetection extends \Google\Protobuf\Internal\Message
     /**
      * The number of consecutive gateway failures (502, 503, 504 status or connection errors that are mapped to one of those status codes) before a consecutive gateway failure ejection occurs. Defaults to 3.
      *
-     * Generated from protobuf field <code>int32 consecutive_gateway_failure = 417504250;</code>
+     * Generated from protobuf field <code>int32 consecutive_gateway_failure = 149068794;</code>
      * @param int $var
      * @return $this
      */
@@ -234,7 +234,7 @@ class OutlierDetection extends \Google\Protobuf\Internal\Message
     /**
      * The percentage chance that a host will be actually ejected when an outlier status is detected through consecutive gateway failures. This setting can be used to disable ejection or to ramp it up slowly. Defaults to 100.
      *
-     * Generated from protobuf field <code>int32 enforcing_consecutive_gateway_failure = 394440666;</code>
+     * Generated from protobuf field <code>int32 enforcing_consecutive_gateway_failure = 126005210;</code>
      * @return int
      */
     public function getEnforcingConsecutiveGatewayFailure()
@@ -245,7 +245,7 @@ class OutlierDetection extends \Google\Protobuf\Internal\Message
     /**
      * The percentage chance that a host will be actually ejected when an outlier status is detected through consecutive gateway failures. This setting can be used to disable ejection or to ramp it up slowly. Defaults to 100.
      *
-     * Generated from protobuf field <code>int32 enforcing_consecutive_gateway_failure = 394440666;</code>
+     * Generated from protobuf field <code>int32 enforcing_consecutive_gateway_failure = 126005210;</code>
      * @param int $var
      * @return $this
      */
@@ -348,7 +348,7 @@ class OutlierDetection extends \Google\Protobuf\Internal\Message
     /**
      * The number of hosts in a cluster that must have enough request volume to detect success rate outliers. If the number of hosts is less than this setting, outlier detection via success rate statistics is not performed for any host in the cluster. Defaults to 5.
      *
-     * Generated from protobuf field <code>int32 success_rate_minimum_hosts = 525766903;</code>
+     * Generated from protobuf field <code>int32 success_rate_minimum_hosts = 257331447;</code>
      * @return int
      */
     public function getSuccessRateMinimumHosts()
@@ -359,7 +359,7 @@ class OutlierDetection extends \Google\Protobuf\Internal\Message
     /**
      * The number of hosts in a cluster that must have enough request volume to detect success rate outliers. If the number of hosts is less than this setting, outlier detection via success rate statistics is not performed for any host in the cluster. Defaults to 5.
      *
-     * Generated from protobuf field <code>int32 success_rate_minimum_hosts = 525766903;</code>
+     * Generated from protobuf field <code>int32 success_rate_minimum_hosts = 257331447;</code>
      * @param int $var
      * @return $this
      */
@@ -374,7 +374,7 @@ class OutlierDetection extends \Google\Protobuf\Internal\Message
     /**
      * The minimum number of total requests that must be collected in one interval (as defined by the interval duration above) to include this host in success rate based outlier detection. If the volume is lower than this setting, outlier detection via success rate statistics is not performed for that host. Defaults to 100.
      *
-     * Generated from protobuf field <code>int32 success_rate_request_volume = 281425357;</code>
+     * Generated from protobuf field <code>int32 success_rate_request_volume = 12989901;</code>
      * @return int
      */
     public function getSuccessRateRequestVolume()
@@ -385,7 +385,7 @@ class OutlierDetection extends \Google\Protobuf\Internal\Message
     /**
      * The minimum number of total requests that must be collected in one interval (as defined by the interval duration above) to include this host in success rate based outlier detection. If the volume is lower than this setting, outlier detection via success rate statistics is not performed for that host. Defaults to 100.
      *
-     * Generated from protobuf field <code>int32 success_rate_request_volume = 281425357;</code>
+     * Generated from protobuf field <code>int32 success_rate_request_volume = 12989901;</code>
      * @param int $var
      * @return $this
      */

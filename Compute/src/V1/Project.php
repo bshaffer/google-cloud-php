@@ -31,25 +31,25 @@ class Project extends \Google\Protobuf\Internal\Message
     /**
      * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 203317905;</code>
      */
     private $default_network_tier = 0;
     /**
      * [Output Only] Default service account used by VMs running in this project.
      *
-     * Generated from protobuf field <code>string default_service_account = 298712229;</code>
+     * Generated from protobuf field <code>string default_service_account = 30276773;</code>
      */
     private $default_service_account = '';
     /**
      * An optional textual description of the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
      * Restricted features enabled for use on this project.
      *
-     * Generated from protobuf field <code>repeated string enabled_features = 469017467;</code>
+     * Generated from protobuf field <code>repeated string enabled_features = 200582011;</code>
      */
     private $enabled_features;
     /**
@@ -79,17 +79,17 @@ class Project extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
      * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 79108418;</code>
      */
     private $usage_export_location = null;
     /**
-     * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+     * [Output Only] The role this project has in a shared VPC configuration. Currently only HOST projects are differentiated.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.Project.XpnProjectStatus xpn_project_status = 228419265;</code>
      */
@@ -126,7 +126,7 @@ class Project extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Compute\V1\UsageExportLocation $usage_export_location
      *           The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
      *     @type int $xpn_project_status
-     *           [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+     *           [Output Only] The role this project has in a shared VPC configuration. Currently only HOST projects are differentiated.
      * }
      */
     public function __construct($data = NULL) {
@@ -199,7 +199,7 @@ class Project extends \Google\Protobuf\Internal\Message
     /**
      * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 203317905;</code>
      * @return int
      */
     public function getDefaultNetworkTier()
@@ -210,7 +210,7 @@ class Project extends \Google\Protobuf\Internal\Message
     /**
      * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 203317905;</code>
      * @param int $var
      * @return $this
      */
@@ -225,7 +225,7 @@ class Project extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Default service account used by VMs running in this project.
      *
-     * Generated from protobuf field <code>string default_service_account = 298712229;</code>
+     * Generated from protobuf field <code>string default_service_account = 30276773;</code>
      * @return string
      */
     public function getDefaultServiceAccount()
@@ -236,7 +236,7 @@ class Project extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Default service account used by VMs running in this project.
      *
-     * Generated from protobuf field <code>string default_service_account = 298712229;</code>
+     * Generated from protobuf field <code>string default_service_account = 30276773;</code>
      * @param string $var
      * @return $this
      */
@@ -251,7 +251,7 @@ class Project extends \Google\Protobuf\Internal\Message
     /**
      * An optional textual description of the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -262,7 +262,7 @@ class Project extends \Google\Protobuf\Internal\Message
     /**
      * An optional textual description of the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -277,7 +277,7 @@ class Project extends \Google\Protobuf\Internal\Message
     /**
      * Restricted features enabled for use on this project.
      *
-     * Generated from protobuf field <code>repeated string enabled_features = 469017467;</code>
+     * Generated from protobuf field <code>repeated string enabled_features = 200582011;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getEnabledFeatures()
@@ -288,7 +288,7 @@ class Project extends \Google\Protobuf\Internal\Message
     /**
      * Restricted features enabled for use on this project.
      *
-     * Generated from protobuf field <code>repeated string enabled_features = 469017467;</code>
+     * Generated from protobuf field <code>repeated string enabled_features = 200582011;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -407,7 +407,7 @@ class Project extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -418,7 +418,7 @@ class Project extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */
@@ -433,7 +433,7 @@ class Project extends \Google\Protobuf\Internal\Message
     /**
      * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 79108418;</code>
      * @return \Google\Cloud\Compute\V1\UsageExportLocation
      */
     public function getUsageExportLocation()
@@ -454,7 +454,7 @@ class Project extends \Google\Protobuf\Internal\Message
     /**
      * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 79108418;</code>
      * @param \Google\Cloud\Compute\V1\UsageExportLocation $var
      * @return $this
      */
@@ -467,7 +467,7 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+     * [Output Only] The role this project has in a shared VPC configuration. Currently only HOST projects are differentiated.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.Project.XpnProjectStatus xpn_project_status = 228419265;</code>
      * @return int
@@ -478,7 +478,7 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+     * [Output Only] The role this project has in a shared VPC configuration. Currently only HOST projects are differentiated.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.Project.XpnProjectStatus xpn_project_status = 228419265;</code>
      * @param int $var

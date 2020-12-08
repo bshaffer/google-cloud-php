@@ -18,7 +18,7 @@ class DiskInstantiationConfig extends \Google\Protobuf\Internal\Message
     /**
      * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
      *
-     * Generated from protobuf field <code>bool auto_delete = 464761403;</code>
+     * Generated from protobuf field <code>bool auto_delete = 196325947;</code>
      */
     private $auto_delete = false;
     /**
@@ -41,7 +41,7 @@ class DiskInstantiationConfig extends \Google\Protobuf\Internal\Message
      * - attach-read-only: to attach a read-only disk. Applicable to read-only disks.
      * - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 124948447;</code>
      */
     private $instantiate_from = 0;
 
@@ -74,7 +74,7 @@ class DiskInstantiationConfig extends \Google\Protobuf\Internal\Message
     /**
      * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
      *
-     * Generated from protobuf field <code>bool auto_delete = 464761403;</code>
+     * Generated from protobuf field <code>bool auto_delete = 196325947;</code>
      * @return bool
      */
     public function getAutoDelete()
@@ -85,7 +85,7 @@ class DiskInstantiationConfig extends \Google\Protobuf\Internal\Message
     /**
      * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
      *
-     * Generated from protobuf field <code>bool auto_delete = 464761403;</code>
+     * Generated from protobuf field <code>bool auto_delete = 196325947;</code>
      * @param bool $var
      * @return $this
      */
@@ -157,7 +157,7 @@ class DiskInstantiationConfig extends \Google\Protobuf\Internal\Message
      * - attach-read-only: to attach a read-only disk. Applicable to read-only disks.
      * - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 124948447;</code>
      * @return int
      */
     public function getInstantiateFrom()
@@ -173,7 +173,7 @@ class DiskInstantiationConfig extends \Google\Protobuf\Internal\Message
      * - attach-read-only: to attach a read-only disk. Applicable to read-only disks.
      * - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 124948447;</code>
      * @param int $var
      * @return $this
      */

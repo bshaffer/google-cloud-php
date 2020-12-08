@@ -20,9 +20,9 @@ class State
      */
     const UNDEFINED_STATE = 0;
     /**
-     * Generated from protobuf enum <code>DISABLED = 516696700;</code>
+     * Generated from protobuf enum <code>DISABLED = 248261244;</code>
      */
-    const DISABLED = 516696700;
+    const DISABLED = 248261244;
     /**
      * Generated from protobuf enum <code>ENABLED = 182130465;</code>
      */
@@ -32,9 +32,9 @@ class State
      */
     const RESTRICTED = 261551195;
     /**
-     * Generated from protobuf enum <code>STATE_UNSPECIFIED = 470755401;</code>
+     * Generated from protobuf enum <code>STATE_UNSPECIFIED = 202319945;</code>
      */
-    const STATE_UNSPECIFIED = 470755401;
+    const STATE_UNSPECIFIED = 202319945;
     /**
      * Generated from protobuf enum <code>TERMINATED = 250018339;</code>
      */

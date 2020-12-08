@@ -25,13 +25,13 @@ class Region extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The deprecation status associated with this region.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     private $deprecated = null;
     /**
      * [Output Only] Textual description of the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -61,7 +61,7 @@ class Region extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
@@ -139,7 +139,7 @@ class Region extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The deprecation status associated with this region.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      * @return \Google\Cloud\Compute\V1\DeprecationStatus
      */
     public function getDeprecated()
@@ -160,7 +160,7 @@ class Region extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The deprecation status associated with this region.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      * @param \Google\Cloud\Compute\V1\DeprecationStatus $var
      * @return $this
      */
@@ -175,7 +175,7 @@ class Region extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Textual description of the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -186,7 +186,7 @@ class Region extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Textual description of the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -305,7 +305,7 @@ class Region extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -316,7 +316,7 @@ class Region extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */

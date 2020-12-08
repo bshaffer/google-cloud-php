@@ -20,9 +20,9 @@ class StorageBytesStatus
      */
     const UNDEFINED_STORAGE_BYTES_STATUS = 0;
     /**
-     * Generated from protobuf enum <code>UPDATING = 494614342;</code>
+     * Generated from protobuf enum <code>UPDATING = 226178886;</code>
      */
-    const UPDATING = 494614342;
+    const UPDATING = 226178886;
     /**
      * Generated from protobuf enum <code>UP_TO_DATE = 101306702;</code>
      */

@@ -34,7 +34,6 @@ use Google\Cloud\Compute\V1\InstanceList;
 use Google\Cloud\Compute\V1\InstanceListReferrers;
 use Google\Cloud\Compute\V1\Operation;
 use Google\Cloud\Compute\V1\Policy;
-use Google\Cloud\Compute\V1\Screenshot;
 use Google\Cloud\Compute\V1\SerialPortOutput;
 use Google\Cloud\Compute\V1\ShieldedInstanceIdentity;
 use Google\Cloud\Compute\V1\TestPermissionsResponse;
@@ -924,9 +923,6 @@ class InstancesClientTest extends GeneratedTest
         $id = 'id3355';
         $kind = 'kind3292052';
         $labelFingerprint = 'labelFingerprint714995737';
-        $lastStartTimestamp = 'lastStartTimestamp-629911088';
-        $lastStopTimestamp = 'lastStopTimestamp-1197789726';
-        $lastSuspendedTimestamp = 'lastSuspendedTimestamp893146249';
         $machineType = 'machineType1838323762';
         $minCpuPlatform = 'minCpuPlatform-1367699977';
         $name = 'name3373707';
@@ -945,9 +941,6 @@ class InstancesClientTest extends GeneratedTest
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
         $expectedResponse->setLabelFingerprint($labelFingerprint);
-        $expectedResponse->setLastStartTimestamp($lastStartTimestamp);
-        $expectedResponse->setLastStopTimestamp($lastStopTimestamp);
-        $expectedResponse->setLastSuspendedTimestamp($lastSuspendedTimestamp);
         $expectedResponse->setMachineType($machineType);
         $expectedResponse->setMinCpuPlatform($minCpuPlatform);
         $expectedResponse->setName($name);
@@ -1190,91 +1183,6 @@ class InstancesClientTest extends GeneratedTest
 
         try {
             $client->getIamPolicy($project, $resource, $zone);
-            // If the $client method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function getScreenshotTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock response
-        $contents = 'contents-567321830';
-        $kind = 'kind3292052';
-        $expectedResponse = new Screenshot();
-        $expectedResponse->setContents($contents);
-        $expectedResponse->setKind($kind);
-        $transport->addResponse($expectedResponse);
-
-        // Mock request
-        $instance = 'instance555127957';
-        $project = 'project-309310695';
-        $zone = 'zone3744684';
-
-        $response = $client->getScreenshot($instance, $project, $zone);
-        $this->assertEquals($expectedResponse, $response);
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.cloud.compute.v1.Instances/GetScreenshot', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getInstance();
-
-        $this->assertProtobufEquals($instance, $actualValue);
-        $actualValue = $actualRequestObject->getProject();
-
-        $this->assertProtobufEquals($project, $actualValue);
-        $actualValue = $actualRequestObject->getZone();
-
-        $this->assertProtobufEquals($zone, $actualValue);
-
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function getScreenshotExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $transport->addResponse(null, $status);
-
-        // Mock request
-        $instance = 'instance555127957';
-        $project = 'project-309310695';
-        $zone = 'zone3744684';
-
-        try {
-            $client->getScreenshot($instance, $project, $zone);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

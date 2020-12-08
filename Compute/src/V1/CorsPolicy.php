@@ -19,7 +19,7 @@ class CorsPolicy extends \Google\Protobuf\Internal\Message
      * In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This translates to the Access-Control-Allow-Credentials header.
      * Default is false.
      *
-     * Generated from protobuf field <code>bool allow_credentials = 481263366;</code>
+     * Generated from protobuf field <code>bool allow_credentials = 212827910;</code>
      */
     private $allow_credentials = false;
     /**
@@ -51,7 +51,7 @@ class CorsPolicy extends \Google\Protobuf\Internal\Message
     /**
      * If true, specifies the CORS policy is disabled. The default value of false, which indicates that the CORS policy is in effect.
      *
-     * Generated from protobuf field <code>bool disabled = 270940796;</code>
+     * Generated from protobuf field <code>bool disabled = 2505340;</code>
      */
     private $disabled = false;
     /**
@@ -63,7 +63,7 @@ class CorsPolicy extends \Google\Protobuf\Internal\Message
     /**
      * Specifies how long results of a preflight request can be cached in seconds. This translates to the Access-Control-Max-Age header.
      *
-     * Generated from protobuf field <code>int32 max_age = 307559332;</code>
+     * Generated from protobuf field <code>int32 max_age = 39123876;</code>
      */
     private $max_age = 0;
 
@@ -103,7 +103,7 @@ class CorsPolicy extends \Google\Protobuf\Internal\Message
      * In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This translates to the Access-Control-Allow-Credentials header.
      * Default is false.
      *
-     * Generated from protobuf field <code>bool allow_credentials = 481263366;</code>
+     * Generated from protobuf field <code>bool allow_credentials = 212827910;</code>
      * @return bool
      */
     public function getAllowCredentials()
@@ -115,7 +115,7 @@ class CorsPolicy extends \Google\Protobuf\Internal\Message
      * In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This translates to the Access-Control-Allow-Credentials header.
      * Default is false.
      *
-     * Generated from protobuf field <code>bool allow_credentials = 481263366;</code>
+     * Generated from protobuf field <code>bool allow_credentials = 212827910;</code>
      * @param bool $var
      * @return $this
      */
@@ -238,7 +238,7 @@ class CorsPolicy extends \Google\Protobuf\Internal\Message
     /**
      * If true, specifies the CORS policy is disabled. The default value of false, which indicates that the CORS policy is in effect.
      *
-     * Generated from protobuf field <code>bool disabled = 270940796;</code>
+     * Generated from protobuf field <code>bool disabled = 2505340;</code>
      * @return bool
      */
     public function getDisabled()
@@ -249,7 +249,7 @@ class CorsPolicy extends \Google\Protobuf\Internal\Message
     /**
      * If true, specifies the CORS policy is disabled. The default value of false, which indicates that the CORS policy is in effect.
      *
-     * Generated from protobuf field <code>bool disabled = 270940796;</code>
+     * Generated from protobuf field <code>bool disabled = 2505340;</code>
      * @param bool $var
      * @return $this
      */
@@ -290,7 +290,7 @@ class CorsPolicy extends \Google\Protobuf\Internal\Message
     /**
      * Specifies how long results of a preflight request can be cached in seconds. This translates to the Access-Control-Max-Age header.
      *
-     * Generated from protobuf field <code>int32 max_age = 307559332;</code>
+     * Generated from protobuf field <code>int32 max_age = 39123876;</code>
      * @return int
      */
     public function getMaxAge()
@@ -301,7 +301,7 @@ class CorsPolicy extends \Google\Protobuf\Internal\Message
     /**
      * Specifies how long results of a preflight request can be cached in seconds. This translates to the Access-Control-Max-Age header.
      *
-     * Generated from protobuf field <code>int32 max_age = 307559332;</code>
+     * Generated from protobuf field <code>int32 max_age = 39123876;</code>
      * @param int $var
      * @return $this
      */

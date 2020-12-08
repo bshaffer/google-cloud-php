@@ -41,7 +41,7 @@ class NetworkEndpointGroupList extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for this resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
@@ -183,7 +183,7 @@ class NetworkEndpointGroupList extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for this resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -194,7 +194,7 @@ class NetworkEndpointGroupList extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for this resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */

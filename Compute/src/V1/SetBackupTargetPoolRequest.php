@@ -48,7 +48,7 @@ class SetBackupTargetPoolRequest extends \Google\Protobuf\Internal\Message
      */
     private $target_pool = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 255286256;</code>
      */
     private $target_reference_resource = null;
 
@@ -213,7 +213,7 @@ class SetBackupTargetPoolRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 255286256;</code>
      * @return \Google\Cloud\Compute\V1\TargetReference
      */
     public function getTargetReferenceResource()
@@ -232,7 +232,7 @@ class SetBackupTargetPoolRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 255286256;</code>
      * @param \Google\Cloud\Compute\V1\TargetReference $var
      * @return $this
      */

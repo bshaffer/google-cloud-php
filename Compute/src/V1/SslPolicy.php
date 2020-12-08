@@ -32,13 +32,13 @@ class SslPolicy extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
      * [Output Only] The list of features enabled in the SSL policy.
      *
-     * Generated from protobuf field <code>repeated string enabled_features = 469017467;</code>
+     * Generated from protobuf field <code>repeated string enabled_features = 200582011;</code>
      */
     private $enabled_features;
     /**
@@ -81,13 +81,13 @@ class SslPolicy extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
      * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     private $warnings;
 
@@ -187,7 +187,7 @@ class SslPolicy extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -198,7 +198,7 @@ class SslPolicy extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -213,7 +213,7 @@ class SslPolicy extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The list of features enabled in the SSL policy.
      *
-     * Generated from protobuf field <code>repeated string enabled_features = 469017467;</code>
+     * Generated from protobuf field <code>repeated string enabled_features = 200582011;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getEnabledFeatures()
@@ -224,7 +224,7 @@ class SslPolicy extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The list of features enabled in the SSL policy.
      *
-     * Generated from protobuf field <code>repeated string enabled_features = 469017467;</code>
+     * Generated from protobuf field <code>repeated string enabled_features = 200582011;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -397,7 +397,7 @@ class SslPolicy extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -408,7 +408,7 @@ class SslPolicy extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */
@@ -423,7 +423,7 @@ class SslPolicy extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getWarnings()
@@ -434,7 +434,7 @@ class SslPolicy extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      * @param \Google\Cloud\Compute\V1\Warnings[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

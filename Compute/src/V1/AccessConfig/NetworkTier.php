@@ -22,13 +22,13 @@ class NetworkTier
      */
     const UNDEFINED_NETWORK_TIER = 0;
     /**
-     * Generated from protobuf enum <code>PREMIUM = 399530551;</code>
+     * Generated from protobuf enum <code>PREMIUM = 131095095;</code>
      */
-    const PREMIUM = 399530551;
+    const PREMIUM = 131095095;
     /**
-     * Generated from protobuf enum <code>STANDARD = 484642493;</code>
+     * Generated from protobuf enum <code>STANDARD = 216207037;</code>
      */
-    const STANDARD = 484642493;
+    const STANDARD = 216207037;
 
     private static $valueToName = [
         self::UNDEFINED_NETWORK_TIER => 'UNDEFINED_NETWORK_TIER',

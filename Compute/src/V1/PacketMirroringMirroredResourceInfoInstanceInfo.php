@@ -17,7 +17,7 @@ class PacketMirroringMirroredResourceInfoInstanceInfo extends \Google\Protobuf\I
     /**
      * [Output Only] Unique identifier for the instance; defined by the server.
      *
-     * Generated from protobuf field <code>string canonical_url = 512294820;</code>
+     * Generated from protobuf field <code>string canonical_url = 243859364;</code>
      */
     private $canonical_url = '';
     /**
@@ -47,7 +47,7 @@ class PacketMirroringMirroredResourceInfoInstanceInfo extends \Google\Protobuf\I
     /**
      * [Output Only] Unique identifier for the instance; defined by the server.
      *
-     * Generated from protobuf field <code>string canonical_url = 512294820;</code>
+     * Generated from protobuf field <code>string canonical_url = 243859364;</code>
      * @return string
      */
     public function getCanonicalUrl()
@@ -58,7 +58,7 @@ class PacketMirroringMirroredResourceInfoInstanceInfo extends \Google\Protobuf\I
     /**
      * [Output Only] Unique identifier for the instance; defined by the server.
      *
-     * Generated from protobuf field <code>string canonical_url = 512294820;</code>
+     * Generated from protobuf field <code>string canonical_url = 243859364;</code>
      * @param string $var
      * @return $this
      */

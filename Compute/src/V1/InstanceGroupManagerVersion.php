@@ -17,7 +17,7 @@ class InstanceGroupManagerVersion extends \Google\Protobuf\Internal\Message
     /**
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached.
      *
-     * Generated from protobuf field <code>string instance_template = 309248228;</code>
+     * Generated from protobuf field <code>string instance_template = 40812772;</code>
      */
     private $instance_template = '';
     /**
@@ -59,7 +59,7 @@ class InstanceGroupManagerVersion extends \Google\Protobuf\Internal\Message
     /**
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached.
      *
-     * Generated from protobuf field <code>string instance_template = 309248228;</code>
+     * Generated from protobuf field <code>string instance_template = 40812772;</code>
      * @return string
      */
     public function getInstanceTemplate()
@@ -70,7 +70,7 @@ class InstanceGroupManagerVersion extends \Google\Protobuf\Internal\Message
     /**
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached.
      *
-     * Generated from protobuf field <code>string instance_template = 309248228;</code>
+     * Generated from protobuf field <code>string instance_template = 40812772;</code>
      * @param string $var
      * @return $this
      */

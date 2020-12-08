@@ -17,7 +17,7 @@ class CommitmentsScopedList extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of commitments contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
      */
     private $commitments;
     /**
@@ -47,7 +47,7 @@ class CommitmentsScopedList extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of commitments contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getCommitments()
@@ -58,7 +58,7 @@ class CommitmentsScopedList extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of commitments contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
      * @param \Google\Cloud\Compute\V1\Commitment[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

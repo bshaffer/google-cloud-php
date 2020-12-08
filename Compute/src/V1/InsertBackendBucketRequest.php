@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class InsertBackendBucketRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 380757784;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 112322328;</code>
      */
     private $backend_bucket_resource = null;
     /**
@@ -55,7 +55,7 @@ class InsertBackendBucketRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 380757784;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 112322328;</code>
      * @return \Google\Cloud\Compute\V1\BackendBucket
      */
     public function getBackendBucketResource()
@@ -74,7 +74,7 @@ class InsertBackendBucketRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 380757784;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 112322328;</code>
      * @param \Google\Cloud\Compute\V1\BackendBucket $var
      * @return $this
      */

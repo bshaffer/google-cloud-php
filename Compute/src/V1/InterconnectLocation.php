@@ -19,7 +19,7 @@ class InterconnectLocation extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
      *
-     * Generated from protobuf field <code>string address = 462920692;</code>
+     * Generated from protobuf field <code>string address = 194485236;</code>
      */
     private $address = '';
     /**
@@ -54,13 +54,13 @@ class InterconnectLocation extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An optional description of the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
      * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
      *
-     * Generated from protobuf field <code>string facility_provider = 533303309;</code>
+     * Generated from protobuf field <code>string facility_provider = 264867853;</code>
      */
     private $facility_provider = '';
     /**
@@ -90,19 +90,19 @@ class InterconnectLocation extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb).
      *
-     * Generated from protobuf field <code>string peeringdb_facility_id = 536567094;</code>
+     * Generated from protobuf field <code>string peeringdb_facility_id = 268131638;</code>
      */
     private $peeringdb_facility_id = '';
     /**
      * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;</code>
      */
     private $region_infos;
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
@@ -167,7 +167,7 @@ class InterconnectLocation extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
      *
-     * Generated from protobuf field <code>string address = 462920692;</code>
+     * Generated from protobuf field <code>string address = 194485236;</code>
      * @return string
      */
     public function getAddress()
@@ -178,7 +178,7 @@ class InterconnectLocation extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
      *
-     * Generated from protobuf field <code>string address = 462920692;</code>
+     * Generated from protobuf field <code>string address = 194485236;</code>
      * @param string $var
      * @return $this
      */
@@ -307,7 +307,7 @@ class InterconnectLocation extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An optional description of the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -318,7 +318,7 @@ class InterconnectLocation extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An optional description of the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -333,7 +333,7 @@ class InterconnectLocation extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
      *
-     * Generated from protobuf field <code>string facility_provider = 533303309;</code>
+     * Generated from protobuf field <code>string facility_provider = 264867853;</code>
      * @return string
      */
     public function getFacilityProvider()
@@ -344,7 +344,7 @@ class InterconnectLocation extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
      *
-     * Generated from protobuf field <code>string facility_provider = 533303309;</code>
+     * Generated from protobuf field <code>string facility_provider = 264867853;</code>
      * @param string $var
      * @return $this
      */
@@ -463,7 +463,7 @@ class InterconnectLocation extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb).
      *
-     * Generated from protobuf field <code>string peeringdb_facility_id = 536567094;</code>
+     * Generated from protobuf field <code>string peeringdb_facility_id = 268131638;</code>
      * @return string
      */
     public function getPeeringdbFacilityId()
@@ -474,7 +474,7 @@ class InterconnectLocation extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb).
      *
-     * Generated from protobuf field <code>string peeringdb_facility_id = 536567094;</code>
+     * Generated from protobuf field <code>string peeringdb_facility_id = 268131638;</code>
      * @param string $var
      * @return $this
      */
@@ -489,7 +489,7 @@ class InterconnectLocation extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getRegionInfos()
@@ -500,7 +500,7 @@ class InterconnectLocation extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;</code>
      * @param \Google\Cloud\Compute\V1\InterconnectLocationRegionInfo[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -515,7 +515,7 @@ class InterconnectLocation extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -526,7 +526,7 @@ class InterconnectLocation extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */

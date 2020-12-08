@@ -19,7 +19,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Set to true if snapshots are automatically created by applying resource policy on the target disk.
      *
-     * Generated from protobuf field <code>bool auto_created = 463922264;</code>
+     * Generated from protobuf field <code>bool auto_created = 195486808;</code>
      */
     private $auto_created = false;
     /**
@@ -31,19 +31,19 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
      * [Output Only] Size of the source disk, specified in GB.
      *
-     * Generated from protobuf field <code>string disk_size_gb = 316263735;</code>
+     * Generated from protobuf field <code>string disk_size_gb = 47828279;</code>
      */
     private $disk_size_gb = '';
     /**
      * [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
      *
-     * Generated from protobuf field <code>string download_bytes = 435054068;</code>
+     * Generated from protobuf field <code>string download_bytes = 166618612;</code>
      */
     private $download_bytes = '';
     /**
@@ -68,7 +68,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * Labels to apply to this snapshot. These can be later modified by the setLabels method. Label values may be empty.
      *
-     * Generated from protobuf field <code>map<string, string> labels = 500195327;</code>
+     * Generated from protobuf field <code>map<string, string> labels = 231759871;</code>
      */
     private $labels;
     /**
@@ -80,7 +80,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of public visible licenses that apply to this snapshot. This can be because the original image had licenses attached (such as a Windows image).
      *
-     * Generated from protobuf field <code>repeated string licenses = 337642578;</code>
+     * Generated from protobuf field <code>repeated string licenses = 69207122;</code>
      */
     private $licenses;
     /**
@@ -92,7 +92,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
@@ -105,21 +105,21 @@ class Snapshot extends \Google\Protobuf\Internal\Message
      */
     private $snapshot_encryption_key = null;
     /**
-     * The source disk used to create this snapshot.
+     * [Output Only] The source disk used to create this snapshot.
      *
-     * Generated from protobuf field <code>string source_disk = 451753793;</code>
+     * Generated from protobuf field <code>string source_disk = 183318337;</code>
      */
     private $source_disk = '';
     /**
      * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 263065697;</code>
      */
     private $source_disk_encryption_key = null;
     /**
      * [Output Only] The ID value of the disk used to create this snapshot. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given disk name.
      *
-     * Generated from protobuf field <code>string source_disk_id = 454190809;</code>
+     * Generated from protobuf field <code>string source_disk_id = 185755353;</code>
      */
     private $source_disk_id = '';
     /**
@@ -131,19 +131,19 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A size of the storage used by the snapshot. As snapshots share storage, this number is expected to change with snapshot creation/deletion.
      *
-     * Generated from protobuf field <code>string storage_bytes = 424631719;</code>
+     * Generated from protobuf field <code>string storage_bytes = 156196263;</code>
      */
     private $storage_bytes = '';
     /**
      * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 222303626;</code>
      */
     private $storage_bytes_status = 0;
     /**
      * Cloud Storage bucket storage location of the snapshot (regional or multi-regional).
      *
-     * Generated from protobuf field <code>repeated string storage_locations = 328005274;</code>
+     * Generated from protobuf field <code>repeated string storage_locations = 59569818;</code>
      */
     private $storage_locations;
 
@@ -186,7 +186,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
      *           Customer-supplied encryption keys do not protect access to metadata of the snapshot.
      *           If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
      *     @type string $source_disk
-     *           The source disk used to create this snapshot.
+     *           [Output Only] The source disk used to create this snapshot.
      *     @type \Google\Cloud\Compute\V1\CustomerEncryptionKey $source_disk_encryption_key
      *           The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
      *     @type string $source_disk_id
@@ -209,7 +209,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Set to true if snapshots are automatically created by applying resource policy on the target disk.
      *
-     * Generated from protobuf field <code>bool auto_created = 463922264;</code>
+     * Generated from protobuf field <code>bool auto_created = 195486808;</code>
      * @return bool
      */
     public function getAutoCreated()
@@ -220,7 +220,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Set to true if snapshots are automatically created by applying resource policy on the target disk.
      *
-     * Generated from protobuf field <code>bool auto_created = 463922264;</code>
+     * Generated from protobuf field <code>bool auto_created = 195486808;</code>
      * @param bool $var
      * @return $this
      */
@@ -261,7 +261,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -272,7 +272,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -287,7 +287,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Size of the source disk, specified in GB.
      *
-     * Generated from protobuf field <code>string disk_size_gb = 316263735;</code>
+     * Generated from protobuf field <code>string disk_size_gb = 47828279;</code>
      * @return string
      */
     public function getDiskSizeGb()
@@ -298,7 +298,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Size of the source disk, specified in GB.
      *
-     * Generated from protobuf field <code>string disk_size_gb = 316263735;</code>
+     * Generated from protobuf field <code>string disk_size_gb = 47828279;</code>
      * @param string $var
      * @return $this
      */
@@ -313,7 +313,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
      *
-     * Generated from protobuf field <code>string download_bytes = 435054068;</code>
+     * Generated from protobuf field <code>string download_bytes = 166618612;</code>
      * @return string
      */
     public function getDownloadBytes()
@@ -324,7 +324,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
      *
-     * Generated from protobuf field <code>string download_bytes = 435054068;</code>
+     * Generated from protobuf field <code>string download_bytes = 166618612;</code>
      * @param string $var
      * @return $this
      */
@@ -419,7 +419,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * Labels to apply to this snapshot. These can be later modified by the setLabels method. Label values may be empty.
      *
-     * Generated from protobuf field <code>map<string, string> labels = 500195327;</code>
+     * Generated from protobuf field <code>map<string, string> labels = 231759871;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getLabels()
@@ -430,7 +430,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * Labels to apply to this snapshot. These can be later modified by the setLabels method. Label values may be empty.
      *
-     * Generated from protobuf field <code>map<string, string> labels = 500195327;</code>
+     * Generated from protobuf field <code>map<string, string> labels = 231759871;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
@@ -471,7 +471,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of public visible licenses that apply to this snapshot. This can be because the original image had licenses attached (such as a Windows image).
      *
-     * Generated from protobuf field <code>repeated string licenses = 337642578;</code>
+     * Generated from protobuf field <code>repeated string licenses = 69207122;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getLicenses()
@@ -482,7 +482,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of public visible licenses that apply to this snapshot. This can be because the original image had licenses attached (such as a Windows image).
      *
-     * Generated from protobuf field <code>repeated string licenses = 337642578;</code>
+     * Generated from protobuf field <code>repeated string licenses = 69207122;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -523,7 +523,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -534,7 +534,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */
@@ -589,9 +589,9 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The source disk used to create this snapshot.
+     * [Output Only] The source disk used to create this snapshot.
      *
-     * Generated from protobuf field <code>string source_disk = 451753793;</code>
+     * Generated from protobuf field <code>string source_disk = 183318337;</code>
      * @return string
      */
     public function getSourceDisk()
@@ -600,9 +600,9 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The source disk used to create this snapshot.
+     * [Output Only] The source disk used to create this snapshot.
      *
-     * Generated from protobuf field <code>string source_disk = 451753793;</code>
+     * Generated from protobuf field <code>string source_disk = 183318337;</code>
      * @param string $var
      * @return $this
      */
@@ -617,7 +617,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 263065697;</code>
      * @return \Google\Cloud\Compute\V1\CustomerEncryptionKey
      */
     public function getSourceDiskEncryptionKey()
@@ -638,7 +638,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 263065697;</code>
      * @param \Google\Cloud\Compute\V1\CustomerEncryptionKey $var
      * @return $this
      */
@@ -653,7 +653,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The ID value of the disk used to create this snapshot. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given disk name.
      *
-     * Generated from protobuf field <code>string source_disk_id = 454190809;</code>
+     * Generated from protobuf field <code>string source_disk_id = 185755353;</code>
      * @return string
      */
     public function getSourceDiskId()
@@ -664,7 +664,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The ID value of the disk used to create this snapshot. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given disk name.
      *
-     * Generated from protobuf field <code>string source_disk_id = 454190809;</code>
+     * Generated from protobuf field <code>string source_disk_id = 185755353;</code>
      * @param string $var
      * @return $this
      */
@@ -705,7 +705,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A size of the storage used by the snapshot. As snapshots share storage, this number is expected to change with snapshot creation/deletion.
      *
-     * Generated from protobuf field <code>string storage_bytes = 424631719;</code>
+     * Generated from protobuf field <code>string storage_bytes = 156196263;</code>
      * @return string
      */
     public function getStorageBytes()
@@ -716,7 +716,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A size of the storage used by the snapshot. As snapshots share storage, this number is expected to change with snapshot creation/deletion.
      *
-     * Generated from protobuf field <code>string storage_bytes = 424631719;</code>
+     * Generated from protobuf field <code>string storage_bytes = 156196263;</code>
      * @param string $var
      * @return $this
      */
@@ -731,7 +731,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 222303626;</code>
      * @return int
      */
     public function getStorageBytesStatus()
@@ -742,7 +742,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 222303626;</code>
      * @param int $var
      * @return $this
      */
@@ -757,7 +757,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * Cloud Storage bucket storage location of the snapshot (regional or multi-regional).
      *
-     * Generated from protobuf field <code>repeated string storage_locations = 328005274;</code>
+     * Generated from protobuf field <code>repeated string storage_locations = 59569818;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getStorageLocations()
@@ -768,7 +768,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     /**
      * Cloud Storage bucket storage location of the snapshot (regional or multi-regional).
      *
-     * Generated from protobuf field <code>repeated string storage_locations = 328005274;</code>
+     * Generated from protobuf field <code>repeated string storage_locations = 59569818;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

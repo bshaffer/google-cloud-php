@@ -11,7 +11,6 @@ use UnexpectedValueException;
  * When the loadBalancingScheme is EXTERNAL, possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. You can use GENERATED_COOKIE if the protocol is HTTP or HTTPS.
  * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
  * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
- * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
  *
  * Protobuf type <code>google.cloud.compute.v1.BackendService.SessionAffinity</code>
  */
@@ -24,9 +23,9 @@ class SessionAffinity
      */
     const UNDEFINED_SESSION_AFFINITY = 0;
     /**
-     * Generated from protobuf enum <code>CLIENT_IP = 345665051;</code>
+     * Generated from protobuf enum <code>CLIENT_IP = 77229595;</code>
      */
-    const CLIENT_IP = 345665051;
+    const CLIENT_IP = 77229595;
     /**
      * Generated from protobuf enum <code>CLIENT_IP_PORT_PROTO = 221722926;</code>
      */
@@ -36,17 +35,17 @@ class SessionAffinity
      */
     const CLIENT_IP_PROTO = 25322148;
     /**
-     * Generated from protobuf enum <code>GENERATED_COOKIE = 370321204;</code>
+     * Generated from protobuf enum <code>GENERATED_COOKIE = 101885748;</code>
      */
-    const GENERATED_COOKIE = 370321204;
+    const GENERATED_COOKIE = 101885748;
     /**
      * Generated from protobuf enum <code>HEADER_FIELD = 200737960;</code>
      */
     const HEADER_FIELD = 200737960;
     /**
-     * Generated from protobuf enum <code>HTTP_COOKIE = 494981627;</code>
+     * Generated from protobuf enum <code>HTTP_COOKIE = 226546171;</code>
      */
-    const HTTP_COOKIE = 494981627;
+    const HTTP_COOKIE = 226546171;
     /**
      * Generated from protobuf enum <code>NONE = 2402104;</code>
      */

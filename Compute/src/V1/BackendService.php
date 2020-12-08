@@ -21,17 +21,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class BackendService extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Lifetime of cookies in seconds. Only applicable if the loadBalancingScheme is EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, the protocol is HTTP or HTTPS, and the sessionAffinity is GENERATED_COOKIE, or HTTP_COOKIE.
      * If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400).
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
-     * Generated from protobuf field <code>int32 affinity_cookie_ttl_sec = 369996954;</code>
+     * Generated from protobuf field <code>int32 affinity_cookie_ttl_sec = 101561498;</code>
      */
     private $affinity_cookie_ttl_sec = 0;
     /**
      * The list of backends that serve this BackendService.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
      */
     private $backends;
     /**
@@ -45,13 +43,12 @@ class BackendService extends \Google\Protobuf\Internal\Message
      * This field is applicable to either:
      * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
      * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 152904605;</code>
      */
     private $circuit_breakers = null;
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 192661291;</code>
      */
     private $connection_draining = null;
     /**
@@ -59,7 +56,6 @@ class BackendService extends \Google\Protobuf\Internal\Message
      * This field is applicable to either:
      * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
      * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;</code>
      */
@@ -79,7 +75,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -104,7 +100,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     /**
      * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
      *
-     * Generated from protobuf field <code>repeated string health_checks = 448370606;</code>
+     * Generated from protobuf field <code>repeated string health_checks = 179935150;</code>
      */
     private $health_checks;
     /**
@@ -128,7 +124,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the load balancer type. Choose EXTERNAL for load balancers that receive traffic from external clients. Choose INTERNAL for Internal TCP/UDP Load Balancing. Choose INTERNAL_MANAGED for Internal HTTP(S) Load Balancing. Choose INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancing cannot be used with another. For more information, refer to Choosing a load balancer.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 95454788;</code>
      */
     private $load_balancing_scheme = 0;
     /**
@@ -142,8 +138,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
      * This field is applicable to either:
      * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
      * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect.
-     * Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * If sessionAffinity is not NONE, and this field is not set to >MAGLEV or RING_HASH, session affinity settings will not take effect.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;</code>
      */
@@ -151,7 +146,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     /**
      * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 82864285;</code>
      */
     private $log_config = null;
     /**
@@ -171,9 +166,8 @@ class BackendService extends \Google\Protobuf\Internal\Message
      * This field is applicable to either:
      * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
      * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 86189630;</code>
      */
     private $outlier_detection = null;
     /**
@@ -193,7 +187,6 @@ class BackendService extends \Google\Protobuf\Internal\Message
     /**
      * The protocol this BackendService uses to communicate with backends.
      * Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
-     * Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
      */
@@ -213,7 +206,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
@@ -221,9 +214,8 @@ class BackendService extends \Google\Protobuf\Internal\Message
      * When the loadBalancingScheme is EXTERNAL, possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. You can use GENERATED_COOKIE if the protocol is HTTP or HTTPS.
      * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
      * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 195453105;</code>
      */
     private $session_affinity = 0;
     /**
@@ -240,9 +232,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $affinity_cookie_ttl_sec
-     *           Lifetime of cookies in seconds. Only applicable if the loadBalancingScheme is EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, the protocol is HTTP or HTTPS, and the sessionAffinity is GENERATED_COOKIE, or HTTP_COOKIE.
      *           If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400).
-     *           Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      *     @type \Google\Cloud\Compute\V1\Backend[]|\Google\Protobuf\Internal\RepeatedField $backends
      *           The list of backends that serve this BackendService.
      *     @type \Google\Cloud\Compute\V1\BackendServiceCdnPolicy $cdn_policy
@@ -252,14 +242,12 @@ class BackendService extends \Google\Protobuf\Internal\Message
      *           This field is applicable to either:
      *           - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
      *           - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     *           Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      *     @type \Google\Cloud\Compute\V1\ConnectionDraining $connection_draining
      *     @type \Google\Cloud\Compute\V1\ConsistentHashLoadBalancerSettings $consistent_hash
      *           Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH.
      *           This field is applicable to either:
      *           - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
      *           - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     *           Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      *     @type string $creation_timestamp
      *           [Output Only] Creation timestamp in RFC3339 text format.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $custom_request_headers
@@ -294,8 +282,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
      *           This field is applicable to either:
      *           - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
      *           - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     *           If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect.
-     *           Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     *           If sessionAffinity is not NONE, and this field is not set to >MAGLEV or RING_HASH, session affinity settings will not take effect.
      *     @type \Google\Cloud\Compute\V1\BackendServiceLogConfig $log_config
      *           This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
      *     @type string $name
@@ -307,7 +294,6 @@ class BackendService extends \Google\Protobuf\Internal\Message
      *           This field is applicable to either:
      *           - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
      *           - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     *           Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      *     @type int $port
      *           Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.
      *           This cannot be used if the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
@@ -317,7 +303,6 @@ class BackendService extends \Google\Protobuf\Internal\Message
      *     @type int $protocol
      *           The protocol this BackendService uses to communicate with backends.
      *           Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
-     *           Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
      *     @type string $region
      *           [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      *     @type string $security_policy
@@ -329,7 +314,6 @@ class BackendService extends \Google\Protobuf\Internal\Message
      *           When the loadBalancingScheme is EXTERNAL, possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. You can use GENERATED_COOKIE if the protocol is HTTP or HTTPS.
      *           When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
      *           When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
-     *           Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      *     @type int $timeout_sec
      *           The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds.
      * }
@@ -340,11 +324,9 @@ class BackendService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Lifetime of cookies in seconds. Only applicable if the loadBalancingScheme is EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, the protocol is HTTP or HTTPS, and the sessionAffinity is GENERATED_COOKIE, or HTTP_COOKIE.
      * If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400).
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
-     * Generated from protobuf field <code>int32 affinity_cookie_ttl_sec = 369996954;</code>
+     * Generated from protobuf field <code>int32 affinity_cookie_ttl_sec = 101561498;</code>
      * @return int
      */
     public function getAffinityCookieTtlSec()
@@ -353,11 +335,9 @@ class BackendService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Lifetime of cookies in seconds. Only applicable if the loadBalancingScheme is EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, the protocol is HTTP or HTTPS, and the sessionAffinity is GENERATED_COOKIE, or HTTP_COOKIE.
      * If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400).
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
-     * Generated from protobuf field <code>int32 affinity_cookie_ttl_sec = 369996954;</code>
+     * Generated from protobuf field <code>int32 affinity_cookie_ttl_sec = 101561498;</code>
      * @param int $var
      * @return $this
      */
@@ -372,7 +352,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     /**
      * The list of backends that serve this BackendService.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getBackends()
@@ -383,7 +363,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     /**
      * The list of backends that serve this BackendService.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
      * @param \Google\Cloud\Compute\V1\Backend[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -436,9 +416,8 @@ class BackendService extends \Google\Protobuf\Internal\Message
      * This field is applicable to either:
      * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
      * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 152904605;</code>
      * @return \Google\Cloud\Compute\V1\CircuitBreakers
      */
     public function getCircuitBreakers()
@@ -461,9 +440,8 @@ class BackendService extends \Google\Protobuf\Internal\Message
      * This field is applicable to either:
      * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
      * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 152904605;</code>
      * @param \Google\Cloud\Compute\V1\CircuitBreakers $var
      * @return $this
      */
@@ -476,7 +454,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 192661291;</code>
      * @return \Google\Cloud\Compute\V1\ConnectionDraining
      */
     public function getConnectionDraining()
@@ -495,7 +473,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 192661291;</code>
      * @param \Google\Cloud\Compute\V1\ConnectionDraining $var
      * @return $this
      */
@@ -512,7 +490,6 @@ class BackendService extends \Google\Protobuf\Internal\Message
      * This field is applicable to either:
      * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
      * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;</code>
      * @return \Google\Cloud\Compute\V1\ConsistentHashLoadBalancerSettings
@@ -537,7 +514,6 @@ class BackendService extends \Google\Protobuf\Internal\Message
      * This field is applicable to either:
      * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
      * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings consistent_hash = 905883;</code>
      * @param \Google\Cloud\Compute\V1\ConsistentHashLoadBalancerSettings $var
@@ -606,7 +582,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -617,7 +593,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -722,7 +698,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     /**
      * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
      *
-     * Generated from protobuf field <code>repeated string health_checks = 448370606;</code>
+     * Generated from protobuf field <code>repeated string health_checks = 179935150;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getHealthChecks()
@@ -733,7 +709,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     /**
      * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
      *
-     * Generated from protobuf field <code>repeated string health_checks = 448370606;</code>
+     * Generated from protobuf field <code>repeated string health_checks = 179935150;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -836,7 +812,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the load balancer type. Choose EXTERNAL for load balancers that receive traffic from external clients. Choose INTERNAL for Internal TCP/UDP Load Balancing. Choose INTERNAL_MANAGED for Internal HTTP(S) Load Balancing. Choose INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancing cannot be used with another. For more information, refer to Choosing a load balancer.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 95454788;</code>
      * @return int
      */
     public function getLoadBalancingScheme()
@@ -847,7 +823,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the load balancer type. Choose EXTERNAL for load balancers that receive traffic from external clients. Choose INTERNAL for Internal TCP/UDP Load Balancing. Choose INTERNAL_MANAGED for Internal HTTP(S) Load Balancing. Choose INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancing cannot be used with another. For more information, refer to Choosing a load balancer.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 95454788;</code>
      * @param int $var
      * @return $this
      */
@@ -870,8 +846,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
      * This field is applicable to either:
      * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
      * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect.
-     * Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * If sessionAffinity is not NONE, and this field is not set to >MAGLEV or RING_HASH, session affinity settings will not take effect.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;</code>
      * @return int
@@ -892,8 +867,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
      * This field is applicable to either:
      * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
      * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect.
-     * Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * If sessionAffinity is not NONE, and this field is not set to >MAGLEV or RING_HASH, session affinity settings will not take effect.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;</code>
      * @param int $var
@@ -910,7 +884,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     /**
      * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 82864285;</code>
      * @return \Google\Cloud\Compute\V1\BackendServiceLogConfig
      */
     public function getLogConfig()
@@ -931,7 +905,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     /**
      * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 82864285;</code>
      * @param \Google\Cloud\Compute\V1\BackendServiceLogConfig $var
      * @return $this
      */
@@ -1000,9 +974,8 @@ class BackendService extends \Google\Protobuf\Internal\Message
      * This field is applicable to either:
      * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
      * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 86189630;</code>
      * @return \Google\Cloud\Compute\V1\OutlierDetection
      */
     public function getOutlierDetection()
@@ -1025,9 +998,8 @@ class BackendService extends \Google\Protobuf\Internal\Message
      * This field is applicable to either:
      * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
      * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 86189630;</code>
      * @param \Google\Cloud\Compute\V1\OutlierDetection $var
      * @return $this
      */
@@ -1098,7 +1070,6 @@ class BackendService extends \Google\Protobuf\Internal\Message
     /**
      * The protocol this BackendService uses to communicate with backends.
      * Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
-     * Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
      * @return int
@@ -1111,7 +1082,6 @@ class BackendService extends \Google\Protobuf\Internal\Message
     /**
      * The protocol this BackendService uses to communicate with backends.
      * Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
-     * Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
      * @param int $var
@@ -1180,7 +1150,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -1191,7 +1161,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */
@@ -1208,9 +1178,8 @@ class BackendService extends \Google\Protobuf\Internal\Message
      * When the loadBalancingScheme is EXTERNAL, possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. You can use GENERATED_COOKIE if the protocol is HTTP or HTTPS.
      * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
      * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 195453105;</code>
      * @return int
      */
     public function getSessionAffinity()
@@ -1223,9 +1192,8 @@ class BackendService extends \Google\Protobuf\Internal\Message
      * When the loadBalancingScheme is EXTERNAL, possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. You can use GENERATED_COOKIE if the protocol is HTTP or HTTPS.
      * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
      * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 195453105;</code>
      * @param int $var
      * @return $this
      */

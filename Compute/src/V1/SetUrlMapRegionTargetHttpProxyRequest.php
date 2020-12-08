@@ -42,7 +42,7 @@ class SetUrlMapRegionTargetHttpProxyRequest extends \Google\Protobuf\Internal\Me
      */
     private $target_http_proxy = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 398701333;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 130265877;</code>
      */
     private $url_map_reference_resource = null;
 
@@ -179,7 +179,7 @@ class SetUrlMapRegionTargetHttpProxyRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 398701333;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 130265877;</code>
      * @return \Google\Cloud\Compute\V1\UrlMapReference
      */
     public function getUrlMapReferenceResource()
@@ -198,7 +198,7 @@ class SetUrlMapRegionTargetHttpProxyRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 398701333;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 130265877;</code>
      * @param \Google\Cloud\Compute\V1\UrlMapReference $var
      * @return $this
      */

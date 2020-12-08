@@ -28,7 +28,7 @@ class UpdateInstanceRequest extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
      *
-     * Generated from protobuf field <code>string minimal_action = 270567060;</code>
+     * Generated from protobuf field <code>string minimal_action = 2131604;</code>
      */
     private $minimal_action = '';
     /**
@@ -147,7 +147,7 @@ class UpdateInstanceRequest extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
      *
-     * Generated from protobuf field <code>string minimal_action = 270567060;</code>
+     * Generated from protobuf field <code>string minimal_action = 2131604;</code>
      * @return string
      */
     public function getMinimalAction()
@@ -158,7 +158,7 @@ class UpdateInstanceRequest extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
      *
-     * Generated from protobuf field <code>string minimal_action = 270567060;</code>
+     * Generated from protobuf field <code>string minimal_action = 2131604;</code>
      * @param string $var
      * @return $this
      */

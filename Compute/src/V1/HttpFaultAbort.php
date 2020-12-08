@@ -19,7 +19,7 @@ class HttpFaultAbort extends \Google\Protobuf\Internal\Message
      * The HTTP status code used to abort the request.
      * The value must be between 200 and 599 inclusive.
      *
-     * Generated from protobuf field <code>uint32 http_status = 468949897;</code>
+     * Generated from protobuf field <code>uint32 http_status = 200514441;</code>
      */
     private $http_status = 0;
     /**
@@ -53,7 +53,7 @@ class HttpFaultAbort extends \Google\Protobuf\Internal\Message
      * The HTTP status code used to abort the request.
      * The value must be between 200 and 599 inclusive.
      *
-     * Generated from protobuf field <code>uint32 http_status = 468949897;</code>
+     * Generated from protobuf field <code>uint32 http_status = 200514441;</code>
      * @return int
      */
     public function getHttpStatus()
@@ -65,7 +65,7 @@ class HttpFaultAbort extends \Google\Protobuf\Internal\Message
      * The HTTP status code used to abort the request.
      * The value must be between 200 and 599 inclusive.
      *
-     * Generated from protobuf field <code>uint32 http_status = 468949897;</code>
+     * Generated from protobuf field <code>uint32 http_status = 200514441;</code>
      * @param int $var
      * @return $this
      */

@@ -18,13 +18,13 @@ class UsageExportLocation extends \Google\Protobuf\Internal\Message
     /**
      * The name of an existing bucket in Cloud Storage where the usage report object is stored. The Google Service Account is granted write access to this bucket. This can either be the bucket name by itself, such as example-bucket, or the bucket name with gs:// or https://storage.googleapis.com/ in front of it, such as gs://example-bucket.
      *
-     * Generated from protobuf field <code>string bucket_name = 283610048;</code>
+     * Generated from protobuf field <code>string bucket_name = 15174592;</code>
      */
     private $bucket_name = '';
     /**
      * An optional prefix for the name of the usage report object stored in bucketName. If not supplied, defaults to usage. The report is stored as a CSV file named report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming conventions.
      *
-     * Generated from protobuf field <code>string report_name_prefix = 320198715;</code>
+     * Generated from protobuf field <code>string report_name_prefix = 51763259;</code>
      */
     private $report_name_prefix = '';
 
@@ -48,7 +48,7 @@ class UsageExportLocation extends \Google\Protobuf\Internal\Message
     /**
      * The name of an existing bucket in Cloud Storage where the usage report object is stored. The Google Service Account is granted write access to this bucket. This can either be the bucket name by itself, such as example-bucket, or the bucket name with gs:// or https://storage.googleapis.com/ in front of it, such as gs://example-bucket.
      *
-     * Generated from protobuf field <code>string bucket_name = 283610048;</code>
+     * Generated from protobuf field <code>string bucket_name = 15174592;</code>
      * @return string
      */
     public function getBucketName()
@@ -59,7 +59,7 @@ class UsageExportLocation extends \Google\Protobuf\Internal\Message
     /**
      * The name of an existing bucket in Cloud Storage where the usage report object is stored. The Google Service Account is granted write access to this bucket. This can either be the bucket name by itself, such as example-bucket, or the bucket name with gs:// or https://storage.googleapis.com/ in front of it, such as gs://example-bucket.
      *
-     * Generated from protobuf field <code>string bucket_name = 283610048;</code>
+     * Generated from protobuf field <code>string bucket_name = 15174592;</code>
      * @param string $var
      * @return $this
      */
@@ -74,7 +74,7 @@ class UsageExportLocation extends \Google\Protobuf\Internal\Message
     /**
      * An optional prefix for the name of the usage report object stored in bucketName. If not supplied, defaults to usage. The report is stored as a CSV file named report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming conventions.
      *
-     * Generated from protobuf field <code>string report_name_prefix = 320198715;</code>
+     * Generated from protobuf field <code>string report_name_prefix = 51763259;</code>
      * @return string
      */
     public function getReportNamePrefix()
@@ -85,7 +85,7 @@ class UsageExportLocation extends \Google\Protobuf\Internal\Message
     /**
      * An optional prefix for the name of the usage report object stored in bucketName. If not supplied, defaults to usage. The report is stored as a CSV file named report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming conventions.
      *
-     * Generated from protobuf field <code>string report_name_prefix = 320198715;</code>
+     * Generated from protobuf field <code>string report_name_prefix = 51763259;</code>
      * @param string $var
      * @return $this
      */

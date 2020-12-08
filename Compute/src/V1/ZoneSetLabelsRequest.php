@@ -23,7 +23,7 @@ class ZoneSetLabelsRequest extends \Google\Protobuf\Internal\Message
     /**
      * The labels to set for this resource.
      *
-     * Generated from protobuf field <code>map<string, string> labels = 500195327;</code>
+     * Generated from protobuf field <code>map<string, string> labels = 231759871;</code>
      */
     private $labels;
 
@@ -73,7 +73,7 @@ class ZoneSetLabelsRequest extends \Google\Protobuf\Internal\Message
     /**
      * The labels to set for this resource.
      *
-     * Generated from protobuf field <code>map<string, string> labels = 500195327;</code>
+     * Generated from protobuf field <code>map<string, string> labels = 231759871;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getLabels()
@@ -84,7 +84,7 @@ class ZoneSetLabelsRequest extends \Google\Protobuf\Internal\Message
     /**
      * The labels to set for this resource.
      *
-     * Generated from protobuf field <code>map<string, string> labels = 500195327;</code>
+     * Generated from protobuf field <code>map<string, string> labels = 231759871;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */

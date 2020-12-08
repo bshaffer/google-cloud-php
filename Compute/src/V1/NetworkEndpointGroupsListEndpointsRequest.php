@@ -17,7 +17,7 @@ class NetworkEndpointGroupsListEndpointsRequest extends \Google\Protobuf\Interna
     /**
      * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 380545845;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 112110389;</code>
      */
     private $health_status = 0;
 
@@ -39,7 +39,7 @@ class NetworkEndpointGroupsListEndpointsRequest extends \Google\Protobuf\Interna
     /**
      * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 380545845;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 112110389;</code>
      * @return int
      */
     public function getHealthStatus()
@@ -50,7 +50,7 @@ class NetworkEndpointGroupsListEndpointsRequest extends \Google\Protobuf\Interna
     /**
      * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 380545845;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 112110389;</code>
      * @param int $var
      * @return $this
      */

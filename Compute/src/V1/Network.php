@@ -34,7 +34,7 @@ class Network extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this field when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -62,12 +62,6 @@ class Network extends \Google\Protobuf\Internal\Message
      */
     private $kind = '';
     /**
-     * Maximum Transmission Unit in bytes. The minimum value for this field is 1460 and the maximum value is 1500 bytes.
-     *
-     * Generated from protobuf field <code>int32 mtu = 108462;</code>
-     */
-    private $mtu = 0;
-    /**
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
      *
      * Generated from protobuf field <code>string name = 3373707;</code>
@@ -82,19 +76,19 @@ class Network extends \Google\Protobuf\Internal\Message
     /**
      * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
      */
     private $routing_config = null;
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
      * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
      *
-     * Generated from protobuf field <code>repeated string subnetworks = 415853125;</code>
+     * Generated from protobuf field <code>repeated string subnetworks = 147417669;</code>
      */
     private $subnetworks;
 
@@ -121,8 +115,6 @@ class Network extends \Google\Protobuf\Internal\Message
      *           [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      *     @type string $kind
      *           [Output Only] Type of the resource. Always compute#network for networks.
-     *     @type int $mtu
-     *           Maximum Transmission Unit in bytes. The minimum value for this field is 1460 and the maximum value is 1500 bytes.
      *     @type string $name
      *           Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
      *     @type \Google\Cloud\Compute\V1\NetworkPeering[]|\Google\Protobuf\Internal\RepeatedField $peerings
@@ -201,7 +193,7 @@ class Network extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this field when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -212,7 +204,7 @@ class Network extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this field when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -329,32 +321,6 @@ class Network extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Maximum Transmission Unit in bytes. The minimum value for this field is 1460 and the maximum value is 1500 bytes.
-     *
-     * Generated from protobuf field <code>int32 mtu = 108462;</code>
-     * @return int
-     */
-    public function getMtu()
-    {
-        return $this->mtu;
-    }
-
-    /**
-     * Maximum Transmission Unit in bytes. The minimum value for this field is 1460 and the maximum value is 1500 bytes.
-     *
-     * Generated from protobuf field <code>int32 mtu = 108462;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setMtu($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->mtu = $var;
-
-        return $this;
-    }
-
-    /**
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
      *
      * Generated from protobuf field <code>string name = 3373707;</code>
@@ -409,7 +375,7 @@ class Network extends \Google\Protobuf\Internal\Message
     /**
      * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
      * @return \Google\Cloud\Compute\V1\NetworkRoutingConfig
      */
     public function getRoutingConfig()
@@ -430,7 +396,7 @@ class Network extends \Google\Protobuf\Internal\Message
     /**
      * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
      * @param \Google\Cloud\Compute\V1\NetworkRoutingConfig $var
      * @return $this
      */
@@ -445,7 +411,7 @@ class Network extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -456,7 +422,7 @@ class Network extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */
@@ -471,7 +437,7 @@ class Network extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
      *
-     * Generated from protobuf field <code>repeated string subnetworks = 415853125;</code>
+     * Generated from protobuf field <code>repeated string subnetworks = 147417669;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getSubnetworks()
@@ -482,7 +448,7 @@ class Network extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
      *
-     * Generated from protobuf field <code>repeated string subnetworks = 415853125;</code>
+     * Generated from protobuf field <code>repeated string subnetworks = 147417669;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

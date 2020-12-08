@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class BackendServiceReference extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string backend_service = 306946058;</code>
+     * Generated from protobuf field <code>string backend_service = 38510602;</code>
      */
     private $backend_service = '';
 
@@ -34,7 +34,7 @@ class BackendServiceReference extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string backend_service = 306946058;</code>
+     * Generated from protobuf field <code>string backend_service = 38510602;</code>
      * @return string
      */
     public function getBackendService()
@@ -43,7 +43,7 @@ class BackendServiceReference extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string backend_service = 306946058;</code>
+     * Generated from protobuf field <code>string backend_service = 38510602;</code>
      * @param string $var
      * @return $this
      */

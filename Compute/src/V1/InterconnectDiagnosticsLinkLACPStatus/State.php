@@ -22,9 +22,9 @@ class State
      */
     const UNDEFINED_STATE = 0;
     /**
-     * Generated from protobuf enum <code>ACTIVE = 314733318;</code>
+     * Generated from protobuf enum <code>ACTIVE = 46297862;</code>
      */
-    const ACTIVE = 314733318;
+    const ACTIVE = 46297862;
     /**
      * Generated from protobuf enum <code>DETACHED = 216562546;</code>
      */

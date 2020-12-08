@@ -12,12 +12,8 @@ use Google\Protobuf\Internal\GPBUtil;
  * Represents a Health Check resource.
  * Google Compute Engine has two Health Check resources:
  * * [Global](/compute/docs/reference/rest/{$api_version}/healthChecks) * [Regional](https://cloud.google.com/compute/docs/reference/rest/{$api_version}/regionHealthChecks)
- * Internal HTTP(S) load balancers must use regional health checks (`compute.v1.regionHealthChecks`).
- * Traffic Director must use global health checks (`compute.v1.HealthChecks`).
- * Internal TCP/UDP load balancers can use either regional or global health checks (`compute.v1.regionHealthChecks` or `compute.v1.HealthChecks`).
- * External HTTP(S), TCP proxy, and SSL proxy load balancers as well as managed instance group auto-healing must use global health checks (`compute.v1.HealthChecks`).
- * Network load balancers must use legacy HTTP health checks (httpHealthChecks).
- * For more information, see Health checks overview.
+ * Internal HTTP(S) load balancers must use regional health checks. Internal TCP/UDP load balancers can use either regional or global health checks. All other types of GCP load balancers and managed instance group auto-healing must use global health checks. For more information, read Health Check Concepts.
+ * To perform health checks on network load balancers, you must use either httpHealthChecks or httpsHealthChecks.
  *
  * Generated from protobuf message <code>google.cloud.compute.v1.HealthCheck</code>
  */
@@ -26,7 +22,7 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
     /**
      * How often (in seconds) to send a health check. The default value is 5 seconds.
      *
-     * Generated from protobuf field <code>int32 check_interval_sec = 345561006;</code>
+     * Generated from protobuf field <code>int32 check_interval_sec = 77125550;</code>
      */
     private $check_interval_sec = 0;
     /**
@@ -38,7 +34,7 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -48,7 +44,7 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
     /**
      * A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.
      *
-     * Generated from protobuf field <code>int32 healthy_threshold = 403212361;</code>
+     * Generated from protobuf field <code>int32 healthy_threshold = 134776905;</code>
      */
     private $healthy_threshold = 0;
     /**
@@ -56,11 +52,11 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
      */
     private $http2_health_check = null;
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 144151484;</code>
      */
     private $http_health_check = null;
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 167611449;</code>
      */
     private $https_health_check = null;
     /**
@@ -90,15 +86,15 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 11596984;</code>
      */
     private $ssl_health_check = null;
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 201544963;</code>
      */
     private $tcp_health_check = null;
     /**
@@ -166,7 +162,7 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
     /**
      * How often (in seconds) to send a health check. The default value is 5 seconds.
      *
-     * Generated from protobuf field <code>int32 check_interval_sec = 345561006;</code>
+     * Generated from protobuf field <code>int32 check_interval_sec = 77125550;</code>
      * @return int
      */
     public function getCheckIntervalSec()
@@ -177,7 +173,7 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
     /**
      * How often (in seconds) to send a health check. The default value is 5 seconds.
      *
-     * Generated from protobuf field <code>int32 check_interval_sec = 345561006;</code>
+     * Generated from protobuf field <code>int32 check_interval_sec = 77125550;</code>
      * @param int $var
      * @return $this
      */
@@ -218,7 +214,7 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -229,7 +225,7 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -276,7 +272,7 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
     /**
      * A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.
      *
-     * Generated from protobuf field <code>int32 healthy_threshold = 403212361;</code>
+     * Generated from protobuf field <code>int32 healthy_threshold = 134776905;</code>
      * @return int
      */
     public function getHealthyThreshold()
@@ -287,7 +283,7 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
     /**
      * A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.
      *
-     * Generated from protobuf field <code>int32 healthy_threshold = 403212361;</code>
+     * Generated from protobuf field <code>int32 healthy_threshold = 134776905;</code>
      * @param int $var
      * @return $this
      */
@@ -332,7 +328,7 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 144151484;</code>
      * @return \Google\Cloud\Compute\V1\HTTPHealthCheck
      */
     public function getHttpHealthCheck()
@@ -351,7 +347,7 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 144151484;</code>
      * @param \Google\Cloud\Compute\V1\HTTPHealthCheck $var
      * @return $this
      */
@@ -364,7 +360,7 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 167611449;</code>
      * @return \Google\Cloud\Compute\V1\HTTPSHealthCheck
      */
     public function getHttpsHealthCheck()
@@ -383,7 +379,7 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 167611449;</code>
      * @param \Google\Cloud\Compute\V1\HTTPSHealthCheck $var
      * @return $this
      */
@@ -502,7 +498,7 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -513,7 +509,7 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */
@@ -526,7 +522,7 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 11596984;</code>
      * @return \Google\Cloud\Compute\V1\SSLHealthCheck
      */
     public function getSslHealthCheck()
@@ -545,7 +541,7 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 11596984;</code>
      * @param \Google\Cloud\Compute\V1\SSLHealthCheck $var
      * @return $this
      */
@@ -558,7 +554,7 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 201544963;</code>
      * @return \Google\Cloud\Compute\V1\TCPHealthCheck
      */
     public function getTcpHealthCheck()
@@ -577,7 +573,7 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 201544963;</code>
      * @param \Google\Cloud\Compute\V1\TCPHealthCheck $var
      * @return $this
      */

@@ -15,19 +15,19 @@ use Google\Protobuf\Internal\GPBUtil;
 class NodeGroupAutoscalingPolicy extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The maximum number of nodes that the group should have. Must be set if autoscaling is enabled. Maximum value allowed is 100.
+     * The maximum number of nodes that the group should have.
      *
-     * Generated from protobuf field <code>int32 max_nodes = 297762838;</code>
+     * Generated from protobuf field <code>int32 max_nodes = 29327382;</code>
      */
     private $max_nodes = 0;
     /**
      * The minimum number of nodes that the group should have.
      *
-     * Generated from protobuf field <code>int32 min_nodes = 533370500;</code>
+     * Generated from protobuf field <code>int32 min_nodes = 264935044;</code>
      */
     private $min_nodes = 0;
     /**
-     * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see  Autoscaler modes.
+     * The autoscaling mode.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode mode = 3357091;</code>
      */
@@ -40,11 +40,11 @@ class NodeGroupAutoscalingPolicy extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $max_nodes
-     *           The maximum number of nodes that the group should have. Must be set if autoscaling is enabled. Maximum value allowed is 100.
+     *           The maximum number of nodes that the group should have.
      *     @type int $min_nodes
      *           The minimum number of nodes that the group should have.
      *     @type int $mode
-     *           The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see  Autoscaler modes.
+     *           The autoscaling mode.
      * }
      */
     public function __construct($data = NULL) {
@@ -53,9 +53,9 @@ class NodeGroupAutoscalingPolicy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The maximum number of nodes that the group should have. Must be set if autoscaling is enabled. Maximum value allowed is 100.
+     * The maximum number of nodes that the group should have.
      *
-     * Generated from protobuf field <code>int32 max_nodes = 297762838;</code>
+     * Generated from protobuf field <code>int32 max_nodes = 29327382;</code>
      * @return int
      */
     public function getMaxNodes()
@@ -64,9 +64,9 @@ class NodeGroupAutoscalingPolicy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The maximum number of nodes that the group should have. Must be set if autoscaling is enabled. Maximum value allowed is 100.
+     * The maximum number of nodes that the group should have.
      *
-     * Generated from protobuf field <code>int32 max_nodes = 297762838;</code>
+     * Generated from protobuf field <code>int32 max_nodes = 29327382;</code>
      * @param int $var
      * @return $this
      */
@@ -81,7 +81,7 @@ class NodeGroupAutoscalingPolicy extends \Google\Protobuf\Internal\Message
     /**
      * The minimum number of nodes that the group should have.
      *
-     * Generated from protobuf field <code>int32 min_nodes = 533370500;</code>
+     * Generated from protobuf field <code>int32 min_nodes = 264935044;</code>
      * @return int
      */
     public function getMinNodes()
@@ -92,7 +92,7 @@ class NodeGroupAutoscalingPolicy extends \Google\Protobuf\Internal\Message
     /**
      * The minimum number of nodes that the group should have.
      *
-     * Generated from protobuf field <code>int32 min_nodes = 533370500;</code>
+     * Generated from protobuf field <code>int32 min_nodes = 264935044;</code>
      * @param int $var
      * @return $this
      */
@@ -105,7 +105,7 @@ class NodeGroupAutoscalingPolicy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see  Autoscaler modes.
+     * The autoscaling mode.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode mode = 3357091;</code>
      * @return int
@@ -116,7 +116,7 @@ class NodeGroupAutoscalingPolicy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see  Autoscaler modes.
+     * The autoscaling mode.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode mode = 3357091;</code>
      * @param int $var

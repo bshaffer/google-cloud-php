@@ -17,7 +17,7 @@ class ManagedInstanceVersion extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
      *
-     * Generated from protobuf field <code>string instance_template = 309248228;</code>
+     * Generated from protobuf field <code>string instance_template = 40812772;</code>
      */
     private $instance_template = '';
     /**
@@ -47,7 +47,7 @@ class ManagedInstanceVersion extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
      *
-     * Generated from protobuf field <code>string instance_template = 309248228;</code>
+     * Generated from protobuf field <code>string instance_template = 40812772;</code>
      * @return string
      */
     public function getInstanceTemplate()
@@ -58,7 +58,7 @@ class ManagedInstanceVersion extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
      *
-     * Generated from protobuf field <code>string instance_template = 309248228;</code>
+     * Generated from protobuf field <code>string instance_template = 40812772;</code>
      * @param string $var
      * @return $this
      */

@@ -22,13 +22,13 @@ class Status
      */
     const UNDEFINED_STATUS = 0;
     /**
-     * Generated from protobuf enum <code>AVAILABLE = 442079913;</code>
+     * Generated from protobuf enum <code>AVAILABLE = 173644457;</code>
      */
-    const AVAILABLE = 442079913;
+    const AVAILABLE = 173644457;
     /**
-     * Generated from protobuf enum <code>CLOSED = 380163436;</code>
+     * Generated from protobuf enum <code>CLOSED = 111727980;</code>
      */
-    const CLOSED = 380163436;
+    const CLOSED = 111727980;
 
     private static $valueToName = [
         self::UNDEFINED_STATUS => 'UNDEFINED_STATUS',

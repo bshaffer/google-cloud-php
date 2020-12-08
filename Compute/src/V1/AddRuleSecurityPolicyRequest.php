@@ -28,7 +28,7 @@ class AddRuleSecurityPolicyRequest extends \Google\Protobuf\Internal\Message
      */
     private $security_policy = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987;</code>
      */
     private $security_policy_rule_resource = null;
 
@@ -103,7 +103,7 @@ class AddRuleSecurityPolicyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987;</code>
      * @return \Google\Cloud\Compute\V1\SecurityPolicyRule
      */
     public function getSecurityPolicyRuleResource()
@@ -122,7 +122,7 @@ class AddRuleSecurityPolicyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987;</code>
      * @param \Google\Cloud\Compute\V1\SecurityPolicyRule $var
      * @return $this
      */

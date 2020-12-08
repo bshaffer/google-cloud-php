@@ -19,7 +19,7 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
     /**
      * Determines whether this Attachment will carry packets. Not present for PARTNER_PROVIDER.
      *
-     * Generated from protobuf field <code>bool admin_enabled = 445675089;</code>
+     * Generated from protobuf field <code>bool admin_enabled = 177239633;</code>
      */
     private $admin_enabled = false;
     /**
@@ -49,7 +49,7 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] IPv4 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment.
      *
-     * Generated from protobuf field <code>string cloud_router_ip_address = 287392776;</code>
+     * Generated from protobuf field <code>string cloud_router_ip_address = 18957320;</code>
      */
     private $cloud_router_ip_address = '';
     /**
@@ -61,13 +61,13 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] IPv4 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
      *
-     * Generated from protobuf field <code>string customer_router_ip_address = 332475761;</code>
+     * Generated from protobuf field <code>string customer_router_ip_address = 64040305;</code>
      */
     private $customer_router_ip_address = '';
     /**
      * An optional description of this resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -82,7 +82,7 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Google reference ID, to be used when raising support tickets with Google or otherwise to debug backend connectivity issues. [Deprecated] This field is not used.
      *
-     * Generated from protobuf field <code>string google_reference_id = 534944469;</code>
+     * Generated from protobuf field <code>string google_reference_id = 266509013;</code>
      */
     private $google_reference_id = '';
     /**
@@ -120,13 +120,13 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
     /**
      * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED]. The opaque identifier of an PARTNER attachment used to initiate provisioning with a selected partner. Of the form "XXXXX/region/domain"
      *
-     * Generated from protobuf field <code>string pairing_key = 439695464;</code>
+     * Generated from protobuf field <code>string pairing_key = 171260008;</code>
      */
     private $pairing_key = '';
     /**
      * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
      *
-     * Generated from protobuf field <code>string partner_asn = 438166149;</code>
+     * Generated from protobuf field <code>string partner_asn = 169730693;</code>
      */
     private $partner_asn = '';
     /**
@@ -156,7 +156,7 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
@@ -277,7 +277,7 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
     /**
      * Determines whether this Attachment will carry packets. Not present for PARTNER_PROVIDER.
      *
-     * Generated from protobuf field <code>bool admin_enabled = 445675089;</code>
+     * Generated from protobuf field <code>bool admin_enabled = 177239633;</code>
      * @return bool
      */
     public function getAdminEnabled()
@@ -288,7 +288,7 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
     /**
      * Determines whether this Attachment will carry packets. Not present for PARTNER_PROVIDER.
      *
-     * Generated from protobuf field <code>bool admin_enabled = 445675089;</code>
+     * Generated from protobuf field <code>bool admin_enabled = 177239633;</code>
      * @param bool $var
      * @return $this
      */
@@ -379,7 +379,7 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] IPv4 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment.
      *
-     * Generated from protobuf field <code>string cloud_router_ip_address = 287392776;</code>
+     * Generated from protobuf field <code>string cloud_router_ip_address = 18957320;</code>
      * @return string
      */
     public function getCloudRouterIpAddress()
@@ -390,7 +390,7 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] IPv4 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment.
      *
-     * Generated from protobuf field <code>string cloud_router_ip_address = 287392776;</code>
+     * Generated from protobuf field <code>string cloud_router_ip_address = 18957320;</code>
      * @param string $var
      * @return $this
      */
@@ -431,7 +431,7 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] IPv4 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
      *
-     * Generated from protobuf field <code>string customer_router_ip_address = 332475761;</code>
+     * Generated from protobuf field <code>string customer_router_ip_address = 64040305;</code>
      * @return string
      */
     public function getCustomerRouterIpAddress()
@@ -442,7 +442,7 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] IPv4 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
      *
-     * Generated from protobuf field <code>string customer_router_ip_address = 332475761;</code>
+     * Generated from protobuf field <code>string customer_router_ip_address = 64040305;</code>
      * @param string $var
      * @return $this
      */
@@ -457,7 +457,7 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -468,7 +468,7 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -515,7 +515,7 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Google reference ID, to be used when raising support tickets with Google or otherwise to debug backend connectivity issues. [Deprecated] This field is not used.
      *
-     * Generated from protobuf field <code>string google_reference_id = 534944469;</code>
+     * Generated from protobuf field <code>string google_reference_id = 266509013;</code>
      * @return string
      */
     public function getGoogleReferenceId()
@@ -526,7 +526,7 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Google reference ID, to be used when raising support tickets with Google or otherwise to debug backend connectivity issues. [Deprecated] This field is not used.
      *
-     * Generated from protobuf field <code>string google_reference_id = 534944469;</code>
+     * Generated from protobuf field <code>string google_reference_id = 266509013;</code>
      * @param string $var
      * @return $this
      */
@@ -675,7 +675,7 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
     /**
      * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED]. The opaque identifier of an PARTNER attachment used to initiate provisioning with a selected partner. Of the form "XXXXX/region/domain"
      *
-     * Generated from protobuf field <code>string pairing_key = 439695464;</code>
+     * Generated from protobuf field <code>string pairing_key = 171260008;</code>
      * @return string
      */
     public function getPairingKey()
@@ -686,7 +686,7 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
     /**
      * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED]. The opaque identifier of an PARTNER attachment used to initiate provisioning with a selected partner. Of the form "XXXXX/region/domain"
      *
-     * Generated from protobuf field <code>string pairing_key = 439695464;</code>
+     * Generated from protobuf field <code>string pairing_key = 171260008;</code>
      * @param string $var
      * @return $this
      */
@@ -701,7 +701,7 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
     /**
      * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
      *
-     * Generated from protobuf field <code>string partner_asn = 438166149;</code>
+     * Generated from protobuf field <code>string partner_asn = 169730693;</code>
      * @return string
      */
     public function getPartnerAsn()
@@ -712,7 +712,7 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
     /**
      * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
      *
-     * Generated from protobuf field <code>string partner_asn = 438166149;</code>
+     * Generated from protobuf field <code>string partner_asn = 169730693;</code>
      * @param string $var
      * @return $this
      */
@@ -851,7 +851,7 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -862,7 +862,7 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */

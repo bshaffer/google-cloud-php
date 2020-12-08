@@ -18,7 +18,7 @@ class SslCertificateManagedSslCertificate extends \Google\Protobuf\Internal\Mess
     /**
      * [Output only] Detailed statuses of the domains specified for managed certificate resource.
      *
-     * Generated from protobuf field <code>map<string, string> domain_status = 360305613;</code>
+     * Generated from protobuf field <code>map<string, string> domain_status = 91870157;</code>
      */
     private $domain_status;
     /**
@@ -56,7 +56,7 @@ class SslCertificateManagedSslCertificate extends \Google\Protobuf\Internal\Mess
     /**
      * [Output only] Detailed statuses of the domains specified for managed certificate resource.
      *
-     * Generated from protobuf field <code>map<string, string> domain_status = 360305613;</code>
+     * Generated from protobuf field <code>map<string, string> domain_status = 91870157;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getDomainStatus()
@@ -67,7 +67,7 @@ class SslCertificateManagedSslCertificate extends \Google\Protobuf\Internal\Mess
     /**
      * [Output only] Detailed statuses of the domains specified for managed certificate resource.
      *
-     * Generated from protobuf field <code>map<string, string> domain_status = 360305613;</code>
+     * Generated from protobuf field <code>map<string, string> domain_status = 91870157;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */

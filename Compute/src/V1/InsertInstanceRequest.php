@@ -40,7 +40,7 @@ class InsertInstanceRequest extends \Google\Protobuf\Internal\Message
      * - projects/project/global/instanceTemplates/instanceTemplate
      * - global/instanceTemplates/instanceTemplate
      *
-     * Generated from protobuf field <code>string source_instance_template = 332423616;</code>
+     * Generated from protobuf field <code>string source_instance_template = 63988160;</code>
      */
     private $source_instance_template = '';
     /**
@@ -173,7 +173,7 @@ class InsertInstanceRequest extends \Google\Protobuf\Internal\Message
      * - projects/project/global/instanceTemplates/instanceTemplate
      * - global/instanceTemplates/instanceTemplate
      *
-     * Generated from protobuf field <code>string source_instance_template = 332423616;</code>
+     * Generated from protobuf field <code>string source_instance_template = 63988160;</code>
      * @return string
      */
     public function getSourceInstanceTemplate()
@@ -188,7 +188,7 @@ class InsertInstanceRequest extends \Google\Protobuf\Internal\Message
      * - projects/project/global/instanceTemplates/instanceTemplate
      * - global/instanceTemplates/instanceTemplate
      *
-     * Generated from protobuf field <code>string source_instance_template = 332423616;</code>
+     * Generated from protobuf field <code>string source_instance_template = 63988160;</code>
      * @param string $var
      * @return $this
      */

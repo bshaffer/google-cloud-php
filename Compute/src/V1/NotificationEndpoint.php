@@ -26,13 +26,13 @@ class NotificationEndpoint extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
      * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;</code>
      */
     private $grpc_settings = null;
     /**
@@ -62,7 +62,7 @@ class NotificationEndpoint extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
 
@@ -124,7 +124,7 @@ class NotificationEndpoint extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -135,7 +135,7 @@ class NotificationEndpoint extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -150,7 +150,7 @@ class NotificationEndpoint extends \Google\Protobuf\Internal\Message
     /**
      * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;</code>
      * @return \Google\Cloud\Compute\V1\NotificationEndpointGrpcSettings
      */
     public function getGrpcSettings()
@@ -171,7 +171,7 @@ class NotificationEndpoint extends \Google\Protobuf\Internal\Message
     /**
      * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;</code>
      * @param \Google\Cloud\Compute\V1\NotificationEndpointGrpcSettings $var
      * @return $this
      */
@@ -290,7 +290,7 @@ class NotificationEndpoint extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -301,7 +301,7 @@ class NotificationEndpoint extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */

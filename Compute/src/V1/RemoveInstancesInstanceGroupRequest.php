@@ -22,7 +22,7 @@ class RemoveInstancesInstanceGroupRequest extends \Google\Protobuf\Internal\Mess
      */
     private $instance_group = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 390981817;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 122546361;</code>
      */
     private $instance_groups_remove_instances_request_resource = null;
     /**
@@ -97,7 +97,7 @@ class RemoveInstancesInstanceGroupRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 390981817;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 122546361;</code>
      * @return \Google\Cloud\Compute\V1\InstanceGroupsRemoveInstancesRequest
      */
     public function getInstanceGroupsRemoveInstancesRequestResource()
@@ -116,7 +116,7 @@ class RemoveInstancesInstanceGroupRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 390981817;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 122546361;</code>
      * @param \Google\Cloud\Compute\V1\InstanceGroupsRemoveInstancesRequest $var
      * @return $this
      */

@@ -17,7 +17,7 @@ class ForwardingRulesScopedList extends \Google\Protobuf\Internal\Message
     /**
      * A list of forwarding rules contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
      */
     private $forwarding_rules;
     /**
@@ -47,7 +47,7 @@ class ForwardingRulesScopedList extends \Google\Protobuf\Internal\Message
     /**
      * A list of forwarding rules contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getForwardingRules()
@@ -58,7 +58,7 @@ class ForwardingRulesScopedList extends \Google\Protobuf\Internal\Message
     /**
      * A list of forwarding rules contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
      * @param \Google\Cloud\Compute\V1\ForwardingRule[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

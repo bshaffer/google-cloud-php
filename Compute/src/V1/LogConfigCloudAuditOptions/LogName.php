@@ -20,17 +20,17 @@ class LogName
      */
     const UNDEFINED_LOG_NAME = 0;
     /**
-     * Generated from protobuf enum <code>ADMIN_ACTIVITY = 427503135;</code>
+     * Generated from protobuf enum <code>ADMIN_ACTIVITY = 159067679;</code>
      */
-    const ADMIN_ACTIVITY = 427503135;
+    const ADMIN_ACTIVITY = 159067679;
     /**
      * Generated from protobuf enum <code>DATA_ACCESS = 238070681;</code>
      */
     const DATA_ACCESS = 238070681;
     /**
-     * Generated from protobuf enum <code>UNSPECIFIED_LOG_NAME = 410515182;</code>
+     * Generated from protobuf enum <code>UNSPECIFIED_LOG_NAME = 142079726;</code>
      */
-    const UNSPECIFIED_LOG_NAME = 410515182;
+    const UNSPECIFIED_LOG_NAME = 142079726;
 
     private static $valueToName = [
         self::UNDEFINED_LOG_NAME => 'UNDEFINED_LOG_NAME',

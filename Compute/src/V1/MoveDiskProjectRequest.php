@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class MoveDiskProjectRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002;</code>
      */
     private $disk_move_request_resource = null;
     /**
@@ -55,7 +55,7 @@ class MoveDiskProjectRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002;</code>
      * @return \Google\Cloud\Compute\V1\DiskMoveRequest
      */
     public function getDiskMoveRequestResource()
@@ -74,7 +74,7 @@ class MoveDiskProjectRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002;</code>
      * @param \Google\Cloud\Compute\V1\DiskMoveRequest $var
      * @return $this
      */

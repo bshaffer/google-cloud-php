@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Sets the scheduling options for an Instance. NextID: 13
+ * Sets the scheduling options for an Instance. NextID: 12
  *
  * Generated from protobuf message <code>google.cloud.compute.v1.Scheduling</code>
  */
@@ -19,19 +19,19 @@ class Scheduling extends \Google\Protobuf\Internal\Message
      * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.
      * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
      *
-     * Generated from protobuf field <code>bool automatic_restart = 350821371;</code>
+     * Generated from protobuf field <code>bool automatic_restart = 82385915;</code>
      */
     private $automatic_restart = false;
     /**
      * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
      *
-     * Generated from protobuf field <code>int32 min_node_cpus = 317231675;</code>
+     * Generated from protobuf field <code>int32 min_node_cpus = 48796219;</code>
      */
     private $min_node_cpus = 0;
     /**
      * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;</code>
      */
     private $node_affinities;
     /**
@@ -43,7 +43,7 @@ class Scheduling extends \Google\Protobuf\Internal\Message
     /**
      * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
      *
-     * Generated from protobuf field <code>bool preemptible = 324203169;</code>
+     * Generated from protobuf field <code>bool preemptible = 55767713;</code>
      */
     private $preemptible = false;
 
@@ -75,7 +75,7 @@ class Scheduling extends \Google\Protobuf\Internal\Message
      * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.
      * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
      *
-     * Generated from protobuf field <code>bool automatic_restart = 350821371;</code>
+     * Generated from protobuf field <code>bool automatic_restart = 82385915;</code>
      * @return bool
      */
     public function getAutomaticRestart()
@@ -87,7 +87,7 @@ class Scheduling extends \Google\Protobuf\Internal\Message
      * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.
      * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
      *
-     * Generated from protobuf field <code>bool automatic_restart = 350821371;</code>
+     * Generated from protobuf field <code>bool automatic_restart = 82385915;</code>
      * @param bool $var
      * @return $this
      */
@@ -102,7 +102,7 @@ class Scheduling extends \Google\Protobuf\Internal\Message
     /**
      * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
      *
-     * Generated from protobuf field <code>int32 min_node_cpus = 317231675;</code>
+     * Generated from protobuf field <code>int32 min_node_cpus = 48796219;</code>
      * @return int
      */
     public function getMinNodeCpus()
@@ -113,7 +113,7 @@ class Scheduling extends \Google\Protobuf\Internal\Message
     /**
      * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
      *
-     * Generated from protobuf field <code>int32 min_node_cpus = 317231675;</code>
+     * Generated from protobuf field <code>int32 min_node_cpus = 48796219;</code>
      * @param int $var
      * @return $this
      */
@@ -128,7 +128,7 @@ class Scheduling extends \Google\Protobuf\Internal\Message
     /**
      * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getNodeAffinities()
@@ -139,7 +139,7 @@ class Scheduling extends \Google\Protobuf\Internal\Message
     /**
      * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;</code>
      * @param \Google\Cloud\Compute\V1\SchedulingNodeAffinity[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -180,7 +180,7 @@ class Scheduling extends \Google\Protobuf\Internal\Message
     /**
      * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
      *
-     * Generated from protobuf field <code>bool preemptible = 324203169;</code>
+     * Generated from protobuf field <code>bool preemptible = 55767713;</code>
      * @return bool
      */
     public function getPreemptible()
@@ -191,7 +191,7 @@ class Scheduling extends \Google\Protobuf\Internal\Message
     /**
      * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
      *
-     * Generated from protobuf field <code>bool preemptible = 324203169;</code>
+     * Generated from protobuf field <code>bool preemptible = 55767713;</code>
      * @param bool $var
      * @return $this
      */

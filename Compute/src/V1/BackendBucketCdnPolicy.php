@@ -18,13 +18,13 @@ class BackendBucketCdnPolicy extends \Google\Protobuf\Internal\Message
     /**
      * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
      *
-     * Generated from protobuf field <code>string signed_url_cache_max_age_sec = 269374534;</code>
+     * Generated from protobuf field <code>string signed_url_cache_max_age_sec = 939078;</code>
      */
     private $signed_url_cache_max_age_sec = '';
     /**
      * [Output Only] Names of the keys for signing request URLs.
      *
-     * Generated from protobuf field <code>repeated string signed_url_key_names = 371848885;</code>
+     * Generated from protobuf field <code>repeated string signed_url_key_names = 103413429;</code>
      */
     private $signed_url_key_names;
 
@@ -48,7 +48,7 @@ class BackendBucketCdnPolicy extends \Google\Protobuf\Internal\Message
     /**
      * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
      *
-     * Generated from protobuf field <code>string signed_url_cache_max_age_sec = 269374534;</code>
+     * Generated from protobuf field <code>string signed_url_cache_max_age_sec = 939078;</code>
      * @return string
      */
     public function getSignedUrlCacheMaxAgeSec()
@@ -59,7 +59,7 @@ class BackendBucketCdnPolicy extends \Google\Protobuf\Internal\Message
     /**
      * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
      *
-     * Generated from protobuf field <code>string signed_url_cache_max_age_sec = 269374534;</code>
+     * Generated from protobuf field <code>string signed_url_cache_max_age_sec = 939078;</code>
      * @param string $var
      * @return $this
      */
@@ -74,7 +74,7 @@ class BackendBucketCdnPolicy extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Names of the keys for signing request URLs.
      *
-     * Generated from protobuf field <code>repeated string signed_url_key_names = 371848885;</code>
+     * Generated from protobuf field <code>repeated string signed_url_key_names = 103413429;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getSignedUrlKeyNames()
@@ -85,7 +85,7 @@ class BackendBucketCdnPolicy extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Names of the keys for signing request URLs.
      *
-     * Generated from protobuf field <code>repeated string signed_url_key_names = 371848885;</code>
+     * Generated from protobuf field <code>repeated string signed_url_key_names = 103413429;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

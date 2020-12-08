@@ -20,13 +20,13 @@ class Direction
      */
     const UNDEFINED_DIRECTION = 0;
     /**
-     * Generated from protobuf enum <code>EGRESS = 432880501;</code>
+     * Generated from protobuf enum <code>EGRESS = 164445045;</code>
      */
-    const EGRESS = 432880501;
+    const EGRESS = 164445045;
     /**
-     * Generated from protobuf enum <code>INGRESS = 516931221;</code>
+     * Generated from protobuf enum <code>INGRESS = 248495765;</code>
      */
-    const INGRESS = 516931221;
+    const INGRESS = 248495765;
 
     private static $valueToName = [
         self::UNDEFINED_DIRECTION => 'UNDEFINED_DIRECTION',

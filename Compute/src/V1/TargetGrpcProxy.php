@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Represents a Target gRPC Proxy resource.
- * A target gRPC proxy is a component of load balancers intended for load balancing gRPC traffic. Global forwarding rules reference a target gRPC proxy. The Target gRPC Proxy references a URL map which specifies how traffic routes to gRPC backend services. (== resource_for {$api_version}.targetGrpcProxies ==)
+ * A target gRPC proxy is a component of load balancers intended for load balancing gRPC traffic. Global forwarding rules reference a target gRPC proxy. The Target gRPC Proxy references a URL map which specifies how traffic routes to gRPC backend services.
  *
  * Generated from protobuf message <code>google.cloud.compute.v1.TargetGrpcProxy</code>
  */
@@ -25,7 +25,7 @@ class TargetGrpcProxy extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -55,7 +55,7 @@ class TargetGrpcProxy extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
@@ -67,11 +67,11 @@ class TargetGrpcProxy extends \Google\Protobuf\Internal\Message
     /**
      * URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
      *
-     * Generated from protobuf field <code>string url_map = 367020684;</code>
+     * Generated from protobuf field <code>string url_map = 98585228;</code>
      */
     private $url_map = '';
     /**
-     * If true, indicates that the BackendServices referenced by the urlMap may be accessed by gRPC applications without using a sidecar proxy. This will enable configuration checks on urlMap and its referenced BackendServices to not allow unsupported features. A gRPC application must use "xds:///" scheme in the target URI of the service it is connecting to. If false, indicates that the BackendServices referenced by the urlMap will be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC application must not use "xds:///" scheme in the target URI of the service it is connecting to
+     * If true, indicates that the BackendServices referenced by the urlMap may be accessed by gRPC applications without using a sidecar proxy. This will enable configuration checks on urlMap and its referenced BackendServices to not allow unsupported features. A gRPC application must use "xds-experimental:///" scheme in the target URI of the service it is connecting to. If false, indicates that the BackendServices referenced by the urlMap will be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC application must not use "xds-experimental:///" scheme in the target URI of the service it is connecting to
      *
      * Generated from protobuf field <code>bool validate_for_proxyless = 101822888;</code>
      */
@@ -102,7 +102,7 @@ class TargetGrpcProxy extends \Google\Protobuf\Internal\Message
      *     @type string $url_map
      *           URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
      *     @type bool $validate_for_proxyless
-     *           If true, indicates that the BackendServices referenced by the urlMap may be accessed by gRPC applications without using a sidecar proxy. This will enable configuration checks on urlMap and its referenced BackendServices to not allow unsupported features. A gRPC application must use "xds:///" scheme in the target URI of the service it is connecting to. If false, indicates that the BackendServices referenced by the urlMap will be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC application must not use "xds:///" scheme in the target URI of the service it is connecting to
+     *           If true, indicates that the BackendServices referenced by the urlMap may be accessed by gRPC applications without using a sidecar proxy. This will enable configuration checks on urlMap and its referenced BackendServices to not allow unsupported features. A gRPC application must use "xds-experimental:///" scheme in the target URI of the service it is connecting to. If false, indicates that the BackendServices referenced by the urlMap will be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC application must not use "xds-experimental:///" scheme in the target URI of the service it is connecting to
      * }
      */
     public function __construct($data = NULL) {
@@ -139,7 +139,7 @@ class TargetGrpcProxy extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -150,7 +150,7 @@ class TargetGrpcProxy extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -269,7 +269,7 @@ class TargetGrpcProxy extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -280,7 +280,7 @@ class TargetGrpcProxy extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */
@@ -321,7 +321,7 @@ class TargetGrpcProxy extends \Google\Protobuf\Internal\Message
     /**
      * URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
      *
-     * Generated from protobuf field <code>string url_map = 367020684;</code>
+     * Generated from protobuf field <code>string url_map = 98585228;</code>
      * @return string
      */
     public function getUrlMap()
@@ -332,7 +332,7 @@ class TargetGrpcProxy extends \Google\Protobuf\Internal\Message
     /**
      * URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
      *
-     * Generated from protobuf field <code>string url_map = 367020684;</code>
+     * Generated from protobuf field <code>string url_map = 98585228;</code>
      * @param string $var
      * @return $this
      */
@@ -345,7 +345,7 @@ class TargetGrpcProxy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If true, indicates that the BackendServices referenced by the urlMap may be accessed by gRPC applications without using a sidecar proxy. This will enable configuration checks on urlMap and its referenced BackendServices to not allow unsupported features. A gRPC application must use "xds:///" scheme in the target URI of the service it is connecting to. If false, indicates that the BackendServices referenced by the urlMap will be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC application must not use "xds:///" scheme in the target URI of the service it is connecting to
+     * If true, indicates that the BackendServices referenced by the urlMap may be accessed by gRPC applications without using a sidecar proxy. This will enable configuration checks on urlMap and its referenced BackendServices to not allow unsupported features. A gRPC application must use "xds-experimental:///" scheme in the target URI of the service it is connecting to. If false, indicates that the BackendServices referenced by the urlMap will be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC application must not use "xds-experimental:///" scheme in the target URI of the service it is connecting to
      *
      * Generated from protobuf field <code>bool validate_for_proxyless = 101822888;</code>
      * @return bool
@@ -356,7 +356,7 @@ class TargetGrpcProxy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If true, indicates that the BackendServices referenced by the urlMap may be accessed by gRPC applications without using a sidecar proxy. This will enable configuration checks on urlMap and its referenced BackendServices to not allow unsupported features. A gRPC application must use "xds:///" scheme in the target URI of the service it is connecting to. If false, indicates that the BackendServices referenced by the urlMap will be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC application must not use "xds:///" scheme in the target URI of the service it is connecting to
+     * If true, indicates that the BackendServices referenced by the urlMap may be accessed by gRPC applications without using a sidecar proxy. This will enable configuration checks on urlMap and its referenced BackendServices to not allow unsupported features. A gRPC application must use "xds-experimental:///" scheme in the target URI of the service it is connecting to. If false, indicates that the BackendServices referenced by the urlMap will be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC application must not use "xds-experimental:///" scheme in the target URI of the service it is connecting to
      *
      * Generated from protobuf field <code>bool validate_for_proxyless = 101822888;</code>
      * @param bool $var

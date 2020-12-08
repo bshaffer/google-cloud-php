@@ -18,7 +18,7 @@ class DeleteGlobalForwardingRuleRequest extends \Google\Protobuf\Internal\Messag
     /**
      * Name of the ForwardingRule resource to delete.
      *
-     * Generated from protobuf field <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $forwarding_rule = '';
     /**
@@ -60,7 +60,7 @@ class DeleteGlobalForwardingRuleRequest extends \Google\Protobuf\Internal\Messag
     /**
      * Name of the ForwardingRule resource to delete.
      *
-     * Generated from protobuf field <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getForwardingRule()
@@ -71,7 +71,7 @@ class DeleteGlobalForwardingRuleRequest extends \Google\Protobuf\Internal\Messag
     /**
      * Name of the ForwardingRule resource to delete.
      *
-     * Generated from protobuf field <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

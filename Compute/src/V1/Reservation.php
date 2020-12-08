@@ -18,7 +18,7 @@ class Reservation extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
      *
-     * Generated from protobuf field <code>string commitment = 482134805;</code>
+     * Generated from protobuf field <code>string commitment = 213699349;</code>
      */
     private $commitment = '';
     /**
@@ -30,7 +30,7 @@ class Reservation extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -54,13 +54,13 @@ class Reservation extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined fully-qualified URL for this resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
      * Reservation for instances with specific machine shapes.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 136466495;</code>
      */
     private $specific_reservation = null;
     /**
@@ -120,7 +120,7 @@ class Reservation extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
      *
-     * Generated from protobuf field <code>string commitment = 482134805;</code>
+     * Generated from protobuf field <code>string commitment = 213699349;</code>
      * @return string
      */
     public function getCommitment()
@@ -131,7 +131,7 @@ class Reservation extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
      *
-     * Generated from protobuf field <code>string commitment = 482134805;</code>
+     * Generated from protobuf field <code>string commitment = 213699349;</code>
      * @param string $var
      * @return $this
      */
@@ -172,7 +172,7 @@ class Reservation extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -183,7 +183,7 @@ class Reservation extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -276,7 +276,7 @@ class Reservation extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined fully-qualified URL for this resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -287,7 +287,7 @@ class Reservation extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined fully-qualified URL for this resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */
@@ -302,7 +302,7 @@ class Reservation extends \Google\Protobuf\Internal\Message
     /**
      * Reservation for instances with specific machine shapes.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 136466495;</code>
      * @return \Google\Cloud\Compute\V1\AllocationSpecificSKUReservation
      */
     public function getSpecificReservation()
@@ -323,7 +323,7 @@ class Reservation extends \Google\Protobuf\Internal\Message
     /**
      * Reservation for instances with specific machine shapes.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 136466495;</code>
      * @param \Google\Cloud\Compute\V1\AllocationSpecificSKUReservation $var
      * @return $this
      */

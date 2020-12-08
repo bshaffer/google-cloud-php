@@ -17,13 +17,13 @@ class Accelerators extends \Google\Protobuf\Internal\Message
     /**
      * Number of accelerator cards exposed to the guest.
      *
-     * Generated from protobuf field <code>int32 guest_accelerator_count = 479079316;</code>
+     * Generated from protobuf field <code>int32 guest_accelerator_count = 210643860;</code>
      */
     private $guest_accelerator_count = 0;
     /**
      * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
      *
-     * Generated from protobuf field <code>string guest_accelerator_type = 293064725;</code>
+     * Generated from protobuf field <code>string guest_accelerator_type = 24629269;</code>
      */
     private $guest_accelerator_type = '';
 
@@ -47,7 +47,7 @@ class Accelerators extends \Google\Protobuf\Internal\Message
     /**
      * Number of accelerator cards exposed to the guest.
      *
-     * Generated from protobuf field <code>int32 guest_accelerator_count = 479079316;</code>
+     * Generated from protobuf field <code>int32 guest_accelerator_count = 210643860;</code>
      * @return int
      */
     public function getGuestAcceleratorCount()
@@ -58,7 +58,7 @@ class Accelerators extends \Google\Protobuf\Internal\Message
     /**
      * Number of accelerator cards exposed to the guest.
      *
-     * Generated from protobuf field <code>int32 guest_accelerator_count = 479079316;</code>
+     * Generated from protobuf field <code>int32 guest_accelerator_count = 210643860;</code>
      * @param int $var
      * @return $this
      */
@@ -73,7 +73,7 @@ class Accelerators extends \Google\Protobuf\Internal\Message
     /**
      * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
      *
-     * Generated from protobuf field <code>string guest_accelerator_type = 293064725;</code>
+     * Generated from protobuf field <code>string guest_accelerator_type = 24629269;</code>
      * @return string
      */
     public function getGuestAcceleratorType()
@@ -84,7 +84,7 @@ class Accelerators extends \Google\Protobuf\Internal\Message
     /**
      * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
      *
-     * Generated from protobuf field <code>string guest_accelerator_type = 293064725;</code>
+     * Generated from protobuf field <code>string guest_accelerator_type = 24629269;</code>
      * @param string $var
      * @return $this
      */

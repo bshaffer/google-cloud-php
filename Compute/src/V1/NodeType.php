@@ -19,7 +19,7 @@ class NodeType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The CPU platform used by this node type.
      *
-     * Generated from protobuf field <code>string cpu_platform = 410285354;</code>
+     * Generated from protobuf field <code>string cpu_platform = 141849898;</code>
      */
     private $cpu_platform = '';
     /**
@@ -31,19 +31,19 @@ class NodeType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The deprecation status associated with this node type.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     private $deprecated = null;
     /**
      * [Output Only] An optional textual description of the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
      * [Output Only] The number of virtual CPUs that are available to the node type.
      *
-     * Generated from protobuf field <code>int32 guest_cpus = 393356754;</code>
+     * Generated from protobuf field <code>int32 guest_cpus = 124921298;</code>
      */
     private $guest_cpus = 0;
     /**
@@ -61,7 +61,7 @@ class NodeType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Local SSD available to the node type, defined in GB.
      *
-     * Generated from protobuf field <code>int32 local_ssd_gb = 329237578;</code>
+     * Generated from protobuf field <code>int32 local_ssd_gb = 60802122;</code>
      */
     private $local_ssd_gb = 0;
     /**
@@ -79,7 +79,7 @@ class NodeType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
@@ -129,7 +129,7 @@ class NodeType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The CPU platform used by this node type.
      *
-     * Generated from protobuf field <code>string cpu_platform = 410285354;</code>
+     * Generated from protobuf field <code>string cpu_platform = 141849898;</code>
      * @return string
      */
     public function getCpuPlatform()
@@ -140,7 +140,7 @@ class NodeType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The CPU platform used by this node type.
      *
-     * Generated from protobuf field <code>string cpu_platform = 410285354;</code>
+     * Generated from protobuf field <code>string cpu_platform = 141849898;</code>
      * @param string $var
      * @return $this
      */
@@ -181,7 +181,7 @@ class NodeType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The deprecation status associated with this node type.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      * @return \Google\Cloud\Compute\V1\DeprecationStatus
      */
     public function getDeprecated()
@@ -202,7 +202,7 @@ class NodeType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The deprecation status associated with this node type.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      * @param \Google\Cloud\Compute\V1\DeprecationStatus $var
      * @return $this
      */
@@ -217,7 +217,7 @@ class NodeType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An optional textual description of the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -228,7 +228,7 @@ class NodeType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An optional textual description of the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -243,7 +243,7 @@ class NodeType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The number of virtual CPUs that are available to the node type.
      *
-     * Generated from protobuf field <code>int32 guest_cpus = 393356754;</code>
+     * Generated from protobuf field <code>int32 guest_cpus = 124921298;</code>
      * @return int
      */
     public function getGuestCpus()
@@ -254,7 +254,7 @@ class NodeType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The number of virtual CPUs that are available to the node type.
      *
-     * Generated from protobuf field <code>int32 guest_cpus = 393356754;</code>
+     * Generated from protobuf field <code>int32 guest_cpus = 124921298;</code>
      * @param int $var
      * @return $this
      */
@@ -321,7 +321,7 @@ class NodeType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Local SSD available to the node type, defined in GB.
      *
-     * Generated from protobuf field <code>int32 local_ssd_gb = 329237578;</code>
+     * Generated from protobuf field <code>int32 local_ssd_gb = 60802122;</code>
      * @return int
      */
     public function getLocalSsdGb()
@@ -332,7 +332,7 @@ class NodeType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Local SSD available to the node type, defined in GB.
      *
-     * Generated from protobuf field <code>int32 local_ssd_gb = 329237578;</code>
+     * Generated from protobuf field <code>int32 local_ssd_gb = 60802122;</code>
      * @param int $var
      * @return $this
      */
@@ -399,7 +399,7 @@ class NodeType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -410,7 +410,7 @@ class NodeType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */

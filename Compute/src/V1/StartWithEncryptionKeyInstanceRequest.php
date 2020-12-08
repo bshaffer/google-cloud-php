@@ -22,7 +22,7 @@ class StartWithEncryptionKeyInstanceRequest extends \Google\Protobuf\Internal\Me
      */
     private $instance = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 441712511;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 173277055;</code>
      */
     private $instances_start_with_encryption_key_request_resource = null;
     /**
@@ -97,7 +97,7 @@ class StartWithEncryptionKeyInstanceRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 441712511;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 173277055;</code>
      * @return \Google\Cloud\Compute\V1\InstancesStartWithEncryptionKeyRequest
      */
     public function getInstancesStartWithEncryptionKeyRequestResource()
@@ -116,7 +116,7 @@ class StartWithEncryptionKeyInstanceRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 441712511;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 173277055;</code>
      * @param \Google\Cloud\Compute\V1\InstancesStartWithEncryptionKeyRequest $var
      * @return $this
      */

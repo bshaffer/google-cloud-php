@@ -18,7 +18,7 @@ class UpdateRegionAutoscalerRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the autoscaler to update.
      *
-     * Generated from protobuf field <code>string autoscaler = 517258967;</code>
+     * Generated from protobuf field <code>string autoscaler = 248823511;</code>
      */
     private $autoscaler = '';
     /**
@@ -73,7 +73,7 @@ class UpdateRegionAutoscalerRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the autoscaler to update.
      *
-     * Generated from protobuf field <code>string autoscaler = 517258967;</code>
+     * Generated from protobuf field <code>string autoscaler = 248823511;</code>
      * @return string
      */
     public function getAutoscaler()
@@ -84,7 +84,7 @@ class UpdateRegionAutoscalerRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the autoscaler to update.
      *
-     * Generated from protobuf field <code>string autoscaler = 517258967;</code>
+     * Generated from protobuf field <code>string autoscaler = 248823511;</code>
      * @param string $var
      * @return $this
      */

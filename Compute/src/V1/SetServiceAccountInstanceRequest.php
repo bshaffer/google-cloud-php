@@ -22,7 +22,7 @@ class SetServiceAccountInstanceRequest extends \Google\Protobuf\Internal\Message
      */
     private $instance = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 275550008;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 7114552;</code>
      */
     private $instances_set_service_account_request_resource = null;
     /**
@@ -97,7 +97,7 @@ class SetServiceAccountInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 275550008;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 7114552;</code>
      * @return \Google\Cloud\Compute\V1\InstancesSetServiceAccountRequest
      */
     public function getInstancesSetServiceAccountRequestResource()
@@ -116,7 +116,7 @@ class SetServiceAccountInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 275550008;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 7114552;</code>
      * @param \Google\Cloud\Compute\V1\InstancesSetServiceAccountRequest $var
      * @return $this
      */

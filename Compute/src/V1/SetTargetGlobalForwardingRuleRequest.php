@@ -18,7 +18,7 @@ class SetTargetGlobalForwardingRuleRequest extends \Google\Protobuf\Internal\Mes
     /**
      * Name of the ForwardingRule resource in which target is to be set.
      *
-     * Generated from protobuf field <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $forwarding_rule = '';
     /**
@@ -36,7 +36,7 @@ class SetTargetGlobalForwardingRuleRequest extends \Google\Protobuf\Internal\Mes
      */
     private $request_id = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 255286256;</code>
      */
     private $target_reference_resource = null;
 
@@ -65,7 +65,7 @@ class SetTargetGlobalForwardingRuleRequest extends \Google\Protobuf\Internal\Mes
     /**
      * Name of the ForwardingRule resource in which target is to be set.
      *
-     * Generated from protobuf field <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getForwardingRule()
@@ -76,7 +76,7 @@ class SetTargetGlobalForwardingRuleRequest extends \Google\Protobuf\Internal\Mes
     /**
      * Name of the ForwardingRule resource in which target is to be set.
      *
-     * Generated from protobuf field <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -145,7 +145,7 @@ class SetTargetGlobalForwardingRuleRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 255286256;</code>
      * @return \Google\Cloud\Compute\V1\TargetReference
      */
     public function getTargetReferenceResource()
@@ -164,7 +164,7 @@ class SetTargetGlobalForwardingRuleRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 255286256;</code>
      * @param \Google\Cloud\Compute\V1\TargetReference $var
      * @return $this
      */

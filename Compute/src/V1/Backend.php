@@ -27,20 +27,20 @@ class Backend extends \Google\Protobuf\Internal\Message
      * - If the load balancing mode is UTILIZATION, the load is spread based on the backend utilization of instances in an instance group.
      * You can use the UTILIZATION balancing mode if the loadBalancingScheme of the backend service is EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the backend service protocol.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 161850761;</code>
      */
     private $balancing_mode = 0;
     /**
      * A multiplier applied to the group's maximum servicing capacity (based on UTILIZATION, RATE or CONNECTION). Default value is 1, which means the group will serve up to 100% of its configured capacity (depending on balancingMode). A setting of 0 means the group is completely drained, offering 0% of its available capacity. Valid range is 0.0 and [0.1,1.0]. You cannot configure a setting larger than 0 and smaller than 0.1. You cannot configure a setting of 0 when there is only one backend attached to the backend service.
      * This cannot be used for internal load balancing.
      *
-     * Generated from protobuf field <code>float capacity_scaler = 315958157;</code>
+     * Generated from protobuf field <code>float capacity_scaler = 47522701;</code>
      */
     private $capacity_scaler = 0.0;
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -84,7 +84,7 @@ class Backend extends \Google\Protobuf\Internal\Message
      * If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is RATE, you must specify maxRate, maxRatePerInstance, or maxRatePerEndpoint.
      * Not available if the backend's balancingMode is CONNECTION.
      *
-     * Generated from protobuf field <code>int32 max_rate = 408035035;</code>
+     * Generated from protobuf field <code>int32 max_rate = 139599579;</code>
      */
     private $max_rate = 0;
     /**
@@ -183,7 +183,7 @@ class Backend extends \Google\Protobuf\Internal\Message
      * - If the load balancing mode is UTILIZATION, the load is spread based on the backend utilization of instances in an instance group.
      * You can use the UTILIZATION balancing mode if the loadBalancingScheme of the backend service is EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the backend service protocol.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 161850761;</code>
      * @return int
      */
     public function getBalancingMode()
@@ -203,7 +203,7 @@ class Backend extends \Google\Protobuf\Internal\Message
      * - If the load balancing mode is UTILIZATION, the load is spread based on the backend utilization of instances in an instance group.
      * You can use the UTILIZATION balancing mode if the loadBalancingScheme of the backend service is EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the backend service protocol.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 161850761;</code>
      * @param int $var
      * @return $this
      */
@@ -219,7 +219,7 @@ class Backend extends \Google\Protobuf\Internal\Message
      * A multiplier applied to the group's maximum servicing capacity (based on UTILIZATION, RATE or CONNECTION). Default value is 1, which means the group will serve up to 100% of its configured capacity (depending on balancingMode). A setting of 0 means the group is completely drained, offering 0% of its available capacity. Valid range is 0.0 and [0.1,1.0]. You cannot configure a setting larger than 0 and smaller than 0.1. You cannot configure a setting of 0 when there is only one backend attached to the backend service.
      * This cannot be used for internal load balancing.
      *
-     * Generated from protobuf field <code>float capacity_scaler = 315958157;</code>
+     * Generated from protobuf field <code>float capacity_scaler = 47522701;</code>
      * @return float
      */
     public function getCapacityScaler()
@@ -231,7 +231,7 @@ class Backend extends \Google\Protobuf\Internal\Message
      * A multiplier applied to the group's maximum servicing capacity (based on UTILIZATION, RATE or CONNECTION). Default value is 1, which means the group will serve up to 100% of its configured capacity (depending on balancingMode). A setting of 0 means the group is completely drained, offering 0% of its available capacity. Valid range is 0.0 and [0.1,1.0]. You cannot configure a setting larger than 0 and smaller than 0.1. You cannot configure a setting of 0 when there is only one backend attached to the backend service.
      * This cannot be used for internal load balancing.
      *
-     * Generated from protobuf field <code>float capacity_scaler = 315958157;</code>
+     * Generated from protobuf field <code>float capacity_scaler = 47522701;</code>
      * @param float $var
      * @return $this
      */
@@ -246,7 +246,7 @@ class Backend extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -257,7 +257,7 @@ class Backend extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -416,7 +416,7 @@ class Backend extends \Google\Protobuf\Internal\Message
      * If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is RATE, you must specify maxRate, maxRatePerInstance, or maxRatePerEndpoint.
      * Not available if the backend's balancingMode is CONNECTION.
      *
-     * Generated from protobuf field <code>int32 max_rate = 408035035;</code>
+     * Generated from protobuf field <code>int32 max_rate = 139599579;</code>
      * @return int
      */
     public function getMaxRate()
@@ -429,7 +429,7 @@ class Backend extends \Google\Protobuf\Internal\Message
      * If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is RATE, you must specify maxRate, maxRatePerInstance, or maxRatePerEndpoint.
      * Not available if the backend's balancingMode is CONNECTION.
      *
-     * Generated from protobuf field <code>int32 max_rate = 408035035;</code>
+     * Generated from protobuf field <code>int32 max_rate = 139599579;</code>
      * @param int $var
      * @return $this
      */

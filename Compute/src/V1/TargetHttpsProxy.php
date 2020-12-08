@@ -29,7 +29,7 @@ class TargetHttpsProxy extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -58,7 +58,7 @@ class TargetHttpsProxy extends \Google\Protobuf\Internal\Message
      * - If the quic-override flag is not specified, NONE is implied.
      * -
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 456577197;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 188141741;</code>
      */
     private $quic_override = 0;
     /**
@@ -70,19 +70,19 @@ class TargetHttpsProxy extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
      * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
      *
-     * Generated from protobuf field <code>repeated string ssl_certificates = 366006543;</code>
+     * Generated from protobuf field <code>repeated string ssl_certificates = 97571087;</code>
      */
     private $ssl_certificates;
     /**
      * URL of SslPolicy resource that will be associated with the TargetHttpsProxy resource. If not set, the TargetHttpsProxy resource has no SSL policy configured.
      *
-     * Generated from protobuf field <code>string ssl_policy = 295190213;</code>
+     * Generated from protobuf field <code>string ssl_policy = 26754757;</code>
      */
     private $ssl_policy = '';
     /**
@@ -91,7 +91,7 @@ class TargetHttpsProxy extends \Google\Protobuf\Internal\Message
      * - projects/project/global/urlMaps/url-map
      * - global/urlMaps/url-map
      *
-     * Generated from protobuf field <code>string url_map = 367020684;</code>
+     * Generated from protobuf field <code>string url_map = 98585228;</code>
      */
     private $url_map = '';
 
@@ -167,7 +167,7 @@ class TargetHttpsProxy extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -178,7 +178,7 @@ class TargetHttpsProxy extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -276,7 +276,7 @@ class TargetHttpsProxy extends \Google\Protobuf\Internal\Message
      * - If the quic-override flag is not specified, NONE is implied.
      * -
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 456577197;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 188141741;</code>
      * @return int
      */
     public function getQuicOverride()
@@ -292,7 +292,7 @@ class TargetHttpsProxy extends \Google\Protobuf\Internal\Message
      * - If the quic-override flag is not specified, NONE is implied.
      * -
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 456577197;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 188141741;</code>
      * @param int $var
      * @return $this
      */
@@ -333,7 +333,7 @@ class TargetHttpsProxy extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -344,7 +344,7 @@ class TargetHttpsProxy extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */
@@ -359,7 +359,7 @@ class TargetHttpsProxy extends \Google\Protobuf\Internal\Message
     /**
      * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
      *
-     * Generated from protobuf field <code>repeated string ssl_certificates = 366006543;</code>
+     * Generated from protobuf field <code>repeated string ssl_certificates = 97571087;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getSslCertificates()
@@ -370,7 +370,7 @@ class TargetHttpsProxy extends \Google\Protobuf\Internal\Message
     /**
      * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
      *
-     * Generated from protobuf field <code>repeated string ssl_certificates = 366006543;</code>
+     * Generated from protobuf field <code>repeated string ssl_certificates = 97571087;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -385,7 +385,7 @@ class TargetHttpsProxy extends \Google\Protobuf\Internal\Message
     /**
      * URL of SslPolicy resource that will be associated with the TargetHttpsProxy resource. If not set, the TargetHttpsProxy resource has no SSL policy configured.
      *
-     * Generated from protobuf field <code>string ssl_policy = 295190213;</code>
+     * Generated from protobuf field <code>string ssl_policy = 26754757;</code>
      * @return string
      */
     public function getSslPolicy()
@@ -396,7 +396,7 @@ class TargetHttpsProxy extends \Google\Protobuf\Internal\Message
     /**
      * URL of SslPolicy resource that will be associated with the TargetHttpsProxy resource. If not set, the TargetHttpsProxy resource has no SSL policy configured.
      *
-     * Generated from protobuf field <code>string ssl_policy = 295190213;</code>
+     * Generated from protobuf field <code>string ssl_policy = 26754757;</code>
      * @param string $var
      * @return $this
      */
@@ -414,7 +414,7 @@ class TargetHttpsProxy extends \Google\Protobuf\Internal\Message
      * - projects/project/global/urlMaps/url-map
      * - global/urlMaps/url-map
      *
-     * Generated from protobuf field <code>string url_map = 367020684;</code>
+     * Generated from protobuf field <code>string url_map = 98585228;</code>
      * @return string
      */
     public function getUrlMap()
@@ -428,7 +428,7 @@ class TargetHttpsProxy extends \Google\Protobuf\Internal\Message
      * - projects/project/global/urlMaps/url-map
      * - global/urlMaps/url-map
      *
-     * Generated from protobuf field <code>string url_map = 367020684;</code>
+     * Generated from protobuf field <code>string url_map = 98585228;</code>
      * @param string $var
      * @return $this
      */

@@ -35,33 +35,33 @@ class Status
      */
     const UNDEFINED_STATUS = 0;
     /**
-     * Generated from protobuf enum <code>ALLOCATING_RESOURCES = 320922816;</code>
+     * Generated from protobuf enum <code>ALLOCATING_RESOURCES = 52487360;</code>
      */
-    const ALLOCATING_RESOURCES = 320922816;
+    const ALLOCATING_RESOURCES = 52487360;
     /**
      * Generated from protobuf enum <code>AUTHORIZATION_ERROR = 23580290;</code>
      */
     const AUTHORIZATION_ERROR = 23580290;
     /**
-     * Generated from protobuf enum <code>DEPROVISIONING = 428935662;</code>
+     * Generated from protobuf enum <code>DEPROVISIONING = 160500206;</code>
      */
-    const DEPROVISIONING = 428935662;
+    const DEPROVISIONING = 160500206;
     /**
      * Generated from protobuf enum <code>ESTABLISHED = 88852344;</code>
      */
     const ESTABLISHED = 88852344;
     /**
-     * Generated from protobuf enum <code>FAILED = 455706685;</code>
+     * Generated from protobuf enum <code>FAILED = 187271229;</code>
      */
-    const FAILED = 455706685;
+    const FAILED = 187271229;
     /**
      * Generated from protobuf enum <code>FIRST_HANDSHAKE = 191393000;</code>
      */
     const FIRST_HANDSHAKE = 191393000;
     /**
-     * Generated from protobuf enum <code>NEGOTIATION_FAILURE = 360325868;</code>
+     * Generated from protobuf enum <code>NEGOTIATION_FAILURE = 91890412;</code>
      */
-    const NEGOTIATION_FAILURE = 360325868;
+    const NEGOTIATION_FAILURE = 91890412;
     /**
      * Generated from protobuf enum <code>NETWORK_ERROR = 193912951;</code>
      */
@@ -71,17 +71,17 @@ class Status
      */
     const NO_INCOMING_PACKETS = 119983216;
     /**
-     * Generated from protobuf enum <code>PROVISIONING = 290896621;</code>
+     * Generated from protobuf enum <code>PROVISIONING = 22461165;</code>
      */
-    const PROVISIONING = 290896621;
+    const PROVISIONING = 22461165;
     /**
      * Generated from protobuf enum <code>REJECTED = 174130302;</code>
      */
     const REJECTED = 174130302;
     /**
-     * Generated from protobuf enum <code>STOPPED = 444276141;</code>
+     * Generated from protobuf enum <code>STOPPED = 175840685;</code>
      */
-    const STOPPED = 444276141;
+    const STOPPED = 175840685;
     /**
      * Generated from protobuf enum <code>WAITING_FOR_FULL_CONFIG = 41640522;</code>
      */

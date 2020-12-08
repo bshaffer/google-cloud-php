@@ -18,11 +18,11 @@ class PatchNodeGroupRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the NodeGroup resource to update.
      *
-     * Generated from protobuf field <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $node_group = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 505321899;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 236886443;</code>
      */
     private $node_group_resource = null;
     /**
@@ -73,7 +73,7 @@ class PatchNodeGroupRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the NodeGroup resource to update.
      *
-     * Generated from protobuf field <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getNodeGroup()
@@ -84,7 +84,7 @@ class PatchNodeGroupRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the NodeGroup resource to update.
      *
-     * Generated from protobuf field <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -97,7 +97,7 @@ class PatchNodeGroupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 505321899;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 236886443;</code>
      * @return \Google\Cloud\Compute\V1\NodeGroup
      */
     public function getNodeGroupResource()
@@ -116,7 +116,7 @@ class PatchNodeGroupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 505321899;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 236886443;</code>
      * @param \Google\Cloud\Compute\V1\NodeGroup $var
      * @return $this
      */

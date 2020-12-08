@@ -20,41 +20,41 @@ class InstanceStatus
      */
     const UNDEFINED_INSTANCE_STATUS = 0;
     /**
-     * Generated from protobuf enum <code>DEPROVISIONING = 428935662;</code>
+     * Generated from protobuf enum <code>DEPROVISIONING = 160500206;</code>
      */
-    const DEPROVISIONING = 428935662;
+    const DEPROVISIONING = 160500206;
     /**
-     * Generated from protobuf enum <code>PROVISIONING = 290896621;</code>
+     * Generated from protobuf enum <code>PROVISIONING = 22461165;</code>
      */
-    const PROVISIONING = 290896621;
+    const PROVISIONING = 22461165;
     /**
-     * Generated from protobuf enum <code>REPAIRING = 413483285;</code>
+     * Generated from protobuf enum <code>REPAIRING = 145047829;</code>
      */
-    const REPAIRING = 413483285;
+    const REPAIRING = 145047829;
     /**
      * Generated from protobuf enum <code>RUNNING = 121282975;</code>
      */
     const RUNNING = 121282975;
     /**
-     * Generated from protobuf enum <code>STAGING = 431072283;</code>
+     * Generated from protobuf enum <code>STAGING = 162636827;</code>
      */
-    const STAGING = 431072283;
+    const STAGING = 162636827;
     /**
-     * Generated from protobuf enum <code>STOPPED = 444276141;</code>
+     * Generated from protobuf enum <code>STOPPED = 175840685;</code>
      */
-    const STOPPED = 444276141;
+    const STOPPED = 175840685;
     /**
-     * Generated from protobuf enum <code>STOPPING = 350791796;</code>
+     * Generated from protobuf enum <code>STOPPING = 82356340;</code>
      */
-    const STOPPING = 350791796;
+    const STOPPING = 82356340;
     /**
      * Generated from protobuf enum <code>SUSPENDED = 51223995;</code>
      */
     const SUSPENDED = 51223995;
     /**
-     * Generated from protobuf enum <code>SUSPENDING = 514206246;</code>
+     * Generated from protobuf enum <code>SUSPENDING = 245770790;</code>
      */
-    const SUSPENDING = 514206246;
+    const SUSPENDING = 245770790;
     /**
      * Generated from protobuf enum <code>TERMINATED = 250018339;</code>
      */

@@ -23,7 +23,7 @@ class InstanceGroupsSetNamedPortsRequest extends \Google\Protobuf\Internal\Messa
     /**
      * The list of named ports to set for this instance group.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     private $named_ports;
 
@@ -73,7 +73,7 @@ class InstanceGroupsSetNamedPortsRequest extends \Google\Protobuf\Internal\Messa
     /**
      * The list of named ports to set for this instance group.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getNamedPorts()
@@ -84,7 +84,7 @@ class InstanceGroupsSetNamedPortsRequest extends \Google\Protobuf\Internal\Messa
     /**
      * The list of named ports to set for this instance group.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      * @param \Google\Cloud\Compute\V1\NamedPort[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

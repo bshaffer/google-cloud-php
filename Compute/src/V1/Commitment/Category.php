@@ -20,17 +20,17 @@ class Category
      */
     const UNDEFINED_CATEGORY = 0;
     /**
-     * Generated from protobuf enum <code>CATEGORY_UNSPECIFIED = 509189462;</code>
+     * Generated from protobuf enum <code>CATEGORY_UNSPECIFIED = 240754006;</code>
      */
-    const CATEGORY_UNSPECIFIED = 509189462;
+    const CATEGORY_UNSPECIFIED = 240754006;
     /**
-     * Generated from protobuf enum <code>LICENSE = 347869217;</code>
+     * Generated from protobuf enum <code>LICENSE = 79433761;</code>
      */
-    const LICENSE = 347869217;
+    const LICENSE = 79433761;
     /**
-     * Generated from protobuf enum <code>MACHINE = 469553191;</code>
+     * Generated from protobuf enum <code>MACHINE = 201117735;</code>
      */
-    const MACHINE = 469553191;
+    const MACHINE = 201117735;
 
     private static $valueToName = [
         self::UNDEFINED_CATEGORY => 'UNDEFINED_CATEGORY',

@@ -20,13 +20,13 @@ class Type
      */
     const UNDEFINED_TYPE = 0;
     /**
-     * Generated from protobuf enum <code>PERSISTENT = 460683927;</code>
+     * Generated from protobuf enum <code>PERSISTENT = 192248471;</code>
      */
-    const PERSISTENT = 460683927;
+    const PERSISTENT = 192248471;
     /**
-     * Generated from protobuf enum <code>SCRATCH = 496778970;</code>
+     * Generated from protobuf enum <code>SCRATCH = 228343514;</code>
      */
-    const SCRATCH = 496778970;
+    const SCRATCH = 228343514;
 
     private static $valueToName = [
         self::UNDEFINED_TYPE => 'UNDEFINED_TYPE',

@@ -31,13 +31,13 @@ class Commitment extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
      * [Output Only] Commitment end time in RFC3339 text format.
      *
-     * Generated from protobuf field <code>string end_timestamp = 468096690;</code>
+     * Generated from protobuf field <code>string end_timestamp = 199661234;</code>
      */
     private $end_timestamp = '';
     /**
@@ -55,7 +55,7 @@ class Commitment extends \Google\Protobuf\Internal\Message
     /**
      * The license specification required as part of a license commitment.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 169519692;</code>
      */
     private $license_resource = null;
     /**
@@ -79,7 +79,7 @@ class Commitment extends \Google\Protobuf\Internal\Message
     /**
      * List of reservations in this commitment.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
      */
     private $reservations;
     /**
@@ -91,7 +91,7 @@ class Commitment extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
@@ -109,7 +109,7 @@ class Commitment extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An optional, human-readable explanation of the status.
      *
-     * Generated from protobuf field <code>string status_message = 297428154;</code>
+     * Generated from protobuf field <code>string status_message = 28992698;</code>
      */
     private $status_message = '';
 
@@ -213,7 +213,7 @@ class Commitment extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -224,7 +224,7 @@ class Commitment extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -239,7 +239,7 @@ class Commitment extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Commitment end time in RFC3339 text format.
      *
-     * Generated from protobuf field <code>string end_timestamp = 468096690;</code>
+     * Generated from protobuf field <code>string end_timestamp = 199661234;</code>
      * @return string
      */
     public function getEndTimestamp()
@@ -250,7 +250,7 @@ class Commitment extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Commitment end time in RFC3339 text format.
      *
-     * Generated from protobuf field <code>string end_timestamp = 468096690;</code>
+     * Generated from protobuf field <code>string end_timestamp = 199661234;</code>
      * @param string $var
      * @return $this
      */
@@ -317,7 +317,7 @@ class Commitment extends \Google\Protobuf\Internal\Message
     /**
      * The license specification required as part of a license commitment.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 169519692;</code>
      * @return \Google\Cloud\Compute\V1\LicenseResourceCommitment
      */
     public function getLicenseResource()
@@ -338,7 +338,7 @@ class Commitment extends \Google\Protobuf\Internal\Message
     /**
      * The license specification required as part of a license commitment.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 169519692;</code>
      * @param \Google\Cloud\Compute\V1\LicenseResourceCommitment $var
      * @return $this
      */
@@ -431,7 +431,7 @@ class Commitment extends \Google\Protobuf\Internal\Message
     /**
      * List of reservations in this commitment.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getReservations()
@@ -442,7 +442,7 @@ class Commitment extends \Google\Protobuf\Internal\Message
     /**
      * List of reservations in this commitment.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
      * @param \Google\Cloud\Compute\V1\Reservation[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -483,7 +483,7 @@ class Commitment extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -494,7 +494,7 @@ class Commitment extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */
@@ -561,7 +561,7 @@ class Commitment extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An optional, human-readable explanation of the status.
      *
-     * Generated from protobuf field <code>string status_message = 297428154;</code>
+     * Generated from protobuf field <code>string status_message = 28992698;</code>
      * @return string
      */
     public function getStatusMessage()
@@ -572,7 +572,7 @@ class Commitment extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An optional, human-readable explanation of the status.
      *
-     * Generated from protobuf field <code>string status_message = 297428154;</code>
+     * Generated from protobuf field <code>string status_message = 28992698;</code>
      * @param string $var
      * @return $this
      */

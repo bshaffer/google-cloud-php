@@ -25,7 +25,7 @@ class Router extends \Google\Protobuf\Internal\Message
     /**
      * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
      */
     private $bgp_peers;
     /**
@@ -37,7 +37,7 @@ class Router extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -85,7 +85,7 @@ class Router extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
 
@@ -165,7 +165,7 @@ class Router extends \Google\Protobuf\Internal\Message
     /**
      * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getBgpPeers()
@@ -176,7 +176,7 @@ class Router extends \Google\Protobuf\Internal\Message
     /**
      * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
      * @param \Google\Cloud\Compute\V1\RouterBgpPeer[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -217,7 +217,7 @@ class Router extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -228,7 +228,7 @@ class Router extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -425,7 +425,7 @@ class Router extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -436,7 +436,7 @@ class Router extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */

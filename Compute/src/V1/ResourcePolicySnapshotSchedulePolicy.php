@@ -24,7 +24,7 @@ class ResourcePolicySnapshotSchedulePolicy extends \Google\Protobuf\Internal\Mes
     /**
      * A Vm Maintenance Policy specifies what kind of infrastructure maintenance we are allowed to perform on this VM and when. Schedule that is applied to disks covered by this policy.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;</code>
      */
     private $schedule = null;
     /**
@@ -92,7 +92,7 @@ class ResourcePolicySnapshotSchedulePolicy extends \Google\Protobuf\Internal\Mes
     /**
      * A Vm Maintenance Policy specifies what kind of infrastructure maintenance we are allowed to perform on this VM and when. Schedule that is applied to disks covered by this policy.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;</code>
      * @return \Google\Cloud\Compute\V1\ResourcePolicySnapshotSchedulePolicySchedule
      */
     public function getSchedule()
@@ -113,7 +113,7 @@ class ResourcePolicySnapshotSchedulePolicy extends \Google\Protobuf\Internal\Mes
     /**
      * A Vm Maintenance Policy specifies what kind of infrastructure maintenance we are allowed to perform on this VM and when. Schedule that is applied to disks covered by this policy.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;</code>
      * @param \Google\Cloud\Compute\V1\ResourcePolicySnapshotSchedulePolicySchedule $var
      * @return $this
      */

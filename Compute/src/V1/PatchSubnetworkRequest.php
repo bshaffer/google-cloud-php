@@ -18,7 +18,7 @@ class PatchSubnetworkRequest extends \Google\Protobuf\Internal\Message
     /**
      * The drain timeout specifies the upper bound in seconds on the amount of time allowed to drain connections from the current ACTIVE subnetwork to the current BACKUP subnetwork. The drain timeout is only applicable when the following conditions are true: - the subnetwork being patched has purpose = INTERNAL_HTTPS_LOAD_BALANCER - the subnetwork being patched has role = BACKUP - the patch request is setting the role to ACTIVE. Note that after this patch operation the roles of the ACTIVE and BACKUP subnetworks will be swapped.
      *
-     * Generated from protobuf field <code>int32 drain_timeout_seconds = 357707098;</code>
+     * Generated from protobuf field <code>int32 drain_timeout_seconds = 89271642;</code>
      */
     private $drain_timeout_seconds = 0;
     /**
@@ -44,7 +44,7 @@ class PatchSubnetworkRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the Subnetwork resource to patch.
      *
-     * Generated from protobuf field <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $subnetwork = '';
     /**
@@ -81,7 +81,7 @@ class PatchSubnetworkRequest extends \Google\Protobuf\Internal\Message
     /**
      * The drain timeout specifies the upper bound in seconds on the amount of time allowed to drain connections from the current ACTIVE subnetwork to the current BACKUP subnetwork. The drain timeout is only applicable when the following conditions are true: - the subnetwork being patched has purpose = INTERNAL_HTTPS_LOAD_BALANCER - the subnetwork being patched has role = BACKUP - the patch request is setting the role to ACTIVE. Note that after this patch operation the roles of the ACTIVE and BACKUP subnetworks will be swapped.
      *
-     * Generated from protobuf field <code>int32 drain_timeout_seconds = 357707098;</code>
+     * Generated from protobuf field <code>int32 drain_timeout_seconds = 89271642;</code>
      * @return int
      */
     public function getDrainTimeoutSeconds()
@@ -92,7 +92,7 @@ class PatchSubnetworkRequest extends \Google\Protobuf\Internal\Message
     /**
      * The drain timeout specifies the upper bound in seconds on the amount of time allowed to drain connections from the current ACTIVE subnetwork to the current BACKUP subnetwork. The drain timeout is only applicable when the following conditions are true: - the subnetwork being patched has purpose = INTERNAL_HTTPS_LOAD_BALANCER - the subnetwork being patched has role = BACKUP - the patch request is setting the role to ACTIVE. Note that after this patch operation the roles of the ACTIVE and BACKUP subnetworks will be swapped.
      *
-     * Generated from protobuf field <code>int32 drain_timeout_seconds = 357707098;</code>
+     * Generated from protobuf field <code>int32 drain_timeout_seconds = 89271642;</code>
      * @param int $var
      * @return $this
      */
@@ -189,7 +189,7 @@ class PatchSubnetworkRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the Subnetwork resource to patch.
      *
-     * Generated from protobuf field <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getSubnetwork()
@@ -200,7 +200,7 @@ class PatchSubnetworkRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the Subnetwork resource to patch.
      *
-     * Generated from protobuf field <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

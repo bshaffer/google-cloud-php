@@ -17,7 +17,7 @@ class PreservedStatePreservedDisk extends \Google\Protobuf\Internal\Message
     /**
      * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 196325947;</code>
      */
     private $auto_delete = 0;
     /**
@@ -55,7 +55,7 @@ class PreservedStatePreservedDisk extends \Google\Protobuf\Internal\Message
     /**
      * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 196325947;</code>
      * @return int
      */
     public function getAutoDelete()
@@ -66,7 +66,7 @@ class PreservedStatePreservedDisk extends \Google\Protobuf\Internal\Message
     /**
      * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 196325947;</code>
      * @param int $var
      * @return $this
      */

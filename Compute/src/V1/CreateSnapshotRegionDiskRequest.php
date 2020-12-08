@@ -42,7 +42,7 @@ class CreateSnapshotRegionDiskRequest extends \Google\Protobuf\Internal\Message
      */
     private $request_id = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 212884521;</code>
      */
     private $snapshot_resource = null;
 
@@ -179,7 +179,7 @@ class CreateSnapshotRegionDiskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 212884521;</code>
      * @return \Google\Cloud\Compute\V1\Snapshot
      */
     public function getSnapshotResource()
@@ -198,7 +198,7 @@ class CreateSnapshotRegionDiskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 212884521;</code>
      * @param \Google\Cloud\Compute\V1\Snapshot $var
      * @return $this
      */

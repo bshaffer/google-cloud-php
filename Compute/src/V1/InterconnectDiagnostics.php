@@ -18,7 +18,7 @@ class InterconnectDiagnostics extends \Google\Protobuf\Internal\Message
     /**
      * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;</code>
      */
     private $arp_caches;
     /**
@@ -30,7 +30,7 @@ class InterconnectDiagnostics extends \Google\Protobuf\Internal\Message
     /**
      * The MAC address of the Interconnect's bundle interface.
      *
-     * Generated from protobuf field <code>string mac_address = 332540164;</code>
+     * Generated from protobuf field <code>string mac_address = 64104708;</code>
      */
     private $mac_address = '';
 
@@ -56,7 +56,7 @@ class InterconnectDiagnostics extends \Google\Protobuf\Internal\Message
     /**
      * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getArpCaches()
@@ -67,7 +67,7 @@ class InterconnectDiagnostics extends \Google\Protobuf\Internal\Message
     /**
      * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;</code>
      * @param \Google\Cloud\Compute\V1\InterconnectDiagnosticsARPEntry[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -108,7 +108,7 @@ class InterconnectDiagnostics extends \Google\Protobuf\Internal\Message
     /**
      * The MAC address of the Interconnect's bundle interface.
      *
-     * Generated from protobuf field <code>string mac_address = 332540164;</code>
+     * Generated from protobuf field <code>string mac_address = 64104708;</code>
      * @return string
      */
     public function getMacAddress()
@@ -119,7 +119,7 @@ class InterconnectDiagnostics extends \Google\Protobuf\Internal\Message
     /**
      * The MAC address of the Interconnect's bundle interface.
      *
-     * Generated from protobuf field <code>string mac_address = 332540164;</code>
+     * Generated from protobuf field <code>string mac_address = 64104708;</code>
      * @param string $var
      * @return $this
      */

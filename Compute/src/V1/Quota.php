@@ -24,7 +24,7 @@ class Quota extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Name of the quota metric.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Quota.Metric metric = 264631728;</code>
      */
     private $metric = 0;
     /**
@@ -90,7 +90,7 @@ class Quota extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Name of the quota metric.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Quota.Metric metric = 264631728;</code>
      * @return int
      */
     public function getMetric()
@@ -101,7 +101,7 @@ class Quota extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Name of the quota metric.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Quota.Metric metric = 264631728;</code>
      * @param int $var
      * @return $this
      */

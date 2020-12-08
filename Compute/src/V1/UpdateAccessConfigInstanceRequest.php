@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateAccessConfigInstanceRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 387825552;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 119390096;</code>
      */
     private $access_config_resource = null;
     /**
@@ -28,7 +28,7 @@ class UpdateAccessConfigInstanceRequest extends \Google\Protobuf\Internal\Messag
     /**
      * The name of the network interface where the access config is attached.
      *
-     * Generated from protobuf field <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $network_interface = '';
     /**
@@ -79,7 +79,7 @@ class UpdateAccessConfigInstanceRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 387825552;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 119390096;</code>
      * @return \Google\Cloud\Compute\V1\AccessConfig
      */
     public function getAccessConfigResource()
@@ -98,7 +98,7 @@ class UpdateAccessConfigInstanceRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 387825552;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 119390096;</code>
      * @param \Google\Cloud\Compute\V1\AccessConfig $var
      * @return $this
      */
@@ -139,7 +139,7 @@ class UpdateAccessConfigInstanceRequest extends \Google\Protobuf\Internal\Messag
     /**
      * The name of the network interface where the access config is attached.
      *
-     * Generated from protobuf field <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getNetworkInterface()
@@ -150,7 +150,7 @@ class UpdateAccessConfigInstanceRequest extends \Google\Protobuf\Internal\Messag
     /**
      * The name of the network interface where the access config is attached.
      *
-     * Generated from protobuf field <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

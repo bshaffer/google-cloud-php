@@ -24,7 +24,7 @@ class AliasIpRange extends \Google\Protobuf\Internal\Message
     /**
      * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not specified, the primary range of the subnetwork is used.
      *
-     * Generated from protobuf field <code>string subnetwork_range_name = 387995966;</code>
+     * Generated from protobuf field <code>string subnetwork_range_name = 119560510;</code>
      */
     private $subnetwork_range_name = '';
 
@@ -74,7 +74,7 @@ class AliasIpRange extends \Google\Protobuf\Internal\Message
     /**
      * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not specified, the primary range of the subnetwork is used.
      *
-     * Generated from protobuf field <code>string subnetwork_range_name = 387995966;</code>
+     * Generated from protobuf field <code>string subnetwork_range_name = 119560510;</code>
      * @return string
      */
     public function getSubnetworkRangeName()
@@ -85,7 +85,7 @@ class AliasIpRange extends \Google\Protobuf\Internal\Message
     /**
      * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not specified, the primary range of the subnetwork is used.
      *
-     * Generated from protobuf field <code>string subnetwork_range_name = 387995966;</code>
+     * Generated from protobuf field <code>string subnetwork_range_name = 119560510;</code>
      * @param string $var
      * @return $this
      */

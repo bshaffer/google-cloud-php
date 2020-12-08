@@ -19,7 +19,7 @@ class MachineType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of accelerator configurations assigned to this machine type.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Accelerators accelerators = 269577064;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Accelerators accelerators = 1141608;</code>
      */
     private $accelerators;
     /**
@@ -29,21 +29,21 @@ class MachineType extends \Google\Protobuf\Internal\Message
      */
     private $creation_timestamp = '';
     /**
-     * [Output Only] The deprecation status associated with this machine type. Only applicable if the machine type is unavailable.
+     * [Output Only] The deprecation status associated with this machine type.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     private $deprecated = null;
     /**
      * [Output Only] An optional textual description of the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
      * [Output Only] The number of virtual CPUs that are available to the instance.
      *
-     * Generated from protobuf field <code>int32 guest_cpus = 393356754;</code>
+     * Generated from protobuf field <code>int32 guest_cpus = 124921298;</code>
      */
     private $guest_cpus = 0;
     /**
@@ -61,7 +61,7 @@ class MachineType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Whether this machine type has a shared CPU. See Shared-core machine types for more information.
      *
-     * Generated from protobuf field <code>bool is_shared_cpu = 521399555;</code>
+     * Generated from protobuf field <code>bool is_shared_cpu = 252964099;</code>
      */
     private $is_shared_cpu = false;
     /**
@@ -73,7 +73,7 @@ class MachineType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Maximum persistent disks allowed.
      *
-     * Generated from protobuf field <code>int32 maximum_persistent_disks = 496220941;</code>
+     * Generated from protobuf field <code>int32 maximum_persistent_disks = 227785485;</code>
      */
     private $maximum_persistent_disks = 0;
     /**
@@ -97,13 +97,13 @@ class MachineType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of extended scratch disks assigned to the instance.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ScratchDisks scratch_disks = 480778481;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ScratchDisks scratch_disks = 212343025;</code>
      */
     private $scratch_disks;
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
@@ -124,7 +124,7 @@ class MachineType extends \Google\Protobuf\Internal\Message
      *     @type string $creation_timestamp
      *           [Output Only] Creation timestamp in RFC3339 text format.
      *     @type \Google\Cloud\Compute\V1\DeprecationStatus $deprecated
-     *           [Output Only] The deprecation status associated with this machine type. Only applicable if the machine type is unavailable.
+     *           [Output Only] The deprecation status associated with this machine type.
      *     @type string $description
      *           [Output Only] An optional textual description of the resource.
      *     @type int $guest_cpus
@@ -161,7 +161,7 @@ class MachineType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of accelerator configurations assigned to this machine type.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Accelerators accelerators = 269577064;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Accelerators accelerators = 1141608;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getAccelerators()
@@ -172,7 +172,7 @@ class MachineType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of accelerator configurations assigned to this machine type.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Accelerators accelerators = 269577064;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Accelerators accelerators = 1141608;</code>
      * @param \Google\Cloud\Compute\V1\Accelerators[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -211,9 +211,9 @@ class MachineType extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Output Only] The deprecation status associated with this machine type. Only applicable if the machine type is unavailable.
+     * [Output Only] The deprecation status associated with this machine type.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      * @return \Google\Cloud\Compute\V1\DeprecationStatus
      */
     public function getDeprecated()
@@ -232,9 +232,9 @@ class MachineType extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Output Only] The deprecation status associated with this machine type. Only applicable if the machine type is unavailable.
+     * [Output Only] The deprecation status associated with this machine type.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      * @param \Google\Cloud\Compute\V1\DeprecationStatus $var
      * @return $this
      */
@@ -249,7 +249,7 @@ class MachineType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An optional textual description of the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -260,7 +260,7 @@ class MachineType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An optional textual description of the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -275,7 +275,7 @@ class MachineType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The number of virtual CPUs that are available to the instance.
      *
-     * Generated from protobuf field <code>int32 guest_cpus = 393356754;</code>
+     * Generated from protobuf field <code>int32 guest_cpus = 124921298;</code>
      * @return int
      */
     public function getGuestCpus()
@@ -286,7 +286,7 @@ class MachineType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The number of virtual CPUs that are available to the instance.
      *
-     * Generated from protobuf field <code>int32 guest_cpus = 393356754;</code>
+     * Generated from protobuf field <code>int32 guest_cpus = 124921298;</code>
      * @param int $var
      * @return $this
      */
@@ -353,7 +353,7 @@ class MachineType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Whether this machine type has a shared CPU. See Shared-core machine types for more information.
      *
-     * Generated from protobuf field <code>bool is_shared_cpu = 521399555;</code>
+     * Generated from protobuf field <code>bool is_shared_cpu = 252964099;</code>
      * @return bool
      */
     public function getIsSharedCpu()
@@ -364,7 +364,7 @@ class MachineType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Whether this machine type has a shared CPU. See Shared-core machine types for more information.
      *
-     * Generated from protobuf field <code>bool is_shared_cpu = 521399555;</code>
+     * Generated from protobuf field <code>bool is_shared_cpu = 252964099;</code>
      * @param bool $var
      * @return $this
      */
@@ -405,7 +405,7 @@ class MachineType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Maximum persistent disks allowed.
      *
-     * Generated from protobuf field <code>int32 maximum_persistent_disks = 496220941;</code>
+     * Generated from protobuf field <code>int32 maximum_persistent_disks = 227785485;</code>
      * @return int
      */
     public function getMaximumPersistentDisks()
@@ -416,7 +416,7 @@ class MachineType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Maximum persistent disks allowed.
      *
-     * Generated from protobuf field <code>int32 maximum_persistent_disks = 496220941;</code>
+     * Generated from protobuf field <code>int32 maximum_persistent_disks = 227785485;</code>
      * @param int $var
      * @return $this
      */
@@ -509,7 +509,7 @@ class MachineType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of extended scratch disks assigned to the instance.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ScratchDisks scratch_disks = 480778481;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ScratchDisks scratch_disks = 212343025;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getScratchDisks()
@@ -520,7 +520,7 @@ class MachineType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of extended scratch disks assigned to the instance.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ScratchDisks scratch_disks = 480778481;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ScratchDisks scratch_disks = 212343025;</code>
      * @param \Google\Cloud\Compute\V1\ScratchDisks[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -535,7 +535,7 @@ class MachineType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -546,7 +546,7 @@ class MachineType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */

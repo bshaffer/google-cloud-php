@@ -23,7 +23,7 @@ class InstanceManagedByIgmError extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Details of the instance action that triggered this error. May be null, if the error was not caused by an action on an instance. This field is optional.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;</code>
      */
     private $instance_action_details = null;
     /**
@@ -91,7 +91,7 @@ class InstanceManagedByIgmError extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Details of the instance action that triggered this error. May be null, if the error was not caused by an action on an instance. This field is optional.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;</code>
      * @return \Google\Cloud\Compute\V1\InstanceManagedByIgmErrorInstanceActionDetails
      */
     public function getInstanceActionDetails()
@@ -112,7 +112,7 @@ class InstanceManagedByIgmError extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Details of the instance action that triggered this error. May be null, if the error was not caused by an action on an instance. This field is optional.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;</code>
      * @param \Google\Cloud\Compute\V1\InstanceManagedByIgmErrorInstanceActionDetails $var
      * @return $this
      */

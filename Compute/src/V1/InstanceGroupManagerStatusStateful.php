@@ -23,7 +23,7 @@ class InstanceGroupManagerStatusStateful extends \Google\Protobuf\Internal\Messa
     /**
      * [Output Only] Status of per-instance configs on the instance.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;</code>
      */
     private $per_instance_configs = null;
 
@@ -73,7 +73,7 @@ class InstanceGroupManagerStatusStateful extends \Google\Protobuf\Internal\Messa
     /**
      * [Output Only] Status of per-instance configs on the instance.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;</code>
      * @return \Google\Cloud\Compute\V1\InstanceGroupManagerStatusStatefulPerInstanceConfigs
      */
     public function getPerInstanceConfigs()
@@ -94,7 +94,7 @@ class InstanceGroupManagerStatusStateful extends \Google\Protobuf\Internal\Messa
     /**
      * [Output Only] Status of per-instance configs on the instance.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;</code>
      * @param \Google\Cloud\Compute\V1\InstanceGroupManagerStatusStatefulPerInstanceConfigs $var
      * @return $this
      */

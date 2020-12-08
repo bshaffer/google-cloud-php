@@ -18,7 +18,7 @@ class HttpFaultDelay extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the value of the fixed delay interval.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
      */
     private $fixed_delay = null;
     /**
@@ -50,7 +50,7 @@ class HttpFaultDelay extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the value of the fixed delay interval.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
      * @return \Google\Cloud\Compute\V1\Duration
      */
     public function getFixedDelay()
@@ -71,7 +71,7 @@ class HttpFaultDelay extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the value of the fixed delay interval.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
      * @param \Google\Cloud\Compute\V1\Duration $var
      * @return $this
      */

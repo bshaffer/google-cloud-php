@@ -69,23 +69,6 @@ return [
                     ],
                 ],
             ],
-            'Patch' => [
-                'method' => 'patch',
-                'uriTemplate' => '/compute/v1/projects/{project}/global/targetHttpProxies/{target_http_proxy}',
-                'body' => 'target_http_proxy_resource',
-                'placeholders' => [
-                    'target_http_proxy' => [
-                        'getters' => [
-                            'getTargetHttpProxy',
-                        ],
-                    ],
-                    'project' => [
-                        'getters' => [
-                            'getProject',
-                        ],
-                    ],
-                ],
-            ],
             'SetUrlMap' => [
                 'method' => 'post',
                 'uriTemplate' => '/compute/v1/projects/{project}/targetHttpProxies/{target_http_proxy}/setUrlMap',

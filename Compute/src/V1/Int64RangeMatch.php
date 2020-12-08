@@ -18,7 +18,7 @@ class Int64RangeMatch extends \Google\Protobuf\Internal\Message
     /**
      * The end of the range (exclusive) in signed long integer format.
      *
-     * Generated from protobuf field <code>string range_end = 322439897;</code>
+     * Generated from protobuf field <code>string range_end = 54004441;</code>
      */
     private $range_end = '';
     /**
@@ -48,7 +48,7 @@ class Int64RangeMatch extends \Google\Protobuf\Internal\Message
     /**
      * The end of the range (exclusive) in signed long integer format.
      *
-     * Generated from protobuf field <code>string range_end = 322439897;</code>
+     * Generated from protobuf field <code>string range_end = 54004441;</code>
      * @return string
      */
     public function getRangeEnd()
@@ -59,7 +59,7 @@ class Int64RangeMatch extends \Google\Protobuf\Internal\Message
     /**
      * The end of the range (exclusive) in signed long integer format.
      *
-     * Generated from protobuf field <code>string range_end = 322439897;</code>
+     * Generated from protobuf field <code>string range_end = 54004441;</code>
      * @param string $var
      * @return $this
      */

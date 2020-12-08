@@ -22,7 +22,7 @@ class RemoveResourcePoliciesDiskRequest extends \Google\Protobuf\Internal\Messag
      */
     private $disk = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DisksRemoveResourcePoliciesRequest disks_remove_resource_policies_request_resource = 436756718;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DisksRemoveResourcePoliciesRequest disks_remove_resource_policies_request_resource = 168321262;</code>
      */
     private $disks_remove_resource_policies_request_resource = null;
     /**
@@ -97,7 +97,7 @@ class RemoveResourcePoliciesDiskRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DisksRemoveResourcePoliciesRequest disks_remove_resource_policies_request_resource = 436756718;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DisksRemoveResourcePoliciesRequest disks_remove_resource_policies_request_resource = 168321262;</code>
      * @return \Google\Cloud\Compute\V1\DisksRemoveResourcePoliciesRequest
      */
     public function getDisksRemoveResourcePoliciesRequestResource()
@@ -116,7 +116,7 @@ class RemoveResourcePoliciesDiskRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DisksRemoveResourcePoliciesRequest disks_remove_resource_policies_request_resource = 436756718;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DisksRemoveResourcePoliciesRequest disks_remove_resource_policies_request_resource = 168321262;</code>
      * @param \Google\Cloud\Compute\V1\DisksRemoveResourcePoliciesRequest $var
      * @return $this
      */

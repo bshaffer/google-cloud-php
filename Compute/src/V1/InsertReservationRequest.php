@@ -30,7 +30,7 @@ class InsertReservationRequest extends \Google\Protobuf\Internal\Message
      */
     private $request_id = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Reservation reservation_resource = 285030177;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Reservation reservation_resource = 16594721;</code>
      */
     private $reservation_resource = null;
     /**
@@ -119,7 +119,7 @@ class InsertReservationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Reservation reservation_resource = 285030177;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Reservation reservation_resource = 16594721;</code>
      * @return \Google\Cloud\Compute\V1\Reservation
      */
     public function getReservationResource()
@@ -138,7 +138,7 @@ class InsertReservationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Reservation reservation_resource = 285030177;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Reservation reservation_resource = 16594721;</code>
      * @param \Google\Cloud\Compute\V1\Reservation $var
      * @return $this
      */

@@ -14,8 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
  * * [Global](/compute/docs/reference/rest/{$api_version}/urlMaps) * [Regional](https://cloud.google.com/compute/docs/reference/rest/{$api_version}/regionUrlMaps)
  * A URL map resource is a component of certain types of GCP load balancers and Traffic Director.
  * * urlMaps are used by external HTTP(S) load balancers and Traffic Director. * regionUrlMaps are used by internal HTTP(S) load balancers.
- * For a list of supported URL map features by load balancer type, see the  Load balancing features: Routing and traffic management table.
- * For a list of supported URL map features for Traffic Director, see the  Traffic Director features: Routing and traffic management table.
  * This resource defines mappings from host names and URL paths to either a backend service or a backend bucket.
  * To use the global urlMaps resource, the backend service must have a loadBalancingScheme of either EXTERNAL or INTERNAL_SELF_MANAGED. To use the regionUrlMaps resource, the backend service must have a loadBalancingScheme of INTERNAL_MANAGED. For more information, read URL Map Concepts.
  *
@@ -33,31 +31,28 @@ class UrlMap extends \Google\Protobuf\Internal\Message
      * defaultRouteAction takes effect when none of the  hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any  weightedBackendServices.
      * Only one of defaultRouteAction or defaultUrlRedirect must be set.
      * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction.
-     * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 110484010;</code>
      */
     private $default_route_action = null;
     /**
      * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified.
      * Only one of defaultService, defaultUrlRedirect  or defaultRouteAction.weightedBackendService must be set.
-     * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
-     * Generated from protobuf field <code>string default_service = 370242231;</code>
+     * Generated from protobuf field <code>string default_service = 101806775;</code>
      */
     private $default_service = '';
     /**
      * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect.
      * If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set.
-     * Not supported when the URL map is bound to target gRPC proxy.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 91067882;</code>
      */
     private $default_url_redirect = null;
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -70,16 +65,14 @@ class UrlMap extends \Google\Protobuf\Internal\Message
     /**
      * Specifies changes to request and response headers that need to take effect for the selected backendService.
      * The headerAction specified here take effect after headerAction specified under pathMatcher.
-     * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
      */
     private $header_action = null;
     /**
      * The list of HostRules to use against the URL.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
      */
     private $host_rules;
     /**
@@ -103,7 +96,7 @@ class UrlMap extends \Google\Protobuf\Internal\Message
     /**
      * The list of named PathMatchers to use against the URL.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
      */
     private $path_matchers;
     /**
@@ -115,12 +108,11 @@ class UrlMap extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
      * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
      * Generated from protobuf field <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
      */
@@ -138,15 +130,12 @@ class UrlMap extends \Google\Protobuf\Internal\Message
      *           defaultRouteAction takes effect when none of the  hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any  weightedBackendServices.
      *           Only one of defaultRouteAction or defaultUrlRedirect must be set.
      *           UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction.
-     *           defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *     @type string $default_service
      *           The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified.
      *           Only one of defaultService, defaultUrlRedirect  or defaultRouteAction.weightedBackendService must be set.
-     *           defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *     @type \Google\Cloud\Compute\V1\HttpRedirectAction $default_url_redirect
      *           When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect.
      *           If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set.
-     *           Not supported when the URL map is bound to target gRPC proxy.
      *     @type string $description
      *           An optional description of this resource. Provide this property when you create the resource.
      *     @type string $fingerprint
@@ -155,8 +144,6 @@ class UrlMap extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Compute\V1\HttpHeaderAction $header_action
      *           Specifies changes to request and response headers that need to take effect for the selected backendService.
      *           The headerAction specified here take effect after headerAction specified under pathMatcher.
-     *           Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
-     *           Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *     @type \Google\Cloud\Compute\V1\HostRule[]|\Google\Protobuf\Internal\RepeatedField $host_rules
      *           The list of HostRules to use against the URL.
      *     @type string $id
@@ -173,7 +160,6 @@ class UrlMap extends \Google\Protobuf\Internal\Message
      *           [Output Only] Server-defined URL for the resource.
      *     @type \Google\Cloud\Compute\V1\UrlMapTest[]|\Google\Protobuf\Internal\RepeatedField $tests
      *           The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-     *           Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * }
      */
     public function __construct($data = NULL) {
@@ -211,9 +197,8 @@ class UrlMap extends \Google\Protobuf\Internal\Message
      * defaultRouteAction takes effect when none of the  hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any  weightedBackendServices.
      * Only one of defaultRouteAction or defaultUrlRedirect must be set.
      * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction.
-     * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 110484010;</code>
      * @return \Google\Cloud\Compute\V1\HttpRouteAction
      */
     public function getDefaultRouteAction()
@@ -235,9 +220,8 @@ class UrlMap extends \Google\Protobuf\Internal\Message
      * defaultRouteAction takes effect when none of the  hostRules match. The load balancer performs advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any  weightedBackendServices.
      * Only one of defaultRouteAction or defaultUrlRedirect must be set.
      * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within defaultRouteAction.
-     * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 110484010;</code>
      * @param \Google\Cloud\Compute\V1\HttpRouteAction $var
      * @return $this
      */
@@ -252,9 +236,8 @@ class UrlMap extends \Google\Protobuf\Internal\Message
     /**
      * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified.
      * Only one of defaultService, defaultUrlRedirect  or defaultRouteAction.weightedBackendService must be set.
-     * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
-     * Generated from protobuf field <code>string default_service = 370242231;</code>
+     * Generated from protobuf field <code>string default_service = 101806775;</code>
      * @return string
      */
     public function getDefaultService()
@@ -265,9 +248,8 @@ class UrlMap extends \Google\Protobuf\Internal\Message
     /**
      * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified.
      * Only one of defaultService, defaultUrlRedirect  or defaultRouteAction.weightedBackendService must be set.
-     * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
-     * Generated from protobuf field <code>string default_service = 370242231;</code>
+     * Generated from protobuf field <code>string default_service = 101806775;</code>
      * @param string $var
      * @return $this
      */
@@ -282,9 +264,8 @@ class UrlMap extends \Google\Protobuf\Internal\Message
     /**
      * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect.
      * If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set.
-     * Not supported when the URL map is bound to target gRPC proxy.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 91067882;</code>
      * @return \Google\Cloud\Compute\V1\HttpRedirectAction
      */
     public function getDefaultUrlRedirect()
@@ -305,9 +286,8 @@ class UrlMap extends \Google\Protobuf\Internal\Message
     /**
      * When none of the specified hostRules match, the request is redirected to a URL specified by defaultUrlRedirect.
      * If defaultUrlRedirect is specified, defaultService or defaultRouteAction must not be set.
-     * Not supported when the URL map is bound to target gRPC proxy.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 91067882;</code>
      * @param \Google\Cloud\Compute\V1\HttpRedirectAction $var
      * @return $this
      */
@@ -322,7 +302,7 @@ class UrlMap extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -333,7 +313,7 @@ class UrlMap extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -376,10 +356,8 @@ class UrlMap extends \Google\Protobuf\Internal\Message
     /**
      * Specifies changes to request and response headers that need to take effect for the selected backendService.
      * The headerAction specified here take effect after headerAction specified under pathMatcher.
-     * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
      * @return \Google\Cloud\Compute\V1\HttpHeaderAction
      */
     public function getHeaderAction()
@@ -400,10 +378,8 @@ class UrlMap extends \Google\Protobuf\Internal\Message
     /**
      * Specifies changes to request and response headers that need to take effect for the selected backendService.
      * The headerAction specified here take effect after headerAction specified under pathMatcher.
-     * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
      * @param \Google\Cloud\Compute\V1\HttpHeaderAction $var
      * @return $this
      */
@@ -418,7 +394,7 @@ class UrlMap extends \Google\Protobuf\Internal\Message
     /**
      * The list of HostRules to use against the URL.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getHostRules()
@@ -429,7 +405,7 @@ class UrlMap extends \Google\Protobuf\Internal\Message
     /**
      * The list of HostRules to use against the URL.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
      * @param \Google\Cloud\Compute\V1\HostRule[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -522,7 +498,7 @@ class UrlMap extends \Google\Protobuf\Internal\Message
     /**
      * The list of named PathMatchers to use against the URL.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPathMatchers()
@@ -533,7 +509,7 @@ class UrlMap extends \Google\Protobuf\Internal\Message
     /**
      * The list of named PathMatchers to use against the URL.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
      * @param \Google\Cloud\Compute\V1\PathMatcher[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -574,7 +550,7 @@ class UrlMap extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -585,7 +561,7 @@ class UrlMap extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */
@@ -599,7 +575,6 @@ class UrlMap extends \Google\Protobuf\Internal\Message
 
     /**
      * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
      * Generated from protobuf field <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -611,7 +586,6 @@ class UrlMap extends \Google\Protobuf\Internal\Message
 
     /**
      * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
      * Generated from protobuf field <code>repeated .google.cloud.compute.v1.UrlMapTest tests = 110251553;</code>
      * @param \Google\Cloud\Compute\V1\UrlMapTest[]|\Google\Protobuf\Internal\RepeatedField $var

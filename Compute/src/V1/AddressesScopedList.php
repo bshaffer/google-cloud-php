@@ -17,7 +17,7 @@ class AddressesScopedList extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of addresses contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
      */
     private $addresses;
     /**
@@ -47,7 +47,7 @@ class AddressesScopedList extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of addresses contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getAddresses()
@@ -58,7 +58,7 @@ class AddressesScopedList extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of addresses contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
      * @param \Google\Cloud\Compute\V1\Address[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

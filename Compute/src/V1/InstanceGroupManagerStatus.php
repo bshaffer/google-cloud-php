@@ -17,7 +17,7 @@ class InstanceGroupManagerStatus extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The URL of the Autoscaler that targets this instance group manager.
      *
-     * Generated from protobuf field <code>string autoscaler = 517258967;</code>
+     * Generated from protobuf field <code>string autoscaler = 248823511;</code>
      */
     private $autoscaler = '';
     /**
@@ -35,7 +35,7 @@ class InstanceGroupManagerStatus extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A status of consistency of Instances' versions with their target version specified by version field on Instance Group Manager.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 20950744;</code>
      */
     private $version_target = null;
 
@@ -63,7 +63,7 @@ class InstanceGroupManagerStatus extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The URL of the Autoscaler that targets this instance group manager.
      *
-     * Generated from protobuf field <code>string autoscaler = 517258967;</code>
+     * Generated from protobuf field <code>string autoscaler = 248823511;</code>
      * @return string
      */
     public function getAutoscaler()
@@ -74,7 +74,7 @@ class InstanceGroupManagerStatus extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The URL of the Autoscaler that targets this instance group manager.
      *
-     * Generated from protobuf field <code>string autoscaler = 517258967;</code>
+     * Generated from protobuf field <code>string autoscaler = 248823511;</code>
      * @param string $var
      * @return $this
      */
@@ -151,7 +151,7 @@ class InstanceGroupManagerStatus extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A status of consistency of Instances' versions with their target version specified by version field on Instance Group Manager.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 20950744;</code>
      * @return \Google\Cloud\Compute\V1\InstanceGroupManagerStatusVersionTarget
      */
     public function getVersionTarget()
@@ -172,7 +172,7 @@ class InstanceGroupManagerStatus extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A status of consistency of Instances' versions with their target version specified by version field on Instance Group Manager.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 20950744;</code>
      * @param \Google\Cloud\Compute\V1\InstanceGroupManagerStatusVersionTarget $var
      * @return $this
      */

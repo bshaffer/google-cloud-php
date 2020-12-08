@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class InsertPacketMirroringRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529;</code>
      */
     private $packet_mirroring_resource = null;
     /**
@@ -63,7 +63,7 @@ class InsertPacketMirroringRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529;</code>
      * @return \Google\Cloud\Compute\V1\PacketMirroring
      */
     public function getPacketMirroringResource()
@@ -82,7 +82,7 @@ class InsertPacketMirroringRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529;</code>
      * @param \Google\Cloud\Compute\V1\PacketMirroring $var
      * @return $this
      */

@@ -29,19 +29,19 @@ class DiskType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined default disk size in GB.
      *
-     * Generated from protobuf field <code>string default_disk_size_gb = 270619253;</code>
+     * Generated from protobuf field <code>string default_disk_size_gb = 2183797;</code>
      */
     private $default_disk_size_gb = '';
     /**
      * [Output Only] The deprecation status associated with this disk type.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     private $deprecated = null;
     /**
      * [Output Only] An optional description of this resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -71,13 +71,13 @@ class DiskType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
      * [Output Only] An optional textual description of the valid disk size, such as "10GB-10TB".
      *
-     * Generated from protobuf field <code>string valid_disk_size = 493962464;</code>
+     * Generated from protobuf field <code>string valid_disk_size = 225527008;</code>
      */
     private $valid_disk_size = '';
     /**
@@ -151,7 +151,7 @@ class DiskType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined default disk size in GB.
      *
-     * Generated from protobuf field <code>string default_disk_size_gb = 270619253;</code>
+     * Generated from protobuf field <code>string default_disk_size_gb = 2183797;</code>
      * @return string
      */
     public function getDefaultDiskSizeGb()
@@ -162,7 +162,7 @@ class DiskType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined default disk size in GB.
      *
-     * Generated from protobuf field <code>string default_disk_size_gb = 270619253;</code>
+     * Generated from protobuf field <code>string default_disk_size_gb = 2183797;</code>
      * @param string $var
      * @return $this
      */
@@ -177,7 +177,7 @@ class DiskType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The deprecation status associated with this disk type.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      * @return \Google\Cloud\Compute\V1\DeprecationStatus
      */
     public function getDeprecated()
@@ -198,7 +198,7 @@ class DiskType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The deprecation status associated with this disk type.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      * @param \Google\Cloud\Compute\V1\DeprecationStatus $var
      * @return $this
      */
@@ -213,7 +213,7 @@ class DiskType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An optional description of this resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -224,7 +224,7 @@ class DiskType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An optional description of this resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -343,7 +343,7 @@ class DiskType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -354,7 +354,7 @@ class DiskType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */
@@ -369,7 +369,7 @@ class DiskType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An optional textual description of the valid disk size, such as "10GB-10TB".
      *
-     * Generated from protobuf field <code>string valid_disk_size = 493962464;</code>
+     * Generated from protobuf field <code>string valid_disk_size = 225527008;</code>
      * @return string
      */
     public function getValidDiskSize()
@@ -380,7 +380,7 @@ class DiskType extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An optional textual description of the valid disk size, such as "10GB-10TB".
      *
-     * Generated from protobuf field <code>string valid_disk_size = 493962464;</code>
+     * Generated from protobuf field <code>string valid_disk_size = 225527008;</code>
      * @param string $var
      * @return $this
      */

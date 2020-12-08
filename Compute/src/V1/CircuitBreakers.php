@@ -24,7 +24,7 @@ class CircuitBreakers extends \Google\Protobuf\Internal\Message
     /**
      * The maximum number of pending requests allowed to the backend service. If not specified, there is no limit.
      *
-     * Generated from protobuf field <code>int32 max_pending_requests = 375558887;</code>
+     * Generated from protobuf field <code>int32 max_pending_requests = 107123431;</code>
      */
     private $max_pending_requests = 0;
     /**
@@ -36,7 +36,7 @@ class CircuitBreakers extends \Google\Protobuf\Internal\Message
     /**
      * Maximum requests for a single connection to the backend service. This parameter is respected by both the HTTP/1.1 and HTTP/2 implementations. If not specified, there is no limit. Setting this parameter to 1 will effectively disable keep alive.
      *
-     * Generated from protobuf field <code>int32 max_requests_per_connection = 361630528;</code>
+     * Generated from protobuf field <code>int32 max_requests_per_connection = 93195072;</code>
      */
     private $max_requests_per_connection = 0;
     /**
@@ -98,7 +98,7 @@ class CircuitBreakers extends \Google\Protobuf\Internal\Message
     /**
      * The maximum number of pending requests allowed to the backend service. If not specified, there is no limit.
      *
-     * Generated from protobuf field <code>int32 max_pending_requests = 375558887;</code>
+     * Generated from protobuf field <code>int32 max_pending_requests = 107123431;</code>
      * @return int
      */
     public function getMaxPendingRequests()
@@ -109,7 +109,7 @@ class CircuitBreakers extends \Google\Protobuf\Internal\Message
     /**
      * The maximum number of pending requests allowed to the backend service. If not specified, there is no limit.
      *
-     * Generated from protobuf field <code>int32 max_pending_requests = 375558887;</code>
+     * Generated from protobuf field <code>int32 max_pending_requests = 107123431;</code>
      * @param int $var
      * @return $this
      */
@@ -150,7 +150,7 @@ class CircuitBreakers extends \Google\Protobuf\Internal\Message
     /**
      * Maximum requests for a single connection to the backend service. This parameter is respected by both the HTTP/1.1 and HTTP/2 implementations. If not specified, there is no limit. Setting this parameter to 1 will effectively disable keep alive.
      *
-     * Generated from protobuf field <code>int32 max_requests_per_connection = 361630528;</code>
+     * Generated from protobuf field <code>int32 max_requests_per_connection = 93195072;</code>
      * @return int
      */
     public function getMaxRequestsPerConnection()
@@ -161,7 +161,7 @@ class CircuitBreakers extends \Google\Protobuf\Internal\Message
     /**
      * Maximum requests for a single connection to the backend service. This parameter is respected by both the HTTP/1.1 and HTTP/2 implementations. If not specified, there is no limit. Setting this parameter to 1 will effectively disable keep alive.
      *
-     * Generated from protobuf field <code>int32 max_requests_per_connection = 361630528;</code>
+     * Generated from protobuf field <code>int32 max_requests_per_connection = 93195072;</code>
      * @param int $var
      * @return $this
      */

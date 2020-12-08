@@ -17,7 +17,7 @@ class TargetHttpsProxiesScopedList extends \Google\Protobuf\Internal\Message
     /**
      * A list of TargetHttpsProxies contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;</code>
      */
     private $target_https_proxies;
     /**
@@ -47,7 +47,7 @@ class TargetHttpsProxiesScopedList extends \Google\Protobuf\Internal\Message
     /**
      * A list of TargetHttpsProxies contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTargetHttpsProxies()
@@ -58,7 +58,7 @@ class TargetHttpsProxiesScopedList extends \Google\Protobuf\Internal\Message
     /**
      * A list of TargetHttpsProxies contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;</code>
      * @param \Google\Cloud\Compute\V1\TargetHttpsProxy[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

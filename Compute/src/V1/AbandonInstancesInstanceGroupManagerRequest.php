@@ -22,7 +22,7 @@ class AbandonInstancesInstanceGroupManagerRequest extends \Google\Protobuf\Inter
      */
     private $instance_group_manager = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 320929016;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 52493560;</code>
      */
     private $instance_group_managers_abandon_instances_request_resource = null;
     /**
@@ -97,7 +97,7 @@ class AbandonInstancesInstanceGroupManagerRequest extends \Google\Protobuf\Inter
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 320929016;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 52493560;</code>
      * @return \Google\Cloud\Compute\V1\InstanceGroupManagersAbandonInstancesRequest
      */
     public function getInstanceGroupManagersAbandonInstancesRequestResource()
@@ -116,7 +116,7 @@ class AbandonInstancesInstanceGroupManagerRequest extends \Google\Protobuf\Inter
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 320929016;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 52493560;</code>
      * @param \Google\Cloud\Compute\V1\InstanceGroupManagersAbandonInstancesRequest $var
      * @return $this
      */

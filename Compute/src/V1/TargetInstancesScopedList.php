@@ -17,7 +17,7 @@ class TargetInstancesScopedList extends \Google\Protobuf\Internal\Message
     /**
      * A list of target instances contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.TargetInstance target_instances = 392915280;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.TargetInstance target_instances = 124479824;</code>
      */
     private $target_instances;
     /**
@@ -47,7 +47,7 @@ class TargetInstancesScopedList extends \Google\Protobuf\Internal\Message
     /**
      * A list of target instances contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.TargetInstance target_instances = 392915280;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.TargetInstance target_instances = 124479824;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTargetInstances()
@@ -58,7 +58,7 @@ class TargetInstancesScopedList extends \Google\Protobuf\Internal\Message
     /**
      * A list of target instances contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.TargetInstance target_instances = 392915280;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.TargetInstance target_instances = 124479824;</code>
      * @param \Google\Cloud\Compute\V1\TargetInstance[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

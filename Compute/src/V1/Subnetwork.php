@@ -25,7 +25,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -44,7 +44,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
      *
-     * Generated from protobuf field <code>string gateway_address = 459867385;</code>
+     * Generated from protobuf field <code>string gateway_address = 191431929;</code>
      */
     private $gateway_address = '';
     /**
@@ -62,7 +62,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
      *
-     * Generated from protobuf field <code>string ipv6_cidr_range = 273141258;</code>
+     * Generated from protobuf field <code>string ipv6_cidr_range = 4705802;</code>
      */
     private $ipv6_cidr_range = '';
     /**
@@ -74,7 +74,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     /**
      * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 82864285;</code>
      */
     private $log_config = null;
     /**
@@ -92,7 +92,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     /**
      * Whether the VMs in this subnet can access Google services without assigned external IP addresses. This field can be both set at resource creation time and updated using setPrivateIpGoogleAccess.
      *
-     * Generated from protobuf field <code>bool private_ip_google_access = 421491790;</code>
+     * Generated from protobuf field <code>bool private_ip_google_access = 153056334;</code>
      */
     private $private_ip_google_access = false;
     /**
@@ -105,7 +105,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     /**
      * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 47971614;</code>
      */
     private $purpose = 0;
     /**
@@ -129,7 +129,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
@@ -223,7 +223,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -234,7 +234,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -303,7 +303,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
      *
-     * Generated from protobuf field <code>string gateway_address = 459867385;</code>
+     * Generated from protobuf field <code>string gateway_address = 191431929;</code>
      * @return string
      */
     public function getGatewayAddress()
@@ -314,7 +314,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
      *
-     * Generated from protobuf field <code>string gateway_address = 459867385;</code>
+     * Generated from protobuf field <code>string gateway_address = 191431929;</code>
      * @param string $var
      * @return $this
      */
@@ -381,7 +381,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
      *
-     * Generated from protobuf field <code>string ipv6_cidr_range = 273141258;</code>
+     * Generated from protobuf field <code>string ipv6_cidr_range = 4705802;</code>
      * @return string
      */
     public function getIpv6CidrRange()
@@ -392,7 +392,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
      *
-     * Generated from protobuf field <code>string ipv6_cidr_range = 273141258;</code>
+     * Generated from protobuf field <code>string ipv6_cidr_range = 4705802;</code>
      * @param string $var
      * @return $this
      */
@@ -433,7 +433,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     /**
      * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 82864285;</code>
      * @return \Google\Cloud\Compute\V1\SubnetworkLogConfig
      */
     public function getLogConfig()
@@ -454,7 +454,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     /**
      * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 82864285;</code>
      * @param \Google\Cloud\Compute\V1\SubnetworkLogConfig $var
      * @return $this
      */
@@ -521,7 +521,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     /**
      * Whether the VMs in this subnet can access Google services without assigned external IP addresses. This field can be both set at resource creation time and updated using setPrivateIpGoogleAccess.
      *
-     * Generated from protobuf field <code>bool private_ip_google_access = 421491790;</code>
+     * Generated from protobuf field <code>bool private_ip_google_access = 153056334;</code>
      * @return bool
      */
     public function getPrivateIpGoogleAccess()
@@ -532,7 +532,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     /**
      * Whether the VMs in this subnet can access Google services without assigned external IP addresses. This field can be both set at resource creation time and updated using setPrivateIpGoogleAccess.
      *
-     * Generated from protobuf field <code>bool private_ip_google_access = 421491790;</code>
+     * Generated from protobuf field <code>bool private_ip_google_access = 153056334;</code>
      * @param bool $var
      * @return $this
      */
@@ -575,7 +575,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     /**
      * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 47971614;</code>
      * @return int
      */
     public function getPurpose()
@@ -586,7 +586,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     /**
      * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 47971614;</code>
      * @param int $var
      * @return $this
      */
@@ -679,7 +679,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -690,7 +690,7 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */

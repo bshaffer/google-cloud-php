@@ -24,7 +24,7 @@ class ResourcePolicySnapshotSchedulePolicySchedule extends \Google\Protobuf\Inte
      */
     private $hourly_schedule = null;
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 91112597;</code>
      */
     private $weekly_schedule = null;
 
@@ -109,7 +109,7 @@ class ResourcePolicySnapshotSchedulePolicySchedule extends \Google\Protobuf\Inte
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 91112597;</code>
      * @return \Google\Cloud\Compute\V1\ResourcePolicyWeeklyCycle
      */
     public function getWeeklySchedule()
@@ -128,7 +128,7 @@ class ResourcePolicySnapshotSchedulePolicySchedule extends \Google\Protobuf\Inte
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 91112597;</code>
      * @param \Google\Cloud\Compute\V1\ResourcePolicyWeeklyCycle $var
      * @return $this
      */

@@ -27,13 +27,13 @@ class Filter
      */
     const ALL = 64897;
     /**
-     * Generated from protobuf enum <code>ERRORS_ONLY = 307484672;</code>
+     * Generated from protobuf enum <code>ERRORS_ONLY = 39049216;</code>
      */
-    const ERRORS_ONLY = 307484672;
+    const ERRORS_ONLY = 39049216;
     /**
-     * Generated from protobuf enum <code>TRANSLATIONS_ONLY = 357212649;</code>
+     * Generated from protobuf enum <code>TRANSLATIONS_ONLY = 88777193;</code>
      */
-    const TRANSLATIONS_ONLY = 357212649;
+    const TRANSLATIONS_ONLY = 88777193;
 
     private static $valueToName = [
         self::UNDEFINED_FILTER => 'UNDEFINED_FILTER',

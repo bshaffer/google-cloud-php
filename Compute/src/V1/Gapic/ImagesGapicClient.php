@@ -27,6 +27,7 @@ namespace Google\Cloud\Compute\V1\Gapic;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
@@ -44,7 +45,6 @@ use Google\Cloud\Compute\V1\ImageList;
 use Google\Cloud\Compute\V1\InsertImageRequest;
 use Google\Cloud\Compute\V1\ListImagesRequest;
 use Google\Cloud\Compute\V1\Operation;
-use Google\Cloud\Compute\V1\PatchImageRequest;
 use Google\Cloud\Compute\V1\Policy;
 use Google\Cloud\Compute\V1\SetIamPolicyImageRequest;
 use Google\Cloud\Compute\V1\SetLabelsImageRequest;
@@ -108,8 +108,9 @@ class ImagesGapicClient
             'apiEndpoint' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
             'clientConfig' => __DIR__.'/../resources/images_client_config.json',
             'descriptorsConfigPath' => __DIR__.'/../resources/images_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__.'/../resources/images_grpc_config.json',
             'credentialsConfig' => [
-                'defaultScopes' => self::$serviceScopes,
+                'scopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
@@ -117,16 +118,6 @@ class ImagesGapicClient
                 ],
             ],
         ];
-    }
-
-    private static function defaultTransport()
-    {
-        return 'rest';
-    }
-
-    private static function getSupportedTransports()
-    {
-        return ['rest'];
     }
 
     /**
@@ -162,8 +153,8 @@ class ImagesGapicClient
      *           By default this settings points to the default client config file, which is provided
      *           in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. At the moment, only supports
-     *           `rest`.
+     *           The transport used for executing network requests. May be either the string `rest`
+     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
      *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
      *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
      *           object is provided, any settings in $transportConfig, and any `$apiEndpoint`
@@ -173,9 +164,11 @@ class ImagesGapicClient
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
+     *               'grpc' => [...],
      *               'rest' => [...]
      *           ];
-     *           See the {@see \Google\ApiCore\Transport\RestTransport::build()} method for the
+     *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
+     *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
      *           supported options.
      * }
      *
@@ -493,6 +486,13 @@ class ImagesGapicClient
             $request->setRequestId($optionalArgs['requestId']);
         }
 
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'project' => $request->getProject(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
         return $this->startCall(
             'Insert',
             Operation::class,
@@ -537,8 +537,6 @@ class ImagesGapicClient
      *          Currently, only sorting by `name` or `creationTimestamp desc` is supported.
      *     @type string $pageToken
      *          Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
-     *     @type bool $returnPartialSuccess
-     *          Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -566,71 +564,17 @@ class ImagesGapicClient
         if (isset($optionalArgs['pageToken'])) {
             $request->setPageToken($optionalArgs['pageToken']);
         }
-        if (isset($optionalArgs['returnPartialSuccess'])) {
-            $request->setReturnPartialSuccess($optionalArgs['returnPartialSuccess']);
-        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'project' => $request->getProject(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
 
         return $this->startCall(
             'List',
             ImageList::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Patches the specified image with the data included in the request. Only the following fields can be modified: family, description, deprecation status.
-     *
-     * Sample code:
-     * ```
-     * $imagesClient = new ImagesClient();
-     * try {
-     *     $image = '';
-     *     $project = '';
-     *     $response = $imagesClient->patch($image, $project);
-     * } finally {
-     *     $imagesClient->close();
-     * }
-     * ```
-     *
-     * @param string $image        Name of the image resource to patch.
-     * @param string $project      Project ID for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type Image $imageResource
-     *     @type string $requestId
-     *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-     *
-     *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-     *
-     *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Cloud\Compute\V1\Operation
-     *
-     * @throws ApiException if the remote call fails
-     */
-    public function patch($image, $project, array $optionalArgs = [])
-    {
-        $request = new PatchImageRequest();
-        $request->setImage($image);
-        $request->setProject($project);
-        if (isset($optionalArgs['imageResource'])) {
-            $request->setImageResource($optionalArgs['imageResource']);
-        }
-        if (isset($optionalArgs['requestId'])) {
-            $request->setRequestId($optionalArgs['requestId']);
-        }
-
-        return $this->startCall(
-            'Patch',
-            Operation::class,
             $optionalArgs,
             $request
         )->wait();

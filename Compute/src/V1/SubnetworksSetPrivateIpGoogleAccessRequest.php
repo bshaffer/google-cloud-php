@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class SubnetworksSetPrivateIpGoogleAccessRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>bool private_ip_google_access = 421491790;</code>
+     * Generated from protobuf field <code>bool private_ip_google_access = 153056334;</code>
      */
     private $private_ip_google_access = false;
 
@@ -34,7 +34,7 @@ class SubnetworksSetPrivateIpGoogleAccessRequest extends \Google\Protobuf\Intern
     }
 
     /**
-     * Generated from protobuf field <code>bool private_ip_google_access = 421491790;</code>
+     * Generated from protobuf field <code>bool private_ip_google_access = 153056334;</code>
      * @return bool
      */
     public function getPrivateIpGoogleAccess()
@@ -43,7 +43,7 @@ class SubnetworksSetPrivateIpGoogleAccessRequest extends \Google\Protobuf\Intern
     }
 
     /**
-     * Generated from protobuf field <code>bool private_ip_google_access = 421491790;</code>
+     * Generated from protobuf field <code>bool private_ip_google_access = 153056334;</code>
      * @param bool $var
      * @return $this
      */

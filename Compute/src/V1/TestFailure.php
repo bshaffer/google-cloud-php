@@ -15,26 +15,18 @@ use Google\Protobuf\Internal\GPBUtil;
 class TestFailure extends \Google\Protobuf\Internal\Message
 {
     /**
-     * BackendService or BackendBucket returned by load balancer.
-     *
-     * Generated from protobuf field <code>string actual_service = 440379652;</code>
+     * Generated from protobuf field <code>string actual_service = 171944196;</code>
      */
     private $actual_service = '';
     /**
-     * Expected BackendService or BackendBucket resource the given URL should be mapped to.
-     *
      * Generated from protobuf field <code>string expected_service = 133987374;</code>
      */
     private $expected_service = '';
     /**
-     * Host portion of the URL.
-     *
      * Generated from protobuf field <code>string host = 3208616;</code>
      */
     private $host = '';
     /**
-     * Path portion including query parameters in the URL.
-     *
      * Generated from protobuf field <code>string path = 3433509;</code>
      */
     private $path = '';
@@ -46,13 +38,9 @@ class TestFailure extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $actual_service
-     *           BackendService or BackendBucket returned by load balancer.
      *     @type string $expected_service
-     *           Expected BackendService or BackendBucket resource the given URL should be mapped to.
      *     @type string $host
-     *           Host portion of the URL.
      *     @type string $path
-     *           Path portion including query parameters in the URL.
      * }
      */
     public function __construct($data = NULL) {
@@ -61,9 +49,7 @@ class TestFailure extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * BackendService or BackendBucket returned by load balancer.
-     *
-     * Generated from protobuf field <code>string actual_service = 440379652;</code>
+     * Generated from protobuf field <code>string actual_service = 171944196;</code>
      * @return string
      */
     public function getActualService()
@@ -72,9 +58,7 @@ class TestFailure extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * BackendService or BackendBucket returned by load balancer.
-     *
-     * Generated from protobuf field <code>string actual_service = 440379652;</code>
+     * Generated from protobuf field <code>string actual_service = 171944196;</code>
      * @param string $var
      * @return $this
      */
@@ -87,8 +71,6 @@ class TestFailure extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Expected BackendService or BackendBucket resource the given URL should be mapped to.
-     *
      * Generated from protobuf field <code>string expected_service = 133987374;</code>
      * @return string
      */
@@ -98,8 +80,6 @@ class TestFailure extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Expected BackendService or BackendBucket resource the given URL should be mapped to.
-     *
      * Generated from protobuf field <code>string expected_service = 133987374;</code>
      * @param string $var
      * @return $this
@@ -113,8 +93,6 @@ class TestFailure extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Host portion of the URL.
-     *
      * Generated from protobuf field <code>string host = 3208616;</code>
      * @return string
      */
@@ -124,8 +102,6 @@ class TestFailure extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Host portion of the URL.
-     *
      * Generated from protobuf field <code>string host = 3208616;</code>
      * @param string $var
      * @return $this
@@ -139,8 +115,6 @@ class TestFailure extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Path portion including query parameters in the URL.
-     *
      * Generated from protobuf field <code>string path = 3433509;</code>
      * @return string
      */
@@ -150,8 +124,6 @@ class TestFailure extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Path portion including query parameters in the URL.
-     *
      * Generated from protobuf field <code>string path = 3433509;</code>
      * @param string $var
      * @return $this

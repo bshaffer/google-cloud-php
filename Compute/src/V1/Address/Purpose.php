@@ -12,7 +12,6 @@ use UnexpectedValueException;
  * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
  * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
  * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
- * - `IPSEC_INTERCONNECT` for addresses created from a private IP range reserved for a VLAN attachment in an IPsec over Interconnect configuration. These addresses are regional resources.
  *
  * Protobuf type <code>google.cloud.compute.v1.Address.Purpose</code>
  */
@@ -25,9 +24,9 @@ class Purpose
      */
     const UNDEFINED_PURPOSE = 0;
     /**
-     * Generated from protobuf enum <code>DNS_RESOLVER = 476114556;</code>
+     * Generated from protobuf enum <code>DNS_RESOLVER = 207679100;</code>
      */
-    const DNS_RESOLVER = 476114556;
+    const DNS_RESOLVER = 207679100;
     /**
      * Generated from protobuf enum <code>GCE_ENDPOINT = 230515243;</code>
      */
@@ -37,20 +36,15 @@ class Purpose
      */
     const NAT_AUTO = 163666477;
     /**
-     * Generated from protobuf enum <code>SHARED_LOADBALANCER_VIP = 294447572;</code>
+     * Generated from protobuf enum <code>VPC_PEERING = 132364714;</code>
      */
-    const SHARED_LOADBALANCER_VIP = 294447572;
-    /**
-     * Generated from protobuf enum <code>VPC_PEERING = 400800170;</code>
-     */
-    const VPC_PEERING = 400800170;
+    const VPC_PEERING = 132364714;
 
     private static $valueToName = [
         self::UNDEFINED_PURPOSE => 'UNDEFINED_PURPOSE',
         self::DNS_RESOLVER => 'DNS_RESOLVER',
         self::GCE_ENDPOINT => 'GCE_ENDPOINT',
         self::NAT_AUTO => 'NAT_AUTO',
-        self::SHARED_LOADBALANCER_VIP => 'SHARED_LOADBALANCER_VIP',
         self::VPC_PEERING => 'VPC_PEERING',
     ];
 

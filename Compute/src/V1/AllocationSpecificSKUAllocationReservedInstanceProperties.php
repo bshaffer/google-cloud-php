@@ -18,7 +18,7 @@ class AllocationSpecificSKUAllocationReservedInstanceProperties extends \Google\
     /**
      * Specifies accelerator type and count.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;</code>
      */
     private $guest_accelerators;
     /**
@@ -33,6 +33,13 @@ class AllocationSpecificSKUAllocationReservedInstanceProperties extends \Google\
      * Generated from protobuf field <code>string machine_type = 227711026;</code>
      */
     private $machine_type = '';
+    /**
+     * Specifies whether this VM may be a stable fleet VM. Setting this to "Periodic" designates this VM as a Stable Fleet VM.
+     * See go/stable-fleet-ug for more details.
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties.MaintenanceInterval maintenance_interval = 134932593;</code>
+     */
+    private $maintenance_interval = 0;
     /**
      * Minimum cpu platform the reservation.
      *
@@ -52,6 +59,9 @@ class AllocationSpecificSKUAllocationReservedInstanceProperties extends \Google\
      *           Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
      *     @type string $machine_type
      *           Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
+     *     @type int $maintenance_interval
+     *           Specifies whether this VM may be a stable fleet VM. Setting this to "Periodic" designates this VM as a Stable Fleet VM.
+     *           See go/stable-fleet-ug for more details.
      *     @type string $min_cpu_platform
      *           Minimum cpu platform the reservation.
      * }
@@ -64,7 +74,7 @@ class AllocationSpecificSKUAllocationReservedInstanceProperties extends \Google\
     /**
      * Specifies accelerator type and count.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getGuestAccelerators()
@@ -75,7 +85,7 @@ class AllocationSpecificSKUAllocationReservedInstanceProperties extends \Google\
     /**
      * Specifies accelerator type and count.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;</code>
      * @param \Google\Cloud\Compute\V1\AcceleratorConfig[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -135,6 +145,34 @@ class AllocationSpecificSKUAllocationReservedInstanceProperties extends \Google\
     {
         GPBUtil::checkString($var, True);
         $this->machine_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Specifies whether this VM may be a stable fleet VM. Setting this to "Periodic" designates this VM as a Stable Fleet VM.
+     * See go/stable-fleet-ug for more details.
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties.MaintenanceInterval maintenance_interval = 134932593;</code>
+     * @return int
+     */
+    public function getMaintenanceInterval()
+    {
+        return $this->maintenance_interval;
+    }
+
+    /**
+     * Specifies whether this VM may be a stable fleet VM. Setting this to "Periodic" designates this VM as a Stable Fleet VM.
+     * See go/stable-fleet-ug for more details.
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties.MaintenanceInterval maintenance_interval = 134932593;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMaintenanceInterval($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\AllocationSpecificSKUAllocationReservedInstanceProperties\MaintenanceInterval::class);
+        $this->maintenance_interval = $var;
 
         return $this;
     }

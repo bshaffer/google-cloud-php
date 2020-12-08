@@ -21,7 +21,7 @@ class NetworkEndpointGroupCloudRun extends \Google\Protobuf\Internal\Message
      * The service must be 1-63 characters long, and comply with RFC1035.
      * Example value: "run-service".
      *
-     * Generated from protobuf field <code>string service = 373540533;</code>
+     * Generated from protobuf field <code>string service = 105105077;</code>
      */
     private $service = '';
     /**
@@ -69,7 +69,7 @@ class NetworkEndpointGroupCloudRun extends \Google\Protobuf\Internal\Message
      * The service must be 1-63 characters long, and comply with RFC1035.
      * Example value: "run-service".
      *
-     * Generated from protobuf field <code>string service = 373540533;</code>
+     * Generated from protobuf field <code>string service = 105105077;</code>
      * @return string
      */
     public function getService()
@@ -82,7 +82,7 @@ class NetworkEndpointGroupCloudRun extends \Google\Protobuf\Internal\Message
      * The service must be 1-63 characters long, and comply with RFC1035.
      * Example value: "run-service".
      *
-     * Generated from protobuf field <code>string service = 373540533;</code>
+     * Generated from protobuf field <code>string service = 105105077;</code>
      * @param string $var
      * @return $this
      */

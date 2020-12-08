@@ -17,7 +17,7 @@ class InstanceGroupManagerAutoHealingPolicy extends \Google\Protobuf\Internal\Me
     /**
      * The URL for the health check that signals autohealing.
      *
-     * Generated from protobuf field <code>string health_check = 308876645;</code>
+     * Generated from protobuf field <code>string health_check = 40441189;</code>
      */
     private $health_check = '';
     /**
@@ -47,7 +47,7 @@ class InstanceGroupManagerAutoHealingPolicy extends \Google\Protobuf\Internal\Me
     /**
      * The URL for the health check that signals autohealing.
      *
-     * Generated from protobuf field <code>string health_check = 308876645;</code>
+     * Generated from protobuf field <code>string health_check = 40441189;</code>
      * @return string
      */
     public function getHealthCheck()
@@ -58,7 +58,7 @@ class InstanceGroupManagerAutoHealingPolicy extends \Google\Protobuf\Internal\Me
     /**
      * The URL for the health check that signals autohealing.
      *
-     * Generated from protobuf field <code>string health_check = 308876645;</code>
+     * Generated from protobuf field <code>string health_check = 40441189;</code>
      * @param string $var
      * @return $this
      */

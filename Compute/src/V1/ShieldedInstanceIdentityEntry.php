@@ -18,13 +18,13 @@ class ShieldedInstanceIdentityEntry extends \Google\Protobuf\Internal\Message
     /**
      * A PEM-encoded X.509 certificate. This field can be empty.
      *
-     * Generated from protobuf field <code>string ek_cert = 450178589;</code>
+     * Generated from protobuf field <code>string ek_cert = 181743133;</code>
      */
     private $ek_cert = '';
     /**
      * A PEM-encoded public key.
      *
-     * Generated from protobuf field <code>string ek_pub = 308947940;</code>
+     * Generated from protobuf field <code>string ek_pub = 40512484;</code>
      */
     private $ek_pub = '';
 
@@ -48,7 +48,7 @@ class ShieldedInstanceIdentityEntry extends \Google\Protobuf\Internal\Message
     /**
      * A PEM-encoded X.509 certificate. This field can be empty.
      *
-     * Generated from protobuf field <code>string ek_cert = 450178589;</code>
+     * Generated from protobuf field <code>string ek_cert = 181743133;</code>
      * @return string
      */
     public function getEkCert()
@@ -59,7 +59,7 @@ class ShieldedInstanceIdentityEntry extends \Google\Protobuf\Internal\Message
     /**
      * A PEM-encoded X.509 certificate. This field can be empty.
      *
-     * Generated from protobuf field <code>string ek_cert = 450178589;</code>
+     * Generated from protobuf field <code>string ek_cert = 181743133;</code>
      * @param string $var
      * @return $this
      */
@@ -74,7 +74,7 @@ class ShieldedInstanceIdentityEntry extends \Google\Protobuf\Internal\Message
     /**
      * A PEM-encoded public key.
      *
-     * Generated from protobuf field <code>string ek_pub = 308947940;</code>
+     * Generated from protobuf field <code>string ek_pub = 40512484;</code>
      * @return string
      */
     public function getEkPub()
@@ -85,7 +85,7 @@ class ShieldedInstanceIdentityEntry extends \Google\Protobuf\Internal\Message
     /**
      * A PEM-encoded public key.
      *
-     * Generated from protobuf field <code>string ek_pub = 308947940;</code>
+     * Generated from protobuf field <code>string ek_pub = 40512484;</code>
      * @param string $var
      * @return $this
      */

@@ -18,25 +18,25 @@ class DeprecationStatus extends \Google\Protobuf\Internal\Message
     /**
      * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DELETED. This is only informational and the status will not change unless the client explicitly changes it.
      *
-     * Generated from protobuf field <code>string deleted = 476721177;</code>
+     * Generated from protobuf field <code>string deleted = 208285721;</code>
      */
     private $deleted = '';
     /**
      * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DEPRECATED. This is only informational and the status will not change unless the client explicitly changes it.
      *
-     * Generated from protobuf field <code>string deprecated = 515138995;</code>
+     * Generated from protobuf field <code>string deprecated = 246703539;</code>
      */
     private $deprecated = '';
     /**
      * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to OBSOLETE. This is only informational and the status will not change unless the client explicitly changes it.
      *
-     * Generated from protobuf field <code>string obsolete = 357647769;</code>
+     * Generated from protobuf field <code>string obsolete = 89212313;</code>
      */
     private $obsolete = '';
     /**
      * The URL of the suggested replacement for a deprecated resource. The suggested replacement resource must be the same kind of resource as the deprecated resource.
      *
-     * Generated from protobuf field <code>string replacement = 430919186;</code>
+     * Generated from protobuf field <code>string replacement = 162483730;</code>
      */
     private $replacement = '';
     /**
@@ -72,7 +72,7 @@ class DeprecationStatus extends \Google\Protobuf\Internal\Message
     /**
      * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DELETED. This is only informational and the status will not change unless the client explicitly changes it.
      *
-     * Generated from protobuf field <code>string deleted = 476721177;</code>
+     * Generated from protobuf field <code>string deleted = 208285721;</code>
      * @return string
      */
     public function getDeleted()
@@ -83,7 +83,7 @@ class DeprecationStatus extends \Google\Protobuf\Internal\Message
     /**
      * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DELETED. This is only informational and the status will not change unless the client explicitly changes it.
      *
-     * Generated from protobuf field <code>string deleted = 476721177;</code>
+     * Generated from protobuf field <code>string deleted = 208285721;</code>
      * @param string $var
      * @return $this
      */
@@ -98,7 +98,7 @@ class DeprecationStatus extends \Google\Protobuf\Internal\Message
     /**
      * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DEPRECATED. This is only informational and the status will not change unless the client explicitly changes it.
      *
-     * Generated from protobuf field <code>string deprecated = 515138995;</code>
+     * Generated from protobuf field <code>string deprecated = 246703539;</code>
      * @return string
      */
     public function getDeprecated()
@@ -109,7 +109,7 @@ class DeprecationStatus extends \Google\Protobuf\Internal\Message
     /**
      * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DEPRECATED. This is only informational and the status will not change unless the client explicitly changes it.
      *
-     * Generated from protobuf field <code>string deprecated = 515138995;</code>
+     * Generated from protobuf field <code>string deprecated = 246703539;</code>
      * @param string $var
      * @return $this
      */
@@ -124,7 +124,7 @@ class DeprecationStatus extends \Google\Protobuf\Internal\Message
     /**
      * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to OBSOLETE. This is only informational and the status will not change unless the client explicitly changes it.
      *
-     * Generated from protobuf field <code>string obsolete = 357647769;</code>
+     * Generated from protobuf field <code>string obsolete = 89212313;</code>
      * @return string
      */
     public function getObsolete()
@@ -135,7 +135,7 @@ class DeprecationStatus extends \Google\Protobuf\Internal\Message
     /**
      * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to OBSOLETE. This is only informational and the status will not change unless the client explicitly changes it.
      *
-     * Generated from protobuf field <code>string obsolete = 357647769;</code>
+     * Generated from protobuf field <code>string obsolete = 89212313;</code>
      * @param string $var
      * @return $this
      */
@@ -150,7 +150,7 @@ class DeprecationStatus extends \Google\Protobuf\Internal\Message
     /**
      * The URL of the suggested replacement for a deprecated resource. The suggested replacement resource must be the same kind of resource as the deprecated resource.
      *
-     * Generated from protobuf field <code>string replacement = 430919186;</code>
+     * Generated from protobuf field <code>string replacement = 162483730;</code>
      * @return string
      */
     public function getReplacement()
@@ -161,7 +161,7 @@ class DeprecationStatus extends \Google\Protobuf\Internal\Message
     /**
      * The URL of the suggested replacement for a deprecated resource. The suggested replacement resource must be the same kind of resource as the deprecated resource.
      *
-     * Generated from protobuf field <code>string replacement = 430919186;</code>
+     * Generated from protobuf field <code>string replacement = 162483730;</code>
      * @param string $var
      * @return $this
      */

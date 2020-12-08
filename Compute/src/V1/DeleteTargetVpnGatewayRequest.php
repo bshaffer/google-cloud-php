@@ -38,7 +38,7 @@ class DeleteTargetVpnGatewayRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the target VPN gateway to delete.
      *
-     * Generated from protobuf field <code>string target_vpn_gateway = 532512843 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string target_vpn_gateway = 264077387 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $target_vpn_gateway = '';
 
@@ -150,7 +150,7 @@ class DeleteTargetVpnGatewayRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the target VPN gateway to delete.
      *
-     * Generated from protobuf field <code>string target_vpn_gateway = 532512843 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string target_vpn_gateway = 264077387 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getTargetVpnGateway()
@@ -161,7 +161,7 @@ class DeleteTargetVpnGatewayRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the target VPN gateway to delete.
      *
-     * Generated from protobuf field <code>string target_vpn_gateway = 532512843 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string target_vpn_gateway = 264077387 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

@@ -18,11 +18,11 @@ class PatchRegionHealthCheckServiceRequest extends \Google\Protobuf\Internal\Mes
     /**
      * Name of the HealthCheckService to update. The name must be 1-63 characters long, and comply with RFC1035.
      *
-     * Generated from protobuf field <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string health_check_service = 139939291 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $health_check_service = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338;</code>
      */
     private $health_check_service_resource = null;
     /**
@@ -73,7 +73,7 @@ class PatchRegionHealthCheckServiceRequest extends \Google\Protobuf\Internal\Mes
     /**
      * Name of the HealthCheckService to update. The name must be 1-63 characters long, and comply with RFC1035.
      *
-     * Generated from protobuf field <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string health_check_service = 139939291 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getHealthCheckService()
@@ -84,7 +84,7 @@ class PatchRegionHealthCheckServiceRequest extends \Google\Protobuf\Internal\Mes
     /**
      * Name of the HealthCheckService to update. The name must be 1-63 characters long, and comply with RFC1035.
      *
-     * Generated from protobuf field <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string health_check_service = 139939291 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -97,7 +97,7 @@ class PatchRegionHealthCheckServiceRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338;</code>
      * @return \Google\Cloud\Compute\V1\HealthCheckService
      */
     public function getHealthCheckServiceResource()
@@ -116,7 +116,7 @@ class PatchRegionHealthCheckServiceRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338;</code>
      * @param \Google\Cloud\Compute\V1\HealthCheckService $var
      * @return $this
      */

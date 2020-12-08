@@ -19,7 +19,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
     /**
      * Administrative status of the interconnect. When this is set to true, the Interconnect is functional and can carry traffic. When set to false, no packets can be carried over the interconnect and no BGP routes are exchanged over it. By default, the status is set to true.
      *
-     * Generated from protobuf field <code>bool admin_enabled = 445675089;</code>
+     * Generated from protobuf field <code>bool admin_enabled = 177239633;</code>
      */
     private $admin_enabled = false;
     /**
@@ -43,7 +43,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -55,13 +55,13 @@ class Interconnect extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] IP address configured on the Google side of the Interconnect link. This can be used only for ping tests.
      *
-     * Generated from protobuf field <code>string google_ip_address = 443105954;</code>
+     * Generated from protobuf field <code>string google_ip_address = 174670498;</code>
      */
     private $google_ip_address = '';
     /**
      * [Output Only] Google reference ID to be used when raising support tickets with Google or otherwise to debug backend connectivity issues.
      *
-     * Generated from protobuf field <code>string google_reference_id = 534944469;</code>
+     * Generated from protobuf field <code>string google_reference_id = 266509013;</code>
      */
     private $google_reference_id = '';
     /**
@@ -73,7 +73,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
      *
-     * Generated from protobuf field <code>repeated string interconnect_attachments = 425388415;</code>
+     * Generated from protobuf field <code>repeated string interconnect_attachments = 156952959;</code>
      */
     private $interconnect_attachments;
     /**
@@ -81,7 +81,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
      * - PARTNER: A partner-managed interconnection shared between customers though a partner.
      * - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 515165259;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 246729803;</code>
      */
     private $interconnect_type = 0;
     /**
@@ -95,13 +95,13 @@ class Interconnect extends \Google\Protobuf\Internal\Message
      * - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
      * - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Interconnect.LinkType link_type = 523207775;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Interconnect.LinkType link_type = 254772319;</code>
      */
     private $link_type = 0;
     /**
      * URL of the InterconnectLocation object that represents where this connection is to be provisioned.
      *
-     * Generated from protobuf field <code>string location = 290430901;</code>
+     * Generated from protobuf field <code>string location = 21995445;</code>
      */
     private $location = '';
     /**
@@ -134,7 +134,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Number of links actually provisioned in this interconnect.
      *
-     * Generated from protobuf field <code>int32 provisioned_link_count = 410888565;</code>
+     * Generated from protobuf field <code>int32 provisioned_link_count = 142453109;</code>
      */
     private $provisioned_link_count = 0;
     /**
@@ -146,7 +146,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
@@ -229,7 +229,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
     /**
      * Administrative status of the interconnect. When this is set to true, the Interconnect is functional and can carry traffic. When set to false, no packets can be carried over the interconnect and no BGP routes are exchanged over it. By default, the status is set to true.
      *
-     * Generated from protobuf field <code>bool admin_enabled = 445675089;</code>
+     * Generated from protobuf field <code>bool admin_enabled = 177239633;</code>
      * @return bool
      */
     public function getAdminEnabled()
@@ -240,7 +240,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
     /**
      * Administrative status of the interconnect. When this is set to true, the Interconnect is functional and can carry traffic. When set to false, no packets can be carried over the interconnect and no BGP routes are exchanged over it. By default, the status is set to true.
      *
-     * Generated from protobuf field <code>bool admin_enabled = 445675089;</code>
+     * Generated from protobuf field <code>bool admin_enabled = 177239633;</code>
      * @param bool $var
      * @return $this
      */
@@ -333,7 +333,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -344,7 +344,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -385,7 +385,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] IP address configured on the Google side of the Interconnect link. This can be used only for ping tests.
      *
-     * Generated from protobuf field <code>string google_ip_address = 443105954;</code>
+     * Generated from protobuf field <code>string google_ip_address = 174670498;</code>
      * @return string
      */
     public function getGoogleIpAddress()
@@ -396,7 +396,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] IP address configured on the Google side of the Interconnect link. This can be used only for ping tests.
      *
-     * Generated from protobuf field <code>string google_ip_address = 443105954;</code>
+     * Generated from protobuf field <code>string google_ip_address = 174670498;</code>
      * @param string $var
      * @return $this
      */
@@ -411,7 +411,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Google reference ID to be used when raising support tickets with Google or otherwise to debug backend connectivity issues.
      *
-     * Generated from protobuf field <code>string google_reference_id = 534944469;</code>
+     * Generated from protobuf field <code>string google_reference_id = 266509013;</code>
      * @return string
      */
     public function getGoogleReferenceId()
@@ -422,7 +422,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Google reference ID to be used when raising support tickets with Google or otherwise to debug backend connectivity issues.
      *
-     * Generated from protobuf field <code>string google_reference_id = 534944469;</code>
+     * Generated from protobuf field <code>string google_reference_id = 266509013;</code>
      * @param string $var
      * @return $this
      */
@@ -463,7 +463,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
      *
-     * Generated from protobuf field <code>repeated string interconnect_attachments = 425388415;</code>
+     * Generated from protobuf field <code>repeated string interconnect_attachments = 156952959;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getInterconnectAttachments()
@@ -474,7 +474,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
      *
-     * Generated from protobuf field <code>repeated string interconnect_attachments = 425388415;</code>
+     * Generated from protobuf field <code>repeated string interconnect_attachments = 156952959;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -491,7 +491,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
      * - PARTNER: A partner-managed interconnection shared between customers though a partner.
      * - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 515165259;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 246729803;</code>
      * @return int
      */
     public function getInterconnectType()
@@ -504,7 +504,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
      * - PARTNER: A partner-managed interconnection shared between customers though a partner.
      * - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 515165259;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 246729803;</code>
      * @param int $var
      * @return $this
      */
@@ -547,7 +547,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
      * - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
      * - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Interconnect.LinkType link_type = 523207775;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Interconnect.LinkType link_type = 254772319;</code>
      * @return int
      */
     public function getLinkType()
@@ -560,7 +560,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
      * - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
      * - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Interconnect.LinkType link_type = 523207775;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Interconnect.LinkType link_type = 254772319;</code>
      * @param int $var
      * @return $this
      */
@@ -575,7 +575,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
     /**
      * URL of the InterconnectLocation object that represents where this connection is to be provisioned.
      *
-     * Generated from protobuf field <code>string location = 290430901;</code>
+     * Generated from protobuf field <code>string location = 21995445;</code>
      * @return string
      */
     public function getLocation()
@@ -586,7 +586,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
     /**
      * URL of the InterconnectLocation object that represents where this connection is to be provisioned.
      *
-     * Generated from protobuf field <code>string location = 290430901;</code>
+     * Generated from protobuf field <code>string location = 21995445;</code>
      * @param string $var
      * @return $this
      */
@@ -711,7 +711,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Number of links actually provisioned in this interconnect.
      *
-     * Generated from protobuf field <code>int32 provisioned_link_count = 410888565;</code>
+     * Generated from protobuf field <code>int32 provisioned_link_count = 142453109;</code>
      * @return int
      */
     public function getProvisionedLinkCount()
@@ -722,7 +722,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Number of links actually provisioned in this interconnect.
      *
-     * Generated from protobuf field <code>int32 provisioned_link_count = 410888565;</code>
+     * Generated from protobuf field <code>int32 provisioned_link_count = 142453109;</code>
      * @param int $var
      * @return $this
      */
@@ -763,7 +763,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -774,7 +774,7 @@ class Interconnect extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */

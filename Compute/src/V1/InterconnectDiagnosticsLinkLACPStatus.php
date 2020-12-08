@@ -23,7 +23,7 @@ class InterconnectDiagnosticsLinkLACPStatus extends \Google\Protobuf\Internal\Me
     /**
      * System ID of the port on the neighbor's side of the LACP exchange.
      *
-     * Generated from protobuf field <code>string neighbor_system_id = 343821342;</code>
+     * Generated from protobuf field <code>string neighbor_system_id = 75385886;</code>
      */
     private $neighbor_system_id = '';
     /**
@@ -85,7 +85,7 @@ class InterconnectDiagnosticsLinkLACPStatus extends \Google\Protobuf\Internal\Me
     /**
      * System ID of the port on the neighbor's side of the LACP exchange.
      *
-     * Generated from protobuf field <code>string neighbor_system_id = 343821342;</code>
+     * Generated from protobuf field <code>string neighbor_system_id = 75385886;</code>
      * @return string
      */
     public function getNeighborSystemId()
@@ -96,7 +96,7 @@ class InterconnectDiagnosticsLinkLACPStatus extends \Google\Protobuf\Internal\Me
     /**
      * System ID of the port on the neighbor's side of the LACP exchange.
      *
-     * Generated from protobuf field <code>string neighbor_system_id = 343821342;</code>
+     * Generated from protobuf field <code>string neighbor_system_id = 75385886;</code>
      * @param string $var
      * @return $this
      */

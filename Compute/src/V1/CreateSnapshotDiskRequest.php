@@ -22,9 +22,9 @@ class CreateSnapshotDiskRequest extends \Google\Protobuf\Internal\Message
      */
     private $disk = '';
     /**
-     * [Input Only] Whether to attempt an application consistent snapshot by informing the OS to prepare for the snapshot process. Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS).
+     * [Input Only] Specifies to create an application consistent snapshot by informing the OS to prepare for the snapshot process. Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS).
      *
-     * Generated from protobuf field <code>bool guest_flush = 385550813;</code>
+     * Generated from protobuf field <code>bool guest_flush = 117115357;</code>
      */
     private $guest_flush = false;
     /**
@@ -42,7 +42,7 @@ class CreateSnapshotDiskRequest extends \Google\Protobuf\Internal\Message
      */
     private $request_id = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 212884521;</code>
      */
     private $snapshot_resource = null;
     /**
@@ -61,7 +61,7 @@ class CreateSnapshotDiskRequest extends \Google\Protobuf\Internal\Message
      *     @type string $disk
      *           Name of the persistent disk to snapshot.
      *     @type bool $guest_flush
-     *           [Input Only] Whether to attempt an application consistent snapshot by informing the OS to prepare for the snapshot process. Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS).
+     *           [Input Only] Specifies to create an application consistent snapshot by informing the OS to prepare for the snapshot process. Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS).
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -105,9 +105,9 @@ class CreateSnapshotDiskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Input Only] Whether to attempt an application consistent snapshot by informing the OS to prepare for the snapshot process. Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS).
+     * [Input Only] Specifies to create an application consistent snapshot by informing the OS to prepare for the snapshot process. Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS).
      *
-     * Generated from protobuf field <code>bool guest_flush = 385550813;</code>
+     * Generated from protobuf field <code>bool guest_flush = 117115357;</code>
      * @return bool
      */
     public function getGuestFlush()
@@ -116,9 +116,9 @@ class CreateSnapshotDiskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Input Only] Whether to attempt an application consistent snapshot by informing the OS to prepare for the snapshot process. Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS).
+     * [Input Only] Specifies to create an application consistent snapshot by informing the OS to prepare for the snapshot process. Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS).
      *
-     * Generated from protobuf field <code>bool guest_flush = 385550813;</code>
+     * Generated from protobuf field <code>bool guest_flush = 117115357;</code>
      * @param bool $var
      * @return $this
      */
@@ -187,7 +187,7 @@ class CreateSnapshotDiskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 212884521;</code>
      * @return \Google\Cloud\Compute\V1\Snapshot
      */
     public function getSnapshotResource()
@@ -206,7 +206,7 @@ class CreateSnapshotDiskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 212884521;</code>
      * @param \Google\Cloud\Compute\V1\Snapshot $var
      * @return $this
      */

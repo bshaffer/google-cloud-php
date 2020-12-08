@@ -17,7 +17,7 @@ class AcceleratorTypesScopedList extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of accelerator types contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
      */
     private $accelerator_types;
     /**
@@ -47,7 +47,7 @@ class AcceleratorTypesScopedList extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of accelerator types contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getAcceleratorTypes()
@@ -58,7 +58,7 @@ class AcceleratorTypesScopedList extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of accelerator types contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
      * @param \Google\Cloud\Compute\V1\AcceleratorType[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

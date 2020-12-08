@@ -21,7 +21,7 @@ class NetworkEndpointGroupCloudFunction extends \Google\Protobuf\Internal\Messag
      * The function name is case-sensitive and must be 1-63 characters long.
      * Example value: "func1".
      *
-     * Generated from protobuf field <code>string function = 307196888;</code>
+     * Generated from protobuf field <code>string function = 38761432;</code>
      */
     private $function = '';
     /**
@@ -57,7 +57,7 @@ class NetworkEndpointGroupCloudFunction extends \Google\Protobuf\Internal\Messag
      * The function name is case-sensitive and must be 1-63 characters long.
      * Example value: "func1".
      *
-     * Generated from protobuf field <code>string function = 307196888;</code>
+     * Generated from protobuf field <code>string function = 38761432;</code>
      * @return string
      */
     public function getFunction()
@@ -70,7 +70,7 @@ class NetworkEndpointGroupCloudFunction extends \Google\Protobuf\Internal\Messag
      * The function name is case-sensitive and must be 1-63 characters long.
      * Example value: "func1".
      *
-     * Generated from protobuf field <code>string function = 307196888;</code>
+     * Generated from protobuf field <code>string function = 38761432;</code>
      * @param string $var
      * @return $this
      */

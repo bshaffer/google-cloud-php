@@ -18,7 +18,7 @@ class RouterAdvertisedIpRange extends \Google\Protobuf\Internal\Message
     /**
      * User-specified description for the IP range.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -48,7 +48,7 @@ class RouterAdvertisedIpRange extends \Google\Protobuf\Internal\Message
     /**
      * User-specified description for the IP range.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -59,7 +59,7 @@ class RouterAdvertisedIpRange extends \Google\Protobuf\Internal\Message
     /**
      * User-specified description for the IP range.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */

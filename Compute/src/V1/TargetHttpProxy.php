@@ -29,15 +29,9 @@ class TargetHttpProxy extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
-    /**
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetHttpProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetHttpProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetHttpProxy.
-     *
-     * Generated from protobuf field <code>string fingerprint = 234678500;</code>
-     */
-    private $fingerprint = '';
     /**
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      *
@@ -65,13 +59,13 @@ class TargetHttpProxy extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
      * URL to the UrlMap resource that defines the mapping from URL to the BackendService.
      *
-     * Generated from protobuf field <code>string url_map = 367020684;</code>
+     * Generated from protobuf field <code>string url_map = 98585228;</code>
      */
     private $url_map = '';
 
@@ -85,8 +79,6 @@ class TargetHttpProxy extends \Google\Protobuf\Internal\Message
      *           [Output Only] Creation timestamp in RFC3339 text format.
      *     @type string $description
      *           An optional description of this resource. Provide this property when you create the resource.
-     *     @type string $fingerprint
-     *           Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetHttpProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetHttpProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetHttpProxy.
      *     @type string $id
      *           [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      *     @type string $kind
@@ -135,7 +127,7 @@ class TargetHttpProxy extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -146,7 +138,7 @@ class TargetHttpProxy extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -154,32 +146,6 @@ class TargetHttpProxy extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->description = $var;
-
-        return $this;
-    }
-
-    /**
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetHttpProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetHttpProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetHttpProxy.
-     *
-     * Generated from protobuf field <code>string fingerprint = 234678500;</code>
-     * @return string
-     */
-    public function getFingerprint()
-    {
-        return $this->fingerprint;
-    }
-
-    /**
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetHttpProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetHttpProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetHttpProxy.
-     *
-     * Generated from protobuf field <code>string fingerprint = 234678500;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setFingerprint($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->fingerprint = $var;
 
         return $this;
     }
@@ -291,7 +257,7 @@ class TargetHttpProxy extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -302,7 +268,7 @@ class TargetHttpProxy extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */
@@ -317,7 +283,7 @@ class TargetHttpProxy extends \Google\Protobuf\Internal\Message
     /**
      * URL to the UrlMap resource that defines the mapping from URL to the BackendService.
      *
-     * Generated from protobuf field <code>string url_map = 367020684;</code>
+     * Generated from protobuf field <code>string url_map = 98585228;</code>
      * @return string
      */
     public function getUrlMap()
@@ -328,7 +294,7 @@ class TargetHttpProxy extends \Google\Protobuf\Internal\Message
     /**
      * URL to the UrlMap resource that defines the mapping from URL to the BackendService.
      *
-     * Generated from protobuf field <code>string url_map = 367020684;</code>
+     * Generated from protobuf field <code>string url_map = 98585228;</code>
      * @param string $var
      * @return $this
      */

@@ -26,26 +26,24 @@ class HttpRouteRuleMatch extends \Google\Protobuf\Internal\Message
     /**
      * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
      */
     private $header_matches;
     /**
      * Specifies that prefixMatch and fullPathMatch matches are case sensitive.
      * The default value is false.
      * ignoreCase must not be used with regexMatch.
-     * Not supported when the URL map is bound to target gRPC proxy.
      *
-     * Generated from protobuf field <code>bool ignore_case = 464324989;</code>
+     * Generated from protobuf field <code>bool ignore_case = 195889533;</code>
      */
     private $ignore_case = false;
     /**
-     * Opaque filter criteria used by Loadbalancer to restrict routing configuration to a limited set of xDS compliant clients. In their xDS requests to Loadbalancer, xDS clients present node metadata. When there is a match, the relevant routing configuration is made available to those proxies.
-     * For each metadataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metadata. If multiple metadataFilters are specified, all of them need to be satisfied in order to be considered a match.
+     * Opaque filter criteria used by Loadbalancer to restrict routing configuration to a limited set of xDS compliant clients. In their xDS requests to Loadbalancer, xDS clients present node metadata. If a match takes place, the relevant routing configuration is made available to those proxies.
+     * For each metadataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metadata.
      * metadataFilters specified here will be applied after those specified in ForwardingRule that refers to the UrlMap this HttpRouteRuleMatch belongs to.
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
      */
     private $metadata_filters;
     /**
@@ -58,9 +56,8 @@ class HttpRouteRuleMatch extends \Google\Protobuf\Internal\Message
     private $prefix_match = '';
     /**
      * Specifies a list of query parameter match criteria, all of which must match corresponding query parameters in the request.
-     * Not supported when the URL map is bound to target gRPC proxy.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;</code>
      */
     private $query_parameter_matches;
     /**
@@ -88,20 +85,17 @@ class HttpRouteRuleMatch extends \Google\Protobuf\Internal\Message
      *           Specifies that prefixMatch and fullPathMatch matches are case sensitive.
      *           The default value is false.
      *           ignoreCase must not be used with regexMatch.
-     *           Not supported when the URL map is bound to target gRPC proxy.
      *     @type \Google\Cloud\Compute\V1\MetadataFilter[]|\Google\Protobuf\Internal\RepeatedField $metadata_filters
-     *           Opaque filter criteria used by Loadbalancer to restrict routing configuration to a limited set of xDS compliant clients. In their xDS requests to Loadbalancer, xDS clients present node metadata. When there is a match, the relevant routing configuration is made available to those proxies.
-     *           For each metadataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metadata. If multiple metadataFilters are specified, all of them need to be satisfied in order to be considered a match.
+     *           Opaque filter criteria used by Loadbalancer to restrict routing configuration to a limited set of xDS compliant clients. In their xDS requests to Loadbalancer, xDS clients present node metadata. If a match takes place, the relevant routing configuration is made available to those proxies.
+     *           For each metadataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metadata.
      *           metadataFilters specified here will be applied after those specified in ForwardingRule that refers to the UrlMap this HttpRouteRuleMatch belongs to.
      *           metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
-     *           Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *     @type string $prefix_match
      *           For satisfying the matchRule condition, the request's path must begin with the specified prefixMatch. prefixMatch must begin with a /.
      *           The value must be between 1 and 1024 characters.
      *           Only one of prefixMatch, fullPathMatch or regexMatch must be specified.
      *     @type \Google\Cloud\Compute\V1\HttpQueryParameterMatch[]|\Google\Protobuf\Internal\RepeatedField $query_parameter_matches
      *           Specifies a list of query parameter match criteria, all of which must match corresponding query parameters in the request.
-     *           Not supported when the URL map is bound to target gRPC proxy.
      *     @type string $regex_match
      *           For satisfying the matchRule condition, the path of the request must satisfy the regular expression specified in regexMatch after removing any query parameters and anchor supplied with the original URL. For regular expression grammar please see en.cppreference.com/w/cpp/regex/ecmascript
      *           Only one of prefixMatch, fullPathMatch or regexMatch must be specified.
@@ -146,7 +140,7 @@ class HttpRouteRuleMatch extends \Google\Protobuf\Internal\Message
     /**
      * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getHeaderMatches()
@@ -157,7 +151,7 @@ class HttpRouteRuleMatch extends \Google\Protobuf\Internal\Message
     /**
      * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
      * @param \Google\Cloud\Compute\V1\HttpHeaderMatch[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -173,9 +167,8 @@ class HttpRouteRuleMatch extends \Google\Protobuf\Internal\Message
      * Specifies that prefixMatch and fullPathMatch matches are case sensitive.
      * The default value is false.
      * ignoreCase must not be used with regexMatch.
-     * Not supported when the URL map is bound to target gRPC proxy.
      *
-     * Generated from protobuf field <code>bool ignore_case = 464324989;</code>
+     * Generated from protobuf field <code>bool ignore_case = 195889533;</code>
      * @return bool
      */
     public function getIgnoreCase()
@@ -187,9 +180,8 @@ class HttpRouteRuleMatch extends \Google\Protobuf\Internal\Message
      * Specifies that prefixMatch and fullPathMatch matches are case sensitive.
      * The default value is false.
      * ignoreCase must not be used with regexMatch.
-     * Not supported when the URL map is bound to target gRPC proxy.
      *
-     * Generated from protobuf field <code>bool ignore_case = 464324989;</code>
+     * Generated from protobuf field <code>bool ignore_case = 195889533;</code>
      * @param bool $var
      * @return $this
      */
@@ -202,13 +194,12 @@ class HttpRouteRuleMatch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Opaque filter criteria used by Loadbalancer to restrict routing configuration to a limited set of xDS compliant clients. In their xDS requests to Loadbalancer, xDS clients present node metadata. When there is a match, the relevant routing configuration is made available to those proxies.
-     * For each metadataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metadata. If multiple metadataFilters are specified, all of them need to be satisfied in order to be considered a match.
+     * Opaque filter criteria used by Loadbalancer to restrict routing configuration to a limited set of xDS compliant clients. In their xDS requests to Loadbalancer, xDS clients present node metadata. If a match takes place, the relevant routing configuration is made available to those proxies.
+     * For each metadataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metadata.
      * metadataFilters specified here will be applied after those specified in ForwardingRule that refers to the UrlMap this HttpRouteRuleMatch belongs to.
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getMetadataFilters()
@@ -217,13 +208,12 @@ class HttpRouteRuleMatch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Opaque filter criteria used by Loadbalancer to restrict routing configuration to a limited set of xDS compliant clients. In their xDS requests to Loadbalancer, xDS clients present node metadata. When there is a match, the relevant routing configuration is made available to those proxies.
-     * For each metadataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metadata. If multiple metadataFilters are specified, all of them need to be satisfied in order to be considered a match.
+     * Opaque filter criteria used by Loadbalancer to restrict routing configuration to a limited set of xDS compliant clients. In their xDS requests to Loadbalancer, xDS clients present node metadata. If a match takes place, the relevant routing configuration is made available to those proxies.
+     * For each metadataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metadata.
      * metadataFilters specified here will be applied after those specified in ForwardingRule that refers to the UrlMap this HttpRouteRuleMatch belongs to.
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
-     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
      * @param \Google\Cloud\Compute\V1\MetadataFilter[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -267,9 +257,8 @@ class HttpRouteRuleMatch extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies a list of query parameter match criteria, all of which must match corresponding query parameters in the request.
-     * Not supported when the URL map is bound to target gRPC proxy.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getQueryParameterMatches()
@@ -279,9 +268,8 @@ class HttpRouteRuleMatch extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies a list of query parameter match criteria, all of which must match corresponding query parameters in the request.
-     * Not supported when the URL map is bound to target gRPC proxy.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;</code>
      * @param \Google\Cloud\Compute\V1\HttpQueryParameterMatch[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

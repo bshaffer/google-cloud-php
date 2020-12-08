@@ -23,13 +23,13 @@ class Errors extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Indicates the field in the request that caused the error. This property is optional.
      *
-     * Generated from protobuf field <code>string location = 290430901;</code>
+     * Generated from protobuf field <code>string location = 21995445;</code>
      */
     private $location = '';
     /**
      * [Output Only] An optional, human-readable error message.
      *
-     * Generated from protobuf field <code>string message = 418054151;</code>
+     * Generated from protobuf field <code>string message = 149618695;</code>
      */
     private $message = '';
 
@@ -81,7 +81,7 @@ class Errors extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Indicates the field in the request that caused the error. This property is optional.
      *
-     * Generated from protobuf field <code>string location = 290430901;</code>
+     * Generated from protobuf field <code>string location = 21995445;</code>
      * @return string
      */
     public function getLocation()
@@ -92,7 +92,7 @@ class Errors extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Indicates the field in the request that caused the error. This property is optional.
      *
-     * Generated from protobuf field <code>string location = 290430901;</code>
+     * Generated from protobuf field <code>string location = 21995445;</code>
      * @param string $var
      * @return $this
      */
@@ -107,7 +107,7 @@ class Errors extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An optional, human-readable error message.
      *
-     * Generated from protobuf field <code>string message = 418054151;</code>
+     * Generated from protobuf field <code>string message = 149618695;</code>
      * @return string
      */
     public function getMessage()
@@ -118,7 +118,7 @@ class Errors extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An optional, human-readable error message.
      *
-     * Generated from protobuf field <code>string message = 418054151;</code>
+     * Generated from protobuf field <code>string message = 149618695;</code>
      * @param string $var
      * @return $this
      */

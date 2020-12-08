@@ -36,7 +36,7 @@ class NetworkInterface extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An IPv6 internal network address for this network interface.
      *
-     * Generated from protobuf field <code>string ipv6_address = 341563804;</code>
+     * Generated from protobuf field <code>string ipv6_address = 73128348;</code>
      */
     private $ipv6_address = '';
     /**
@@ -72,7 +72,7 @@ class NetworkInterface extends \Google\Protobuf\Internal\Message
      * - https://www.googleapis.com/compute/v1/projects/project/regions/region/subnetworks/subnetwork
      * - regions/region/subnetworks/subnetwork
      *
-     * Generated from protobuf field <code>string subnetwork = 307827694;</code>
+     * Generated from protobuf field <code>string subnetwork = 39392238;</code>
      */
     private $subnetwork = '';
 
@@ -194,7 +194,7 @@ class NetworkInterface extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An IPv6 internal network address for this network interface.
      *
-     * Generated from protobuf field <code>string ipv6_address = 341563804;</code>
+     * Generated from protobuf field <code>string ipv6_address = 73128348;</code>
      * @return string
      */
     public function getIpv6Address()
@@ -205,7 +205,7 @@ class NetworkInterface extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An IPv6 internal network address for this network interface.
      *
-     * Generated from protobuf field <code>string ipv6_address = 341563804;</code>
+     * Generated from protobuf field <code>string ipv6_address = 73128348;</code>
      * @param string $var
      * @return $this
      */
@@ -334,7 +334,7 @@ class NetworkInterface extends \Google\Protobuf\Internal\Message
      * - https://www.googleapis.com/compute/v1/projects/project/regions/region/subnetworks/subnetwork
      * - regions/region/subnetworks/subnetwork
      *
-     * Generated from protobuf field <code>string subnetwork = 307827694;</code>
+     * Generated from protobuf field <code>string subnetwork = 39392238;</code>
      * @return string
      */
     public function getSubnetwork()
@@ -347,7 +347,7 @@ class NetworkInterface extends \Google\Protobuf\Internal\Message
      * - https://www.googleapis.com/compute/v1/projects/project/regions/region/subnetworks/subnetwork
      * - regions/region/subnetworks/subnetwork
      *
-     * Generated from protobuf field <code>string subnetwork = 307827694;</code>
+     * Generated from protobuf field <code>string subnetwork = 39392238;</code>
      * @param string $var
      * @return $this
      */

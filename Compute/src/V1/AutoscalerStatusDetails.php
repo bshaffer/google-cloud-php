@@ -17,7 +17,7 @@ class AutoscalerStatusDetails extends \Google\Protobuf\Internal\Message
     /**
      * The status message.
      *
-     * Generated from protobuf field <code>string message = 418054151;</code>
+     * Generated from protobuf field <code>string message = 149618695;</code>
      */
     private $message = '';
     /**
@@ -79,7 +79,7 @@ class AutoscalerStatusDetails extends \Google\Protobuf\Internal\Message
     /**
      * The status message.
      *
-     * Generated from protobuf field <code>string message = 418054151;</code>
+     * Generated from protobuf field <code>string message = 149618695;</code>
      * @return string
      */
     public function getMessage()
@@ -90,7 +90,7 @@ class AutoscalerStatusDetails extends \Google\Protobuf\Internal\Message
     /**
      * The status message.
      *
-     * Generated from protobuf field <code>string message = 418054151;</code>
+     * Generated from protobuf field <code>string message = 149618695;</code>
      * @param string $var
      * @return $this
      */

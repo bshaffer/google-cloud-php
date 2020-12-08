@@ -28,7 +28,7 @@ class SetIamPolicyResourcePolicyRequest extends \Google\Protobuf\Internal\Messag
      */
     private $region = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 276489091;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 8053635;</code>
      */
     private $region_set_policy_request_resource = null;
     /**
@@ -111,7 +111,7 @@ class SetIamPolicyResourcePolicyRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 276489091;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 8053635;</code>
      * @return \Google\Cloud\Compute\V1\RegionSetPolicyRequest
      */
     public function getRegionSetPolicyRequestResource()
@@ -130,7 +130,7 @@ class SetIamPolicyResourcePolicyRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 276489091;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 8053635;</code>
      * @param \Google\Cloud\Compute\V1\RegionSetPolicyRequest $var
      * @return $this
      */

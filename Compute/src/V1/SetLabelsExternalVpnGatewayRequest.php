@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class SetLabelsExternalVpnGatewayRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 319917189;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 51481733;</code>
      */
     private $global_set_labels_request_resource = null;
     /**
@@ -51,7 +51,7 @@ class SetLabelsExternalVpnGatewayRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 319917189;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 51481733;</code>
      * @return \Google\Cloud\Compute\V1\GlobalSetLabelsRequest
      */
     public function getGlobalSetLabelsRequestResource()
@@ -70,7 +70,7 @@ class SetLabelsExternalVpnGatewayRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 319917189;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 51481733;</code>
      * @param \Google\Cloud\Compute\V1\GlobalSetLabelsRequest $var
      * @return $this
      */

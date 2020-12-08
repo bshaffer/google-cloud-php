@@ -17,7 +17,7 @@ class SubnetworksScopedList extends \Google\Protobuf\Internal\Message
     /**
      * A list of subnetworks contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
      */
     private $subnetworks;
     /**
@@ -47,7 +47,7 @@ class SubnetworksScopedList extends \Google\Protobuf\Internal\Message
     /**
      * A list of subnetworks contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getSubnetworks()
@@ -58,7 +58,7 @@ class SubnetworksScopedList extends \Google\Protobuf\Internal\Message
     /**
      * A list of subnetworks contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
      * @param \Google\Cloud\Compute\V1\Subnetwork[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

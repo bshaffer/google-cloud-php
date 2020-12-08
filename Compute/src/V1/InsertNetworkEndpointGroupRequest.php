@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class InsertNetworkEndpointGroupRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 525788839;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 257353383;</code>
      */
     private $network_endpoint_group_resource = null;
     /**
@@ -63,7 +63,7 @@ class InsertNetworkEndpointGroupRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 525788839;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 257353383;</code>
      * @return \Google\Cloud\Compute\V1\NetworkEndpointGroup
      */
     public function getNetworkEndpointGroupResource()
@@ -82,7 +82,7 @@ class InsertNetworkEndpointGroupRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 525788839;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 257353383;</code>
      * @param \Google\Cloud\Compute\V1\NetworkEndpointGroup $var
      * @return $this
      */

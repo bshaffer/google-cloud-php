@@ -42,7 +42,7 @@ class RemoveHealthCheckTargetPoolRequest extends \Google\Protobuf\Internal\Messa
      */
     private $target_pool = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 304985011;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 36549555;</code>
      */
     private $target_pools_remove_health_check_request_resource = null;
 
@@ -179,7 +179,7 @@ class RemoveHealthCheckTargetPoolRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 304985011;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 36549555;</code>
      * @return \Google\Cloud\Compute\V1\TargetPoolsRemoveHealthCheckRequest
      */
     public function getTargetPoolsRemoveHealthCheckRequestResource()
@@ -198,7 +198,7 @@ class RemoveHealthCheckTargetPoolRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 304985011;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 36549555;</code>
      * @param \Google\Cloud\Compute\V1\TargetPoolsRemoveHealthCheckRequest $var
      * @return $this
      */

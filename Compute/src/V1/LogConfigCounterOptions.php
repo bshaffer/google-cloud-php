@@ -34,7 +34,7 @@ class LogConfigCounterOptions extends \Google\Protobuf\Internal\Message
     /**
      * The metric to update.
      *
-     * Generated from protobuf field <code>string metric = 533067184;</code>
+     * Generated from protobuf field <code>string metric = 264631728;</code>
      */
     private $metric = '';
 
@@ -112,7 +112,7 @@ class LogConfigCounterOptions extends \Google\Protobuf\Internal\Message
     /**
      * The metric to update.
      *
-     * Generated from protobuf field <code>string metric = 533067184;</code>
+     * Generated from protobuf field <code>string metric = 264631728;</code>
      * @return string
      */
     public function getMetric()
@@ -123,7 +123,7 @@ class LogConfigCounterOptions extends \Google\Protobuf\Internal\Message
     /**
      * The metric to update.
      *
-     * Generated from protobuf field <code>string metric = 533067184;</code>
+     * Generated from protobuf field <code>string metric = 264631728;</code>
      * @param string $var
      * @return $this
      */

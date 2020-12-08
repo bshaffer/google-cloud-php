@@ -17,7 +17,7 @@ class InstanceGroupManagersSetInstanceTemplateRequest extends \Google\Protobuf\I
     /**
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group.
      *
-     * Generated from protobuf field <code>string instance_template = 309248228;</code>
+     * Generated from protobuf field <code>string instance_template = 40812772;</code>
      */
     private $instance_template = '';
 
@@ -39,7 +39,7 @@ class InstanceGroupManagersSetInstanceTemplateRequest extends \Google\Protobuf\I
     /**
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group.
      *
-     * Generated from protobuf field <code>string instance_template = 309248228;</code>
+     * Generated from protobuf field <code>string instance_template = 40812772;</code>
      * @return string
      */
     public function getInstanceTemplate()
@@ -50,7 +50,7 @@ class InstanceGroupManagersSetInstanceTemplateRequest extends \Google\Protobuf\I
     /**
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group.
      *
-     * Generated from protobuf field <code>string instance_template = 309248228;</code>
+     * Generated from protobuf field <code>string instance_template = 40812772;</code>
      * @param string $var
      * @return $this
      */

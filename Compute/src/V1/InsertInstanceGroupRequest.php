@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class InsertInstanceGroupRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 286612152;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 18176696;</code>
      */
     private $instance_group_resource = null;
     /**
@@ -63,7 +63,7 @@ class InsertInstanceGroupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 286612152;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 18176696;</code>
      * @return \Google\Cloud\Compute\V1\InstanceGroup
      */
     public function getInstanceGroupResource()
@@ -82,7 +82,7 @@ class InsertInstanceGroupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 286612152;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 18176696;</code>
      * @param \Google\Cloud\Compute\V1\InstanceGroup $var
      * @return $this
      */

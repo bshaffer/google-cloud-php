@@ -64,12 +64,6 @@ class NetworkPeering extends \Google\Protobuf\Internal\Message
      */
     private $network = '';
     /**
-     * Maximum Transmission Unit in bytes.
-     *
-     * Generated from protobuf field <code>int32 peer_mtu = 69584721;</code>
-     */
-    private $peer_mtu = 0;
-    /**
      * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkPeering.State state = 109757585;</code>
@@ -104,8 +98,6 @@ class NetworkPeering extends \Google\Protobuf\Internal\Message
      *           Name of this peering. Provided by the client when the peering is created. The name must comply with RFC1035. Specifically, the name must be 1-63 characters long and match regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all the following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      *     @type string $network
      *           The URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
-     *     @type int $peer_mtu
-     *           Maximum Transmission Unit in bytes.
      *     @type int $state
      *           [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
      *     @type string $state_details
@@ -321,32 +313,6 @@ class NetworkPeering extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->network = $var;
-
-        return $this;
-    }
-
-    /**
-     * Maximum Transmission Unit in bytes.
-     *
-     * Generated from protobuf field <code>int32 peer_mtu = 69584721;</code>
-     * @return int
-     */
-    public function getPeerMtu()
-    {
-        return $this->peer_mtu;
-    }
-
-    /**
-     * Maximum Transmission Unit in bytes.
-     *
-     * Generated from protobuf field <code>int32 peer_mtu = 69584721;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setPeerMtu($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->peer_mtu = $var;
 
         return $this;
     }

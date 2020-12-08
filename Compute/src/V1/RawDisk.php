@@ -18,13 +18,13 @@ class RawDisk extends \Google\Protobuf\Internal\Message
     /**
      * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 50373688;</code>
      */
     private $container_type = 0;
     /**
      * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
      *
-     * Generated from protobuf field <code>string sha1_checksum = 314444349;</code>
+     * Generated from protobuf field <code>string sha1_checksum = 46008893;</code>
      */
     private $sha1_checksum = '';
     /**
@@ -56,7 +56,7 @@ class RawDisk extends \Google\Protobuf\Internal\Message
     /**
      * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 50373688;</code>
      * @return int
      */
     public function getContainerType()
@@ -67,7 +67,7 @@ class RawDisk extends \Google\Protobuf\Internal\Message
     /**
      * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 50373688;</code>
      * @param int $var
      * @return $this
      */
@@ -82,7 +82,7 @@ class RawDisk extends \Google\Protobuf\Internal\Message
     /**
      * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
      *
-     * Generated from protobuf field <code>string sha1_checksum = 314444349;</code>
+     * Generated from protobuf field <code>string sha1_checksum = 46008893;</code>
      * @return string
      */
     public function getSha1Checksum()
@@ -93,7 +93,7 @@ class RawDisk extends \Google\Protobuf\Internal\Message
     /**
      * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
      *
-     * Generated from protobuf field <code>string sha1_checksum = 314444349;</code>
+     * Generated from protobuf field <code>string sha1_checksum = 46008893;</code>
      * @param string $var
      * @return $this
      */

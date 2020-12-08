@@ -18,7 +18,7 @@ class DeleteNodesNodeGroupRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the NodeGroup resource whose nodes will be deleted.
      *
-     * Generated from protobuf field <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $node_group = '';
     /**
@@ -73,7 +73,7 @@ class DeleteNodesNodeGroupRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the NodeGroup resource whose nodes will be deleted.
      *
-     * Generated from protobuf field <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getNodeGroup()
@@ -84,7 +84,7 @@ class DeleteNodesNodeGroupRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the NodeGroup resource whose nodes will be deleted.
      *
-     * Generated from protobuf field <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

@@ -19,7 +19,7 @@ class BackendBucket extends \Google\Protobuf\Internal\Message
     /**
      * Cloud Storage bucket name.
      *
-     * Generated from protobuf field <code>string bucket_name = 283610048;</code>
+     * Generated from protobuf field <code>string bucket_name = 15174592;</code>
      */
     private $bucket_name = '';
     /**
@@ -37,13 +37,13 @@ class BackendBucket extends \Google\Protobuf\Internal\Message
     /**
      * An optional textual description of the resource; provided by the client when the resource is created.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
      * If true, enable Cloud CDN for this BackendBucket.
      *
-     * Generated from protobuf field <code>bool enable_cdn = 282942321;</code>
+     * Generated from protobuf field <code>bool enable_cdn = 14506865;</code>
      */
     private $enable_cdn = false;
     /**
@@ -67,7 +67,7 @@ class BackendBucket extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
 
@@ -105,7 +105,7 @@ class BackendBucket extends \Google\Protobuf\Internal\Message
     /**
      * Cloud Storage bucket name.
      *
-     * Generated from protobuf field <code>string bucket_name = 283610048;</code>
+     * Generated from protobuf field <code>string bucket_name = 15174592;</code>
      * @return string
      */
     public function getBucketName()
@@ -116,7 +116,7 @@ class BackendBucket extends \Google\Protobuf\Internal\Message
     /**
      * Cloud Storage bucket name.
      *
-     * Generated from protobuf field <code>string bucket_name = 283610048;</code>
+     * Generated from protobuf field <code>string bucket_name = 15174592;</code>
      * @param string $var
      * @return $this
      */
@@ -193,7 +193,7 @@ class BackendBucket extends \Google\Protobuf\Internal\Message
     /**
      * An optional textual description of the resource; provided by the client when the resource is created.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -204,7 +204,7 @@ class BackendBucket extends \Google\Protobuf\Internal\Message
     /**
      * An optional textual description of the resource; provided by the client when the resource is created.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -219,7 +219,7 @@ class BackendBucket extends \Google\Protobuf\Internal\Message
     /**
      * If true, enable Cloud CDN for this BackendBucket.
      *
-     * Generated from protobuf field <code>bool enable_cdn = 282942321;</code>
+     * Generated from protobuf field <code>bool enable_cdn = 14506865;</code>
      * @return bool
      */
     public function getEnableCdn()
@@ -230,7 +230,7 @@ class BackendBucket extends \Google\Protobuf\Internal\Message
     /**
      * If true, enable Cloud CDN for this BackendBucket.
      *
-     * Generated from protobuf field <code>bool enable_cdn = 282942321;</code>
+     * Generated from protobuf field <code>bool enable_cdn = 14506865;</code>
      * @param bool $var
      * @return $this
      */
@@ -323,7 +323,7 @@ class BackendBucket extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -334,7 +334,7 @@ class BackendBucket extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */

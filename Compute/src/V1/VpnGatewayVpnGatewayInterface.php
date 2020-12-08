@@ -24,7 +24,7 @@ class VpnGatewayVpnGatewayInterface extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The external IP address for this VPN gateway interface.
      *
-     * Generated from protobuf field <code>string ip_address = 406272220;</code>
+     * Generated from protobuf field <code>string ip_address = 137836764;</code>
      */
     private $ip_address = '';
 
@@ -74,7 +74,7 @@ class VpnGatewayVpnGatewayInterface extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The external IP address for this VPN gateway interface.
      *
-     * Generated from protobuf field <code>string ip_address = 406272220;</code>
+     * Generated from protobuf field <code>string ip_address = 137836764;</code>
      * @return string
      */
     public function getIpAddress()
@@ -85,7 +85,7 @@ class VpnGatewayVpnGatewayInterface extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The external IP address for this VPN gateway interface.
      *
-     * Generated from protobuf field <code>string ip_address = 406272220;</code>
+     * Generated from protobuf field <code>string ip_address = 137836764;</code>
      * @param string $var
      * @return $this
      */

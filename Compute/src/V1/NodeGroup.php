@@ -31,7 +31,7 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -51,9 +51,9 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
      */
     private $kind = '';
     /**
-     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+     * Specifies how to handle instances when a node in the group undergoes maintenance.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 259892190;</code>
      */
     private $maintenance_policy = 0;
     /**
@@ -65,13 +65,13 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
     /**
      * URL of the node template to create the node group from.
      *
-     * Generated from protobuf field <code>string node_template = 323154455;</code>
+     * Generated from protobuf field <code>string node_template = 54718999;</code>
      */
     private $node_template = '';
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
@@ -109,7 +109,7 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
      *     @type string $kind
      *           [Output Only] The type of the resource. Always compute#nodeGroup for node group.
      *     @type int $maintenance_policy
-     *           Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+     *           Specifies how to handle instances when a node in the group undergoes maintenance.
      *     @type string $name
      *           The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      *     @type string $node_template
@@ -193,7 +193,7 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -204,7 +204,7 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -291,9 +291,9 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+     * Specifies how to handle instances when a node in the group undergoes maintenance.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 259892190;</code>
      * @return int
      */
     public function getMaintenancePolicy()
@@ -302,9 +302,9 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+     * Specifies how to handle instances when a node in the group undergoes maintenance.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 259892190;</code>
      * @param int $var
      * @return $this
      */
@@ -345,7 +345,7 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
     /**
      * URL of the node template to create the node group from.
      *
-     * Generated from protobuf field <code>string node_template = 323154455;</code>
+     * Generated from protobuf field <code>string node_template = 54718999;</code>
      * @return string
      */
     public function getNodeTemplate()
@@ -356,7 +356,7 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
     /**
      * URL of the node template to create the node group from.
      *
-     * Generated from protobuf field <code>string node_template = 323154455;</code>
+     * Generated from protobuf field <code>string node_template = 54718999;</code>
      * @param string $var
      * @return $this
      */
@@ -371,7 +371,7 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -382,7 +382,7 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */

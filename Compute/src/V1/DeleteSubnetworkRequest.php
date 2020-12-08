@@ -38,7 +38,7 @@ class DeleteSubnetworkRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the Subnetwork resource to delete.
      *
-     * Generated from protobuf field <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $subnetwork = '';
 
@@ -150,7 +150,7 @@ class DeleteSubnetworkRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the Subnetwork resource to delete.
      *
-     * Generated from protobuf field <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getSubnetwork()
@@ -161,7 +161,7 @@ class DeleteSubnetworkRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the Subnetwork resource to delete.
      *
-     * Generated from protobuf field <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

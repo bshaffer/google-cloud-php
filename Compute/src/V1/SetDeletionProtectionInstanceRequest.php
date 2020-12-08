@@ -18,7 +18,7 @@ class SetDeletionProtectionInstanceRequest extends \Google\Protobuf\Internal\Mes
     /**
      * Whether the resource should be protected against deletion.
      *
-     * Generated from protobuf field <code>bool deletion_protection = 458014698;</code>
+     * Generated from protobuf field <code>bool deletion_protection = 189579242;</code>
      */
     private $deletion_protection = false;
     /**
@@ -76,7 +76,7 @@ class SetDeletionProtectionInstanceRequest extends \Google\Protobuf\Internal\Mes
     /**
      * Whether the resource should be protected against deletion.
      *
-     * Generated from protobuf field <code>bool deletion_protection = 458014698;</code>
+     * Generated from protobuf field <code>bool deletion_protection = 189579242;</code>
      * @return bool
      */
     public function getDeletionProtection()
@@ -87,7 +87,7 @@ class SetDeletionProtectionInstanceRequest extends \Google\Protobuf\Internal\Mes
     /**
      * Whether the resource should be protected against deletion.
      *
-     * Generated from protobuf field <code>bool deletion_protection = 458014698;</code>
+     * Generated from protobuf field <code>bool deletion_protection = 189579242;</code>
      * @param bool $var
      * @return $this
      */

@@ -24,7 +24,7 @@ class DeleteSignedUrlKeyBackendBucketRequest extends \Google\Protobuf\Internal\M
     /**
      * The name of the Signed URL Key to delete.
      *
-     * Generated from protobuf field <code>string key_name = 500938859 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string key_name = 232503403 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $key_name = '';
     /**
@@ -94,7 +94,7 @@ class DeleteSignedUrlKeyBackendBucketRequest extends \Google\Protobuf\Internal\M
     /**
      * The name of the Signed URL Key to delete.
      *
-     * Generated from protobuf field <code>string key_name = 500938859 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string key_name = 232503403 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getKeyName()
@@ -105,7 +105,7 @@ class DeleteSignedUrlKeyBackendBucketRequest extends \Google\Protobuf\Internal\M
     /**
      * The name of the Signed URL Key to delete.
      *
-     * Generated from protobuf field <code>string key_name = 500938859 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string key_name = 232503403 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

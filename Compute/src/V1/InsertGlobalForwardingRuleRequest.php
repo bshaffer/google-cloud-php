@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class InsertGlobalForwardingRuleRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 301211695;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239;</code>
      */
     private $forwarding_rule_resource = null;
     /**
@@ -55,7 +55,7 @@ class InsertGlobalForwardingRuleRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 301211695;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239;</code>
      * @return \Google\Cloud\Compute\V1\ForwardingRule
      */
     public function getForwardingRuleResource()
@@ -74,7 +74,7 @@ class InsertGlobalForwardingRuleRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 301211695;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239;</code>
      * @param \Google\Cloud\Compute\V1\ForwardingRule $var
      * @return $this
      */

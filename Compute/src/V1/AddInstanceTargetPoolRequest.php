@@ -42,7 +42,7 @@ class AddInstanceTargetPoolRequest extends \Google\Protobuf\Internal\Message
      */
     private $target_pool = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 428796404;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 160360948;</code>
      */
     private $target_pools_add_instance_request_resource = null;
 
@@ -179,7 +179,7 @@ class AddInstanceTargetPoolRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 428796404;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 160360948;</code>
      * @return \Google\Cloud\Compute\V1\TargetPoolsAddInstanceRequest
      */
     public function getTargetPoolsAddInstanceRequestResource()
@@ -198,7 +198,7 @@ class AddInstanceTargetPoolRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 428796404;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 160360948;</code>
      * @param \Google\Cloud\Compute\V1\TargetPoolsAddInstanceRequest $var
      * @return $this
      */

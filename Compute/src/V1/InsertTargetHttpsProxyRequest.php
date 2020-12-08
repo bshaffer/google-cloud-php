@@ -30,7 +30,7 @@ class InsertTargetHttpsProxyRequest extends \Google\Protobuf\Internal\Message
      */
     private $request_id = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 433657473;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 165222017;</code>
      */
     private $target_https_proxy_resource = null;
 
@@ -111,7 +111,7 @@ class InsertTargetHttpsProxyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 433657473;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 165222017;</code>
      * @return \Google\Cloud\Compute\V1\TargetHttpsProxy
      */
     public function getTargetHttpsProxyResource()
@@ -130,7 +130,7 @@ class InsertTargetHttpsProxyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 433657473;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 165222017;</code>
      * @param \Google\Cloud\Compute\V1\TargetHttpsProxy $var
      * @return $this
      */

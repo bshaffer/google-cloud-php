@@ -20,13 +20,13 @@ class Role
      */
     const UNDEFINED_ROLE = 0;
     /**
-     * Generated from protobuf enum <code>ACTIVE = 314733318;</code>
+     * Generated from protobuf enum <code>ACTIVE = 46297862;</code>
      */
-    const ACTIVE = 314733318;
+    const ACTIVE = 46297862;
     /**
-     * Generated from protobuf enum <code>BACKUP = 341010882;</code>
+     * Generated from protobuf enum <code>BACKUP = 72575426;</code>
      */
-    const BACKUP = 341010882;
+    const BACKUP = 72575426;
 
     private static $valueToName = [
         self::UNDEFINED_ROLE => 'UNDEFINED_ROLE',

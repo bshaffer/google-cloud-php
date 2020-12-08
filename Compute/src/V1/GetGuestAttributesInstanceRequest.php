@@ -30,7 +30,7 @@ class GetGuestAttributesInstanceRequest extends \Google\Protobuf\Internal\Messag
     /**
      * Specifies the guest attributes path to be queried.
      *
-     * Generated from protobuf field <code>string query_path = 368591164;</code>
+     * Generated from protobuf field <code>string query_path = 100155708;</code>
      */
     private $query_path = '';
     /**
@@ -124,7 +124,7 @@ class GetGuestAttributesInstanceRequest extends \Google\Protobuf\Internal\Messag
     /**
      * Specifies the guest attributes path to be queried.
      *
-     * Generated from protobuf field <code>string query_path = 368591164;</code>
+     * Generated from protobuf field <code>string query_path = 100155708;</code>
      * @return string
      */
     public function getQueryPath()
@@ -135,7 +135,7 @@ class GetGuestAttributesInstanceRequest extends \Google\Protobuf\Internal\Messag
     /**
      * Specifies the guest attributes path to be queried.
      *
-     * Generated from protobuf field <code>string query_path = 368591164;</code>
+     * Generated from protobuf field <code>string query_path = 100155708;</code>
      * @param string $var
      * @return $this
      */

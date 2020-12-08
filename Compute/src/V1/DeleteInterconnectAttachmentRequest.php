@@ -18,7 +18,7 @@ class DeleteInterconnectAttachmentRequest extends \Google\Protobuf\Internal\Mess
     /**
      * Name of the interconnect attachment to delete.
      *
-     * Generated from protobuf field <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $interconnect_attachment = '';
     /**
@@ -68,7 +68,7 @@ class DeleteInterconnectAttachmentRequest extends \Google\Protobuf\Internal\Mess
     /**
      * Name of the interconnect attachment to delete.
      *
-     * Generated from protobuf field <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getInterconnectAttachment()
@@ -79,7 +79,7 @@ class DeleteInterconnectAttachmentRequest extends \Google\Protobuf\Internal\Mess
     /**
      * Name of the interconnect attachment to delete.
      *
-     * Generated from protobuf field <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

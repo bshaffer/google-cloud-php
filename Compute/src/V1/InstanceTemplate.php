@@ -25,7 +25,7 @@ class InstanceTemplate extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -55,7 +55,7 @@ class InstanceTemplate extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The URL for this instance template. The server defines this URL.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
@@ -63,7 +63,7 @@ class InstanceTemplate extends \Google\Protobuf\Internal\Message
      * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
      * - projects/project/zones/zone/instances/instance
      *
-     * Generated from protobuf field <code>string source_instance = 396315705;</code>
+     * Generated from protobuf field <code>string source_instance = 127880249;</code>
      */
     private $source_instance = '';
     /**
@@ -135,7 +135,7 @@ class InstanceTemplate extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -146,7 +146,7 @@ class InstanceTemplate extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -275,7 +275,7 @@ class InstanceTemplate extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The URL for this instance template. The server defines this URL.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -286,7 +286,7 @@ class InstanceTemplate extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The URL for this instance template. The server defines this URL.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */
@@ -303,7 +303,7 @@ class InstanceTemplate extends \Google\Protobuf\Internal\Message
      * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
      * - projects/project/zones/zone/instances/instance
      *
-     * Generated from protobuf field <code>string source_instance = 396315705;</code>
+     * Generated from protobuf field <code>string source_instance = 127880249;</code>
      * @return string
      */
     public function getSourceInstance()
@@ -316,7 +316,7 @@ class InstanceTemplate extends \Google\Protobuf\Internal\Message
      * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
      * - projects/project/zones/zone/instances/instance
      *
-     * Generated from protobuf field <code>string source_instance = 396315705;</code>
+     * Generated from protobuf field <code>string source_instance = 127880249;</code>
      * @param string $var
      * @return $this
      */

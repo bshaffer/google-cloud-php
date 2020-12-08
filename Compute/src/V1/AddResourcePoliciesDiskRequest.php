@@ -22,7 +22,7 @@ class AddResourcePoliciesDiskRequest extends \Google\Protobuf\Internal\Message
      */
     private $disk = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 496483363;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 228047907;</code>
      */
     private $disks_add_resource_policies_request_resource = null;
     /**
@@ -97,7 +97,7 @@ class AddResourcePoliciesDiskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 496483363;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 228047907;</code>
      * @return \Google\Cloud\Compute\V1\DisksAddResourcePoliciesRequest
      */
     public function getDisksAddResourcePoliciesRequestResource()
@@ -116,7 +116,7 @@ class AddResourcePoliciesDiskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 496483363;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 228047907;</code>
      * @param \Google\Cloud\Compute\V1\DisksAddResourcePoliciesRequest $var
      * @return $this
      */

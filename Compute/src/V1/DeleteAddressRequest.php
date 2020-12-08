@@ -18,7 +18,7 @@ class DeleteAddressRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the address resource to delete.
      *
-     * Generated from protobuf field <code>string address = 462920692 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string address = 194485236 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $address = '';
     /**
@@ -68,7 +68,7 @@ class DeleteAddressRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the address resource to delete.
      *
-     * Generated from protobuf field <code>string address = 462920692 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string address = 194485236 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getAddress()
@@ -79,7 +79,7 @@ class DeleteAddressRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the address resource to delete.
      *
-     * Generated from protobuf field <code>string address = 462920692 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string address = 194485236 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

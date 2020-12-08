@@ -36,7 +36,7 @@ class SetTagsInstanceRequest extends \Google\Protobuf\Internal\Message
      */
     private $request_id = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Tags tags_resource = 331435380;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Tags tags_resource = 62999924;</code>
      */
     private $tags_resource = null;
     /**
@@ -153,7 +153,7 @@ class SetTagsInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Tags tags_resource = 331435380;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Tags tags_resource = 62999924;</code>
      * @return \Google\Cloud\Compute\V1\Tags
      */
     public function getTagsResource()
@@ -172,7 +172,7 @@ class SetTagsInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Tags tags_resource = 331435380;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Tags tags_resource = 62999924;</code>
      * @param \Google\Cloud\Compute\V1\Tags $var
      * @return $this
      */

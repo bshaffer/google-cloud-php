@@ -18,7 +18,7 @@ class PatchRegionHealthCheckRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the HealthCheck resource to patch.
      *
-     * Generated from protobuf field <code>string health_check = 308876645 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string health_check = 40441189 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $health_check = '';
     /**
@@ -73,7 +73,7 @@ class PatchRegionHealthCheckRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the HealthCheck resource to patch.
      *
-     * Generated from protobuf field <code>string health_check = 308876645 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string health_check = 40441189 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getHealthCheck()
@@ -84,7 +84,7 @@ class PatchRegionHealthCheckRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the HealthCheck resource to patch.
      *
-     * Generated from protobuf field <code>string health_check = 308876645 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string health_check = 40441189 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

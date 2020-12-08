@@ -18,7 +18,7 @@ class RouterNat extends \Google\Protobuf\Internal\Message
     /**
      * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
      *
-     * Generated from protobuf field <code>repeated string drain_nat_ips = 504078535;</code>
+     * Generated from protobuf field <code>repeated string drain_nat_ips = 235643079;</code>
      */
     private $drain_nat_ips;
     /**
@@ -30,7 +30,7 @@ class RouterNat extends \Google\Protobuf\Internal\Message
     /**
      * Configure logging on this NAT.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 82864285;</code>
      */
     private $log_config = null;
     /**
@@ -50,7 +50,7 @@ class RouterNat extends \Google\Protobuf\Internal\Message
      * - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs.
      * - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 161291389;</code>
      */
     private $nat_ip_allocate_option = 0;
     /**
@@ -71,7 +71,7 @@ class RouterNat extends \Google\Protobuf\Internal\Message
     /**
      * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;</code>
      */
     private $subnetworks;
     /**
@@ -138,7 +138,7 @@ class RouterNat extends \Google\Protobuf\Internal\Message
     /**
      * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
      *
-     * Generated from protobuf field <code>repeated string drain_nat_ips = 504078535;</code>
+     * Generated from protobuf field <code>repeated string drain_nat_ips = 235643079;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getDrainNatIps()
@@ -149,7 +149,7 @@ class RouterNat extends \Google\Protobuf\Internal\Message
     /**
      * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
      *
-     * Generated from protobuf field <code>repeated string drain_nat_ips = 504078535;</code>
+     * Generated from protobuf field <code>repeated string drain_nat_ips = 235643079;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -190,7 +190,7 @@ class RouterNat extends \Google\Protobuf\Internal\Message
     /**
      * Configure logging on this NAT.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 82864285;</code>
      * @return \Google\Cloud\Compute\V1\RouterNatLogConfig
      */
     public function getLogConfig()
@@ -211,7 +211,7 @@ class RouterNat extends \Google\Protobuf\Internal\Message
     /**
      * Configure logging on this NAT.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 82864285;</code>
      * @param \Google\Cloud\Compute\V1\RouterNatLogConfig $var
      * @return $this
      */
@@ -280,7 +280,7 @@ class RouterNat extends \Google\Protobuf\Internal\Message
      * - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs.
      * - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 161291389;</code>
      * @return int
      */
     public function getNatIpAllocateOption()
@@ -293,7 +293,7 @@ class RouterNat extends \Google\Protobuf\Internal\Message
      * - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs.
      * - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 161291389;</code>
      * @param int $var
      * @return $this
      */
@@ -366,7 +366,7 @@ class RouterNat extends \Google\Protobuf\Internal\Message
     /**
      * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getSubnetworks()
@@ -377,7 +377,7 @@ class RouterNat extends \Google\Protobuf\Internal\Message
     /**
      * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;</code>
      * @param \Google\Cloud\Compute\V1\RouterNatSubnetworkToNat[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

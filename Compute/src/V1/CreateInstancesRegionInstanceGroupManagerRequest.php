@@ -34,7 +34,7 @@ class CreateInstancesRegionInstanceGroupManagerRequest extends \Google\Protobuf\
      */
     private $region = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 359014280;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 90578824;</code>
      */
     private $region_instance_group_managers_create_instances_request_resource = null;
     /**
@@ -149,7 +149,7 @@ class CreateInstancesRegionInstanceGroupManagerRequest extends \Google\Protobuf\
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 359014280;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 90578824;</code>
      * @return \Google\Cloud\Compute\V1\RegionInstanceGroupManagersCreateInstancesRequest
      */
     public function getRegionInstanceGroupManagersCreateInstancesRequestResource()
@@ -168,7 +168,7 @@ class CreateInstancesRegionInstanceGroupManagerRequest extends \Google\Protobuf\
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 359014280;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 90578824;</code>
      * @param \Google\Cloud\Compute\V1\RegionInstanceGroupManagersCreateInstancesRequest $var
      * @return $this
      */

@@ -35,7 +35,7 @@ class HttpRedirectAction extends \Google\Protobuf\Internal\Message
      * pathRedirect cannot be supplied together with prefixRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
      * The value must be between 1 and 1024 characters.
      *
-     * Generated from protobuf field <code>string path_redirect = 272342710;</code>
+     * Generated from protobuf field <code>string path_redirect = 3907254;</code>
      */
     private $path_redirect = '';
     /**
@@ -43,7 +43,7 @@ class HttpRedirectAction extends \Google\Protobuf\Internal\Message
      * prefixRedirect cannot be supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
      * The value must be between 1 and 1024 characters.
      *
-     * Generated from protobuf field <code>string prefix_redirect = 446184169;</code>
+     * Generated from protobuf field <code>string prefix_redirect = 177748713;</code>
      */
     private $prefix_redirect = '';
     /**
@@ -55,7 +55,7 @@ class HttpRedirectAction extends \Google\Protobuf\Internal\Message
      * - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained.
      * - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 168274952;</code>
      */
     private $redirect_response_code = 0;
     /**
@@ -168,7 +168,7 @@ class HttpRedirectAction extends \Google\Protobuf\Internal\Message
      * pathRedirect cannot be supplied together with prefixRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
      * The value must be between 1 and 1024 characters.
      *
-     * Generated from protobuf field <code>string path_redirect = 272342710;</code>
+     * Generated from protobuf field <code>string path_redirect = 3907254;</code>
      * @return string
      */
     public function getPathRedirect()
@@ -181,7 +181,7 @@ class HttpRedirectAction extends \Google\Protobuf\Internal\Message
      * pathRedirect cannot be supplied together with prefixRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
      * The value must be between 1 and 1024 characters.
      *
-     * Generated from protobuf field <code>string path_redirect = 272342710;</code>
+     * Generated from protobuf field <code>string path_redirect = 3907254;</code>
      * @param string $var
      * @return $this
      */
@@ -198,7 +198,7 @@ class HttpRedirectAction extends \Google\Protobuf\Internal\Message
      * prefixRedirect cannot be supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
      * The value must be between 1 and 1024 characters.
      *
-     * Generated from protobuf field <code>string prefix_redirect = 446184169;</code>
+     * Generated from protobuf field <code>string prefix_redirect = 177748713;</code>
      * @return string
      */
     public function getPrefixRedirect()
@@ -211,7 +211,7 @@ class HttpRedirectAction extends \Google\Protobuf\Internal\Message
      * prefixRedirect cannot be supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
      * The value must be between 1 and 1024 characters.
      *
-     * Generated from protobuf field <code>string prefix_redirect = 446184169;</code>
+     * Generated from protobuf field <code>string prefix_redirect = 177748713;</code>
      * @param string $var
      * @return $this
      */
@@ -232,7 +232,7 @@ class HttpRedirectAction extends \Google\Protobuf\Internal\Message
      * - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained.
      * - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 168274952;</code>
      * @return int
      */
     public function getRedirectResponseCode()
@@ -249,7 +249,7 @@ class HttpRedirectAction extends \Google\Protobuf\Internal\Message
      * - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained.
      * - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 168274952;</code>
      * @param int $var
      * @return $this
      */

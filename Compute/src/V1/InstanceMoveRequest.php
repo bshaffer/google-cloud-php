@@ -29,7 +29,7 @@ class InstanceMoveRequest extends \Google\Protobuf\Internal\Message
      * - projects/project/zones/zone/instances/instance
      * - zones/zone/instances/instance
      *
-     * Generated from protobuf field <code>string target_instance = 289769347;</code>
+     * Generated from protobuf field <code>string target_instance = 21333891;</code>
      */
     private $target_instance = '';
 
@@ -94,7 +94,7 @@ class InstanceMoveRequest extends \Google\Protobuf\Internal\Message
      * - projects/project/zones/zone/instances/instance
      * - zones/zone/instances/instance
      *
-     * Generated from protobuf field <code>string target_instance = 289769347;</code>
+     * Generated from protobuf field <code>string target_instance = 21333891;</code>
      * @return string
      */
     public function getTargetInstance()
@@ -108,7 +108,7 @@ class InstanceMoveRequest extends \Google\Protobuf\Internal\Message
      * - projects/project/zones/zone/instances/instance
      * - zones/zone/instances/instance
      *
-     * Generated from protobuf field <code>string target_instance = 289769347;</code>
+     * Generated from protobuf field <code>string target_instance = 21333891;</code>
      * @param string $var
      * @return $this
      */

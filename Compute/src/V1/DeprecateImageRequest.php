@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeprecateImageRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 333006064;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 64570608;</code>
      */
     private $deprecation_status_resource = null;
     /**
@@ -63,7 +63,7 @@ class DeprecateImageRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 333006064;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 64570608;</code>
      * @return \Google\Cloud\Compute\V1\DeprecationStatus
      */
     public function getDeprecationStatusResource()
@@ -82,7 +82,7 @@ class DeprecateImageRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 333006064;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 64570608;</code>
      * @param \Google\Cloud\Compute\V1\DeprecationStatus $var
      * @return $this
      */

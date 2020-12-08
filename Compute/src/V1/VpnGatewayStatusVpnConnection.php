@@ -18,13 +18,13 @@ class VpnGatewayStatusVpnConnection extends \Google\Protobuf\Internal\Message
     /**
      * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
      *
-     * Generated from protobuf field <code>string peer_external_gateway = 384956173;</code>
+     * Generated from protobuf field <code>string peer_external_gateway = 116520717;</code>
      */
     private $peer_external_gateway = '';
     /**
      * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
      *
-     * Generated from protobuf field <code>string peer_gcp_gateway = 281867452;</code>
+     * Generated from protobuf field <code>string peer_gcp_gateway = 13431996;</code>
      */
     private $peer_gcp_gateway = '';
     /**
@@ -64,7 +64,7 @@ class VpnGatewayStatusVpnConnection extends \Google\Protobuf\Internal\Message
     /**
      * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
      *
-     * Generated from protobuf field <code>string peer_external_gateway = 384956173;</code>
+     * Generated from protobuf field <code>string peer_external_gateway = 116520717;</code>
      * @return string
      */
     public function getPeerExternalGateway()
@@ -75,7 +75,7 @@ class VpnGatewayStatusVpnConnection extends \Google\Protobuf\Internal\Message
     /**
      * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
      *
-     * Generated from protobuf field <code>string peer_external_gateway = 384956173;</code>
+     * Generated from protobuf field <code>string peer_external_gateway = 116520717;</code>
      * @param string $var
      * @return $this
      */
@@ -90,7 +90,7 @@ class VpnGatewayStatusVpnConnection extends \Google\Protobuf\Internal\Message
     /**
      * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
      *
-     * Generated from protobuf field <code>string peer_gcp_gateway = 281867452;</code>
+     * Generated from protobuf field <code>string peer_gcp_gateway = 13431996;</code>
      * @return string
      */
     public function getPeerGcpGateway()
@@ -101,7 +101,7 @@ class VpnGatewayStatusVpnConnection extends \Google\Protobuf\Internal\Message
     /**
      * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
      *
-     * Generated from protobuf field <code>string peer_gcp_gateway = 281867452;</code>
+     * Generated from protobuf field <code>string peer_gcp_gateway = 13431996;</code>
      * @param string $var
      * @return $this
      */

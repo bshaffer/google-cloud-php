@@ -25,7 +25,7 @@ class TargetSslProxy extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -55,25 +55,25 @@ class TargetSslProxy extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
      * URL to the BackendService resource.
      *
-     * Generated from protobuf field <code>string service = 373540533;</code>
+     * Generated from protobuf field <code>string service = 105105077;</code>
      */
     private $service = '';
     /**
      * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
      *
-     * Generated from protobuf field <code>repeated string ssl_certificates = 366006543;</code>
+     * Generated from protobuf field <code>repeated string ssl_certificates = 97571087;</code>
      */
     private $ssl_certificates;
     /**
      * URL of SslPolicy resource that will be associated with the TargetSslProxy resource. If not set, the TargetSslProxy resource will not have any SSL policy configured.
      *
-     * Generated from protobuf field <code>string ssl_policy = 295190213;</code>
+     * Generated from protobuf field <code>string ssl_policy = 26754757;</code>
      */
     private $ssl_policy = '';
 
@@ -139,7 +139,7 @@ class TargetSslProxy extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -150,7 +150,7 @@ class TargetSslProxy extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -269,7 +269,7 @@ class TargetSslProxy extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -280,7 +280,7 @@ class TargetSslProxy extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */
@@ -295,7 +295,7 @@ class TargetSslProxy extends \Google\Protobuf\Internal\Message
     /**
      * URL to the BackendService resource.
      *
-     * Generated from protobuf field <code>string service = 373540533;</code>
+     * Generated from protobuf field <code>string service = 105105077;</code>
      * @return string
      */
     public function getService()
@@ -306,7 +306,7 @@ class TargetSslProxy extends \Google\Protobuf\Internal\Message
     /**
      * URL to the BackendService resource.
      *
-     * Generated from protobuf field <code>string service = 373540533;</code>
+     * Generated from protobuf field <code>string service = 105105077;</code>
      * @param string $var
      * @return $this
      */
@@ -321,7 +321,7 @@ class TargetSslProxy extends \Google\Protobuf\Internal\Message
     /**
      * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
      *
-     * Generated from protobuf field <code>repeated string ssl_certificates = 366006543;</code>
+     * Generated from protobuf field <code>repeated string ssl_certificates = 97571087;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getSslCertificates()
@@ -332,7 +332,7 @@ class TargetSslProxy extends \Google\Protobuf\Internal\Message
     /**
      * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
      *
-     * Generated from protobuf field <code>repeated string ssl_certificates = 366006543;</code>
+     * Generated from protobuf field <code>repeated string ssl_certificates = 97571087;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -347,7 +347,7 @@ class TargetSslProxy extends \Google\Protobuf\Internal\Message
     /**
      * URL of SslPolicy resource that will be associated with the TargetSslProxy resource. If not set, the TargetSslProxy resource will not have any SSL policy configured.
      *
-     * Generated from protobuf field <code>string ssl_policy = 295190213;</code>
+     * Generated from protobuf field <code>string ssl_policy = 26754757;</code>
      * @return string
      */
     public function getSslPolicy()
@@ -358,7 +358,7 @@ class TargetSslProxy extends \Google\Protobuf\Internal\Message
     /**
      * URL of SslPolicy resource that will be associated with the TargetSslProxy resource. If not set, the TargetSslProxy resource will not have any SSL policy configured.
      *
-     * Generated from protobuf field <code>string ssl_policy = 295190213;</code>
+     * Generated from protobuf field <code>string ssl_policy = 26754757;</code>
      * @param string $var
      * @return $this
      */

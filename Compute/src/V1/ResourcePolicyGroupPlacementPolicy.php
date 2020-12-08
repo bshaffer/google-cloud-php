@@ -24,7 +24,7 @@ class ResourcePolicyGroupPlacementPolicy extends \Google\Protobuf\Internal\Messa
     /**
      * Specifies network collocation
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 242721077;</code>
      */
     private $collocation = 0;
     /**
@@ -82,7 +82,7 @@ class ResourcePolicyGroupPlacementPolicy extends \Google\Protobuf\Internal\Messa
     /**
      * Specifies network collocation
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 242721077;</code>
      * @return int
      */
     public function getCollocation()
@@ -93,7 +93,7 @@ class ResourcePolicyGroupPlacementPolicy extends \Google\Protobuf\Internal\Messa
     /**
      * Specifies network collocation
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 242721077;</code>
      * @param int $var
      * @return $this
      */

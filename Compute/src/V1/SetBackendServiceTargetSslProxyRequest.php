@@ -36,7 +36,7 @@ class SetBackendServiceTargetSslProxyRequest extends \Google\Protobuf\Internal\M
     /**
      * Name of the TargetSslProxy resource whose BackendService resource is to be set.
      *
-     * Generated from protobuf field <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $target_ssl_proxy = '';
 
@@ -153,7 +153,7 @@ class SetBackendServiceTargetSslProxyRequest extends \Google\Protobuf\Internal\M
     /**
      * Name of the TargetSslProxy resource whose BackendService resource is to be set.
      *
-     * Generated from protobuf field <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getTargetSslProxy()
@@ -164,7 +164,7 @@ class SetBackendServiceTargetSslProxyRequest extends \Google\Protobuf\Internal\M
     /**
      * Name of the TargetSslProxy resource whose BackendService resource is to be set.
      *
-     * Generated from protobuf field <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

@@ -36,7 +36,7 @@ class ResizeReservationRequest extends \Google\Protobuf\Internal\Message
      */
     private $reservation = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 389262801;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 120827345;</code>
      */
     private $reservations_resize_request_resource = null;
     /**
@@ -153,7 +153,7 @@ class ResizeReservationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 389262801;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 120827345;</code>
      * @return \Google\Cloud\Compute\V1\ReservationsResizeRequest
      */
     public function getReservationsResizeRequestResource()
@@ -172,7 +172,7 @@ class ResizeReservationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 389262801;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 120827345;</code>
      * @param \Google\Cloud\Compute\V1\ReservationsResizeRequest $var
      * @return $this
      */

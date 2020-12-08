@@ -22,7 +22,7 @@ class SetTargetPoolsInstanceGroupManagerRequest extends \Google\Protobuf\Interna
      */
     private $instance_group_manager = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 281150216;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 12714760;</code>
      */
     private $instance_group_managers_set_target_pools_request_resource = null;
     /**
@@ -97,7 +97,7 @@ class SetTargetPoolsInstanceGroupManagerRequest extends \Google\Protobuf\Interna
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 281150216;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 12714760;</code>
      * @return \Google\Cloud\Compute\V1\InstanceGroupManagersSetTargetPoolsRequest
      */
     public function getInstanceGroupManagersSetTargetPoolsRequestResource()
@@ -116,7 +116,7 @@ class SetTargetPoolsInstanceGroupManagerRequest extends \Google\Protobuf\Interna
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 281150216;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 12714760;</code>
      * @param \Google\Cloud\Compute\V1\InstanceGroupManagersSetTargetPoolsRequest $var
      * @return $this
      */

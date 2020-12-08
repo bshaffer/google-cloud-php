@@ -22,7 +22,7 @@ class SetNamedPortsInstanceGroupRequest extends \Google\Protobuf\Internal\Messag
      */
     private $instance_group = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 385151535;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 116716079;</code>
      */
     private $instance_groups_set_named_ports_request_resource = null;
     /**
@@ -97,7 +97,7 @@ class SetNamedPortsInstanceGroupRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 385151535;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 116716079;</code>
      * @return \Google\Cloud\Compute\V1\InstanceGroupsSetNamedPortsRequest
      */
     public function getInstanceGroupsSetNamedPortsRequestResource()
@@ -116,7 +116,7 @@ class SetNamedPortsInstanceGroupRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 385151535;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 116716079;</code>
      * @param \Google\Cloud\Compute\V1\InstanceGroupsSetNamedPortsRequest $var
      * @return $this
      */

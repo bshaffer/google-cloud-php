@@ -20,17 +20,17 @@ class Status
      */
     const UNDEFINED_STATUS = 0;
     /**
-     * Generated from protobuf enum <code>ACTIVE = 314733318;</code>
+     * Generated from protobuf enum <code>ACTIVE = 46297862;</code>
      */
-    const ACTIVE = 314733318;
+    const ACTIVE = 46297862;
     /**
-     * Generated from protobuf enum <code>CREATING = 455564985;</code>
+     * Generated from protobuf enum <code>CREATING = 187129529;</code>
      */
-    const CREATING = 455564985;
+    const CREATING = 187129529;
     /**
-     * Generated from protobuf enum <code>EXPIRED = 482489093;</code>
+     * Generated from protobuf enum <code>EXPIRED = 214053637;</code>
      */
-    const EXPIRED = 482489093;
+    const EXPIRED = 214053637;
     /**
      * Generated from protobuf enum <code>NOT_YET_ACTIVE = 20607337;</code>
      */

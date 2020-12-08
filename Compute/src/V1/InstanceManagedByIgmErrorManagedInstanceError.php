@@ -23,7 +23,7 @@ class InstanceManagedByIgmErrorManagedInstanceError extends \Google\Protobuf\Int
     /**
      * [Output Only] Error message.
      *
-     * Generated from protobuf field <code>string message = 418054151;</code>
+     * Generated from protobuf field <code>string message = 149618695;</code>
      */
     private $message = '';
 
@@ -73,7 +73,7 @@ class InstanceManagedByIgmErrorManagedInstanceError extends \Google\Protobuf\Int
     /**
      * [Output Only] Error message.
      *
-     * Generated from protobuf field <code>string message = 418054151;</code>
+     * Generated from protobuf field <code>string message = 149618695;</code>
      * @return string
      */
     public function getMessage()
@@ -84,7 +84,7 @@ class InstanceManagedByIgmErrorManagedInstanceError extends \Google\Protobuf\Int
     /**
      * [Output Only] Error message.
      *
-     * Generated from protobuf field <code>string message = 418054151;</code>
+     * Generated from protobuf field <code>string message = 149618695;</code>
      * @param string $var
      * @return $this
      */

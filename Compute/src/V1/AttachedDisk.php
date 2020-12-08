@@ -18,7 +18,7 @@ class AttachedDisk extends \Google\Protobuf\Internal\Message
     /**
      * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
      *
-     * Generated from protobuf field <code>bool auto_delete = 464761403;</code>
+     * Generated from protobuf field <code>bool auto_delete = 196325947;</code>
      */
     private $auto_delete = false;
     /**
@@ -41,13 +41,13 @@ class AttachedDisk extends \Google\Protobuf\Internal\Message
      * If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
      * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      */
     private $disk_encryption_key = null;
     /**
      * The size of the disk in GB.
      *
-     * Generated from protobuf field <code>string disk_size_gb = 316263735;</code>
+     * Generated from protobuf field <code>string disk_size_gb = 47828279;</code>
      */
     private $disk_size_gb = '';
     /**
@@ -72,7 +72,7 @@ class AttachedDisk extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 234188089;</code>
      */
     private $interface = 0;
     /**
@@ -84,7 +84,7 @@ class AttachedDisk extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Any valid publicly visible licenses.
      *
-     * Generated from protobuf field <code>repeated string licenses = 337642578;</code>
+     * Generated from protobuf field <code>repeated string licenses = 69207122;</code>
      */
     private $licenses;
     /**
@@ -168,7 +168,7 @@ class AttachedDisk extends \Google\Protobuf\Internal\Message
     /**
      * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
      *
-     * Generated from protobuf field <code>bool auto_delete = 464761403;</code>
+     * Generated from protobuf field <code>bool auto_delete = 196325947;</code>
      * @return bool
      */
     public function getAutoDelete()
@@ -179,7 +179,7 @@ class AttachedDisk extends \Google\Protobuf\Internal\Message
     /**
      * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
      *
-     * Generated from protobuf field <code>bool auto_delete = 464761403;</code>
+     * Generated from protobuf field <code>bool auto_delete = 196325947;</code>
      * @param bool $var
      * @return $this
      */
@@ -252,7 +252,7 @@ class AttachedDisk extends \Google\Protobuf\Internal\Message
      * If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
      * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      * @return \Google\Cloud\Compute\V1\CustomerEncryptionKey
      */
     public function getDiskEncryptionKey()
@@ -277,7 +277,7 @@ class AttachedDisk extends \Google\Protobuf\Internal\Message
      * If you do not provide an encryption key, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
      * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      * @param \Google\Cloud\Compute\V1\CustomerEncryptionKey $var
      * @return $this
      */
@@ -292,7 +292,7 @@ class AttachedDisk extends \Google\Protobuf\Internal\Message
     /**
      * The size of the disk in GB.
      *
-     * Generated from protobuf field <code>string disk_size_gb = 316263735;</code>
+     * Generated from protobuf field <code>string disk_size_gb = 47828279;</code>
      * @return string
      */
     public function getDiskSizeGb()
@@ -303,7 +303,7 @@ class AttachedDisk extends \Google\Protobuf\Internal\Message
     /**
      * The size of the disk in GB.
      *
-     * Generated from protobuf field <code>string disk_size_gb = 316263735;</code>
+     * Generated from protobuf field <code>string disk_size_gb = 47828279;</code>
      * @param string $var
      * @return $this
      */
@@ -408,7 +408,7 @@ class AttachedDisk extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 234188089;</code>
      * @return int
      */
     public function getInterface()
@@ -419,7 +419,7 @@ class AttachedDisk extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 234188089;</code>
      * @param int $var
      * @return $this
      */
@@ -460,7 +460,7 @@ class AttachedDisk extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Any valid publicly visible licenses.
      *
-     * Generated from protobuf field <code>repeated string licenses = 337642578;</code>
+     * Generated from protobuf field <code>repeated string licenses = 69207122;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getLicenses()
@@ -471,7 +471,7 @@ class AttachedDisk extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Any valid publicly visible licenses.
      *
-     * Generated from protobuf field <code>repeated string licenses = 337642578;</code>
+     * Generated from protobuf field <code>repeated string licenses = 69207122;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

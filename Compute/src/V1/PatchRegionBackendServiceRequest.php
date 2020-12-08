@@ -18,11 +18,11 @@ class PatchRegionBackendServiceRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the BackendService resource to patch.
      *
-     * Generated from protobuf field <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $backend_service = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService backend_service_resource = 347586723;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService backend_service_resource = 79151267;</code>
      */
     private $backend_service_resource = null;
     /**
@@ -73,7 +73,7 @@ class PatchRegionBackendServiceRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the BackendService resource to patch.
      *
-     * Generated from protobuf field <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getBackendService()
@@ -84,7 +84,7 @@ class PatchRegionBackendServiceRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the BackendService resource to patch.
      *
-     * Generated from protobuf field <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -97,7 +97,7 @@ class PatchRegionBackendServiceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService backend_service_resource = 347586723;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService backend_service_resource = 79151267;</code>
      * @return \Google\Cloud\Compute\V1\BackendService
      */
     public function getBackendServiceResource()
@@ -116,7 +116,7 @@ class PatchRegionBackendServiceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService backend_service_resource = 347586723;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService backend_service_resource = 79151267;</code>
      * @param \Google\Cloud\Compute\V1\BackendService $var
      * @return $this
      */

@@ -9,6 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Represents a customer-supplied encryption key
  *
  * Generated from protobuf message <code>google.cloud.compute.v1.CustomerEncryptionKey</code>
  */
@@ -17,7 +18,7 @@ class CustomerEncryptionKey extends \Google\Protobuf\Internal\Message
     /**
      * The name of the encryption key that is stored in Google Cloud KMS.
      *
-     * Generated from protobuf field <code>string kms_key_name = 484373913;</code>
+     * Generated from protobuf field <code>string kms_key_name = 215938457;</code>
      */
     private $kms_key_name = '';
     /**
@@ -29,7 +30,7 @@ class CustomerEncryptionKey extends \Google\Protobuf\Internal\Message
     /**
      * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
      *
-     * Generated from protobuf field <code>string raw_key = 449196488;</code>
+     * Generated from protobuf field <code>string raw_key = 180761032;</code>
      */
     private $raw_key = '';
     /**
@@ -63,7 +64,7 @@ class CustomerEncryptionKey extends \Google\Protobuf\Internal\Message
     /**
      * The name of the encryption key that is stored in Google Cloud KMS.
      *
-     * Generated from protobuf field <code>string kms_key_name = 484373913;</code>
+     * Generated from protobuf field <code>string kms_key_name = 215938457;</code>
      * @return string
      */
     public function getKmsKeyName()
@@ -74,7 +75,7 @@ class CustomerEncryptionKey extends \Google\Protobuf\Internal\Message
     /**
      * The name of the encryption key that is stored in Google Cloud KMS.
      *
-     * Generated from protobuf field <code>string kms_key_name = 484373913;</code>
+     * Generated from protobuf field <code>string kms_key_name = 215938457;</code>
      * @param string $var
      * @return $this
      */
@@ -115,7 +116,7 @@ class CustomerEncryptionKey extends \Google\Protobuf\Internal\Message
     /**
      * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
      *
-     * Generated from protobuf field <code>string raw_key = 449196488;</code>
+     * Generated from protobuf field <code>string raw_key = 180761032;</code>
      * @return string
      */
     public function getRawKey()
@@ -126,7 +127,7 @@ class CustomerEncryptionKey extends \Google\Protobuf\Internal\Message
     /**
      * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
      *
-     * Generated from protobuf field <code>string raw_key = 449196488;</code>
+     * Generated from protobuf field <code>string raw_key = 180761032;</code>
      * @param string $var
      * @return $this
      */

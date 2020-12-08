@@ -18,7 +18,7 @@ class DeleteInstanceTemplateRequest extends \Google\Protobuf\Internal\Message
     /**
      * The name of the instance template to delete.
      *
-     * Generated from protobuf field <code>string instance_template = 309248228 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string instance_template = 40812772 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $instance_template = '';
     /**
@@ -60,7 +60,7 @@ class DeleteInstanceTemplateRequest extends \Google\Protobuf\Internal\Message
     /**
      * The name of the instance template to delete.
      *
-     * Generated from protobuf field <code>string instance_template = 309248228 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string instance_template = 40812772 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getInstanceTemplate()
@@ -71,7 +71,7 @@ class DeleteInstanceTemplateRequest extends \Google\Protobuf\Internal\Message
     /**
      * The name of the instance template to delete.
      *
-     * Generated from protobuf field <code>string instance_template = 309248228 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string instance_template = 40812772 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

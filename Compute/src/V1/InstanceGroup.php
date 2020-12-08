@@ -30,7 +30,7 @@ class InstanceGroup extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -62,7 +62,7 @@ class InstanceGroup extends \Google\Protobuf\Internal\Message
      * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
      * Named ports apply to all instances in this instance group.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     private $named_ports;
     /**
@@ -80,7 +80,7 @@ class InstanceGroup extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The URL for this instance group. The server generates this URL.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
@@ -92,7 +92,7 @@ class InstanceGroup extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
      *
-     * Generated from protobuf field <code>string subnetwork = 307827694;</code>
+     * Generated from protobuf field <code>string subnetwork = 39392238;</code>
      */
     private $subnetwork = '';
     /**
@@ -172,7 +172,7 @@ class InstanceGroup extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -183,7 +183,7 @@ class InstanceGroup extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -304,7 +304,7 @@ class InstanceGroup extends \Google\Protobuf\Internal\Message
      * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
      * Named ports apply to all instances in this instance group.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getNamedPorts()
@@ -317,7 +317,7 @@ class InstanceGroup extends \Google\Protobuf\Internal\Message
      * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
      * Named ports apply to all instances in this instance group.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      * @param \Google\Cloud\Compute\V1\NamedPort[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -384,7 +384,7 @@ class InstanceGroup extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The URL for this instance group. The server generates this URL.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -395,7 +395,7 @@ class InstanceGroup extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The URL for this instance group. The server generates this URL.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */
@@ -436,7 +436,7 @@ class InstanceGroup extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
      *
-     * Generated from protobuf field <code>string subnetwork = 307827694;</code>
+     * Generated from protobuf field <code>string subnetwork = 39392238;</code>
      * @return string
      */
     public function getSubnetwork()
@@ -447,7 +447,7 @@ class InstanceGroup extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
      *
-     * Generated from protobuf field <code>string subnetwork = 307827694;</code>
+     * Generated from protobuf field <code>string subnetwork = 39392238;</code>
      * @param string $var
      * @return $this
      */

@@ -19,11 +19,11 @@ class NodeTemplateNodeTypeFlexibility extends \Google\Protobuf\Internal\Message
      */
     private $cpus = '';
     /**
-     * Generated from protobuf field <code>string local_ssd = 405741360;</code>
+     * Generated from protobuf field <code>string local_ssd = 137305904;</code>
      */
     private $local_ssd = '';
     /**
-     * Generated from protobuf field <code>string memory = 532856065;</code>
+     * Generated from protobuf field <code>string memory = 264420609;</code>
      */
     private $memory = '';
 
@@ -66,7 +66,7 @@ class NodeTemplateNodeTypeFlexibility extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string local_ssd = 405741360;</code>
+     * Generated from protobuf field <code>string local_ssd = 137305904;</code>
      * @return string
      */
     public function getLocalSsd()
@@ -75,7 +75,7 @@ class NodeTemplateNodeTypeFlexibility extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string local_ssd = 405741360;</code>
+     * Generated from protobuf field <code>string local_ssd = 137305904;</code>
      * @param string $var
      * @return $this
      */
@@ -88,7 +88,7 @@ class NodeTemplateNodeTypeFlexibility extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string memory = 532856065;</code>
+     * Generated from protobuf field <code>string memory = 264420609;</code>
      * @return string
      */
     public function getMemory()
@@ -97,7 +97,7 @@ class NodeTemplateNodeTypeFlexibility extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string memory = 532856065;</code>
+     * Generated from protobuf field <code>string memory = 264420609;</code>
      * @param string $var
      * @return $this
      */

@@ -17,7 +17,7 @@ class TargetTcpProxiesSetBackendServiceRequest extends \Google\Protobuf\Internal
     /**
      * The URL of the new BackendService resource for the targetTcpProxy.
      *
-     * Generated from protobuf field <code>string service = 373540533;</code>
+     * Generated from protobuf field <code>string service = 105105077;</code>
      */
     private $service = '';
 
@@ -39,7 +39,7 @@ class TargetTcpProxiesSetBackendServiceRequest extends \Google\Protobuf\Internal
     /**
      * The URL of the new BackendService resource for the targetTcpProxy.
      *
-     * Generated from protobuf field <code>string service = 373540533;</code>
+     * Generated from protobuf field <code>string service = 105105077;</code>
      * @return string
      */
     public function getService()
@@ -50,7 +50,7 @@ class TargetTcpProxiesSetBackendServiceRequest extends \Google\Protobuf\Internal
     /**
      * The URL of the new BackendService resource for the targetTcpProxy.
      *
-     * Generated from protobuf field <code>string service = 373540533;</code>
+     * Generated from protobuf field <code>string service = 105105077;</code>
      * @param string $var
      * @return $this
      */

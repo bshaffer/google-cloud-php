@@ -34,7 +34,7 @@ class ResizeRegionDiskRequest extends \Google\Protobuf\Internal\Message
      */
     private $region = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 446633237;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 178197781;</code>
      */
     private $region_disks_resize_request_resource = null;
     /**
@@ -149,7 +149,7 @@ class ResizeRegionDiskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 446633237;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 178197781;</code>
      * @return \Google\Cloud\Compute\V1\RegionDisksResizeRequest
      */
     public function getRegionDisksResizeRequestResource()
@@ -168,7 +168,7 @@ class ResizeRegionDiskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 446633237;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 178197781;</code>
      * @param \Google\Cloud\Compute\V1\RegionDisksResizeRequest $var
      * @return $this
      */

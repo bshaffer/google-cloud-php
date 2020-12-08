@@ -17,13 +17,13 @@ class FileContentBuffer extends \Google\Protobuf\Internal\Message
     /**
      * The raw content in the secure keys file.
      *
-     * Generated from protobuf field <code>string content = 414659705;</code>
+     * Generated from protobuf field <code>string content = 146224249;</code>
      */
     private $content = '';
     /**
      * The file type of source file.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 25911325;</code>
      */
     private $file_type = 0;
 
@@ -47,7 +47,7 @@ class FileContentBuffer extends \Google\Protobuf\Internal\Message
     /**
      * The raw content in the secure keys file.
      *
-     * Generated from protobuf field <code>string content = 414659705;</code>
+     * Generated from protobuf field <code>string content = 146224249;</code>
      * @return string
      */
     public function getContent()
@@ -58,7 +58,7 @@ class FileContentBuffer extends \Google\Protobuf\Internal\Message
     /**
      * The raw content in the secure keys file.
      *
-     * Generated from protobuf field <code>string content = 414659705;</code>
+     * Generated from protobuf field <code>string content = 146224249;</code>
      * @param string $var
      * @return $this
      */
@@ -73,7 +73,7 @@ class FileContentBuffer extends \Google\Protobuf\Internal\Message
     /**
      * The file type of source file.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 25911325;</code>
      * @return int
      */
     public function getFileType()
@@ -84,7 +84,7 @@ class FileContentBuffer extends \Google\Protobuf\Internal\Message
     /**
      * The file type of source file.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 25911325;</code>
      * @param int $var
      * @return $this
      */

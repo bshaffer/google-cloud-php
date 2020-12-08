@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class InsertGlobalAddressRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Address address_resource = 483888121;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Address address_resource = 215452665;</code>
      */
     private $address_resource = null;
     /**
@@ -55,7 +55,7 @@ class InsertGlobalAddressRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Address address_resource = 483888121;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Address address_resource = 215452665;</code>
      * @return \Google\Cloud\Compute\V1\Address
      */
     public function getAddressResource()
@@ -74,7 +74,7 @@ class InsertGlobalAddressRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Address address_resource = 483888121;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Address address_resource = 215452665;</code>
      * @param \Google\Cloud\Compute\V1\Address $var
      * @return $this
      */

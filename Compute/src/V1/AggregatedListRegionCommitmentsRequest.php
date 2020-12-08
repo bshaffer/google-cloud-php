@@ -21,13 +21,13 @@ class AggregatedListRegionCommitmentsRequest extends \Google\Protobuf\Internal\M
      * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      *
-     * Generated from protobuf field <code>string filter = 336120696;</code>
+     * Generated from protobuf field <code>string filter = 67685240;</code>
      */
     private $filter = '';
     /**
      * Indicates whether every visible scope for each scope type (zone, region, global) should be included in the response. For new resource types added after this field, the flag has no effect as new resource types will always include every visible scope for each scope type in response. For resource types which predate this field, if this flag is omitted or false, only scopes of the scope types where the resource type is expected to be found will be included.
      *
-     * Generated from protobuf field <code>bool include_all_scopes = 391327988;</code>
+     * Generated from protobuf field <code>bool include_all_scopes = 122892532;</code>
      */
     private $include_all_scopes = false;
     /**
@@ -56,12 +56,6 @@ class AggregatedListRegionCommitmentsRequest extends \Google\Protobuf\Internal\M
      * Generated from protobuf field <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $project = '';
-    /**
-     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
-     *
-     * Generated from protobuf field <code>bool return_partial_success = 517198390;</code>
-     */
-    private $return_partial_success = false;
 
     /**
      * Constructor.
@@ -86,8 +80,6 @@ class AggregatedListRegionCommitmentsRequest extends \Google\Protobuf\Internal\M
      *           Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
      *     @type string $project
      *           Project ID for this request.
-     *     @type bool $return_partial_success
-     *           Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      * }
      */
     public function __construct($data = NULL) {
@@ -101,7 +93,7 @@ class AggregatedListRegionCommitmentsRequest extends \Google\Protobuf\Internal\M
      * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      *
-     * Generated from protobuf field <code>string filter = 336120696;</code>
+     * Generated from protobuf field <code>string filter = 67685240;</code>
      * @return string
      */
     public function getFilter()
@@ -115,7 +107,7 @@ class AggregatedListRegionCommitmentsRequest extends \Google\Protobuf\Internal\M
      * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      *
-     * Generated from protobuf field <code>string filter = 336120696;</code>
+     * Generated from protobuf field <code>string filter = 67685240;</code>
      * @param string $var
      * @return $this
      */
@@ -130,7 +122,7 @@ class AggregatedListRegionCommitmentsRequest extends \Google\Protobuf\Internal\M
     /**
      * Indicates whether every visible scope for each scope type (zone, region, global) should be included in the response. For new resource types added after this field, the flag has no effect as new resource types will always include every visible scope for each scope type in response. For resource types which predate this field, if this flag is omitted or false, only scopes of the scope types where the resource type is expected to be found will be included.
      *
-     * Generated from protobuf field <code>bool include_all_scopes = 391327988;</code>
+     * Generated from protobuf field <code>bool include_all_scopes = 122892532;</code>
      * @return bool
      */
     public function getIncludeAllScopes()
@@ -141,7 +133,7 @@ class AggregatedListRegionCommitmentsRequest extends \Google\Protobuf\Internal\M
     /**
      * Indicates whether every visible scope for each scope type (zone, region, global) should be included in the response. For new resource types added after this field, the flag has no effect as new resource types will always include every visible scope for each scope type in response. For resource types which predate this field, if this flag is omitted or false, only scopes of the scope types where the resource type is expected to be found will be included.
      *
-     * Generated from protobuf field <code>bool include_all_scopes = 391327988;</code>
+     * Generated from protobuf field <code>bool include_all_scopes = 122892532;</code>
      * @param bool $var
      * @return $this
      */
@@ -257,32 +249,6 @@ class AggregatedListRegionCommitmentsRequest extends \Google\Protobuf\Internal\M
     {
         GPBUtil::checkString($var, True);
         $this->project = $var;
-
-        return $this;
-    }
-
-    /**
-     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
-     *
-     * Generated from protobuf field <code>bool return_partial_success = 517198390;</code>
-     * @return bool
-     */
-    public function getReturnPartialSuccess()
-    {
-        return $this->return_partial_success;
-    }
-
-    /**
-     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
-     *
-     * Generated from protobuf field <code>bool return_partial_success = 517198390;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setReturnPartialSuccess($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->return_partial_success = $var;
 
         return $this;
     }

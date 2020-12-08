@@ -18,7 +18,7 @@ class GetHealthRegionBackendServiceRequest extends \Google\Protobuf\Internal\Mes
     /**
      * Name of the BackendService resource for which to get health.
      *
-     * Generated from protobuf field <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $backend_service = '';
     /**
@@ -58,7 +58,7 @@ class GetHealthRegionBackendServiceRequest extends \Google\Protobuf\Internal\Mes
     /**
      * Name of the BackendService resource for which to get health.
      *
-     * Generated from protobuf field <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getBackendService()
@@ -69,7 +69,7 @@ class GetHealthRegionBackendServiceRequest extends \Google\Protobuf\Internal\Mes
     /**
      * Name of the BackendService resource for which to get health.
      *
-     * Generated from protobuf field <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

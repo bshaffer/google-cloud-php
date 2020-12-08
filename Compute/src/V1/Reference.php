@@ -31,7 +31,7 @@ class Reference extends \Google\Protobuf\Internal\Message
     /**
      * URL of the resource which refers to the target.
      *
-     * Generated from protobuf field <code>string referrer = 351173663;</code>
+     * Generated from protobuf field <code>string referrer = 82738207;</code>
      */
     private $referrer = '';
     /**
@@ -120,7 +120,7 @@ class Reference extends \Google\Protobuf\Internal\Message
     /**
      * URL of the resource which refers to the target.
      *
-     * Generated from protobuf field <code>string referrer = 351173663;</code>
+     * Generated from protobuf field <code>string referrer = 82738207;</code>
      * @return string
      */
     public function getReferrer()
@@ -131,7 +131,7 @@ class Reference extends \Google\Protobuf\Internal\Message
     /**
      * URL of the resource which refers to the target.
      *
-     * Generated from protobuf field <code>string referrer = 351173663;</code>
+     * Generated from protobuf field <code>string referrer = 82738207;</code>
      * @param string $var
      * @return $this
      */

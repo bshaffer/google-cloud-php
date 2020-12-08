@@ -18,7 +18,7 @@ class FirewallLogConfig extends \Google\Protobuf\Internal\Message
     /**
      * This field denotes whether to enable logging for a particular firewall rule.
      *
-     * Generated from protobuf field <code>bool enable = 311764355;</code>
+     * Generated from protobuf field <code>bool enable = 43328899;</code>
      */
     private $enable = false;
     /**
@@ -48,7 +48,7 @@ class FirewallLogConfig extends \Google\Protobuf\Internal\Message
     /**
      * This field denotes whether to enable logging for a particular firewall rule.
      *
-     * Generated from protobuf field <code>bool enable = 311764355;</code>
+     * Generated from protobuf field <code>bool enable = 43328899;</code>
      * @return bool
      */
     public function getEnable()
@@ -59,7 +59,7 @@ class FirewallLogConfig extends \Google\Protobuf\Internal\Message
     /**
      * This field denotes whether to enable logging for a particular firewall rule.
      *
-     * Generated from protobuf field <code>bool enable = 311764355;</code>
+     * Generated from protobuf field <code>bool enable = 43328899;</code>
      * @param bool $var
      * @return $this
      */

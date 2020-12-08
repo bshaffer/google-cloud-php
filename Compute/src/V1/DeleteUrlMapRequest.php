@@ -32,7 +32,7 @@ class DeleteUrlMapRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the UrlMap resource to delete.
      *
-     * Generated from protobuf field <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $url_map = '';
 
@@ -116,7 +116,7 @@ class DeleteUrlMapRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the UrlMap resource to delete.
      *
-     * Generated from protobuf field <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getUrlMap()
@@ -127,7 +127,7 @@ class DeleteUrlMapRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the UrlMap resource to delete.
      *
-     * Generated from protobuf field <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

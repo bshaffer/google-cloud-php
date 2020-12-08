@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class UrlMapValidationResult extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated string load_errors = 310147300;</code>
+     * Generated from protobuf field <code>repeated string load_errors = 41711844;</code>
      */
     private $load_errors;
     /**
@@ -26,7 +26,7 @@ class UrlMapValidationResult extends \Google\Protobuf\Internal\Message
      */
     private $load_succeeded = false;
     /**
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code>
      */
     private $test_failures;
     /**
@@ -56,7 +56,7 @@ class UrlMapValidationResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string load_errors = 310147300;</code>
+     * Generated from protobuf field <code>repeated string load_errors = 41711844;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getLoadErrors()
@@ -65,7 +65,7 @@ class UrlMapValidationResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string load_errors = 310147300;</code>
+     * Generated from protobuf field <code>repeated string load_errors = 41711844;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -104,7 +104,7 @@ class UrlMapValidationResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTestFailures()
@@ -113,7 +113,7 @@ class UrlMapValidationResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code>
      * @param \Google\Cloud\Compute\V1\TestFailure[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

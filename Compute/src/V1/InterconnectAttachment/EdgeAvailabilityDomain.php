@@ -23,17 +23,17 @@ class EdgeAvailabilityDomain
      */
     const UNDEFINED_EDGE_AVAILABILITY_DOMAIN = 0;
     /**
-     * Generated from protobuf enum <code>AVAILABILITY_DOMAIN_1 = 349552090;</code>
+     * Generated from protobuf enum <code>AVAILABILITY_DOMAIN_1 = 81116634;</code>
      */
-    const AVAILABILITY_DOMAIN_1 = 349552090;
+    const AVAILABILITY_DOMAIN_1 = 81116634;
     /**
-     * Generated from protobuf enum <code>AVAILABILITY_DOMAIN_2 = 349552091;</code>
+     * Generated from protobuf enum <code>AVAILABILITY_DOMAIN_2 = 81116635;</code>
      */
-    const AVAILABILITY_DOMAIN_2 = 349552091;
+    const AVAILABILITY_DOMAIN_2 = 81116635;
     /**
-     * Generated from protobuf enum <code>AVAILABILITY_DOMAIN_ANY = 375256373;</code>
+     * Generated from protobuf enum <code>AVAILABILITY_DOMAIN_ANY = 106820917;</code>
      */
-    const AVAILABILITY_DOMAIN_ANY = 375256373;
+    const AVAILABILITY_DOMAIN_ANY = 106820917;
 
     private static $valueToName = [
         self::UNDEFINED_EDGE_AVAILABILITY_DOMAIN => 'UNDEFINED_EDGE_AVAILABILITY_DOMAIN',

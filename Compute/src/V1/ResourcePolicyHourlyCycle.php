@@ -24,7 +24,7 @@ class ResourcePolicyHourlyCycle extends \Google\Protobuf\Internal\Message
     /**
      * Defines a schedule with units measured in hours. The value determines how many hours pass between the start of each cycle.
      *
-     * Generated from protobuf field <code>int32 hours_in_cycle = 526763132;</code>
+     * Generated from protobuf field <code>int32 hours_in_cycle = 258327676;</code>
      */
     private $hours_in_cycle = 0;
     /**
@@ -82,7 +82,7 @@ class ResourcePolicyHourlyCycle extends \Google\Protobuf\Internal\Message
     /**
      * Defines a schedule with units measured in hours. The value determines how many hours pass between the start of each cycle.
      *
-     * Generated from protobuf field <code>int32 hours_in_cycle = 526763132;</code>
+     * Generated from protobuf field <code>int32 hours_in_cycle = 258327676;</code>
      * @return int
      */
     public function getHoursInCycle()
@@ -93,7 +93,7 @@ class ResourcePolicyHourlyCycle extends \Google\Protobuf\Internal\Message
     /**
      * Defines a schedule with units measured in hours. The value determines how many hours pass between the start of each cycle.
      *
-     * Generated from protobuf field <code>int32 hours_in_cycle = 526763132;</code>
+     * Generated from protobuf field <code>int32 hours_in_cycle = 258327676;</code>
      * @param int $var
      * @return $this
      */

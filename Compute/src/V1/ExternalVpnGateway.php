@@ -27,7 +27,7 @@ class ExternalVpnGateway extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -58,7 +58,7 @@ class ExternalVpnGateway extends \Google\Protobuf\Internal\Message
     /**
      * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
      *
-     * Generated from protobuf field <code>map<string, string> labels = 500195327;</code>
+     * Generated from protobuf field <code>map<string, string> labels = 231759871;</code>
      */
     private $labels;
     /**
@@ -70,13 +70,13 @@ class ExternalVpnGateway extends \Google\Protobuf\Internal\Message
     /**
      * Indicates the user-supplied redundancy type of this external VPN gateway.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 3008284;</code>
      */
     private $redundancy_type = 0;
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
 
@@ -143,7 +143,7 @@ class ExternalVpnGateway extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -154,7 +154,7 @@ class ExternalVpnGateway extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -275,7 +275,7 @@ class ExternalVpnGateway extends \Google\Protobuf\Internal\Message
     /**
      * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
      *
-     * Generated from protobuf field <code>map<string, string> labels = 500195327;</code>
+     * Generated from protobuf field <code>map<string, string> labels = 231759871;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getLabels()
@@ -286,7 +286,7 @@ class ExternalVpnGateway extends \Google\Protobuf\Internal\Message
     /**
      * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
      *
-     * Generated from protobuf field <code>map<string, string> labels = 500195327;</code>
+     * Generated from protobuf field <code>map<string, string> labels = 231759871;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
@@ -327,7 +327,7 @@ class ExternalVpnGateway extends \Google\Protobuf\Internal\Message
     /**
      * Indicates the user-supplied redundancy type of this external VPN gateway.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 3008284;</code>
      * @return int
      */
     public function getRedundancyType()
@@ -338,7 +338,7 @@ class ExternalVpnGateway extends \Google\Protobuf\Internal\Message
     /**
      * Indicates the user-supplied redundancy type of this external VPN gateway.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 3008284;</code>
      * @param int $var
      * @return $this
      */
@@ -353,7 +353,7 @@ class ExternalVpnGateway extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -364,7 +364,7 @@ class ExternalVpnGateway extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */

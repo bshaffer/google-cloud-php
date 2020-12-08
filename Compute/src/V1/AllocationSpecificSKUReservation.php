@@ -24,7 +24,7 @@ class AllocationSpecificSKUReservation extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Indicates how many instances are in use.
      *
-     * Generated from protobuf field <code>string in_use_count = 493458877;</code>
+     * Generated from protobuf field <code>string in_use_count = 225023421;</code>
      */
     private $in_use_count = '';
     /**
@@ -82,7 +82,7 @@ class AllocationSpecificSKUReservation extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Indicates how many instances are in use.
      *
-     * Generated from protobuf field <code>string in_use_count = 493458877;</code>
+     * Generated from protobuf field <code>string in_use_count = 225023421;</code>
      * @return string
      */
     public function getInUseCount()
@@ -93,7 +93,7 @@ class AllocationSpecificSKUReservation extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Indicates how many instances are in use.
      *
-     * Generated from protobuf field <code>string in_use_count = 493458877;</code>
+     * Generated from protobuf field <code>string in_use_count = 225023421;</code>
      * @param string $var
      * @return $this
      */

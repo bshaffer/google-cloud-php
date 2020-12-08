@@ -17,7 +17,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Protobuf\Internal\Messa
     /**
      * [Output Only] The total number of instances in the managed instance group that are scheduled to be abandoned. Abandoning an instance removes it from the managed instance group without deleting it.
      *
-     * Generated from protobuf field <code>int32 abandoning = 440023373;</code>
+     * Generated from protobuf field <code>int32 abandoning = 171587917;</code>
      */
     private $abandoning = 0;
     /**
@@ -30,13 +30,13 @@ class InstanceGroupManagerActionsSummary extends \Google\Protobuf\Internal\Messa
     /**
      * [Output Only] The number of instances that the managed instance group will attempt to create. The group attempts to create each instance only once. If the group fails to create any of these instances, it decreases the group's targetSize value accordingly.
      *
-     * Generated from protobuf field <code>int32 creating_without_retries = 369916745;</code>
+     * Generated from protobuf field <code>int32 creating_without_retries = 101481289;</code>
      */
     private $creating_without_retries = 0;
     /**
      * [Output Only] The number of instances in the managed instance group that are scheduled to be deleted or are currently being deleted.
      *
-     * Generated from protobuf field <code>int32 deleting = 282846120;</code>
+     * Generated from protobuf field <code>int32 deleting = 14410664;</code>
      */
     private $deleting = 0;
     /**
@@ -48,7 +48,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Protobuf\Internal\Messa
     /**
      * [Output Only] The number of instances in the managed instance group that are scheduled to be recreated or are currently being being recreated. Recreating an instance deletes the existing root persistent disk and creates a new disk from the image that is defined in the instance template.
      *
-     * Generated from protobuf field <code>int32 recreating = 339057132;</code>
+     * Generated from protobuf field <code>int32 recreating = 70621676;</code>
      */
     private $recreating = 0;
     /**
@@ -60,13 +60,13 @@ class InstanceGroupManagerActionsSummary extends \Google\Protobuf\Internal\Messa
     /**
      * [Output Only] The number of instances in the managed instance group that are scheduled to be restarted or are currently being restarted.
      *
-     * Generated from protobuf field <code>int32 restarting = 372312947;</code>
+     * Generated from protobuf field <code>int32 restarting = 103877491;</code>
      */
     private $restarting = 0;
     /**
      * [Output Only] The number of instances in the managed instance group that are being verified. See the managedInstances[].currentAction property in the listManagedInstances method documentation.
      *
-     * Generated from protobuf field <code>int32 verifying = 451612873;</code>
+     * Generated from protobuf field <code>int32 verifying = 183177417;</code>
      */
     private $verifying = 0;
 
@@ -105,7 +105,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Protobuf\Internal\Messa
     /**
      * [Output Only] The total number of instances in the managed instance group that are scheduled to be abandoned. Abandoning an instance removes it from the managed instance group without deleting it.
      *
-     * Generated from protobuf field <code>int32 abandoning = 440023373;</code>
+     * Generated from protobuf field <code>int32 abandoning = 171587917;</code>
      * @return int
      */
     public function getAbandoning()
@@ -116,7 +116,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Protobuf\Internal\Messa
     /**
      * [Output Only] The total number of instances in the managed instance group that are scheduled to be abandoned. Abandoning an instance removes it from the managed instance group without deleting it.
      *
-     * Generated from protobuf field <code>int32 abandoning = 440023373;</code>
+     * Generated from protobuf field <code>int32 abandoning = 171587917;</code>
      * @param int $var
      * @return $this
      */
@@ -159,7 +159,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Protobuf\Internal\Messa
     /**
      * [Output Only] The number of instances that the managed instance group will attempt to create. The group attempts to create each instance only once. If the group fails to create any of these instances, it decreases the group's targetSize value accordingly.
      *
-     * Generated from protobuf field <code>int32 creating_without_retries = 369916745;</code>
+     * Generated from protobuf field <code>int32 creating_without_retries = 101481289;</code>
      * @return int
      */
     public function getCreatingWithoutRetries()
@@ -170,7 +170,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Protobuf\Internal\Messa
     /**
      * [Output Only] The number of instances that the managed instance group will attempt to create. The group attempts to create each instance only once. If the group fails to create any of these instances, it decreases the group's targetSize value accordingly.
      *
-     * Generated from protobuf field <code>int32 creating_without_retries = 369916745;</code>
+     * Generated from protobuf field <code>int32 creating_without_retries = 101481289;</code>
      * @param int $var
      * @return $this
      */
@@ -185,7 +185,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Protobuf\Internal\Messa
     /**
      * [Output Only] The number of instances in the managed instance group that are scheduled to be deleted or are currently being deleted.
      *
-     * Generated from protobuf field <code>int32 deleting = 282846120;</code>
+     * Generated from protobuf field <code>int32 deleting = 14410664;</code>
      * @return int
      */
     public function getDeleting()
@@ -196,7 +196,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Protobuf\Internal\Messa
     /**
      * [Output Only] The number of instances in the managed instance group that are scheduled to be deleted or are currently being deleted.
      *
-     * Generated from protobuf field <code>int32 deleting = 282846120;</code>
+     * Generated from protobuf field <code>int32 deleting = 14410664;</code>
      * @param int $var
      * @return $this
      */
@@ -237,7 +237,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Protobuf\Internal\Messa
     /**
      * [Output Only] The number of instances in the managed instance group that are scheduled to be recreated or are currently being being recreated. Recreating an instance deletes the existing root persistent disk and creates a new disk from the image that is defined in the instance template.
      *
-     * Generated from protobuf field <code>int32 recreating = 339057132;</code>
+     * Generated from protobuf field <code>int32 recreating = 70621676;</code>
      * @return int
      */
     public function getRecreating()
@@ -248,7 +248,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Protobuf\Internal\Messa
     /**
      * [Output Only] The number of instances in the managed instance group that are scheduled to be recreated or are currently being being recreated. Recreating an instance deletes the existing root persistent disk and creates a new disk from the image that is defined in the instance template.
      *
-     * Generated from protobuf field <code>int32 recreating = 339057132;</code>
+     * Generated from protobuf field <code>int32 recreating = 70621676;</code>
      * @param int $var
      * @return $this
      */
@@ -289,7 +289,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Protobuf\Internal\Messa
     /**
      * [Output Only] The number of instances in the managed instance group that are scheduled to be restarted or are currently being restarted.
      *
-     * Generated from protobuf field <code>int32 restarting = 372312947;</code>
+     * Generated from protobuf field <code>int32 restarting = 103877491;</code>
      * @return int
      */
     public function getRestarting()
@@ -300,7 +300,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Protobuf\Internal\Messa
     /**
      * [Output Only] The number of instances in the managed instance group that are scheduled to be restarted or are currently being restarted.
      *
-     * Generated from protobuf field <code>int32 restarting = 372312947;</code>
+     * Generated from protobuf field <code>int32 restarting = 103877491;</code>
      * @param int $var
      * @return $this
      */
@@ -315,7 +315,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Protobuf\Internal\Messa
     /**
      * [Output Only] The number of instances in the managed instance group that are being verified. See the managedInstances[].currentAction property in the listManagedInstances method documentation.
      *
-     * Generated from protobuf field <code>int32 verifying = 451612873;</code>
+     * Generated from protobuf field <code>int32 verifying = 183177417;</code>
      * @return int
      */
     public function getVerifying()
@@ -326,7 +326,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Protobuf\Internal\Messa
     /**
      * [Output Only] The number of instances in the managed instance group that are being verified. See the managedInstances[].currentAction property in the listManagedInstances method documentation.
      *
-     * Generated from protobuf field <code>int32 verifying = 451612873;</code>
+     * Generated from protobuf field <code>int32 verifying = 183177417;</code>
      * @param int $var
      * @return $this
      */

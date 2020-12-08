@@ -23,7 +23,7 @@ class InstanceWithNamedPorts extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The named ports that belong to this instance group.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     private $named_ports;
     /**
@@ -81,7 +81,7 @@ class InstanceWithNamedPorts extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The named ports that belong to this instance group.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getNamedPorts()
@@ -92,7 +92,7 @@ class InstanceWithNamedPorts extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The named ports that belong to this instance group.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      * @param \Google\Cloud\Compute\V1\NamedPort[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

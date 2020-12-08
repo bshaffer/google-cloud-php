@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class InsertLicenseRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.License license_resource = 437955148;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.License license_resource = 169519692;</code>
      */
     private $license_resource = null;
     /**
@@ -55,7 +55,7 @@ class InsertLicenseRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.License license_resource = 437955148;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.License license_resource = 169519692;</code>
      * @return \Google\Cloud\Compute\V1\License
      */
     public function getLicenseResource()
@@ -74,7 +74,7 @@ class InsertLicenseRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.License license_resource = 437955148;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.License license_resource = 169519692;</code>
      * @param \Google\Cloud\Compute\V1\License $var
      * @return $this
      */

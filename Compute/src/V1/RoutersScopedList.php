@@ -17,7 +17,7 @@ class RoutersScopedList extends \Google\Protobuf\Internal\Message
     /**
      * A list of routers contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
      */
     private $routers;
     /**
@@ -47,7 +47,7 @@ class RoutersScopedList extends \Google\Protobuf\Internal\Message
     /**
      * A list of routers contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getRouters()
@@ -58,7 +58,7 @@ class RoutersScopedList extends \Google\Protobuf\Internal\Message
     /**
      * A list of routers contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
      * @param \Google\Cloud\Compute\V1\Router[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

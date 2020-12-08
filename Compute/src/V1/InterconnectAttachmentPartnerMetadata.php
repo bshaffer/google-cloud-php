@@ -18,7 +18,7 @@ class InterconnectAttachmentPartnerMetadata extends \Google\Protobuf\Internal\Me
     /**
      * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
      *
-     * Generated from protobuf field <code>string interconnect_name = 514963356;</code>
+     * Generated from protobuf field <code>string interconnect_name = 246527900;</code>
      */
     private $interconnect_name = '';
     /**
@@ -30,7 +30,7 @@ class InterconnectAttachmentPartnerMetadata extends \Google\Protobuf\Internal\Me
     /**
      * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
      *
-     * Generated from protobuf field <code>string portal_url = 269182748;</code>
+     * Generated from protobuf field <code>string portal_url = 747292;</code>
      */
     private $portal_url = '';
 
@@ -56,7 +56,7 @@ class InterconnectAttachmentPartnerMetadata extends \Google\Protobuf\Internal\Me
     /**
      * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
      *
-     * Generated from protobuf field <code>string interconnect_name = 514963356;</code>
+     * Generated from protobuf field <code>string interconnect_name = 246527900;</code>
      * @return string
      */
     public function getInterconnectName()
@@ -67,7 +67,7 @@ class InterconnectAttachmentPartnerMetadata extends \Google\Protobuf\Internal\Me
     /**
      * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
      *
-     * Generated from protobuf field <code>string interconnect_name = 514963356;</code>
+     * Generated from protobuf field <code>string interconnect_name = 246527900;</code>
      * @param string $var
      * @return $this
      */
@@ -108,7 +108,7 @@ class InterconnectAttachmentPartnerMetadata extends \Google\Protobuf\Internal\Me
     /**
      * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
      *
-     * Generated from protobuf field <code>string portal_url = 269182748;</code>
+     * Generated from protobuf field <code>string portal_url = 747292;</code>
      * @return string
      */
     public function getPortalUrl()
@@ -119,7 +119,7 @@ class InterconnectAttachmentPartnerMetadata extends \Google\Protobuf\Internal\Me
     /**
      * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
      *
-     * Generated from protobuf field <code>string portal_url = 269182748;</code>
+     * Generated from protobuf field <code>string portal_url = 747292;</code>
      * @param string $var
      * @return $this
      */

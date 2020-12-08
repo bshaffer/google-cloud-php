@@ -36,7 +36,7 @@ class UsableSubnetwork extends \Google\Protobuf\Internal\Message
     /**
      * Subnetwork URL.
      *
-     * Generated from protobuf field <code>string subnetwork = 307827694;</code>
+     * Generated from protobuf field <code>string subnetwork = 39392238;</code>
      */
     private $subnetwork = '';
 
@@ -142,7 +142,7 @@ class UsableSubnetwork extends \Google\Protobuf\Internal\Message
     /**
      * Subnetwork URL.
      *
-     * Generated from protobuf field <code>string subnetwork = 307827694;</code>
+     * Generated from protobuf field <code>string subnetwork = 39392238;</code>
      * @return string
      */
     public function getSubnetwork()
@@ -153,7 +153,7 @@ class UsableSubnetwork extends \Google\Protobuf\Internal\Message
     /**
      * Subnetwork URL.
      *
-     * Generated from protobuf field <code>string subnetwork = 307827694;</code>
+     * Generated from protobuf field <code>string subnetwork = 39392238;</code>
      * @param string $var
      * @return $this
      */

@@ -24,7 +24,7 @@ class UsableSubnetworkSecondaryRange extends \Google\Protobuf\Internal\Message
     /**
      * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
      *
-     * Generated from protobuf field <code>string range_name = 332216397;</code>
+     * Generated from protobuf field <code>string range_name = 63780941;</code>
      */
     private $range_name = '';
 
@@ -74,7 +74,7 @@ class UsableSubnetworkSecondaryRange extends \Google\Protobuf\Internal\Message
     /**
      * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
      *
-     * Generated from protobuf field <code>string range_name = 332216397;</code>
+     * Generated from protobuf field <code>string range_name = 63780941;</code>
      * @return string
      */
     public function getRangeName()
@@ -85,7 +85,7 @@ class UsableSubnetworkSecondaryRange extends \Google\Protobuf\Internal\Message
     /**
      * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
      *
-     * Generated from protobuf field <code>string range_name = 332216397;</code>
+     * Generated from protobuf field <code>string range_name = 63780941;</code>
      * @param string $var
      * @return $this
      */

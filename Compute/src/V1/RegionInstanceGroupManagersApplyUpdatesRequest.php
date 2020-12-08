@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * RegionInstanceGroupManagers.applyUpdatesToInstances
+ * InstanceGroupManagers.applyUpdatesToInstances
  *
  * Generated from protobuf message <code>google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest</code>
  */
@@ -28,7 +28,7 @@ class RegionInstanceGroupManagersApplyUpdatesRequest extends \Google\Protobuf\In
      * - REFRESH: Do not stop the instance.
      * - NONE: Do not disrupt the instance at all.  By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
      *
-     * Generated from protobuf field <code>string minimal_action = 270567060;</code>
+     * Generated from protobuf field <code>string minimal_action = 2131604;</code>
      */
     private $minimal_action = '';
     /**
@@ -102,7 +102,7 @@ class RegionInstanceGroupManagersApplyUpdatesRequest extends \Google\Protobuf\In
      * - REFRESH: Do not stop the instance.
      * - NONE: Do not disrupt the instance at all.  By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
      *
-     * Generated from protobuf field <code>string minimal_action = 270567060;</code>
+     * Generated from protobuf field <code>string minimal_action = 2131604;</code>
      * @return string
      */
     public function getMinimalAction()
@@ -117,7 +117,7 @@ class RegionInstanceGroupManagersApplyUpdatesRequest extends \Google\Protobuf\In
      * - REFRESH: Do not stop the instance.
      * - NONE: Do not disrupt the instance at all.  By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
      *
-     * Generated from protobuf field <code>string minimal_action = 270567060;</code>
+     * Generated from protobuf field <code>string minimal_action = 2131604;</code>
      * @param string $var
      * @return $this
      */

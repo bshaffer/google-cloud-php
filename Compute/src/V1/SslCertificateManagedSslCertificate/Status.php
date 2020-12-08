@@ -20,29 +20,29 @@ class Status
      */
     const UNDEFINED_STATUS = 0;
     /**
-     * Generated from protobuf enum <code>ACTIVE = 314733318;</code>
+     * Generated from protobuf enum <code>ACTIVE = 46297862;</code>
      */
-    const ACTIVE = 314733318;
+    const ACTIVE = 46297862;
     /**
-     * Generated from protobuf enum <code>MANAGED_CERTIFICATE_STATUS_UNSPECIFIED = 474800850;</code>
+     * Generated from protobuf enum <code>MANAGED_CERTIFICATE_STATUS_UNSPECIFIED = 206365394;</code>
      */
-    const MANAGED_CERTIFICATE_STATUS_UNSPECIFIED = 474800850;
+    const MANAGED_CERTIFICATE_STATUS_UNSPECIFIED = 206365394;
     /**
-     * Generated from protobuf enum <code>PROVISIONING = 290896621;</code>
+     * Generated from protobuf enum <code>PROVISIONING = 22461165;</code>
      */
-    const PROVISIONING = 290896621;
+    const PROVISIONING = 22461165;
     /**
      * Generated from protobuf enum <code>PROVISIONING_FAILED = 76813775;</code>
      */
     const PROVISIONING_FAILED = 76813775;
     /**
-     * Generated from protobuf enum <code>PROVISIONING_FAILED_PERMANENTLY = 275036203;</code>
+     * Generated from protobuf enum <code>PROVISIONING_FAILED_PERMANENTLY = 6600747;</code>
      */
-    const PROVISIONING_FAILED_PERMANENTLY = 275036203;
+    const PROVISIONING_FAILED_PERMANENTLY = 6600747;
     /**
-     * Generated from protobuf enum <code>RENEWAL_FAILED = 434659076;</code>
+     * Generated from protobuf enum <code>RENEWAL_FAILED = 166223620;</code>
      */
-    const RENEWAL_FAILED = 434659076;
+    const RENEWAL_FAILED = 166223620;
 
     private static $valueToName = [
         self::UNDEFINED_STATUS => 'UNDEFINED_STATUS',

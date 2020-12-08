@@ -18,13 +18,13 @@ class InterconnectDiagnosticsARPEntry extends \Google\Protobuf\Internal\Message
     /**
      * The IP address of this ARP neighbor.
      *
-     * Generated from protobuf field <code>string ip_address = 406272220;</code>
+     * Generated from protobuf field <code>string ip_address = 137836764;</code>
      */
     private $ip_address = '';
     /**
      * The MAC address of this ARP neighbor.
      *
-     * Generated from protobuf field <code>string mac_address = 332540164;</code>
+     * Generated from protobuf field <code>string mac_address = 64104708;</code>
      */
     private $mac_address = '';
 
@@ -48,7 +48,7 @@ class InterconnectDiagnosticsARPEntry extends \Google\Protobuf\Internal\Message
     /**
      * The IP address of this ARP neighbor.
      *
-     * Generated from protobuf field <code>string ip_address = 406272220;</code>
+     * Generated from protobuf field <code>string ip_address = 137836764;</code>
      * @return string
      */
     public function getIpAddress()
@@ -59,7 +59,7 @@ class InterconnectDiagnosticsARPEntry extends \Google\Protobuf\Internal\Message
     /**
      * The IP address of this ARP neighbor.
      *
-     * Generated from protobuf field <code>string ip_address = 406272220;</code>
+     * Generated from protobuf field <code>string ip_address = 137836764;</code>
      * @param string $var
      * @return $this
      */
@@ -74,7 +74,7 @@ class InterconnectDiagnosticsARPEntry extends \Google\Protobuf\Internal\Message
     /**
      * The MAC address of this ARP neighbor.
      *
-     * Generated from protobuf field <code>string mac_address = 332540164;</code>
+     * Generated from protobuf field <code>string mac_address = 64104708;</code>
      * @return string
      */
     public function getMacAddress()
@@ -85,7 +85,7 @@ class InterconnectDiagnosticsARPEntry extends \Google\Protobuf\Internal\Message
     /**
      * The MAC address of this ARP neighbor.
      *
-     * Generated from protobuf field <code>string mac_address = 332540164;</code>
+     * Generated from protobuf field <code>string mac_address = 64104708;</code>
      * @param string $var
      * @return $this
      */

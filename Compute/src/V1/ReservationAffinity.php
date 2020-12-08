@@ -18,7 +18,7 @@ class ReservationAffinity extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See  Consuming reserved instances for examples.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 300736944;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 32301488;</code>
      */
     private $consume_reservation_type = 0;
     /**
@@ -56,7 +56,7 @@ class ReservationAffinity extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See  Consuming reserved instances for examples.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 300736944;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 32301488;</code>
      * @return int
      */
     public function getConsumeReservationType()
@@ -67,7 +67,7 @@ class ReservationAffinity extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See  Consuming reserved instances for examples.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 300736944;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 32301488;</code>
      * @param int $var
      * @return $this
      */

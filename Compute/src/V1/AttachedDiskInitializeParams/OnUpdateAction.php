@@ -20,13 +20,13 @@ class OnUpdateAction
      */
     const UNDEFINED_ON_UPDATE_ACTION = 0;
     /**
-     * Generated from protobuf enum <code>RECREATE_DISK = 494767853;</code>
+     * Generated from protobuf enum <code>RECREATE_DISK = 226332397;</code>
      */
-    const RECREATE_DISK = 494767853;
+    const RECREATE_DISK = 226332397;
     /**
-     * Generated from protobuf enum <code>RECREATE_DISK_IF_SOURCE_CHANGED = 398099712;</code>
+     * Generated from protobuf enum <code>RECREATE_DISK_IF_SOURCE_CHANGED = 129664256;</code>
      */
-    const RECREATE_DISK_IF_SOURCE_CHANGED = 398099712;
+    const RECREATE_DISK_IF_SOURCE_CHANGED = 129664256;
     /**
      * Generated from protobuf enum <code>USE_EXISTING_DISK = 232682233;</code>
      */

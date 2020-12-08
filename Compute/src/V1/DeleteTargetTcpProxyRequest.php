@@ -32,7 +32,7 @@ class DeleteTargetTcpProxyRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the TargetTcpProxy resource to delete.
      *
-     * Generated from protobuf field <code>string target_tcp_proxy = 503065442 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string target_tcp_proxy = 234629986 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $target_tcp_proxy = '';
 
@@ -116,7 +116,7 @@ class DeleteTargetTcpProxyRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the TargetTcpProxy resource to delete.
      *
-     * Generated from protobuf field <code>string target_tcp_proxy = 503065442 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string target_tcp_proxy = 234629986 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getTargetTcpProxy()
@@ -127,7 +127,7 @@ class DeleteTargetTcpProxyRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the TargetTcpProxy resource to delete.
      *
-     * Generated from protobuf field <code>string target_tcp_proxy = 503065442 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string target_tcp_proxy = 234629986 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

@@ -24,7 +24,7 @@ class GuestAttributes extends \Google\Protobuf\Internal\Message
     /**
      * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/\/') or a specified key ('/\/\')
      *
-     * Generated from protobuf field <code>string query_path = 368591164;</code>
+     * Generated from protobuf field <code>string query_path = 100155708;</code>
      */
     private $query_path = '';
     /**
@@ -36,7 +36,7 @@ class GuestAttributes extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for this resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
@@ -106,7 +106,7 @@ class GuestAttributes extends \Google\Protobuf\Internal\Message
     /**
      * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/\/') or a specified key ('/\/\')
      *
-     * Generated from protobuf field <code>string query_path = 368591164;</code>
+     * Generated from protobuf field <code>string query_path = 100155708;</code>
      * @return string
      */
     public function getQueryPath()
@@ -117,7 +117,7 @@ class GuestAttributes extends \Google\Protobuf\Internal\Message
     /**
      * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/\/') or a specified key ('/\/\')
      *
-     * Generated from protobuf field <code>string query_path = 368591164;</code>
+     * Generated from protobuf field <code>string query_path = 100155708;</code>
      * @param string $var
      * @return $this
      */
@@ -168,7 +168,7 @@ class GuestAttributes extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for this resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -179,7 +179,7 @@ class GuestAttributes extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for this resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */

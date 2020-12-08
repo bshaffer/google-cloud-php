@@ -17,7 +17,7 @@ class NodeGroupsSetNodeTemplateRequest extends \Google\Protobuf\Internal\Message
     /**
      * Full or partial URL of the node template resource to be updated for this node group.
      *
-     * Generated from protobuf field <code>string node_template = 323154455;</code>
+     * Generated from protobuf field <code>string node_template = 54718999;</code>
      */
     private $node_template = '';
 
@@ -39,7 +39,7 @@ class NodeGroupsSetNodeTemplateRequest extends \Google\Protobuf\Internal\Message
     /**
      * Full or partial URL of the node template resource to be updated for this node group.
      *
-     * Generated from protobuf field <code>string node_template = 323154455;</code>
+     * Generated from protobuf field <code>string node_template = 54718999;</code>
      * @return string
      */
     public function getNodeTemplate()
@@ -50,7 +50,7 @@ class NodeGroupsSetNodeTemplateRequest extends \Google\Protobuf\Internal\Message
     /**
      * Full or partial URL of the node template resource to be updated for this node group.
      *
-     * Generated from protobuf field <code>string node_template = 323154455;</code>
+     * Generated from protobuf field <code>string node_template = 54718999;</code>
      * @param string $var
      * @return $this
      */

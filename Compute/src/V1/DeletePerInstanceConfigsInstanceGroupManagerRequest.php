@@ -22,7 +22,7 @@ class DeletePerInstanceConfigsInstanceGroupManagerRequest extends \Google\Protob
      */
     private $instance_group_manager = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReq instance_group_managers_delete_per_instance_configs_req_resource = 362427680;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReq instance_group_managers_delete_per_instance_configs_req_resource = 93992224;</code>
      */
     private $instance_group_managers_delete_per_instance_configs_req_resource = null;
     /**
@@ -85,7 +85,7 @@ class DeletePerInstanceConfigsInstanceGroupManagerRequest extends \Google\Protob
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReq instance_group_managers_delete_per_instance_configs_req_resource = 362427680;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReq instance_group_managers_delete_per_instance_configs_req_resource = 93992224;</code>
      * @return \Google\Cloud\Compute\V1\InstanceGroupManagersDeletePerInstanceConfigsReq
      */
     public function getInstanceGroupManagersDeletePerInstanceConfigsReqResource()
@@ -104,7 +104,7 @@ class DeletePerInstanceConfigsInstanceGroupManagerRequest extends \Google\Protob
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReq instance_group_managers_delete_per_instance_configs_req_resource = 362427680;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReq instance_group_managers_delete_per_instance_configs_req_resource = 93992224;</code>
      * @param \Google\Cloud\Compute\V1\InstanceGroupManagersDeletePerInstanceConfigsReq $var
      * @return $this
      */

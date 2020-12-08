@@ -17,7 +17,7 @@ class RegionInstanceGroupManagersListInstancesResponse extends \Google\Protobuf\
     /**
      * A list of managed instances.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
      */
     private $managed_instances;
     /**
@@ -47,7 +47,7 @@ class RegionInstanceGroupManagersListInstancesResponse extends \Google\Protobuf\
     /**
      * A list of managed instances.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getManagedInstances()
@@ -58,7 +58,7 @@ class RegionInstanceGroupManagersListInstancesResponse extends \Google\Protobuf\
     /**
      * A list of managed instances.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
      * @param \Google\Cloud\Compute\V1\ManagedInstance[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

@@ -17,7 +17,7 @@ class RouterBgpPeer extends \Google\Protobuf\Internal\Message
     /**
      * User-specified flag to indicate which mode to use for advertisement.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 43698875;</code>
      */
     private $advertise_mode = 0;
     /**
@@ -44,13 +44,13 @@ class RouterBgpPeer extends \Google\Protobuf\Internal\Message
     /**
      * Name of the interface the BGP peer is associated with.
      *
-     * Generated from protobuf field <code>string interface_name = 437854673;</code>
+     * Generated from protobuf field <code>string interface_name = 169419217;</code>
      */
     private $interface_name = '';
     /**
      * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
      *
-     * Generated from protobuf field <code>string ip_address = 406272220;</code>
+     * Generated from protobuf field <code>string ip_address = 137836764;</code>
      */
     private $ip_address = '';
     /**
@@ -121,7 +121,7 @@ class RouterBgpPeer extends \Google\Protobuf\Internal\Message
     /**
      * User-specified flag to indicate which mode to use for advertisement.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 43698875;</code>
      * @return int
      */
     public function getAdvertiseMode()
@@ -132,7 +132,7 @@ class RouterBgpPeer extends \Google\Protobuf\Internal\Message
     /**
      * User-specified flag to indicate which mode to use for advertisement.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 43698875;</code>
      * @param int $var
      * @return $this
      */
@@ -231,7 +231,7 @@ class RouterBgpPeer extends \Google\Protobuf\Internal\Message
     /**
      * Name of the interface the BGP peer is associated with.
      *
-     * Generated from protobuf field <code>string interface_name = 437854673;</code>
+     * Generated from protobuf field <code>string interface_name = 169419217;</code>
      * @return string
      */
     public function getInterfaceName()
@@ -242,7 +242,7 @@ class RouterBgpPeer extends \Google\Protobuf\Internal\Message
     /**
      * Name of the interface the BGP peer is associated with.
      *
-     * Generated from protobuf field <code>string interface_name = 437854673;</code>
+     * Generated from protobuf field <code>string interface_name = 169419217;</code>
      * @param string $var
      * @return $this
      */
@@ -257,7 +257,7 @@ class RouterBgpPeer extends \Google\Protobuf\Internal\Message
     /**
      * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
      *
-     * Generated from protobuf field <code>string ip_address = 406272220;</code>
+     * Generated from protobuf field <code>string ip_address = 137836764;</code>
      * @return string
      */
     public function getIpAddress()
@@ -268,7 +268,7 @@ class RouterBgpPeer extends \Google\Protobuf\Internal\Message
     /**
      * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
      *
-     * Generated from protobuf field <code>string ip_address = 406272220;</code>
+     * Generated from protobuf field <code>string ip_address = 137836764;</code>
      * @param string $var
      * @return $this
      */

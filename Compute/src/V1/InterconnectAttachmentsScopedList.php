@@ -17,7 +17,7 @@ class InterconnectAttachmentsScopedList extends \Google\Protobuf\Internal\Messag
     /**
      * A list of interconnect attachments contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;</code>
      */
     private $interconnect_attachments;
     /**
@@ -47,7 +47,7 @@ class InterconnectAttachmentsScopedList extends \Google\Protobuf\Internal\Messag
     /**
      * A list of interconnect attachments contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getInterconnectAttachments()
@@ -58,7 +58,7 @@ class InterconnectAttachmentsScopedList extends \Google\Protobuf\Internal\Messag
     /**
      * A list of interconnect attachments contained in this scope.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;</code>
      * @param \Google\Cloud\Compute\V1\InterconnectAttachment[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

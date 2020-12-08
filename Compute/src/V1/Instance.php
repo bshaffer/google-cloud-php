@@ -19,17 +19,13 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding.
      *
-     * Generated from protobuf field <code>bool can_ip_forward = 467731324;</code>
+     * Generated from protobuf field <code>bool can_ip_forward = 199295868;</code>
      */
     private $can_ip_forward = false;
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;</code>
-     */
-    private $confidential_instance_config = null;
-    /**
      * [Output Only] The CPU platform used by this instance.
      *
-     * Generated from protobuf field <code>string cpu_platform = 410285354;</code>
+     * Generated from protobuf field <code>string cpu_platform = 141849898;</code>
      */
     private $cpu_platform = '';
     /**
@@ -41,13 +37,13 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * Whether the resource should be protected against deletion.
      *
-     * Generated from protobuf field <code>bool deletion_protection = 458014698;</code>
+     * Generated from protobuf field <code>bool deletion_protection = 189579242;</code>
      */
     private $deletion_protection = false;
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -72,7 +68,7 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * A list of the type and count of accelerator cards attached to the instance.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;</code>
      */
     private $guest_accelerators;
     /**
@@ -103,27 +99,9 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * Labels to apply to this instance. These can be later modified by the setLabels method.
      *
-     * Generated from protobuf field <code>map<string, string> labels = 500195327;</code>
+     * Generated from protobuf field <code>map<string, string> labels = 231759871;</code>
      */
     private $labels;
-    /**
-     * [Output Only] Last start timestamp in RFC3339 text format.
-     *
-     * Generated from protobuf field <code>string last_start_timestamp = 443830736;</code>
-     */
-    private $last_start_timestamp = '';
-    /**
-     * [Output Only] Last stop timestamp in RFC3339 text format.
-     *
-     * Generated from protobuf field <code>string last_stop_timestamp = 412823010;</code>
-     */
-    private $last_stop_timestamp = '';
-    /**
-     * [Output Only] Last suspended timestamp in RFC3339 text format.
-     *
-     * Generated from protobuf field <code>string last_suspended_timestamp = 356275337;</code>
-     */
-    private $last_suspended_timestamp = '';
     /**
      * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type:
      * zones/us-central1-f/machineTypes/n1-standard-1
@@ -180,20 +158,20 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * Sets the scheduling options for this instance.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
      */
     private $scheduling = null;
     /**
      * [Output Only] Server-defined URL for this resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
      * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
      * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
      */
     private $service_accounts;
     /**
@@ -211,7 +189,7 @@ class Instance extends \Google\Protobuf\Internal\Message
      */
     private $start_restricted = false;
     /**
-     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see  Instance life cycle.
+     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.Instance.Status status = 181260274;</code>
      */
@@ -219,7 +197,7 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An optional, human-readable explanation of the status.
      *
-     * Generated from protobuf field <code>string status_message = 297428154;</code>
+     * Generated from protobuf field <code>string status_message = 28992698;</code>
      */
     private $status_message = '';
     /**
@@ -243,7 +221,6 @@ class Instance extends \Google\Protobuf\Internal\Message
      *
      *     @type bool $can_ip_forward
      *           Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding.
-     *     @type \Google\Cloud\Compute\V1\ConfidentialInstanceConfig $confidential_instance_config
      *     @type string $cpu_platform
      *           [Output Only] The CPU platform used by this instance.
      *     @type string $creation_timestamp
@@ -272,12 +249,6 @@ class Instance extends \Google\Protobuf\Internal\Message
      *           To see the latest fingerprint, make get() request to the instance.
      *     @type array|\Google\Protobuf\Internal\MapField $labels
      *           Labels to apply to this instance. These can be later modified by the setLabels method.
-     *     @type string $last_start_timestamp
-     *           [Output Only] Last start timestamp in RFC3339 text format.
-     *     @type string $last_stop_timestamp
-     *           [Output Only] Last stop timestamp in RFC3339 text format.
-     *     @type string $last_suspended_timestamp
-     *           [Output Only] Last suspended timestamp in RFC3339 text format.
      *     @type string $machine_type
      *           Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type:
      *           zones/us-central1-f/machineTypes/n1-standard-1
@@ -311,7 +282,7 @@ class Instance extends \Google\Protobuf\Internal\Message
      *     @type bool $start_restricted
      *           [Output Only] Whether a VM has been restricted for start because Compute Engine has detected suspicious activity.
      *     @type int $status
-     *           [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see  Instance life cycle.
+     *           [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED.
      *     @type string $status_message
      *           [Output Only] An optional, human-readable explanation of the status.
      *     @type \Google\Cloud\Compute\V1\Tags $tags
@@ -328,7 +299,7 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding.
      *
-     * Generated from protobuf field <code>bool can_ip_forward = 467731324;</code>
+     * Generated from protobuf field <code>bool can_ip_forward = 199295868;</code>
      * @return bool
      */
     public function getCanIpForward()
@@ -339,7 +310,7 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding.
      *
-     * Generated from protobuf field <code>bool can_ip_forward = 467731324;</code>
+     * Generated from protobuf field <code>bool can_ip_forward = 199295868;</code>
      * @param bool $var
      * @return $this
      */
@@ -352,41 +323,9 @@ class Instance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;</code>
-     * @return \Google\Cloud\Compute\V1\ConfidentialInstanceConfig
-     */
-    public function getConfidentialInstanceConfig()
-    {
-        return isset($this->confidential_instance_config) ? $this->confidential_instance_config : null;
-    }
-
-    public function hasConfidentialInstanceConfig()
-    {
-        return isset($this->confidential_instance_config);
-    }
-
-    public function clearConfidentialInstanceConfig()
-    {
-        unset($this->confidential_instance_config);
-    }
-
-    /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;</code>
-     * @param \Google\Cloud\Compute\V1\ConfidentialInstanceConfig $var
-     * @return $this
-     */
-    public function setConfidentialInstanceConfig($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Cloud\Compute\V1\ConfidentialInstanceConfig::class);
-        $this->confidential_instance_config = $var;
-
-        return $this;
-    }
-
-    /**
      * [Output Only] The CPU platform used by this instance.
      *
-     * Generated from protobuf field <code>string cpu_platform = 410285354;</code>
+     * Generated from protobuf field <code>string cpu_platform = 141849898;</code>
      * @return string
      */
     public function getCpuPlatform()
@@ -397,7 +336,7 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The CPU platform used by this instance.
      *
-     * Generated from protobuf field <code>string cpu_platform = 410285354;</code>
+     * Generated from protobuf field <code>string cpu_platform = 141849898;</code>
      * @param string $var
      * @return $this
      */
@@ -438,7 +377,7 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * Whether the resource should be protected against deletion.
      *
-     * Generated from protobuf field <code>bool deletion_protection = 458014698;</code>
+     * Generated from protobuf field <code>bool deletion_protection = 189579242;</code>
      * @return bool
      */
     public function getDeletionProtection()
@@ -449,7 +388,7 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * Whether the resource should be protected against deletion.
      *
-     * Generated from protobuf field <code>bool deletion_protection = 458014698;</code>
+     * Generated from protobuf field <code>bool deletion_protection = 189579242;</code>
      * @param bool $var
      * @return $this
      */
@@ -464,7 +403,7 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -475,7 +414,7 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -580,7 +519,7 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * A list of the type and count of accelerator cards attached to the instance.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getGuestAccelerators()
@@ -591,7 +530,7 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * A list of the type and count of accelerator cards attached to the instance.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;</code>
      * @param \Google\Cloud\Compute\V1\AcceleratorConfig[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -712,7 +651,7 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * Labels to apply to this instance. These can be later modified by the setLabels method.
      *
-     * Generated from protobuf field <code>map<string, string> labels = 500195327;</code>
+     * Generated from protobuf field <code>map<string, string> labels = 231759871;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getLabels()
@@ -723,7 +662,7 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * Labels to apply to this instance. These can be later modified by the setLabels method.
      *
-     * Generated from protobuf field <code>map<string, string> labels = 500195327;</code>
+     * Generated from protobuf field <code>map<string, string> labels = 231759871;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
@@ -731,84 +670,6 @@ class Instance extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->labels = $arr;
-
-        return $this;
-    }
-
-    /**
-     * [Output Only] Last start timestamp in RFC3339 text format.
-     *
-     * Generated from protobuf field <code>string last_start_timestamp = 443830736;</code>
-     * @return string
-     */
-    public function getLastStartTimestamp()
-    {
-        return $this->last_start_timestamp;
-    }
-
-    /**
-     * [Output Only] Last start timestamp in RFC3339 text format.
-     *
-     * Generated from protobuf field <code>string last_start_timestamp = 443830736;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setLastStartTimestamp($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->last_start_timestamp = $var;
-
-        return $this;
-    }
-
-    /**
-     * [Output Only] Last stop timestamp in RFC3339 text format.
-     *
-     * Generated from protobuf field <code>string last_stop_timestamp = 412823010;</code>
-     * @return string
-     */
-    public function getLastStopTimestamp()
-    {
-        return $this->last_stop_timestamp;
-    }
-
-    /**
-     * [Output Only] Last stop timestamp in RFC3339 text format.
-     *
-     * Generated from protobuf field <code>string last_stop_timestamp = 412823010;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setLastStopTimestamp($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->last_stop_timestamp = $var;
-
-        return $this;
-    }
-
-    /**
-     * [Output Only] Last suspended timestamp in RFC3339 text format.
-     *
-     * Generated from protobuf field <code>string last_suspended_timestamp = 356275337;</code>
-     * @return string
-     */
-    public function getLastSuspendedTimestamp()
-    {
-        return $this->last_suspended_timestamp;
-    }
-
-    /**
-     * [Output Only] Last suspended timestamp in RFC3339 text format.
-     *
-     * Generated from protobuf field <code>string last_suspended_timestamp = 356275337;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setLastSuspendedTimestamp($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->last_suspended_timestamp = $var;
 
         return $this;
     }
@@ -1054,7 +915,7 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * Sets the scheduling options for this instance.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
      * @return \Google\Cloud\Compute\V1\Scheduling
      */
     public function getScheduling()
@@ -1075,7 +936,7 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * Sets the scheduling options for this instance.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
      * @param \Google\Cloud\Compute\V1\Scheduling $var
      * @return $this
      */
@@ -1090,7 +951,7 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for this resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -1101,7 +962,7 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for this resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */
@@ -1117,7 +978,7 @@ class Instance extends \Google\Protobuf\Internal\Message
      * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
      * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getServiceAccounts()
@@ -1129,7 +990,7 @@ class Instance extends \Google\Protobuf\Internal\Message
      * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
      * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
      * @param \Google\Cloud\Compute\V1\ServiceAccount[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -1232,7 +1093,7 @@ class Instance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see  Instance life cycle.
+     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.Instance.Status status = 181260274;</code>
      * @return int
@@ -1243,7 +1104,7 @@ class Instance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see  Instance life cycle.
+     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.Instance.Status status = 181260274;</code>
      * @param int $var
@@ -1260,7 +1121,7 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An optional, human-readable explanation of the status.
      *
-     * Generated from protobuf field <code>string status_message = 297428154;</code>
+     * Generated from protobuf field <code>string status_message = 28992698;</code>
      * @return string
      */
     public function getStatusMessage()
@@ -1271,7 +1132,7 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] An optional, human-readable explanation of the status.
      *
-     * Generated from protobuf field <code>string status_message = 297428154;</code>
+     * Generated from protobuf field <code>string status_message = 28992698;</code>
      * @param string $var
      * @return $this
      */

@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Represents a Cloud VPN Tunnel resource.
- * For more information about VPN, read the  the Cloud VPN Overview. (== resource_for {$api_version}.vpnTunnels ==)
+ * For more information about VPN, read the the Cloud VPN Overview. (== resource_for {$api_version}.vpnTunnels ==)
  *
  * Generated from protobuf message <code>google.cloud.compute.v1.VpnTunnel</code>
  */
@@ -25,13 +25,13 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
      * [Output Only] Detailed status message for the VPN tunnel.
      *
-     * Generated from protobuf field <code>string detailed_status = 333501025;</code>
+     * Generated from protobuf field <code>string detailed_status = 65065569;</code>
      */
     private $detailed_status = '';
     /**
@@ -55,7 +55,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
      *
-     * Generated from protobuf field <code>repeated string local_traffic_selector = 317314613;</code>
+     * Generated from protobuf field <code>repeated string local_traffic_selector = 48879157;</code>
      */
     private $local_traffic_selector;
     /**
@@ -67,25 +67,25 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
      *
-     * Generated from protobuf field <code>string peer_external_gateway = 384956173;</code>
+     * Generated from protobuf field <code>string peer_external_gateway = 116520717;</code>
      */
     private $peer_external_gateway = '';
     /**
      * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created.
      *
-     * Generated from protobuf field <code>int32 peer_external_gateway_interface = 452768391;</code>
+     * Generated from protobuf field <code>int32 peer_external_gateway_interface = 184332935;</code>
      */
     private $peer_external_gateway_interface = 0;
     /**
      * URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer GCP VPN gateway.
      *
-     * Generated from protobuf field <code>string peer_gcp_gateway = 281867452;</code>
+     * Generated from protobuf field <code>string peer_gcp_gateway = 13431996;</code>
      */
     private $peer_gcp_gateway = '';
     /**
      * IP address of the peer VPN gateway. Only IPv4 is supported.
      *
-     * Generated from protobuf field <code>string peer_ip = 383249700;</code>
+     * Generated from protobuf field <code>string peer_ip = 114814244;</code>
      */
     private $peer_ip = '';
     /**
@@ -97,7 +97,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
      *
-     * Generated from protobuf field <code>repeated string remote_traffic_selector = 358887098;</code>
+     * Generated from protobuf field <code>repeated string remote_traffic_selector = 90451642;</code>
      */
     private $remote_traffic_selector;
     /**
@@ -109,19 +109,19 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
      * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
      *
-     * Generated from protobuf field <code>string shared_secret = 381932490;</code>
+     * Generated from protobuf field <code>string shared_secret = 113497034;</code>
      */
     private $shared_secret = '';
     /**
      * Hash of the shared secret.
      *
-     * Generated from protobuf field <code>string shared_secret_hash = 398881891;</code>
+     * Generated from protobuf field <code>string shared_secret_hash = 130446435;</code>
      */
     private $shared_secret_hash = '';
     /**
@@ -148,13 +148,13 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
      *
-     * Generated from protobuf field <code>string target_vpn_gateway = 532512843;</code>
+     * Generated from protobuf field <code>string target_vpn_gateway = 264077387;</code>
      */
     private $target_vpn_gateway = '';
     /**
      * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
      *
-     * Generated from protobuf field <code>string vpn_gateway = 406684153;</code>
+     * Generated from protobuf field <code>string vpn_gateway = 138248697;</code>
      */
     private $vpn_gateway = '';
     /**
@@ -265,7 +265,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -276,7 +276,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -291,7 +291,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Detailed status message for the VPN tunnel.
      *
-     * Generated from protobuf field <code>string detailed_status = 333501025;</code>
+     * Generated from protobuf field <code>string detailed_status = 65065569;</code>
      * @return string
      */
     public function getDetailedStatus()
@@ -302,7 +302,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Detailed status message for the VPN tunnel.
      *
-     * Generated from protobuf field <code>string detailed_status = 333501025;</code>
+     * Generated from protobuf field <code>string detailed_status = 65065569;</code>
      * @param string $var
      * @return $this
      */
@@ -395,7 +395,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
      *
-     * Generated from protobuf field <code>repeated string local_traffic_selector = 317314613;</code>
+     * Generated from protobuf field <code>repeated string local_traffic_selector = 48879157;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getLocalTrafficSelector()
@@ -406,7 +406,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
      *
-     * Generated from protobuf field <code>repeated string local_traffic_selector = 317314613;</code>
+     * Generated from protobuf field <code>repeated string local_traffic_selector = 48879157;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -447,7 +447,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
      *
-     * Generated from protobuf field <code>string peer_external_gateway = 384956173;</code>
+     * Generated from protobuf field <code>string peer_external_gateway = 116520717;</code>
      * @return string
      */
     public function getPeerExternalGateway()
@@ -458,7 +458,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
      *
-     * Generated from protobuf field <code>string peer_external_gateway = 384956173;</code>
+     * Generated from protobuf field <code>string peer_external_gateway = 116520717;</code>
      * @param string $var
      * @return $this
      */
@@ -473,7 +473,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created.
      *
-     * Generated from protobuf field <code>int32 peer_external_gateway_interface = 452768391;</code>
+     * Generated from protobuf field <code>int32 peer_external_gateway_interface = 184332935;</code>
      * @return int
      */
     public function getPeerExternalGatewayInterface()
@@ -484,7 +484,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created.
      *
-     * Generated from protobuf field <code>int32 peer_external_gateway_interface = 452768391;</code>
+     * Generated from protobuf field <code>int32 peer_external_gateway_interface = 184332935;</code>
      * @param int $var
      * @return $this
      */
@@ -499,7 +499,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer GCP VPN gateway.
      *
-     * Generated from protobuf field <code>string peer_gcp_gateway = 281867452;</code>
+     * Generated from protobuf field <code>string peer_gcp_gateway = 13431996;</code>
      * @return string
      */
     public function getPeerGcpGateway()
@@ -510,7 +510,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer GCP VPN gateway.
      *
-     * Generated from protobuf field <code>string peer_gcp_gateway = 281867452;</code>
+     * Generated from protobuf field <code>string peer_gcp_gateway = 13431996;</code>
      * @param string $var
      * @return $this
      */
@@ -525,7 +525,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * IP address of the peer VPN gateway. Only IPv4 is supported.
      *
-     * Generated from protobuf field <code>string peer_ip = 383249700;</code>
+     * Generated from protobuf field <code>string peer_ip = 114814244;</code>
      * @return string
      */
     public function getPeerIp()
@@ -536,7 +536,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * IP address of the peer VPN gateway. Only IPv4 is supported.
      *
-     * Generated from protobuf field <code>string peer_ip = 383249700;</code>
+     * Generated from protobuf field <code>string peer_ip = 114814244;</code>
      * @param string $var
      * @return $this
      */
@@ -577,7 +577,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
      *
-     * Generated from protobuf field <code>repeated string remote_traffic_selector = 358887098;</code>
+     * Generated from protobuf field <code>repeated string remote_traffic_selector = 90451642;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getRemoteTrafficSelector()
@@ -588,7 +588,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
      *
-     * Generated from protobuf field <code>repeated string remote_traffic_selector = 358887098;</code>
+     * Generated from protobuf field <code>repeated string remote_traffic_selector = 90451642;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -629,7 +629,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -640,7 +640,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */
@@ -655,7 +655,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
      *
-     * Generated from protobuf field <code>string shared_secret = 381932490;</code>
+     * Generated from protobuf field <code>string shared_secret = 113497034;</code>
      * @return string
      */
     public function getSharedSecret()
@@ -666,7 +666,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
      *
-     * Generated from protobuf field <code>string shared_secret = 381932490;</code>
+     * Generated from protobuf field <code>string shared_secret = 113497034;</code>
      * @param string $var
      * @return $this
      */
@@ -681,7 +681,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * Hash of the shared secret.
      *
-     * Generated from protobuf field <code>string shared_secret_hash = 398881891;</code>
+     * Generated from protobuf field <code>string shared_secret_hash = 130446435;</code>
      * @return string
      */
     public function getSharedSecretHash()
@@ -692,7 +692,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * Hash of the shared secret.
      *
-     * Generated from protobuf field <code>string shared_secret_hash = 398881891;</code>
+     * Generated from protobuf field <code>string shared_secret_hash = 130446435;</code>
      * @param string $var
      * @return $this
      */
@@ -763,7 +763,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
      *
-     * Generated from protobuf field <code>string target_vpn_gateway = 532512843;</code>
+     * Generated from protobuf field <code>string target_vpn_gateway = 264077387;</code>
      * @return string
      */
     public function getTargetVpnGateway()
@@ -774,7 +774,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
      *
-     * Generated from protobuf field <code>string target_vpn_gateway = 532512843;</code>
+     * Generated from protobuf field <code>string target_vpn_gateway = 264077387;</code>
      * @param string $var
      * @return $this
      */
@@ -789,7 +789,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
      *
-     * Generated from protobuf field <code>string vpn_gateway = 406684153;</code>
+     * Generated from protobuf field <code>string vpn_gateway = 138248697;</code>
      * @return string
      */
     public function getVpnGateway()
@@ -800,7 +800,7 @@ class VpnTunnel extends \Google\Protobuf\Internal\Message
     /**
      * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
      *
-     * Generated from protobuf field <code>string vpn_gateway = 406684153;</code>
+     * Generated from protobuf field <code>string vpn_gateway = 138248697;</code>
      * @param string $var
      * @return $this
      */

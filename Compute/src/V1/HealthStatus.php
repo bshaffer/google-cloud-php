@@ -23,7 +23,7 @@ class HealthStatus extends \Google\Protobuf\Internal\Message
     /**
      * Health state of the instance.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 55571694;</code>
      */
     private $health_state = 0;
     /**
@@ -35,7 +35,7 @@ class HealthStatus extends \Google\Protobuf\Internal\Message
     /**
      * A forwarding rule IP address assigned to this instance.
      *
-     * Generated from protobuf field <code>string ip_address = 406272220;</code>
+     * Generated from protobuf field <code>string ip_address = 137836764;</code>
      */
     private $ip_address = '';
     /**
@@ -97,7 +97,7 @@ class HealthStatus extends \Google\Protobuf\Internal\Message
     /**
      * Health state of the instance.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 55571694;</code>
      * @return int
      */
     public function getHealthState()
@@ -108,7 +108,7 @@ class HealthStatus extends \Google\Protobuf\Internal\Message
     /**
      * Health state of the instance.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 55571694;</code>
      * @param int $var
      * @return $this
      */
@@ -149,7 +149,7 @@ class HealthStatus extends \Google\Protobuf\Internal\Message
     /**
      * A forwarding rule IP address assigned to this instance.
      *
-     * Generated from protobuf field <code>string ip_address = 406272220;</code>
+     * Generated from protobuf field <code>string ip_address = 137836764;</code>
      * @return string
      */
     public function getIpAddress()
@@ -160,7 +160,7 @@ class HealthStatus extends \Google\Protobuf\Internal\Message
     /**
      * A forwarding rule IP address assigned to this instance.
      *
-     * Generated from protobuf field <code>string ip_address = 406272220;</code>
+     * Generated from protobuf field <code>string ip_address = 137836764;</code>
      * @param string $var
      * @return $this
      */

@@ -25,13 +25,13 @@ class Route extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this field when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
      * The destination range of outgoing packets that this route applies to. Only IPv4 is supported.
      *
-     * Generated from protobuf field <code>string dest_range = 381327712;</code>
+     * Generated from protobuf field <code>string dest_range = 112892256;</code>
      */
     private $dest_range = '';
     /**
@@ -61,7 +61,7 @@ class Route extends \Google\Protobuf\Internal\Message
     /**
      * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL:  projects/project/global/gateways/default-internet-gateway
      *
-     * Generated from protobuf field <code>string next_hop_gateway = 377175298;</code>
+     * Generated from protobuf field <code>string next_hop_gateway = 108739842;</code>
      */
     private $next_hop_gateway = '';
     /**
@@ -76,7 +76,7 @@ class Route extends \Google\Protobuf\Internal\Message
      * The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example:
      * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
      *
-     * Generated from protobuf field <code>string next_hop_instance = 393508247;</code>
+     * Generated from protobuf field <code>string next_hop_instance = 125072791;</code>
      */
     private $next_hop_instance = '';
     /**
@@ -94,25 +94,25 @@ class Route extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
      *
-     * Generated from protobuf field <code>string next_hop_peering = 412682750;</code>
+     * Generated from protobuf field <code>string next_hop_peering = 144247294;</code>
      */
     private $next_hop_peering = '';
     /**
      * The URL to a VpnTunnel that should handle matching packets.
      *
-     * Generated from protobuf field <code>string next_hop_vpn_tunnel = 519844501;</code>
+     * Generated from protobuf field <code>string next_hop_vpn_tunnel = 251409045;</code>
      */
     private $next_hop_vpn_tunnel = '';
     /**
      * The priority of this route. Priority is used to break ties in cases where there is more than one matching route of equal prefix length. In cases where multiple routes have equal prefix length, the one with the lowest-numbered priority value wins. The default value is `1000`. The priority value must be from `0` to `65535`, inclusive.
      *
-     * Generated from protobuf field <code>uint32 priority = 445151652;</code>
+     * Generated from protobuf field <code>uint32 priority = 176716196;</code>
      */
     private $priority = 0;
     /**
      * [Output Only] Server-defined fully-qualified URL for this resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
@@ -124,7 +124,7 @@ class Route extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     private $warnings;
 
@@ -209,7 +209,7 @@ class Route extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this field when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -220,7 +220,7 @@ class Route extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this field when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -235,7 +235,7 @@ class Route extends \Google\Protobuf\Internal\Message
     /**
      * The destination range of outgoing packets that this route applies to. Only IPv4 is supported.
      *
-     * Generated from protobuf field <code>string dest_range = 381327712;</code>
+     * Generated from protobuf field <code>string dest_range = 112892256;</code>
      * @return string
      */
     public function getDestRange()
@@ -246,7 +246,7 @@ class Route extends \Google\Protobuf\Internal\Message
     /**
      * The destination range of outgoing packets that this route applies to. Only IPv4 is supported.
      *
-     * Generated from protobuf field <code>string dest_range = 381327712;</code>
+     * Generated from protobuf field <code>string dest_range = 112892256;</code>
      * @param string $var
      * @return $this
      */
@@ -365,7 +365,7 @@ class Route extends \Google\Protobuf\Internal\Message
     /**
      * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL:  projects/project/global/gateways/default-internet-gateway
      *
-     * Generated from protobuf field <code>string next_hop_gateway = 377175298;</code>
+     * Generated from protobuf field <code>string next_hop_gateway = 108739842;</code>
      * @return string
      */
     public function getNextHopGateway()
@@ -376,7 +376,7 @@ class Route extends \Google\Protobuf\Internal\Message
     /**
      * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL:  projects/project/global/gateways/default-internet-gateway
      *
-     * Generated from protobuf field <code>string next_hop_gateway = 377175298;</code>
+     * Generated from protobuf field <code>string next_hop_gateway = 108739842;</code>
      * @param string $var
      * @return $this
      */
@@ -422,7 +422,7 @@ class Route extends \Google\Protobuf\Internal\Message
      * The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example:
      * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
      *
-     * Generated from protobuf field <code>string next_hop_instance = 393508247;</code>
+     * Generated from protobuf field <code>string next_hop_instance = 125072791;</code>
      * @return string
      */
     public function getNextHopInstance()
@@ -434,7 +434,7 @@ class Route extends \Google\Protobuf\Internal\Message
      * The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example:
      * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
      *
-     * Generated from protobuf field <code>string next_hop_instance = 393508247;</code>
+     * Generated from protobuf field <code>string next_hop_instance = 125072791;</code>
      * @param string $var
      * @return $this
      */
@@ -501,7 +501,7 @@ class Route extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
      *
-     * Generated from protobuf field <code>string next_hop_peering = 412682750;</code>
+     * Generated from protobuf field <code>string next_hop_peering = 144247294;</code>
      * @return string
      */
     public function getNextHopPeering()
@@ -512,7 +512,7 @@ class Route extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
      *
-     * Generated from protobuf field <code>string next_hop_peering = 412682750;</code>
+     * Generated from protobuf field <code>string next_hop_peering = 144247294;</code>
      * @param string $var
      * @return $this
      */
@@ -527,7 +527,7 @@ class Route extends \Google\Protobuf\Internal\Message
     /**
      * The URL to a VpnTunnel that should handle matching packets.
      *
-     * Generated from protobuf field <code>string next_hop_vpn_tunnel = 519844501;</code>
+     * Generated from protobuf field <code>string next_hop_vpn_tunnel = 251409045;</code>
      * @return string
      */
     public function getNextHopVpnTunnel()
@@ -538,7 +538,7 @@ class Route extends \Google\Protobuf\Internal\Message
     /**
      * The URL to a VpnTunnel that should handle matching packets.
      *
-     * Generated from protobuf field <code>string next_hop_vpn_tunnel = 519844501;</code>
+     * Generated from protobuf field <code>string next_hop_vpn_tunnel = 251409045;</code>
      * @param string $var
      * @return $this
      */
@@ -553,7 +553,7 @@ class Route extends \Google\Protobuf\Internal\Message
     /**
      * The priority of this route. Priority is used to break ties in cases where there is more than one matching route of equal prefix length. In cases where multiple routes have equal prefix length, the one with the lowest-numbered priority value wins. The default value is `1000`. The priority value must be from `0` to `65535`, inclusive.
      *
-     * Generated from protobuf field <code>uint32 priority = 445151652;</code>
+     * Generated from protobuf field <code>uint32 priority = 176716196;</code>
      * @return int
      */
     public function getPriority()
@@ -564,7 +564,7 @@ class Route extends \Google\Protobuf\Internal\Message
     /**
      * The priority of this route. Priority is used to break ties in cases where there is more than one matching route of equal prefix length. In cases where multiple routes have equal prefix length, the one with the lowest-numbered priority value wins. The default value is `1000`. The priority value must be from `0` to `65535`, inclusive.
      *
-     * Generated from protobuf field <code>uint32 priority = 445151652;</code>
+     * Generated from protobuf field <code>uint32 priority = 176716196;</code>
      * @param int $var
      * @return $this
      */
@@ -579,7 +579,7 @@ class Route extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined fully-qualified URL for this resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -590,7 +590,7 @@ class Route extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined fully-qualified URL for this resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */
@@ -631,7 +631,7 @@ class Route extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getWarnings()
@@ -642,7 +642,7 @@ class Route extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      * @param \Google\Cloud\Compute\V1\Warnings[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

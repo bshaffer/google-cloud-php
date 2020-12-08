@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class InsertRegionNotificationEndpointRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 338459940;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 70024484;</code>
      */
     private $notification_endpoint_resource = null;
     /**
@@ -63,7 +63,7 @@ class InsertRegionNotificationEndpointRequest extends \Google\Protobuf\Internal\
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 338459940;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 70024484;</code>
      * @return \Google\Cloud\Compute\V1\NotificationEndpoint
      */
     public function getNotificationEndpointResource()
@@ -82,7 +82,7 @@ class InsertRegionNotificationEndpointRequest extends \Google\Protobuf\Internal\
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 338459940;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 70024484;</code>
      * @param \Google\Cloud\Compute\V1\NotificationEndpoint $var
      * @return $this
      */

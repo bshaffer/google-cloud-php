@@ -20,37 +20,37 @@ class Day
      */
     const UNDEFINED_DAY = 0;
     /**
-     * Generated from protobuf enum <code>FRIDAY = 471398751;</code>
+     * Generated from protobuf enum <code>FRIDAY = 202963295;</code>
      */
-    const FRIDAY = 471398751;
+    const FRIDAY = 202963295;
     /**
-     * Generated from protobuf enum <code>INVALID = 530283991;</code>
+     * Generated from protobuf enum <code>INVALID = 261848535;</code>
      */
-    const INVALID = 530283991;
+    const INVALID = 261848535;
     /**
      * Generated from protobuf enum <code>MONDAY = 132310288;</code>
      */
     const MONDAY = 132310288;
     /**
-     * Generated from protobuf enum <code>SATURDAY = 279037881;</code>
+     * Generated from protobuf enum <code>SATURDAY = 10602425;</code>
      */
-    const SATURDAY = 279037881;
+    const SATURDAY = 10602425;
     /**
-     * Generated from protobuf enum <code>SUNDAY = 309626320;</code>
+     * Generated from protobuf enum <code>SUNDAY = 41190864;</code>
      */
-    const SUNDAY = 309626320;
+    const SUNDAY = 41190864;
     /**
      * Generated from protobuf enum <code>THURSDAY = 207198682;</code>
      */
     const THURSDAY = 207198682;
     /**
-     * Generated from protobuf enum <code>TUESDAY = 277509677;</code>
+     * Generated from protobuf enum <code>TUESDAY = 9074221;</code>
      */
-    const TUESDAY = 277509677;
+    const TUESDAY = 9074221;
     /**
-     * Generated from protobuf enum <code>WEDNESDAY = 422029110;</code>
+     * Generated from protobuf enum <code>WEDNESDAY = 153593654;</code>
      */
-    const WEDNESDAY = 422029110;
+    const WEDNESDAY = 153593654;
 
     private static $valueToName = [
         self::UNDEFINED_DAY => 'UNDEFINED_DAY',

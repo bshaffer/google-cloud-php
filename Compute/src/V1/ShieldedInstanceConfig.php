@@ -18,7 +18,7 @@ class ShieldedInstanceConfig extends \Google\Protobuf\Internal\Message
     /**
      * Defines whether the instance has integrity monitoring enabled. Enabled by default.
      *
-     * Generated from protobuf field <code>bool enable_integrity_monitoring = 409071030;</code>
+     * Generated from protobuf field <code>bool enable_integrity_monitoring = 140635574;</code>
      */
     private $enable_integrity_monitoring = false;
     /**
@@ -56,7 +56,7 @@ class ShieldedInstanceConfig extends \Google\Protobuf\Internal\Message
     /**
      * Defines whether the instance has integrity monitoring enabled. Enabled by default.
      *
-     * Generated from protobuf field <code>bool enable_integrity_monitoring = 409071030;</code>
+     * Generated from protobuf field <code>bool enable_integrity_monitoring = 140635574;</code>
      * @return bool
      */
     public function getEnableIntegrityMonitoring()
@@ -67,7 +67,7 @@ class ShieldedInstanceConfig extends \Google\Protobuf\Internal\Message
     /**
      * Defines whether the instance has integrity monitoring enabled. Enabled by default.
      *
-     * Generated from protobuf field <code>bool enable_integrity_monitoring = 409071030;</code>
+     * Generated from protobuf field <code>bool enable_integrity_monitoring = 140635574;</code>
      * @param bool $var
      * @return $this
      */

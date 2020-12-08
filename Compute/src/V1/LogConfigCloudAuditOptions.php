@@ -24,7 +24,7 @@ class LogConfigCloudAuditOptions extends \Google\Protobuf\Internal\Message
     /**
      * The log_name to populate in the Cloud Audit Record.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 134478502;</code>
      */
     private $log_name = 0;
 
@@ -84,7 +84,7 @@ class LogConfigCloudAuditOptions extends \Google\Protobuf\Internal\Message
     /**
      * The log_name to populate in the Cloud Audit Record.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 134478502;</code>
      * @return int
      */
     public function getLogName()
@@ -95,7 +95,7 @@ class LogConfigCloudAuditOptions extends \Google\Protobuf\Internal\Message
     /**
      * The log_name to populate in the Cloud Audit Record.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 134478502;</code>
      * @param int $var
      * @return $this
      */

@@ -22,7 +22,7 @@ class SetMetadataInstanceRequest extends \Google\Protobuf\Internal\Message
      */
     private $instance = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Metadata metadata_resource = 291086110;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Metadata metadata_resource = 22650654;</code>
      */
     private $metadata_resource = null;
     /**
@@ -97,7 +97,7 @@ class SetMetadataInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Metadata metadata_resource = 291086110;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Metadata metadata_resource = 22650654;</code>
      * @return \Google\Cloud\Compute\V1\Metadata
      */
     public function getMetadataResource()
@@ -116,7 +116,7 @@ class SetMetadataInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Metadata metadata_resource = 291086110;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Metadata metadata_resource = 22650654;</code>
      * @param \Google\Cloud\Compute\V1\Metadata $var
      * @return $this
      */

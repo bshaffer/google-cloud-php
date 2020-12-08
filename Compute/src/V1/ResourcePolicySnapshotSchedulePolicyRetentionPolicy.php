@@ -18,13 +18,13 @@ class ResourcePolicySnapshotSchedulePolicyRetentionPolicy extends \Google\Protob
     /**
      * Maximum age of the snapshot that is allowed to be kept.
      *
-     * Generated from protobuf field <code>int32 max_retention_days = 324296979;</code>
+     * Generated from protobuf field <code>int32 max_retention_days = 55861523;</code>
      */
     private $max_retention_days = 0;
     /**
      * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 321955529;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 53520073;</code>
      */
     private $on_source_disk_delete = 0;
 
@@ -48,7 +48,7 @@ class ResourcePolicySnapshotSchedulePolicyRetentionPolicy extends \Google\Protob
     /**
      * Maximum age of the snapshot that is allowed to be kept.
      *
-     * Generated from protobuf field <code>int32 max_retention_days = 324296979;</code>
+     * Generated from protobuf field <code>int32 max_retention_days = 55861523;</code>
      * @return int
      */
     public function getMaxRetentionDays()
@@ -59,7 +59,7 @@ class ResourcePolicySnapshotSchedulePolicyRetentionPolicy extends \Google\Protob
     /**
      * Maximum age of the snapshot that is allowed to be kept.
      *
-     * Generated from protobuf field <code>int32 max_retention_days = 324296979;</code>
+     * Generated from protobuf field <code>int32 max_retention_days = 55861523;</code>
      * @param int $var
      * @return $this
      */
@@ -74,7 +74,7 @@ class ResourcePolicySnapshotSchedulePolicyRetentionPolicy extends \Google\Protob
     /**
      * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 321955529;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 53520073;</code>
      * @return int
      */
     public function getOnSourceDiskDelete()
@@ -85,7 +85,7 @@ class ResourcePolicySnapshotSchedulePolicyRetentionPolicy extends \Google\Protob
     /**
      * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 321955529;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 53520073;</code>
      * @param int $var
      * @return $this
      */

@@ -22,7 +22,7 @@ class PatchPerInstanceConfigsInstanceGroupManagerRequest extends \Google\Protobu
      */
     private $instance_group_manager = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 356650495;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 88215039;</code>
      */
     private $instance_group_managers_patch_per_instance_configs_req_resource = null;
     /**
@@ -97,7 +97,7 @@ class PatchPerInstanceConfigsInstanceGroupManagerRequest extends \Google\Protobu
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 356650495;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 88215039;</code>
      * @return \Google\Cloud\Compute\V1\InstanceGroupManagersPatchPerInstanceConfigsReq
      */
     public function getInstanceGroupManagersPatchPerInstanceConfigsReqResource()
@@ -116,7 +116,7 @@ class PatchPerInstanceConfigsInstanceGroupManagerRequest extends \Google\Protobu
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 356650495;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 88215039;</code>
      * @param \Google\Cloud\Compute\V1\InstanceGroupManagersPatchPerInstanceConfigsReq $var
      * @return $this
      */

@@ -17,7 +17,7 @@ class ExchangedPeeringRoute extends \Google\Protobuf\Internal\Message
     /**
      * The destination range of the route.
      *
-     * Generated from protobuf field <code>string dest_range = 381327712;</code>
+     * Generated from protobuf field <code>string dest_range = 112892256;</code>
      */
     private $dest_range = '';
     /**
@@ -35,7 +35,7 @@ class ExchangedPeeringRoute extends \Google\Protobuf\Internal\Message
     /**
      * The priority of the peering route.
      *
-     * Generated from protobuf field <code>uint32 priority = 445151652;</code>
+     * Generated from protobuf field <code>uint32 priority = 176716196;</code>
      */
     private $priority = 0;
     /**
@@ -71,7 +71,7 @@ class ExchangedPeeringRoute extends \Google\Protobuf\Internal\Message
     /**
      * The destination range of the route.
      *
-     * Generated from protobuf field <code>string dest_range = 381327712;</code>
+     * Generated from protobuf field <code>string dest_range = 112892256;</code>
      * @return string
      */
     public function getDestRange()
@@ -82,7 +82,7 @@ class ExchangedPeeringRoute extends \Google\Protobuf\Internal\Message
     /**
      * The destination range of the route.
      *
-     * Generated from protobuf field <code>string dest_range = 381327712;</code>
+     * Generated from protobuf field <code>string dest_range = 112892256;</code>
      * @param string $var
      * @return $this
      */
@@ -149,7 +149,7 @@ class ExchangedPeeringRoute extends \Google\Protobuf\Internal\Message
     /**
      * The priority of the peering route.
      *
-     * Generated from protobuf field <code>uint32 priority = 445151652;</code>
+     * Generated from protobuf field <code>uint32 priority = 176716196;</code>
      * @return int
      */
     public function getPriority()
@@ -160,7 +160,7 @@ class ExchangedPeeringRoute extends \Google\Protobuf\Internal\Message
     /**
      * The priority of the peering route.
      *
-     * Generated from protobuf field <code>uint32 priority = 445151652;</code>
+     * Generated from protobuf field <code>uint32 priority = 176716196;</code>
      * @param int $var
      * @return $this
      */

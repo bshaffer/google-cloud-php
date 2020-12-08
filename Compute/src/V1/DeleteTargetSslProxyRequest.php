@@ -32,7 +32,7 @@ class DeleteTargetSslProxyRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the TargetSslProxy resource to delete.
      *
-     * Generated from protobuf field <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $target_ssl_proxy = '';
 
@@ -116,7 +116,7 @@ class DeleteTargetSslProxyRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the TargetSslProxy resource to delete.
      *
-     * Generated from protobuf field <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getTargetSslProxy()
@@ -127,7 +127,7 @@ class DeleteTargetSslProxyRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the TargetSslProxy resource to delete.
      *
-     * Generated from protobuf field <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

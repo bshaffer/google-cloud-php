@@ -20,21 +20,21 @@ class Type
      */
     const UNDEFINED_TYPE = 0;
     /**
-     * Generated from protobuf enum <code>ACCELERATOR = 429815371;</code>
+     * Generated from protobuf enum <code>ACCELERATOR = 161379915;</code>
      */
-    const ACCELERATOR = 429815371;
+    const ACCELERATOR = 161379915;
     /**
-     * Generated from protobuf enum <code>LOCAL_SSD = 508934896;</code>
+     * Generated from protobuf enum <code>LOCAL_SSD = 240499440;</code>
      */
-    const LOCAL_SSD = 508934896;
+    const LOCAL_SSD = 240499440;
     /**
      * Generated from protobuf enum <code>MEMORY = 123056385;</code>
      */
     const MEMORY = 123056385;
     /**
-     * Generated from protobuf enum <code>UNSPECIFIED = 526786327;</code>
+     * Generated from protobuf enum <code>UNSPECIFIED = 258350871;</code>
      */
-    const UNSPECIFIED = 526786327;
+    const UNSPECIFIED = 258350871;
     /**
      * Generated from protobuf enum <code>VCPU = 2628978;</code>
      */

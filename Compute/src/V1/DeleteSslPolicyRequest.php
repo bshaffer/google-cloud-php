@@ -32,7 +32,7 @@ class DeleteSslPolicyRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the SSL policy to delete. The name must be 1-63 characters long, and comply with RFC1035.
      *
-     * Generated from protobuf field <code>string ssl_policy = 295190213 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string ssl_policy = 26754757 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $ssl_policy = '';
 
@@ -116,7 +116,7 @@ class DeleteSslPolicyRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the SSL policy to delete. The name must be 1-63 characters long, and comply with RFC1035.
      *
-     * Generated from protobuf field <code>string ssl_policy = 295190213 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string ssl_policy = 26754757 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getSslPolicy()
@@ -127,7 +127,7 @@ class DeleteSslPolicyRequest extends \Google\Protobuf\Internal\Message
     /**
      * Name of the SSL policy to delete. The name must be 1-63 characters long, and comply with RFC1035.
      *
-     * Generated from protobuf field <code>string ssl_policy = 295190213 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string ssl_policy = 26754757 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

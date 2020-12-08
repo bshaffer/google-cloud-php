@@ -20,17 +20,17 @@ class PrivateIpv6GoogleAccess
      */
     const UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS = 0;
     /**
-     * Generated from protobuf enum <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code>
+     * Generated from protobuf enum <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 159540538;</code>
      */
-    const ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;
+    const ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 159540538;
     /**
-     * Generated from protobuf enum <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code>
+     * Generated from protobuf enum <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 19774807;</code>
      */
-    const ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;
+    const ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 19774807;
     /**
-     * Generated from protobuf enum <code>INHERIT_FROM_SUBNETWORK = 530256959;</code>
+     * Generated from protobuf enum <code>INHERIT_FROM_SUBNETWORK = 261821503;</code>
      */
-    const INHERIT_FROM_SUBNETWORK = 530256959;
+    const INHERIT_FROM_SUBNETWORK = 261821503;
 
     private static $valueToName = [
         self::UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS => 'UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS',

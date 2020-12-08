@@ -17,7 +17,7 @@ class RegionSetPolicyRequest extends \Google\Protobuf\Internal\Message
     /**
      * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
      */
     private $bindings;
     /**
@@ -55,7 +55,7 @@ class RegionSetPolicyRequest extends \Google\Protobuf\Internal\Message
     /**
      * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getBindings()
@@ -66,7 +66,7 @@ class RegionSetPolicyRequest extends \Google\Protobuf\Internal\Message
     /**
      * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
      * @param \Google\Cloud\Compute\V1\Binding[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

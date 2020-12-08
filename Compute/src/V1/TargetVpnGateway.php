@@ -25,13 +25,13 @@ class TargetVpnGateway extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
      * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
      *
-     * Generated from protobuf field <code>repeated string forwarding_rules = 315821365;</code>
+     * Generated from protobuf field <code>repeated string forwarding_rules = 47385909;</code>
      */
     private $forwarding_rules;
     /**
@@ -67,7 +67,7 @@ class TargetVpnGateway extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
@@ -147,7 +147,7 @@ class TargetVpnGateway extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -158,7 +158,7 @@ class TargetVpnGateway extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -173,7 +173,7 @@ class TargetVpnGateway extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
      *
-     * Generated from protobuf field <code>repeated string forwarding_rules = 315821365;</code>
+     * Generated from protobuf field <code>repeated string forwarding_rules = 47385909;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getForwardingRules()
@@ -184,7 +184,7 @@ class TargetVpnGateway extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
      *
-     * Generated from protobuf field <code>repeated string forwarding_rules = 315821365;</code>
+     * Generated from protobuf field <code>repeated string forwarding_rules = 47385909;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -329,7 +329,7 @@ class TargetVpnGateway extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -340,7 +340,7 @@ class TargetVpnGateway extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */

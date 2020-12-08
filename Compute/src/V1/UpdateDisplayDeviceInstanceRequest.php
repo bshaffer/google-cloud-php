@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateDisplayDeviceInstanceRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 289686106;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 21250650;</code>
      */
     private $display_device_resource = null;
     /**
@@ -71,7 +71,7 @@ class UpdateDisplayDeviceInstanceRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 289686106;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 21250650;</code>
      * @return \Google\Cloud\Compute\V1\DisplayDevice
      */
     public function getDisplayDeviceResource()
@@ -90,7 +90,7 @@ class UpdateDisplayDeviceInstanceRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 289686106;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 21250650;</code>
      * @param \Google\Cloud\Compute\V1\DisplayDevice $var
      * @return $this
      */

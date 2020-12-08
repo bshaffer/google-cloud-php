@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class InsertRegionHealthCheckServiceRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338;</code>
      */
     private $health_check_service_resource = null;
     /**
@@ -63,7 +63,7 @@ class InsertRegionHealthCheckServiceRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338;</code>
      * @return \Google\Cloud\Compute\V1\HealthCheckService
      */
     public function getHealthCheckServiceResource()
@@ -82,7 +82,7 @@ class InsertRegionHealthCheckServiceRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338;</code>
      * @param \Google\Cloud\Compute\V1\HealthCheckService $var
      * @return $this
      */

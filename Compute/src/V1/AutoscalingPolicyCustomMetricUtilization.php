@@ -19,12 +19,12 @@ class AutoscalingPolicyCustomMetricUtilization extends \Google\Protobuf\Internal
      * The identifier (type) of the Stackdriver Monitoring metric. The metric cannot have negative values.
      * The metric must have a value type of INT64 or DOUBLE.
      *
-     * Generated from protobuf field <code>string metric = 533067184;</code>
+     * Generated from protobuf field <code>string metric = 264631728;</code>
      */
     private $metric = '';
     /**
      * The target value of the metric that autoscaler should maintain. This must be a positive value. A utilization metric scales number of virtual machines handling requests to increase or decrease proportionally to the metric.
-     * For example, a good metric to use as a utilization_target is https://www.googleapis.com/compute/v1/instance/network/received_bytes_count. The autoscaler will work to keep this value constant for each of the instances.
+     * For example, a good metric to use as a utilization_target is compute.googleapis.com/instance/network/received_bytes_count. The autoscaler will work to keep this value constant for each of the instances.
      *
      * Generated from protobuf field <code>double utilization_target = 215905870;</code>
      */
@@ -32,7 +32,7 @@ class AutoscalingPolicyCustomMetricUtilization extends \Google\Protobuf\Internal
     /**
      * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 340169355;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 71733899;</code>
      */
     private $utilization_target_type = 0;
 
@@ -47,7 +47,7 @@ class AutoscalingPolicyCustomMetricUtilization extends \Google\Protobuf\Internal
      *           The metric must have a value type of INT64 or DOUBLE.
      *     @type float $utilization_target
      *           The target value of the metric that autoscaler should maintain. This must be a positive value. A utilization metric scales number of virtual machines handling requests to increase or decrease proportionally to the metric.
-     *           For example, a good metric to use as a utilization_target is https://www.googleapis.com/compute/v1/instance/network/received_bytes_count. The autoscaler will work to keep this value constant for each of the instances.
+     *           For example, a good metric to use as a utilization_target is compute.googleapis.com/instance/network/received_bytes_count. The autoscaler will work to keep this value constant for each of the instances.
      *     @type int $utilization_target_type
      *           Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
      * }
@@ -61,7 +61,7 @@ class AutoscalingPolicyCustomMetricUtilization extends \Google\Protobuf\Internal
      * The identifier (type) of the Stackdriver Monitoring metric. The metric cannot have negative values.
      * The metric must have a value type of INT64 or DOUBLE.
      *
-     * Generated from protobuf field <code>string metric = 533067184;</code>
+     * Generated from protobuf field <code>string metric = 264631728;</code>
      * @return string
      */
     public function getMetric()
@@ -73,7 +73,7 @@ class AutoscalingPolicyCustomMetricUtilization extends \Google\Protobuf\Internal
      * The identifier (type) of the Stackdriver Monitoring metric. The metric cannot have negative values.
      * The metric must have a value type of INT64 or DOUBLE.
      *
-     * Generated from protobuf field <code>string metric = 533067184;</code>
+     * Generated from protobuf field <code>string metric = 264631728;</code>
      * @param string $var
      * @return $this
      */
@@ -87,7 +87,7 @@ class AutoscalingPolicyCustomMetricUtilization extends \Google\Protobuf\Internal
 
     /**
      * The target value of the metric that autoscaler should maintain. This must be a positive value. A utilization metric scales number of virtual machines handling requests to increase or decrease proportionally to the metric.
-     * For example, a good metric to use as a utilization_target is https://www.googleapis.com/compute/v1/instance/network/received_bytes_count. The autoscaler will work to keep this value constant for each of the instances.
+     * For example, a good metric to use as a utilization_target is compute.googleapis.com/instance/network/received_bytes_count. The autoscaler will work to keep this value constant for each of the instances.
      *
      * Generated from protobuf field <code>double utilization_target = 215905870;</code>
      * @return float
@@ -99,7 +99,7 @@ class AutoscalingPolicyCustomMetricUtilization extends \Google\Protobuf\Internal
 
     /**
      * The target value of the metric that autoscaler should maintain. This must be a positive value. A utilization metric scales number of virtual machines handling requests to increase or decrease proportionally to the metric.
-     * For example, a good metric to use as a utilization_target is https://www.googleapis.com/compute/v1/instance/network/received_bytes_count. The autoscaler will work to keep this value constant for each of the instances.
+     * For example, a good metric to use as a utilization_target is compute.googleapis.com/instance/network/received_bytes_count. The autoscaler will work to keep this value constant for each of the instances.
      *
      * Generated from protobuf field <code>double utilization_target = 215905870;</code>
      * @param float $var
@@ -116,7 +116,7 @@ class AutoscalingPolicyCustomMetricUtilization extends \Google\Protobuf\Internal
     /**
      * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 340169355;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 71733899;</code>
      * @return int
      */
     public function getUtilizationTargetType()
@@ -127,7 +127,7 @@ class AutoscalingPolicyCustomMetricUtilization extends \Google\Protobuf\Internal
     /**
      * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 340169355;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 71733899;</code>
      * @param int $var
      * @return $this
      */

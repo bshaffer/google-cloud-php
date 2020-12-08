@@ -17,7 +17,7 @@ class RouterStatus extends \Google\Protobuf\Internal\Message
     /**
      * Best routes for this router's network.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
      */
     private $best_routes;
     /**
@@ -65,7 +65,7 @@ class RouterStatus extends \Google\Protobuf\Internal\Message
     /**
      * Best routes for this router's network.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getBestRoutes()
@@ -76,7 +76,7 @@ class RouterStatus extends \Google\Protobuf\Internal\Message
     /**
      * Best routes for this router's network.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
      * @param \Google\Cloud\Compute\V1\Route[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

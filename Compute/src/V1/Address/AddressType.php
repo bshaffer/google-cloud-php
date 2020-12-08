@@ -24,9 +24,9 @@ class AddressType
      */
     const EXTERNAL = 35607499;
     /**
-     * Generated from protobuf enum <code>INTERNAL = 279295677;</code>
+     * Generated from protobuf enum <code>INTERNAL = 10860221;</code>
      */
-    const INTERNAL = 279295677;
+    const INTERNAL = 10860221;
     /**
      * Generated from protobuf enum <code>UNSPECIFIED_TYPE = 53933922;</code>
      */

@@ -24,7 +24,7 @@ class BackendServiceIAP extends \Google\Protobuf\Internal\Message
     /**
      * OAuth2 client ID to use for the authentication flow.
      *
-     * Generated from protobuf field <code>string oauth2_client_id = 314017611;</code>
+     * Generated from protobuf field <code>string oauth2_client_id = 45582155;</code>
      */
     private $oauth2_client_id = '';
     /**
@@ -90,7 +90,7 @@ class BackendServiceIAP extends \Google\Protobuf\Internal\Message
     /**
      * OAuth2 client ID to use for the authentication flow.
      *
-     * Generated from protobuf field <code>string oauth2_client_id = 314017611;</code>
+     * Generated from protobuf field <code>string oauth2_client_id = 45582155;</code>
      * @return string
      */
     public function getOauth2ClientId()
@@ -101,7 +101,7 @@ class BackendServiceIAP extends \Google\Protobuf\Internal\Message
     /**
      * OAuth2 client ID to use for the authentication flow.
      *
-     * Generated from protobuf field <code>string oauth2_client_id = 314017611;</code>
+     * Generated from protobuf field <code>string oauth2_client_id = 45582155;</code>
      * @param string $var
      * @return $this
      */

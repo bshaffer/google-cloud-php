@@ -42,7 +42,7 @@ class AddHealthCheckTargetPoolRequest extends \Google\Protobuf\Internal\Message
      */
     private $target_pool = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 269573412;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 1137956;</code>
      */
     private $target_pools_add_health_check_request_resource = null;
 
@@ -179,7 +179,7 @@ class AddHealthCheckTargetPoolRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 269573412;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 1137956;</code>
      * @return \Google\Cloud\Compute\V1\TargetPoolsAddHealthCheckRequest
      */
     public function getTargetPoolsAddHealthCheckRequestResource()
@@ -198,7 +198,7 @@ class AddHealthCheckTargetPoolRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 269573412;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 1137956;</code>
      * @param \Google\Cloud\Compute\V1\TargetPoolsAddHealthCheckRequest $var
      * @return $this
      */

@@ -30,7 +30,7 @@ class InterconnectCircuitInfo extends \Google\Protobuf\Internal\Message
     /**
      * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
      *
-     * Generated from protobuf field <code>string google_demarc_id = 448196270;</code>
+     * Generated from protobuf field <code>string google_demarc_id = 179760814;</code>
      */
     private $google_demarc_id = '';
 
@@ -108,7 +108,7 @@ class InterconnectCircuitInfo extends \Google\Protobuf\Internal\Message
     /**
      * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
      *
-     * Generated from protobuf field <code>string google_demarc_id = 448196270;</code>
+     * Generated from protobuf field <code>string google_demarc_id = 179760814;</code>
      * @return string
      */
     public function getGoogleDemarcId()
@@ -119,7 +119,7 @@ class InterconnectCircuitInfo extends \Google\Protobuf\Internal\Message
     /**
      * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
      *
-     * Generated from protobuf field <code>string google_demarc_id = 448196270;</code>
+     * Generated from protobuf field <code>string google_demarc_id = 179760814;</code>
      * @param string $var
      * @return $this
      */

@@ -17,13 +17,13 @@ class ManagedInstanceInstanceHealth extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The current detailed instance health state.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 242034717;</code>
      */
     private $detailed_health_state = 0;
     /**
      * [Output Only] The URL for the health check that verifies whether the instance is healthy.
      *
-     * Generated from protobuf field <code>string health_check = 308876645;</code>
+     * Generated from protobuf field <code>string health_check = 40441189;</code>
      */
     private $health_check = '';
 
@@ -47,7 +47,7 @@ class ManagedInstanceInstanceHealth extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The current detailed instance health state.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 242034717;</code>
      * @return int
      */
     public function getDetailedHealthState()
@@ -58,7 +58,7 @@ class ManagedInstanceInstanceHealth extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The current detailed instance health state.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 242034717;</code>
      * @param int $var
      * @return $this
      */
@@ -73,7 +73,7 @@ class ManagedInstanceInstanceHealth extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The URL for the health check that verifies whether the instance is healthy.
      *
-     * Generated from protobuf field <code>string health_check = 308876645;</code>
+     * Generated from protobuf field <code>string health_check = 40441189;</code>
      * @return string
      */
     public function getHealthCheck()
@@ -84,7 +84,7 @@ class ManagedInstanceInstanceHealth extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The URL for the health check that verifies whether the instance is healthy.
      *
-     * Generated from protobuf field <code>string health_check = 308876645;</code>
+     * Generated from protobuf field <code>string health_check = 40441189;</code>
      * @param string $var
      * @return $this
      */

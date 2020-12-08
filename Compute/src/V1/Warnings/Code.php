@@ -24,57 +24,57 @@ class Code
      */
     const CLEANUP_FAILED = 150308440;
     /**
-     * Generated from protobuf enum <code>DEPRECATED_RESOURCE_USED = 391835586;</code>
+     * Generated from protobuf enum <code>DEPRECATED_RESOURCE_USED = 123400130;</code>
      */
-    const DEPRECATED_RESOURCE_USED = 391835586;
+    const DEPRECATED_RESOURCE_USED = 123400130;
     /**
-     * Generated from protobuf enum <code>DEPRECATED_TYPE_USED = 346526230;</code>
+     * Generated from protobuf enum <code>DEPRECATED_TYPE_USED = 78090774;</code>
      */
-    const DEPRECATED_TYPE_USED = 346526230;
+    const DEPRECATED_TYPE_USED = 78090774;
     /**
-     * Generated from protobuf enum <code>DISK_SIZE_LARGER_THAN_IMAGE_SIZE = 369442967;</code>
+     * Generated from protobuf enum <code>DISK_SIZE_LARGER_THAN_IMAGE_SIZE = 101007511;</code>
      */
-    const DISK_SIZE_LARGER_THAN_IMAGE_SIZE = 369442967;
+    const DISK_SIZE_LARGER_THAN_IMAGE_SIZE = 101007511;
     /**
-     * Generated from protobuf enum <code>EXPERIMENTAL_TYPE_USED = 451954443;</code>
+     * Generated from protobuf enum <code>EXPERIMENTAL_TYPE_USED = 183518987;</code>
      */
-    const EXPERIMENTAL_TYPE_USED = 451954443;
+    const EXPERIMENTAL_TYPE_USED = 183518987;
     /**
      * Generated from protobuf enum <code>EXTERNAL_API_WARNING = 175546307;</code>
      */
     const EXTERNAL_API_WARNING = 175546307;
     /**
-     * Generated from protobuf enum <code>FIELD_VALUE_OVERRIDEN = 329669423;</code>
+     * Generated from protobuf enum <code>FIELD_VALUE_OVERRIDEN = 61233967;</code>
      */
-    const FIELD_VALUE_OVERRIDEN = 329669423;
+    const FIELD_VALUE_OVERRIDEN = 61233967;
     /**
-     * Generated from protobuf enum <code>INJECTED_KERNELS_DEPRECATED = 417377419;</code>
+     * Generated from protobuf enum <code>INJECTED_KERNELS_DEPRECATED = 148941963;</code>
      */
-    const INJECTED_KERNELS_DEPRECATED = 417377419;
+    const INJECTED_KERNELS_DEPRECATED = 148941963;
     /**
-     * Generated from protobuf enum <code>MISSING_TYPE_DEPENDENCY = 344505463;</code>
+     * Generated from protobuf enum <code>MISSING_TYPE_DEPENDENCY = 76070007;</code>
      */
-    const MISSING_TYPE_DEPENDENCY = 344505463;
+    const MISSING_TYPE_DEPENDENCY = 76070007;
     /**
-     * Generated from protobuf enum <code>NEXT_HOP_ADDRESS_NOT_ASSIGNED = 324964999;</code>
+     * Generated from protobuf enum <code>NEXT_HOP_ADDRESS_NOT_ASSIGNED = 56529543;</code>
      */
-    const NEXT_HOP_ADDRESS_NOT_ASSIGNED = 324964999;
+    const NEXT_HOP_ADDRESS_NOT_ASSIGNED = 56529543;
     /**
-     * Generated from protobuf enum <code>NEXT_HOP_CANNOT_IP_FORWARD = 383382887;</code>
+     * Generated from protobuf enum <code>NEXT_HOP_CANNOT_IP_FORWARD = 114947431;</code>
      */
-    const NEXT_HOP_CANNOT_IP_FORWARD = 383382887;
+    const NEXT_HOP_CANNOT_IP_FORWARD = 114947431;
     /**
-     * Generated from protobuf enum <code>NEXT_HOP_INSTANCE_NOT_FOUND = 464250446;</code>
+     * Generated from protobuf enum <code>NEXT_HOP_INSTANCE_NOT_FOUND = 195814990;</code>
      */
-    const NEXT_HOP_INSTANCE_NOT_FOUND = 464250446;
+    const NEXT_HOP_INSTANCE_NOT_FOUND = 195814990;
     /**
      * Generated from protobuf enum <code>NEXT_HOP_INSTANCE_NOT_ON_NETWORK = 243758146;</code>
      */
     const NEXT_HOP_INSTANCE_NOT_ON_NETWORK = 243758146;
     /**
-     * Generated from protobuf enum <code>NEXT_HOP_NOT_RUNNING = 417081265;</code>
+     * Generated from protobuf enum <code>NEXT_HOP_NOT_RUNNING = 148645809;</code>
      */
-    const NEXT_HOP_NOT_RUNNING = 417081265;
+    const NEXT_HOP_NOT_RUNNING = 148645809;
     /**
      * Generated from protobuf enum <code>NOT_CRITICAL_ERROR = 105763924;</code>
      */
@@ -84,33 +84,29 @@ class Code
      */
     const NO_RESULTS_ON_PAGE = 30036744;
     /**
-     * Generated from protobuf enum <code>PARTIAL_SUCCESS = 39966469;</code>
-     */
-    const PARTIAL_SUCCESS = 39966469;
-    /**
      * Generated from protobuf enum <code>REQUIRED_TOS_AGREEMENT = 3745539;</code>
      */
     const REQUIRED_TOS_AGREEMENT = 3745539;
     /**
-     * Generated from protobuf enum <code>RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING = 496728641;</code>
+     * Generated from protobuf enum <code>RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING = 228293185;</code>
      */
-    const RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING = 496728641;
+    const RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING = 228293185;
     /**
      * Generated from protobuf enum <code>RESOURCE_NOT_DELETED = 168598460;</code>
      */
     const RESOURCE_NOT_DELETED = 168598460;
     /**
-     * Generated from protobuf enum <code>SCHEMA_VALIDATION_IGNORED = 275245642;</code>
+     * Generated from protobuf enum <code>SCHEMA_VALIDATION_IGNORED = 6810186;</code>
      */
-    const SCHEMA_VALIDATION_IGNORED = 275245642;
+    const SCHEMA_VALIDATION_IGNORED = 6810186;
     /**
      * Generated from protobuf enum <code>SINGLE_INSTANCE_PROPERTY_TEMPLATE = 268305617;</code>
      */
     const SINGLE_INSTANCE_PROPERTY_TEMPLATE = 268305617;
     /**
-     * Generated from protobuf enum <code>UNDECLARED_PROPERTIES = 390513439;</code>
+     * Generated from protobuf enum <code>UNDECLARED_PROPERTIES = 122077983;</code>
      */
-    const UNDECLARED_PROPERTIES = 390513439;
+    const UNDECLARED_PROPERTIES = 122077983;
     /**
      * Generated from protobuf enum <code>UNREACHABLE = 13328052;</code>
      */
@@ -134,7 +130,6 @@ class Code
         self::NEXT_HOP_NOT_RUNNING => 'NEXT_HOP_NOT_RUNNING',
         self::NOT_CRITICAL_ERROR => 'NOT_CRITICAL_ERROR',
         self::NO_RESULTS_ON_PAGE => 'NO_RESULTS_ON_PAGE',
-        self::PARTIAL_SUCCESS => 'PARTIAL_SUCCESS',
         self::REQUIRED_TOS_AGREEMENT => 'REQUIRED_TOS_AGREEMENT',
         self::RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING => 'RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING',
         self::RESOURCE_NOT_DELETED => 'RESOURCE_NOT_DELETED',

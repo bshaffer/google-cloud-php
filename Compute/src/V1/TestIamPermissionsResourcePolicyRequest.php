@@ -34,7 +34,7 @@ class TestIamPermissionsResourcePolicyRequest extends \Google\Protobuf\Internal\
      */
     private $resource = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 439214758;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 170779302;</code>
      */
     private $test_permissions_request_resource = null;
 
@@ -137,7 +137,7 @@ class TestIamPermissionsResourcePolicyRequest extends \Google\Protobuf\Internal\
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 439214758;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 170779302;</code>
      * @return \Google\Cloud\Compute\V1\TestPermissionsRequest
      */
     public function getTestPermissionsRequestResource()
@@ -156,7 +156,7 @@ class TestIamPermissionsResourcePolicyRequest extends \Google\Protobuf\Internal\
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 439214758;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 170779302;</code>
      * @param \Google\Cloud\Compute\V1\TestPermissionsRequest $var
      * @return $this
      */

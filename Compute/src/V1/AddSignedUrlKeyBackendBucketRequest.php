@@ -36,7 +36,7 @@ class AddSignedUrlKeyBackendBucketRequest extends \Google\Protobuf\Internal\Mess
      */
     private $request_id = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 457625985;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 189190529;</code>
      */
     private $signed_url_key_resource = null;
 
@@ -145,7 +145,7 @@ class AddSignedUrlKeyBackendBucketRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 457625985;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 189190529;</code>
      * @return \Google\Cloud\Compute\V1\SignedUrlKey
      */
     public function getSignedUrlKeyResource()
@@ -164,7 +164,7 @@ class AddSignedUrlKeyBackendBucketRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 457625985;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 189190529;</code>
      * @param \Google\Cloud\Compute\V1\SignedUrlKey $var
      * @return $this
      */

@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class InsertExternalVpnGatewayRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 486813576;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 218378120;</code>
      */
     private $external_vpn_gateway_resource = null;
     /**
@@ -55,7 +55,7 @@ class InsertExternalVpnGatewayRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 486813576;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 218378120;</code>
      * @return \Google\Cloud\Compute\V1\ExternalVpnGateway
      */
     public function getExternalVpnGatewayResource()
@@ -74,7 +74,7 @@ class InsertExternalVpnGatewayRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 486813576;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 218378120;</code>
      * @param \Google\Cloud\Compute\V1\ExternalVpnGateway $var
      * @return $this
      */

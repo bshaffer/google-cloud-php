@@ -18,7 +18,7 @@ class RouterNatLogConfig extends \Google\Protobuf\Internal\Message
     /**
      * Indicates whether or not to export logs. This is false by default.
      *
-     * Generated from protobuf field <code>bool enable = 311764355;</code>
+     * Generated from protobuf field <code>bool enable = 43328899;</code>
      */
     private $enable = false;
     /**
@@ -27,7 +27,7 @@ class RouterNatLogConfig extends \Google\Protobuf\Internal\Message
      * - TRANSLATIONS_ONLY: Export logs only for successful connections.
      * - ALL: Export logs for all connections, successful and unsuccessful.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 67685240;</code>
      */
     private $filter = 0;
 
@@ -54,7 +54,7 @@ class RouterNatLogConfig extends \Google\Protobuf\Internal\Message
     /**
      * Indicates whether or not to export logs. This is false by default.
      *
-     * Generated from protobuf field <code>bool enable = 311764355;</code>
+     * Generated from protobuf field <code>bool enable = 43328899;</code>
      * @return bool
      */
     public function getEnable()
@@ -65,7 +65,7 @@ class RouterNatLogConfig extends \Google\Protobuf\Internal\Message
     /**
      * Indicates whether or not to export logs. This is false by default.
      *
-     * Generated from protobuf field <code>bool enable = 311764355;</code>
+     * Generated from protobuf field <code>bool enable = 43328899;</code>
      * @param bool $var
      * @return $this
      */
@@ -83,7 +83,7 @@ class RouterNatLogConfig extends \Google\Protobuf\Internal\Message
      * - TRANSLATIONS_ONLY: Export logs only for successful connections.
      * - ALL: Export logs for all connections, successful and unsuccessful.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 67685240;</code>
      * @return int
      */
     public function getFilter()
@@ -97,7 +97,7 @@ class RouterNatLogConfig extends \Google\Protobuf\Internal\Message
      * - TRANSLATIONS_ONLY: Export logs only for successful connections.
      * - ALL: Export logs for all connections, successful and unsuccessful.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 67685240;</code>
      * @param int $var
      * @return $this
      */

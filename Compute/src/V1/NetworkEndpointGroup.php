@@ -25,13 +25,13 @@ class NetworkEndpointGroup extends \Google\Protobuf\Internal\Message
     /**
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
      */
     private $app_engine = null;
     /**
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;</code>
      */
     private $cloud_function = null;
     /**
@@ -49,13 +49,13 @@ class NetworkEndpointGroup extends \Google\Protobuf\Internal\Message
     /**
      * The default port used if the port number is not specified in the network endpoint.
      *
-     * Generated from protobuf field <code>int32 default_port = 423377855;</code>
+     * Generated from protobuf field <code>int32 default_port = 154942399;</code>
      */
     private $default_port = 0;
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -97,7 +97,7 @@ class NetworkEndpointGroup extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
@@ -109,7 +109,7 @@ class NetworkEndpointGroup extends \Google\Protobuf\Internal\Message
     /**
      * Optional URL of the subnetwork to which all network endpoints in the NEG belong.
      *
-     * Generated from protobuf field <code>string subnetwork = 307827694;</code>
+     * Generated from protobuf field <code>string subnetwork = 39392238;</code>
      */
     private $subnetwork = '';
     /**
@@ -195,7 +195,7 @@ class NetworkEndpointGroup extends \Google\Protobuf\Internal\Message
     /**
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
      * @return \Google\Cloud\Compute\V1\NetworkEndpointGroupAppEngine
      */
     public function getAppEngine()
@@ -216,7 +216,7 @@ class NetworkEndpointGroup extends \Google\Protobuf\Internal\Message
     /**
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
      * @param \Google\Cloud\Compute\V1\NetworkEndpointGroupAppEngine $var
      * @return $this
      */
@@ -231,7 +231,7 @@ class NetworkEndpointGroup extends \Google\Protobuf\Internal\Message
     /**
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;</code>
      * @return \Google\Cloud\Compute\V1\NetworkEndpointGroupCloudFunction
      */
     public function getCloudFunction()
@@ -252,7 +252,7 @@ class NetworkEndpointGroup extends \Google\Protobuf\Internal\Message
     /**
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;</code>
      * @param \Google\Cloud\Compute\V1\NetworkEndpointGroupCloudFunction $var
      * @return $this
      */
@@ -329,7 +329,7 @@ class NetworkEndpointGroup extends \Google\Protobuf\Internal\Message
     /**
      * The default port used if the port number is not specified in the network endpoint.
      *
-     * Generated from protobuf field <code>int32 default_port = 423377855;</code>
+     * Generated from protobuf field <code>int32 default_port = 154942399;</code>
      * @return int
      */
     public function getDefaultPort()
@@ -340,7 +340,7 @@ class NetworkEndpointGroup extends \Google\Protobuf\Internal\Message
     /**
      * The default port used if the port number is not specified in the network endpoint.
      *
-     * Generated from protobuf field <code>int32 default_port = 423377855;</code>
+     * Generated from protobuf field <code>int32 default_port = 154942399;</code>
      * @param int $var
      * @return $this
      */
@@ -355,7 +355,7 @@ class NetworkEndpointGroup extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -366,7 +366,7 @@ class NetworkEndpointGroup extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -537,7 +537,7 @@ class NetworkEndpointGroup extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -548,7 +548,7 @@ class NetworkEndpointGroup extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined URL for the resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */
@@ -589,7 +589,7 @@ class NetworkEndpointGroup extends \Google\Protobuf\Internal\Message
     /**
      * Optional URL of the subnetwork to which all network endpoints in the NEG belong.
      *
-     * Generated from protobuf field <code>string subnetwork = 307827694;</code>
+     * Generated from protobuf field <code>string subnetwork = 39392238;</code>
      * @return string
      */
     public function getSubnetwork()
@@ -600,7 +600,7 @@ class NetworkEndpointGroup extends \Google\Protobuf\Internal\Message
     /**
      * Optional URL of the subnetwork to which all network endpoints in the NEG belong.
      *
-     * Generated from protobuf field <code>string subnetwork = 307827694;</code>
+     * Generated from protobuf field <code>string subnetwork = 39392238;</code>
      * @param string $var
      * @return $this
      */

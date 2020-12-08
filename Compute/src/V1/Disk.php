@@ -29,7 +29,7 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
     /**
@@ -38,7 +38,7 @@ class Disk extends \Google\Protobuf\Internal\Message
      * Customer-supplied encryption keys do not protect access to metadata of the disk.
      * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      */
     private $disk_encryption_key = null;
     /**
@@ -69,7 +69,7 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * Labels to apply to this disk. These can be later modified by the setLabels method.
      *
-     * Generated from protobuf field <code>map<string, string> labels = 500195327;</code>
+     * Generated from protobuf field <code>map<string, string> labels = 231759871;</code>
      */
     private $labels;
     /**
@@ -93,7 +93,7 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * A list of publicly visible licenses. Reserved for Google's use.
      *
-     * Generated from protobuf field <code>repeated string licenses = 337642578;</code>
+     * Generated from protobuf field <code>repeated string licenses = 69207122;</code>
      */
     private $licenses;
     /**
@@ -105,13 +105,13 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * Internal use only.
      *
-     * Generated from protobuf field <code>string options = 361137822;</code>
+     * Generated from protobuf field <code>string options = 92702366;</code>
      */
     private $options = '';
     /**
      * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
      *
-     * Generated from protobuf field <code>string physical_block_size_bytes = 420007943;</code>
+     * Generated from protobuf field <code>string physical_block_size_bytes = 151572487;</code>
      */
     private $physical_block_size_bytes = '';
     /**
@@ -135,14 +135,14 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined fully-qualified URL for this resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
      * Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to create an empty persistent disk.
      * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
      *
-     * Generated from protobuf field <code>string size_gb = 494929369;</code>
+     * Generated from protobuf field <code>string size_gb = 226493913;</code>
      */
     private $size_gb = '';
     /**
@@ -151,13 +151,13 @@ class Disk extends \Google\Protobuf\Internal\Message
      * - projects/project/zones/zone/disks/disk
      * - zones/zone/disks/disk
      *
-     * Generated from protobuf field <code>string source_disk = 451753793;</code>
+     * Generated from protobuf field <code>string source_disk = 183318337;</code>
      */
     private $source_disk = '';
     /**
      * [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
      *
-     * Generated from protobuf field <code>string source_disk_id = 454190809;</code>
+     * Generated from protobuf field <code>string source_disk_id = 185755353;</code>
      */
     private $source_disk_id = '';
     /**
@@ -177,7 +177,7 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;</code>
      */
     private $source_image_encryption_key = null;
     /**
@@ -198,7 +198,7 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;</code>
      */
     private $source_snapshot_encryption_key = null;
     /**
@@ -357,7 +357,7 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @return string
      */
     public function getDescription()
@@ -368,7 +368,7 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
-     * Generated from protobuf field <code>string description = 422937596;</code>
+     * Generated from protobuf field <code>string description = 154502140;</code>
      * @param string $var
      * @return $this
      */
@@ -386,7 +386,7 @@ class Disk extends \Google\Protobuf\Internal\Message
      * Customer-supplied encryption keys do not protect access to metadata of the disk.
      * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      * @return \Google\Cloud\Compute\V1\CustomerEncryptionKey
      */
     public function getDiskEncryptionKey()
@@ -410,7 +410,7 @@ class Disk extends \Google\Protobuf\Internal\Message
      * Customer-supplied encryption keys do not protect access to metadata of the disk.
      * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      * @param \Google\Cloud\Compute\V1\CustomerEncryptionKey $var
      * @return $this
      */
@@ -531,7 +531,7 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * Labels to apply to this disk. These can be later modified by the setLabels method.
      *
-     * Generated from protobuf field <code>map<string, string> labels = 500195327;</code>
+     * Generated from protobuf field <code>map<string, string> labels = 231759871;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getLabels()
@@ -542,7 +542,7 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * Labels to apply to this disk. These can be later modified by the setLabels method.
      *
-     * Generated from protobuf field <code>map<string, string> labels = 500195327;</code>
+     * Generated from protobuf field <code>map<string, string> labels = 231759871;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
@@ -635,7 +635,7 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * A list of publicly visible licenses. Reserved for Google's use.
      *
-     * Generated from protobuf field <code>repeated string licenses = 337642578;</code>
+     * Generated from protobuf field <code>repeated string licenses = 69207122;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getLicenses()
@@ -646,7 +646,7 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * A list of publicly visible licenses. Reserved for Google's use.
      *
-     * Generated from protobuf field <code>repeated string licenses = 337642578;</code>
+     * Generated from protobuf field <code>repeated string licenses = 69207122;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -687,7 +687,7 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * Internal use only.
      *
-     * Generated from protobuf field <code>string options = 361137822;</code>
+     * Generated from protobuf field <code>string options = 92702366;</code>
      * @return string
      */
     public function getOptions()
@@ -698,7 +698,7 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * Internal use only.
      *
-     * Generated from protobuf field <code>string options = 361137822;</code>
+     * Generated from protobuf field <code>string options = 92702366;</code>
      * @param string $var
      * @return $this
      */
@@ -713,7 +713,7 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
      *
-     * Generated from protobuf field <code>string physical_block_size_bytes = 420007943;</code>
+     * Generated from protobuf field <code>string physical_block_size_bytes = 151572487;</code>
      * @return string
      */
     public function getPhysicalBlockSizeBytes()
@@ -724,7 +724,7 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
      *
-     * Generated from protobuf field <code>string physical_block_size_bytes = 420007943;</code>
+     * Generated from protobuf field <code>string physical_block_size_bytes = 151572487;</code>
      * @param string $var
      * @return $this
      */
@@ -817,7 +817,7 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined fully-qualified URL for this resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @return string
      */
     public function getSelfLink()
@@ -828,7 +828,7 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] Server-defined fully-qualified URL for this resource.
      *
-     * Generated from protobuf field <code>string self_link = 456214797;</code>
+     * Generated from protobuf field <code>string self_link = 187779341;</code>
      * @param string $var
      * @return $this
      */
@@ -844,7 +844,7 @@ class Disk extends \Google\Protobuf\Internal\Message
      * Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to create an empty persistent disk.
      * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
      *
-     * Generated from protobuf field <code>string size_gb = 494929369;</code>
+     * Generated from protobuf field <code>string size_gb = 226493913;</code>
      * @return string
      */
     public function getSizeGb()
@@ -856,7 +856,7 @@ class Disk extends \Google\Protobuf\Internal\Message
      * Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to create an empty persistent disk.
      * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
      *
-     * Generated from protobuf field <code>string size_gb = 494929369;</code>
+     * Generated from protobuf field <code>string size_gb = 226493913;</code>
      * @param string $var
      * @return $this
      */
@@ -874,7 +874,7 @@ class Disk extends \Google\Protobuf\Internal\Message
      * - projects/project/zones/zone/disks/disk
      * - zones/zone/disks/disk
      *
-     * Generated from protobuf field <code>string source_disk = 451753793;</code>
+     * Generated from protobuf field <code>string source_disk = 183318337;</code>
      * @return string
      */
     public function getSourceDisk()
@@ -888,7 +888,7 @@ class Disk extends \Google\Protobuf\Internal\Message
      * - projects/project/zones/zone/disks/disk
      * - zones/zone/disks/disk
      *
-     * Generated from protobuf field <code>string source_disk = 451753793;</code>
+     * Generated from protobuf field <code>string source_disk = 183318337;</code>
      * @param string $var
      * @return $this
      */
@@ -903,7 +903,7 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
      *
-     * Generated from protobuf field <code>string source_disk_id = 454190809;</code>
+     * Generated from protobuf field <code>string source_disk_id = 185755353;</code>
      * @return string
      */
     public function getSourceDiskId()
@@ -914,7 +914,7 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
      *
-     * Generated from protobuf field <code>string source_disk_id = 454190809;</code>
+     * Generated from protobuf field <code>string source_disk_id = 185755353;</code>
      * @param string $var
      * @return $this
      */
@@ -971,7 +971,7 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;</code>
      * @return \Google\Cloud\Compute\V1\CustomerEncryptionKey
      */
     public function getSourceImageEncryptionKey()
@@ -992,7 +992,7 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;</code>
      * @param \Google\Cloud\Compute\V1\CustomerEncryptionKey $var
      * @return $this
      */
@@ -1065,7 +1065,7 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;</code>
      * @return \Google\Cloud\Compute\V1\CustomerEncryptionKey
      */
     public function getSourceSnapshotEncryptionKey()
@@ -1086,7 +1086,7 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
      *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;</code>
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;</code>
      * @param \Google\Cloud\Compute\V1\CustomerEncryptionKey $var
      * @return $this
      */

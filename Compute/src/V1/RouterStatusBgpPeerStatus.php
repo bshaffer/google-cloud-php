@@ -17,19 +17,19 @@ class RouterStatusBgpPeerStatus extends \Google\Protobuf\Internal\Message
     /**
      * Routes that were advertised to the remote BGP peer
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Route advertised_routes = 333393068;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Route advertised_routes = 64957612;</code>
      */
     private $advertised_routes;
     /**
      * IP address of the local BGP interface.
      *
-     * Generated from protobuf field <code>string ip_address = 406272220;</code>
+     * Generated from protobuf field <code>string ip_address = 137836764;</code>
      */
     private $ip_address = '';
     /**
      * URL of the VPN tunnel that this BGP peer controls.
      *
-     * Generated from protobuf field <code>string linked_vpn_tunnel = 352296953;</code>
+     * Generated from protobuf field <code>string linked_vpn_tunnel = 83861497;</code>
      */
     private $linked_vpn_tunnel = '';
     /**
@@ -111,7 +111,7 @@ class RouterStatusBgpPeerStatus extends \Google\Protobuf\Internal\Message
     /**
      * Routes that were advertised to the remote BGP peer
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Route advertised_routes = 333393068;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Route advertised_routes = 64957612;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getAdvertisedRoutes()
@@ -122,7 +122,7 @@ class RouterStatusBgpPeerStatus extends \Google\Protobuf\Internal\Message
     /**
      * Routes that were advertised to the remote BGP peer
      *
-     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Route advertised_routes = 333393068;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.Route advertised_routes = 64957612;</code>
      * @param \Google\Cloud\Compute\V1\Route[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -137,7 +137,7 @@ class RouterStatusBgpPeerStatus extends \Google\Protobuf\Internal\Message
     /**
      * IP address of the local BGP interface.
      *
-     * Generated from protobuf field <code>string ip_address = 406272220;</code>
+     * Generated from protobuf field <code>string ip_address = 137836764;</code>
      * @return string
      */
     public function getIpAddress()
@@ -148,7 +148,7 @@ class RouterStatusBgpPeerStatus extends \Google\Protobuf\Internal\Message
     /**
      * IP address of the local BGP interface.
      *
-     * Generated from protobuf field <code>string ip_address = 406272220;</code>
+     * Generated from protobuf field <code>string ip_address = 137836764;</code>
      * @param string $var
      * @return $this
      */
@@ -163,7 +163,7 @@ class RouterStatusBgpPeerStatus extends \Google\Protobuf\Internal\Message
     /**
      * URL of the VPN tunnel that this BGP peer controls.
      *
-     * Generated from protobuf field <code>string linked_vpn_tunnel = 352296953;</code>
+     * Generated from protobuf field <code>string linked_vpn_tunnel = 83861497;</code>
      * @return string
      */
     public function getLinkedVpnTunnel()
@@ -174,7 +174,7 @@ class RouterStatusBgpPeerStatus extends \Google\Protobuf\Internal\Message
     /**
      * URL of the VPN tunnel that this BGP peer controls.
      *
-     * Generated from protobuf field <code>string linked_vpn_tunnel = 352296953;</code>
+     * Generated from protobuf field <code>string linked_vpn_tunnel = 83861497;</code>
      * @param string $var
      * @return $this
      */

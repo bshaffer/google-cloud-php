@@ -349,7 +349,7 @@ class RegionTargetHttpProxiesGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $regionTargetHttpProxiesClient->list_($project, $region);
+     *     $response = $regionTargetHttpProxiesClient->list($project, $region);
      * } finally {
      *     $regionTargetHttpProxiesClient->close();
      * }
@@ -389,7 +389,7 @@ class RegionTargetHttpProxiesGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $region, array $optionalArgs = [])
+    public function list($project, $region, array $optionalArgs = [])
     {
         $request = new ListRegionTargetHttpProxiesRequest();
         $request->setProject($project);

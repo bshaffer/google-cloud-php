@@ -393,7 +393,7 @@ class LicensesGapicClient
      * $licensesClient = new LicensesClient();
      * try {
      *     $project = '';
-     *     $response = $licensesClient->list_($project);
+     *     $response = $licensesClient->list($project);
      * } finally {
      *     $licensesClient->close();
      * }
@@ -432,7 +432,7 @@ class LicensesGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, array $optionalArgs = [])
+    public function list($project, array $optionalArgs = [])
     {
         $request = new ListLicensesRequest();
         $request->setProject($project);

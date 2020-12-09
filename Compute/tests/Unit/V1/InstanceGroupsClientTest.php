@@ -640,7 +640,7 @@ class InstanceGroupsClientTest extends GeneratedTest
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
-        $response = $client->list_($project, $zone);
+        $response = $client->list($project, $zone);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -685,7 +685,7 @@ class InstanceGroupsClientTest extends GeneratedTest
         $zone = 'zone3744684';
 
         try {
-            $client->list_($project, $zone);
+            $client->list($project, $zone);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

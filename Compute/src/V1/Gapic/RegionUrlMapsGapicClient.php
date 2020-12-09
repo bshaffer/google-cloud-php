@@ -344,7 +344,7 @@ class RegionUrlMapsGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $regionUrlMapsClient->list_($project, $region);
+     *     $response = $regionUrlMapsClient->list($project, $region);
      * } finally {
      *     $regionUrlMapsClient->close();
      * }
@@ -384,7 +384,7 @@ class RegionUrlMapsGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $region, array $optionalArgs = [])
+    public function list($project, $region, array $optionalArgs = [])
     {
         $request = new ListRegionUrlMapsRequest();
         $request->setProject($project);

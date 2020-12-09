@@ -349,7 +349,7 @@ class RegionAutoscalersGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $regionAutoscalersClient->list_($project, $region);
+     *     $response = $regionAutoscalersClient->list($project, $region);
      * } finally {
      *     $regionAutoscalersClient->close();
      * }
@@ -389,7 +389,7 @@ class RegionAutoscalersGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $region, array $optionalArgs = [])
+    public function list($project, $region, array $optionalArgs = [])
     {
         $request = new ListRegionAutoscalersRequest();
         $request->setProject($project);

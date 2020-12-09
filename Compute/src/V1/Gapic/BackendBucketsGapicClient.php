@@ -456,7 +456,7 @@ class BackendBucketsGapicClient
      * $backendBucketsClient = new BackendBucketsClient();
      * try {
      *     $project = '';
-     *     $response = $backendBucketsClient->list_($project);
+     *     $response = $backendBucketsClient->list($project);
      * } finally {
      *     $backendBucketsClient->close();
      * }
@@ -495,7 +495,7 @@ class BackendBucketsGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, array $optionalArgs = [])
+    public function list($project, array $optionalArgs = [])
     {
         $request = new ListBackendBucketsRequest();
         $request->setProject($project);

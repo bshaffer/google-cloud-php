@@ -426,7 +426,7 @@ class AutoscalersGapicClient
      * try {
      *     $project = '';
      *     $zone = '';
-     *     $response = $autoscalersClient->list_($project, $zone);
+     *     $response = $autoscalersClient->list($project, $zone);
      * } finally {
      *     $autoscalersClient->close();
      * }
@@ -466,7 +466,7 @@ class AutoscalersGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $zone, array $optionalArgs = [])
+    public function list($project, $zone, array $optionalArgs = [])
     {
         $request = new ListAutoscalersRequest();
         $request->setProject($project);

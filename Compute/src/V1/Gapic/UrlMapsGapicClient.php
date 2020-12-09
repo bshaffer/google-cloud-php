@@ -479,7 +479,7 @@ class UrlMapsGapicClient
      * $urlMapsClient = new UrlMapsClient();
      * try {
      *     $project = '';
-     *     $response = $urlMapsClient->list_($project);
+     *     $response = $urlMapsClient->list($project);
      * } finally {
      *     $urlMapsClient->close();
      * }
@@ -518,7 +518,7 @@ class UrlMapsGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, array $optionalArgs = [])
+    public function list($project, array $optionalArgs = [])
     {
         $request = new ListUrlMapsRequest();
         $request->setProject($project);

@@ -347,7 +347,7 @@ class RegionNetworkEndpointGroupsGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $regionNetworkEndpointGroupsClient->list_($project, $region);
+     *     $response = $regionNetworkEndpointGroupsClient->list($project, $region);
      * } finally {
      *     $regionNetworkEndpointGroupsClient->close();
      * }
@@ -387,7 +387,7 @@ class RegionNetworkEndpointGroupsGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $region, array $optionalArgs = [])
+    public function list($project, $region, array $optionalArgs = [])
     {
         $request = new ListRegionNetworkEndpointGroupsRequest();
         $request->setProject($project);

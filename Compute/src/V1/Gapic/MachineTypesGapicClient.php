@@ -306,7 +306,7 @@ class MachineTypesGapicClient
      * try {
      *     $project = '';
      *     $zone = '';
-     *     $response = $machineTypesClient->list_($project, $zone);
+     *     $response = $machineTypesClient->list($project, $zone);
      * } finally {
      *     $machineTypesClient->close();
      * }
@@ -346,7 +346,7 @@ class MachineTypesGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $zone, array $optionalArgs = [])
+    public function list($project, $zone, array $optionalArgs = [])
     {
         $request = new ListMachineTypesRequest();
         $request->setProject($project);

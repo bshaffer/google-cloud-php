@@ -366,7 +366,7 @@ class RegionCommitmentsGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $regionCommitmentsClient->list_($project, $region);
+     *     $response = $regionCommitmentsClient->list($project, $region);
      * } finally {
      *     $regionCommitmentsClient->close();
      * }
@@ -406,7 +406,7 @@ class RegionCommitmentsGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $region, array $optionalArgs = [])
+    public function list($project, $region, array $optionalArgs = [])
     {
         $request = new ListRegionCommitmentsRequest();
         $request->setProject($project);

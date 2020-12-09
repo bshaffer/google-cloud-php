@@ -552,7 +552,7 @@ class SubnetworksGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $subnetworksClient->list_($project, $region);
+     *     $response = $subnetworksClient->list($project, $region);
      * } finally {
      *     $subnetworksClient->close();
      * }
@@ -592,7 +592,7 @@ class SubnetworksGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $region, array $optionalArgs = [])
+    public function list($project, $region, array $optionalArgs = [])
     {
         $request = new ListSubnetworksRequest();
         $request->setProject($project);

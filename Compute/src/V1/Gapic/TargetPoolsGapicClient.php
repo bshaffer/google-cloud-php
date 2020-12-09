@@ -613,7 +613,7 @@ class TargetPoolsGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $targetPoolsClient->list_($project, $region);
+     *     $response = $targetPoolsClient->list($project, $region);
      * } finally {
      *     $targetPoolsClient->close();
      * }
@@ -653,7 +653,7 @@ class TargetPoolsGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $region, array $optionalArgs = [])
+    public function list($project, $region, array $optionalArgs = [])
     {
         $request = new ListTargetPoolsRequest();
         $request->setProject($project);

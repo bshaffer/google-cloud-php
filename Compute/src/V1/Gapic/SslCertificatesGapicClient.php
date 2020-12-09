@@ -414,7 +414,7 @@ class SslCertificatesGapicClient
      * $sslCertificatesClient = new SslCertificatesClient();
      * try {
      *     $project = '';
-     *     $response = $sslCertificatesClient->list_($project);
+     *     $response = $sslCertificatesClient->list($project);
      * } finally {
      *     $sslCertificatesClient->close();
      * }
@@ -453,7 +453,7 @@ class SslCertificatesGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, array $optionalArgs = [])
+    public function list($project, array $optionalArgs = [])
     {
         $request = new ListSslCertificatesRequest();
         $request->setProject($project);

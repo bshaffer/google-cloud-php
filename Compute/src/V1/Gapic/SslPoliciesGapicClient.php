@@ -339,7 +339,7 @@ class SslPoliciesGapicClient
      * $sslPoliciesClient = new SslPoliciesClient();
      * try {
      *     $project = '';
-     *     $response = $sslPoliciesClient->list_($project);
+     *     $response = $sslPoliciesClient->list($project);
      * } finally {
      *     $sslPoliciesClient->close();
      * }
@@ -378,7 +378,7 @@ class SslPoliciesGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, array $optionalArgs = [])
+    public function list($project, array $optionalArgs = [])
     {
         $request = new ListSslPoliciesRequest();
         $request->setProject($project);

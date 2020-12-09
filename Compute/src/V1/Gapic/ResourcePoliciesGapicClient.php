@@ -484,7 +484,7 @@ class ResourcePoliciesGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $resourcePoliciesClient->list_($project, $region);
+     *     $response = $resourcePoliciesClient->list($project, $region);
      * } finally {
      *     $resourcePoliciesClient->close();
      * }
@@ -524,7 +524,7 @@ class ResourcePoliciesGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $region, array $optionalArgs = [])
+    public function list($project, $region, array $optionalArgs = [])
     {
         $request = new ListResourcePoliciesRequest();
         $request->setProject($project);

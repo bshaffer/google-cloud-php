@@ -308,7 +308,7 @@ class AcceleratorTypesGapicClient
      * try {
      *     $project = '';
      *     $zone = '';
-     *     $response = $acceleratorTypesClient->list_($project, $zone);
+     *     $response = $acceleratorTypesClient->list($project, $zone);
      * } finally {
      *     $acceleratorTypesClient->close();
      * }
@@ -348,7 +348,7 @@ class AcceleratorTypesGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $zone, array $optionalArgs = [])
+    public function list($project, $zone, array $optionalArgs = [])
     {
         $request = new ListAcceleratorTypesRequest();
         $request->setProject($project);

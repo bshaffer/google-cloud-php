@@ -479,7 +479,7 @@ class VpnGatewaysGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $vpnGatewaysClient->list_($project, $region);
+     *     $response = $vpnGatewaysClient->list($project, $region);
      * } finally {
      *     $vpnGatewaysClient->close();
      * }
@@ -519,7 +519,7 @@ class VpnGatewaysGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $region, array $optionalArgs = [])
+    public function list($project, $region, array $optionalArgs = [])
     {
         $request = new ListVpnGatewaysRequest();
         $request->setProject($project);

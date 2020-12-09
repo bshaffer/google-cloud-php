@@ -486,7 +486,7 @@ class ReservationsGapicClient
      * try {
      *     $project = '';
      *     $zone = '';
-     *     $response = $reservationsClient->list_($project, $zone);
+     *     $response = $reservationsClient->list($project, $zone);
      * } finally {
      *     $reservationsClient->close();
      * }
@@ -526,7 +526,7 @@ class ReservationsGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $zone, array $optionalArgs = [])
+    public function list($project, $zone, array $optionalArgs = [])
     {
         $request = new ListReservationsRequest();
         $request->setProject($project);

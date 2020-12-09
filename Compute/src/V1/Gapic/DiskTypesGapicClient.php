@@ -306,7 +306,7 @@ class DiskTypesGapicClient
      * try {
      *     $project = '';
      *     $zone = '';
-     *     $response = $diskTypesClient->list_($project, $zone);
+     *     $response = $diskTypesClient->list($project, $zone);
      * } finally {
      *     $diskTypesClient->close();
      * }
@@ -346,7 +346,7 @@ class DiskTypesGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $zone, array $optionalArgs = [])
+    public function list($project, $zone, array $optionalArgs = [])
     {
         $request = new ListDiskTypesRequest();
         $request->setProject($project);

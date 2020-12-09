@@ -424,7 +424,7 @@ class AddressesGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $addressesClient->list_($project, $region);
+     *     $response = $addressesClient->list($project, $region);
      * } finally {
      *     $addressesClient->close();
      * }
@@ -464,7 +464,7 @@ class AddressesGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $region, array $optionalArgs = [])
+    public function list($project, $region, array $optionalArgs = [])
     {
         $request = new ListAddressesRequest();
         $request->setProject($project);

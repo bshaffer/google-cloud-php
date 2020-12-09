@@ -416,7 +416,7 @@ class HealthChecksGapicClient
      * $healthChecksClient = new HealthChecksClient();
      * try {
      *     $project = '';
-     *     $response = $healthChecksClient->list_($project);
+     *     $response = $healthChecksClient->list($project);
      * } finally {
      *     $healthChecksClient->close();
      * }
@@ -455,7 +455,7 @@ class HealthChecksGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, array $optionalArgs = [])
+    public function list($project, array $optionalArgs = [])
     {
         $request = new ListHealthChecksRequest();
         $request->setProject($project);

@@ -427,7 +427,7 @@ class ForwardingRulesGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $forwardingRulesClient->list_($project, $region);
+     *     $response = $forwardingRulesClient->list($project, $region);
      * } finally {
      *     $forwardingRulesClient->close();
      * }
@@ -467,7 +467,7 @@ class ForwardingRulesGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $region, array $optionalArgs = [])
+    public function list($project, $region, array $optionalArgs = [])
     {
         $request = new ListForwardingRulesRequest();
         $request->setProject($project);

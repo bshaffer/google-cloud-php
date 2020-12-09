@@ -344,7 +344,7 @@ class TargetSslProxiesGapicClient
      * $targetSslProxiesClient = new TargetSslProxiesClient();
      * try {
      *     $project = '';
-     *     $response = $targetSslProxiesClient->list_($project);
+     *     $response = $targetSslProxiesClient->list($project);
      * } finally {
      *     $targetSslProxiesClient->close();
      * }
@@ -383,7 +383,7 @@ class TargetSslProxiesGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, array $optionalArgs = [])
+    public function list($project, array $optionalArgs = [])
     {
         $request = new ListTargetSslProxiesRequest();
         $request->setProject($project);

@@ -340,7 +340,7 @@ class TargetTcpProxiesGapicClient
      * $targetTcpProxiesClient = new TargetTcpProxiesClient();
      * try {
      *     $project = '';
-     *     $response = $targetTcpProxiesClient->list_($project);
+     *     $response = $targetTcpProxiesClient->list($project);
      * } finally {
      *     $targetTcpProxiesClient->close();
      * }
@@ -379,7 +379,7 @@ class TargetTcpProxiesGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, array $optionalArgs = [])
+    public function list($project, array $optionalArgs = [])
     {
         $request = new ListTargetTcpProxiesRequest();
         $request->setProject($project);

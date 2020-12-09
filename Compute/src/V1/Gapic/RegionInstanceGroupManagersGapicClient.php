@@ -672,7 +672,7 @@ class RegionInstanceGroupManagersGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $regionInstanceGroupManagersClient->list_($project, $region);
+     *     $response = $regionInstanceGroupManagersClient->list($project, $region);
      * } finally {
      *     $regionInstanceGroupManagersClient->close();
      * }
@@ -712,7 +712,7 @@ class RegionInstanceGroupManagersGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $region, array $optionalArgs = [])
+    public function list($project, $region, array $optionalArgs = [])
     {
         $request = new ListRegionInstanceGroupManagersRequest();
         $request->setProject($project);

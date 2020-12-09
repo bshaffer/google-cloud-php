@@ -428,7 +428,7 @@ class PacketMirroringsGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $packetMirroringsClient->list_($project, $region);
+     *     $response = $packetMirroringsClient->list($project, $region);
      * } finally {
      *     $packetMirroringsClient->close();
      * }
@@ -468,7 +468,7 @@ class PacketMirroringsGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $region, array $optionalArgs = [])
+    public function list($project, $region, array $optionalArgs = [])
     {
         $request = new ListPacketMirroringsRequest();
         $request->setProject($project);

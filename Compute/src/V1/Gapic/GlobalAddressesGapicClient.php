@@ -336,7 +336,7 @@ class GlobalAddressesGapicClient
      * $globalAddressesClient = new GlobalAddressesClient();
      * try {
      *     $project = '';
-     *     $response = $globalAddressesClient->list_($project);
+     *     $response = $globalAddressesClient->list($project);
      * } finally {
      *     $globalAddressesClient->close();
      * }
@@ -375,7 +375,7 @@ class GlobalAddressesGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, array $optionalArgs = [])
+    public function list($project, array $optionalArgs = [])
     {
         $request = new ListGlobalAddressesRequest();
         $request->setProject($project);

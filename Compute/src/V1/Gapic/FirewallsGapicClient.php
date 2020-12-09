@@ -338,7 +338,7 @@ class FirewallsGapicClient
      * $firewallsClient = new FirewallsClient();
      * try {
      *     $project = '';
-     *     $response = $firewallsClient->list_($project);
+     *     $response = $firewallsClient->list($project);
      * } finally {
      *     $firewallsClient->close();
      * }
@@ -377,7 +377,7 @@ class FirewallsGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, array $optionalArgs = [])
+    public function list($project, array $optionalArgs = [])
     {
         $request = new ListFirewallsRequest();
         $request->setProject($project);

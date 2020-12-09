@@ -337,7 +337,7 @@ class TargetGrpcProxiesGapicClient
      * $targetGrpcProxiesClient = new TargetGrpcProxiesClient();
      * try {
      *     $project = '';
-     *     $response = $targetGrpcProxiesClient->list_($project);
+     *     $response = $targetGrpcProxiesClient->list($project);
      * } finally {
      *     $targetGrpcProxiesClient->close();
      * }
@@ -376,7 +376,7 @@ class TargetGrpcProxiesGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, array $optionalArgs = [])
+    public function list($project, array $optionalArgs = [])
     {
         $request = new ListTargetGrpcProxiesRequest();
         $request->setProject($project);

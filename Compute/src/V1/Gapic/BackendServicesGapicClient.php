@@ -593,7 +593,7 @@ class BackendServicesGapicClient
      * $backendServicesClient = new BackendServicesClient();
      * try {
      *     $project = '';
-     *     $response = $backendServicesClient->list_($project);
+     *     $response = $backendServicesClient->list($project);
      * } finally {
      *     $backendServicesClient->close();
      * }
@@ -632,7 +632,7 @@ class BackendServicesGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, array $optionalArgs = [])
+    public function list($project, array $optionalArgs = [])
     {
         $request = new ListBackendServicesRequest();
         $request->setProject($project);

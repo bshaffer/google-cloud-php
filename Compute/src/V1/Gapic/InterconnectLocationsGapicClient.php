@@ -224,7 +224,7 @@ class InterconnectLocationsGapicClient
      * $interconnectLocationsClient = new InterconnectLocationsClient();
      * try {
      *     $project = '';
-     *     $response = $interconnectLocationsClient->list_($project);
+     *     $response = $interconnectLocationsClient->list($project);
      * } finally {
      *     $interconnectLocationsClient->close();
      * }
@@ -263,7 +263,7 @@ class InterconnectLocationsGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, array $optionalArgs = [])
+    public function list($project, array $optionalArgs = [])
     {
         $request = new ListInterconnectLocationsRequest();
         $request->setProject($project);

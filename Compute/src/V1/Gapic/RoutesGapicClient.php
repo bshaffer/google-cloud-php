@@ -336,7 +336,7 @@ class RoutesGapicClient
      * $routesClient = new RoutesClient();
      * try {
      *     $project = '';
-     *     $response = $routesClient->list_($project);
+     *     $response = $routesClient->list($project);
      * } finally {
      *     $routesClient->close();
      * }
@@ -375,7 +375,7 @@ class RoutesGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, array $optionalArgs = [])
+    public function list($project, array $optionalArgs = [])
     {
         $request = new ListRoutesRequest();
         $request->setProject($project);

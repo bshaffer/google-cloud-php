@@ -544,7 +544,7 @@ class RegionDisksGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $regionDisksClient->list_($project, $region);
+     *     $response = $regionDisksClient->list($project, $region);
      * } finally {
      *     $regionDisksClient->close();
      * }
@@ -584,7 +584,7 @@ class RegionDisksGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $region, array $optionalArgs = [])
+    public function list($project, $region, array $optionalArgs = [])
     {
         $request = new ListRegionDisksRequest();
         $request->setProject($project);

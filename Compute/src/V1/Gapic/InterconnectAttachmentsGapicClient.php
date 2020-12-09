@@ -430,7 +430,7 @@ class InterconnectAttachmentsGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $interconnectAttachmentsClient->list_($project, $region);
+     *     $response = $interconnectAttachmentsClient->list($project, $region);
      * } finally {
      *     $interconnectAttachmentsClient->close();
      * }
@@ -470,7 +470,7 @@ class InterconnectAttachmentsGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $region, array $optionalArgs = [])
+    public function list($project, $region, array $optionalArgs = [])
     {
         $request = new ListInterconnectAttachmentsRequest();
         $request->setProject($project);

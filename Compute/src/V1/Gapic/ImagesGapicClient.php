@@ -508,7 +508,7 @@ class ImagesGapicClient
      * $imagesClient = new ImagesClient();
      * try {
      *     $project = '';
-     *     $response = $imagesClient->list_($project);
+     *     $response = $imagesClient->list($project);
      * } finally {
      *     $imagesClient->close();
      * }
@@ -547,7 +547,7 @@ class ImagesGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, array $optionalArgs = [])
+    public function list($project, array $optionalArgs = [])
     {
         $request = new ListImagesRequest();
         $request->setProject($project);

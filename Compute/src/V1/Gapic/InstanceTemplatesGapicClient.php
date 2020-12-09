@@ -393,7 +393,7 @@ class InstanceTemplatesGapicClient
      * $instanceTemplatesClient = new InstanceTemplatesClient();
      * try {
      *     $project = '';
-     *     $response = $instanceTemplatesClient->list_($project);
+     *     $response = $instanceTemplatesClient->list($project);
      * } finally {
      *     $instanceTemplatesClient->close();
      * }
@@ -432,7 +432,7 @@ class InstanceTemplatesGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, array $optionalArgs = [])
+    public function list($project, array $optionalArgs = [])
     {
         $request = new ListInstanceTemplatesRequest();
         $request->setProject($project);

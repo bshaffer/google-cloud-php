@@ -496,7 +496,7 @@ class TargetHttpsProxiesClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
 
-        $response = $client->list_($project);
+        $response = $client->list($project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -537,7 +537,7 @@ class TargetHttpsProxiesClientTest extends GeneratedTest
         $project = 'project-309310695';
 
         try {
-            $client->list_($project);
+            $client->list($project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

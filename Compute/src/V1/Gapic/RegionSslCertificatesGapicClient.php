@@ -347,7 +347,7 @@ class RegionSslCertificatesGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $regionSslCertificatesClient->list_($project, $region);
+     *     $response = $regionSslCertificatesClient->list($project, $region);
      * } finally {
      *     $regionSslCertificatesClient->close();
      * }
@@ -387,7 +387,7 @@ class RegionSslCertificatesGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $region, array $optionalArgs = [])
+    public function list($project, $region, array $optionalArgs = [])
     {
         $request = new ListRegionSslCertificatesRequest();
         $request->setProject($project);

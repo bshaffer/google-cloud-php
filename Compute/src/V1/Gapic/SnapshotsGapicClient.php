@@ -341,7 +341,7 @@ class SnapshotsGapicClient
      * $snapshotsClient = new SnapshotsClient();
      * try {
      *     $project = '';
-     *     $response = $snapshotsClient->list_($project);
+     *     $response = $snapshotsClient->list($project);
      * } finally {
      *     $snapshotsClient->close();
      * }
@@ -380,7 +380,7 @@ class SnapshotsGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, array $optionalArgs = [])
+    public function list($project, array $optionalArgs = [])
     {
         $request = new ListSnapshotsRequest();
         $request->setProject($project);

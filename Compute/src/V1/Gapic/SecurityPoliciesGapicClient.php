@@ -443,7 +443,7 @@ class SecurityPoliciesGapicClient
      * $securityPoliciesClient = new SecurityPoliciesClient();
      * try {
      *     $project = '';
-     *     $response = $securityPoliciesClient->list_($project);
+     *     $response = $securityPoliciesClient->list($project);
      * } finally {
      *     $securityPoliciesClient->close();
      * }
@@ -482,7 +482,7 @@ class SecurityPoliciesGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, array $optionalArgs = [])
+    public function list($project, array $optionalArgs = [])
     {
         $request = new ListSecurityPoliciesRequest();
         $request->setProject($project);

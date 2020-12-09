@@ -350,7 +350,7 @@ class GlobalOperationsGapicClient
      * $globalOperationsClient = new GlobalOperationsClient();
      * try {
      *     $project = '';
-     *     $response = $globalOperationsClient->list_($project);
+     *     $response = $globalOperationsClient->list($project);
      * } finally {
      *     $globalOperationsClient->close();
      * }
@@ -389,7 +389,7 @@ class GlobalOperationsGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, array $optionalArgs = [])
+    public function list($project, array $optionalArgs = [])
     {
         $request = new ListGlobalOperationsRequest();
         $request->setProject($project);

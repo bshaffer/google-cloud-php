@@ -280,7 +280,7 @@ class ZoneOperationsGapicClient
      * try {
      *     $project = '';
      *     $zone = '';
-     *     $response = $zoneOperationsClient->list_($project, $zone);
+     *     $response = $zoneOperationsClient->list($project, $zone);
      * } finally {
      *     $zoneOperationsClient->close();
      * }
@@ -320,7 +320,7 @@ class ZoneOperationsGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $zone, array $optionalArgs = [])
+    public function list($project, $zone, array $optionalArgs = [])
     {
         $request = new ListZoneOperationsRequest();
         $request->setProject($project);

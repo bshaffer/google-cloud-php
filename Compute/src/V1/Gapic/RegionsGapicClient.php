@@ -224,7 +224,7 @@ class RegionsGapicClient
      * $regionsClient = new RegionsClient();
      * try {
      *     $project = '';
-     *     $response = $regionsClient->list_($project);
+     *     $response = $regionsClient->list($project);
      * } finally {
      *     $regionsClient->close();
      * }
@@ -263,7 +263,7 @@ class RegionsGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, array $optionalArgs = [])
+    public function list($project, array $optionalArgs = [])
     {
         $request = new ListRegionsRequest();
         $request->setProject($project);

@@ -620,7 +620,7 @@ class NodeGroupsGapicClient
      * try {
      *     $project = '';
      *     $zone = '';
-     *     $response = $nodeGroupsClient->list_($project, $zone);
+     *     $response = $nodeGroupsClient->list($project, $zone);
      * } finally {
      *     $nodeGroupsClient->close();
      * }
@@ -660,7 +660,7 @@ class NodeGroupsGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $zone, array $optionalArgs = [])
+    public function list($project, $zone, array $optionalArgs = [])
     {
         $request = new ListNodeGroupsRequest();
         $request->setProject($project);

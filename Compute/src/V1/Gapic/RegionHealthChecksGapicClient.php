@@ -349,7 +349,7 @@ class RegionHealthChecksGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $regionHealthChecksClient->list_($project, $region);
+     *     $response = $regionHealthChecksClient->list($project, $region);
      * } finally {
      *     $regionHealthChecksClient->close();
      * }
@@ -389,7 +389,7 @@ class RegionHealthChecksGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $region, array $optionalArgs = [])
+    public function list($project, $region, array $optionalArgs = [])
     {
         $request = new ListRegionHealthChecksRequest();
         $request->setProject($project);

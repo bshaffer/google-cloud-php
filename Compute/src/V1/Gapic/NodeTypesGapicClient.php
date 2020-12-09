@@ -306,7 +306,7 @@ class NodeTypesGapicClient
      * try {
      *     $project = '';
      *     $zone = '';
-     *     $response = $nodeTypesClient->list_($project, $zone);
+     *     $response = $nodeTypesClient->list($project, $zone);
      * } finally {
      *     $nodeTypesClient->close();
      * }
@@ -346,7 +346,7 @@ class NodeTypesGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $zone, array $optionalArgs = [])
+    public function list($project, $zone, array $optionalArgs = [])
     {
         $request = new ListNodeTypesRequest();
         $request->setProject($project);

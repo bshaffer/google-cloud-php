@@ -416,7 +416,7 @@ class TargetHttpProxiesGapicClient
      * $targetHttpProxiesClient = new TargetHttpProxiesClient();
      * try {
      *     $project = '';
-     *     $response = $targetHttpProxiesClient->list_($project);
+     *     $response = $targetHttpProxiesClient->list($project);
      * } finally {
      *     $targetHttpProxiesClient->close();
      * }
@@ -455,7 +455,7 @@ class TargetHttpProxiesGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, array $optionalArgs = [])
+    public function list($project, array $optionalArgs = [])
     {
         $request = new ListTargetHttpProxiesRequest();
         $request->setProject($project);

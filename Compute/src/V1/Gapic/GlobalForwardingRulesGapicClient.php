@@ -339,7 +339,7 @@ class GlobalForwardingRulesGapicClient
      * $globalForwardingRulesClient = new GlobalForwardingRulesClient();
      * try {
      *     $project = '';
-     *     $response = $globalForwardingRulesClient->list_($project);
+     *     $response = $globalForwardingRulesClient->list($project);
      * } finally {
      *     $globalForwardingRulesClient->close();
      * }
@@ -378,7 +378,7 @@ class GlobalForwardingRulesGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, array $optionalArgs = [])
+    public function list($project, array $optionalArgs = [])
     {
         $request = new ListGlobalForwardingRulesRequest();
         $request->setProject($project);

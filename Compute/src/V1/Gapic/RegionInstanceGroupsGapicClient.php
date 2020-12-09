@@ -235,7 +235,7 @@ class RegionInstanceGroupsGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $regionInstanceGroupsClient->list_($project, $region);
+     *     $response = $regionInstanceGroupsClient->list($project, $region);
      * } finally {
      *     $regionInstanceGroupsClient->close();
      * }
@@ -275,7 +275,7 @@ class RegionInstanceGroupsGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $region, array $optionalArgs = [])
+    public function list($project, $region, array $optionalArgs = [])
     {
         $request = new ListRegionInstanceGroupsRequest();
         $request->setProject($project);

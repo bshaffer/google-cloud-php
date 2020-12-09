@@ -405,7 +405,7 @@ class NetworksGapicClient
      * $networksClient = new NetworksClient();
      * try {
      *     $project = '';
-     *     $response = $networksClient->list_($project);
+     *     $response = $networksClient->list($project);
      * } finally {
      *     $networksClient->close();
      * }
@@ -444,7 +444,7 @@ class NetworksGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, array $optionalArgs = [])
+    public function list($project, array $optionalArgs = [])
     {
         $request = new ListNetworksRequest();
         $request->setProject($project);

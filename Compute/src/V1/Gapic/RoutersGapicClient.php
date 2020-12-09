@@ -558,7 +558,7 @@ class RoutersGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $routersClient->list_($project, $region);
+     *     $response = $routersClient->list($project, $region);
      * } finally {
      *     $routersClient->close();
      * }
@@ -598,7 +598,7 @@ class RoutersGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_($project, $region, array $optionalArgs = [])
+    public function list($project, $region, array $optionalArgs = [])
     {
         $request = new ListRoutersRequest();
         $request->setProject($project);

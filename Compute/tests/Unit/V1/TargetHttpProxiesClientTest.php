@@ -28,7 +28,6 @@ use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
 use Google\Cloud\Compute\V1\Operation;
-use Google\Cloud\Compute\V1\TargetHttpProxiesScopedList;
 use Google\Cloud\Compute\V1\TargetHttpProxy;
 use Google\Cloud\Compute\V1\TargetHttpProxyAggregatedList;
 use Google\Cloud\Compute\V1\TargetHttpProxyList;
@@ -85,27 +84,20 @@ class TargetHttpProxiesClientTest extends GeneratedTest
         // Mock response
         $id = 'id3355';
         $kind = 'kind3292052';
-        $nextPageToken = '';
+        $nextPageToken = 'nextPageToken-1530815211';
         $selfLink = 'selfLink-1691268851';
-        $itemsItem = new TargetHttpProxiesScopedList();
-        $items = ['items' => $itemsItem];
         $expectedResponse = new TargetHttpProxyAggregatedList();
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
         $expectedResponse->setNextPageToken($nextPageToken);
         $expectedResponse->setSelfLink($selfLink);
-        $expectedResponse->setItems($items);
         $transport->addResponse($expectedResponse);
 
         // Mock request
         $project = 'project-309310695';
 
         $response = $client->aggregatedList($project);
-        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
-        $resources = iterator_to_array($response->iterateAllElements());
-        $this->assertSame(1, count($resources));
-        $this->assertEquals($expectedResponse->getItems()->getIterator()->current(), $resources[0]);
-
+        $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
@@ -115,6 +107,7 @@ class TargetHttpProxiesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
+
         $this->assertTrue($transport->isExhausted());
     }
 

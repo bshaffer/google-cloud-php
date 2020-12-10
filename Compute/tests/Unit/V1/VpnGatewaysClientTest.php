@@ -33,7 +33,6 @@ use Google\Cloud\Compute\V1\VpnGateway;
 use Google\Cloud\Compute\V1\VpnGatewayAggregatedList;
 use Google\Cloud\Compute\V1\VpnGatewayList;
 use Google\Cloud\Compute\V1\VpnGatewaysGetStatusResponse;
-use Google\Cloud\Compute\V1\VpnGatewaysScopedList;
 use Google\Protobuf\Any;
 use Google\Rpc\Code;
 use stdClass;
@@ -87,27 +86,20 @@ class VpnGatewaysClientTest extends GeneratedTest
         // Mock response
         $id = 'id3355';
         $kind = 'kind3292052';
-        $nextPageToken = '';
+        $nextPageToken = 'nextPageToken-1530815211';
         $selfLink = 'selfLink-1691268851';
-        $itemsItem = new VpnGatewaysScopedList();
-        $items = ['items' => $itemsItem];
         $expectedResponse = new VpnGatewayAggregatedList();
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
         $expectedResponse->setNextPageToken($nextPageToken);
         $expectedResponse->setSelfLink($selfLink);
-        $expectedResponse->setItems($items);
         $transport->addResponse($expectedResponse);
 
         // Mock request
         $project = 'project-309310695';
 
         $response = $client->aggregatedList($project);
-        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
-        $resources = iterator_to_array($response->iterateAllElements());
-        $this->assertSame(1, count($resources));
-        $this->assertEquals($expectedResponse->getItems()->getIterator()->current(), $resources[0]);
-
+        $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
@@ -117,6 +109,7 @@ class VpnGatewaysClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
+
         $this->assertTrue($transport->isExhausted());
     }
 

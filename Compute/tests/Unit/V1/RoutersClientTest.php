@@ -33,7 +33,6 @@ use Google\Cloud\Compute\V1\RouterAggregatedList;
 use Google\Cloud\Compute\V1\RouterList;
 use Google\Cloud\Compute\V1\RouterStatusResponse;
 use Google\Cloud\Compute\V1\RoutersPreviewResponse;
-use Google\Cloud\Compute\V1\RoutersScopedList;
 use Google\Cloud\Compute\V1\VmEndpointNatMappings;
 use Google\Cloud\Compute\V1\VmEndpointNatMappingsList;
 use Google\Protobuf\Any;
@@ -89,27 +88,20 @@ class RoutersClientTest extends GeneratedTest
         // Mock response
         $id = 'id3355';
         $kind = 'kind3292052';
-        $nextPageToken = '';
+        $nextPageToken = 'nextPageToken-1530815211';
         $selfLink = 'selfLink-1691268851';
-        $itemsItem = new RoutersScopedList();
-        $items = ['items' => $itemsItem];
         $expectedResponse = new RouterAggregatedList();
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
         $expectedResponse->setNextPageToken($nextPageToken);
         $expectedResponse->setSelfLink($selfLink);
-        $expectedResponse->setItems($items);
         $transport->addResponse($expectedResponse);
 
         // Mock request
         $project = 'project-309310695';
 
         $response = $client->aggregatedList($project);
-        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
-        $resources = iterator_to_array($response->iterateAllElements());
-        $this->assertSame(1, count($resources));
-        $this->assertEquals($expectedResponse->getItems()->getIterator()->current(), $resources[0]);
-
+        $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
@@ -119,6 +111,7 @@ class RoutersClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
+
         $this->assertTrue($transport->isExhausted());
     }
 

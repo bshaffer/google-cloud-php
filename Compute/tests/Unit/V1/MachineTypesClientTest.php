@@ -103,7 +103,7 @@ class MachineTypesClientTest extends GeneratedTest
         $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
         $resources = iterator_to_array($response->iterateAllElements());
         $this->assertSame(1, count($resources));
-        $this->assertEquals($expectedResponse->getItems()[0], $resources[0]);
+        $this->assertEquals($expectedResponse->getItems()->getIterator()->current(), $resources[0]);
 
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));

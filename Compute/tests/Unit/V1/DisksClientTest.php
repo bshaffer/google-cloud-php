@@ -30,6 +30,7 @@ use Google\ApiCore\Testing\MockTransport;
 use Google\Cloud\Compute\V1\Disk;
 use Google\Cloud\Compute\V1\DiskAggregatedList;
 use Google\Cloud\Compute\V1\DiskList;
+use Google\Cloud\Compute\V1\DisksScopedList;
 use Google\Cloud\Compute\V1\Operation;
 use Google\Cloud\Compute\V1\Policy;
 use Google\Cloud\Compute\V1\TestPermissionsResponse;
@@ -207,20 +208,27 @@ class DisksClientTest extends GeneratedTest
         // Mock response
         $id = 'id3355';
         $kind = 'kind3292052';
-        $nextPageToken = 'nextPageToken-1530815211';
+        $nextPageToken = '';
         $selfLink = 'selfLink-1691268851';
+        $itemsItem = new DisksScopedList();
+        $items = ['items' => $itemsItem];
         $expectedResponse = new DiskAggregatedList();
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
         $expectedResponse->setNextPageToken($nextPageToken);
         $expectedResponse->setSelfLink($selfLink);
+        $expectedResponse->setItems($items);
         $transport->addResponse($expectedResponse);
 
         // Mock request
         $project = 'project-309310695';
 
         $response = $client->aggregatedList($project);
-        $this->assertEquals($expectedResponse, $response);
+        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
+        $resources = iterator_to_array($response->iterateAllElements());
+        $this->assertSame(1, count($resources));
+        $this->assertEquals($expectedResponse->getItems()[0], $resources[0]);
+
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
@@ -230,7 +238,6 @@ class DisksClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -854,13 +861,16 @@ class DisksClientTest extends GeneratedTest
         // Mock response
         $id = 'id3355';
         $kind = 'kind3292052';
-        $nextPageToken = 'nextPageToken-1530815211';
+        $nextPageToken = '';
         $selfLink = 'selfLink-1691268851';
+        $itemsElement = new Disk();
+        $items = [$itemsElement];
         $expectedResponse = new DiskList();
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
         $expectedResponse->setNextPageToken($nextPageToken);
         $expectedResponse->setSelfLink($selfLink);
+        $expectedResponse->setItems($items);
         $transport->addResponse($expectedResponse);
 
         // Mock request
@@ -868,7 +878,11 @@ class DisksClientTest extends GeneratedTest
         $zone = 'zone3744684';
 
         $response = $client->list($project, $zone);
-        $this->assertEquals($expectedResponse, $response);
+        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
+        $resources = iterator_to_array($response->iterateAllElements());
+        $this->assertSame(1, count($resources));
+        $this->assertEquals($expectedResponse->getItems()[0], $resources[0]);
+
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
@@ -881,7 +895,6 @@ class DisksClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getZone();
 
         $this->assertProtobufEquals($zone, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 

@@ -28,7 +28,10 @@ use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
 use Google\Cloud\Compute\V1\InstanceGroupManager;
+use Google\Cloud\Compute\V1\InstanceManagedByIgmError;
+use Google\Cloud\Compute\V1\ManagedInstance;
 use Google\Cloud\Compute\V1\Operation;
+use Google\Cloud\Compute\V1\PerInstanceConfig;
 use Google\Cloud\Compute\V1\RegionInstanceGroupManagerList;
 use Google\Cloud\Compute\V1\RegionInstanceGroupManagersListErrorsResponse;
 use Google\Cloud\Compute\V1\RegionInstanceGroupManagersListInstanceConfigsResp;
@@ -1035,13 +1038,16 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         // Mock response
         $id = 'id3355';
         $kind = 'kind3292052';
-        $nextPageToken = 'nextPageToken-1530815211';
+        $nextPageToken = '';
         $selfLink = 'selfLink-1691268851';
+        $itemsElement = new InstanceGroupManager();
+        $items = [$itemsElement];
         $expectedResponse = new RegionInstanceGroupManagerList();
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
         $expectedResponse->setNextPageToken($nextPageToken);
         $expectedResponse->setSelfLink($selfLink);
+        $expectedResponse->setItems($items);
         $transport->addResponse($expectedResponse);
 
         // Mock request
@@ -1049,7 +1055,11 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $region = 'region-934795532';
 
         $response = $client->list($project, $region);
-        $this->assertEquals($expectedResponse, $response);
+        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
+        $resources = iterator_to_array($response->iterateAllElements());
+        $this->assertSame(1, count($resources));
+        $this->assertEquals($expectedResponse->getItems()[0], $resources[0]);
+
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
@@ -1062,7 +1072,6 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -1117,9 +1126,12 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
 
         // Mock response
-        $nextPageToken = 'nextPageToken-1530815211';
+        $nextPageToken = '';
+        $itemsElement = new InstanceManagedByIgmError();
+        $items = [$itemsElement];
         $expectedResponse = new RegionInstanceGroupManagersListErrorsResponse();
         $expectedResponse->setNextPageToken($nextPageToken);
+        $expectedResponse->setItems($items);
         $transport->addResponse($expectedResponse);
 
         // Mock request
@@ -1128,7 +1140,11 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $region = 'region-934795532';
 
         $response = $client->listErrors($instanceGroupManager, $project, $region);
-        $this->assertEquals($expectedResponse, $response);
+        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
+        $resources = iterator_to_array($response->iterateAllElements());
+        $this->assertSame(1, count($resources));
+        $this->assertEquals($expectedResponse->getItems()[0], $resources[0]);
+
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
@@ -1144,7 +1160,6 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -1200,9 +1215,12 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
 
         // Mock response
-        $nextPageToken = 'nextPageToken-1530815211';
+        $nextPageToken = '';
+        $managedInstancesElement = new ManagedInstance();
+        $managedInstances = [$managedInstancesElement];
         $expectedResponse = new RegionInstanceGroupManagersListInstancesResponse();
         $expectedResponse->setNextPageToken($nextPageToken);
+        $expectedResponse->setManagedInstances($managedInstances);
         $transport->addResponse($expectedResponse);
 
         // Mock request
@@ -1211,7 +1229,11 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $region = 'region-934795532';
 
         $response = $client->listManagedInstances($instanceGroupManager, $project, $region);
-        $this->assertEquals($expectedResponse, $response);
+        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
+        $resources = iterator_to_array($response->iterateAllElements());
+        $this->assertSame(1, count($resources));
+        $this->assertEquals($expectedResponse->getManagedInstances()[0], $resources[0]);
+
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
@@ -1227,7 +1249,6 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -1283,9 +1304,12 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
 
         // Mock response
-        $nextPageToken = 'nextPageToken-1530815211';
+        $nextPageToken = '';
+        $itemsElement = new PerInstanceConfig();
+        $items = [$itemsElement];
         $expectedResponse = new RegionInstanceGroupManagersListInstanceConfigsResp();
         $expectedResponse->setNextPageToken($nextPageToken);
+        $expectedResponse->setItems($items);
         $transport->addResponse($expectedResponse);
 
         // Mock request
@@ -1294,7 +1318,11 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $region = 'region-934795532';
 
         $response = $client->listPerInstanceConfigs($instanceGroupManager, $project, $region);
-        $this->assertEquals($expectedResponse, $response);
+        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
+        $resources = iterator_to_array($response->iterateAllElements());
+        $this->assertSame(1, count($resources));
+        $this->assertEquals($expectedResponse->getItems()[0], $resources[0]);
+
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
@@ -1310,7 +1338,6 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 

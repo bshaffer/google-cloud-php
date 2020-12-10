@@ -31,6 +31,8 @@ use Google\Cloud\Compute\V1\NetworkEndpointGroup;
 use Google\Cloud\Compute\V1\NetworkEndpointGroupAggregatedList;
 use Google\Cloud\Compute\V1\NetworkEndpointGroupList;
 use Google\Cloud\Compute\V1\NetworkEndpointGroupsListNetworkEndpoints;
+use Google\Cloud\Compute\V1\NetworkEndpointGroupsScopedList;
+use Google\Cloud\Compute\V1\NetworkEndpointWithHealthStatus;
 use Google\Cloud\Compute\V1\Operation;
 use Google\Cloud\Compute\V1\TestPermissionsResponse;
 use Google\Protobuf\Any;
@@ -86,20 +88,27 @@ class NetworkEndpointGroupsClientTest extends GeneratedTest
         // Mock response
         $id = 'id3355';
         $kind = 'kind3292052';
-        $nextPageToken = 'nextPageToken-1530815211';
+        $nextPageToken = '';
         $selfLink = 'selfLink-1691268851';
+        $itemsItem = new NetworkEndpointGroupsScopedList();
+        $items = ['items' => $itemsItem];
         $expectedResponse = new NetworkEndpointGroupAggregatedList();
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
         $expectedResponse->setNextPageToken($nextPageToken);
         $expectedResponse->setSelfLink($selfLink);
+        $expectedResponse->setItems($items);
         $transport->addResponse($expectedResponse);
 
         // Mock request
         $project = 'project-309310695';
 
         $response = $client->aggregatedList($project);
-        $this->assertEquals($expectedResponse, $response);
+        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
+        $resources = iterator_to_array($response->iterateAllElements());
+        $this->assertSame(1, count($resources));
+        $this->assertEquals($expectedResponse->getItems()[0], $resources[0]);
+
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
@@ -109,7 +118,6 @@ class NetworkEndpointGroupsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -749,13 +757,16 @@ class NetworkEndpointGroupsClientTest extends GeneratedTest
         // Mock response
         $id = 'id3355';
         $kind = 'kind3292052';
-        $nextPageToken = 'nextPageToken-1530815211';
+        $nextPageToken = '';
         $selfLink = 'selfLink-1691268851';
+        $itemsElement = new NetworkEndpointGroup();
+        $items = [$itemsElement];
         $expectedResponse = new NetworkEndpointGroupList();
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
         $expectedResponse->setNextPageToken($nextPageToken);
         $expectedResponse->setSelfLink($selfLink);
+        $expectedResponse->setItems($items);
         $transport->addResponse($expectedResponse);
 
         // Mock request
@@ -763,7 +774,11 @@ class NetworkEndpointGroupsClientTest extends GeneratedTest
         $zone = 'zone3744684';
 
         $response = $client->list($project, $zone);
-        $this->assertEquals($expectedResponse, $response);
+        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
+        $resources = iterator_to_array($response->iterateAllElements());
+        $this->assertSame(1, count($resources));
+        $this->assertEquals($expectedResponse->getItems()[0], $resources[0]);
+
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
@@ -776,7 +791,6 @@ class NetworkEndpointGroupsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getZone();
 
         $this->assertProtobufEquals($zone, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -833,11 +847,14 @@ class NetworkEndpointGroupsClientTest extends GeneratedTest
         // Mock response
         $id = 'id3355';
         $kind = 'kind3292052';
-        $nextPageToken = 'nextPageToken-1530815211';
+        $nextPageToken = '';
+        $itemsElement = new NetworkEndpointWithHealthStatus();
+        $items = [$itemsElement];
         $expectedResponse = new NetworkEndpointGroupsListNetworkEndpoints();
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
         $expectedResponse->setNextPageToken($nextPageToken);
+        $expectedResponse->setItems($items);
         $transport->addResponse($expectedResponse);
 
         // Mock request
@@ -846,7 +863,11 @@ class NetworkEndpointGroupsClientTest extends GeneratedTest
         $zone = 'zone3744684';
 
         $response = $client->listNetworkEndpoints($networkEndpointGroup, $project, $zone);
-        $this->assertEquals($expectedResponse, $response);
+        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
+        $resources = iterator_to_array($response->iterateAllElements());
+        $this->assertSame(1, count($resources));
+        $this->assertEquals($expectedResponse->getItems()[0], $resources[0]);
+
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
@@ -862,7 +883,6 @@ class NetworkEndpointGroupsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getZone();
 
         $this->assertProtobufEquals($zone, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 

@@ -31,6 +31,7 @@ use Google\Cloud\Compute\V1\Operation;
 use Google\Cloud\Compute\V1\Project;
 use Google\Cloud\Compute\V1\ProjectsGetXpnResources;
 use Google\Cloud\Compute\V1\XpnHostList;
+use Google\Cloud\Compute\V1\XpnResourceId;
 use Google\Protobuf\Any;
 use Google\Rpc\Code;
 use stdClass;
@@ -697,17 +698,24 @@ class ProjectsClientTest extends GeneratedTest
 
         // Mock response
         $kind = 'kind3292052';
-        $nextPageToken = 'nextPageToken-1530815211';
+        $nextPageToken = '';
+        $resourcesElement = new XpnResourceId();
+        $resources2 = [$resourcesElement];
         $expectedResponse = new ProjectsGetXpnResources();
         $expectedResponse->setKind($kind);
         $expectedResponse->setNextPageToken($nextPageToken);
+        $expectedResponse->setResources($resources2);
         $transport->addResponse($expectedResponse);
 
         // Mock request
         $project = 'project-309310695';
 
         $response = $client->getXpnResources($project);
-        $this->assertEquals($expectedResponse, $response);
+        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
+        $resources = iterator_to_array($response->iterateAllElements());
+        $this->assertSame(1, count($resources));
+        $this->assertEquals($expectedResponse->getResources()[0], $resources[0]);
+
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
@@ -717,7 +725,6 @@ class ProjectsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -773,20 +780,27 @@ class ProjectsClientTest extends GeneratedTest
         // Mock response
         $id = 'id3355';
         $kind = 'kind3292052';
-        $nextPageToken = 'nextPageToken-1530815211';
+        $nextPageToken = '';
         $selfLink = 'selfLink-1691268851';
+        $itemsElement = new Project();
+        $items = [$itemsElement];
         $expectedResponse = new XpnHostList();
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
         $expectedResponse->setNextPageToken($nextPageToken);
         $expectedResponse->setSelfLink($selfLink);
+        $expectedResponse->setItems($items);
         $transport->addResponse($expectedResponse);
 
         // Mock request
         $project = 'project-309310695';
 
         $response = $client->listXpnHosts($project);
-        $this->assertEquals($expectedResponse, $response);
+        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
+        $resources = iterator_to_array($response->iterateAllElements());
+        $this->assertSame(1, count($resources));
+        $this->assertEquals($expectedResponse->getItems()[0], $resources[0]);
+
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
@@ -796,7 +810,6 @@ class ProjectsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 

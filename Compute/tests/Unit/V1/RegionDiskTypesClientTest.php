@@ -183,13 +183,16 @@ class RegionDiskTypesClientTest extends GeneratedTest
         // Mock response
         $id = 'id3355';
         $kind = 'kind3292052';
-        $nextPageToken = 'nextPageToken-1530815211';
+        $nextPageToken = '';
         $selfLink = 'selfLink-1691268851';
+        $itemsElement = new DiskType();
+        $items = [$itemsElement];
         $expectedResponse = new RegionDiskTypeList();
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
         $expectedResponse->setNextPageToken($nextPageToken);
         $expectedResponse->setSelfLink($selfLink);
+        $expectedResponse->setItems($items);
         $transport->addResponse($expectedResponse);
 
         // Mock request
@@ -197,7 +200,11 @@ class RegionDiskTypesClientTest extends GeneratedTest
         $region = 'region-934795532';
 
         $response = $client->list($project, $region);
-        $this->assertEquals($expectedResponse, $response);
+        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
+        $resources = iterator_to_array($response->iterateAllElements());
+        $this->assertSame(1, count($resources));
+        $this->assertEquals($expectedResponse->getItems()[0], $resources[0]);
+
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
@@ -210,7 +217,6 @@ class RegionDiskTypesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 

@@ -26,6 +26,7 @@ class HttpRouteRule extends \Google\Protobuf\Internal\Message
      * Specifies changes to request and response headers that need to take effect for the selected backendService.
      * The headerAction specified here are applied before the matching pathMatchers[].headerAction and after pathMatchers[].routeRules[].routeAction.weightedBackendService.backendServiceWeightAction[].headerAction
      * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
+     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
      */
@@ -62,6 +63,7 @@ class HttpRouteRule extends \Google\Protobuf\Internal\Message
     /**
      * When this rule is matched, the request is redirected to a URL specified by urlRedirect.
      * If urlRedirect is specified, service or routeAction must not be set.
+     * Not supported when the URL map is bound to target gRPC proxy.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 136712364;</code>
      */
@@ -80,6 +82,7 @@ class HttpRouteRule extends \Google\Protobuf\Internal\Message
      *           Specifies changes to request and response headers that need to take effect for the selected backendService.
      *           The headerAction specified here are applied before the matching pathMatchers[].headerAction and after pathMatchers[].routeRules[].routeAction.weightedBackendService.backendServiceWeightAction[].headerAction
      *           Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
+     *           Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *     @type \Google\Cloud\Compute\V1\HttpRouteRuleMatch[]|\Google\Protobuf\Internal\RepeatedField $match_rules
      *           The list of criteria for matching attributes of a request to this routeRule. This list has OR semantics: the request matches this routeRule when any of the matchRules are satisfied. However predicates within a given matchRule have AND semantics. All predicates within a matchRule must match for the request to match the rule.
      *     @type int $priority
@@ -96,6 +99,7 @@ class HttpRouteRule extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Compute\V1\HttpRedirectAction $url_redirect
      *           When this rule is matched, the request is redirected to a URL specified by urlRedirect.
      *           If urlRedirect is specified, service or routeAction must not be set.
+     *           Not supported when the URL map is bound to target gRPC proxy.
      * }
      */
     public function __construct($data = NULL) {
@@ -135,6 +139,7 @@ class HttpRouteRule extends \Google\Protobuf\Internal\Message
      * Specifies changes to request and response headers that need to take effect for the selected backendService.
      * The headerAction specified here are applied before the matching pathMatchers[].headerAction and after pathMatchers[].routeRules[].routeAction.weightedBackendService.backendServiceWeightAction[].headerAction
      * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
+     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
      * @return \Google\Cloud\Compute\V1\HttpHeaderAction
@@ -158,6 +163,7 @@ class HttpRouteRule extends \Google\Protobuf\Internal\Message
      * Specifies changes to request and response headers that need to take effect for the selected backendService.
      * The headerAction specified here are applied before the matching pathMatchers[].headerAction and after pathMatchers[].routeRules[].routeAction.weightedBackendService.backendServiceWeightAction[].headerAction
      * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
+     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
      * @param \Google\Cloud\Compute\V1\HttpHeaderAction $var
@@ -298,6 +304,7 @@ class HttpRouteRule extends \Google\Protobuf\Internal\Message
     /**
      * When this rule is matched, the request is redirected to a URL specified by urlRedirect.
      * If urlRedirect is specified, service or routeAction must not be set.
+     * Not supported when the URL map is bound to target gRPC proxy.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 136712364;</code>
      * @return \Google\Cloud\Compute\V1\HttpRedirectAction
@@ -320,6 +327,7 @@ class HttpRouteRule extends \Google\Protobuf\Internal\Message
     /**
      * When this rule is matched, the request is redirected to a URL specified by urlRedirect.
      * If urlRedirect is specified, service or routeAction must not be set.
+     * Not supported when the URL map is bound to target gRPC proxy.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 136712364;</code>
      * @param \Google\Cloud\Compute\V1\HttpRedirectAction $var

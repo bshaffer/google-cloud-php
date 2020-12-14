@@ -62,6 +62,12 @@ class Network extends \Google\Protobuf\Internal\Message
      */
     private $kind = '';
     /**
+     * Maximum Transmission Unit in bytes. The minimum value for this field is 1460 and the maximum value is 1500 bytes.
+     *
+     * Generated from protobuf field <code>int32 mtu = 108462;</code>
+     */
+    private $mtu = 0;
+    /**
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
      *
      * Generated from protobuf field <code>string name = 3373707;</code>
@@ -115,6 +121,8 @@ class Network extends \Google\Protobuf\Internal\Message
      *           [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      *     @type string $kind
      *           [Output Only] Type of the resource. Always compute#network for networks.
+     *     @type int $mtu
+     *           Maximum Transmission Unit in bytes. The minimum value for this field is 1460 and the maximum value is 1500 bytes.
      *     @type string $name
      *           Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
      *     @type \Google\Cloud\Compute\V1\NetworkPeering[]|\Google\Protobuf\Internal\RepeatedField $peerings
@@ -316,6 +324,32 @@ class Network extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->kind = $var;
+
+        return $this;
+    }
+
+    /**
+     * Maximum Transmission Unit in bytes. The minimum value for this field is 1460 and the maximum value is 1500 bytes.
+     *
+     * Generated from protobuf field <code>int32 mtu = 108462;</code>
+     * @return int
+     */
+    public function getMtu()
+    {
+        return $this->mtu;
+    }
+
+    /**
+     * Maximum Transmission Unit in bytes. The minimum value for this field is 1460 and the maximum value is 1500 bytes.
+     *
+     * Generated from protobuf field <code>int32 mtu = 108462;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMtu($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->mtu = $var;
 
         return $this;
     }

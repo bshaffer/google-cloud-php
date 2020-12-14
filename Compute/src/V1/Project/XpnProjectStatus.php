@@ -7,7 +7,7 @@ namespace Google\Cloud\Compute\V1\Project;
 use UnexpectedValueException;
 
 /**
- * [Output Only] The role this project has in a shared VPC configuration. Currently only HOST projects are differentiated.
+ * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
  *
  * Protobuf type <code>google.cloud.compute.v1.Project.XpnProjectStatus</code>
  */

@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Represents a Cloud VPN Tunnel resource.
- * For more information about VPN, read the the Cloud VPN Overview. (== resource_for {$api_version}.vpnTunnels ==)
+ * For more information about VPN, read the  the Cloud VPN Overview. (== resource_for {$api_version}.vpnTunnels ==)
  *
  * Generated from protobuf message <code>google.cloud.compute.v1.VpnTunnel</code>
  */

@@ -84,6 +84,10 @@ class Code
      */
     const NO_RESULTS_ON_PAGE = 30036744;
     /**
+     * Generated from protobuf enum <code>PARTIAL_SUCCESS = 39966469;</code>
+     */
+    const PARTIAL_SUCCESS = 39966469;
+    /**
      * Generated from protobuf enum <code>REQUIRED_TOS_AGREEMENT = 3745539;</code>
      */
     const REQUIRED_TOS_AGREEMENT = 3745539;
@@ -130,6 +134,7 @@ class Code
         self::NEXT_HOP_NOT_RUNNING => 'NEXT_HOP_NOT_RUNNING',
         self::NOT_CRITICAL_ERROR => 'NOT_CRITICAL_ERROR',
         self::NO_RESULTS_ON_PAGE => 'NO_RESULTS_ON_PAGE',
+        self::PARTIAL_SUCCESS => 'PARTIAL_SUCCESS',
         self::REQUIRED_TOS_AGREEMENT => 'REQUIRED_TOS_AGREEMENT',
         self::RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING => 'RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING',
         self::RESOURCE_NOT_DELETED => 'RESOURCE_NOT_DELETED',

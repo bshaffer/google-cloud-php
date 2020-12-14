@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * InstanceGroupManagers.applyUpdatesToInstances
+ * RegionInstanceGroupManagers.applyUpdatesToInstances
  *
  * Generated from protobuf message <code>google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest</code>
  */

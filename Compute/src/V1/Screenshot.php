@@ -18,7 +18,7 @@ class Screenshot extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The Base64-encoded screenshot data.
      *
-     * Generated from protobuf field <code>string contents = 506419994;</code>
+     * Generated from protobuf field <code>string contents = 237984538;</code>
      */
     private $contents = '';
     /**
@@ -48,7 +48,7 @@ class Screenshot extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The Base64-encoded screenshot data.
      *
-     * Generated from protobuf field <code>string contents = 506419994;</code>
+     * Generated from protobuf field <code>string contents = 237984538;</code>
      * @return string
      */
     public function getContents()
@@ -59,7 +59,7 @@ class Screenshot extends \Google\Protobuf\Internal\Message
     /**
      * [Output Only] The Base64-encoded screenshot data.
      *
-     * Generated from protobuf field <code>string contents = 506419994;</code>
+     * Generated from protobuf field <code>string contents = 237984538;</code>
      * @param string $var
      * @return $this
      */

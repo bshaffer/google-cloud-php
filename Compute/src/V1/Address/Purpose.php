@@ -12,6 +12,7 @@ use UnexpectedValueException;
  * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
  * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
  * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
+ * - `IPSEC_INTERCONNECT` for addresses created from a private IP range reserved for a VLAN attachment in an IPsec over Interconnect configuration. These addresses are regional resources.
  *
  * Protobuf type <code>google.cloud.compute.v1.Address.Purpose</code>
  */
@@ -36,6 +37,10 @@ class Purpose
      */
     const NAT_AUTO = 163666477;
     /**
+     * Generated from protobuf enum <code>SHARED_LOADBALANCER_VIP = 26012116;</code>
+     */
+    const SHARED_LOADBALANCER_VIP = 26012116;
+    /**
      * Generated from protobuf enum <code>VPC_PEERING = 132364714;</code>
      */
     const VPC_PEERING = 132364714;
@@ -45,6 +50,7 @@ class Purpose
         self::DNS_RESOLVER => 'DNS_RESOLVER',
         self::GCE_ENDPOINT => 'GCE_ENDPOINT',
         self::NAT_AUTO => 'NAT_AUTO',
+        self::SHARED_LOADBALANCER_VIP => 'SHARED_LOADBALANCER_VIP',
         self::VPC_PEERING => 'VPC_PEERING',
     ];
 

@@ -29,7 +29,7 @@ class MachineType extends \Google\Protobuf\Internal\Message
      */
     private $creation_timestamp = '';
     /**
-     * [Output Only] The deprecation status associated with this machine type.
+     * [Output Only] The deprecation status associated with this machine type. Only applicable if the machine type is unavailable.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
@@ -124,7 +124,7 @@ class MachineType extends \Google\Protobuf\Internal\Message
      *     @type string $creation_timestamp
      *           [Output Only] Creation timestamp in RFC3339 text format.
      *     @type \Google\Cloud\Compute\V1\DeprecationStatus $deprecated
-     *           [Output Only] The deprecation status associated with this machine type.
+     *           [Output Only] The deprecation status associated with this machine type. Only applicable if the machine type is unavailable.
      *     @type string $description
      *           [Output Only] An optional textual description of the resource.
      *     @type int $guest_cpus
@@ -211,7 +211,7 @@ class MachineType extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Output Only] The deprecation status associated with this machine type.
+     * [Output Only] The deprecation status associated with this machine type. Only applicable if the machine type is unavailable.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      * @return \Google\Cloud\Compute\V1\DeprecationStatus
@@ -232,7 +232,7 @@ class MachineType extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Output Only] The deprecation status associated with this machine type.
+     * [Output Only] The deprecation status associated with this machine type. Only applicable if the machine type is unavailable.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      * @param \Google\Cloud\Compute\V1\DeprecationStatus $var

@@ -54,6 +54,12 @@ class ListXpnHostsProjectsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391;</code>
      */
     private $projects_list_xpn_hosts_request_resource = null;
+    /**
+     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
+     *
+     * Generated from protobuf field <code>bool return_partial_success = 248762934;</code>
+     */
+    private $return_partial_success = false;
 
     /**
      * Constructor.
@@ -77,6 +83,8 @@ class ListXpnHostsProjectsRequest extends \Google\Protobuf\Internal\Message
      *     @type string $project
      *           Project ID for this request.
      *     @type \Google\Cloud\Compute\V1\ProjectsListXpnHostsRequest $projects_list_xpn_hosts_request_resource
+     *     @type bool $return_partial_success
+     *           Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      * }
      */
     public function __construct($data = NULL) {
@@ -252,6 +260,32 @@ class ListXpnHostsProjectsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Compute\V1\ProjectsListXpnHostsRequest::class);
         $this->projects_list_xpn_hosts_request_resource = $var;
+
+        return $this;
+    }
+
+    /**
+     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
+     *
+     * Generated from protobuf field <code>bool return_partial_success = 248762934;</code>
+     * @return bool
+     */
+    public function getReturnPartialSuccess()
+    {
+        return $this->return_partial_success;
+    }
+
+    /**
+     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
+     *
+     * Generated from protobuf field <code>bool return_partial_success = 248762934;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setReturnPartialSuccess($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->return_partial_success = $var;
 
         return $this;
     }

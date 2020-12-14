@@ -107,6 +107,23 @@ return [
                     ],
                 ],
             ],
+            'Patch' => [
+                'method' => 'patch',
+                'uriTemplate' => '/compute/v1/projects/{project}/global/images/{image}',
+                'body' => 'image_resource',
+                'placeholders' => [
+                    'image' => [
+                        'getters' => [
+                            'getImage',
+                        ],
+                    ],
+                    'project' => [
+                        'getters' => [
+                            'getProject',
+                        ],
+                    ],
+                ],
+            ],
             'SetIamPolicy' => [
                 'method' => 'post',
                 'uriTemplate' => '/compute/v1/projects/{project}/global/images/{resource}/setIamPolicy',

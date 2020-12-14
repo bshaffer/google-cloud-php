@@ -39,6 +39,7 @@ class PathRule extends \Google\Protobuf\Internal\Message
     /**
      * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect.
      * If urlRedirect is specified, service or routeAction must not be set.
+     * Not supported when the URL map is bound to target gRPC proxy.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 136712364;</code>
      */
@@ -62,6 +63,7 @@ class PathRule extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Compute\V1\HttpRedirectAction $url_redirect
      *           When a path pattern is matched, the request is redirected to a URL specified by urlRedirect.
      *           If urlRedirect is specified, service or routeAction must not be set.
+     *           Not supported when the URL map is bound to target gRPC proxy.
      * }
      */
     public function __construct($data = NULL) {
@@ -166,6 +168,7 @@ class PathRule extends \Google\Protobuf\Internal\Message
     /**
      * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect.
      * If urlRedirect is specified, service or routeAction must not be set.
+     * Not supported when the URL map is bound to target gRPC proxy.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 136712364;</code>
      * @return \Google\Cloud\Compute\V1\HttpRedirectAction
@@ -188,6 +191,7 @@ class PathRule extends \Google\Protobuf\Internal\Message
     /**
      * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect.
      * If urlRedirect is specified, service or routeAction must not be set.
+     * Not supported when the URL map is bound to target gRPC proxy.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 136712364;</code>
      * @param \Google\Cloud\Compute\V1\HttpRedirectAction $var

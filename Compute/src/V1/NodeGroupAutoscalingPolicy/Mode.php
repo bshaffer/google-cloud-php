@@ -7,7 +7,7 @@ namespace Google\Cloud\Compute\V1\NodeGroupAutoscalingPolicy;
 use UnexpectedValueException;
 
 /**
- * The autoscaling mode.
+ * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see  Autoscaler modes.
  *
  * Protobuf type <code>google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode</code>
  */

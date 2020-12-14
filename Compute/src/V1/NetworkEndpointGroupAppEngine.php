@@ -18,7 +18,7 @@ class NetworkEndpointGroupAppEngine extends \Google\Protobuf\Internal\Message
 {
     /**
      * Optional serving service.
-     * The service name must be 1-63 characters long, and comply with RFC1035.
+     * The service name is case-sensitive and must be 1-63 characters long.
      * Example value: "default", "my-service".
      *
      * Generated from protobuf field <code>string service = 105105077;</code>
@@ -33,7 +33,7 @@ class NetworkEndpointGroupAppEngine extends \Google\Protobuf\Internal\Message
     private $url_mask = '';
     /**
      * Optional serving version.
-     * The version must be 1-63 characters long, and comply with RFC1035.
+     * The version name is case-sensitive and must be 1-100 characters long.
      * Example value: "v1", "v2".
      *
      * Generated from protobuf field <code>string version = 83172568;</code>
@@ -48,14 +48,14 @@ class NetworkEndpointGroupAppEngine extends \Google\Protobuf\Internal\Message
      *
      *     @type string $service
      *           Optional serving service.
-     *           The service name must be 1-63 characters long, and comply with RFC1035.
+     *           The service name is case-sensitive and must be 1-63 characters long.
      *           Example value: "default", "my-service".
      *     @type string $url_mask
      *           A template to parse service and version fields from a request URL. URL mask allows for routing to multiple App Engine services without having to create multiple Network Endpoint Groups and backend services.
      *           For example, the request URLs "foo1-dot-appname.appspot.com/v1" and "foo1-dot-appname.appspot.com/v2" can be backed by the same Serverless NEG with URL mask "-dot-appname.appspot.com/". The URL mask will parse them to { service = "foo1", version = "v1" } and { service = "foo1", version = "v2" } respectively.
      *     @type string $version
      *           Optional serving version.
-     *           The version must be 1-63 characters long, and comply with RFC1035.
+     *           The version name is case-sensitive and must be 1-100 characters long.
      *           Example value: "v1", "v2".
      * }
      */
@@ -66,7 +66,7 @@ class NetworkEndpointGroupAppEngine extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional serving service.
-     * The service name must be 1-63 characters long, and comply with RFC1035.
+     * The service name is case-sensitive and must be 1-63 characters long.
      * Example value: "default", "my-service".
      *
      * Generated from protobuf field <code>string service = 105105077;</code>
@@ -79,7 +79,7 @@ class NetworkEndpointGroupAppEngine extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional serving service.
-     * The service name must be 1-63 characters long, and comply with RFC1035.
+     * The service name is case-sensitive and must be 1-63 characters long.
      * Example value: "default", "my-service".
      *
      * Generated from protobuf field <code>string service = 105105077;</code>
@@ -124,7 +124,7 @@ class NetworkEndpointGroupAppEngine extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional serving version.
-     * The version must be 1-63 characters long, and comply with RFC1035.
+     * The version name is case-sensitive and must be 1-100 characters long.
      * Example value: "v1", "v2".
      *
      * Generated from protobuf field <code>string version = 83172568;</code>
@@ -137,7 +137,7 @@ class NetworkEndpointGroupAppEngine extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional serving version.
-     * The version must be 1-63 characters long, and comply with RFC1035.
+     * The version name is case-sensitive and must be 1-100 characters long.
      * Example value: "v1", "v2".
      *
      * Generated from protobuf field <code>string version = 83172568;</code>

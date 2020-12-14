@@ -7,7 +7,7 @@ namespace Google\Cloud\Compute\V1\NodeGroup;
 use UnexpectedValueException;
 
 /**
- * Specifies how to handle instances when a node in the group undergoes maintenance.
+ * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
  *
  * Protobuf type <code>google.cloud.compute.v1.NodeGroup.MaintenancePolicy</code>
  */

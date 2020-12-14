@@ -17,7 +17,8 @@ use UnexpectedValueException;
  * This field is applicable to either:
  * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
  * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
- * If sessionAffinity is not NONE, and this field is not set to >MAGLEV or RING_HASH, session affinity settings will not take effect.
+ * If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect.
+ * Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
  *
  * Protobuf type <code>google.cloud.compute.v1.BackendService.LocalityLbPolicy</code>
  */

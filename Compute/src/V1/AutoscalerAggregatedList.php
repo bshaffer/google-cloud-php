@@ -45,6 +45,12 @@ class AutoscalerAggregatedList extends \Google\Protobuf\Internal\Message
      */
     private $self_link = '';
     /**
+     * [Output Only] Unreachable resources.
+     *
+     * Generated from protobuf field <code>repeated string unreachables = 243372063;</code>
+     */
+    private $unreachables;
+    /**
      * [Output Only] Informational warning message.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -67,6 +73,8 @@ class AutoscalerAggregatedList extends \Google\Protobuf\Internal\Message
      *           [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
      *     @type string $self_link
      *           [Output Only] Server-defined URL for this resource.
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $unreachables
+     *           [Output Only] Unreachable resources.
      *     @type \Google\Cloud\Compute\V1\Warning $warning
      *           [Output Only] Informational warning message.
      * }
@@ -202,6 +210,32 @@ class AutoscalerAggregatedList extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->self_link = $var;
+
+        return $this;
+    }
+
+    /**
+     * [Output Only] Unreachable resources.
+     *
+     * Generated from protobuf field <code>repeated string unreachables = 243372063;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getUnreachables()
+    {
+        return $this->unreachables;
+    }
+
+    /**
+     * [Output Only] Unreachable resources.
+     *
+     * Generated from protobuf field <code>repeated string unreachables = 243372063;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setUnreachables($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->unreachables = $arr;
 
         return $this;
     }

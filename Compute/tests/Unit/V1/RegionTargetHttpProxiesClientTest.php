@@ -204,6 +204,7 @@ class RegionTargetHttpProxiesClientTest extends GeneratedTest
         // Mock response
         $creationTimestamp = 'creationTimestamp567396278';
         $description = 'description-1724546052';
+        $fingerprint = 'fingerprint-1375934236';
         $id = 'id3355';
         $kind = 'kind3292052';
         $name = 'name3373707';
@@ -213,6 +214,7 @@ class RegionTargetHttpProxiesClientTest extends GeneratedTest
         $expectedResponse = new TargetHttpProxy();
         $expectedResponse->setCreationTimestamp($creationTimestamp);
         $expectedResponse->setDescription($description);
+        $expectedResponse->setFingerprint($fingerprint);
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
         $expectedResponse->setName($name);

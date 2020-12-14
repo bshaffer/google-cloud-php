@@ -21,6 +21,12 @@ class InstanceProperties extends \Google\Protobuf\Internal\Message
      */
     private $can_ip_forward = false;
     /**
+     * Specifies the Confidential Instance options.
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;</code>
+     */
+    private $confidential_instance_config = null;
+    /**
      * An optional text description for the instances that are created from these properties.
      *
      * Generated from protobuf field <code>string description = 154502140;</code>
@@ -117,6 +123,8 @@ class InstanceProperties extends \Google\Protobuf\Internal\Message
      *
      *     @type bool $can_ip_forward
      *           Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
+     *     @type \Google\Cloud\Compute\V1\ConfidentialInstanceConfig $confidential_instance_config
+     *           Specifies the Confidential Instance options.
      *     @type string $description
      *           An optional text description for the instances that are created from these properties.
      *     @type \Google\Cloud\Compute\V1\AttachedDisk[]|\Google\Protobuf\Internal\RepeatedField $disks
@@ -175,6 +183,42 @@ class InstanceProperties extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->can_ip_forward = $var;
+
+        return $this;
+    }
+
+    /**
+     * Specifies the Confidential Instance options.
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;</code>
+     * @return \Google\Cloud\Compute\V1\ConfidentialInstanceConfig
+     */
+    public function getConfidentialInstanceConfig()
+    {
+        return isset($this->confidential_instance_config) ? $this->confidential_instance_config : null;
+    }
+
+    public function hasConfidentialInstanceConfig()
+    {
+        return isset($this->confidential_instance_config);
+    }
+
+    public function clearConfidentialInstanceConfig()
+    {
+        unset($this->confidential_instance_config);
+    }
+
+    /**
+     * Specifies the Confidential Instance options.
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;</code>
+     * @param \Google\Cloud\Compute\V1\ConfidentialInstanceConfig $var
+     * @return $this
+     */
+    public function setConfidentialInstanceConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Compute\V1\ConfidentialInstanceConfig::class);
+        $this->confidential_instance_config = $var;
 
         return $this;
     }

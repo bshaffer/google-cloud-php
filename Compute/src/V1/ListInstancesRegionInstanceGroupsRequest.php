@@ -66,6 +66,12 @@ class ListInstancesRegionInstanceGroupsRequest extends \Google\Protobuf\Internal
      * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest region_instance_groups_list_instances_request_resource = 48239828;</code>
      */
     private $region_instance_groups_list_instances_request_resource = null;
+    /**
+     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
+     *
+     * Generated from protobuf field <code>bool return_partial_success = 248762934;</code>
+     */
+    private $return_partial_success = false;
 
     /**
      * Constructor.
@@ -93,6 +99,8 @@ class ListInstancesRegionInstanceGroupsRequest extends \Google\Protobuf\Internal
      *     @type string $region
      *           Name of the region scoping this request.
      *     @type \Google\Cloud\Compute\V1\RegionInstanceGroupsListInstancesRequest $region_instance_groups_list_instances_request_resource
+     *     @type bool $return_partial_success
+     *           Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      * }
      */
     public function __construct($data = NULL) {
@@ -320,6 +328,32 @@ class ListInstancesRegionInstanceGroupsRequest extends \Google\Protobuf\Internal
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Compute\V1\RegionInstanceGroupsListInstancesRequest::class);
         $this->region_instance_groups_list_instances_request_resource = $var;
+
+        return $this;
+    }
+
+    /**
+     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
+     *
+     * Generated from protobuf field <code>bool return_partial_success = 248762934;</code>
+     * @return bool
+     */
+    public function getReturnPartialSuccess()
+    {
+        return $this->return_partial_success;
+    }
+
+    /**
+     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
+     *
+     * Generated from protobuf field <code>bool return_partial_success = 248762934;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setReturnPartialSuccess($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->return_partial_success = $var;
 
         return $this;
     }

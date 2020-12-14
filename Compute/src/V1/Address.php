@@ -95,6 +95,7 @@ class Address extends \Google\Protobuf\Internal\Message
      * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
      * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
      * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
+     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range reserved for a VLAN attachment in an IPsec over Interconnect configuration. These addresses are regional resources.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.Address.Purpose purpose = 47971614;</code>
      */
@@ -165,6 +166,7 @@ class Address extends \Google\Protobuf\Internal\Message
      *           - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
      *           - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
      *           - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
+     *           - `IPSEC_INTERCONNECT` for addresses created from a private IP range reserved for a VLAN attachment in an IPsec over Interconnect configuration. These addresses are regional resources.
      *     @type string $region
      *           [Output Only] The URL of the region where the regional address resides. This field is not applicable to global addresses. You must specify this field as part of the HTTP request URL.
      *     @type string $self_link
@@ -476,6 +478,7 @@ class Address extends \Google\Protobuf\Internal\Message
      * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
      * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
      * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
+     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range reserved for a VLAN attachment in an IPsec over Interconnect configuration. These addresses are regional resources.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.Address.Purpose purpose = 47971614;</code>
      * @return int
@@ -491,6 +494,7 @@ class Address extends \Google\Protobuf\Internal\Message
      * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
      * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
      * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
+     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range reserved for a VLAN attachment in an IPsec over Interconnect configuration. These addresses are regional resources.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.Address.Purpose purpose = 47971614;</code>
      * @param int $var

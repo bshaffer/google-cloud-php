@@ -51,7 +51,7 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
      */
     private $kind = '';
     /**
-     * Specifies how to handle instances when a node in the group undergoes maintenance.
+     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 259892190;</code>
      */
@@ -109,7 +109,7 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
      *     @type string $kind
      *           [Output Only] The type of the resource. Always compute#nodeGroup for node group.
      *     @type int $maintenance_policy
-     *           Specifies how to handle instances when a node in the group undergoes maintenance.
+     *           Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
      *     @type string $name
      *           The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      *     @type string $node_template
@@ -291,7 +291,7 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specifies how to handle instances when a node in the group undergoes maintenance.
+     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 259892190;</code>
      * @return int
@@ -302,7 +302,7 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specifies how to handle instances when a node in the group undergoes maintenance.
+     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 259892190;</code>
      * @param int $var

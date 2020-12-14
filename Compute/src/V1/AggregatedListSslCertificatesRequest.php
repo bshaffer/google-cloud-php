@@ -56,6 +56,12 @@ class AggregatedListSslCertificatesRequest extends \Google\Protobuf\Internal\Mes
      * Generated from protobuf field <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $project = '';
+    /**
+     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
+     *
+     * Generated from protobuf field <code>bool return_partial_success = 248762934;</code>
+     */
+    private $return_partial_success = false;
 
     /**
      * Constructor.
@@ -80,6 +86,8 @@ class AggregatedListSslCertificatesRequest extends \Google\Protobuf\Internal\Mes
      *           Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
      *     @type string $project
      *           Name of the project scoping this request.
+     *     @type bool $return_partial_success
+     *           Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      * }
      */
     public function __construct($data = NULL) {
@@ -249,6 +257,32 @@ class AggregatedListSslCertificatesRequest extends \Google\Protobuf\Internal\Mes
     {
         GPBUtil::checkString($var, True);
         $this->project = $var;
+
+        return $this;
+    }
+
+    /**
+     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
+     *
+     * Generated from protobuf field <code>bool return_partial_success = 248762934;</code>
+     * @return bool
+     */
+    public function getReturnPartialSuccess()
+    {
+        return $this->return_partial_success;
+    }
+
+    /**
+     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
+     *
+     * Generated from protobuf field <code>bool return_partial_success = 248762934;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setReturnPartialSuccess($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->return_partial_success = $var;
 
         return $this;
     }

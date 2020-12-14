@@ -20,7 +20,7 @@ class AttachDiskInstanceRequest extends \Google\Protobuf\Internal\Message
      */
     private $attached_disk_resource = null;
     /**
-     * Whether to force attach the regional disk even if it's currently attached to another instance.
+     * Whether to force attach the regional disk even if it's currently attached to another instance. If you try to force attach a zonal disk to an instance, you will receive an error.
      *
      * Generated from protobuf field <code>bool force_attach = 142758425;</code>
      */
@@ -60,7 +60,7 @@ class AttachDiskInstanceRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Cloud\Compute\V1\AttachedDisk $attached_disk_resource
      *     @type bool $force_attach
-     *           Whether to force attach the regional disk even if it's currently attached to another instance.
+     *           Whether to force attach the regional disk even if it's currently attached to another instance. If you try to force attach a zonal disk to an instance, you will receive an error.
      *     @type string $instance
      *           The instance name for this request.
      *     @type string $project
@@ -111,7 +111,7 @@ class AttachDiskInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether to force attach the regional disk even if it's currently attached to another instance.
+     * Whether to force attach the regional disk even if it's currently attached to another instance. If you try to force attach a zonal disk to an instance, you will receive an error.
      *
      * Generated from protobuf field <code>bool force_attach = 142758425;</code>
      * @return bool
@@ -122,7 +122,7 @@ class AttachDiskInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether to force attach the regional disk even if it's currently attached to another instance.
+     * Whether to force attach the regional disk even if it's currently attached to another instance. If you try to force attach a zonal disk to an instance, you will receive an error.
      *
      * Generated from protobuf field <code>bool force_attach = 142758425;</code>
      * @param bool $var

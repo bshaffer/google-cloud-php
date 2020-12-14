@@ -34,13 +34,6 @@ class AllocationSpecificSKUAllocationReservedInstanceProperties extends \Google\
      */
     private $machine_type = '';
     /**
-     * Specifies whether this VM may be a stable fleet VM. Setting this to "Periodic" designates this VM as a Stable Fleet VM.
-     * See go/stable-fleet-ug for more details.
-     *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties.MaintenanceInterval maintenance_interval = 134932593;</code>
-     */
-    private $maintenance_interval = 0;
-    /**
      * Minimum cpu platform the reservation.
      *
      * Generated from protobuf field <code>string min_cpu_platform = 242912759;</code>
@@ -59,9 +52,6 @@ class AllocationSpecificSKUAllocationReservedInstanceProperties extends \Google\
      *           Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
      *     @type string $machine_type
      *           Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
-     *     @type int $maintenance_interval
-     *           Specifies whether this VM may be a stable fleet VM. Setting this to "Periodic" designates this VM as a Stable Fleet VM.
-     *           See go/stable-fleet-ug for more details.
      *     @type string $min_cpu_platform
      *           Minimum cpu platform the reservation.
      * }
@@ -145,34 +135,6 @@ class AllocationSpecificSKUAllocationReservedInstanceProperties extends \Google\
     {
         GPBUtil::checkString($var, True);
         $this->machine_type = $var;
-
-        return $this;
-    }
-
-    /**
-     * Specifies whether this VM may be a stable fleet VM. Setting this to "Periodic" designates this VM as a Stable Fleet VM.
-     * See go/stable-fleet-ug for more details.
-     *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties.MaintenanceInterval maintenance_interval = 134932593;</code>
-     * @return int
-     */
-    public function getMaintenanceInterval()
-    {
-        return $this->maintenance_interval;
-    }
-
-    /**
-     * Specifies whether this VM may be a stable fleet VM. Setting this to "Periodic" designates this VM as a Stable Fleet VM.
-     * See go/stable-fleet-ug for more details.
-     *
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties.MaintenanceInterval maintenance_interval = 134932593;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setMaintenanceInterval($var)
-    {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\AllocationSpecificSKUAllocationReservedInstanceProperties\MaintenanceInterval::class);
-        $this->maintenance_interval = $var;
 
         return $this;
     }

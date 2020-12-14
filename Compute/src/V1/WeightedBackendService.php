@@ -24,6 +24,8 @@ class WeightedBackendService extends \Google\Protobuf\Internal\Message
     /**
      * Specifies changes to request and response headers that need to take effect for the selected backendService.
      * headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap.
+     * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
+     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
      */
@@ -48,6 +50,8 @@ class WeightedBackendService extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Compute\V1\HttpHeaderAction $header_action
      *           Specifies changes to request and response headers that need to take effect for the selected backendService.
      *           headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap.
+     *           Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
+     *           Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *     @type int $weight
      *           Specifies the fraction of traffic sent to backendService, computed as weight / (sum of all weightedBackendService weights in routeAction) .
      *           The selection of a backend service is determined only for new traffic. Once a user's request has been directed to a backendService, subsequent requests will be sent to the same backendService as determined by the BackendService's session affinity policy.
@@ -88,6 +92,8 @@ class WeightedBackendService extends \Google\Protobuf\Internal\Message
     /**
      * Specifies changes to request and response headers that need to take effect for the selected backendService.
      * headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap.
+     * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
+     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
      * @return \Google\Cloud\Compute\V1\HttpHeaderAction
@@ -110,6 +116,8 @@ class WeightedBackendService extends \Google\Protobuf\Internal\Message
     /**
      * Specifies changes to request and response headers that need to take effect for the selected backendService.
      * headerAction specified here take effect before headerAction in the enclosing HttpRouteRule, PathMatcher and UrlMap.
+     * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
+     * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
      * @param \Google\Cloud\Compute\V1\HttpHeaderAction $var

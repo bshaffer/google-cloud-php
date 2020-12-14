@@ -89,7 +89,7 @@ class Project extends \Google\Protobuf\Internal\Message
      */
     private $usage_export_location = null;
     /**
-     * [Output Only] The role this project has in a shared VPC configuration. Currently only HOST projects are differentiated.
+     * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.Project.XpnProjectStatus xpn_project_status = 228419265;</code>
      */
@@ -126,7 +126,7 @@ class Project extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Compute\V1\UsageExportLocation $usage_export_location
      *           The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
      *     @type int $xpn_project_status
-     *           [Output Only] The role this project has in a shared VPC configuration. Currently only HOST projects are differentiated.
+     *           [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
      * }
      */
     public function __construct($data = NULL) {
@@ -467,7 +467,7 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Output Only] The role this project has in a shared VPC configuration. Currently only HOST projects are differentiated.
+     * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.Project.XpnProjectStatus xpn_project_status = 228419265;</code>
      * @return int
@@ -478,7 +478,7 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Output Only] The role this project has in a shared VPC configuration. Currently only HOST projects are differentiated.
+     * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.Project.XpnProjectStatus xpn_project_status = 228419265;</code>
      * @param int $var

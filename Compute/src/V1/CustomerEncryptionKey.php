@@ -9,7 +9,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Represents a customer-supplied encryption key
  *
  * Generated from protobuf message <code>google.cloud.compute.v1.CustomerEncryptionKey</code>
  */

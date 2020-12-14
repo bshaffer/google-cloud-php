@@ -322,6 +322,7 @@ class NetworksClientTest extends GeneratedTest
         $iPv4Range = 'iPv4Range-534892458';
         $id = 'id3355';
         $kind = 'kind3292052';
+        $mtu = 108462;
         $name = 'name3373707';
         $selfLink = 'selfLink-1691268851';
         $expectedResponse = new Network();
@@ -332,6 +333,7 @@ class NetworksClientTest extends GeneratedTest
         $expectedResponse->setIPv4Range($iPv4Range);
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
+        $expectedResponse->setMtu($mtu);
         $expectedResponse->setName($name);
         $expectedResponse->setSelfLink($selfLink);
         $transport->addResponse($expectedResponse);

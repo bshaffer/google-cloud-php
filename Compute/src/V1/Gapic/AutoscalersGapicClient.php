@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -58,6 +60,8 @@ use Google\Cloud\Compute\V1\UpdateAutoscalerRequest;
  *     $autoscalersClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class AutoscalersGapicClient
 {
@@ -170,6 +174,7 @@ class AutoscalersGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -227,6 +232,7 @@ class AutoscalersGapicClient
      * @return \Google\Cloud\Compute\V1\AutoscalerAggregatedList
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function aggregatedList($project, array $optionalArgs = [])
     {
@@ -297,6 +303,7 @@ class AutoscalersGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function delete($autoscaler, $project, $zone, array $optionalArgs = [])
     {
@@ -348,6 +355,7 @@ class AutoscalersGapicClient
      * @return \Google\Cloud\Compute\V1\Autoscaler
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($autoscaler, $project, $zone, array $optionalArgs = [])
     {
@@ -401,6 +409,7 @@ class AutoscalersGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function insert($project, $zone, array $optionalArgs = [])
     {
@@ -492,6 +501,7 @@ class AutoscalersGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, $zone, array $optionalArgs = [])
     {
@@ -561,6 +571,7 @@ class AutoscalersGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function patch($project, $zone, array $optionalArgs = [])
     {
@@ -624,6 +635,7 @@ class AutoscalersGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function update($project, $zone, array $optionalArgs = [])
     {

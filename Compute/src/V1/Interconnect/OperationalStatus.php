@@ -58,6 +58,4 @@ class OperationalStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(OperationalStatus::class, \Google\Cloud\Compute\V1\Interconnect_OperationalStatus::class);
 

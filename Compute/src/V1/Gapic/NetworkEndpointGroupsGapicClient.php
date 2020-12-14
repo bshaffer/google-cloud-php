@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -66,6 +68,8 @@ use Google\Cloud\Compute\V1\TestPermissionsResponse;
  *     $networkEndpointGroupsClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class NetworkEndpointGroupsGapicClient
 {
@@ -178,6 +182,7 @@ class NetworkEndpointGroupsGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -235,6 +240,7 @@ class NetworkEndpointGroupsGapicClient
      * @return \Google\Cloud\Compute\V1\NetworkEndpointGroupAggregatedList
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function aggregatedList($project, array $optionalArgs = [])
     {
@@ -306,6 +312,7 @@ class NetworkEndpointGroupsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function attachNetworkEndpoints($networkEndpointGroup, $project, $zone, array $optionalArgs = [])
     {
@@ -366,6 +373,7 @@ class NetworkEndpointGroupsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function delete($networkEndpointGroup, $project, $zone, array $optionalArgs = [])
     {
@@ -424,6 +432,7 @@ class NetworkEndpointGroupsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function detachNetworkEndpoints($networkEndpointGroup, $project, $zone, array $optionalArgs = [])
     {
@@ -478,6 +487,7 @@ class NetworkEndpointGroupsGapicClient
      * @return \Google\Cloud\Compute\V1\NetworkEndpointGroup
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($networkEndpointGroup, $project, $zone, array $optionalArgs = [])
     {
@@ -531,6 +541,7 @@ class NetworkEndpointGroupsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function insert($project, $zone, array $optionalArgs = [])
     {
@@ -622,6 +633,7 @@ class NetworkEndpointGroupsGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, $zone, array $optionalArgs = [])
     {
@@ -725,6 +737,7 @@ class NetworkEndpointGroupsGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function listNetworkEndpoints($networkEndpointGroup, $project, $zone, array $optionalArgs = [])
     {
@@ -792,6 +805,7 @@ class NetworkEndpointGroupsGapicClient
      * @return \Google\Cloud\Compute\V1\TestPermissionsResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function testIamPermissions($project, $resource, $zone, array $optionalArgs = [])
     {

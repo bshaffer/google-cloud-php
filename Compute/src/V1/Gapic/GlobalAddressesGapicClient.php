@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -55,6 +57,8 @@ use Google\Cloud\Compute\V1\Operation;
  *     $globalAddressesClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class GlobalAddressesGapicClient
 {
@@ -167,6 +171,7 @@ class GlobalAddressesGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -210,6 +215,7 @@ class GlobalAddressesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function delete($address, $project, array $optionalArgs = [])
     {
@@ -258,6 +264,7 @@ class GlobalAddressesGapicClient
      * @return \Google\Cloud\Compute\V1\Address
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($address, $project, array $optionalArgs = [])
     {
@@ -308,6 +315,7 @@ class GlobalAddressesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function insert($project, array $optionalArgs = [])
     {
@@ -396,6 +404,7 @@ class GlobalAddressesGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, array $optionalArgs = [])
     {

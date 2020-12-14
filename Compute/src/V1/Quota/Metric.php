@@ -575,6 +575,4 @@ class Metric
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Metric::class, \Google\Cloud\Compute\V1\Quota_Metric::class);
 

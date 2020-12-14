@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -63,6 +65,8 @@ use Google\Cloud\Compute\V1\TargetSslProxyList;
  *     $targetSslProxiesClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class TargetSslProxiesGapicClient
 {
@@ -175,6 +179,7 @@ class TargetSslProxiesGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -218,6 +223,7 @@ class TargetSslProxiesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function delete($project, $targetSslProxy, array $optionalArgs = [])
     {
@@ -266,6 +272,7 @@ class TargetSslProxiesGapicClient
      * @return \Google\Cloud\Compute\V1\TargetSslProxy
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($project, $targetSslProxy, array $optionalArgs = [])
     {
@@ -316,6 +323,7 @@ class TargetSslProxiesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function insert($project, array $optionalArgs = [])
     {
@@ -404,6 +412,7 @@ class TargetSslProxiesGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, array $optionalArgs = [])
     {
@@ -470,6 +479,7 @@ class TargetSslProxiesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setBackendService($project, $targetSslProxy, array $optionalArgs = [])
     {
@@ -528,6 +538,7 @@ class TargetSslProxiesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setProxyHeader($project, $targetSslProxy, array $optionalArgs = [])
     {
@@ -586,6 +597,7 @@ class TargetSslProxiesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setSslCertificates($project, $targetSslProxy, array $optionalArgs = [])
     {
@@ -644,6 +656,7 @@ class TargetSslProxiesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setSslPolicy($project, $targetSslProxy, array $optionalArgs = [])
     {

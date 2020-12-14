@@ -95,6 +95,4 @@ class InstanceStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(InstanceStatus::class, \Google\Cloud\Compute\V1\ManagedInstance_InstanceStatus::class);
 

@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -61,6 +63,8 @@ use Google\Cloud\Compute\V1\ValidateRegionUrlMapRequest;
  *     $regionUrlMapsClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class RegionUrlMapsGapicClient
 {
@@ -173,6 +177,7 @@ class RegionUrlMapsGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -214,6 +219,7 @@ class RegionUrlMapsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function delete($project, $region, $urlMap, array $optionalArgs = [])
     {
@@ -265,6 +271,7 @@ class RegionUrlMapsGapicClient
      * @return \Google\Cloud\Compute\V1\UrlMap
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($project, $region, $urlMap, array $optionalArgs = [])
     {
@@ -314,6 +321,7 @@ class RegionUrlMapsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function insert($project, $region, array $optionalArgs = [])
     {
@@ -405,6 +413,7 @@ class RegionUrlMapsGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, $region, array $optionalArgs = [])
     {
@@ -470,6 +479,7 @@ class RegionUrlMapsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function patch($project, $region, $urlMap, array $optionalArgs = [])
     {
@@ -527,6 +537,7 @@ class RegionUrlMapsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function update($project, $region, $urlMap, array $optionalArgs = [])
     {
@@ -582,6 +593,7 @@ class RegionUrlMapsGapicClient
      * @return \Google\Cloud\Compute\V1\UrlMapsValidateResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function validate($project, $region, $urlMap, array $optionalArgs = [])
     {

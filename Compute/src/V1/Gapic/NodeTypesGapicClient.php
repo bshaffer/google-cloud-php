@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -53,6 +55,8 @@ use Google\Cloud\Compute\V1\NodeTypeList;
  *     $nodeTypesClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class NodeTypesGapicClient
 {
@@ -165,6 +169,7 @@ class NodeTypesGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -222,6 +227,7 @@ class NodeTypesGapicClient
      * @return \Google\Cloud\Compute\V1\NodeTypeAggregatedList
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function aggregatedList($project, array $optionalArgs = [])
     {
@@ -286,6 +292,7 @@ class NodeTypesGapicClient
      * @return \Google\Cloud\Compute\V1\NodeType
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($nodeType, $project, $zone, array $optionalArgs = [])
     {
@@ -372,6 +379,7 @@ class NodeTypesGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, $zone, array $optionalArgs = [])
     {

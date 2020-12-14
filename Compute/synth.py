@@ -37,8 +37,16 @@ s.move(library / 'src')
 s.move(
     sources=library / 'proto/src/Google/Cloud/Compute',
     destination='src/',
-    excludes='V1/*_*.php'
+    excludes='V*/*_*.php'
 )
+# remove class_alias code
+s.replace(
+    "src/V*/*/*.php",
+    r"^// Adding a class alias for backwards compatibility with the previous class name.$"
+    + "\n"
+    + r"^class_alias\(.*\);$"
+    + "\n",
+    '')
 
 s.move(library / 'tests/')
 
@@ -63,23 +71,17 @@ s.replace(
     r"\$transportConfig, and any \$serviceAddress",
     r"$transportConfig, and any `$apiEndpoint`")
 
-# V1 is GA, so remove @experimental tags
-s.replace(
-    'src/V1/**/*Client.php',
-    r'^(\s+\*\n)?\s+\*\s@experimental\n',
-    '')
-
 # fix year
 s.replace(
     '**/Gapic/*GapicClient.php',
     r'Copyright \d{4}',
     'Copyright 2020')
 s.replace(
-    '**/V2/*Client.php',
+    '**/V*/*Client.php',
     r'Copyright \d{4}',
     'Copyright 2020')
 s.replace(
-    'tests/**/V2/*Test.php',
+    'tests/**/V*/*Test.php',
     r'Copyright \d{4}',
     'Copyright 2020')
 

@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -55,6 +57,8 @@ use Google\Cloud\Compute\V1\ListAcceleratorTypesRequest;
  *     $acceleratorTypesClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class AcceleratorTypesGapicClient
 {
@@ -167,6 +171,7 @@ class AcceleratorTypesGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -224,6 +229,7 @@ class AcceleratorTypesGapicClient
      * @return \Google\Cloud\Compute\V1\AcceleratorTypeAggregatedList
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function aggregatedList($project, array $optionalArgs = [])
     {
@@ -288,6 +294,7 @@ class AcceleratorTypesGapicClient
      * @return \Google\Cloud\Compute\V1\AcceleratorType
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($acceleratorType, $project, $zone, array $optionalArgs = [])
     {
@@ -374,6 +381,7 @@ class AcceleratorTypesGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, $zone, array $optionalArgs = [])
     {

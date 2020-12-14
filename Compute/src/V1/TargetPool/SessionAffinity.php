@@ -83,6 +83,4 @@ class SessionAffinity
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(SessionAffinity::class, \Google\Cloud\Compute\V1\TargetPool_SessionAffinity::class);
 

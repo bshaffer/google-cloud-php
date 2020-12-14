@@ -60,6 +60,4 @@ class Operator
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Operator::class, \Google\Cloud\Compute\V1\SchedulingNodeAffinity_Operator::class);
 

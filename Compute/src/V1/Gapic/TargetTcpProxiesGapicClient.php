@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -59,6 +61,8 @@ use Google\Cloud\Compute\V1\TargetTcpProxyList;
  *     $targetTcpProxiesClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class TargetTcpProxiesGapicClient
 {
@@ -171,6 +175,7 @@ class TargetTcpProxiesGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -214,6 +219,7 @@ class TargetTcpProxiesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function delete($project, $targetTcpProxy, array $optionalArgs = [])
     {
@@ -262,6 +268,7 @@ class TargetTcpProxiesGapicClient
      * @return \Google\Cloud\Compute\V1\TargetTcpProxy
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($project, $targetTcpProxy, array $optionalArgs = [])
     {
@@ -312,6 +319,7 @@ class TargetTcpProxiesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function insert($project, array $optionalArgs = [])
     {
@@ -400,6 +408,7 @@ class TargetTcpProxiesGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, array $optionalArgs = [])
     {
@@ -466,6 +475,7 @@ class TargetTcpProxiesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setBackendService($project, $targetTcpProxy, array $optionalArgs = [])
     {
@@ -524,6 +534,7 @@ class TargetTcpProxiesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setProxyHeader($project, $targetTcpProxy, array $optionalArgs = [])
     {

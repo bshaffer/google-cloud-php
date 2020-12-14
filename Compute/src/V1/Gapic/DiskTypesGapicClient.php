@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -53,6 +55,8 @@ use Google\Cloud\Compute\V1\ListDiskTypesRequest;
  *     $diskTypesClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class DiskTypesGapicClient
 {
@@ -165,6 +169,7 @@ class DiskTypesGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -222,6 +227,7 @@ class DiskTypesGapicClient
      * @return \Google\Cloud\Compute\V1\DiskTypeAggregatedList
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function aggregatedList($project, array $optionalArgs = [])
     {
@@ -286,6 +292,7 @@ class DiskTypesGapicClient
      * @return \Google\Cloud\Compute\V1\DiskType
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($diskType, $project, $zone, array $optionalArgs = [])
     {
@@ -372,6 +379,7 @@ class DiskTypesGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, $zone, array $optionalArgs = [])
     {

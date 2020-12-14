@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -71,6 +73,8 @@ use Google\Cloud\Compute\V1\TargetReference;
  *     $targetPoolsClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class TargetPoolsGapicClient
 {
@@ -183,6 +187,7 @@ class TargetPoolsGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -229,6 +234,7 @@ class TargetPoolsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function addHealthCheck($project, $region, $targetPool, array $optionalArgs = [])
     {
@@ -290,6 +296,7 @@ class TargetPoolsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function addInstance($project, $region, $targetPool, array $optionalArgs = [])
     {
@@ -362,6 +369,7 @@ class TargetPoolsGapicClient
      * @return \Google\Cloud\Compute\V1\TargetPoolAggregatedList
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function aggregatedList($project, array $optionalArgs = [])
     {
@@ -432,6 +440,7 @@ class TargetPoolsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function delete($project, $region, $targetPool, array $optionalArgs = [])
     {
@@ -483,6 +492,7 @@ class TargetPoolsGapicClient
      * @return \Google\Cloud\Compute\V1\TargetPool
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($project, $region, $targetPool, array $optionalArgs = [])
     {
@@ -532,6 +542,7 @@ class TargetPoolsGapicClient
      * @return \Google\Cloud\Compute\V1\TargetPoolInstanceHealth
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function getHealth($project, $region, $targetPool, array $optionalArgs = [])
     {
@@ -588,6 +599,7 @@ class TargetPoolsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function insert($project, $region, array $optionalArgs = [])
     {
@@ -679,6 +691,7 @@ class TargetPoolsGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, $region, array $optionalArgs = [])
     {
@@ -748,6 +761,7 @@ class TargetPoolsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function removeHealthCheck($project, $region, $targetPool, array $optionalArgs = [])
     {
@@ -809,6 +823,7 @@ class TargetPoolsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function removeInstance($project, $region, $targetPool, array $optionalArgs = [])
     {
@@ -872,6 +887,7 @@ class TargetPoolsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setBackup($project, $region, $targetPool, array $optionalArgs = [])
     {

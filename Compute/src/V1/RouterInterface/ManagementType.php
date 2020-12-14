@@ -57,6 +57,4 @@ class ManagementType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ManagementType::class, \Google\Cloud\Compute\V1\RouterInterface_ManagementType::class);
 

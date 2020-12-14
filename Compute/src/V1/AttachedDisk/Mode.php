@@ -55,6 +55,4 @@ class Mode
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Mode::class, \Google\Cloud\Compute\V1\AttachedDisk_Mode::class);
 

@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -66,6 +68,8 @@ use Google\Cloud\Compute\V1\UpdatePeeringNetworkRequest;
  *     $networksClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class NetworksGapicClient
 {
@@ -178,6 +182,7 @@ class NetworksGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -222,6 +227,7 @@ class NetworksGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function addPeering($network, $project, array $optionalArgs = [])
     {
@@ -279,6 +285,7 @@ class NetworksGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function delete($network, $project, array $optionalArgs = [])
     {
@@ -327,6 +334,7 @@ class NetworksGapicClient
      * @return \Google\Cloud\Compute\V1\Network
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($network, $project, array $optionalArgs = [])
     {
@@ -377,6 +385,7 @@ class NetworksGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function insert($project, array $optionalArgs = [])
     {
@@ -465,6 +474,7 @@ class NetworksGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, array $optionalArgs = [])
     {
@@ -571,6 +581,7 @@ class NetworksGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function listPeeringRoutes($network, $project, array $optionalArgs = [])
     {
@@ -647,6 +658,7 @@ class NetworksGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function patch($network, $project, array $optionalArgs = [])
     {
@@ -705,6 +717,7 @@ class NetworksGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function removePeering($network, $project, array $optionalArgs = [])
     {
@@ -762,6 +775,7 @@ class NetworksGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function switchToCustomMode($network, $project, array $optionalArgs = [])
     {
@@ -817,6 +831,7 @@ class NetworksGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function updatePeering($network, $project, array $optionalArgs = [])
     {

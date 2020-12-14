@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -62,6 +64,8 @@ use Google\Cloud\Compute\V1\TestPermissionsResponse;
  *     $licensesClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class LicensesGapicClient
 {
@@ -174,6 +178,7 @@ class LicensesGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -217,6 +222,7 @@ class LicensesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function delete($license, $project, array $optionalArgs = [])
     {
@@ -265,6 +271,7 @@ class LicensesGapicClient
      * @return \Google\Cloud\Compute\V1\License
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($license, $project, array $optionalArgs = [])
     {
@@ -312,6 +319,7 @@ class LicensesGapicClient
      * @return \Google\Cloud\Compute\V1\Policy
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function getIamPolicy($project, $resource, array $optionalArgs = [])
     {
@@ -365,6 +373,7 @@ class LicensesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function insert($project, array $optionalArgs = [])
     {
@@ -453,6 +462,7 @@ class LicensesGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, array $optionalArgs = [])
     {
@@ -513,6 +523,7 @@ class LicensesGapicClient
      * @return \Google\Cloud\Compute\V1\Policy
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setIamPolicy($project, $resource, array $optionalArgs = [])
     {
@@ -562,6 +573,7 @@ class LicensesGapicClient
      * @return \Google\Cloud\Compute\V1\TestPermissionsResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function testIamPermissions($project, $resource, array $optionalArgs = [])
     {

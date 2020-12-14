@@ -56,6 +56,4 @@ class Source
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Source::class, \Google\Cloud\Compute\V1\InterconnectOutageNotification_Source::class);
 

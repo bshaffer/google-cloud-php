@@ -50,6 +50,4 @@ class NatPolicy
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(NatPolicy::class, \Google\Cloud\Compute\V1\TargetInstance_NatPolicy::class);
 

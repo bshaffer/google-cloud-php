@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -58,6 +60,8 @@ use Google\Cloud\Compute\V1\TargetReference;
  *     $globalForwardingRulesClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class GlobalForwardingRulesGapicClient
 {
@@ -170,6 +174,7 @@ class GlobalForwardingRulesGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -213,6 +218,7 @@ class GlobalForwardingRulesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function delete($forwardingRule, $project, array $optionalArgs = [])
     {
@@ -261,6 +267,7 @@ class GlobalForwardingRulesGapicClient
      * @return \Google\Cloud\Compute\V1\ForwardingRule
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($forwardingRule, $project, array $optionalArgs = [])
     {
@@ -311,6 +318,7 @@ class GlobalForwardingRulesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function insert($project, array $optionalArgs = [])
     {
@@ -399,6 +407,7 @@ class GlobalForwardingRulesGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, array $optionalArgs = [])
     {
@@ -465,6 +474,7 @@ class GlobalForwardingRulesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function patch($forwardingRule, $project, array $optionalArgs = [])
     {
@@ -523,6 +533,7 @@ class GlobalForwardingRulesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setTarget($forwardingRule, $project, array $optionalArgs = [])
     {

@@ -65,6 +65,4 @@ class QuicOverride
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(QuicOverride::class, \Google\Cloud\Compute\V1\TargetHttpsProxy_QuicOverride::class);
 

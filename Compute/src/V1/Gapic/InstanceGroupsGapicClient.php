@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -67,6 +69,8 @@ use Google\Cloud\Compute\V1\SetNamedPortsInstanceGroupRequest;
  *     $instanceGroupsClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class InstanceGroupsGapicClient
 {
@@ -179,6 +183,7 @@ class InstanceGroupsGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -225,6 +230,7 @@ class InstanceGroupsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function addInstances($instanceGroup, $project, $zone, array $optionalArgs = [])
     {
@@ -297,6 +303,7 @@ class InstanceGroupsGapicClient
      * @return \Google\Cloud\Compute\V1\InstanceGroupAggregatedList
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function aggregatedList($project, array $optionalArgs = [])
     {
@@ -367,6 +374,7 @@ class InstanceGroupsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function delete($instanceGroup, $project, $zone, array $optionalArgs = [])
     {
@@ -420,6 +428,7 @@ class InstanceGroupsGapicClient
      * @return \Google\Cloud\Compute\V1\InstanceGroup
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($instanceGroup, $project, $zone, array $optionalArgs = [])
     {
@@ -473,6 +482,7 @@ class InstanceGroupsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function insert($project, $zone, array $optionalArgs = [])
     {
@@ -566,6 +576,7 @@ class InstanceGroupsGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, $zone, array $optionalArgs = [])
     {
@@ -669,6 +680,7 @@ class InstanceGroupsGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function listInstances($instanceGroup, $project, $zone, array $optionalArgs = [])
     {
@@ -744,6 +756,7 @@ class InstanceGroupsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function removeInstances($instanceGroup, $project, $zone, array $optionalArgs = [])
     {
@@ -805,6 +818,7 @@ class InstanceGroupsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setNamedPorts($instanceGroup, $project, $zone, array $optionalArgs = [])
     {

@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -56,6 +58,8 @@ use Google\Cloud\Compute\V1\VpnTunnelList;
  *     $vpnTunnelsClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class VpnTunnelsGapicClient
 {
@@ -168,6 +172,7 @@ class VpnTunnelsGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -225,6 +230,7 @@ class VpnTunnelsGapicClient
      * @return \Google\Cloud\Compute\V1\VpnTunnelAggregatedList
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function aggregatedList($project, array $optionalArgs = [])
     {
@@ -295,6 +301,7 @@ class VpnTunnelsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function delete($project, $region, $vpnTunnel, array $optionalArgs = [])
     {
@@ -346,6 +353,7 @@ class VpnTunnelsGapicClient
      * @return \Google\Cloud\Compute\V1\VpnTunnel
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($project, $region, $vpnTunnel, array $optionalArgs = [])
     {
@@ -399,6 +407,7 @@ class VpnTunnelsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function insert($project, $region, array $optionalArgs = [])
     {
@@ -490,6 +499,7 @@ class VpnTunnelsGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, $region, array $optionalArgs = [])
     {

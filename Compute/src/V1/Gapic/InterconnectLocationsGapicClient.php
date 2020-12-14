@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -52,6 +54,8 @@ use Google\Cloud\Compute\V1\ListInterconnectLocationsRequest;
  *     $interconnectLocationsClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class InterconnectLocationsGapicClient
 {
@@ -164,6 +168,7 @@ class InterconnectLocationsGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -201,6 +206,7 @@ class InterconnectLocationsGapicClient
      * @return \Google\Cloud\Compute\V1\InterconnectLocation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($interconnectLocation, $project, array $optionalArgs = [])
     {
@@ -284,6 +290,7 @@ class InterconnectLocationsGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, array $optionalArgs = [])
     {

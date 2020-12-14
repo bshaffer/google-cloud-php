@@ -55,6 +55,4 @@ class Collocation
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Collocation::class, \Google\Cloud\Compute\V1\ResourcePolicyGroupPlacementPolicy_Collocation::class);
 

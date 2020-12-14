@@ -76,6 +76,4 @@ class IPProtocol
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(IPProtocol::class, \Google\Cloud\Compute\V1\ForwardingRule_IPProtocol::class);
 

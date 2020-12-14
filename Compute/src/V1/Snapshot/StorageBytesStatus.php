@@ -55,6 +55,4 @@ class StorageBytesStatus
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(StorageBytesStatus::class, \Google\Cloud\Compute\V1\Snapshot_StorageBytesStatus::class);
 

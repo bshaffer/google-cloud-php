@@ -60,6 +60,4 @@ class IpVersion
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(IpVersion::class, \Google\Cloud\Compute\V1\ForwardingRule_IpVersion::class);
 

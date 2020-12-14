@@ -60,6 +60,4 @@ class Metadata
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Metadata::class, \Google\Cloud\Compute\V1\SubnetworkLogConfig_Metadata::class);
 

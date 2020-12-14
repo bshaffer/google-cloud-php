@@ -60,6 +60,4 @@ class FileType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(FileType::class, \Google\Cloud\Compute\V1\FileContentBuffer_FileType::class);
 

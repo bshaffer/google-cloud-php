@@ -70,6 +70,4 @@ class NetworkEndpointType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(NetworkEndpointType::class, \Google\Cloud\Compute\V1\NetworkEndpointGroup_NetworkEndpointType::class);
 

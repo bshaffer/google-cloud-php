@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -120,6 +122,8 @@ use Google\Cloud\Compute\V1\ZoneSetPolicyRequest;
  *     $instancesClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class InstancesGapicClient
 {
@@ -232,6 +236,7 @@ class InstancesGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -280,6 +285,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function addAccessConfig($instance, $networkInterface, $project, $zone, array $optionalArgs = [])
     {
@@ -342,6 +348,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function addResourcePolicies($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -414,6 +421,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\InstanceAggregatedList
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function aggregatedList($project, array $optionalArgs = [])
     {
@@ -487,6 +495,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function attachDisk($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -550,6 +559,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function delete($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -611,6 +621,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function deleteAccessConfig($accessConfig, $instance, $networkInterface, $project, $zone, array $optionalArgs = [])
     {
@@ -672,6 +683,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function detachDisk($deviceName, $instance, $project, $zone, array $optionalArgs = [])
     {
@@ -724,6 +736,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Instance
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -776,6 +789,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\GuestAttributes
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function getGuestAttributes($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -832,6 +846,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Policy
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function getIamPolicy($project, $resource, $zone, array $optionalArgs = [])
     {
@@ -883,6 +898,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Screenshot
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function getScreenshot($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -939,6 +955,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\SerialPortOutput
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function getSerialPortOutput($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -993,6 +1010,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\ShieldedInstanceIdentity
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function getShieldedInstanceIdentity($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -1053,6 +1071,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function insert($project, $zone, array $optionalArgs = [])
     {
@@ -1147,6 +1166,7 @@ class InstancesGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, $zone, array $optionalArgs = [])
     {
@@ -1249,6 +1269,7 @@ class InstancesGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function listReferrers($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -1319,6 +1340,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function removeResourcePolicies($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -1379,6 +1401,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function reset($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -1438,6 +1461,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setDeletionProtection($project, $resource, $zone, array $optionalArgs = [])
     {
@@ -1502,6 +1526,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setDiskAutoDelete($autoDelete, $deviceName, $instance, $project, $zone, array $optionalArgs = [])
     {
@@ -1556,6 +1581,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Policy
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setIamPolicy($project, $resource, $zone, array $optionalArgs = [])
     {
@@ -1614,6 +1640,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setLabels($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -1675,6 +1702,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setMachineResources($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -1736,6 +1764,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setMachineType($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -1797,6 +1826,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setMetadata($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -1858,6 +1888,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setMinCpuPlatform($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -1919,6 +1950,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setScheduling($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -1980,6 +2012,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setServiceAccount($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -2041,6 +2074,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setShieldedInstanceIntegrityPolicy($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -2102,6 +2136,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setTags($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -2156,6 +2191,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function simulateMaintenanceEvent($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -2210,6 +2246,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function start($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -2268,6 +2305,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function startWithEncryptionKey($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -2328,6 +2366,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function stop($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -2380,6 +2419,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\TestPermissionsResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function testIamPermissions($project, $resource, $zone, array $optionalArgs = [])
     {
@@ -2442,6 +2482,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function update($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -2511,6 +2552,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function updateAccessConfig($instance, $networkInterface, $project, $zone, array $optionalArgs = [])
     {
@@ -2573,6 +2615,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function updateDisplayDevice($instance, $project, $zone, array $optionalArgs = [])
     {
@@ -2636,6 +2679,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function updateNetworkInterface($instance, $networkInterface, $project, $zone, array $optionalArgs = [])
     {
@@ -2698,6 +2742,7 @@ class InstancesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function updateShieldedInstanceConfig($instance, $project, $zone, array $optionalArgs = [])
     {

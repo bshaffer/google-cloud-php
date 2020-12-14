@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -55,6 +57,8 @@ use Google\Cloud\Compute\V1\Operation;
  *     $regionCommitmentsClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class RegionCommitmentsGapicClient
 {
@@ -167,6 +171,7 @@ class RegionCommitmentsGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -224,6 +229,7 @@ class RegionCommitmentsGapicClient
      * @return \Google\Cloud\Compute\V1\CommitmentAggregatedList
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function aggregatedList($project, array $optionalArgs = [])
     {
@@ -288,6 +294,7 @@ class RegionCommitmentsGapicClient
      * @return \Google\Cloud\Compute\V1\Commitment
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($commitment, $project, $region, array $optionalArgs = [])
     {
@@ -341,6 +348,7 @@ class RegionCommitmentsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function insert($project, $region, array $optionalArgs = [])
     {
@@ -432,6 +440,7 @@ class RegionCommitmentsGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, $region, array $optionalArgs = [])
     {

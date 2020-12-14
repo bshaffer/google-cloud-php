@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -60,6 +62,8 @@ use Google\Cloud\Compute\V1\UpdateBackendBucketRequest;
  *     $backendBucketsClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class BackendBucketsGapicClient
 {
@@ -172,6 +176,7 @@ class BackendBucketsGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -216,6 +221,7 @@ class BackendBucketsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function addSignedUrlKey($backendBucket, $project, array $optionalArgs = [])
     {
@@ -273,6 +279,7 @@ class BackendBucketsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function delete($backendBucket, $project, array $optionalArgs = [])
     {
@@ -329,6 +336,7 @@ class BackendBucketsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function deleteSignedUrlKey($backendBucket, $keyName, $project, array $optionalArgs = [])
     {
@@ -378,6 +386,7 @@ class BackendBucketsGapicClient
      * @return \Google\Cloud\Compute\V1\BackendBucket
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($backendBucket, $project, array $optionalArgs = [])
     {
@@ -428,6 +437,7 @@ class BackendBucketsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function insert($project, array $optionalArgs = [])
     {
@@ -516,6 +526,7 @@ class BackendBucketsGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, array $optionalArgs = [])
     {
@@ -582,6 +593,7 @@ class BackendBucketsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function patch($backendBucket, $project, array $optionalArgs = [])
     {
@@ -640,6 +652,7 @@ class BackendBucketsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function update($backendBucket, $project, array $optionalArgs = [])
     {

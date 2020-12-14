@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -73,6 +75,8 @@ use Google\Cloud\Compute\V1\TestPermissionsResponse;
  *     $regionDisksClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class RegionDisksGapicClient
 {
@@ -185,6 +189,7 @@ class RegionDisksGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -231,6 +236,7 @@ class RegionDisksGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function addResourcePolicies($disk, $project, $region, array $optionalArgs = [])
     {
@@ -292,6 +298,7 @@ class RegionDisksGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function createSnapshot($disk, $project, $region, array $optionalArgs = [])
     {
@@ -352,6 +359,7 @@ class RegionDisksGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function delete($disk, $project, $region, array $optionalArgs = [])
     {
@@ -403,6 +411,7 @@ class RegionDisksGapicClient
      * @return \Google\Cloud\Compute\V1\Disk
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($disk, $project, $region, array $optionalArgs = [])
     {
@@ -453,6 +462,7 @@ class RegionDisksGapicClient
      * @return \Google\Cloud\Compute\V1\Policy
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function getIamPolicy($project, $region, $resource, array $optionalArgs = [])
     {
@@ -511,6 +521,7 @@ class RegionDisksGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function insert($project, $region, array $optionalArgs = [])
     {
@@ -605,6 +616,7 @@ class RegionDisksGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, $region, array $optionalArgs = [])
     {
@@ -674,6 +686,7 @@ class RegionDisksGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function removeResourcePolicies($disk, $project, $region, array $optionalArgs = [])
     {
@@ -735,6 +748,7 @@ class RegionDisksGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function resize($disk, $project, $region, array $optionalArgs = [])
     {
@@ -790,6 +804,7 @@ class RegionDisksGapicClient
      * @return \Google\Cloud\Compute\V1\Policy
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setIamPolicy($project, $region, $resource, array $optionalArgs = [])
     {
@@ -848,6 +863,7 @@ class RegionDisksGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setLabels($project, $region, $resource, array $optionalArgs = [])
     {
@@ -903,6 +919,7 @@ class RegionDisksGapicClient
      * @return \Google\Cloud\Compute\V1\TestPermissionsResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function testIamPermissions($project, $region, $resource, array $optionalArgs = [])
     {

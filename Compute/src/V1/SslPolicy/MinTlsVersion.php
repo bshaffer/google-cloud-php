@@ -60,6 +60,4 @@ class MinTlsVersion
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(MinTlsVersion::class, \Google\Cloud\Compute\V1\SslPolicy_MinTlsVersion::class);
 

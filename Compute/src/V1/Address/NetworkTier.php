@@ -56,6 +56,4 @@ class NetworkTier
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(NetworkTier::class, \Google\Cloud\Compute\V1\Address_NetworkTier::class);
 

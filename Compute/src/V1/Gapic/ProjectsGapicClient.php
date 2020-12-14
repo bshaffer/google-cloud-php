@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -72,6 +74,8 @@ use Google\Cloud\Compute\V1\XpnHostList;
  *     $projectsClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class ProjectsGapicClient
 {
@@ -184,6 +188,7 @@ class ProjectsGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -225,6 +230,7 @@ class ProjectsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function disableXpnHost($project, array $optionalArgs = [])
     {
@@ -277,6 +283,7 @@ class ProjectsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function disableXpnResource($project, array $optionalArgs = [])
     {
@@ -331,6 +338,7 @@ class ProjectsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function enableXpnHost($project, array $optionalArgs = [])
     {
@@ -383,6 +391,7 @@ class ProjectsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function enableXpnResource($project, array $optionalArgs = [])
     {
@@ -431,6 +440,7 @@ class ProjectsGapicClient
      * @return \Google\Cloud\Compute\V1\Project
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($project, array $optionalArgs = [])
     {
@@ -473,6 +483,7 @@ class ProjectsGapicClient
      * @return \Google\Cloud\Compute\V1\Project
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function getXpnHost($project, array $optionalArgs = [])
     {
@@ -555,6 +566,7 @@ class ProjectsGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function getXpnResources($project, array $optionalArgs = [])
     {
@@ -653,6 +665,7 @@ class ProjectsGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function listXpnHosts($project, array $optionalArgs = [])
     {
@@ -720,6 +733,7 @@ class ProjectsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function moveDisk($project, array $optionalArgs = [])
     {
@@ -775,6 +789,7 @@ class ProjectsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function moveInstance($project, array $optionalArgs = [])
     {
@@ -830,6 +845,7 @@ class ProjectsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setCommonInstanceMetadata($project, array $optionalArgs = [])
     {
@@ -885,6 +901,7 @@ class ProjectsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setDefaultNetworkTier($project, array $optionalArgs = [])
     {
@@ -940,6 +957,7 @@ class ProjectsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setUsageExportBucket($project, array $optionalArgs = [])
     {

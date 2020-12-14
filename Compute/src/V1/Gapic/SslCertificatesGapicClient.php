@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -56,6 +58,8 @@ use Google\Cloud\Compute\V1\SslCertificateList;
  *     $sslCertificatesClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class SslCertificatesGapicClient
 {
@@ -168,6 +172,7 @@ class SslCertificatesGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -225,6 +230,7 @@ class SslCertificatesGapicClient
      * @return \Google\Cloud\Compute\V1\SslCertificateAggregatedList
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function aggregatedList($project, array $optionalArgs = [])
     {
@@ -293,6 +299,7 @@ class SslCertificatesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function delete($project, $sslCertificate, array $optionalArgs = [])
     {
@@ -341,6 +348,7 @@ class SslCertificatesGapicClient
      * @return \Google\Cloud\Compute\V1\SslCertificate
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($project, $sslCertificate, array $optionalArgs = [])
     {
@@ -391,6 +399,7 @@ class SslCertificatesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function insert($project, array $optionalArgs = [])
     {
@@ -479,6 +488,7 @@ class SslCertificatesGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, array $optionalArgs = [])
     {

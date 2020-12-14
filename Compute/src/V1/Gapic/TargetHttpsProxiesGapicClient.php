@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -64,6 +66,8 @@ use Google\Cloud\Compute\V1\UrlMapReference;
  *     $targetHttpsProxiesClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class TargetHttpsProxiesGapicClient
 {
@@ -176,6 +180,7 @@ class TargetHttpsProxiesGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -233,6 +238,7 @@ class TargetHttpsProxiesGapicClient
      * @return \Google\Cloud\Compute\V1\TargetHttpsProxyAggregatedList
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function aggregatedList($project, array $optionalArgs = [])
     {
@@ -301,6 +307,7 @@ class TargetHttpsProxiesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function delete($project, $targetHttpsProxy, array $optionalArgs = [])
     {
@@ -349,6 +356,7 @@ class TargetHttpsProxiesGapicClient
      * @return \Google\Cloud\Compute\V1\TargetHttpsProxy
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($project, $targetHttpsProxy, array $optionalArgs = [])
     {
@@ -399,6 +407,7 @@ class TargetHttpsProxiesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function insert($project, array $optionalArgs = [])
     {
@@ -487,6 +496,7 @@ class TargetHttpsProxiesGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, array $optionalArgs = [])
     {
@@ -553,6 +563,7 @@ class TargetHttpsProxiesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setQuicOverride($project, $targetHttpsProxy, array $optionalArgs = [])
     {
@@ -611,6 +622,7 @@ class TargetHttpsProxiesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setSslCertificates($project, $targetHttpsProxy, array $optionalArgs = [])
     {
@@ -669,6 +681,7 @@ class TargetHttpsProxiesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setSslPolicy($project, $targetHttpsProxy, array $optionalArgs = [])
     {
@@ -727,6 +740,7 @@ class TargetHttpsProxiesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setUrlMap($project, $targetHttpsProxy, array $optionalArgs = [])
     {

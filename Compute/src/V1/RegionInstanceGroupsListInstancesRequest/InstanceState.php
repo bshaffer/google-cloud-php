@@ -55,6 +55,4 @@ class InstanceState
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(InstanceState::class, \Google\Cloud\Compute\V1\RegionInstanceGroupsListInstancesRequest_InstanceState::class);
 

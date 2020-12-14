@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -86,6 +88,8 @@ use Google\Cloud\Compute\V1\UpdatePerInstanceConfigsInstanceGroupManagerRequest;
  *     $instanceGroupManagersClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class InstanceGroupManagersGapicClient
 {
@@ -198,6 +202,7 @@ class InstanceGroupManagersGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -248,6 +253,7 @@ class InstanceGroupManagersGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function abandonInstances($instanceGroupManager, $project, $zone, array $optionalArgs = [])
     {
@@ -320,6 +326,7 @@ class InstanceGroupManagersGapicClient
      * @return \Google\Cloud\Compute\V1\InstanceGroupManagerAggregatedList
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function aggregatedList($project, array $optionalArgs = [])
     {
@@ -385,6 +392,7 @@ class InstanceGroupManagersGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function applyUpdatesToInstances($instanceGroupManager, $project, $zone, array $optionalArgs = [])
     {
@@ -443,6 +451,7 @@ class InstanceGroupManagersGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function createInstances($instanceGroupManager, $project, $zone, array $optionalArgs = [])
     {
@@ -503,6 +512,7 @@ class InstanceGroupManagersGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function delete($instanceGroupManager, $project, $zone, array $optionalArgs = [])
     {
@@ -565,6 +575,7 @@ class InstanceGroupManagersGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function deleteInstances($instanceGroupManager, $project, $zone, array $optionalArgs = [])
     {
@@ -620,6 +631,7 @@ class InstanceGroupManagersGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function deletePerInstanceConfigs($instanceGroupManager, $project, $zone, array $optionalArgs = [])
     {
@@ -671,6 +683,7 @@ class InstanceGroupManagersGapicClient
      * @return \Google\Cloud\Compute\V1\InstanceGroupManager
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($instanceGroupManager, $project, $zone, array $optionalArgs = [])
     {
@@ -726,6 +739,7 @@ class InstanceGroupManagersGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function insert($project, $zone, array $optionalArgs = [])
     {
@@ -817,6 +831,7 @@ class InstanceGroupManagersGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, $zone, array $optionalArgs = [])
     {
@@ -919,6 +934,7 @@ class InstanceGroupManagersGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function listErrors($instanceGroupManager, $project, $zone, array $optionalArgs = [])
     {
@@ -1022,6 +1038,7 @@ class InstanceGroupManagersGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function listManagedInstances($instanceGroupManager, $project, $zone, array $optionalArgs = [])
     {
@@ -1125,6 +1142,7 @@ class InstanceGroupManagersGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function listPerInstanceConfigs($instanceGroupManager, $project, $zone, array $optionalArgs = [])
     {
@@ -1195,6 +1213,7 @@ class InstanceGroupManagersGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function patch($instanceGroupManager, $project, $zone, array $optionalArgs = [])
     {
@@ -1256,6 +1275,7 @@ class InstanceGroupManagersGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function patchPerInstanceConfigs($instanceGroupManager, $project, $zone, array $optionalArgs = [])
     {
@@ -1321,6 +1341,7 @@ class InstanceGroupManagersGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function recreateInstances($instanceGroupManager, $project, $zone, array $optionalArgs = [])
     {
@@ -1391,6 +1412,7 @@ class InstanceGroupManagersGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function resize($instanceGroupManager, $project, $size, $zone, array $optionalArgs = [])
     {
@@ -1450,6 +1472,7 @@ class InstanceGroupManagersGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setInstanceTemplate($instanceGroupManager, $project, $zone, array $optionalArgs = [])
     {
@@ -1511,6 +1534,7 @@ class InstanceGroupManagersGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setTargetPools($instanceGroupManager, $project, $zone, array $optionalArgs = [])
     {
@@ -1572,6 +1596,7 @@ class InstanceGroupManagersGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function updatePerInstanceConfigs($instanceGroupManager, $project, $zone, array $optionalArgs = [])
     {

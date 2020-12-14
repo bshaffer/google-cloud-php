@@ -65,6 +65,4 @@ class ConsumeReservationType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ConsumeReservationType::class, \Google\Cloud\Compute\V1\ReservationAffinity_ConsumeReservationType::class);
 

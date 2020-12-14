@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -57,6 +59,8 @@ use Google\Cloud\Compute\V1\UpdateFirewallRequest;
  *     $firewallsClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class FirewallsGapicClient
 {
@@ -169,6 +173,7 @@ class FirewallsGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -212,6 +217,7 @@ class FirewallsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function delete($firewall, $project, array $optionalArgs = [])
     {
@@ -260,6 +266,7 @@ class FirewallsGapicClient
      * @return \Google\Cloud\Compute\V1\Firewall
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($firewall, $project, array $optionalArgs = [])
     {
@@ -310,6 +317,7 @@ class FirewallsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function insert($project, array $optionalArgs = [])
     {
@@ -398,6 +406,7 @@ class FirewallsGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, array $optionalArgs = [])
     {
@@ -464,6 +473,7 @@ class FirewallsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function patch($firewall, $project, array $optionalArgs = [])
     {
@@ -522,6 +532,7 @@ class FirewallsGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function update($firewall, $project, array $optionalArgs = [])
     {

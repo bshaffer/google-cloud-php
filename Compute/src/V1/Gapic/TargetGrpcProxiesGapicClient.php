@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -56,6 +58,8 @@ use Google\Cloud\Compute\V1\TargetGrpcProxyList;
  *     $targetGrpcProxiesClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class TargetGrpcProxiesGapicClient
 {
@@ -168,6 +172,7 @@ class TargetGrpcProxiesGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -211,6 +216,7 @@ class TargetGrpcProxiesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function delete($project, $targetGrpcProxy, array $optionalArgs = [])
     {
@@ -259,6 +265,7 @@ class TargetGrpcProxiesGapicClient
      * @return \Google\Cloud\Compute\V1\TargetGrpcProxy
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($project, $targetGrpcProxy, array $optionalArgs = [])
     {
@@ -309,6 +316,7 @@ class TargetGrpcProxiesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function insert($project, array $optionalArgs = [])
     {
@@ -397,6 +405,7 @@ class TargetGrpcProxiesGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, array $optionalArgs = [])
     {
@@ -463,6 +472,7 @@ class TargetGrpcProxiesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function patch($project, $targetGrpcProxy, array $optionalArgs = [])
     {

@@ -56,6 +56,6 @@ class MaintenanceInterval
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(MaintenanceInterval::class, \Google\Cloud\Compute\V1\AllocationSpecificSKUAllocationReservedInstanceProperties_MaintenanceInterval::class);
+
+
 

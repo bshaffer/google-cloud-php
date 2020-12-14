@@ -75,6 +75,4 @@ class Action
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Action::class, \Google\Cloud\Compute\V1\Rule_Action::class);
 

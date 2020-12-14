@@ -50,6 +50,4 @@ class ContainerType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ContainerType::class, \Google\Cloud\Compute\V1\RawDisk_ContainerType::class);
 

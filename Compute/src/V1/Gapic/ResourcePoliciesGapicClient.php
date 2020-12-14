@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -63,6 +65,8 @@ use Google\Cloud\Compute\V1\TestPermissionsResponse;
  *     $resourcePoliciesClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class ResourcePoliciesGapicClient
 {
@@ -175,6 +179,7 @@ class ResourcePoliciesGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -232,6 +237,7 @@ class ResourcePoliciesGapicClient
      * @return \Google\Cloud\Compute\V1\ResourcePolicyAggregatedList
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function aggregatedList($project, array $optionalArgs = [])
     {
@@ -302,6 +308,7 @@ class ResourcePoliciesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function delete($project, $region, $resourcePolicy, array $optionalArgs = [])
     {
@@ -353,6 +360,7 @@ class ResourcePoliciesGapicClient
      * @return \Google\Cloud\Compute\V1\ResourcePolicy
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($project, $region, $resourcePolicy, array $optionalArgs = [])
     {
@@ -403,6 +411,7 @@ class ResourcePoliciesGapicClient
      * @return \Google\Cloud\Compute\V1\Policy
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function getIamPolicy($project, $region, $resource, array $optionalArgs = [])
     {
@@ -459,6 +468,7 @@ class ResourcePoliciesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function insert($project, $region, array $optionalArgs = [])
     {
@@ -550,6 +560,7 @@ class ResourcePoliciesGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, $region, array $optionalArgs = [])
     {
@@ -613,6 +624,7 @@ class ResourcePoliciesGapicClient
      * @return \Google\Cloud\Compute\V1\Policy
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function setIamPolicy($project, $region, $resource, array $optionalArgs = [])
     {
@@ -665,6 +677,7 @@ class ResourcePoliciesGapicClient
      * @return \Google\Cloud\Compute\V1\TestPermissionsResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function testIamPermissions($project, $region, $resource, array $optionalArgs = [])
     {

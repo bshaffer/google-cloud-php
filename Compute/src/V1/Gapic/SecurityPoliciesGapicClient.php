@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -63,6 +65,8 @@ use Google\Cloud\Compute\V1\SecurityPolicyRule;
  *     $securityPoliciesClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class SecurityPoliciesGapicClient
 {
@@ -175,6 +179,7 @@ class SecurityPoliciesGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -213,6 +218,7 @@ class SecurityPoliciesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function addRule($project, $securityPolicy, array $optionalArgs = [])
     {
@@ -267,6 +273,7 @@ class SecurityPoliciesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function delete($project, $securityPolicy, array $optionalArgs = [])
     {
@@ -315,6 +322,7 @@ class SecurityPoliciesGapicClient
      * @return \Google\Cloud\Compute\V1\SecurityPolicy
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($project, $securityPolicy, array $optionalArgs = [])
     {
@@ -362,6 +370,7 @@ class SecurityPoliciesGapicClient
      * @return \Google\Cloud\Compute\V1\SecurityPolicyRule
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function getRule($project, $securityPolicy, array $optionalArgs = [])
     {
@@ -415,6 +424,7 @@ class SecurityPoliciesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function insert($project, array $optionalArgs = [])
     {
@@ -503,6 +513,7 @@ class SecurityPoliciesGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, array $optionalArgs = [])
     {
@@ -580,6 +591,7 @@ class SecurityPoliciesGapicClient
      * @return \Google\Cloud\Compute\V1\SecurityPoliciesListPreconfiguredExpressionSetsResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function listPreconfiguredExpressionSets($project, array $optionalArgs = [])
     {
@@ -646,6 +658,7 @@ class SecurityPoliciesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function patch($project, $securityPolicy, array $optionalArgs = [])
     {
@@ -700,6 +713,7 @@ class SecurityPoliciesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function patchRule($project, $securityPolicy, array $optionalArgs = [])
     {
@@ -753,6 +767,7 @@ class SecurityPoliciesGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function removeRule($project, $securityPolicy, array $optionalArgs = [])
     {

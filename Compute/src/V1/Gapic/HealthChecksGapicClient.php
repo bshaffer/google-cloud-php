@@ -20,6 +20,8 @@
  * This file was generated from the file
  * https://github.com/google/googleapis/blob/master/google/cloud/compute/v1/compute.proto
  * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
  */
 
 namespace Google\Cloud\Compute\V1\Gapic;
@@ -58,6 +60,8 @@ use Google\Cloud\Compute\V1\UpdateHealthCheckRequest;
  *     $healthChecksClient->close();
  * }
  * ```
+ *
+ * @experimental
  */
 class HealthChecksGapicClient
 {
@@ -170,6 +174,7 @@ class HealthChecksGapicClient
      * }
      *
      * @throws ValidationException
+     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -227,6 +232,7 @@ class HealthChecksGapicClient
      * @return \Google\Cloud\Compute\V1\HealthChecksAggregatedList
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function aggregatedList($project, array $optionalArgs = [])
     {
@@ -295,6 +301,7 @@ class HealthChecksGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function delete($healthCheck, $project, array $optionalArgs = [])
     {
@@ -343,6 +350,7 @@ class HealthChecksGapicClient
      * @return \Google\Cloud\Compute\V1\HealthCheck
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function get($healthCheck, $project, array $optionalArgs = [])
     {
@@ -393,6 +401,7 @@ class HealthChecksGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function insert($project, array $optionalArgs = [])
     {
@@ -481,6 +490,7 @@ class HealthChecksGapicClient
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function list($project, array $optionalArgs = [])
     {
@@ -547,6 +557,7 @@ class HealthChecksGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function patch($healthCheck, $project, array $optionalArgs = [])
     {
@@ -605,6 +616,7 @@ class HealthChecksGapicClient
      * @return \Google\Cloud\Compute\V1\Operation
      *
      * @throws ApiException if the remote call fails
+     * @experimental
      */
     public function update($healthCheck, $project, array $optionalArgs = [])
     {

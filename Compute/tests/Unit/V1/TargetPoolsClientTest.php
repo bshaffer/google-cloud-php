@@ -348,6 +348,8 @@ class TargetPoolsClientTest extends GeneratedTest
         $resources = iterator_to_array($response->iterateAllElements());
         $this->assertSame(1, count($resources));
 
+        $this->assertArrayHasKey('items', $expectedResponse->getItems());
+        $this->assertArrayHasKey('items', $resources);
         $this->assertEquals($expectedResponse->getItems()['items'], $resources['items']);
 
         $actualRequests = $transport->popReceivedCalls();

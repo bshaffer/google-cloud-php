@@ -4,7 +4,7 @@
     "license": "Apache-2.0",
     "minimum-stability": "stable",
         "require": {
-        "google/gax": "dev-support-mapped-page-list as 1.10"
+        "google/gax": "dev-master as 1.7.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8|^5.0",

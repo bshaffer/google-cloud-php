@@ -205,6 +205,7 @@
             "Google\\Cloud\\BigQuery\\Storage\\": "BigQueryStorage/src",
             "Google\\Cloud\\Bigtable\\": "Bigtable/src",
             "Google\\Cloud\\Billing\\": "Billing/src",
+            "Google\\Cloud\\Compute\\": "Compute/src",
             "Google\\Cloud\\Container\\": "Container/src",
             "Google\\Cloud\\Core\\": "Core/src",
             "Google\\Cloud\\DataCatalog\\": "DataCatalog/src",

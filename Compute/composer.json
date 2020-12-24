@@ -3,7 +3,8 @@
     "description": "Compute Client for PHP",
     "license": "Apache-2.0",
     "minimum-stability": "stable",
-        "require": {
+    "require": {
+        "php": "^7.0",
         "google/gax": "dev-master as 1.7.0"
     },
     "require-dev": {

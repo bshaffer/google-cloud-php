@@ -33,6 +33,7 @@ use Google\Cloud\Compute\V1\InstanceGroupManagerList;
 use Google\Cloud\Compute\V1\InstanceGroupManagersListErrorsResponse;
 use Google\Cloud\Compute\V1\InstanceGroupManagersListManagedInstancesResponse;
 use Google\Cloud\Compute\V1\InstanceGroupManagersListPerInstanceConfigsResp;
+use Google\Cloud\Compute\V1\InstanceGroupManagersScopedList;
 use Google\Cloud\Compute\V1\InstanceManagedByIgmError;
 use Google\Cloud\Compute\V1\ManagedInstance;
 use Google\Cloud\Compute\V1\Operation;
@@ -211,20 +212,28 @@ class InstanceGroupManagersClientTest extends GeneratedTest
         // Mock response
         $id = 'id3355';
         $kind = 'kind3292052';
-        $nextPageToken = 'nextPageToken-1530815211';
+        $nextPageToken = '';
         $selfLink = 'selfLink-1691268851';
+        $itemsItem = new InstanceGroupManagersScopedList();
+        $items = ['items' => $itemsItem];
         $expectedResponse = new InstanceGroupManagerAggregatedList();
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
         $expectedResponse->setNextPageToken($nextPageToken);
         $expectedResponse->setSelfLink($selfLink);
+        $expectedResponse->setItems($items);
         $transport->addResponse($expectedResponse);
 
         // Mock request
         $project = 'project-309310695';
 
         $response = $client->aggregatedList($project);
-        $this->assertEquals($expectedResponse, $response);
+        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
+        $resources = iterator_to_array($response->iterateAllElements());
+        $this->assertSame(1, count($resources));
+
+        $this->assertEquals($expectedResponse->getItems()['items'], $resources['items']);
+
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
@@ -234,7 +243,6 @@ class InstanceGroupManagersClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 

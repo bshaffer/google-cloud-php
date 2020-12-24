@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "git@github.com:bshaffer/google-cloud-php",
-        "sha": "5dcecfa579d41c93df00c79df8e4a89feaa27d32"
+        "sha": "2c29131f6a7d362233a796ebd9d90a5dce074725"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "996775eca5fd934edac3c2ae34b80ff0395b1717"
+        "sha": "6b026e1443948dcfc0b9e3289c85e940eb70f694"
       }
     }
   ],

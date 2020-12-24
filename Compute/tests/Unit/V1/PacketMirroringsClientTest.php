@@ -31,6 +31,7 @@ use Google\Cloud\Compute\V1\Operation;
 use Google\Cloud\Compute\V1\PacketMirroring;
 use Google\Cloud\Compute\V1\PacketMirroringAggregatedList;
 use Google\Cloud\Compute\V1\PacketMirroringList;
+use Google\Cloud\Compute\V1\PacketMirroringsScopedList;
 use Google\Cloud\Compute\V1\TestPermissionsResponse;
 use Google\Protobuf\Any;
 use Google\Rpc\Code;
@@ -85,20 +86,28 @@ class PacketMirroringsClientTest extends GeneratedTest
         // Mock response
         $id = 'id3355';
         $kind = 'kind3292052';
-        $nextPageToken = 'nextPageToken-1530815211';
+        $nextPageToken = '';
         $selfLink = 'selfLink-1691268851';
+        $itemsItem = new PacketMirroringsScopedList();
+        $items = ['items' => $itemsItem];
         $expectedResponse = new PacketMirroringAggregatedList();
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
         $expectedResponse->setNextPageToken($nextPageToken);
         $expectedResponse->setSelfLink($selfLink);
+        $expectedResponse->setItems($items);
         $transport->addResponse($expectedResponse);
 
         // Mock request
         $project = 'project-309310695';
 
         $response = $client->aggregatedList($project);
-        $this->assertEquals($expectedResponse, $response);
+        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
+        $resources = iterator_to_array($response->iterateAllElements());
+        $this->assertSame(1, count($resources));
+
+        $this->assertEquals($expectedResponse->getItems()['items'], $resources['items']);
+
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
@@ -108,7 +117,6 @@ class PacketMirroringsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 

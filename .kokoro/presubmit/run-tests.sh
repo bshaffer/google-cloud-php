@@ -21,13 +21,14 @@ mkdir -p ${SHORT_JOB_NAME}/snippets
 
 UNIT_LOG_FILENAME=${SHORT_JOB_NAME}/unit/sponge_log.xml
 SNIPPETS_LOG_FILENAME=${SHORT_JOB_NAME}/snippets/sponge_log.xml
+EXCLUDE_GROUP=$(php -r "echo version_compare(phpversion(), '7.0', '<') ? 'compute' : '';")
 
 echo "Running PHPCS Code Style Checker"
 dev/sh/style
 
 echo "Running Unit Test Suite"
 
-vendor/bin/phpunit --log-junit ${UNIT_LOG_FILENAME} ${OPT_CLOVER}
+vendor/bin/phpunit --log-junit ${UNIT_LOG_FILENAME} --exclude-group "$EXCLUDE_GROUP" ${OPT_CLOVER}
 
 if [ "${RUN_CODECOV}" == "true" ]; then
     bash ${KOKORO_GFILE_DIR}/codecov.sh

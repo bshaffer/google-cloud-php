@@ -360,7 +360,7 @@ class RegionTargetHttpsProxiesGapicClient
      *     $project = '';
      *     $region = '';
      *     // Iterate over pages of elements
-     *     $pagedResponse = $regionTargetHttpsProxiesClient->list($project, $region);
+     *     $pagedResponse = $regionTargetHttpsProxiesClient->list_($project, $region);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -371,7 +371,7 @@ class RegionTargetHttpsProxiesGapicClient
      *     // Alternatively:
      *
      *     // Iterate through all elements
-     *     $pagedResponse = $regionTargetHttpsProxiesClient->list($project, $region);
+     *     $pagedResponse = $regionTargetHttpsProxiesClient->list_($project, $region);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }
@@ -422,7 +422,7 @@ class RegionTargetHttpsProxiesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function list($project, $region, array $optionalArgs = [])
+    public function list_($project, $region, array $optionalArgs = [])
     {
         $request = new ListRegionTargetHttpsProxiesRequest();
         $request->setProject($project);

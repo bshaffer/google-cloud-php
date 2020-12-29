@@ -350,7 +350,7 @@ class SnapshotsGapicClient
      * try {
      *     $project = '';
      *     // Iterate over pages of elements
-     *     $pagedResponse = $snapshotsClient->list($project);
+     *     $pagedResponse = $snapshotsClient->list_($project);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -361,7 +361,7 @@ class SnapshotsGapicClient
      *     // Alternatively:
      *
      *     // Iterate through all elements
-     *     $pagedResponse = $snapshotsClient->list($project);
+     *     $pagedResponse = $snapshotsClient->list_($project);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }
@@ -411,7 +411,7 @@ class SnapshotsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function list($project, array $optionalArgs = [])
+    public function list_($project, array $optionalArgs = [])
     {
         $request = new ListSnapshotsRequest();
         $request->setProject($project);

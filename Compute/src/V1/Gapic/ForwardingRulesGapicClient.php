@@ -477,7 +477,7 @@ class ForwardingRulesGapicClient
      *     $project = '';
      *     $region = '';
      *     // Iterate over pages of elements
-     *     $pagedResponse = $forwardingRulesClient->list($project, $region);
+     *     $pagedResponse = $forwardingRulesClient->list_($project, $region);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -488,7 +488,7 @@ class ForwardingRulesGapicClient
      *     // Alternatively:
      *
      *     // Iterate through all elements
-     *     $pagedResponse = $forwardingRulesClient->list($project, $region);
+     *     $pagedResponse = $forwardingRulesClient->list_($project, $region);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }
@@ -539,7 +539,7 @@ class ForwardingRulesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function list($project, $region, array $optionalArgs = [])
+    public function list_($project, $region, array $optionalArgs = [])
     {
         $request = new ListForwardingRulesRequest();
         $request->setProject($project);

@@ -635,7 +635,7 @@ class RoutersGapicClient
      *     $project = '';
      *     $region = '';
      *     // Iterate over pages of elements
-     *     $pagedResponse = $routersClient->list($project, $region);
+     *     $pagedResponse = $routersClient->list_($project, $region);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -646,7 +646,7 @@ class RoutersGapicClient
      *     // Alternatively:
      *
      *     // Iterate through all elements
-     *     $pagedResponse = $routersClient->list($project, $region);
+     *     $pagedResponse = $routersClient->list_($project, $region);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }
@@ -697,7 +697,7 @@ class RoutersGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function list($project, $region, array $optionalArgs = [])
+    public function list_($project, $region, array $optionalArgs = [])
     {
         $request = new ListRoutersRequest();
         $request->setProject($project);

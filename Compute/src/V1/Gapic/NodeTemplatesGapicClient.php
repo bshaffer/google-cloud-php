@@ -535,7 +535,7 @@ class NodeTemplatesGapicClient
      *     $project = '';
      *     $region = '';
      *     // Iterate over pages of elements
-     *     $pagedResponse = $nodeTemplatesClient->list($project, $region);
+     *     $pagedResponse = $nodeTemplatesClient->list_($project, $region);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -546,7 +546,7 @@ class NodeTemplatesGapicClient
      *     // Alternatively:
      *
      *     // Iterate through all elements
-     *     $pagedResponse = $nodeTemplatesClient->list($project, $region);
+     *     $pagedResponse = $nodeTemplatesClient->list_($project, $region);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }
@@ -597,7 +597,7 @@ class NodeTemplatesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function list($project, $region, array $optionalArgs = [])
+    public function list_($project, $region, array $optionalArgs = [])
     {
         $request = new ListNodeTemplatesRequest();
         $request->setProject($project);

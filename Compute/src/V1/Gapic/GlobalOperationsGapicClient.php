@@ -399,7 +399,7 @@ class GlobalOperationsGapicClient
      * try {
      *     $project = '';
      *     // Iterate over pages of elements
-     *     $pagedResponse = $globalOperationsClient->list($project);
+     *     $pagedResponse = $globalOperationsClient->list_($project);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -410,7 +410,7 @@ class GlobalOperationsGapicClient
      *     // Alternatively:
      *
      *     // Iterate through all elements
-     *     $pagedResponse = $globalOperationsClient->list($project);
+     *     $pagedResponse = $globalOperationsClient->list_($project);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }
@@ -460,7 +460,7 @@ class GlobalOperationsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function list($project, array $optionalArgs = [])
+    public function list_($project, array $optionalArgs = [])
     {
         $request = new ListGlobalOperationsRequest();
         $request->setProject($project);

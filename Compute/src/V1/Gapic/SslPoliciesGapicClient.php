@@ -348,7 +348,7 @@ class SslPoliciesGapicClient
      * try {
      *     $project = '';
      *     // Iterate over pages of elements
-     *     $pagedResponse = $sslPoliciesClient->list($project);
+     *     $pagedResponse = $sslPoliciesClient->list_($project);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -359,7 +359,7 @@ class SslPoliciesGapicClient
      *     // Alternatively:
      *
      *     // Iterate through all elements
-     *     $pagedResponse = $sslPoliciesClient->list($project);
+     *     $pagedResponse = $sslPoliciesClient->list_($project);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }
@@ -409,7 +409,7 @@ class SslPoliciesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function list($project, array $optionalArgs = [])
+    public function list_($project, array $optionalArgs = [])
     {
         $request = new ListSslPoliciesRequest();
         $request->setProject($project);

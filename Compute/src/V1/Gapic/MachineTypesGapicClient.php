@@ -354,7 +354,7 @@ class MachineTypesGapicClient
      *     $project = '';
      *     $zone = '';
      *     // Iterate over pages of elements
-     *     $pagedResponse = $machineTypesClient->list($project, $zone);
+     *     $pagedResponse = $machineTypesClient->list_($project, $zone);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -365,7 +365,7 @@ class MachineTypesGapicClient
      *     // Alternatively:
      *
      *     // Iterate through all elements
-     *     $pagedResponse = $machineTypesClient->list($project, $zone);
+     *     $pagedResponse = $machineTypesClient->list_($project, $zone);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }
@@ -416,7 +416,7 @@ class MachineTypesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function list($project, $zone, array $optionalArgs = [])
+    public function list_($project, $zone, array $optionalArgs = [])
     {
         $request = new ListMachineTypesRequest();
         $request->setProject($project);

@@ -530,7 +530,7 @@ class UrlMapsGapicClient
      * try {
      *     $project = '';
      *     // Iterate over pages of elements
-     *     $pagedResponse = $urlMapsClient->list($project);
+     *     $pagedResponse = $urlMapsClient->list_($project);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -541,7 +541,7 @@ class UrlMapsGapicClient
      *     // Alternatively:
      *
      *     // Iterate through all elements
-     *     $pagedResponse = $urlMapsClient->list($project);
+     *     $pagedResponse = $urlMapsClient->list_($project);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }
@@ -591,7 +591,7 @@ class UrlMapsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function list($project, array $optionalArgs = [])
+    public function list_($project, array $optionalArgs = [])
     {
         $request = new ListUrlMapsRequest();
         $request->setProject($project);

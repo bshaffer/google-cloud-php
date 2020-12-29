@@ -356,7 +356,7 @@ class RegionSslCertificatesGapicClient
      *     $project = '';
      *     $region = '';
      *     // Iterate over pages of elements
-     *     $pagedResponse = $regionSslCertificatesClient->list($project, $region);
+     *     $pagedResponse = $regionSslCertificatesClient->list_($project, $region);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -367,7 +367,7 @@ class RegionSslCertificatesGapicClient
      *     // Alternatively:
      *
      *     // Iterate through all elements
-     *     $pagedResponse = $regionSslCertificatesClient->list($project, $region);
+     *     $pagedResponse = $regionSslCertificatesClient->list_($project, $region);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }
@@ -418,7 +418,7 @@ class RegionSslCertificatesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function list($project, $region, array $optionalArgs = [])
+    public function list_($project, $region, array $optionalArgs = [])
     {
         $request = new ListRegionSslCertificatesRequest();
         $request->setProject($project);

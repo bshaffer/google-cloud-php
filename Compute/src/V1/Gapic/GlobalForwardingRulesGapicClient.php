@@ -348,7 +348,7 @@ class GlobalForwardingRulesGapicClient
      * try {
      *     $project = '';
      *     // Iterate over pages of elements
-     *     $pagedResponse = $globalForwardingRulesClient->list($project);
+     *     $pagedResponse = $globalForwardingRulesClient->list_($project);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -359,7 +359,7 @@ class GlobalForwardingRulesGapicClient
      *     // Alternatively:
      *
      *     // Iterate through all elements
-     *     $pagedResponse = $globalForwardingRulesClient->list($project);
+     *     $pagedResponse = $globalForwardingRulesClient->list_($project);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }
@@ -409,7 +409,7 @@ class GlobalForwardingRulesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function list($project, array $optionalArgs = [])
+    public function list_($project, array $optionalArgs = [])
     {
         $request = new ListGlobalForwardingRulesRequest();
         $request->setProject($project);

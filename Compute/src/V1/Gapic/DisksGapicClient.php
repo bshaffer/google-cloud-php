@@ -666,7 +666,7 @@ class DisksGapicClient
      *     $project = '';
      *     $zone = '';
      *     // Iterate over pages of elements
-     *     $pagedResponse = $disksClient->list($project, $zone);
+     *     $pagedResponse = $disksClient->list_($project, $zone);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -677,7 +677,7 @@ class DisksGapicClient
      *     // Alternatively:
      *
      *     // Iterate through all elements
-     *     $pagedResponse = $disksClient->list($project, $zone);
+     *     $pagedResponse = $disksClient->list_($project, $zone);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }
@@ -728,7 +728,7 @@ class DisksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function list($project, $zone, array $optionalArgs = [])
+    public function list_($project, $zone, array $optionalArgs = [])
     {
         $request = new ListDisksRequest();
         $request->setProject($project);

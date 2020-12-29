@@ -474,7 +474,7 @@ class TargetVpnGatewaysGapicClient
      *     $project = '';
      *     $region = '';
      *     // Iterate over pages of elements
-     *     $pagedResponse = $targetVpnGatewaysClient->list($project, $region);
+     *     $pagedResponse = $targetVpnGatewaysClient->list_($project, $region);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -485,7 +485,7 @@ class TargetVpnGatewaysGapicClient
      *     // Alternatively:
      *
      *     // Iterate through all elements
-     *     $pagedResponse = $targetVpnGatewaysClient->list($project, $region);
+     *     $pagedResponse = $targetVpnGatewaysClient->list_($project, $region);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }
@@ -536,7 +536,7 @@ class TargetVpnGatewaysGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function list($project, $region, array $optionalArgs = [])
+    public function list_($project, $region, array $optionalArgs = [])
     {
         $request = new ListTargetVpnGatewaysRequest();
         $request->setProject($project);

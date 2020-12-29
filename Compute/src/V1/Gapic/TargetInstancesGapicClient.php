@@ -474,7 +474,7 @@ class TargetInstancesGapicClient
      *     $project = '';
      *     $zone = '';
      *     // Iterate over pages of elements
-     *     $pagedResponse = $targetInstancesClient->list($project, $zone);
+     *     $pagedResponse = $targetInstancesClient->list_($project, $zone);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -485,7 +485,7 @@ class TargetInstancesGapicClient
      *     // Alternatively:
      *
      *     // Iterate through all elements
-     *     $pagedResponse = $targetInstancesClient->list($project, $zone);
+     *     $pagedResponse = $targetInstancesClient->list_($project, $zone);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }
@@ -536,7 +536,7 @@ class TargetInstancesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function list($project, $zone, array $optionalArgs = [])
+    public function list_($project, $zone, array $optionalArgs = [])
     {
         $request = new ListTargetInstancesRequest();
         $request->setProject($project);

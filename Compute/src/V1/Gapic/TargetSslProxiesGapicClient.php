@@ -353,7 +353,7 @@ class TargetSslProxiesGapicClient
      * try {
      *     $project = '';
      *     // Iterate over pages of elements
-     *     $pagedResponse = $targetSslProxiesClient->list($project);
+     *     $pagedResponse = $targetSslProxiesClient->list_($project);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -364,7 +364,7 @@ class TargetSslProxiesGapicClient
      *     // Alternatively:
      *
      *     // Iterate through all elements
-     *     $pagedResponse = $targetSslProxiesClient->list($project);
+     *     $pagedResponse = $targetSslProxiesClient->list_($project);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }
@@ -414,7 +414,7 @@ class TargetSslProxiesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function list($project, array $optionalArgs = [])
+    public function list_($project, array $optionalArgs = [])
     {
         $request = new ListTargetSslProxiesRequest();
         $request->setProject($project);

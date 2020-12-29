@@ -14,7 +14,6 @@ mkdir -p ${SHORT_JOB_NAME}/system
 UNIT_LOG_FILENAME=${SHORT_JOB_NAME}/unit/sponge_log.xml
 SNIPPETS_LOG_FILENAME=${SHORT_JOB_NAME}/snippets/sponge_log.xml
 SYSTEM_LOG_FILENAME=${SHORT_JOB_NAME}/system/sponge_log.xml
-EXCLUDE_GROUP=$(php -r "echo version_compare(phpversion(), '7.0', '<') ? 'compute' : '';")
 
 if [ ! -z "${GOOGLE_CLOUD_PHP_TESTS_KEY_PATH}" ]; then
     export GOOGLE_CLOUD_PHP_TESTS_KEY_PATH="${KOKORO_KEYSTORE_DIR}/${GOOGLE_CLOUD_PHP_TESTS_KEY_PATH}"
@@ -35,7 +34,7 @@ echo "Running PHPCS Code Style Checker"
 dev/sh/style
 
 echo "Running Unit Test Suite"
-vendor/bin/phpunit --log-junit ${UNIT_LOG_FILENAME} --exclude-group "$EXCLUDE_GROUP"
+vendor/bin/phpunit --log-junit ${UNIT_LOG_FILENAME}
 
 echo "Running Snippet Test Suite"
 vendor/bin/phpunit -c phpunit-snippets.xml.dist --verbose --log-junit \

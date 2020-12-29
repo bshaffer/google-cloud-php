@@ -466,7 +466,7 @@ class HealthChecksGapicClient
      * try {
      *     $project = '';
      *     // Iterate over pages of elements
-     *     $pagedResponse = $healthChecksClient->list($project);
+     *     $pagedResponse = $healthChecksClient->list_($project);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -477,7 +477,7 @@ class HealthChecksGapicClient
      *     // Alternatively:
      *
      *     // Iterate through all elements
-     *     $pagedResponse = $healthChecksClient->list($project);
+     *     $pagedResponse = $healthChecksClient->list_($project);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }
@@ -527,7 +527,7 @@ class HealthChecksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function list($project, array $optionalArgs = [])
+    public function list_($project, array $optionalArgs = [])
     {
         $request = new ListHealthChecksRequest();
         $request->setProject($project);

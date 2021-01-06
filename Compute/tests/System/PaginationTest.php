@@ -31,13 +31,19 @@ class PaginationTest extends TestCase{
         self::$zonesClient = new ZonesClient();
     }
 
+    public static function tearDownAfterClass(): void
+    {
+        self::$zonesClient->close();
+    }
+
     public function testPageToken(){
-        $response = self::$zonesClient->list_(self::$projectId, []);
+        $response = self::$zonesClient->list_(self::$projectId, ['maxResults' => 5]);
         $page = $response->getPage();
         $pageToken = $page->getNextPageToken();
-        $nextPage = self::$zonesClient->list_(self::$projectId, ['pageToken'=>$pageToken])->getPage();
-        self::assertEquals($page->getNextPage(), $nextPage);
-        self::assertNotEquals($page, $nextPage);
+        $nextPage = self::$zonesClient->list_(self::$projectId, ['pageToken'=>$pageToken, 'maxResults' => 5])->getPage();
+        $arrToken = iterator_to_array($nextPage->getIterator());
+        $arr = iterator_to_array($page->getNextPage(5)->getIterator());
+        self::assertEquals($arr, $arrToken);
     }
 
     public function  testNextPage(){
@@ -46,11 +52,10 @@ class PaginationTest extends TestCase{
         $content = iterator_to_array($page->getIterator());
         $nextContent = iterator_to_array($nextPage->getIterator());
         self::assertNotEquals($content, $nextContent);
-        self::assertNotEquals($page, $nextPage);
     }
 
     public function  testNextPageSize(){
-        $page = self::$zonesClient->list_(self::$projectId)->getPage();
+        $page = self::$zonesClient->list_(self::$projectId, ['maxResults' => 5])->getPage();
         $nextPage = $page->getNextPage(1);
         $nextContent = iterator_to_array($nextPage->getIterator());
         self::assertCount(1, $nextContent);

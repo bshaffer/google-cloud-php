@@ -27,7 +27,6 @@ use Google\Cloud\Compute\V1\InstancesClient;
 use Google\Cloud\Compute\V1\NetworkInterface;
 use Google\Cloud\Compute\V1\Operation\Status;
 use Google\Cloud\Compute\V1\ZoneOperationsClient;
-use phpDocumentor\Reflection\Exception;
 use PHPUnit\Framework\TestCase;
 
 
@@ -46,6 +45,11 @@ class SmokeTest extends TestCase
         self::$Machine_Type = 'https://www.googleapis.com/compute/v1/projects/' . self::$projectId . '/zones/us-central1-a/machineTypes/n1-standard-1';
     }
 
+    public static function tearDownAfterClass(): void
+    {
+        self::$instancesClient->close();
+    }
+
     public function testInsertInstance()
     {
         $name = "gapicphp" . strval(rand($min = 100000, $max = 999999));
@@ -58,18 +62,19 @@ class SmokeTest extends TestCase
             'network_interfaces' => [$network_config], 'disks' => [$disk]
         ]);
         $operation = self::$instancesClient->insert($instanceResource, self::$projectId, self::Zone);
-
-        $operationClient = new ZoneOperationsClient();
-        while (true) {
-            $op = $operationClient->get($operation->getName(), self::$projectId, self::Zone);
-            $status = $op->getStatus();
-            if ($status == Status::DONE or $status == Status::UNDEFINED_STATUS) {
-                break;
+        try{
+            $operationClient = new ZoneOperationsClient();
+            while (true) {
+                $op = $operationClient->get($operation->getName(), self::$projectId, self::Zone);
+                $status = $op->getStatus();
+                if ($status == Status::DONE or $status == Status::UNDEFINED_STATUS) {
+                    break;
+                }
             }
+            $instance = self::$instancesClient->get($name, self::$projectId, self::Zone);
+        } finally {
+            self::$instancesClient->delete($name, self::$projectId, self::Zone);
         }
-        $instance = self::$instancesClient->get($name, self::$projectId, self::Zone);
-        self::$instancesClient->delete($name, self::$projectId, self::Zone);
-        self::$instancesClient->close();
         self::assertEquals($name, $instance->getName());
         self::assertEquals(self::$Machine_Type, $instance->getMachineType());
     }

@@ -28,7 +28,9 @@ class ValidateUrlMapRequest extends \Google\Protobuf\Internal\Message
      */
     private $url_map = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.UrlMapsValidateRequest url_maps_validate_request_resource = 127477999;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.UrlMapsValidateRequest url_maps_validate_request_resource = 127477999 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $url_maps_validate_request_resource = null;
 
@@ -43,6 +45,7 @@ class ValidateUrlMapRequest extends \Google\Protobuf\Internal\Message
      *     @type string $url_map
      *           Name of the UrlMap resource to be validated as.
      *     @type \Google\Cloud\Compute\V1\UrlMapsValidateRequest $url_maps_validate_request_resource
+     *           The body resource for this request
      * }
      */
     public function __construct($data = NULL) {
@@ -103,7 +106,9 @@ class ValidateUrlMapRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.UrlMapsValidateRequest url_maps_validate_request_resource = 127477999;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.UrlMapsValidateRequest url_maps_validate_request_resource = 127477999 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\UrlMapsValidateRequest
      */
     public function getUrlMapsValidateRequestResource()
@@ -122,7 +127,9 @@ class ValidateUrlMapRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.UrlMapsValidateRequest url_maps_validate_request_resource = 127477999;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.UrlMapsValidateRequest url_maps_validate_request_resource = 127477999 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\UrlMapsValidateRequest $var
      * @return $this
      */

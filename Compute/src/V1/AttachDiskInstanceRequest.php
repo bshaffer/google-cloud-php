@@ -16,7 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class AttachDiskInstanceRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $attached_disk_resource = null;
     /**
@@ -59,6 +61,7 @@ class AttachDiskInstanceRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Compute\V1\AttachedDisk $attached_disk_resource
+     *           The body resource for this request
      *     @type bool $force_attach
      *           Whether to force attach the regional disk even if it's currently attached to another instance. If you try to force attach a zonal disk to an instance, you will receive an error.
      *     @type string $instance
@@ -79,7 +82,9 @@ class AttachDiskInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\AttachedDisk
      */
     public function getAttachedDiskResource()
@@ -98,7 +103,9 @@ class AttachDiskInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\AttachedDisk $var
      * @return $this
      */

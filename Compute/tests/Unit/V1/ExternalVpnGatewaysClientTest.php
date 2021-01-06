@@ -29,7 +29,9 @@ use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
 use Google\Cloud\Compute\V1\ExternalVpnGateway;
 use Google\Cloud\Compute\V1\ExternalVpnGatewayList;
+use Google\Cloud\Compute\V1\GlobalSetLabelsRequest;
 use Google\Cloud\Compute\V1\Operation;
+use Google\Cloud\Compute\V1\TestPermissionsRequest;
 use Google\Cloud\Compute\V1\TestPermissionsResponse;
 use Google\Protobuf\Any;
 use Google\Rpc\Code;
@@ -332,9 +334,10 @@ class ExternalVpnGatewaysClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $externalVpnGatewayResource = new ExternalVpnGateway();
         $project = 'project-309310695';
 
-        $response = $client->insert($project);
+        $response = $client->insert($externalVpnGatewayResource, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -342,6 +345,9 @@ class ExternalVpnGatewaysClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.ExternalVpnGateways/Insert', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getExternalVpnGatewayResource();
+
+        $this->assertProtobufEquals($externalVpnGatewayResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -372,10 +378,11 @@ class ExternalVpnGatewaysClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $externalVpnGatewayResource = new ExternalVpnGateway();
         $project = 'project-309310695';
 
         try {
-            $client->insert($project);
+            $client->insert($externalVpnGatewayResource, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -530,10 +537,11 @@ class ExternalVpnGatewaysClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $globalSetLabelsRequestResource = new GlobalSetLabelsRequest();
         $project = 'project-309310695';
         $resource = 'resource-341064690';
 
-        $response = $client->setLabels($project, $resource);
+        $response = $client->setLabels($globalSetLabelsRequestResource, $project, $resource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -541,6 +549,9 @@ class ExternalVpnGatewaysClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.ExternalVpnGateways/SetLabels', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getGlobalSetLabelsRequestResource();
+
+        $this->assertProtobufEquals($globalSetLabelsRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -574,11 +585,12 @@ class ExternalVpnGatewaysClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $globalSetLabelsRequestResource = new GlobalSetLabelsRequest();
         $project = 'project-309310695';
         $resource = 'resource-341064690';
 
         try {
-            $client->setLabels($project, $resource);
+            $client->setLabels($globalSetLabelsRequestResource, $project, $resource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -608,8 +620,9 @@ class ExternalVpnGatewaysClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $resource = 'resource-341064690';
+        $testPermissionsRequestResource = new TestPermissionsRequest();
 
-        $response = $client->testIamPermissions($project, $resource);
+        $response = $client->testIamPermissions($project, $resource, $testPermissionsRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -623,6 +636,9 @@ class ExternalVpnGatewaysClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getResource();
 
         $this->assertProtobufEquals($resource, $actualValue);
+        $actualValue = $actualRequestObject->getTestPermissionsRequestResource();
+
+        $this->assertProtobufEquals($testPermissionsRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -652,9 +668,10 @@ class ExternalVpnGatewaysClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $resource = 'resource-341064690';
+        $testPermissionsRequestResource = new TestPermissionsRequest();
 
         try {
-            $client->testIamPermissions($project, $resource);
+            $client->testIamPermissions($project, $resource, $testPermissionsRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

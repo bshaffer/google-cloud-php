@@ -16,7 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class SetCommonInstanceMetadataProjectRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Metadata metadata_resource = 22650654;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $metadata_resource = null;
     /**
@@ -41,6 +43,7 @@ class SetCommonInstanceMetadataProjectRequest extends \Google\Protobuf\Internal\
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Compute\V1\Metadata $metadata_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -55,7 +58,9 @@ class SetCommonInstanceMetadataProjectRequest extends \Google\Protobuf\Internal\
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Metadata metadata_resource = 22650654;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\Metadata
      */
     public function getMetadataResource()
@@ -74,7 +79,9 @@ class SetCommonInstanceMetadataProjectRequest extends \Google\Protobuf\Internal\
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Metadata metadata_resource = 22650654;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\Metadata $var
      * @return $this
      */

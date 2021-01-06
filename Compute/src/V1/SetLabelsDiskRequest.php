@@ -42,7 +42,9 @@ class SetLabelsDiskRequest extends \Google\Protobuf\Internal\Message
      */
     private $zone = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 96515342;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 96515342 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $zone_set_labels_request_resource = null;
 
@@ -63,6 +65,7 @@ class SetLabelsDiskRequest extends \Google\Protobuf\Internal\Message
      *     @type string $zone
      *           The name of the zone for this request.
      *     @type \Google\Cloud\Compute\V1\ZoneSetLabelsRequest $zone_set_labels_request_resource
+     *           The body resource for this request
      * }
      */
     public function __construct($data = NULL) {
@@ -179,7 +182,9 @@ class SetLabelsDiskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 96515342;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 96515342 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\ZoneSetLabelsRequest
      */
     public function getZoneSetLabelsRequestResource()
@@ -198,7 +203,9 @@ class SetLabelsDiskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 96515342;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 96515342 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\ZoneSetLabelsRequest $var
      * @return $this
      */

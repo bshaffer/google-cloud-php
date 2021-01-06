@@ -27,12 +27,18 @@ use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
+use Google\Cloud\Compute\V1\InstanceReference;
 use Google\Cloud\Compute\V1\Operation;
 use Google\Cloud\Compute\V1\TargetPool;
 use Google\Cloud\Compute\V1\TargetPoolAggregatedList;
 use Google\Cloud\Compute\V1\TargetPoolInstanceHealth;
 use Google\Cloud\Compute\V1\TargetPoolList;
+use Google\Cloud\Compute\V1\TargetPoolsAddHealthCheckRequest;
+use Google\Cloud\Compute\V1\TargetPoolsAddInstanceRequest;
+use Google\Cloud\Compute\V1\TargetPoolsRemoveHealthCheckRequest;
+use Google\Cloud\Compute\V1\TargetPoolsRemoveInstanceRequest;
 use Google\Cloud\Compute\V1\TargetPoolsScopedList;
+use Google\Cloud\Compute\V1\TargetReference;
 use Google\Protobuf\Any;
 use Google\Rpc\Code;
 use stdClass;
@@ -131,8 +137,9 @@ class TargetPoolsClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $targetPool = 'targetPool-2084687350';
+        $targetPoolsAddHealthCheckRequestResource = new TargetPoolsAddHealthCheckRequest();
 
-        $response = $client->addHealthCheck($project, $region, $targetPool);
+        $response = $client->addHealthCheck($project, $region, $targetPool, $targetPoolsAddHealthCheckRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -149,6 +156,9 @@ class TargetPoolsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getTargetPool();
 
         $this->assertProtobufEquals($targetPool, $actualValue);
+        $actualValue = $actualRequestObject->getTargetPoolsAddHealthCheckRequestResource();
+
+        $this->assertProtobufEquals($targetPoolsAddHealthCheckRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -179,9 +189,10 @@ class TargetPoolsClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $targetPool = 'targetPool-2084687350';
+        $targetPoolsAddHealthCheckRequestResource = new TargetPoolsAddHealthCheckRequest();
 
         try {
-            $client->addHealthCheck($project, $region, $targetPool);
+            $client->addHealthCheck($project, $region, $targetPool, $targetPoolsAddHealthCheckRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -252,8 +263,9 @@ class TargetPoolsClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $targetPool = 'targetPool-2084687350';
+        $targetPoolsAddInstanceRequestResource = new TargetPoolsAddInstanceRequest();
 
-        $response = $client->addInstance($project, $region, $targetPool);
+        $response = $client->addInstance($project, $region, $targetPool, $targetPoolsAddInstanceRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -270,6 +282,9 @@ class TargetPoolsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getTargetPool();
 
         $this->assertProtobufEquals($targetPool, $actualValue);
+        $actualValue = $actualRequestObject->getTargetPoolsAddInstanceRequestResource();
+
+        $this->assertProtobufEquals($targetPoolsAddInstanceRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -300,9 +315,10 @@ class TargetPoolsClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $targetPool = 'targetPool-2084687350';
+        $targetPoolsAddInstanceRequestResource = new TargetPoolsAddInstanceRequest();
 
         try {
-            $client->addInstance($project, $region, $targetPool);
+            $client->addInstance($project, $region, $targetPool, $targetPoolsAddInstanceRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -640,11 +656,12 @@ class TargetPoolsClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $instanceReferenceResource = new InstanceReference();
         $project = 'project-309310695';
         $region = 'region-934795532';
         $targetPool = 'targetPool-2084687350';
 
-        $response = $client->getHealth($project, $region, $targetPool);
+        $response = $client->getHealth($instanceReferenceResource, $project, $region, $targetPool);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -652,6 +669,9 @@ class TargetPoolsClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.TargetPools/GetHealth', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getInstanceReferenceResource();
+
+        $this->assertProtobufEquals($instanceReferenceResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -688,12 +708,13 @@ class TargetPoolsClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $instanceReferenceResource = new InstanceReference();
         $project = 'project-309310695';
         $region = 'region-934795532';
         $targetPool = 'targetPool-2084687350';
 
         try {
-            $client->getHealth($project, $region, $targetPool);
+            $client->getHealth($instanceReferenceResource, $project, $region, $targetPool);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -763,8 +784,9 @@ class TargetPoolsClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $targetPoolResource = new TargetPool();
 
-        $response = $client->insert($project, $region);
+        $response = $client->insert($project, $region, $targetPoolResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -778,6 +800,9 @@ class TargetPoolsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getTargetPoolResource();
+
+        $this->assertProtobufEquals($targetPoolResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -807,9 +832,10 @@ class TargetPoolsClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $targetPoolResource = new TargetPool();
 
         try {
-            $client->insert($project, $region);
+            $client->insert($project, $region, $targetPoolResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -970,8 +996,9 @@ class TargetPoolsClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $targetPool = 'targetPool-2084687350';
+        $targetPoolsRemoveHealthCheckRequestResource = new TargetPoolsRemoveHealthCheckRequest();
 
-        $response = $client->removeHealthCheck($project, $region, $targetPool);
+        $response = $client->removeHealthCheck($project, $region, $targetPool, $targetPoolsRemoveHealthCheckRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -988,6 +1015,9 @@ class TargetPoolsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getTargetPool();
 
         $this->assertProtobufEquals($targetPool, $actualValue);
+        $actualValue = $actualRequestObject->getTargetPoolsRemoveHealthCheckRequestResource();
+
+        $this->assertProtobufEquals($targetPoolsRemoveHealthCheckRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -1018,9 +1048,10 @@ class TargetPoolsClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $targetPool = 'targetPool-2084687350';
+        $targetPoolsRemoveHealthCheckRequestResource = new TargetPoolsRemoveHealthCheckRequest();
 
         try {
-            $client->removeHealthCheck($project, $region, $targetPool);
+            $client->removeHealthCheck($project, $region, $targetPool, $targetPoolsRemoveHealthCheckRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1091,8 +1122,9 @@ class TargetPoolsClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $targetPool = 'targetPool-2084687350';
+        $targetPoolsRemoveInstanceRequestResource = new TargetPoolsRemoveInstanceRequest();
 
-        $response = $client->removeInstance($project, $region, $targetPool);
+        $response = $client->removeInstance($project, $region, $targetPool, $targetPoolsRemoveInstanceRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1109,6 +1141,9 @@ class TargetPoolsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getTargetPool();
 
         $this->assertProtobufEquals($targetPool, $actualValue);
+        $actualValue = $actualRequestObject->getTargetPoolsRemoveInstanceRequestResource();
+
+        $this->assertProtobufEquals($targetPoolsRemoveInstanceRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -1139,9 +1174,10 @@ class TargetPoolsClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $targetPool = 'targetPool-2084687350';
+        $targetPoolsRemoveInstanceRequestResource = new TargetPoolsRemoveInstanceRequest();
 
         try {
-            $client->removeInstance($project, $region, $targetPool);
+            $client->removeInstance($project, $region, $targetPool, $targetPoolsRemoveInstanceRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1212,8 +1248,9 @@ class TargetPoolsClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $targetPool = 'targetPool-2084687350';
+        $targetReferenceResource = new TargetReference();
 
-        $response = $client->setBackup($project, $region, $targetPool);
+        $response = $client->setBackup($project, $region, $targetPool, $targetReferenceResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1230,6 +1267,9 @@ class TargetPoolsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getTargetPool();
 
         $this->assertProtobufEquals($targetPool, $actualValue);
+        $actualValue = $actualRequestObject->getTargetReferenceResource();
+
+        $this->assertProtobufEquals($targetReferenceResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -1260,9 +1300,10 @@ class TargetPoolsClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $targetPool = 'targetPool-2084687350';
+        $targetReferenceResource = new TargetReference();
 
         try {
-            $client->setBackup($project, $region, $targetPool);
+            $client->setBackup($project, $region, $targetPool, $targetReferenceResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

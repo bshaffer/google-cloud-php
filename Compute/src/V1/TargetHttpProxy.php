@@ -57,6 +57,14 @@ class TargetHttpProxy extends \Google\Protobuf\Internal\Message
      */
     private $name = '';
     /**
+     * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
+     * The default is false.
+     *
+     * Generated from protobuf field <code>bool proxy_bind = 17590126;</code>
+     */
+    private $proxy_bind = false;
+    /**
      * [Output Only] URL of the region where the regional Target HTTP Proxy resides. This field is not applicable to global Target HTTP Proxies.
      *
      * Generated from protobuf field <code>string region = 138946292;</code>
@@ -93,6 +101,10 @@ class TargetHttpProxy extends \Google\Protobuf\Internal\Message
      *           [Output Only] Type of resource. Always compute#targetHttpProxy for target HTTP proxies.
      *     @type string $name
      *           Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     *     @type bool $proxy_bind
+     *           This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     *           When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
+     *           The default is false.
      *     @type string $region
      *           [Output Only] URL of the region where the regional Target HTTP Proxy resides. This field is not applicable to global Target HTTP Proxies.
      *     @type string $self_link
@@ -258,6 +270,36 @@ class TargetHttpProxy extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
+     * The default is false.
+     *
+     * Generated from protobuf field <code>bool proxy_bind = 17590126;</code>
+     * @return bool
+     */
+    public function getProxyBind()
+    {
+        return $this->proxy_bind;
+    }
+
+    /**
+     * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
+     * The default is false.
+     *
+     * Generated from protobuf field <code>bool proxy_bind = 17590126;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setProxyBind($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->proxy_bind = $var;
 
         return $this;
     }

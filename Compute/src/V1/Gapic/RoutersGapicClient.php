@@ -575,16 +575,18 @@ class RoutersGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $routersClient->insert($project, $region);
+     *     $routerResource = new Router();
+     *     $response = $routersClient->insert($project, $region, $routerResource);
      * } finally {
      *     $routersClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string $project        Project ID for this request.
+     * @param string $region         Name of the region for this request.
+     * @param Router $routerResource The body resource for this request
+     * @param array  $optionalArgs   {
+     *                               Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -592,7 +594,6 @@ class RoutersGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type Router $routerResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -605,16 +606,14 @@ class RoutersGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, $region, array $optionalArgs = [])
+    public function insert($project, $region, $routerResource, array $optionalArgs = [])
     {
         $request = new InsertRouterRequest();
         $request->setProject($project);
         $request->setRegion($region);
+        $request->setRouterResource($routerResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['routerResource'])) {
-            $request->setRouterResource($optionalArgs['routerResource']);
         }
 
         return $this->startCall(
@@ -736,17 +735,19 @@ class RoutersGapicClient
      *     $project = '';
      *     $region = '';
      *     $router = '';
-     *     $response = $routersClient->patch($project, $region, $router);
+     *     $routerResource = new Router();
+     *     $response = $routersClient->patch($project, $region, $router, $routerResource);
      * } finally {
      *     $routersClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region for this request.
-     * @param string $router       Name of the Router resource to patch.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string $project        Project ID for this request.
+     * @param string $region         Name of the region for this request.
+     * @param string $router         Name of the Router resource to patch.
+     * @param Router $routerResource The body resource for this request
+     * @param array  $optionalArgs   {
+     *                               Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -754,7 +755,6 @@ class RoutersGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type Router $routerResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -767,17 +767,15 @@ class RoutersGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function patch($project, $region, $router, array $optionalArgs = [])
+    public function patch($project, $region, $router, $routerResource, array $optionalArgs = [])
     {
         $request = new PatchRouterRequest();
         $request->setProject($project);
         $request->setRegion($region);
         $request->setRouter($router);
+        $request->setRouterResource($routerResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['routerResource'])) {
-            $request->setRouterResource($optionalArgs['routerResource']);
         }
 
         return $this->startCall(
@@ -798,19 +796,20 @@ class RoutersGapicClient
      *     $project = '';
      *     $region = '';
      *     $router = '';
-     *     $response = $routersClient->preview($project, $region, $router);
+     *     $routerResource = new Router();
+     *     $response = $routersClient->preview($project, $region, $router, $routerResource);
      * } finally {
      *     $routersClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region for this request.
-     * @param string $router       Name of the Router resource to query.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string $project        Project ID for this request.
+     * @param string $region         Name of the region for this request.
+     * @param string $router         Name of the Router resource to query.
+     * @param Router $routerResource The body resource for this request
+     * @param array  $optionalArgs   {
+     *                               Optional.
      *
-     *     @type Router $routerResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -823,15 +822,13 @@ class RoutersGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function preview($project, $region, $router, array $optionalArgs = [])
+    public function preview($project, $region, $router, $routerResource, array $optionalArgs = [])
     {
         $request = new PreviewRouterRequest();
         $request->setProject($project);
         $request->setRegion($region);
         $request->setRouter($router);
-        if (isset($optionalArgs['routerResource'])) {
-            $request->setRouterResource($optionalArgs['routerResource']);
-        }
+        $request->setRouterResource($routerResource);
 
         return $this->startCall(
             'Preview',
@@ -851,17 +848,19 @@ class RoutersGapicClient
      *     $project = '';
      *     $region = '';
      *     $router = '';
-     *     $response = $routersClient->update($project, $region, $router);
+     *     $routerResource = new Router();
+     *     $response = $routersClient->update($project, $region, $router, $routerResource);
      * } finally {
      *     $routersClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region for this request.
-     * @param string $router       Name of the Router resource to update.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string $project        Project ID for this request.
+     * @param string $region         Name of the region for this request.
+     * @param string $router         Name of the Router resource to update.
+     * @param Router $routerResource The body resource for this request
+     * @param array  $optionalArgs   {
+     *                               Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -869,7 +868,6 @@ class RoutersGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type Router $routerResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -882,17 +880,15 @@ class RoutersGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function update($project, $region, $router, array $optionalArgs = [])
+    public function update($project, $region, $router, $routerResource, array $optionalArgs = [])
     {
         $request = new UpdateRouterRequest();
         $request->setProject($project);
         $request->setRegion($region);
         $request->setRouter($router);
+        $request->setRouterResource($routerResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['routerResource'])) {
-            $request->setRouterResource($optionalArgs['routerResource']);
         }
 
         return $this->startCall(

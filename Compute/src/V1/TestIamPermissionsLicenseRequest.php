@@ -28,7 +28,9 @@ class TestIamPermissionsLicenseRequest extends \Google\Protobuf\Internal\Message
      */
     private $resource = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 170779302;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 170779302 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $test_permissions_request_resource = null;
 
@@ -43,6 +45,7 @@ class TestIamPermissionsLicenseRequest extends \Google\Protobuf\Internal\Message
      *     @type string $resource
      *           Name or id of the resource for this request.
      *     @type \Google\Cloud\Compute\V1\TestPermissionsRequest $test_permissions_request_resource
+     *           The body resource for this request
      * }
      */
     public function __construct($data = NULL) {
@@ -103,7 +106,9 @@ class TestIamPermissionsLicenseRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 170779302;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 170779302 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\TestPermissionsRequest
      */
     public function getTestPermissionsRequestResource()
@@ -122,7 +127,9 @@ class TestIamPermissionsLicenseRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 170779302;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 170779302 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\TestPermissionsRequest $var
      * @return $this
      */

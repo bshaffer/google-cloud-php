@@ -16,7 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateAccessConfigInstanceRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 119390096;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 119390096 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $access_config_resource = null;
     /**
@@ -59,6 +61,7 @@ class UpdateAccessConfigInstanceRequest extends \Google\Protobuf\Internal\Messag
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Compute\V1\AccessConfig $access_config_resource
+     *           The body resource for this request
      *     @type string $instance
      *           The instance name for this request.
      *     @type string $network_interface
@@ -79,7 +82,9 @@ class UpdateAccessConfigInstanceRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 119390096;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 119390096 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\AccessConfig
      */
     public function getAccessConfigResource()
@@ -98,7 +103,9 @@ class UpdateAccessConfigInstanceRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 119390096;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 119390096 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\AccessConfig $var
      * @return $this
      */

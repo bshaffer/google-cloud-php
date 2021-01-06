@@ -36,7 +36,9 @@ class InsertTargetPoolRequest extends \Google\Protobuf\Internal\Message
      */
     private $request_id = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPool target_pool_resource = 101281443;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPool target_pool_resource = 101281443 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $target_pool_resource = null;
 
@@ -55,6 +57,7 @@ class InsertTargetPoolRequest extends \Google\Protobuf\Internal\Message
      *           For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *           The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
      *     @type \Google\Cloud\Compute\V1\TargetPool $target_pool_resource
+     *           The body resource for this request
      * }
      */
     public function __construct($data = NULL) {
@@ -145,7 +148,9 @@ class InsertTargetPoolRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPool target_pool_resource = 101281443;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPool target_pool_resource = 101281443 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\TargetPool
      */
     public function getTargetPoolResource()
@@ -164,7 +169,9 @@ class InsertTargetPoolRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPool target_pool_resource = 101281443;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPool target_pool_resource = 101281443 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\TargetPool $var
      * @return $this
      */

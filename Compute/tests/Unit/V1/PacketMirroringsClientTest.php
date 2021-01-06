@@ -32,6 +32,7 @@ use Google\Cloud\Compute\V1\PacketMirroring;
 use Google\Cloud\Compute\V1\PacketMirroringAggregatedList;
 use Google\Cloud\Compute\V1\PacketMirroringList;
 use Google\Cloud\Compute\V1\PacketMirroringsScopedList;
+use Google\Cloud\Compute\V1\TestPermissionsRequest;
 use Google\Cloud\Compute\V1\TestPermissionsResponse;
 use Google\Protobuf\Any;
 use Google\Rpc\Code;
@@ -434,10 +435,11 @@ class PacketMirroringsClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $packetMirroringResource = new PacketMirroring();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
-        $response = $client->insert($project, $region);
+        $response = $client->insert($packetMirroringResource, $project, $region);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -445,6 +447,9 @@ class PacketMirroringsClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.PacketMirrorings/Insert', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getPacketMirroringResource();
+
+        $this->assertProtobufEquals($packetMirroringResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -478,11 +483,12 @@ class PacketMirroringsClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $packetMirroringResource = new PacketMirroring();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
         try {
-            $client->insert($project, $region);
+            $client->insert($packetMirroringResource, $project, $region);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -641,10 +647,11 @@ class PacketMirroringsClientTest extends GeneratedTest
 
         // Mock request
         $packetMirroring = 'packetMirroring22305996';
+        $packetMirroringResource = new PacketMirroring();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
-        $response = $client->patch($packetMirroring, $project, $region);
+        $response = $client->patch($packetMirroring, $packetMirroringResource, $project, $region);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -655,6 +662,9 @@ class PacketMirroringsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getPacketMirroring();
 
         $this->assertProtobufEquals($packetMirroring, $actualValue);
+        $actualValue = $actualRequestObject->getPacketMirroringResource();
+
+        $this->assertProtobufEquals($packetMirroringResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -689,11 +699,12 @@ class PacketMirroringsClientTest extends GeneratedTest
 
         // Mock request
         $packetMirroring = 'packetMirroring22305996';
+        $packetMirroringResource = new PacketMirroring();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
         try {
-            $client->patch($packetMirroring, $project, $region);
+            $client->patch($packetMirroring, $packetMirroringResource, $project, $region);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -724,8 +735,9 @@ class PacketMirroringsClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $resource = 'resource-341064690';
+        $testPermissionsRequestResource = new TestPermissionsRequest();
 
-        $response = $client->testIamPermissions($project, $region, $resource);
+        $response = $client->testIamPermissions($project, $region, $resource, $testPermissionsRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -742,6 +754,9 @@ class PacketMirroringsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getResource();
 
         $this->assertProtobufEquals($resource, $actualValue);
+        $actualValue = $actualRequestObject->getTestPermissionsRequestResource();
+
+        $this->assertProtobufEquals($testPermissionsRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -772,9 +787,10 @@ class PacketMirroringsClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $resource = 'resource-341064690';
+        $testPermissionsRequestResource = new TestPermissionsRequest();
 
         try {
-            $client->testIamPermissions($project, $region, $resource);
+            $client->testIamPermissions($project, $region, $resource, $testPermissionsRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

@@ -316,10 +316,11 @@ class RegionCommitmentsClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $commitmentResource = new Commitment();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
-        $response = $client->insert($project, $region);
+        $response = $client->insert($commitmentResource, $project, $region);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -327,6 +328,9 @@ class RegionCommitmentsClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.RegionCommitments/Insert', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getCommitmentResource();
+
+        $this->assertProtobufEquals($commitmentResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -360,11 +364,12 @@ class RegionCommitmentsClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $commitmentResource = new Commitment();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
         try {
-            $client->insert($project, $region);
+            $client->insert($commitmentResource, $project, $region);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

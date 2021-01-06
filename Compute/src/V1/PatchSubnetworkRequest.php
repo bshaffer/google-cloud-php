@@ -48,7 +48,9 @@ class PatchSubnetworkRequest extends \Google\Protobuf\Internal\Message
      */
     private $subnetwork = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $subnetwork_resource = null;
 
@@ -71,6 +73,7 @@ class PatchSubnetworkRequest extends \Google\Protobuf\Internal\Message
      *     @type string $subnetwork
      *           Name of the Subnetwork resource to patch.
      *     @type \Google\Cloud\Compute\V1\Subnetwork $subnetwork_resource
+     *           The body resource for this request
      * }
      */
     public function __construct($data = NULL) {
@@ -213,7 +216,9 @@ class PatchSubnetworkRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\Subnetwork
      */
     public function getSubnetworkResource()
@@ -232,7 +237,9 @@ class PatchSubnetworkRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\Subnetwork $var
      * @return $this
      */

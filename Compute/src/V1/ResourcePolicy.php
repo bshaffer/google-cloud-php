@@ -27,7 +27,7 @@ class ResourcePolicy extends \Google\Protobuf\Internal\Message
      */
     private $description = '';
     /**
-     * Resource policy for instacnes for placement configuration.
+     * Resource policy for instances for placement configuration.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy group_placement_policy = 10931596;</code>
      */
@@ -83,7 +83,7 @@ class ResourcePolicy extends \Google\Protobuf\Internal\Message
      *           [Output Only] Creation timestamp in RFC3339 text format.
      *     @type string $description
      *     @type \Google\Cloud\Compute\V1\ResourcePolicyGroupPlacementPolicy $group_placement_policy
-     *           Resource policy for instacnes for placement configuration.
+     *           Resource policy for instances for placement configuration.
      *     @type string $id
      *           [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      *     @type string $kind
@@ -153,7 +153,7 @@ class ResourcePolicy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Resource policy for instacnes for placement configuration.
+     * Resource policy for instances for placement configuration.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy group_placement_policy = 10931596;</code>
      * @return \Google\Cloud\Compute\V1\ResourcePolicyGroupPlacementPolicy
@@ -174,7 +174,7 @@ class ResourcePolicy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Resource policy for instacnes for placement configuration.
+     * Resource policy for instances for placement configuration.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy group_placement_policy = 10931596;</code>
      * @param \Google\Cloud\Compute\V1\ResourcePolicyGroupPlacementPolicy $var

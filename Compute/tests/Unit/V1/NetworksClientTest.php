@@ -31,6 +31,9 @@ use Google\Cloud\Compute\V1\ExchangedPeeringRoute;
 use Google\Cloud\Compute\V1\ExchangedPeeringRoutesList;
 use Google\Cloud\Compute\V1\Network;
 use Google\Cloud\Compute\V1\NetworkList;
+use Google\Cloud\Compute\V1\NetworksAddPeeringRequest;
+use Google\Cloud\Compute\V1\NetworksRemovePeeringRequest;
+use Google\Cloud\Compute\V1\NetworksUpdatePeeringRequest;
 use Google\Cloud\Compute\V1\Operation;
 use Google\Protobuf\Any;
 use Google\Rpc\Code;
@@ -128,9 +131,10 @@ class NetworksClientTest extends GeneratedTest
 
         // Mock request
         $network = 'network1843485230';
+        $networksAddPeeringRequestResource = new NetworksAddPeeringRequest();
         $project = 'project-309310695';
 
-        $response = $client->addPeering($network, $project);
+        $response = $client->addPeering($network, $networksAddPeeringRequestResource, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -141,6 +145,9 @@ class NetworksClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getNetwork();
 
         $this->assertProtobufEquals($network, $actualValue);
+        $actualValue = $actualRequestObject->getNetworksAddPeeringRequestResource();
+
+        $this->assertProtobufEquals($networksAddPeeringRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -172,10 +179,11 @@ class NetworksClientTest extends GeneratedTest
 
         // Mock request
         $network = 'network1843485230';
+        $networksAddPeeringRequestResource = new NetworksAddPeeringRequest();
         $project = 'project-309310695';
 
         try {
-            $client->addPeering($network, $project);
+            $client->addPeering($network, $networksAddPeeringRequestResource, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -455,9 +463,10 @@ class NetworksClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $networkResource = new Network();
         $project = 'project-309310695';
 
-        $response = $client->insert($project);
+        $response = $client->insert($networkResource, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -465,6 +474,9 @@ class NetworksClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.Networks/Insert', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getNetworkResource();
+
+        $this->assertProtobufEquals($networkResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -495,10 +507,11 @@ class NetworksClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $networkResource = new Network();
         $project = 'project-309310695';
 
         try {
-            $client->insert($project);
+            $client->insert($networkResource, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -742,9 +755,10 @@ class NetworksClientTest extends GeneratedTest
 
         // Mock request
         $network = 'network1843485230';
+        $networkResource = new Network();
         $project = 'project-309310695';
 
-        $response = $client->patch($network, $project);
+        $response = $client->patch($network, $networkResource, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -755,6 +769,9 @@ class NetworksClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getNetwork();
 
         $this->assertProtobufEquals($network, $actualValue);
+        $actualValue = $actualRequestObject->getNetworkResource();
+
+        $this->assertProtobufEquals($networkResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -786,10 +803,11 @@ class NetworksClientTest extends GeneratedTest
 
         // Mock request
         $network = 'network1843485230';
+        $networkResource = new Network();
         $project = 'project-309310695';
 
         try {
-            $client->patch($network, $project);
+            $client->patch($network, $networkResource, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -858,9 +876,10 @@ class NetworksClientTest extends GeneratedTest
 
         // Mock request
         $network = 'network1843485230';
+        $networksRemovePeeringRequestResource = new NetworksRemovePeeringRequest();
         $project = 'project-309310695';
 
-        $response = $client->removePeering($network, $project);
+        $response = $client->removePeering($network, $networksRemovePeeringRequestResource, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -871,6 +890,9 @@ class NetworksClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getNetwork();
 
         $this->assertProtobufEquals($network, $actualValue);
+        $actualValue = $actualRequestObject->getNetworksRemovePeeringRequestResource();
+
+        $this->assertProtobufEquals($networksRemovePeeringRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -902,10 +924,11 @@ class NetworksClientTest extends GeneratedTest
 
         // Mock request
         $network = 'network1843485230';
+        $networksRemovePeeringRequestResource = new NetworksRemovePeeringRequest();
         $project = 'project-309310695';
 
         try {
-            $client->removePeering($network, $project);
+            $client->removePeering($network, $networksRemovePeeringRequestResource, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1090,9 +1113,10 @@ class NetworksClientTest extends GeneratedTest
 
         // Mock request
         $network = 'network1843485230';
+        $networksUpdatePeeringRequestResource = new NetworksUpdatePeeringRequest();
         $project = 'project-309310695';
 
-        $response = $client->updatePeering($network, $project);
+        $response = $client->updatePeering($network, $networksUpdatePeeringRequestResource, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1103,6 +1127,9 @@ class NetworksClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getNetwork();
 
         $this->assertProtobufEquals($network, $actualValue);
+        $actualValue = $actualRequestObject->getNetworksUpdatePeeringRequestResource();
+
+        $this->assertProtobufEquals($networksUpdatePeeringRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -1134,10 +1161,11 @@ class NetworksClientTest extends GeneratedTest
 
         // Mock request
         $network = 'network1843485230';
+        $networksUpdatePeeringRequestResource = new NetworksUpdatePeeringRequest();
         $project = 'project-309310695';
 
         try {
-            $client->updatePeering($network, $project);
+            $client->updatePeering($network, $networksUpdatePeeringRequestResource, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

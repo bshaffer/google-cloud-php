@@ -22,7 +22,9 @@ class ResizeDiskRequest extends \Google\Protobuf\Internal\Message
      */
     private $disk = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $disks_resize_request_resource = null;
     /**
@@ -55,6 +57,7 @@ class ResizeDiskRequest extends \Google\Protobuf\Internal\Message
      *     @type string $disk
      *           The name of the persistent disk.
      *     @type \Google\Cloud\Compute\V1\DisksResizeRequest $disks_resize_request_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -97,7 +100,9 @@ class ResizeDiskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\DisksResizeRequest
      */
     public function getDisksResizeRequestResource()
@@ -116,7 +121,9 @@ class ResizeDiskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\DisksResizeRequest $var
      * @return $this
      */

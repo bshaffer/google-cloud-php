@@ -434,9 +434,10 @@ class TargetInstancesClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $targetInstanceResource = new TargetInstance();
         $zone = 'zone3744684';
 
-        $response = $client->insert($project, $zone);
+        $response = $client->insert($project, $targetInstanceResource, $zone);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -447,6 +448,9 @@ class TargetInstancesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
+        $actualValue = $actualRequestObject->getTargetInstanceResource();
+
+        $this->assertProtobufEquals($targetInstanceResource, $actualValue);
         $actualValue = $actualRequestObject->getZone();
 
         $this->assertProtobufEquals($zone, $actualValue);
@@ -478,10 +482,11 @@ class TargetInstancesClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $targetInstanceResource = new TargetInstance();
         $zone = 'zone3744684';
 
         try {
-            $client->insert($project, $zone);
+            $client->insert($project, $targetInstanceResource, $zone);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

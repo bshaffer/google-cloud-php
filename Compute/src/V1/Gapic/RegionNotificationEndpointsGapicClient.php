@@ -294,20 +294,21 @@ class RegionNotificationEndpointsGapicClient
      * ```
      * $regionNotificationEndpointsClient = new RegionNotificationEndpointsClient();
      * try {
+     *     $notificationEndpointResource = new NotificationEndpoint();
      *     $project = '';
      *     $region = '';
-     *     $response = $regionNotificationEndpointsClient->insert($project, $region);
+     *     $response = $regionNotificationEndpointsClient->insert($notificationEndpointResource, $project, $region);
      * } finally {
      *     $regionNotificationEndpointsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region scoping this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param NotificationEndpoint $notificationEndpointResource The body resource for this request
+     * @param string               $project                      Project ID for this request.
+     * @param string               $region                       Name of the region scoping this request.
+     * @param array                $optionalArgs                 {
+     *                                                           Optional.
      *
-     *     @type NotificationEndpoint $notificationEndpointResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -326,14 +327,12 @@ class RegionNotificationEndpointsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, $region, array $optionalArgs = [])
+    public function insert($notificationEndpointResource, $project, $region, array $optionalArgs = [])
     {
         $request = new InsertRegionNotificationEndpointRequest();
+        $request->setNotificationEndpointResource($notificationEndpointResource);
         $request->setProject($project);
         $request->setRegion($region);
-        if (isset($optionalArgs['notificationEndpointResource'])) {
-            $request->setNotificationEndpointResource($optionalArgs['notificationEndpointResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }

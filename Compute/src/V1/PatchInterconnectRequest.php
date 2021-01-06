@@ -22,7 +22,9 @@ class PatchInterconnectRequest extends \Google\Protobuf\Internal\Message
      */
     private $interconnect = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 129175711;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 129175711 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $interconnect_resource = null;
     /**
@@ -49,6 +51,7 @@ class PatchInterconnectRequest extends \Google\Protobuf\Internal\Message
      *     @type string $interconnect
      *           Name of the interconnect to update.
      *     @type \Google\Cloud\Compute\V1\Interconnect $interconnect_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -89,7 +92,9 @@ class PatchInterconnectRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 129175711;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 129175711 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\Interconnect
      */
     public function getInterconnectResource()
@@ -108,7 +113,9 @@ class PatchInterconnectRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 129175711;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 129175711 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\Interconnect $var
      * @return $this
      */

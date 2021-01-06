@@ -16,7 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class SetIamPolicyInstanceTemplateRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $global_set_policy_request_resource = null;
     /**
@@ -39,6 +41,7 @@ class SetIamPolicyInstanceTemplateRequest extends \Google\Protobuf\Internal\Mess
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Compute\V1\GlobalSetPolicyRequest $global_set_policy_request_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $resource
@@ -51,7 +54,9 @@ class SetIamPolicyInstanceTemplateRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\GlobalSetPolicyRequest
      */
     public function getGlobalSetPolicyRequestResource()
@@ -70,7 +75,9 @@ class SetIamPolicyInstanceTemplateRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\GlobalSetPolicyRequest $var
      * @return $this
      */

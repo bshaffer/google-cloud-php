@@ -22,7 +22,9 @@ class RecreateInstancesInstanceGroupManagerRequest extends \Google\Protobuf\Inte
      */
     private $instance_group_manager = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $instance_group_managers_recreate_instances_request_resource = null;
     /**
@@ -55,6 +57,7 @@ class RecreateInstancesInstanceGroupManagerRequest extends \Google\Protobuf\Inte
      *     @type string $instance_group_manager
      *           The name of the managed instance group.
      *     @type \Google\Cloud\Compute\V1\InstanceGroupManagersRecreateInstancesRequest $instance_group_managers_recreate_instances_request_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -97,7 +100,9 @@ class RecreateInstancesInstanceGroupManagerRequest extends \Google\Protobuf\Inte
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\InstanceGroupManagersRecreateInstancesRequest
      */
     public function getInstanceGroupManagersRecreateInstancesRequestResource()
@@ -116,7 +121,9 @@ class RecreateInstancesInstanceGroupManagerRequest extends \Google\Protobuf\Inte
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\InstanceGroupManagersRecreateInstancesRequest $var
      * @return $this
      */

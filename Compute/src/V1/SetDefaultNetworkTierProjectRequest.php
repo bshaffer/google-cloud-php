@@ -22,7 +22,9 @@ class SetDefaultNetworkTierProjectRequest extends \Google\Protobuf\Internal\Mess
      */
     private $project = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $projects_set_default_network_tier_request_resource = null;
     /**
@@ -43,6 +45,7 @@ class SetDefaultNetworkTierProjectRequest extends \Google\Protobuf\Internal\Mess
      *     @type string $project
      *           Project ID for this request.
      *     @type \Google\Cloud\Compute\V1\ProjectsSetDefaultNetworkTierRequest $projects_set_default_network_tier_request_resource
+     *           The body resource for this request
      *     @type string $request_id
      *           An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *           For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
@@ -81,7 +84,9 @@ class SetDefaultNetworkTierProjectRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\ProjectsSetDefaultNetworkTierRequest
      */
     public function getProjectsSetDefaultNetworkTierRequestResource()
@@ -100,7 +105,9 @@ class SetDefaultNetworkTierProjectRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\ProjectsSetDefaultNetworkTierRequest $var
      * @return $this
      */

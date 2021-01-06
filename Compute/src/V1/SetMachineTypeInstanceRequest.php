@@ -22,7 +22,9 @@ class SetMachineTypeInstanceRequest extends \Google\Protobuf\Internal\Message
      */
     private $instance = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesSetMachineTypeRequest instances_set_machine_type_request_resource = 254157709;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesSetMachineTypeRequest instances_set_machine_type_request_resource = 254157709 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $instances_set_machine_type_request_resource = null;
     /**
@@ -55,6 +57,7 @@ class SetMachineTypeInstanceRequest extends \Google\Protobuf\Internal\Message
      *     @type string $instance
      *           Name of the instance scoping this request.
      *     @type \Google\Cloud\Compute\V1\InstancesSetMachineTypeRequest $instances_set_machine_type_request_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -97,7 +100,9 @@ class SetMachineTypeInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesSetMachineTypeRequest instances_set_machine_type_request_resource = 254157709;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesSetMachineTypeRequest instances_set_machine_type_request_resource = 254157709 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\InstancesSetMachineTypeRequest
      */
     public function getInstancesSetMachineTypeRequestResource()
@@ -116,7 +121,9 @@ class SetMachineTypeInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesSetMachineTypeRequest instances_set_machine_type_request_resource = 254157709;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesSetMachineTypeRequest instances_set_machine_type_request_resource = 254157709 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\InstancesSetMachineTypeRequest $var
      * @return $this
      */

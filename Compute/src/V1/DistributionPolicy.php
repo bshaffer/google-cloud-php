@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class DistributionPolicy extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Zones where the regional managed instance group will create and manage instances.
+     * Zones where the regional managed instance group will create and manage its instances.
      *
      * Generated from protobuf field <code>repeated .google.cloud.compute.v1.DistributionPolicyZoneConfiguration zones = 116085319;</code>
      */
@@ -28,7 +28,7 @@ class DistributionPolicy extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Compute\V1\DistributionPolicyZoneConfiguration[]|\Google\Protobuf\Internal\RepeatedField $zones
-     *           Zones where the regional managed instance group will create and manage instances.
+     *           Zones where the regional managed instance group will create and manage its instances.
      * }
      */
     public function __construct($data = NULL) {
@@ -37,7 +37,7 @@ class DistributionPolicy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Zones where the regional managed instance group will create and manage instances.
+     * Zones where the regional managed instance group will create and manage its instances.
      *
      * Generated from protobuf field <code>repeated .google.cloud.compute.v1.DistributionPolicyZoneConfiguration zones = 116085319;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -48,7 +48,7 @@ class DistributionPolicy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Zones where the regional managed instance group will create and manage instances.
+     * Zones where the regional managed instance group will create and manage its instances.
      *
      * Generated from protobuf field <code>repeated .google.cloud.compute.v1.DistributionPolicyZoneConfiguration zones = 116085319;</code>
      * @param \Google\Cloud\Compute\V1\DistributionPolicyZoneConfiguration[]|\Google\Protobuf\Internal\RepeatedField $var

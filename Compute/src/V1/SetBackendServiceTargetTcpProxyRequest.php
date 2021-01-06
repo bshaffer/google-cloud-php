@@ -30,7 +30,9 @@ class SetBackendServiceTargetTcpProxyRequest extends \Google\Protobuf\Internal\M
      */
     private $request_id = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetTcpProxiesSetBackendServiceRequest target_tcp_proxies_set_backend_service_request_resource = 5286127;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetTcpProxiesSetBackendServiceRequest target_tcp_proxies_set_backend_service_request_resource = 5286127 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $target_tcp_proxies_set_backend_service_request_resource = null;
     /**
@@ -53,6 +55,7 @@ class SetBackendServiceTargetTcpProxyRequest extends \Google\Protobuf\Internal\M
      *           For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *           The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
      *     @type \Google\Cloud\Compute\V1\TargetTcpProxiesSetBackendServiceRequest $target_tcp_proxies_set_backend_service_request_resource
+     *           The body resource for this request
      *     @type string $target_tcp_proxy
      *           Name of the TargetTcpProxy resource whose BackendService resource is to be set.
      * }
@@ -119,7 +122,9 @@ class SetBackendServiceTargetTcpProxyRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetTcpProxiesSetBackendServiceRequest target_tcp_proxies_set_backend_service_request_resource = 5286127;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetTcpProxiesSetBackendServiceRequest target_tcp_proxies_set_backend_service_request_resource = 5286127 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\TargetTcpProxiesSetBackendServiceRequest
      */
     public function getTargetTcpProxiesSetBackendServiceRequestResource()
@@ -138,7 +143,9 @@ class SetBackendServiceTargetTcpProxyRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetTcpProxiesSetBackendServiceRequest target_tcp_proxies_set_backend_service_request_resource = 5286127;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetTcpProxiesSetBackendServiceRequest target_tcp_proxies_set_backend_service_request_resource = 5286127 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\TargetTcpProxiesSetBackendServiceRequest $var
      * @return $this
      */

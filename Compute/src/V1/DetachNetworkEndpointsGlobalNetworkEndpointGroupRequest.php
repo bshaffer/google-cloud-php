@@ -16,7 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.GlobalNetworkEndpointGroupsDetachEndpointsRequest global_network_endpoint_groups_detach_endpoints_request_resource = 8898269;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.GlobalNetworkEndpointGroupsDetachEndpointsRequest global_network_endpoint_groups_detach_endpoints_request_resource = 8898269 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $global_network_endpoint_groups_detach_endpoints_request_resource = null;
     /**
@@ -47,6 +49,7 @@ class DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest extends \Google\Pr
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Compute\V1\GlobalNetworkEndpointGroupsDetachEndpointsRequest $global_network_endpoint_groups_detach_endpoints_request_resource
+     *           The body resource for this request
      *     @type string $network_endpoint_group
      *           The name of the network endpoint group where you are removing network endpoints. It should comply with RFC1035.
      *     @type string $project
@@ -63,7 +66,9 @@ class DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest extends \Google\Pr
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.GlobalNetworkEndpointGroupsDetachEndpointsRequest global_network_endpoint_groups_detach_endpoints_request_resource = 8898269;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.GlobalNetworkEndpointGroupsDetachEndpointsRequest global_network_endpoint_groups_detach_endpoints_request_resource = 8898269 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\GlobalNetworkEndpointGroupsDetachEndpointsRequest
      */
     public function getGlobalNetworkEndpointGroupsDetachEndpointsRequestResource()
@@ -82,7 +87,9 @@ class DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest extends \Google\Pr
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.GlobalNetworkEndpointGroupsDetachEndpointsRequest global_network_endpoint_groups_detach_endpoints_request_resource = 8898269;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.GlobalNetworkEndpointGroupsDetachEndpointsRequest global_network_endpoint_groups_detach_endpoints_request_resource = 8898269 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\GlobalNetworkEndpointGroupsDetachEndpointsRequest $var
      * @return $this
      */

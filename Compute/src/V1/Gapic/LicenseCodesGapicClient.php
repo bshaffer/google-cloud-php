@@ -232,18 +232,19 @@ class LicenseCodesGapicClient
      * try {
      *     $project = '';
      *     $resource = '';
-     *     $response = $licenseCodesClient->testIamPermissions($project, $resource);
+     *     $testPermissionsRequestResource = new TestPermissionsRequest();
+     *     $response = $licenseCodesClient->testIamPermissions($project, $resource, $testPermissionsRequestResource);
      * } finally {
      *     $licenseCodesClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $resource     Name or id of the resource for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                 $project                        Project ID for this request.
+     * @param string                 $resource                       Name or id of the resource for this request.
+     * @param TestPermissionsRequest $testPermissionsRequestResource The body resource for this request
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type TestPermissionsRequest $testPermissionsRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -256,14 +257,12 @@ class LicenseCodesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function testIamPermissions($project, $resource, array $optionalArgs = [])
+    public function testIamPermissions($project, $resource, $testPermissionsRequestResource, array $optionalArgs = [])
     {
         $request = new TestIamPermissionsLicenseCodeRequest();
         $request->setProject($project);
         $request->setResource($resource);
-        if (isset($optionalArgs['testPermissionsRequestResource'])) {
-            $request->setTestPermissionsRequestResource($optionalArgs['testPermissionsRequestResource']);
-        }
+        $request->setTestPermissionsRequestResource($testPermissionsRequestResource);
 
         return $this->startCall(
             'TestIamPermissions',

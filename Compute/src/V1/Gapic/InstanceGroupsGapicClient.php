@@ -62,9 +62,10 @@ use Google\Cloud\Compute\V1\SetNamedPortsInstanceGroupRequest;
  * $instanceGroupsClient = new InstanceGroupsClient();
  * try {
  *     $instanceGroup = '';
+ *     $instanceGroupsAddInstancesRequestResource = new InstanceGroupsAddInstancesRequest();
  *     $project = '';
  *     $zone = '';
- *     $response = $instanceGroupsClient->addInstances($instanceGroup, $project, $zone);
+ *     $response = $instanceGroupsClient->addInstances($instanceGroup, $instanceGroupsAddInstancesRequestResource, $project, $zone);
  * } finally {
  *     $instanceGroupsClient->close();
  * }
@@ -199,21 +200,22 @@ class InstanceGroupsGapicClient
      * $instanceGroupsClient = new InstanceGroupsClient();
      * try {
      *     $instanceGroup = '';
+     *     $instanceGroupsAddInstancesRequestResource = new InstanceGroupsAddInstancesRequest();
      *     $project = '';
      *     $zone = '';
-     *     $response = $instanceGroupsClient->addInstances($instanceGroup, $project, $zone);
+     *     $response = $instanceGroupsClient->addInstances($instanceGroup, $instanceGroupsAddInstancesRequestResource, $project, $zone);
      * } finally {
      *     $instanceGroupsClient->close();
      * }
      * ```
      *
-     * @param string $instanceGroup The name of the instance group where you are adding instances.
-     * @param string $project       Project ID for this request.
-     * @param string $zone          The name of the zone where the instance group is located.
-     * @param array  $optionalArgs  {
-     *                              Optional.
+     * @param string                            $instanceGroup                             The name of the instance group where you are adding instances.
+     * @param InstanceGroupsAddInstancesRequest $instanceGroupsAddInstancesRequestResource The body resource for this request
+     * @param string                            $project                                   Project ID for this request.
+     * @param string                            $zone                                      The name of the zone where the instance group is located.
+     * @param array                             $optionalArgs                              {
+     *                                                                                     Optional.
      *
-     *     @type InstanceGroupsAddInstancesRequest $instanceGroupsAddInstancesRequestResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -232,15 +234,13 @@ class InstanceGroupsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function addInstances($instanceGroup, $project, $zone, array $optionalArgs = [])
+    public function addInstances($instanceGroup, $instanceGroupsAddInstancesRequestResource, $project, $zone, array $optionalArgs = [])
     {
         $request = new AddInstancesInstanceGroupRequest();
         $request->setInstanceGroup($instanceGroup);
+        $request->setInstanceGroupsAddInstancesRequestResource($instanceGroupsAddInstancesRequestResource);
         $request->setProject($project);
         $request->setZone($zone);
-        if (isset($optionalArgs['instanceGroupsAddInstancesRequestResource'])) {
-            $request->setInstanceGroupsAddInstancesRequestResource($optionalArgs['instanceGroupsAddInstancesRequestResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -472,20 +472,21 @@ class InstanceGroupsGapicClient
      * ```
      * $instanceGroupsClient = new InstanceGroupsClient();
      * try {
+     *     $instanceGroupResource = new InstanceGroup();
      *     $project = '';
      *     $zone = '';
-     *     $response = $instanceGroupsClient->insert($project, $zone);
+     *     $response = $instanceGroupsClient->insert($instanceGroupResource, $project, $zone);
      * } finally {
      *     $instanceGroupsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $zone         The name of the zone where you want to create the instance group.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param InstanceGroup $instanceGroupResource The body resource for this request
+     * @param string        $project               Project ID for this request.
+     * @param string        $zone                  The name of the zone where you want to create the instance group.
+     * @param array         $optionalArgs          {
+     *                                             Optional.
      *
-     *     @type InstanceGroup $instanceGroupResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -504,14 +505,12 @@ class InstanceGroupsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, $zone, array $optionalArgs = [])
+    public function insert($instanceGroupResource, $project, $zone, array $optionalArgs = [])
     {
         $request = new InsertInstanceGroupRequest();
+        $request->setInstanceGroupResource($instanceGroupResource);
         $request->setProject($project);
         $request->setZone($zone);
-        if (isset($optionalArgs['instanceGroupResource'])) {
-            $request->setInstanceGroupResource($optionalArgs['instanceGroupResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -635,10 +634,11 @@ class InstanceGroupsGapicClient
      * $instanceGroupsClient = new InstanceGroupsClient();
      * try {
      *     $instanceGroup = '';
+     *     $instanceGroupsListInstancesRequestResource = new InstanceGroupsListInstancesRequest();
      *     $project = '';
      *     $zone = '';
      *     // Iterate over pages of elements
-     *     $pagedResponse = $instanceGroupsClient->listInstances($instanceGroup, $project, $zone);
+     *     $pagedResponse = $instanceGroupsClient->listInstances($instanceGroup, $instanceGroupsListInstancesRequestResource, $project, $zone);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -649,7 +649,7 @@ class InstanceGroupsGapicClient
      *     // Alternatively:
      *
      *     // Iterate through all elements
-     *     $pagedResponse = $instanceGroupsClient->listInstances($instanceGroup, $project, $zone);
+     *     $pagedResponse = $instanceGroupsClient->listInstances($instanceGroup, $instanceGroupsListInstancesRequestResource, $project, $zone);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }
@@ -658,11 +658,12 @@ class InstanceGroupsGapicClient
      * }
      * ```
      *
-     * @param string $instanceGroup The name of the instance group from which you want to generate a list of included instances.
-     * @param string $project       Project ID for this request.
-     * @param string $zone          The name of the zone where the instance group is located.
-     * @param array  $optionalArgs  {
-     *                              Optional.
+     * @param string                             $instanceGroup                              The name of the instance group from which you want to generate a list of included instances.
+     * @param InstanceGroupsListInstancesRequest $instanceGroupsListInstancesRequestResource The body resource for this request
+     * @param string                             $project                                    Project ID for this request.
+     * @param string                             $zone                                       The name of the zone where the instance group is located.
+     * @param array                              $optionalArgs                               {
+     *                                                                                       Optional.
      *
      *     @type string $filter
      *          A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`.
@@ -672,7 +673,6 @@ class InstanceGroupsGapicClient
      *          You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
      *
      *          To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
-     *     @type InstanceGroupsListInstancesRequest $instanceGroupsListInstancesRequestResource
      *     @type int $maxResults
      *          The maximum number of resources contained in the underlying API
      *          response. The API may return fewer values in a page, even if
@@ -702,17 +702,15 @@ class InstanceGroupsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function listInstances($instanceGroup, $project, $zone, array $optionalArgs = [])
+    public function listInstances($instanceGroup, $instanceGroupsListInstancesRequestResource, $project, $zone, array $optionalArgs = [])
     {
         $request = new ListInstancesInstanceGroupsRequest();
         $request->setInstanceGroup($instanceGroup);
+        $request->setInstanceGroupsListInstancesRequestResource($instanceGroupsListInstancesRequestResource);
         $request->setProject($project);
         $request->setZone($zone);
         if (isset($optionalArgs['filter'])) {
             $request->setFilter($optionalArgs['filter']);
-        }
-        if (isset($optionalArgs['instanceGroupsListInstancesRequestResource'])) {
-            $request->setInstanceGroupsListInstancesRequestResource($optionalArgs['instanceGroupsListInstancesRequestResource']);
         }
         if (isset($optionalArgs['maxResults'])) {
             $request->setMaxResults($optionalArgs['maxResults']);
@@ -745,21 +743,22 @@ class InstanceGroupsGapicClient
      * $instanceGroupsClient = new InstanceGroupsClient();
      * try {
      *     $instanceGroup = '';
+     *     $instanceGroupsRemoveInstancesRequestResource = new InstanceGroupsRemoveInstancesRequest();
      *     $project = '';
      *     $zone = '';
-     *     $response = $instanceGroupsClient->removeInstances($instanceGroup, $project, $zone);
+     *     $response = $instanceGroupsClient->removeInstances($instanceGroup, $instanceGroupsRemoveInstancesRequestResource, $project, $zone);
      * } finally {
      *     $instanceGroupsClient->close();
      * }
      * ```
      *
-     * @param string $instanceGroup The name of the instance group where the specified instances will be removed.
-     * @param string $project       Project ID for this request.
-     * @param string $zone          The name of the zone where the instance group is located.
-     * @param array  $optionalArgs  {
-     *                              Optional.
+     * @param string                               $instanceGroup                                The name of the instance group where the specified instances will be removed.
+     * @param InstanceGroupsRemoveInstancesRequest $instanceGroupsRemoveInstancesRequestResource The body resource for this request
+     * @param string                               $project                                      Project ID for this request.
+     * @param string                               $zone                                         The name of the zone where the instance group is located.
+     * @param array                                $optionalArgs                                 {
+     *                                                                                           Optional.
      *
-     *     @type InstanceGroupsRemoveInstancesRequest $instanceGroupsRemoveInstancesRequestResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -778,15 +777,13 @@ class InstanceGroupsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function removeInstances($instanceGroup, $project, $zone, array $optionalArgs = [])
+    public function removeInstances($instanceGroup, $instanceGroupsRemoveInstancesRequestResource, $project, $zone, array $optionalArgs = [])
     {
         $request = new RemoveInstancesInstanceGroupRequest();
         $request->setInstanceGroup($instanceGroup);
+        $request->setInstanceGroupsRemoveInstancesRequestResource($instanceGroupsRemoveInstancesRequestResource);
         $request->setProject($project);
         $request->setZone($zone);
-        if (isset($optionalArgs['instanceGroupsRemoveInstancesRequestResource'])) {
-            $request->setInstanceGroupsRemoveInstancesRequestResource($optionalArgs['instanceGroupsRemoveInstancesRequestResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -807,21 +804,22 @@ class InstanceGroupsGapicClient
      * $instanceGroupsClient = new InstanceGroupsClient();
      * try {
      *     $instanceGroup = '';
+     *     $instanceGroupsSetNamedPortsRequestResource = new InstanceGroupsSetNamedPortsRequest();
      *     $project = '';
      *     $zone = '';
-     *     $response = $instanceGroupsClient->setNamedPorts($instanceGroup, $project, $zone);
+     *     $response = $instanceGroupsClient->setNamedPorts($instanceGroup, $instanceGroupsSetNamedPortsRequestResource, $project, $zone);
      * } finally {
      *     $instanceGroupsClient->close();
      * }
      * ```
      *
-     * @param string $instanceGroup The name of the instance group where the named ports are updated.
-     * @param string $project       Project ID for this request.
-     * @param string $zone          The name of the zone where the instance group is located.
-     * @param array  $optionalArgs  {
-     *                              Optional.
+     * @param string                             $instanceGroup                              The name of the instance group where the named ports are updated.
+     * @param InstanceGroupsSetNamedPortsRequest $instanceGroupsSetNamedPortsRequestResource The body resource for this request
+     * @param string                             $project                                    Project ID for this request.
+     * @param string                             $zone                                       The name of the zone where the instance group is located.
+     * @param array                              $optionalArgs                               {
+     *                                                                                       Optional.
      *
-     *     @type InstanceGroupsSetNamedPortsRequest $instanceGroupsSetNamedPortsRequestResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -840,15 +838,13 @@ class InstanceGroupsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setNamedPorts($instanceGroup, $project, $zone, array $optionalArgs = [])
+    public function setNamedPorts($instanceGroup, $instanceGroupsSetNamedPortsRequestResource, $project, $zone, array $optionalArgs = [])
     {
         $request = new SetNamedPortsInstanceGroupRequest();
         $request->setInstanceGroup($instanceGroup);
+        $request->setInstanceGroupsSetNamedPortsRequestResource($instanceGroupsSetNamedPortsRequestResource);
         $request->setProject($project);
         $request->setZone($zone);
-        if (isset($optionalArgs['instanceGroupsSetNamedPortsRequestResource'])) {
-            $request->setInstanceGroupsSetNamedPortsRequestResource($optionalArgs['instanceGroupsSetNamedPortsRequestResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }

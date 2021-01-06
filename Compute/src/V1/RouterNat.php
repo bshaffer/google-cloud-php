@@ -22,6 +22,10 @@ class RouterNat extends \Google\Protobuf\Internal\Message
      */
     private $drain_nat_ips;
     /**
+     * Generated from protobuf field <code>bool enable_endpoint_independent_mapping = 259441819;</code>
+     */
+    private $enable_endpoint_independent_mapping = false;
+    /**
      * Timeout (in seconds) for ICMP connections. Defaults to 30s if not set.
      *
      * Generated from protobuf field <code>int32 icmp_idle_timeout_sec = 3647562;</code>
@@ -101,6 +105,7 @@ class RouterNat extends \Google\Protobuf\Internal\Message
      *
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $drain_nat_ips
      *           A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
+     *     @type bool $enable_endpoint_independent_mapping
      *     @type int $icmp_idle_timeout_sec
      *           Timeout (in seconds) for ICMP connections. Defaults to 30s if not set.
      *     @type \Google\Cloud\Compute\V1\RouterNatLogConfig $log_config
@@ -157,6 +162,28 @@ class RouterNat extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->drain_nat_ips = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool enable_endpoint_independent_mapping = 259441819;</code>
+     * @return bool
+     */
+    public function getEnableEndpointIndependentMapping()
+    {
+        return $this->enable_endpoint_independent_mapping;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool enable_endpoint_independent_mapping = 259441819;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEnableEndpointIndependentMapping($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->enable_endpoint_independent_mapping = $var;
 
         return $this;
     }

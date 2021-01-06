@@ -23,6 +23,12 @@ class Snapshot extends \Google\Protobuf\Internal\Message
      */
     private $auto_created = false;
     /**
+     * Creates the new snapshot in the snapshot chain labeled with the specified name. The chain name must be 1-63 characters long and comply with RFC1035. This is an uncommon option only for advanced service owners who needs to create separate snapshot chains, for example, for chargeback tracking. When you describe your snapshot resource, this field is visible only if it has a non-empty value.
+     *
+     * Generated from protobuf field <code>string chain_name = 68644169;</code>
+     */
+    private $chain_name = '';
+    /**
      * [Output Only] Creation timestamp in RFC3339 text format.
      *
      * Generated from protobuf field <code>string creation_timestamp = 30525366;</code>
@@ -155,6 +161,8 @@ class Snapshot extends \Google\Protobuf\Internal\Message
      *
      *     @type bool $auto_created
      *           [Output Only] Set to true if snapshots are automatically created by applying resource policy on the target disk.
+     *     @type string $chain_name
+     *           Creates the new snapshot in the snapshot chain labeled with the specified name. The chain name must be 1-63 characters long and comply with RFC1035. This is an uncommon option only for advanced service owners who needs to create separate snapshot chains, for example, for chargeback tracking. When you describe your snapshot resource, this field is visible only if it has a non-empty value.
      *     @type string $creation_timestamp
      *           [Output Only] Creation timestamp in RFC3339 text format.
      *     @type string $description
@@ -228,6 +236,32 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->auto_created = $var;
+
+        return $this;
+    }
+
+    /**
+     * Creates the new snapshot in the snapshot chain labeled with the specified name. The chain name must be 1-63 characters long and comply with RFC1035. This is an uncommon option only for advanced service owners who needs to create separate snapshot chains, for example, for chargeback tracking. When you describe your snapshot resource, this field is visible only if it has a non-empty value.
+     *
+     * Generated from protobuf field <code>string chain_name = 68644169;</code>
+     * @return string
+     */
+    public function getChainName()
+    {
+        return $this->chain_name;
+    }
+
+    /**
+     * Creates the new snapshot in the snapshot chain labeled with the specified name. The chain name must be 1-63 characters long and comply with RFC1035. This is an uncommon option only for advanced service owners who needs to create separate snapshot chains, for example, for chargeback tracking. When you describe your snapshot resource, this field is visible only if it has a non-empty value.
+     *
+     * Generated from protobuf field <code>string chain_name = 68644169;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setChainName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->chain_name = $var;
 
         return $this;
     }

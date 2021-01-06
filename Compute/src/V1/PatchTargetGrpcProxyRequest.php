@@ -36,7 +36,9 @@ class PatchTargetGrpcProxyRequest extends \Google\Protobuf\Internal\Message
      */
     private $target_grpc_proxy = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 60486994;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 60486994 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $target_grpc_proxy_resource = null;
 
@@ -55,6 +57,7 @@ class PatchTargetGrpcProxyRequest extends \Google\Protobuf\Internal\Message
      *     @type string $target_grpc_proxy
      *           Name of the TargetGrpcProxy resource to patch.
      *     @type \Google\Cloud\Compute\V1\TargetGrpcProxy $target_grpc_proxy_resource
+     *           The body resource for this request
      * }
      */
     public function __construct($data = NULL) {
@@ -145,7 +148,9 @@ class PatchTargetGrpcProxyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 60486994;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 60486994 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\TargetGrpcProxy
      */
     public function getTargetGrpcProxyResource()
@@ -164,7 +169,9 @@ class PatchTargetGrpcProxyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 60486994;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 60486994 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\TargetGrpcProxy $var
      * @return $this
      */

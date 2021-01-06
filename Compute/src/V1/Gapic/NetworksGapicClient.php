@@ -62,8 +62,9 @@ use Google\Cloud\Compute\V1\UpdatePeeringNetworkRequest;
  * $networksClient = new NetworksClient();
  * try {
  *     $network = '';
+ *     $networksAddPeeringRequestResource = new NetworksAddPeeringRequest();
  *     $project = '';
- *     $response = $networksClient->addPeering($network, $project);
+ *     $response = $networksClient->addPeering($network, $networksAddPeeringRequestResource, $project);
  * } finally {
  *     $networksClient->close();
  * }
@@ -198,19 +199,20 @@ class NetworksGapicClient
      * $networksClient = new NetworksClient();
      * try {
      *     $network = '';
+     *     $networksAddPeeringRequestResource = new NetworksAddPeeringRequest();
      *     $project = '';
-     *     $response = $networksClient->addPeering($network, $project);
+     *     $response = $networksClient->addPeering($network, $networksAddPeeringRequestResource, $project);
      * } finally {
      *     $networksClient->close();
      * }
      * ```
      *
-     * @param string $network      Name of the network resource to add peering to.
-     * @param string $project      Project ID for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                    $network                           Name of the network resource to add peering to.
+     * @param NetworksAddPeeringRequest $networksAddPeeringRequestResource The body resource for this request
+     * @param string                    $project                           Project ID for this request.
+     * @param array                     $optionalArgs                      {
+     *                                                                     Optional.
      *
-     *     @type NetworksAddPeeringRequest $networksAddPeeringRequestResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -229,14 +231,12 @@ class NetworksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function addPeering($network, $project, array $optionalArgs = [])
+    public function addPeering($network, $networksAddPeeringRequestResource, $project, array $optionalArgs = [])
     {
         $request = new AddPeeringNetworkRequest();
         $request->setNetwork($network);
+        $request->setNetworksAddPeeringRequestResource($networksAddPeeringRequestResource);
         $request->setProject($project);
-        if (isset($optionalArgs['networksAddPeeringRequestResource'])) {
-            $request->setNetworksAddPeeringRequestResource($optionalArgs['networksAddPeeringRequestResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -357,18 +357,19 @@ class NetworksGapicClient
      * ```
      * $networksClient = new NetworksClient();
      * try {
+     *     $networkResource = new Network();
      *     $project = '';
-     *     $response = $networksClient->insert($project);
+     *     $response = $networksClient->insert($networkResource, $project);
      * } finally {
      *     $networksClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param Network $networkResource The body resource for this request
+     * @param string  $project         Project ID for this request.
+     * @param array   $optionalArgs    {
+     *                                 Optional.
      *
-     *     @type Network $networkResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -387,13 +388,11 @@ class NetworksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, array $optionalArgs = [])
+    public function insert($networkResource, $project, array $optionalArgs = [])
     {
         $request = new InsertNetworkRequest();
+        $request->setNetworkResource($networkResource);
         $request->setProject($project);
-        if (isset($optionalArgs['networkResource'])) {
-            $request->setNetworkResource($optionalArgs['networkResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -629,19 +628,20 @@ class NetworksGapicClient
      * $networksClient = new NetworksClient();
      * try {
      *     $network = '';
+     *     $networkResource = new Network();
      *     $project = '';
-     *     $response = $networksClient->patch($network, $project);
+     *     $response = $networksClient->patch($network, $networkResource, $project);
      * } finally {
      *     $networksClient->close();
      * }
      * ```
      *
-     * @param string $network      Name of the network to update.
-     * @param string $project      Project ID for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string  $network         Name of the network to update.
+     * @param Network $networkResource The body resource for this request
+     * @param string  $project         Project ID for this request.
+     * @param array   $optionalArgs    {
+     *                                 Optional.
      *
-     *     @type Network $networkResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -660,14 +660,12 @@ class NetworksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function patch($network, $project, array $optionalArgs = [])
+    public function patch($network, $networkResource, $project, array $optionalArgs = [])
     {
         $request = new PatchNetworkRequest();
         $request->setNetwork($network);
+        $request->setNetworkResource($networkResource);
         $request->setProject($project);
-        if (isset($optionalArgs['networkResource'])) {
-            $request->setNetworkResource($optionalArgs['networkResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -688,19 +686,20 @@ class NetworksGapicClient
      * $networksClient = new NetworksClient();
      * try {
      *     $network = '';
+     *     $networksRemovePeeringRequestResource = new NetworksRemovePeeringRequest();
      *     $project = '';
-     *     $response = $networksClient->removePeering($network, $project);
+     *     $response = $networksClient->removePeering($network, $networksRemovePeeringRequestResource, $project);
      * } finally {
      *     $networksClient->close();
      * }
      * ```
      *
-     * @param string $network      Name of the network resource to remove peering from.
-     * @param string $project      Project ID for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                       $network                              Name of the network resource to remove peering from.
+     * @param NetworksRemovePeeringRequest $networksRemovePeeringRequestResource The body resource for this request
+     * @param string                       $project                              Project ID for this request.
+     * @param array                        $optionalArgs                         {
+     *                                                                           Optional.
      *
-     *     @type NetworksRemovePeeringRequest $networksRemovePeeringRequestResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -719,14 +718,12 @@ class NetworksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function removePeering($network, $project, array $optionalArgs = [])
+    public function removePeering($network, $networksRemovePeeringRequestResource, $project, array $optionalArgs = [])
     {
         $request = new RemovePeeringNetworkRequest();
         $request->setNetwork($network);
+        $request->setNetworksRemovePeeringRequestResource($networksRemovePeeringRequestResource);
         $request->setProject($project);
-        if (isset($optionalArgs['networksRemovePeeringRequestResource'])) {
-            $request->setNetworksRemovePeeringRequestResource($optionalArgs['networksRemovePeeringRequestResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -802,19 +799,20 @@ class NetworksGapicClient
      * $networksClient = new NetworksClient();
      * try {
      *     $network = '';
+     *     $networksUpdatePeeringRequestResource = new NetworksUpdatePeeringRequest();
      *     $project = '';
-     *     $response = $networksClient->updatePeering($network, $project);
+     *     $response = $networksClient->updatePeering($network, $networksUpdatePeeringRequestResource, $project);
      * } finally {
      *     $networksClient->close();
      * }
      * ```
      *
-     * @param string $network      Name of the network resource which the updated peering is belonging to.
-     * @param string $project      Project ID for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                       $network                              Name of the network resource which the updated peering is belonging to.
+     * @param NetworksUpdatePeeringRequest $networksUpdatePeeringRequestResource The body resource for this request
+     * @param string                       $project                              Project ID for this request.
+     * @param array                        $optionalArgs                         {
+     *                                                                           Optional.
      *
-     *     @type NetworksUpdatePeeringRequest $networksUpdatePeeringRequestResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -833,14 +831,12 @@ class NetworksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function updatePeering($network, $project, array $optionalArgs = [])
+    public function updatePeering($network, $networksUpdatePeeringRequestResource, $project, array $optionalArgs = [])
     {
         $request = new UpdatePeeringNetworkRequest();
         $request->setNetwork($network);
+        $request->setNetworksUpdatePeeringRequestResource($networksUpdatePeeringRequestResource);
         $request->setProject($project);
-        if (isset($optionalArgs['networksUpdatePeeringRequestResource'])) {
-            $request->setNetworksUpdatePeeringRequestResource($optionalArgs['networksUpdatePeeringRequestResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }

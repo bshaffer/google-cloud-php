@@ -617,8 +617,9 @@ class RoutersClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $routerResource = new Router();
 
-        $response = $client->insert($project, $region);
+        $response = $client->insert($project, $region, $routerResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -632,6 +633,9 @@ class RoutersClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getRouterResource();
+
+        $this->assertProtobufEquals($routerResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -661,9 +665,10 @@ class RoutersClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $routerResource = new Router();
 
         try {
-            $client->insert($project, $region);
+            $client->insert($project, $region, $routerResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -824,8 +829,9 @@ class RoutersClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $router = 'router-925132983';
+        $routerResource = new Router();
 
-        $response = $client->patch($project, $region, $router);
+        $response = $client->patch($project, $region, $router, $routerResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -842,6 +848,9 @@ class RoutersClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRouter();
 
         $this->assertProtobufEquals($router, $actualValue);
+        $actualValue = $actualRequestObject->getRouterResource();
+
+        $this->assertProtobufEquals($routerResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -872,9 +881,10 @@ class RoutersClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $router = 'router-925132983';
+        $routerResource = new Router();
 
         try {
-            $client->patch($project, $region, $router);
+            $client->patch($project, $region, $router, $routerResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -905,8 +915,9 @@ class RoutersClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $router = 'router-925132983';
+        $routerResource = new Router();
 
-        $response = $client->preview($project, $region, $router);
+        $response = $client->preview($project, $region, $router, $routerResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -923,6 +934,9 @@ class RoutersClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRouter();
 
         $this->assertProtobufEquals($router, $actualValue);
+        $actualValue = $actualRequestObject->getRouterResource();
+
+        $this->assertProtobufEquals($routerResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -953,9 +967,10 @@ class RoutersClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $router = 'router-925132983';
+        $routerResource = new Router();
 
         try {
-            $client->preview($project, $region, $router);
+            $client->preview($project, $region, $router, $routerResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1026,8 +1041,9 @@ class RoutersClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $router = 'router-925132983';
+        $routerResource = new Router();
 
-        $response = $client->update($project, $region, $router);
+        $response = $client->update($project, $region, $router, $routerResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1044,6 +1060,9 @@ class RoutersClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRouter();
 
         $this->assertProtobufEquals($router, $actualValue);
+        $actualValue = $actualRequestObject->getRouterResource();
+
+        $this->assertProtobufEquals($routerResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -1074,9 +1093,10 @@ class RoutersClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $router = 'router-925132983';
+        $routerResource = new Router();
 
         try {
-            $client->update($project, $region, $router);
+            $client->update($project, $region, $router, $routerResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

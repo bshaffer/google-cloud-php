@@ -439,10 +439,11 @@ class AddressesClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $addressResource = new Address();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
-        $response = $client->insert($project, $region);
+        $response = $client->insert($addressResource, $project, $region);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -450,6 +451,9 @@ class AddressesClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.Addresses/Insert', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getAddressResource();
+
+        $this->assertProtobufEquals($addressResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -483,11 +487,12 @@ class AddressesClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $addressResource = new Address();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
         try {
-            $client->insert($project, $region);
+            $client->insert($addressResource, $project, $region);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

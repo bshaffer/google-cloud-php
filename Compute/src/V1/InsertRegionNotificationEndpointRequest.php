@@ -16,7 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class InsertRegionNotificationEndpointRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 70024484;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 70024484 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $notification_endpoint_resource = null;
     /**
@@ -47,6 +49,7 @@ class InsertRegionNotificationEndpointRequest extends \Google\Protobuf\Internal\
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Compute\V1\NotificationEndpoint $notification_endpoint_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $region
@@ -63,7 +66,9 @@ class InsertRegionNotificationEndpointRequest extends \Google\Protobuf\Internal\
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 70024484;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 70024484 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\NotificationEndpoint
      */
     public function getNotificationEndpointResource()
@@ -82,7 +87,9 @@ class InsertRegionNotificationEndpointRequest extends \Google\Protobuf\Internal\
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 70024484;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 70024484 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\NotificationEndpoint $var
      * @return $this
      */

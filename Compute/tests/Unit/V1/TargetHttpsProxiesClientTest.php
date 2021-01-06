@@ -28,10 +28,14 @@ use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
 use Google\Cloud\Compute\V1\Operation;
+use Google\Cloud\Compute\V1\SslPolicyReference;
 use Google\Cloud\Compute\V1\TargetHttpsProxiesScopedList;
+use Google\Cloud\Compute\V1\TargetHttpsProxiesSetQuicOverrideRequest;
+use Google\Cloud\Compute\V1\TargetHttpsProxiesSetSslCertificatesRequest;
 use Google\Cloud\Compute\V1\TargetHttpsProxy;
 use Google\Cloud\Compute\V1\TargetHttpsProxyAggregatedList;
 use Google\Cloud\Compute\V1\TargetHttpsProxyList;
+use Google\Cloud\Compute\V1\UrlMapReference;
 use Google\Protobuf\Any;
 use Google\Rpc\Code;
 use stdClass;
@@ -287,23 +291,29 @@ class TargetHttpsProxiesClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
 
         // Mock response
+        $authorizationPolicy = 'authorizationPolicy-1576667208';
         $creationTimestamp = 'creationTimestamp567396278';
         $description = 'description-1724546052';
         $id = 'id3355';
         $kind = 'kind3292052';
         $name = 'name3373707';
+        $proxyBind = true;
         $region = 'region-934795532';
         $selfLink = 'selfLink-1691268851';
+        $serverTlsPolicy = 'serverTlsPolicy1906438002';
         $sslPolicy = 'sslPolicy-1852293435';
         $urlMap = 'urlMap-169850228';
         $expectedResponse = new TargetHttpsProxy();
+        $expectedResponse->setAuthorizationPolicy($authorizationPolicy);
         $expectedResponse->setCreationTimestamp($creationTimestamp);
         $expectedResponse->setDescription($description);
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
         $expectedResponse->setName($name);
+        $expectedResponse->setProxyBind($proxyBind);
         $expectedResponse->setRegion($region);
         $expectedResponse->setSelfLink($selfLink);
+        $expectedResponse->setServerTlsPolicy($serverTlsPolicy);
         $expectedResponse->setSslPolicy($sslPolicy);
         $expectedResponse->setUrlMap($urlMap);
         $transport->addResponse($expectedResponse);
@@ -426,8 +436,9 @@ class TargetHttpsProxiesClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $targetHttpsProxyResource = new TargetHttpsProxy();
 
-        $response = $client->insert($project);
+        $response = $client->insert($project, $targetHttpsProxyResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -438,6 +449,9 @@ class TargetHttpsProxiesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
+        $actualValue = $actualRequestObject->getTargetHttpsProxyResource();
+
+        $this->assertProtobufEquals($targetHttpsProxyResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -466,9 +480,10 @@ class TargetHttpsProxiesClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $targetHttpsProxyResource = new TargetHttpsProxy();
 
         try {
-            $client->insert($project);
+            $client->insert($project, $targetHttpsProxyResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -622,9 +637,10 @@ class TargetHttpsProxiesClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $targetHttpsProxiesSetQuicOverrideRequestResource = new TargetHttpsProxiesSetQuicOverrideRequest();
         $targetHttpsProxy = 'targetHttpsProxy-2095146900';
 
-        $response = $client->setQuicOverride($project, $targetHttpsProxy);
+        $response = $client->setQuicOverride($project, $targetHttpsProxiesSetQuicOverrideRequestResource, $targetHttpsProxy);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -635,6 +651,9 @@ class TargetHttpsProxiesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
+        $actualValue = $actualRequestObject->getTargetHttpsProxiesSetQuicOverrideRequestResource();
+
+        $this->assertProtobufEquals($targetHttpsProxiesSetQuicOverrideRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getTargetHttpsProxy();
 
         $this->assertProtobufEquals($targetHttpsProxy, $actualValue);
@@ -666,10 +685,11 @@ class TargetHttpsProxiesClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $targetHttpsProxiesSetQuicOverrideRequestResource = new TargetHttpsProxiesSetQuicOverrideRequest();
         $targetHttpsProxy = 'targetHttpsProxy-2095146900';
 
         try {
-            $client->setQuicOverride($project, $targetHttpsProxy);
+            $client->setQuicOverride($project, $targetHttpsProxiesSetQuicOverrideRequestResource, $targetHttpsProxy);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -738,9 +758,10 @@ class TargetHttpsProxiesClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $targetHttpsProxiesSetSslCertificatesRequestResource = new TargetHttpsProxiesSetSslCertificatesRequest();
         $targetHttpsProxy = 'targetHttpsProxy-2095146900';
 
-        $response = $client->setSslCertificates($project, $targetHttpsProxy);
+        $response = $client->setSslCertificates($project, $targetHttpsProxiesSetSslCertificatesRequestResource, $targetHttpsProxy);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -751,6 +772,9 @@ class TargetHttpsProxiesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
+        $actualValue = $actualRequestObject->getTargetHttpsProxiesSetSslCertificatesRequestResource();
+
+        $this->assertProtobufEquals($targetHttpsProxiesSetSslCertificatesRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getTargetHttpsProxy();
 
         $this->assertProtobufEquals($targetHttpsProxy, $actualValue);
@@ -782,10 +806,11 @@ class TargetHttpsProxiesClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $targetHttpsProxiesSetSslCertificatesRequestResource = new TargetHttpsProxiesSetSslCertificatesRequest();
         $targetHttpsProxy = 'targetHttpsProxy-2095146900';
 
         try {
-            $client->setSslCertificates($project, $targetHttpsProxy);
+            $client->setSslCertificates($project, $targetHttpsProxiesSetSslCertificatesRequestResource, $targetHttpsProxy);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -854,9 +879,10 @@ class TargetHttpsProxiesClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $sslPolicyReferenceResource = new SslPolicyReference();
         $targetHttpsProxy = 'targetHttpsProxy-2095146900';
 
-        $response = $client->setSslPolicy($project, $targetHttpsProxy);
+        $response = $client->setSslPolicy($project, $sslPolicyReferenceResource, $targetHttpsProxy);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -867,6 +893,9 @@ class TargetHttpsProxiesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
+        $actualValue = $actualRequestObject->getSslPolicyReferenceResource();
+
+        $this->assertProtobufEquals($sslPolicyReferenceResource, $actualValue);
         $actualValue = $actualRequestObject->getTargetHttpsProxy();
 
         $this->assertProtobufEquals($targetHttpsProxy, $actualValue);
@@ -898,10 +927,11 @@ class TargetHttpsProxiesClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $sslPolicyReferenceResource = new SslPolicyReference();
         $targetHttpsProxy = 'targetHttpsProxy-2095146900';
 
         try {
-            $client->setSslPolicy($project, $targetHttpsProxy);
+            $client->setSslPolicy($project, $sslPolicyReferenceResource, $targetHttpsProxy);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -971,8 +1001,9 @@ class TargetHttpsProxiesClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $targetHttpsProxy = 'targetHttpsProxy-2095146900';
+        $urlMapReferenceResource = new UrlMapReference();
 
-        $response = $client->setUrlMap($project, $targetHttpsProxy);
+        $response = $client->setUrlMap($project, $targetHttpsProxy, $urlMapReferenceResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -986,6 +1017,9 @@ class TargetHttpsProxiesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getTargetHttpsProxy();
 
         $this->assertProtobufEquals($targetHttpsProxy, $actualValue);
+        $actualValue = $actualRequestObject->getUrlMapReferenceResource();
+
+        $this->assertProtobufEquals($urlMapReferenceResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -1015,9 +1049,10 @@ class TargetHttpsProxiesClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $targetHttpsProxy = 'targetHttpsProxy-2095146900';
+        $urlMapReferenceResource = new UrlMapReference();
 
         try {
-            $client->setUrlMap($project, $targetHttpsProxy);
+            $client->setUrlMap($project, $targetHttpsProxy, $urlMapReferenceResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

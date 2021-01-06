@@ -27,10 +27,14 @@ use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
+use Google\Cloud\Compute\V1\DeprecationStatus;
+use Google\Cloud\Compute\V1\GlobalSetLabelsRequest;
+use Google\Cloud\Compute\V1\GlobalSetPolicyRequest;
 use Google\Cloud\Compute\V1\Image;
 use Google\Cloud\Compute\V1\ImageList;
 use Google\Cloud\Compute\V1\Operation;
 use Google\Cloud\Compute\V1\Policy;
+use Google\Cloud\Compute\V1\TestPermissionsRequest;
 use Google\Cloud\Compute\V1\TestPermissionsResponse;
 use Google\Protobuf\Any;
 use Google\Rpc\Code;
@@ -243,10 +247,11 @@ class ImagesClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $deprecationStatusResource = new DeprecationStatus();
         $image = 'image100313435';
         $project = 'project-309310695';
 
-        $response = $client->deprecate($image, $project);
+        $response = $client->deprecate($deprecationStatusResource, $image, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -254,6 +259,9 @@ class ImagesClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.Images/Deprecate', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getDeprecationStatusResource();
+
+        $this->assertProtobufEquals($deprecationStatusResource, $actualValue);
         $actualValue = $actualRequestObject->getImage();
 
         $this->assertProtobufEquals($image, $actualValue);
@@ -287,11 +295,12 @@ class ImagesClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $deprecationStatusResource = new DeprecationStatus();
         $image = 'image100313435';
         $project = 'project-309310695';
 
         try {
-            $client->deprecate($image, $project);
+            $client->deprecate($deprecationStatusResource, $image, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -657,9 +666,10 @@ class ImagesClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $imageResource = new Image();
         $project = 'project-309310695';
 
-        $response = $client->insert($project);
+        $response = $client->insert($imageResource, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -667,6 +677,9 @@ class ImagesClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.Images/Insert', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getImageResource();
+
+        $this->assertProtobufEquals($imageResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -697,10 +710,11 @@ class ImagesClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $imageResource = new Image();
         $project = 'project-309310695';
 
         try {
-            $client->insert($project);
+            $client->insert($imageResource, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -854,9 +868,10 @@ class ImagesClientTest extends GeneratedTest
 
         // Mock request
         $image = 'image100313435';
+        $imageResource = new Image();
         $project = 'project-309310695';
 
-        $response = $client->patch($image, $project);
+        $response = $client->patch($image, $imageResource, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -867,6 +882,9 @@ class ImagesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getImage();
 
         $this->assertProtobufEquals($image, $actualValue);
+        $actualValue = $actualRequestObject->getImageResource();
+
+        $this->assertProtobufEquals($imageResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -898,10 +916,11 @@ class ImagesClientTest extends GeneratedTest
 
         // Mock request
         $image = 'image100313435';
+        $imageResource = new Image();
         $project = 'project-309310695';
 
         try {
-            $client->patch($image, $project);
+            $client->patch($image, $imageResource, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -935,10 +954,11 @@ class ImagesClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $globalSetPolicyRequestResource = new GlobalSetPolicyRequest();
         $project = 'project-309310695';
         $resource = 'resource-341064690';
 
-        $response = $client->setIamPolicy($project, $resource);
+        $response = $client->setIamPolicy($globalSetPolicyRequestResource, $project, $resource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -946,6 +966,9 @@ class ImagesClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.Images/SetIamPolicy', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getGlobalSetPolicyRequestResource();
+
+        $this->assertProtobufEquals($globalSetPolicyRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -979,11 +1002,12 @@ class ImagesClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $globalSetPolicyRequestResource = new GlobalSetPolicyRequest();
         $project = 'project-309310695';
         $resource = 'resource-341064690';
 
         try {
-            $client->setIamPolicy($project, $resource);
+            $client->setIamPolicy($globalSetPolicyRequestResource, $project, $resource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1051,10 +1075,11 @@ class ImagesClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $globalSetLabelsRequestResource = new GlobalSetLabelsRequest();
         $project = 'project-309310695';
         $resource = 'resource-341064690';
 
-        $response = $client->setLabels($project, $resource);
+        $response = $client->setLabels($globalSetLabelsRequestResource, $project, $resource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1062,6 +1087,9 @@ class ImagesClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.Images/SetLabels', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getGlobalSetLabelsRequestResource();
+
+        $this->assertProtobufEquals($globalSetLabelsRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -1095,11 +1123,12 @@ class ImagesClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $globalSetLabelsRequestResource = new GlobalSetLabelsRequest();
         $project = 'project-309310695';
         $resource = 'resource-341064690';
 
         try {
-            $client->setLabels($project, $resource);
+            $client->setLabels($globalSetLabelsRequestResource, $project, $resource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1129,8 +1158,9 @@ class ImagesClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $resource = 'resource-341064690';
+        $testPermissionsRequestResource = new TestPermissionsRequest();
 
-        $response = $client->testIamPermissions($project, $resource);
+        $response = $client->testIamPermissions($project, $resource, $testPermissionsRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1144,6 +1174,9 @@ class ImagesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getResource();
 
         $this->assertProtobufEquals($resource, $actualValue);
+        $actualValue = $actualRequestObject->getTestPermissionsRequestResource();
+
+        $this->assertProtobufEquals($testPermissionsRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -1173,9 +1206,10 @@ class ImagesClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $resource = 'resource-341064690';
+        $testPermissionsRequestResource = new TestPermissionsRequest();
 
         try {
-            $client->testIamPermissions($project, $resource);
+            $client->testIamPermissions($project, $resource, $testPermissionsRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

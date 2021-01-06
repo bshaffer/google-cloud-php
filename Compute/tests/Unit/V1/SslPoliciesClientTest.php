@@ -333,8 +333,9 @@ class SslPoliciesClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $sslPolicyResource = new SslPolicy();
 
-        $response = $client->insert($project);
+        $response = $client->insert($project, $sslPolicyResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -345,6 +346,9 @@ class SslPoliciesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
+        $actualValue = $actualRequestObject->getSslPolicyResource();
+
+        $this->assertProtobufEquals($sslPolicyResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -373,9 +377,10 @@ class SslPoliciesClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $sslPolicyResource = new SslPolicy();
 
         try {
-            $client->insert($project);
+            $client->insert($project, $sslPolicyResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -601,8 +606,9 @@ class SslPoliciesClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $sslPolicy = 'sslPolicy-1852293435';
+        $sslPolicyResource = new SslPolicy();
 
-        $response = $client->patch($project, $sslPolicy);
+        $response = $client->patch($project, $sslPolicy, $sslPolicyResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -616,6 +622,9 @@ class SslPoliciesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getSslPolicy();
 
         $this->assertProtobufEquals($sslPolicy, $actualValue);
+        $actualValue = $actualRequestObject->getSslPolicyResource();
+
+        $this->assertProtobufEquals($sslPolicyResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -645,9 +654,10 @@ class SslPoliciesClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $sslPolicy = 'sslPolicy-1852293435';
+        $sslPolicyResource = new SslPolicy();
 
         try {
-            $client->patch($project, $sslPolicy);
+            $client->patch($project, $sslPolicy, $sslPolicyResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

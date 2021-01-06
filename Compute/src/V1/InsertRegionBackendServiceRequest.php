@@ -16,7 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class InsertRegionBackendServiceRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService backend_service_resource = 79151267;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService backend_service_resource = 79151267 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $backend_service_resource = null;
     /**
@@ -47,6 +49,7 @@ class InsertRegionBackendServiceRequest extends \Google\Protobuf\Internal\Messag
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Compute\V1\BackendService $backend_service_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $region
@@ -63,7 +66,9 @@ class InsertRegionBackendServiceRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService backend_service_resource = 79151267;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService backend_service_resource = 79151267 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\BackendService
      */
     public function getBackendServiceResource()
@@ -82,7 +87,9 @@ class InsertRegionBackendServiceRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService backend_service_resource = 79151267;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService backend_service_resource = 79151267 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\BackendService $var
      * @return $this
      */

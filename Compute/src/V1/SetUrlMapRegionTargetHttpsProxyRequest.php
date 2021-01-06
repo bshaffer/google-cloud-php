@@ -42,7 +42,9 @@ class SetUrlMapRegionTargetHttpsProxyRequest extends \Google\Protobuf\Internal\M
      */
     private $target_https_proxy = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 130265877;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 130265877 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $url_map_reference_resource = null;
 
@@ -63,6 +65,7 @@ class SetUrlMapRegionTargetHttpsProxyRequest extends \Google\Protobuf\Internal\M
      *     @type string $target_https_proxy
      *           Name of the TargetHttpsProxy to set a URL map for.
      *     @type \Google\Cloud\Compute\V1\UrlMapReference $url_map_reference_resource
+     *           The body resource for this request
      * }
      */
     public function __construct($data = NULL) {
@@ -179,7 +182,9 @@ class SetUrlMapRegionTargetHttpsProxyRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 130265877;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 130265877 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\UrlMapReference
      */
     public function getUrlMapReferenceResource()
@@ -198,7 +203,9 @@ class SetUrlMapRegionTargetHttpsProxyRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 130265877;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 130265877 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\UrlMapReference $var
      * @return $this
      */

@@ -16,7 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class InsertNodeTemplateRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $node_template_resource = null;
     /**
@@ -47,6 +49,7 @@ class InsertNodeTemplateRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Compute\V1\NodeTemplate $node_template_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $region
@@ -63,7 +66,9 @@ class InsertNodeTemplateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\NodeTemplate
      */
     public function getNodeTemplateResource()
@@ -82,7 +87,9 @@ class InsertNodeTemplateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\NodeTemplate $var
      * @return $this
      */

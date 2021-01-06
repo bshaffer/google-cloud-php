@@ -22,7 +22,9 @@ class PatchInterconnectAttachmentRequest extends \Google\Protobuf\Internal\Messa
      */
     private $interconnect_attachment = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $interconnect_attachment_resource = null;
     /**
@@ -55,6 +57,7 @@ class PatchInterconnectAttachmentRequest extends \Google\Protobuf\Internal\Messa
      *     @type string $interconnect_attachment
      *           Name of the interconnect attachment to patch.
      *     @type \Google\Cloud\Compute\V1\InterconnectAttachment $interconnect_attachment_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $region
@@ -97,7 +100,9 @@ class PatchInterconnectAttachmentRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\InterconnectAttachment
      */
     public function getInterconnectAttachmentResource()
@@ -116,7 +121,9 @@ class PatchInterconnectAttachmentRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\InterconnectAttachment $var
      * @return $this
      */

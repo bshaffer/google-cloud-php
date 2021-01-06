@@ -351,10 +351,11 @@ class RegionNetworkEndpointGroupsClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $networkEndpointGroupResource = new NetworkEndpointGroup();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
-        $response = $client->insert($project, $region);
+        $response = $client->insert($networkEndpointGroupResource, $project, $region);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -362,6 +363,9 @@ class RegionNetworkEndpointGroupsClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.RegionNetworkEndpointGroups/Insert', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getNetworkEndpointGroupResource();
+
+        $this->assertProtobufEquals($networkEndpointGroupResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -395,11 +399,12 @@ class RegionNetworkEndpointGroupsClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $networkEndpointGroupResource = new NetworkEndpointGroup();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
         try {
-            $client->insert($project, $region);
+            $client->insert($networkEndpointGroupResource, $project, $region);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

@@ -22,7 +22,7 @@ class AutoscalingPolicyScaleInControl extends \Google\Protobuf\Internal\Message
      */
     private $max_scaled_in_replicas = null;
     /**
-     * How long back autoscaling should look when computing recommendations to include directives regarding slower scale in, as described above.
+     * How far back autoscaling looks when computing recommendations to include directives regarding slower scale in, as described above.
      *
      * Generated from protobuf field <code>int32 time_window_sec = 36405300;</code>
      */
@@ -37,7 +37,7 @@ class AutoscalingPolicyScaleInControl extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Compute\V1\FixedOrPercent $max_scaled_in_replicas
      *           Maximum allowed number (or %) of VMs that can be deducted from the peak recommendation during the window autoscaler looks at when computing recommendations. Possibly all these VMs can be deleted at once so user service needs to be prepared to lose that many VMs in one step.
      *     @type int $time_window_sec
-     *           How long back autoscaling should look when computing recommendations to include directives regarding slower scale in, as described above.
+     *           How far back autoscaling looks when computing recommendations to include directives regarding slower scale in, as described above.
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +82,7 @@ class AutoscalingPolicyScaleInControl extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * How long back autoscaling should look when computing recommendations to include directives regarding slower scale in, as described above.
+     * How far back autoscaling looks when computing recommendations to include directives regarding slower scale in, as described above.
      *
      * Generated from protobuf field <code>int32 time_window_sec = 36405300;</code>
      * @return int
@@ -93,7 +93,7 @@ class AutoscalingPolicyScaleInControl extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * How long back autoscaling should look when computing recommendations to include directives regarding slower scale in, as described above.
+     * How far back autoscaling looks when computing recommendations to include directives regarding slower scale in, as described above.
      *
      * Generated from protobuf field <code>int32 time_window_sec = 36405300;</code>
      * @param int $var

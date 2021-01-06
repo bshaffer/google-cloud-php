@@ -11,12 +11,12 @@ use UnexpectedValueException;
  * - EXTERNAL is used for:
  * - Classic Cloud VPN gateways
  * - Protocol forwarding to VMs from an external IP address
- * - The following load balancers: HTTP(S), SSL Proxy, TCP Proxy, and Network TCP/UDP
+ * - HTTP(S), SSL Proxy, TCP Proxy, and Network Load Balancing
  * - INTERNAL is used for:
  * - Protocol forwarding to VMs from an internal IP address
- * - Internal TCP/UDP load balancers
+ * - Internal TCP/UDP Load Balancing
  * - INTERNAL_MANAGED is used for:
- * - Internal HTTP(S) load balancers
+ * - Internal HTTP(S) Load Balancing
  * - INTERNAL_SELF_MANAGED is used for:
  * - Traffic Director
  * For more information about forwarding rules, refer to Forwarding rule concepts.

@@ -31,11 +31,16 @@ use Google\Cloud\Compute\V1\NodeGroup;
 use Google\Cloud\Compute\V1\NodeGroupAggregatedList;
 use Google\Cloud\Compute\V1\NodeGroupList;
 use Google\Cloud\Compute\V1\NodeGroupNode;
+use Google\Cloud\Compute\V1\NodeGroupsAddNodesRequest;
+use Google\Cloud\Compute\V1\NodeGroupsDeleteNodesRequest;
 use Google\Cloud\Compute\V1\NodeGroupsListNodes;
 use Google\Cloud\Compute\V1\NodeGroupsScopedList;
+use Google\Cloud\Compute\V1\NodeGroupsSetNodeTemplateRequest;
 use Google\Cloud\Compute\V1\Operation;
 use Google\Cloud\Compute\V1\Policy;
+use Google\Cloud\Compute\V1\TestPermissionsRequest;
 use Google\Cloud\Compute\V1\TestPermissionsResponse;
+use Google\Cloud\Compute\V1\ZoneSetPolicyRequest;
 use Google\Protobuf\Any;
 use Google\Rpc\Code;
 use stdClass;
@@ -132,10 +137,11 @@ class NodeGroupsClientTest extends GeneratedTest
 
         // Mock request
         $nodeGroup = 'nodeGroup1543699970';
+        $nodeGroupsAddNodesRequestResource = new NodeGroupsAddNodesRequest();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
-        $response = $client->addNodes($nodeGroup, $project, $zone);
+        $response = $client->addNodes($nodeGroup, $nodeGroupsAddNodesRequestResource, $project, $zone);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -146,6 +152,9 @@ class NodeGroupsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getNodeGroup();
 
         $this->assertProtobufEquals($nodeGroup, $actualValue);
+        $actualValue = $actualRequestObject->getNodeGroupsAddNodesRequestResource();
+
+        $this->assertProtobufEquals($nodeGroupsAddNodesRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -180,11 +189,12 @@ class NodeGroupsClientTest extends GeneratedTest
 
         // Mock request
         $nodeGroup = 'nodeGroup1543699970';
+        $nodeGroupsAddNodesRequestResource = new NodeGroupsAddNodesRequest();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
         try {
-            $client->addNodes($nodeGroup, $project, $zone);
+            $client->addNodes($nodeGroup, $nodeGroupsAddNodesRequestResource, $project, $zone);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -462,10 +472,11 @@ class NodeGroupsClientTest extends GeneratedTest
 
         // Mock request
         $nodeGroup = 'nodeGroup1543699970';
+        $nodeGroupsDeleteNodesRequestResource = new NodeGroupsDeleteNodesRequest();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
-        $response = $client->deleteNodes($nodeGroup, $project, $zone);
+        $response = $client->deleteNodes($nodeGroup, $nodeGroupsDeleteNodesRequestResource, $project, $zone);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -476,6 +487,9 @@ class NodeGroupsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getNodeGroup();
 
         $this->assertProtobufEquals($nodeGroup, $actualValue);
+        $actualValue = $actualRequestObject->getNodeGroupsDeleteNodesRequestResource();
+
+        $this->assertProtobufEquals($nodeGroupsDeleteNodesRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -510,11 +524,12 @@ class NodeGroupsClientTest extends GeneratedTest
 
         // Mock request
         $nodeGroup = 'nodeGroup1543699970';
+        $nodeGroupsDeleteNodesRequestResource = new NodeGroupsDeleteNodesRequest();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
         try {
-            $client->deleteNodes($nodeGroup, $project, $zone);
+            $client->deleteNodes($nodeGroup, $nodeGroupsDeleteNodesRequestResource, $project, $zone);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -771,10 +786,11 @@ class NodeGroupsClientTest extends GeneratedTest
 
         // Mock request
         $initialNodeCount = 1682564205;
+        $nodeGroupResource = new NodeGroup();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
-        $response = $client->insert($initialNodeCount, $project, $zone);
+        $response = $client->insert($initialNodeCount, $nodeGroupResource, $project, $zone);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -785,6 +801,9 @@ class NodeGroupsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getInitialNodeCount();
 
         $this->assertProtobufEquals($initialNodeCount, $actualValue);
+        $actualValue = $actualRequestObject->getNodeGroupResource();
+
+        $this->assertProtobufEquals($nodeGroupResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -819,11 +838,12 @@ class NodeGroupsClientTest extends GeneratedTest
 
         // Mock request
         $initialNodeCount = 1682564205;
+        $nodeGroupResource = new NodeGroup();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
         try {
-            $client->insert($initialNodeCount, $project, $zone);
+            $client->insert($initialNodeCount, $nodeGroupResource, $project, $zone);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1077,10 +1097,11 @@ class NodeGroupsClientTest extends GeneratedTest
 
         // Mock request
         $nodeGroup = 'nodeGroup1543699970';
+        $nodeGroupResource = new NodeGroup();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
-        $response = $client->patch($nodeGroup, $project, $zone);
+        $response = $client->patch($nodeGroup, $nodeGroupResource, $project, $zone);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1091,6 +1112,9 @@ class NodeGroupsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getNodeGroup();
 
         $this->assertProtobufEquals($nodeGroup, $actualValue);
+        $actualValue = $actualRequestObject->getNodeGroupResource();
+
+        $this->assertProtobufEquals($nodeGroupResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -1125,11 +1149,12 @@ class NodeGroupsClientTest extends GeneratedTest
 
         // Mock request
         $nodeGroup = 'nodeGroup1543699970';
+        $nodeGroupResource = new NodeGroup();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
         try {
-            $client->patch($nodeGroup, $project, $zone);
+            $client->patch($nodeGroup, $nodeGroupResource, $project, $zone);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1166,8 +1191,9 @@ class NodeGroupsClientTest extends GeneratedTest
         $project = 'project-309310695';
         $resource = 'resource-341064690';
         $zone = 'zone3744684';
+        $zoneSetPolicyRequestResource = new ZoneSetPolicyRequest();
 
-        $response = $client->setIamPolicy($project, $resource, $zone);
+        $response = $client->setIamPolicy($project, $resource, $zone, $zoneSetPolicyRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1184,6 +1210,9 @@ class NodeGroupsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getZone();
 
         $this->assertProtobufEquals($zone, $actualValue);
+        $actualValue = $actualRequestObject->getZoneSetPolicyRequestResource();
+
+        $this->assertProtobufEquals($zoneSetPolicyRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -1214,9 +1243,10 @@ class NodeGroupsClientTest extends GeneratedTest
         $project = 'project-309310695';
         $resource = 'resource-341064690';
         $zone = 'zone3744684';
+        $zoneSetPolicyRequestResource = new ZoneSetPolicyRequest();
 
         try {
-            $client->setIamPolicy($project, $resource, $zone);
+            $client->setIamPolicy($project, $resource, $zone, $zoneSetPolicyRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1285,10 +1315,11 @@ class NodeGroupsClientTest extends GeneratedTest
 
         // Mock request
         $nodeGroup = 'nodeGroup1543699970';
+        $nodeGroupsSetNodeTemplateRequestResource = new NodeGroupsSetNodeTemplateRequest();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
-        $response = $client->setNodeTemplate($nodeGroup, $project, $zone);
+        $response = $client->setNodeTemplate($nodeGroup, $nodeGroupsSetNodeTemplateRequestResource, $project, $zone);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1299,6 +1330,9 @@ class NodeGroupsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getNodeGroup();
 
         $this->assertProtobufEquals($nodeGroup, $actualValue);
+        $actualValue = $actualRequestObject->getNodeGroupsSetNodeTemplateRequestResource();
+
+        $this->assertProtobufEquals($nodeGroupsSetNodeTemplateRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -1333,11 +1367,12 @@ class NodeGroupsClientTest extends GeneratedTest
 
         // Mock request
         $nodeGroup = 'nodeGroup1543699970';
+        $nodeGroupsSetNodeTemplateRequestResource = new NodeGroupsSetNodeTemplateRequest();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
         try {
-            $client->setNodeTemplate($nodeGroup, $project, $zone);
+            $client->setNodeTemplate($nodeGroup, $nodeGroupsSetNodeTemplateRequestResource, $project, $zone);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1367,9 +1402,10 @@ class NodeGroupsClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $resource = 'resource-341064690';
+        $testPermissionsRequestResource = new TestPermissionsRequest();
         $zone = 'zone3744684';
 
-        $response = $client->testIamPermissions($project, $resource, $zone);
+        $response = $client->testIamPermissions($project, $resource, $testPermissionsRequestResource, $zone);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1383,6 +1419,9 @@ class NodeGroupsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getResource();
 
         $this->assertProtobufEquals($resource, $actualValue);
+        $actualValue = $actualRequestObject->getTestPermissionsRequestResource();
+
+        $this->assertProtobufEquals($testPermissionsRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getZone();
 
         $this->assertProtobufEquals($zone, $actualValue);
@@ -1415,10 +1454,11 @@ class NodeGroupsClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $resource = 'resource-341064690';
+        $testPermissionsRequestResource = new TestPermissionsRequest();
         $zone = 'zone3744684';
 
         try {
-            $client->testIamPermissions($project, $resource, $zone);
+            $client->testIamPermissions($project, $resource, $testPermissionsRequestResource, $zone);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

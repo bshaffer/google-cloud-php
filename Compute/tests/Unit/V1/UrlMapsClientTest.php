@@ -27,11 +27,13 @@ use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
+use Google\Cloud\Compute\V1\CacheInvalidationRule;
 use Google\Cloud\Compute\V1\Operation;
 use Google\Cloud\Compute\V1\UrlMap;
 use Google\Cloud\Compute\V1\UrlMapList;
 use Google\Cloud\Compute\V1\UrlMapsAggregatedList;
 use Google\Cloud\Compute\V1\UrlMapsScopedList;
+use Google\Cloud\Compute\V1\UrlMapsValidateRequest;
 use Google\Cloud\Compute\V1\UrlMapsValidateResponse;
 use Google\Protobuf\Any;
 use Google\Rpc\Code;
@@ -427,8 +429,9 @@ class UrlMapsClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $urlMapResource = new UrlMap();
 
-        $response = $client->insert($project);
+        $response = $client->insert($project, $urlMapResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -439,6 +442,9 @@ class UrlMapsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
+        $actualValue = $actualRequestObject->getUrlMapResource();
+
+        $this->assertProtobufEquals($urlMapResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -467,9 +473,10 @@ class UrlMapsClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $urlMapResource = new UrlMap();
 
         try {
-            $client->insert($project);
+            $client->insert($project, $urlMapResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -537,10 +544,11 @@ class UrlMapsClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $cacheInvalidationRuleResource = new CacheInvalidationRule();
         $project = 'project-309310695';
         $urlMap = 'urlMap-169850228';
 
-        $response = $client->invalidateCache($project, $urlMap);
+        $response = $client->invalidateCache($cacheInvalidationRuleResource, $project, $urlMap);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -548,6 +556,9 @@ class UrlMapsClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.UrlMaps/InvalidateCache', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getCacheInvalidationRuleResource();
+
+        $this->assertProtobufEquals($cacheInvalidationRuleResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -581,11 +592,12 @@ class UrlMapsClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $cacheInvalidationRuleResource = new CacheInvalidationRule();
         $project = 'project-309310695';
         $urlMap = 'urlMap-169850228';
 
         try {
-            $client->invalidateCache($project, $urlMap);
+            $client->invalidateCache($cacheInvalidationRuleResource, $project, $urlMap);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -740,8 +752,9 @@ class UrlMapsClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $urlMap = 'urlMap-169850228';
+        $urlMapResource = new UrlMap();
 
-        $response = $client->patch($project, $urlMap);
+        $response = $client->patch($project, $urlMap, $urlMapResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -755,6 +768,9 @@ class UrlMapsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getUrlMap();
 
         $this->assertProtobufEquals($urlMap, $actualValue);
+        $actualValue = $actualRequestObject->getUrlMapResource();
+
+        $this->assertProtobufEquals($urlMapResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -784,9 +800,10 @@ class UrlMapsClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $urlMap = 'urlMap-169850228';
+        $urlMapResource = new UrlMap();
 
         try {
-            $client->patch($project, $urlMap);
+            $client->patch($project, $urlMap, $urlMapResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -856,8 +873,9 @@ class UrlMapsClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $urlMap = 'urlMap-169850228';
+        $urlMapResource = new UrlMap();
 
-        $response = $client->update($project, $urlMap);
+        $response = $client->update($project, $urlMap, $urlMapResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -871,6 +889,9 @@ class UrlMapsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getUrlMap();
 
         $this->assertProtobufEquals($urlMap, $actualValue);
+        $actualValue = $actualRequestObject->getUrlMapResource();
+
+        $this->assertProtobufEquals($urlMapResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -900,9 +921,10 @@ class UrlMapsClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $urlMap = 'urlMap-169850228';
+        $urlMapResource = new UrlMap();
 
         try {
-            $client->update($project, $urlMap);
+            $client->update($project, $urlMap, $urlMapResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -932,8 +954,9 @@ class UrlMapsClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $urlMap = 'urlMap-169850228';
+        $urlMapsValidateRequestResource = new UrlMapsValidateRequest();
 
-        $response = $client->validate($project, $urlMap);
+        $response = $client->validate($project, $urlMap, $urlMapsValidateRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -947,6 +970,9 @@ class UrlMapsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getUrlMap();
 
         $this->assertProtobufEquals($urlMap, $actualValue);
+        $actualValue = $actualRequestObject->getUrlMapsValidateRequestResource();
+
+        $this->assertProtobufEquals($urlMapsValidateRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -976,9 +1002,10 @@ class UrlMapsClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $urlMap = 'urlMap-169850228';
+        $urlMapsValidateRequestResource = new UrlMapsValidateRequest();
 
         try {
-            $client->validate($project, $urlMap);
+            $client->validate($project, $urlMap, $urlMapsValidateRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

@@ -294,20 +294,21 @@ class RegionNetworkEndpointGroupsGapicClient
      * ```
      * $regionNetworkEndpointGroupsClient = new RegionNetworkEndpointGroupsClient();
      * try {
+     *     $networkEndpointGroupResource = new NetworkEndpointGroup();
      *     $project = '';
      *     $region = '';
-     *     $response = $regionNetworkEndpointGroupsClient->insert($project, $region);
+     *     $response = $regionNetworkEndpointGroupsClient->insert($networkEndpointGroupResource, $project, $region);
      * } finally {
      *     $regionNetworkEndpointGroupsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       The name of the region where you want to create the network endpoint group. It should comply with RFC1035.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param NetworkEndpointGroup $networkEndpointGroupResource The body resource for this request
+     * @param string               $project                      Project ID for this request.
+     * @param string               $region                       The name of the region where you want to create the network endpoint group. It should comply with RFC1035.
+     * @param array                $optionalArgs                 {
+     *                                                           Optional.
      *
-     *     @type NetworkEndpointGroup $networkEndpointGroupResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -326,14 +327,12 @@ class RegionNetworkEndpointGroupsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, $region, array $optionalArgs = [])
+    public function insert($networkEndpointGroupResource, $project, $region, array $optionalArgs = [])
     {
         $request = new InsertRegionNetworkEndpointGroupRequest();
+        $request->setNetworkEndpointGroupResource($networkEndpointGroupResource);
         $request->setProject($project);
         $request->setRegion($region);
-        if (isset($optionalArgs['networkEndpointGroupResource'])) {
-            $request->setNetworkEndpointGroupResource($optionalArgs['networkEndpointGroupResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }

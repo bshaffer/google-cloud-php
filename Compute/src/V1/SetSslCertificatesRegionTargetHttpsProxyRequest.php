@@ -28,7 +28,9 @@ class SetSslCertificatesRegionTargetHttpsProxyRequest extends \Google\Protobuf\I
      */
     private $region = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $region_target_https_proxies_set_ssl_certificates_request_resource = null;
     /**
@@ -57,6 +59,7 @@ class SetSslCertificatesRegionTargetHttpsProxyRequest extends \Google\Protobuf\I
      *     @type string $region
      *           Name of the region scoping this request.
      *     @type \Google\Cloud\Compute\V1\RegionTargetHttpsProxiesSetSslCertificatesRequest $region_target_https_proxies_set_ssl_certificates_request_resource
+     *           The body resource for this request
      *     @type string $request_id
      *           An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *           For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
@@ -123,7 +126,9 @@ class SetSslCertificatesRegionTargetHttpsProxyRequest extends \Google\Protobuf\I
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\RegionTargetHttpsProxiesSetSslCertificatesRequest
      */
     public function getRegionTargetHttpsProxiesSetSslCertificatesRequestResource()
@@ -142,7 +147,9 @@ class SetSslCertificatesRegionTargetHttpsProxyRequest extends \Google\Protobuf\I
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\RegionTargetHttpsProxiesSetSslCertificatesRequest $var
      * @return $this
      */

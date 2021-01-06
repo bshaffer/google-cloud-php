@@ -292,15 +292,17 @@ class TargetTcpProxiesGapicClient
      * $targetTcpProxiesClient = new TargetTcpProxiesClient();
      * try {
      *     $project = '';
-     *     $response = $targetTcpProxiesClient->insert($project);
+     *     $targetTcpProxyResource = new TargetTcpProxy();
+     *     $response = $targetTcpProxiesClient->insert($project, $targetTcpProxyResource);
      * } finally {
      *     $targetTcpProxiesClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string         $project                Project ID for this request.
+     * @param TargetTcpProxy $targetTcpProxyResource The body resource for this request
+     * @param array          $optionalArgs           {
+     *                                               Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -308,7 +310,6 @@ class TargetTcpProxiesGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type TargetTcpProxy $targetTcpProxyResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -321,15 +322,13 @@ class TargetTcpProxiesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, array $optionalArgs = [])
+    public function insert($project, $targetTcpProxyResource, array $optionalArgs = [])
     {
         $request = new InsertTargetTcpProxyRequest();
         $request->setProject($project);
+        $request->setTargetTcpProxyResource($targetTcpProxyResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['targetTcpProxyResource'])) {
-            $request->setTargetTcpProxyResource($optionalArgs['targetTcpProxyResource']);
         }
 
         return $this->startCall(
@@ -446,17 +445,19 @@ class TargetTcpProxiesGapicClient
      * $targetTcpProxiesClient = new TargetTcpProxiesClient();
      * try {
      *     $project = '';
+     *     $targetTcpProxiesSetBackendServiceRequestResource = new TargetTcpProxiesSetBackendServiceRequest();
      *     $targetTcpProxy = '';
-     *     $response = $targetTcpProxiesClient->setBackendService($project, $targetTcpProxy);
+     *     $response = $targetTcpProxiesClient->setBackendService($project, $targetTcpProxiesSetBackendServiceRequestResource, $targetTcpProxy);
      * } finally {
      *     $targetTcpProxiesClient->close();
      * }
      * ```
      *
-     * @param string $project        Project ID for this request.
-     * @param string $targetTcpProxy Name of the TargetTcpProxy resource whose BackendService resource is to be set.
-     * @param array  $optionalArgs   {
-     *                               Optional.
+     * @param string                                   $project                                          Project ID for this request.
+     * @param TargetTcpProxiesSetBackendServiceRequest $targetTcpProxiesSetBackendServiceRequestResource The body resource for this request
+     * @param string                                   $targetTcpProxy                                   Name of the TargetTcpProxy resource whose BackendService resource is to be set.
+     * @param array                                    $optionalArgs                                     {
+     *                                                                                                   Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -464,7 +465,6 @@ class TargetTcpProxiesGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type TargetTcpProxiesSetBackendServiceRequest $targetTcpProxiesSetBackendServiceRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -477,16 +477,14 @@ class TargetTcpProxiesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setBackendService($project, $targetTcpProxy, array $optionalArgs = [])
+    public function setBackendService($project, $targetTcpProxiesSetBackendServiceRequestResource, $targetTcpProxy, array $optionalArgs = [])
     {
         $request = new SetBackendServiceTargetTcpProxyRequest();
         $request->setProject($project);
+        $request->setTargetTcpProxiesSetBackendServiceRequestResource($targetTcpProxiesSetBackendServiceRequestResource);
         $request->setTargetTcpProxy($targetTcpProxy);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['targetTcpProxiesSetBackendServiceRequestResource'])) {
-            $request->setTargetTcpProxiesSetBackendServiceRequestResource($optionalArgs['targetTcpProxiesSetBackendServiceRequestResource']);
         }
 
         return $this->startCall(
@@ -505,17 +503,19 @@ class TargetTcpProxiesGapicClient
      * $targetTcpProxiesClient = new TargetTcpProxiesClient();
      * try {
      *     $project = '';
+     *     $targetTcpProxiesSetProxyHeaderRequestResource = new TargetTcpProxiesSetProxyHeaderRequest();
      *     $targetTcpProxy = '';
-     *     $response = $targetTcpProxiesClient->setProxyHeader($project, $targetTcpProxy);
+     *     $response = $targetTcpProxiesClient->setProxyHeader($project, $targetTcpProxiesSetProxyHeaderRequestResource, $targetTcpProxy);
      * } finally {
      *     $targetTcpProxiesClient->close();
      * }
      * ```
      *
-     * @param string $project        Project ID for this request.
-     * @param string $targetTcpProxy Name of the TargetTcpProxy resource whose ProxyHeader is to be set.
-     * @param array  $optionalArgs   {
-     *                               Optional.
+     * @param string                                $project                                       Project ID for this request.
+     * @param TargetTcpProxiesSetProxyHeaderRequest $targetTcpProxiesSetProxyHeaderRequestResource The body resource for this request
+     * @param string                                $targetTcpProxy                                Name of the TargetTcpProxy resource whose ProxyHeader is to be set.
+     * @param array                                 $optionalArgs                                  {
+     *                                                                                             Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -523,7 +523,6 @@ class TargetTcpProxiesGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type TargetTcpProxiesSetProxyHeaderRequest $targetTcpProxiesSetProxyHeaderRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -536,16 +535,14 @@ class TargetTcpProxiesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setProxyHeader($project, $targetTcpProxy, array $optionalArgs = [])
+    public function setProxyHeader($project, $targetTcpProxiesSetProxyHeaderRequestResource, $targetTcpProxy, array $optionalArgs = [])
     {
         $request = new SetProxyHeaderTargetTcpProxyRequest();
         $request->setProject($project);
+        $request->setTargetTcpProxiesSetProxyHeaderRequestResource($targetTcpProxiesSetProxyHeaderRequestResource);
         $request->setTargetTcpProxy($targetTcpProxy);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['targetTcpProxiesSetProxyHeaderRequestResource'])) {
-            $request->setTargetTcpProxiesSetProxyHeaderRequestResource($optionalArgs['targetTcpProxiesSetProxyHeaderRequestResource']);
         }
 
         return $this->startCall(

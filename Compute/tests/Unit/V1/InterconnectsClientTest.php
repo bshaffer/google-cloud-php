@@ -424,9 +424,10 @@ class InterconnectsClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $interconnectResource = new Interconnect();
         $project = 'project-309310695';
 
-        $response = $client->insert($project);
+        $response = $client->insert($interconnectResource, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -434,6 +435,9 @@ class InterconnectsClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.Interconnects/Insert', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getInterconnectResource();
+
+        $this->assertProtobufEquals($interconnectResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -464,10 +468,11 @@ class InterconnectsClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $interconnectResource = new Interconnect();
         $project = 'project-309310695';
 
         try {
-            $client->insert($project);
+            $client->insert($interconnectResource, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -621,9 +626,10 @@ class InterconnectsClientTest extends GeneratedTest
 
         // Mock request
         $interconnect = 'interconnect-849140594';
+        $interconnectResource = new Interconnect();
         $project = 'project-309310695';
 
-        $response = $client->patch($interconnect, $project);
+        $response = $client->patch($interconnect, $interconnectResource, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -634,6 +640,9 @@ class InterconnectsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getInterconnect();
 
         $this->assertProtobufEquals($interconnect, $actualValue);
+        $actualValue = $actualRequestObject->getInterconnectResource();
+
+        $this->assertProtobufEquals($interconnectResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -665,10 +674,11 @@ class InterconnectsClientTest extends GeneratedTest
 
         // Mock request
         $interconnect = 'interconnect-849140594';
+        $interconnectResource = new Interconnect();
         $project = 'project-309310695';
 
         try {
-            $client->patch($interconnect, $project);
+            $client->patch($interconnect, $interconnectResource, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

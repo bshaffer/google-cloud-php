@@ -316,21 +316,22 @@ class NetworkEndpointGroupsGapicClient
      * $networkEndpointGroupsClient = new NetworkEndpointGroupsClient();
      * try {
      *     $networkEndpointGroup = '';
+     *     $networkEndpointGroupsAttachEndpointsRequestResource = new NetworkEndpointGroupsAttachEndpointsRequest();
      *     $project = '';
      *     $zone = '';
-     *     $response = $networkEndpointGroupsClient->attachNetworkEndpoints($networkEndpointGroup, $project, $zone);
+     *     $response = $networkEndpointGroupsClient->attachNetworkEndpoints($networkEndpointGroup, $networkEndpointGroupsAttachEndpointsRequestResource, $project, $zone);
      * } finally {
      *     $networkEndpointGroupsClient->close();
      * }
      * ```
      *
-     * @param string $networkEndpointGroup The name of the network endpoint group where you are attaching network endpoints to. It should comply with RFC1035.
-     * @param string $project              Project ID for this request.
-     * @param string $zone                 The name of the zone where the network endpoint group is located. It should comply with RFC1035.
-     * @param array  $optionalArgs         {
-     *                                     Optional.
+     * @param string                                      $networkEndpointGroup                                The name of the network endpoint group where you are attaching network endpoints to. It should comply with RFC1035.
+     * @param NetworkEndpointGroupsAttachEndpointsRequest $networkEndpointGroupsAttachEndpointsRequestResource The body resource for this request
+     * @param string                                      $project                                             Project ID for this request.
+     * @param string                                      $zone                                                The name of the zone where the network endpoint group is located. It should comply with RFC1035.
+     * @param array                                       $optionalArgs                                        {
+     *                                                                                                         Optional.
      *
-     *     @type NetworkEndpointGroupsAttachEndpointsRequest $networkEndpointGroupsAttachEndpointsRequestResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -349,15 +350,13 @@ class NetworkEndpointGroupsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function attachNetworkEndpoints($networkEndpointGroup, $project, $zone, array $optionalArgs = [])
+    public function attachNetworkEndpoints($networkEndpointGroup, $networkEndpointGroupsAttachEndpointsRequestResource, $project, $zone, array $optionalArgs = [])
     {
         $request = new AttachNetworkEndpointsNetworkEndpointGroupRequest();
         $request->setNetworkEndpointGroup($networkEndpointGroup);
+        $request->setNetworkEndpointGroupsAttachEndpointsRequestResource($networkEndpointGroupsAttachEndpointsRequestResource);
         $request->setProject($project);
         $request->setZone($zone);
-        if (isset($optionalArgs['networkEndpointGroupsAttachEndpointsRequestResource'])) {
-            $request->setNetworkEndpointGroupsAttachEndpointsRequestResource($optionalArgs['networkEndpointGroupsAttachEndpointsRequestResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -436,21 +435,22 @@ class NetworkEndpointGroupsGapicClient
      * $networkEndpointGroupsClient = new NetworkEndpointGroupsClient();
      * try {
      *     $networkEndpointGroup = '';
+     *     $networkEndpointGroupsDetachEndpointsRequestResource = new NetworkEndpointGroupsDetachEndpointsRequest();
      *     $project = '';
      *     $zone = '';
-     *     $response = $networkEndpointGroupsClient->detachNetworkEndpoints($networkEndpointGroup, $project, $zone);
+     *     $response = $networkEndpointGroupsClient->detachNetworkEndpoints($networkEndpointGroup, $networkEndpointGroupsDetachEndpointsRequestResource, $project, $zone);
      * } finally {
      *     $networkEndpointGroupsClient->close();
      * }
      * ```
      *
-     * @param string $networkEndpointGroup The name of the network endpoint group where you are removing network endpoints. It should comply with RFC1035.
-     * @param string $project              Project ID for this request.
-     * @param string $zone                 The name of the zone where the network endpoint group is located. It should comply with RFC1035.
-     * @param array  $optionalArgs         {
-     *                                     Optional.
+     * @param string                                      $networkEndpointGroup                                The name of the network endpoint group where you are removing network endpoints. It should comply with RFC1035.
+     * @param NetworkEndpointGroupsDetachEndpointsRequest $networkEndpointGroupsDetachEndpointsRequestResource The body resource for this request
+     * @param string                                      $project                                             Project ID for this request.
+     * @param string                                      $zone                                                The name of the zone where the network endpoint group is located. It should comply with RFC1035.
+     * @param array                                       $optionalArgs                                        {
+     *                                                                                                         Optional.
      *
-     *     @type NetworkEndpointGroupsDetachEndpointsRequest $networkEndpointGroupsDetachEndpointsRequestResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -469,15 +469,13 @@ class NetworkEndpointGroupsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function detachNetworkEndpoints($networkEndpointGroup, $project, $zone, array $optionalArgs = [])
+    public function detachNetworkEndpoints($networkEndpointGroup, $networkEndpointGroupsDetachEndpointsRequestResource, $project, $zone, array $optionalArgs = [])
     {
         $request = new DetachNetworkEndpointsNetworkEndpointGroupRequest();
         $request->setNetworkEndpointGroup($networkEndpointGroup);
+        $request->setNetworkEndpointGroupsDetachEndpointsRequestResource($networkEndpointGroupsDetachEndpointsRequestResource);
         $request->setProject($project);
         $request->setZone($zone);
-        if (isset($optionalArgs['networkEndpointGroupsDetachEndpointsRequestResource'])) {
-            $request->setNetworkEndpointGroupsDetachEndpointsRequestResource($optionalArgs['networkEndpointGroupsDetachEndpointsRequestResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -546,20 +544,21 @@ class NetworkEndpointGroupsGapicClient
      * ```
      * $networkEndpointGroupsClient = new NetworkEndpointGroupsClient();
      * try {
+     *     $networkEndpointGroupResource = new NetworkEndpointGroup();
      *     $project = '';
      *     $zone = '';
-     *     $response = $networkEndpointGroupsClient->insert($project, $zone);
+     *     $response = $networkEndpointGroupsClient->insert($networkEndpointGroupResource, $project, $zone);
      * } finally {
      *     $networkEndpointGroupsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $zone         The name of the zone where you want to create the network endpoint group. It should comply with RFC1035.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param NetworkEndpointGroup $networkEndpointGroupResource The body resource for this request
+     * @param string               $project                      Project ID for this request.
+     * @param string               $zone                         The name of the zone where you want to create the network endpoint group. It should comply with RFC1035.
+     * @param array                $optionalArgs                 {
+     *                                                           Optional.
      *
-     *     @type NetworkEndpointGroup $networkEndpointGroupResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -578,14 +577,12 @@ class NetworkEndpointGroupsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, $zone, array $optionalArgs = [])
+    public function insert($networkEndpointGroupResource, $project, $zone, array $optionalArgs = [])
     {
         $request = new InsertNetworkEndpointGroupRequest();
+        $request->setNetworkEndpointGroupResource($networkEndpointGroupResource);
         $request->setProject($project);
         $request->setZone($zone);
-        if (isset($optionalArgs['networkEndpointGroupResource'])) {
-            $request->setNetworkEndpointGroupResource($optionalArgs['networkEndpointGroupResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -707,10 +704,11 @@ class NetworkEndpointGroupsGapicClient
      * $networkEndpointGroupsClient = new NetworkEndpointGroupsClient();
      * try {
      *     $networkEndpointGroup = '';
+     *     $networkEndpointGroupsListEndpointsRequestResource = new NetworkEndpointGroupsListEndpointsRequest();
      *     $project = '';
      *     $zone = '';
      *     // Iterate over pages of elements
-     *     $pagedResponse = $networkEndpointGroupsClient->listNetworkEndpoints($networkEndpointGroup, $project, $zone);
+     *     $pagedResponse = $networkEndpointGroupsClient->listNetworkEndpoints($networkEndpointGroup, $networkEndpointGroupsListEndpointsRequestResource, $project, $zone);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -721,7 +719,7 @@ class NetworkEndpointGroupsGapicClient
      *     // Alternatively:
      *
      *     // Iterate through all elements
-     *     $pagedResponse = $networkEndpointGroupsClient->listNetworkEndpoints($networkEndpointGroup, $project, $zone);
+     *     $pagedResponse = $networkEndpointGroupsClient->listNetworkEndpoints($networkEndpointGroup, $networkEndpointGroupsListEndpointsRequestResource, $project, $zone);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }
@@ -730,11 +728,12 @@ class NetworkEndpointGroupsGapicClient
      * }
      * ```
      *
-     * @param string $networkEndpointGroup The name of the network endpoint group from which you want to generate a list of included network endpoints. It should comply with RFC1035.
-     * @param string $project              Project ID for this request.
-     * @param string $zone                 The name of the zone where the network endpoint group is located. It should comply with RFC1035.
-     * @param array  $optionalArgs         {
-     *                                     Optional.
+     * @param string                                    $networkEndpointGroup                              The name of the network endpoint group from which you want to generate a list of included network endpoints. It should comply with RFC1035.
+     * @param NetworkEndpointGroupsListEndpointsRequest $networkEndpointGroupsListEndpointsRequestResource The body resource for this request
+     * @param string                                    $project                                           Project ID for this request.
+     * @param string                                    $zone                                              The name of the zone where the network endpoint group is located. It should comply with RFC1035.
+     * @param array                                     $optionalArgs                                      {
+     *                                                                                                     Optional.
      *
      *     @type string $filter
      *          A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`.
@@ -748,7 +747,6 @@ class NetworkEndpointGroupsGapicClient
      *          The maximum number of resources contained in the underlying API
      *          response. The API may return fewer values in a page, even if
      *          there are additional values to be retrieved.
-     *     @type NetworkEndpointGroupsListEndpointsRequest $networkEndpointGroupsListEndpointsRequestResource
      *     @type string $orderBy
      *          Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.
      *
@@ -774,10 +772,11 @@ class NetworkEndpointGroupsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function listNetworkEndpoints($networkEndpointGroup, $project, $zone, array $optionalArgs = [])
+    public function listNetworkEndpoints($networkEndpointGroup, $networkEndpointGroupsListEndpointsRequestResource, $project, $zone, array $optionalArgs = [])
     {
         $request = new ListNetworkEndpointsNetworkEndpointGroupsRequest();
         $request->setNetworkEndpointGroup($networkEndpointGroup);
+        $request->setNetworkEndpointGroupsListEndpointsRequestResource($networkEndpointGroupsListEndpointsRequestResource);
         $request->setProject($project);
         $request->setZone($zone);
         if (isset($optionalArgs['filter'])) {
@@ -785,9 +784,6 @@ class NetworkEndpointGroupsGapicClient
         }
         if (isset($optionalArgs['maxResults'])) {
             $request->setMaxResults($optionalArgs['maxResults']);
-        }
-        if (isset($optionalArgs['networkEndpointGroupsListEndpointsRequestResource'])) {
-            $request->setNetworkEndpointGroupsListEndpointsRequestResource($optionalArgs['networkEndpointGroupsListEndpointsRequestResource']);
         }
         if (isset($optionalArgs['orderBy'])) {
             $request->setOrderBy($optionalArgs['orderBy']);
@@ -816,20 +812,21 @@ class NetworkEndpointGroupsGapicClient
      * try {
      *     $project = '';
      *     $resource = '';
+     *     $testPermissionsRequestResource = new TestPermissionsRequest();
      *     $zone = '';
-     *     $response = $networkEndpointGroupsClient->testIamPermissions($project, $resource, $zone);
+     *     $response = $networkEndpointGroupsClient->testIamPermissions($project, $resource, $testPermissionsRequestResource, $zone);
      * } finally {
      *     $networkEndpointGroupsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $resource     Name or id of the resource for this request.
-     * @param string $zone         The name of the zone for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                 $project                        Project ID for this request.
+     * @param string                 $resource                       Name or id of the resource for this request.
+     * @param TestPermissionsRequest $testPermissionsRequestResource The body resource for this request
+     * @param string                 $zone                           The name of the zone for this request.
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type TestPermissionsRequest $testPermissionsRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -842,15 +839,13 @@ class NetworkEndpointGroupsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function testIamPermissions($project, $resource, $zone, array $optionalArgs = [])
+    public function testIamPermissions($project, $resource, $testPermissionsRequestResource, $zone, array $optionalArgs = [])
     {
         $request = new TestIamPermissionsNetworkEndpointGroupRequest();
         $request->setProject($project);
         $request->setResource($resource);
+        $request->setTestPermissionsRequestResource($testPermissionsRequestResource);
         $request->setZone($zone);
-        if (isset($optionalArgs['testPermissionsRequestResource'])) {
-            $request->setTestPermissionsRequestResource($optionalArgs['testPermissionsRequestResource']);
-        }
 
         return $this->startCall(
             'TestIamPermissions',

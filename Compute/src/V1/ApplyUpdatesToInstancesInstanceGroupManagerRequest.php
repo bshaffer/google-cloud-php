@@ -22,7 +22,9 @@ class ApplyUpdatesToInstancesInstanceGroupManagerRequest extends \Google\Protobu
      */
     private $instance_group_manager = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $instance_group_managers_apply_updates_request_resource = null;
     /**
@@ -47,6 +49,7 @@ class ApplyUpdatesToInstancesInstanceGroupManagerRequest extends \Google\Protobu
      *     @type string $instance_group_manager
      *           The name of the managed instance group, should conform to RFC1035.
      *     @type \Google\Cloud\Compute\V1\InstanceGroupManagersApplyUpdatesRequest $instance_group_managers_apply_updates_request_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $zone
@@ -85,7 +88,9 @@ class ApplyUpdatesToInstancesInstanceGroupManagerRequest extends \Google\Protobu
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\InstanceGroupManagersApplyUpdatesRequest
      */
     public function getInstanceGroupManagersApplyUpdatesRequestResource()
@@ -104,7 +109,9 @@ class ApplyUpdatesToInstancesInstanceGroupManagerRequest extends \Google\Protobu
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\InstanceGroupManagersApplyUpdatesRequest $var
      * @return $this
      */

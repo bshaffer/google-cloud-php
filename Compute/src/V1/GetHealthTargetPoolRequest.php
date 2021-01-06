@@ -16,7 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetHealthTargetPoolRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceReference instance_reference_resource = 24490604;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceReference instance_reference_resource = 24490604 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $instance_reference_resource = null;
     /**
@@ -45,6 +47,7 @@ class GetHealthTargetPoolRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Compute\V1\InstanceReference $instance_reference_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $region
@@ -59,7 +62,9 @@ class GetHealthTargetPoolRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceReference instance_reference_resource = 24490604;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceReference instance_reference_resource = 24490604 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\InstanceReference
      */
     public function getInstanceReferenceResource()
@@ -78,7 +83,9 @@ class GetHealthTargetPoolRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceReference instance_reference_resource = 24490604;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceReference instance_reference_resource = 24490604 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\InstanceReference $var
      * @return $this
      */

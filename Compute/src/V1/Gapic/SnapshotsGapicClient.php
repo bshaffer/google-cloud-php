@@ -446,20 +446,21 @@ class SnapshotsGapicClient
      * ```
      * $snapshotsClient = new SnapshotsClient();
      * try {
+     *     $globalSetPolicyRequestResource = new GlobalSetPolicyRequest();
      *     $project = '';
      *     $resource = '';
-     *     $response = $snapshotsClient->setIamPolicy($project, $resource);
+     *     $response = $snapshotsClient->setIamPolicy($globalSetPolicyRequestResource, $project, $resource);
      * } finally {
      *     $snapshotsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $resource     Name or id of the resource for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param GlobalSetPolicyRequest $globalSetPolicyRequestResource The body resource for this request
+     * @param string                 $project                        Project ID for this request.
+     * @param string                 $resource                       Name or id of the resource for this request.
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type GlobalSetPolicyRequest $globalSetPolicyRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -472,14 +473,12 @@ class SnapshotsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setIamPolicy($project, $resource, array $optionalArgs = [])
+    public function setIamPolicy($globalSetPolicyRequestResource, $project, $resource, array $optionalArgs = [])
     {
         $request = new SetIamPolicySnapshotRequest();
+        $request->setGlobalSetPolicyRequestResource($globalSetPolicyRequestResource);
         $request->setProject($project);
         $request->setResource($resource);
-        if (isset($optionalArgs['globalSetPolicyRequestResource'])) {
-            $request->setGlobalSetPolicyRequestResource($optionalArgs['globalSetPolicyRequestResource']);
-        }
 
         return $this->startCall(
             'SetIamPolicy',
@@ -496,20 +495,21 @@ class SnapshotsGapicClient
      * ```
      * $snapshotsClient = new SnapshotsClient();
      * try {
+     *     $globalSetLabelsRequestResource = new GlobalSetLabelsRequest();
      *     $project = '';
      *     $resource = '';
-     *     $response = $snapshotsClient->setLabels($project, $resource);
+     *     $response = $snapshotsClient->setLabels($globalSetLabelsRequestResource, $project, $resource);
      * } finally {
      *     $snapshotsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $resource     Name or id of the resource for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param GlobalSetLabelsRequest $globalSetLabelsRequestResource The body resource for this request
+     * @param string                 $project                        Project ID for this request.
+     * @param string                 $resource                       Name or id of the resource for this request.
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type GlobalSetLabelsRequest $globalSetLabelsRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -522,14 +522,12 @@ class SnapshotsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setLabels($project, $resource, array $optionalArgs = [])
+    public function setLabels($globalSetLabelsRequestResource, $project, $resource, array $optionalArgs = [])
     {
         $request = new SetLabelsSnapshotRequest();
+        $request->setGlobalSetLabelsRequestResource($globalSetLabelsRequestResource);
         $request->setProject($project);
         $request->setResource($resource);
-        if (isset($optionalArgs['globalSetLabelsRequestResource'])) {
-            $request->setGlobalSetLabelsRequestResource($optionalArgs['globalSetLabelsRequestResource']);
-        }
 
         return $this->startCall(
             'SetLabels',
@@ -548,18 +546,19 @@ class SnapshotsGapicClient
      * try {
      *     $project = '';
      *     $resource = '';
-     *     $response = $snapshotsClient->testIamPermissions($project, $resource);
+     *     $testPermissionsRequestResource = new TestPermissionsRequest();
+     *     $response = $snapshotsClient->testIamPermissions($project, $resource, $testPermissionsRequestResource);
      * } finally {
      *     $snapshotsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $resource     Name or id of the resource for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                 $project                        Project ID for this request.
+     * @param string                 $resource                       Name or id of the resource for this request.
+     * @param TestPermissionsRequest $testPermissionsRequestResource The body resource for this request
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type TestPermissionsRequest $testPermissionsRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -572,14 +571,12 @@ class SnapshotsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function testIamPermissions($project, $resource, array $optionalArgs = [])
+    public function testIamPermissions($project, $resource, $testPermissionsRequestResource, array $optionalArgs = [])
     {
         $request = new TestIamPermissionsSnapshotRequest();
         $request->setProject($project);
         $request->setResource($resource);
-        if (isset($optionalArgs['testPermissionsRequestResource'])) {
-            $request->setTestPermissionsRequestResource($optionalArgs['testPermissionsRequestResource']);
-        }
+        $request->setTestPermissionsRequestResource($testPermissionsRequestResource);
 
         return $this->startCall(
             'TestIamPermissions',

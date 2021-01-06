@@ -28,7 +28,9 @@ class UpdateNetworkInterfaceInstanceRequest extends \Google\Protobuf\Internal\Me
      */
     private $network_interface = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkInterface network_interface_resource = 57379333;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkInterface network_interface_resource = 57379333 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $network_interface_resource = null;
     /**
@@ -63,6 +65,7 @@ class UpdateNetworkInterfaceInstanceRequest extends \Google\Protobuf\Internal\Me
      *     @type string $network_interface
      *           The name of the network interface to update.
      *     @type \Google\Cloud\Compute\V1\NetworkInterface $network_interface_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -131,7 +134,9 @@ class UpdateNetworkInterfaceInstanceRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkInterface network_interface_resource = 57379333;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkInterface network_interface_resource = 57379333 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\NetworkInterface
      */
     public function getNetworkInterfaceResource()
@@ -150,7 +155,9 @@ class UpdateNetworkInterfaceInstanceRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkInterface network_interface_resource = 57379333;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkInterface network_interface_resource = 57379333 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\NetworkInterface $var
      * @return $this
      */

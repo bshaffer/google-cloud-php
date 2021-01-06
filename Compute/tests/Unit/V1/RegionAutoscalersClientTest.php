@@ -347,10 +347,11 @@ class RegionAutoscalersClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $autoscalerResource = new Autoscaler();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
-        $response = $client->insert($project, $region);
+        $response = $client->insert($autoscalerResource, $project, $region);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -358,6 +359,9 @@ class RegionAutoscalersClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.RegionAutoscalers/Insert', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getAutoscalerResource();
+
+        $this->assertProtobufEquals($autoscalerResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -391,11 +395,12 @@ class RegionAutoscalersClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $autoscalerResource = new Autoscaler();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
         try {
-            $client->insert($project, $region);
+            $client->insert($autoscalerResource, $project, $region);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -553,10 +558,11 @@ class RegionAutoscalersClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $autoscalerResource = new Autoscaler();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
-        $response = $client->patch($project, $region);
+        $response = $client->patch($autoscalerResource, $project, $region);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -564,6 +570,9 @@ class RegionAutoscalersClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.RegionAutoscalers/Patch', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getAutoscalerResource();
+
+        $this->assertProtobufEquals($autoscalerResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -597,11 +606,12 @@ class RegionAutoscalersClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $autoscalerResource = new Autoscaler();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
         try {
-            $client->patch($project, $region);
+            $client->patch($autoscalerResource, $project, $region);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -669,10 +679,11 @@ class RegionAutoscalersClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $autoscalerResource = new Autoscaler();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
-        $response = $client->update($project, $region);
+        $response = $client->update($autoscalerResource, $project, $region);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -680,6 +691,9 @@ class RegionAutoscalersClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.RegionAutoscalers/Update', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getAutoscalerResource();
+
+        $this->assertProtobufEquals($autoscalerResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -713,11 +727,12 @@ class RegionAutoscalersClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $autoscalerResource = new Autoscaler();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
         try {
-            $client->update($project, $region);
+            $client->update($autoscalerResource, $project, $region);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

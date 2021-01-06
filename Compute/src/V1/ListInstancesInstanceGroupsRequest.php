@@ -31,7 +31,9 @@ class ListInstancesInstanceGroupsRequest extends \Google\Protobuf\Internal\Messa
      */
     private $instance_group = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 207819807;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 207819807 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $instance_groups_list_instances_request_resource = null;
     /**
@@ -87,6 +89,7 @@ class ListInstancesInstanceGroupsRequest extends \Google\Protobuf\Internal\Messa
      *     @type string $instance_group
      *           The name of the instance group from which you want to generate a list of included instances.
      *     @type \Google\Cloud\Compute\V1\InstanceGroupsListInstancesRequest $instance_groups_list_instances_request_resource
+     *           The body resource for this request
      *     @type int $max_results
      *           The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
      *     @type string $order_by
@@ -167,7 +170,9 @@ class ListInstancesInstanceGroupsRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 207819807;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 207819807 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\InstanceGroupsListInstancesRequest
      */
     public function getInstanceGroupsListInstancesRequestResource()
@@ -186,7 +191,9 @@ class ListInstancesInstanceGroupsRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 207819807;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 207819807 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\InstanceGroupsListInstancesRequest $var
      * @return $this
      */

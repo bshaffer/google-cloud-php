@@ -22,7 +22,9 @@ class AddResourcePoliciesDiskRequest extends \Google\Protobuf\Internal\Message
      */
     private $disk = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 228047907;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 228047907 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $disks_add_resource_policies_request_resource = null;
     /**
@@ -55,6 +57,7 @@ class AddResourcePoliciesDiskRequest extends \Google\Protobuf\Internal\Message
      *     @type string $disk
      *           The disk name for this request.
      *     @type \Google\Cloud\Compute\V1\DisksAddResourcePoliciesRequest $disks_add_resource_policies_request_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -97,7 +100,9 @@ class AddResourcePoliciesDiskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 228047907;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 228047907 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\DisksAddResourcePoliciesRequest
      */
     public function getDisksAddResourcePoliciesRequestResource()
@@ -116,7 +121,9 @@ class AddResourcePoliciesDiskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 228047907;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 228047907 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\DisksAddResourcePoliciesRequest $var
      * @return $this
      */

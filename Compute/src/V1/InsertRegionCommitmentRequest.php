@@ -16,7 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class InsertRegionCommitmentRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Commitment commitment_resource = 244240888;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Commitment commitment_resource = 244240888 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $commitment_resource = null;
     /**
@@ -47,6 +49,7 @@ class InsertRegionCommitmentRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Compute\V1\Commitment $commitment_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $region
@@ -63,7 +66,9 @@ class InsertRegionCommitmentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Commitment commitment_resource = 244240888;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Commitment commitment_resource = 244240888 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\Commitment
      */
     public function getCommitmentResource()
@@ -82,7 +87,9 @@ class InsertRegionCommitmentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Commitment commitment_resource = 244240888;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Commitment commitment_resource = 244240888 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\Commitment $var
      * @return $this
      */

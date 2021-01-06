@@ -57,6 +57,10 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
      */
     private $maintenance_policy = 0;
     /**
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;</code>
+     */
+    private $maintenance_window = null;
+    /**
      * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      *
      * Generated from protobuf field <code>string name = 3373707;</code>
@@ -110,6 +114,7 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
      *           [Output Only] The type of the resource. Always compute#nodeGroup for node group.
      *     @type int $maintenance_policy
      *           Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+     *     @type \Google\Cloud\Compute\V1\NodeGroupMaintenanceWindow $maintenance_window
      *     @type string $name
      *           The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      *     @type string $node_template
@@ -312,6 +317,38 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\NodeGroup\MaintenancePolicy::class);
         $this->maintenance_policy = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;</code>
+     * @return \Google\Cloud\Compute\V1\NodeGroupMaintenanceWindow
+     */
+    public function getMaintenanceWindow()
+    {
+        return isset($this->maintenance_window) ? $this->maintenance_window : null;
+    }
+
+    public function hasMaintenanceWindow()
+    {
+        return isset($this->maintenance_window);
+    }
+
+    public function clearMaintenanceWindow()
+    {
+        unset($this->maintenance_window);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;</code>
+     * @param \Google\Cloud\Compute\V1\NodeGroupMaintenanceWindow $var
+     * @return $this
+     */
+    public function setMaintenanceWindow($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Compute\V1\NodeGroupMaintenanceWindow::class);
+        $this->maintenance_window = $var;
 
         return $this;
     }

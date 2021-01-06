@@ -30,7 +30,9 @@ class SetSslPolicyTargetHttpsProxyRequest extends \Google\Protobuf\Internal\Mess
      */
     private $request_id = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $ssl_policy_reference_resource = null;
     /**
@@ -53,6 +55,7 @@ class SetSslPolicyTargetHttpsProxyRequest extends \Google\Protobuf\Internal\Mess
      *           For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *           The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
      *     @type \Google\Cloud\Compute\V1\SslPolicyReference $ssl_policy_reference_resource
+     *           The body resource for this request
      *     @type string $target_https_proxy
      *           Name of the TargetHttpsProxy resource whose SSL policy is to be set. The name must be 1-63 characters long, and comply with RFC1035.
      * }
@@ -119,7 +122,9 @@ class SetSslPolicyTargetHttpsProxyRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\SslPolicyReference
      */
     public function getSslPolicyReferenceResource()
@@ -138,7 +143,9 @@ class SetSslPolicyTargetHttpsProxyRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\SslPolicyReference $var
      * @return $this
      */

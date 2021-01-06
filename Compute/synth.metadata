@@ -3,15 +3,15 @@
     {
       "git": {
         "name": ".",
-        "remote": "git@github.com:bshaffer/google-cloud-php",
-        "sha": "e95d9e75fb5c210adb7409467fcb6e48dc0fe032"
+        "remote": "git@github.com:googleapis/google-cloud-php",
+        "sha": "4fbfb5b232e4ef1219f89b6ed8774544d7f39edd"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "6b026e1443948dcfc0b9e3289c85e940eb70f694"
+        "sha": "a3e990f3545dc8ccd384a75d20ce9cb185ca6a28"
       }
     }
   ],

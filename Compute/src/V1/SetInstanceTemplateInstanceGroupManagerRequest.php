@@ -22,7 +22,9 @@ class SetInstanceTemplateInstanceGroupManagerRequest extends \Google\Protobuf\In
      */
     private $instance_group_manager = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $instance_group_managers_set_instance_template_request_resource = null;
     /**
@@ -55,6 +57,7 @@ class SetInstanceTemplateInstanceGroupManagerRequest extends \Google\Protobuf\In
      *     @type string $instance_group_manager
      *           The name of the managed instance group.
      *     @type \Google\Cloud\Compute\V1\InstanceGroupManagersSetInstanceTemplateRequest $instance_group_managers_set_instance_template_request_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -97,7 +100,9 @@ class SetInstanceTemplateInstanceGroupManagerRequest extends \Google\Protobuf\In
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\InstanceGroupManagersSetInstanceTemplateRequest
      */
     public function getInstanceGroupManagersSetInstanceTemplateRequestResource()
@@ -116,7 +121,9 @@ class SetInstanceTemplateInstanceGroupManagerRequest extends \Google\Protobuf\In
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\InstanceGroupManagersSetInstanceTemplateRequest $var
      * @return $this
      */

@@ -16,7 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class InsertRegionDiskRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Disk disk_resource = 25880688;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Disk disk_resource = 25880688 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $disk_resource = null;
     /**
@@ -53,6 +55,7 @@ class InsertRegionDiskRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Compute\V1\Disk $disk_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $region
@@ -71,7 +74,9 @@ class InsertRegionDiskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Disk disk_resource = 25880688;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Disk disk_resource = 25880688 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\Disk
      */
     public function getDiskResource()
@@ -90,7 +95,9 @@ class InsertRegionDiskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Disk disk_resource = 25880688;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Disk disk_resource = 25880688 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\Disk $var
      * @return $this
      */

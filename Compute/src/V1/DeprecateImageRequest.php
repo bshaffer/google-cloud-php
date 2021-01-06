@@ -16,7 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeprecateImageRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 64570608;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 64570608 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $deprecation_status_resource = null;
     /**
@@ -47,6 +49,7 @@ class DeprecateImageRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Compute\V1\DeprecationStatus $deprecation_status_resource
+     *           The body resource for this request
      *     @type string $image
      *           Image name.
      *     @type string $project
@@ -63,7 +66,9 @@ class DeprecateImageRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 64570608;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 64570608 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\DeprecationStatus
      */
     public function getDeprecationStatusResource()
@@ -82,7 +87,9 @@ class DeprecateImageRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 64570608;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 64570608 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\DeprecationStatus $var
      * @return $this
      */

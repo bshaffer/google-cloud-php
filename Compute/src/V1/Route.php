@@ -29,7 +29,7 @@ class Route extends \Google\Protobuf\Internal\Message
      */
     private $description = '';
     /**
-     * The destination range of outgoing packets that this route applies to. Only IPv4 is supported.
+     * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported.
      *
      * Generated from protobuf field <code>string dest_range = 112892256;</code>
      */
@@ -65,7 +65,8 @@ class Route extends \Google\Protobuf\Internal\Message
      */
     private $next_hop_gateway = '';
     /**
-     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets. You can only specify the forwarding rule as a partial or full URL. For example, the following are all valid URLs:
+     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs:
+     * - 10.128.0.56
      * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
      * - regions/region/forwardingRules/forwardingRule
      *
@@ -139,7 +140,7 @@ class Route extends \Google\Protobuf\Internal\Message
      *     @type string $description
      *           An optional description of this resource. Provide this field when you create the resource.
      *     @type string $dest_range
-     *           The destination range of outgoing packets that this route applies to. Only IPv4 is supported.
+     *           The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported.
      *     @type string $id
      *           [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      *     @type string $kind
@@ -151,7 +152,8 @@ class Route extends \Google\Protobuf\Internal\Message
      *     @type string $next_hop_gateway
      *           The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL:  projects/project/global/gateways/default-internet-gateway
      *     @type string $next_hop_ilb
-     *           The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets. You can only specify the forwarding rule as a partial or full URL. For example, the following are all valid URLs:
+     *           The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs:
+     *           - 10.128.0.56
      *           - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
      *           - regions/region/forwardingRules/forwardingRule
      *     @type string $next_hop_instance
@@ -233,7 +235,7 @@ class Route extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The destination range of outgoing packets that this route applies to. Only IPv4 is supported.
+     * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported.
      *
      * Generated from protobuf field <code>string dest_range = 112892256;</code>
      * @return string
@@ -244,7 +246,7 @@ class Route extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The destination range of outgoing packets that this route applies to. Only IPv4 is supported.
+     * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported.
      *
      * Generated from protobuf field <code>string dest_range = 112892256;</code>
      * @param string $var
@@ -389,7 +391,8 @@ class Route extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets. You can only specify the forwarding rule as a partial or full URL. For example, the following are all valid URLs:
+     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs:
+     * - 10.128.0.56
      * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
      * - regions/region/forwardingRules/forwardingRule
      *
@@ -402,7 +405,8 @@ class Route extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets. You can only specify the forwarding rule as a partial or full URL. For example, the following are all valid URLs:
+     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs:
+     * - 10.128.0.56
      * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
      * - regions/region/forwardingRules/forwardingRule
      *

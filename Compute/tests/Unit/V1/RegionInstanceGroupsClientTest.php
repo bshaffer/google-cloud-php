@@ -32,6 +32,8 @@ use Google\Cloud\Compute\V1\InstanceWithNamedPorts;
 use Google\Cloud\Compute\V1\Operation;
 use Google\Cloud\Compute\V1\RegionInstanceGroupList;
 use Google\Cloud\Compute\V1\RegionInstanceGroupsListInstances;
+use Google\Cloud\Compute\V1\RegionInstanceGroupsListInstancesRequest;
+use Google\Cloud\Compute\V1\RegionInstanceGroupsSetNamedPortsRequest;
 use Google\Protobuf\Any;
 use Google\Rpc\Code;
 use stdClass;
@@ -296,8 +298,9 @@ class RegionInstanceGroupsClientTest extends GeneratedTest
         $instanceGroup = 'instanceGroup81095253';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionInstanceGroupsListInstancesRequestResource = new RegionInstanceGroupsListInstancesRequest();
 
-        $response = $client->listInstances($instanceGroup, $project, $region);
+        $response = $client->listInstances($instanceGroup, $project, $region, $regionInstanceGroupsListInstancesRequestResource);
         $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
         $resources = iterator_to_array($response->iterateAllElements());
         $this->assertSame(1, count($resources));
@@ -318,6 +321,9 @@ class RegionInstanceGroupsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getRegionInstanceGroupsListInstancesRequestResource();
+
+        $this->assertProtobufEquals($regionInstanceGroupsListInstancesRequestResource, $actualValue);
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -347,9 +353,10 @@ class RegionInstanceGroupsClientTest extends GeneratedTest
         $instanceGroup = 'instanceGroup81095253';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionInstanceGroupsListInstancesRequestResource = new RegionInstanceGroupsListInstancesRequest();
 
         try {
-            $client->listInstances($instanceGroup, $project, $region);
+            $client->listInstances($instanceGroup, $project, $region, $regionInstanceGroupsListInstancesRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -420,8 +427,9 @@ class RegionInstanceGroupsClientTest extends GeneratedTest
         $instanceGroup = 'instanceGroup81095253';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionInstanceGroupsSetNamedPortsRequestResource = new RegionInstanceGroupsSetNamedPortsRequest();
 
-        $response = $client->setNamedPorts($instanceGroup, $project, $region);
+        $response = $client->setNamedPorts($instanceGroup, $project, $region, $regionInstanceGroupsSetNamedPortsRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -438,6 +446,9 @@ class RegionInstanceGroupsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getRegionInstanceGroupsSetNamedPortsRequestResource();
+
+        $this->assertProtobufEquals($regionInstanceGroupsSetNamedPortsRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -468,9 +479,10 @@ class RegionInstanceGroupsClientTest extends GeneratedTest
         $instanceGroup = 'instanceGroup81095253';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionInstanceGroupsSetNamedPortsRequestResource = new RegionInstanceGroupsSetNamedPortsRequest();
 
         try {
-            $client->setNamedPorts($instanceGroup, $project, $region);
+            $client->setNamedPorts($instanceGroup, $project, $region, $regionInstanceGroupsSetNamedPortsRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

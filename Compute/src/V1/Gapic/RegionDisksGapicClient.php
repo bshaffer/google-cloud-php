@@ -70,7 +70,8 @@ use Google\Cloud\Compute\V1\TestPermissionsResponse;
  *     $disk = '';
  *     $project = '';
  *     $region = '';
- *     $response = $regionDisksClient->addResourcePolicies($disk, $project, $region);
+ *     $regionDisksAddResourcePoliciesRequestResource = new RegionDisksAddResourcePoliciesRequest();
+ *     $response = $regionDisksClient->addResourcePolicies($disk, $project, $region, $regionDisksAddResourcePoliciesRequestResource);
  * } finally {
  *     $regionDisksClient->close();
  * }
@@ -207,19 +208,20 @@ class RegionDisksGapicClient
      *     $disk = '';
      *     $project = '';
      *     $region = '';
-     *     $response = $regionDisksClient->addResourcePolicies($disk, $project, $region);
+     *     $regionDisksAddResourcePoliciesRequestResource = new RegionDisksAddResourcePoliciesRequest();
+     *     $response = $regionDisksClient->addResourcePolicies($disk, $project, $region, $regionDisksAddResourcePoliciesRequestResource);
      * } finally {
      *     $regionDisksClient->close();
      * }
      * ```
      *
-     * @param string $disk         The disk name for this request.
-     * @param string $project      Project ID for this request.
-     * @param string $region       The name of the region for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                                $disk                                          The disk name for this request.
+     * @param string                                $project                                       Project ID for this request.
+     * @param string                                $region                                        The name of the region for this request.
+     * @param RegionDisksAddResourcePoliciesRequest $regionDisksAddResourcePoliciesRequestResource The body resource for this request
+     * @param array                                 $optionalArgs                                  {
+     *                                                                                             Optional.
      *
-     *     @type RegionDisksAddResourcePoliciesRequest $regionDisksAddResourcePoliciesRequestResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -238,15 +240,13 @@ class RegionDisksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function addResourcePolicies($disk, $project, $region, array $optionalArgs = [])
+    public function addResourcePolicies($disk, $project, $region, $regionDisksAddResourcePoliciesRequestResource, array $optionalArgs = [])
     {
         $request = new AddResourcePoliciesRegionDiskRequest();
         $request->setDisk($disk);
         $request->setProject($project);
         $request->setRegion($region);
-        if (isset($optionalArgs['regionDisksAddResourcePoliciesRequestResource'])) {
-            $request->setRegionDisksAddResourcePoliciesRequestResource($optionalArgs['regionDisksAddResourcePoliciesRequestResource']);
-        }
+        $request->setRegionDisksAddResourcePoliciesRequestResource($regionDisksAddResourcePoliciesRequestResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -269,17 +269,19 @@ class RegionDisksGapicClient
      *     $disk = '';
      *     $project = '';
      *     $region = '';
-     *     $response = $regionDisksClient->createSnapshot($disk, $project, $region);
+     *     $snapshotResource = new Snapshot();
+     *     $response = $regionDisksClient->createSnapshot($disk, $project, $region, $snapshotResource);
      * } finally {
      *     $regionDisksClient->close();
      * }
      * ```
      *
-     * @param string $disk         Name of the regional persistent disk to snapshot.
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string   $disk             Name of the regional persistent disk to snapshot.
+     * @param string   $project          Project ID for this request.
+     * @param string   $region           Name of the region for this request.
+     * @param Snapshot $snapshotResource The body resource for this request
+     * @param array    $optionalArgs     {
+     *                                   Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -287,7 +289,6 @@ class RegionDisksGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type Snapshot $snapshotResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -300,17 +301,15 @@ class RegionDisksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function createSnapshot($disk, $project, $region, array $optionalArgs = [])
+    public function createSnapshot($disk, $project, $region, $snapshotResource, array $optionalArgs = [])
     {
         $request = new CreateSnapshotRegionDiskRequest();
         $request->setDisk($disk);
         $request->setProject($project);
         $request->setRegion($region);
+        $request->setSnapshotResource($snapshotResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['snapshotResource'])) {
-            $request->setSnapshotResource($optionalArgs['snapshotResource']);
         }
 
         return $this->startCall(
@@ -489,20 +488,21 @@ class RegionDisksGapicClient
      * ```
      * $regionDisksClient = new RegionDisksClient();
      * try {
+     *     $diskResource = new Disk();
      *     $project = '';
      *     $region = '';
-     *     $response = $regionDisksClient->insert($project, $region);
+     *     $response = $regionDisksClient->insert($diskResource, $project, $region);
      * } finally {
      *     $regionDisksClient->close();
      * }
      * ```
      *
+     * @param Disk   $diskResource The body resource for this request
      * @param string $project      Project ID for this request.
      * @param string $region       Name of the region for this request.
      * @param array  $optionalArgs {
      *                             Optional.
      *
-     *     @type Disk $diskResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -523,14 +523,12 @@ class RegionDisksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, $region, array $optionalArgs = [])
+    public function insert($diskResource, $project, $region, array $optionalArgs = [])
     {
         $request = new InsertRegionDiskRequest();
+        $request->setDiskResource($diskResource);
         $request->setProject($project);
         $request->setRegion($region);
-        if (isset($optionalArgs['diskResource'])) {
-            $request->setDiskResource($optionalArgs['diskResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -657,19 +655,20 @@ class RegionDisksGapicClient
      *     $disk = '';
      *     $project = '';
      *     $region = '';
-     *     $response = $regionDisksClient->removeResourcePolicies($disk, $project, $region);
+     *     $regionDisksRemoveResourcePoliciesRequestResource = new RegionDisksRemoveResourcePoliciesRequest();
+     *     $response = $regionDisksClient->removeResourcePolicies($disk, $project, $region, $regionDisksRemoveResourcePoliciesRequestResource);
      * } finally {
      *     $regionDisksClient->close();
      * }
      * ```
      *
-     * @param string $disk         The disk name for this request.
-     * @param string $project      Project ID for this request.
-     * @param string $region       The name of the region for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                                   $disk                                             The disk name for this request.
+     * @param string                                   $project                                          Project ID for this request.
+     * @param string                                   $region                                           The name of the region for this request.
+     * @param RegionDisksRemoveResourcePoliciesRequest $regionDisksRemoveResourcePoliciesRequestResource The body resource for this request
+     * @param array                                    $optionalArgs                                     {
+     *                                                                                                   Optional.
      *
-     *     @type RegionDisksRemoveResourcePoliciesRequest $regionDisksRemoveResourcePoliciesRequestResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -688,15 +687,13 @@ class RegionDisksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function removeResourcePolicies($disk, $project, $region, array $optionalArgs = [])
+    public function removeResourcePolicies($disk, $project, $region, $regionDisksRemoveResourcePoliciesRequestResource, array $optionalArgs = [])
     {
         $request = new RemoveResourcePoliciesRegionDiskRequest();
         $request->setDisk($disk);
         $request->setProject($project);
         $request->setRegion($region);
-        if (isset($optionalArgs['regionDisksRemoveResourcePoliciesRequestResource'])) {
-            $request->setRegionDisksRemoveResourcePoliciesRequestResource($optionalArgs['regionDisksRemoveResourcePoliciesRequestResource']);
-        }
+        $request->setRegionDisksRemoveResourcePoliciesRequestResource($regionDisksRemoveResourcePoliciesRequestResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -719,19 +716,20 @@ class RegionDisksGapicClient
      *     $disk = '';
      *     $project = '';
      *     $region = '';
-     *     $response = $regionDisksClient->resize($disk, $project, $region);
+     *     $regionDisksResizeRequestResource = new RegionDisksResizeRequest();
+     *     $response = $regionDisksClient->resize($disk, $project, $region, $regionDisksResizeRequestResource);
      * } finally {
      *     $regionDisksClient->close();
      * }
      * ```
      *
-     * @param string $disk         Name of the regional persistent disk.
-     * @param string $project      The project ID for this request.
-     * @param string $region       Name of the region for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                   $disk                             Name of the regional persistent disk.
+     * @param string                   $project                          The project ID for this request.
+     * @param string                   $region                           Name of the region for this request.
+     * @param RegionDisksResizeRequest $regionDisksResizeRequestResource The body resource for this request
+     * @param array                    $optionalArgs                     {
+     *                                                                   Optional.
      *
-     *     @type RegionDisksResizeRequest $regionDisksResizeRequestResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -750,15 +748,13 @@ class RegionDisksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function resize($disk, $project, $region, array $optionalArgs = [])
+    public function resize($disk, $project, $region, $regionDisksResizeRequestResource, array $optionalArgs = [])
     {
         $request = new ResizeRegionDiskRequest();
         $request->setDisk($disk);
         $request->setProject($project);
         $request->setRegion($region);
-        if (isset($optionalArgs['regionDisksResizeRequestResource'])) {
-            $request->setRegionDisksResizeRequestResource($optionalArgs['regionDisksResizeRequestResource']);
-        }
+        $request->setRegionDisksResizeRequestResource($regionDisksResizeRequestResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -780,20 +776,21 @@ class RegionDisksGapicClient
      * try {
      *     $project = '';
      *     $region = '';
+     *     $regionSetPolicyRequestResource = new RegionSetPolicyRequest();
      *     $resource = '';
-     *     $response = $regionDisksClient->setIamPolicy($project, $region, $resource);
+     *     $response = $regionDisksClient->setIamPolicy($project, $region, $regionSetPolicyRequestResource, $resource);
      * } finally {
      *     $regionDisksClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       The name of the region for this request.
-     * @param string $resource     Name or id of the resource for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                 $project                        Project ID for this request.
+     * @param string                 $region                         The name of the region for this request.
+     * @param RegionSetPolicyRequest $regionSetPolicyRequestResource The body resource for this request
+     * @param string                 $resource                       Name or id of the resource for this request.
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type RegionSetPolicyRequest $regionSetPolicyRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -806,15 +803,13 @@ class RegionDisksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setIamPolicy($project, $region, $resource, array $optionalArgs = [])
+    public function setIamPolicy($project, $region, $regionSetPolicyRequestResource, $resource, array $optionalArgs = [])
     {
         $request = new SetIamPolicyRegionDiskRequest();
         $request->setProject($project);
         $request->setRegion($region);
+        $request->setRegionSetPolicyRequestResource($regionSetPolicyRequestResource);
         $request->setResource($resource);
-        if (isset($optionalArgs['regionSetPolicyRequestResource'])) {
-            $request->setRegionSetPolicyRequestResource($optionalArgs['regionSetPolicyRequestResource']);
-        }
 
         return $this->startCall(
             'SetIamPolicy',
@@ -833,20 +828,21 @@ class RegionDisksGapicClient
      * try {
      *     $project = '';
      *     $region = '';
+     *     $regionSetLabelsRequestResource = new RegionSetLabelsRequest();
      *     $resource = '';
-     *     $response = $regionDisksClient->setLabels($project, $region, $resource);
+     *     $response = $regionDisksClient->setLabels($project, $region, $regionSetLabelsRequestResource, $resource);
      * } finally {
      *     $regionDisksClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       The region for this request.
-     * @param string $resource     Name or id of the resource for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                 $project                        Project ID for this request.
+     * @param string                 $region                         The region for this request.
+     * @param RegionSetLabelsRequest $regionSetLabelsRequestResource The body resource for this request
+     * @param string                 $resource                       Name or id of the resource for this request.
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type RegionSetLabelsRequest $regionSetLabelsRequestResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -865,15 +861,13 @@ class RegionDisksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setLabels($project, $region, $resource, array $optionalArgs = [])
+    public function setLabels($project, $region, $regionSetLabelsRequestResource, $resource, array $optionalArgs = [])
     {
         $request = new SetLabelsRegionDiskRequest();
         $request->setProject($project);
         $request->setRegion($region);
+        $request->setRegionSetLabelsRequestResource($regionSetLabelsRequestResource);
         $request->setResource($resource);
-        if (isset($optionalArgs['regionSetLabelsRequestResource'])) {
-            $request->setRegionSetLabelsRequestResource($optionalArgs['regionSetLabelsRequestResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -896,19 +890,20 @@ class RegionDisksGapicClient
      *     $project = '';
      *     $region = '';
      *     $resource = '';
-     *     $response = $regionDisksClient->testIamPermissions($project, $region, $resource);
+     *     $testPermissionsRequestResource = new TestPermissionsRequest();
+     *     $response = $regionDisksClient->testIamPermissions($project, $region, $resource, $testPermissionsRequestResource);
      * } finally {
      *     $regionDisksClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       The name of the region for this request.
-     * @param string $resource     Name or id of the resource for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                 $project                        Project ID for this request.
+     * @param string                 $region                         The name of the region for this request.
+     * @param string                 $resource                       Name or id of the resource for this request.
+     * @param TestPermissionsRequest $testPermissionsRequestResource The body resource for this request
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type TestPermissionsRequest $testPermissionsRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -921,15 +916,13 @@ class RegionDisksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function testIamPermissions($project, $region, $resource, array $optionalArgs = [])
+    public function testIamPermissions($project, $region, $resource, $testPermissionsRequestResource, array $optionalArgs = [])
     {
         $request = new TestIamPermissionsRegionDiskRequest();
         $request->setProject($project);
         $request->setRegion($region);
         $request->setResource($resource);
-        if (isset($optionalArgs['testPermissionsRequestResource'])) {
-            $request->setTestPermissionsRequestResource($optionalArgs['testPermissionsRequestResource']);
-        }
+        $request->setTestPermissionsRequestResource($testPermissionsRequestResource);
 
         return $this->startCall(
             'TestIamPermissions',

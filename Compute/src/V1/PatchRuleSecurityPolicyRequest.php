@@ -34,7 +34,9 @@ class PatchRuleSecurityPolicyRequest extends \Google\Protobuf\Internal\Message
      */
     private $security_policy = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $security_policy_rule_resource = null;
 
@@ -51,6 +53,7 @@ class PatchRuleSecurityPolicyRequest extends \Google\Protobuf\Internal\Message
      *     @type string $security_policy
      *           Name of the security policy to update.
      *     @type \Google\Cloud\Compute\V1\SecurityPolicyRule $security_policy_rule_resource
+     *           The body resource for this request
      * }
      */
     public function __construct($data = NULL) {
@@ -137,7 +140,9 @@ class PatchRuleSecurityPolicyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\SecurityPolicyRule
      */
     public function getSecurityPolicyRuleResource()
@@ -156,7 +161,9 @@ class PatchRuleSecurityPolicyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\SecurityPolicyRule $var
      * @return $this
      */

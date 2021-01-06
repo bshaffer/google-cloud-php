@@ -16,7 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class InvalidateCacheUrlMapRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 44360109;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 44360109 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $cache_invalidation_rule_resource = null;
     /**
@@ -47,6 +49,7 @@ class InvalidateCacheUrlMapRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Compute\V1\CacheInvalidationRule $cache_invalidation_rule_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -63,7 +66,9 @@ class InvalidateCacheUrlMapRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 44360109;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 44360109 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\CacheInvalidationRule
      */
     public function getCacheInvalidationRuleResource()
@@ -82,7 +87,9 @@ class InvalidateCacheUrlMapRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 44360109;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 44360109 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\CacheInvalidationRule $var
      * @return $this
      */

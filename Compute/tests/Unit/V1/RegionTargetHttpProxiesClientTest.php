@@ -30,6 +30,7 @@ use Google\ApiCore\Testing\MockTransport;
 use Google\Cloud\Compute\V1\Operation;
 use Google\Cloud\Compute\V1\TargetHttpProxy;
 use Google\Cloud\Compute\V1\TargetHttpProxyList;
+use Google\Cloud\Compute\V1\UrlMapReference;
 use Google\Protobuf\Any;
 use Google\Rpc\Code;
 use stdClass;
@@ -208,6 +209,7 @@ class RegionTargetHttpProxiesClientTest extends GeneratedTest
         $id = 'id3355';
         $kind = 'kind3292052';
         $name = 'name3373707';
+        $proxyBind = true;
         $region2 = 'region2-690338393';
         $selfLink = 'selfLink-1691268851';
         $urlMap = 'urlMap-169850228';
@@ -218,6 +220,7 @@ class RegionTargetHttpProxiesClientTest extends GeneratedTest
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
         $expectedResponse->setName($name);
+        $expectedResponse->setProxyBind($proxyBind);
         $expectedResponse->setRegion($region2);
         $expectedResponse->setSelfLink($selfLink);
         $expectedResponse->setUrlMap($urlMap);
@@ -347,8 +350,9 @@ class RegionTargetHttpProxiesClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $targetHttpProxyResource = new TargetHttpProxy();
 
-        $response = $client->insert($project, $region);
+        $response = $client->insert($project, $region, $targetHttpProxyResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -362,6 +366,9 @@ class RegionTargetHttpProxiesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getTargetHttpProxyResource();
+
+        $this->assertProtobufEquals($targetHttpProxyResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -391,9 +398,10 @@ class RegionTargetHttpProxiesClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $targetHttpProxyResource = new TargetHttpProxy();
 
         try {
-            $client->insert($project, $region);
+            $client->insert($project, $region, $targetHttpProxyResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -554,8 +562,9 @@ class RegionTargetHttpProxiesClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $targetHttpProxy = 'targetHttpProxy206872421';
+        $urlMapReferenceResource = new UrlMapReference();
 
-        $response = $client->setUrlMap($project, $region, $targetHttpProxy);
+        $response = $client->setUrlMap($project, $region, $targetHttpProxy, $urlMapReferenceResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -572,6 +581,9 @@ class RegionTargetHttpProxiesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getTargetHttpProxy();
 
         $this->assertProtobufEquals($targetHttpProxy, $actualValue);
+        $actualValue = $actualRequestObject->getUrlMapReferenceResource();
+
+        $this->assertProtobufEquals($urlMapReferenceResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -602,9 +614,10 @@ class RegionTargetHttpProxiesClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $targetHttpProxy = 'targetHttpProxy206872421';
+        $urlMapReferenceResource = new UrlMapReference();
 
         try {
-            $client->setUrlMap($project, $region, $targetHttpProxy);
+            $client->setUrlMap($project, $region, $targetHttpProxy, $urlMapReferenceResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

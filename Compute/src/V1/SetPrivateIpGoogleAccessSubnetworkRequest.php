@@ -42,7 +42,9 @@ class SetPrivateIpGoogleAccessSubnetworkRequest extends \Google\Protobuf\Interna
      */
     private $subnetwork = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 485240;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 485240 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $subnetworks_set_private_ip_google_access_request_resource = null;
 
@@ -63,6 +65,7 @@ class SetPrivateIpGoogleAccessSubnetworkRequest extends \Google\Protobuf\Interna
      *     @type string $subnetwork
      *           Name of the Subnetwork resource.
      *     @type \Google\Cloud\Compute\V1\SubnetworksSetPrivateIpGoogleAccessRequest $subnetworks_set_private_ip_google_access_request_resource
+     *           The body resource for this request
      * }
      */
     public function __construct($data = NULL) {
@@ -179,7 +182,9 @@ class SetPrivateIpGoogleAccessSubnetworkRequest extends \Google\Protobuf\Interna
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 485240;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 485240 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\SubnetworksSetPrivateIpGoogleAccessRequest
      */
     public function getSubnetworksSetPrivateIpGoogleAccessRequestResource()
@@ -198,7 +203,9 @@ class SetPrivateIpGoogleAccessSubnetworkRequest extends \Google\Protobuf\Interna
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 485240;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 485240 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\SubnetworksSetPrivateIpGoogleAccessRequest $var
      * @return $this
      */

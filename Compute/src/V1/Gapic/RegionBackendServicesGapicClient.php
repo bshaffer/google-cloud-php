@@ -302,19 +302,20 @@ class RegionBackendServicesGapicClient
      *     $backendService = '';
      *     $project = '';
      *     $region = '';
-     *     $response = $regionBackendServicesClient->getHealth($backendService, $project, $region);
+     *     $resourceGroupReferenceResource = new ResourceGroupReference();
+     *     $response = $regionBackendServicesClient->getHealth($backendService, $project, $region, $resourceGroupReferenceResource);
      * } finally {
      *     $regionBackendServicesClient->close();
      * }
      * ```
      *
-     * @param string $backendService Name of the BackendService resource for which to get health.
-     * @param string $project
-     * @param string $region         Name of the region scoping this request.
-     * @param array  $optionalArgs   {
-     *                               Optional.
+     * @param string                 $backendService                 Name of the BackendService resource for which to get health.
+     * @param string                 $project
+     * @param string                 $region                         Name of the region scoping this request.
+     * @param ResourceGroupReference $resourceGroupReferenceResource The body resource for this request
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type ResourceGroupReference $resourceGroupReferenceResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -327,15 +328,13 @@ class RegionBackendServicesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function getHealth($backendService, $project, $region, array $optionalArgs = [])
+    public function getHealth($backendService, $project, $region, $resourceGroupReferenceResource, array $optionalArgs = [])
     {
         $request = new GetHealthRegionBackendServiceRequest();
         $request->setBackendService($backendService);
         $request->setProject($project);
         $request->setRegion($region);
-        if (isset($optionalArgs['resourceGroupReferenceResource'])) {
-            $request->setResourceGroupReferenceResource($optionalArgs['resourceGroupReferenceResource']);
-        }
+        $request->setResourceGroupReferenceResource($resourceGroupReferenceResource);
 
         return $this->startCall(
             'GetHealth',
@@ -352,20 +351,21 @@ class RegionBackendServicesGapicClient
      * ```
      * $regionBackendServicesClient = new RegionBackendServicesClient();
      * try {
+     *     $backendServiceResource = new BackendService();
      *     $project = '';
      *     $region = '';
-     *     $response = $regionBackendServicesClient->insert($project, $region);
+     *     $response = $regionBackendServicesClient->insert($backendServiceResource, $project, $region);
      * } finally {
      *     $regionBackendServicesClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region scoping this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param BackendService $backendServiceResource The body resource for this request
+     * @param string         $project                Project ID for this request.
+     * @param string         $region                 Name of the region scoping this request.
+     * @param array          $optionalArgs           {
+     *                                               Optional.
      *
-     *     @type BackendService $backendServiceResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -384,14 +384,12 @@ class RegionBackendServicesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, $region, array $optionalArgs = [])
+    public function insert($backendServiceResource, $project, $region, array $optionalArgs = [])
     {
         $request = new InsertRegionBackendServiceRequest();
+        $request->setBackendServiceResource($backendServiceResource);
         $request->setProject($project);
         $request->setRegion($region);
-        if (isset($optionalArgs['backendServiceResource'])) {
-            $request->setBackendServiceResource($optionalArgs['backendServiceResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -513,21 +511,22 @@ class RegionBackendServicesGapicClient
      * $regionBackendServicesClient = new RegionBackendServicesClient();
      * try {
      *     $backendService = '';
+     *     $backendServiceResource = new BackendService();
      *     $project = '';
      *     $region = '';
-     *     $response = $regionBackendServicesClient->patch($backendService, $project, $region);
+     *     $response = $regionBackendServicesClient->patch($backendService, $backendServiceResource, $project, $region);
      * } finally {
      *     $regionBackendServicesClient->close();
      * }
      * ```
      *
-     * @param string $backendService Name of the BackendService resource to patch.
-     * @param string $project        Project ID for this request.
-     * @param string $region         Name of the region scoping this request.
-     * @param array  $optionalArgs   {
-     *                               Optional.
+     * @param string         $backendService         Name of the BackendService resource to patch.
+     * @param BackendService $backendServiceResource The body resource for this request
+     * @param string         $project                Project ID for this request.
+     * @param string         $region                 Name of the region scoping this request.
+     * @param array          $optionalArgs           {
+     *                                               Optional.
      *
-     *     @type BackendService $backendServiceResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -546,15 +545,13 @@ class RegionBackendServicesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function patch($backendService, $project, $region, array $optionalArgs = [])
+    public function patch($backendService, $backendServiceResource, $project, $region, array $optionalArgs = [])
     {
         $request = new PatchRegionBackendServiceRequest();
         $request->setBackendService($backendService);
+        $request->setBackendServiceResource($backendServiceResource);
         $request->setProject($project);
         $request->setRegion($region);
-        if (isset($optionalArgs['backendServiceResource'])) {
-            $request->setBackendServiceResource($optionalArgs['backendServiceResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -575,21 +572,22 @@ class RegionBackendServicesGapicClient
      * $regionBackendServicesClient = new RegionBackendServicesClient();
      * try {
      *     $backendService = '';
+     *     $backendServiceResource = new BackendService();
      *     $project = '';
      *     $region = '';
-     *     $response = $regionBackendServicesClient->update($backendService, $project, $region);
+     *     $response = $regionBackendServicesClient->update($backendService, $backendServiceResource, $project, $region);
      * } finally {
      *     $regionBackendServicesClient->close();
      * }
      * ```
      *
-     * @param string $backendService Name of the BackendService resource to update.
-     * @param string $project        Project ID for this request.
-     * @param string $region         Name of the region scoping this request.
-     * @param array  $optionalArgs   {
-     *                               Optional.
+     * @param string         $backendService         Name of the BackendService resource to update.
+     * @param BackendService $backendServiceResource The body resource for this request
+     * @param string         $project                Project ID for this request.
+     * @param string         $region                 Name of the region scoping this request.
+     * @param array          $optionalArgs           {
+     *                                               Optional.
      *
-     *     @type BackendService $backendServiceResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -608,15 +606,13 @@ class RegionBackendServicesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function update($backendService, $project, $region, array $optionalArgs = [])
+    public function update($backendService, $backendServiceResource, $project, $region, array $optionalArgs = [])
     {
         $request = new UpdateRegionBackendServiceRequest();
         $request->setBackendService($backendService);
+        $request->setBackendServiceResource($backendServiceResource);
         $request->setProject($project);
         $request->setRegion($region);
-        if (isset($optionalArgs['backendServiceResource'])) {
-            $request->setBackendServiceResource($optionalArgs['backendServiceResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }

@@ -412,20 +412,21 @@ class AddressesGapicClient
      * ```
      * $addressesClient = new AddressesClient();
      * try {
+     *     $addressResource = new Address();
      *     $project = '';
      *     $region = '';
-     *     $response = $addressesClient->insert($project, $region);
+     *     $response = $addressesClient->insert($addressResource, $project, $region);
      * } finally {
      *     $addressesClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param Address $addressResource The body resource for this request
+     * @param string  $project         Project ID for this request.
+     * @param string  $region          Name of the region for this request.
+     * @param array   $optionalArgs    {
+     *                                 Optional.
      *
-     *     @type Address $addressResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -444,14 +445,12 @@ class AddressesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, $region, array $optionalArgs = [])
+    public function insert($addressResource, $project, $region, array $optionalArgs = [])
     {
         $request = new InsertAddressRequest();
+        $request->setAddressResource($addressResource);
         $request->setProject($project);
         $request->setRegion($region);
-        if (isset($optionalArgs['addressResource'])) {
-            $request->setAddressResource($optionalArgs['addressResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }

@@ -22,7 +22,9 @@ class RemoveResourcePoliciesInstanceRequest extends \Google\Protobuf\Internal\Me
      */
     private $instance = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $instances_remove_resource_policies_request_resource = null;
     /**
@@ -55,6 +57,7 @@ class RemoveResourcePoliciesInstanceRequest extends \Google\Protobuf\Internal\Me
      *     @type string $instance
      *           The instance name for this request.
      *     @type \Google\Cloud\Compute\V1\InstancesRemoveResourcePoliciesRequest $instances_remove_resource_policies_request_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -97,7 +100,9 @@ class RemoveResourcePoliciesInstanceRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\InstancesRemoveResourcePoliciesRequest
      */
     public function getInstancesRemoveResourcePoliciesRequestResource()
@@ -116,7 +121,9 @@ class RemoveResourcePoliciesInstanceRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\InstancesRemoveResourcePoliciesRequest $var
      * @return $this
      */

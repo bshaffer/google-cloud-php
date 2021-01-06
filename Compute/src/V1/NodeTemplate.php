@@ -17,6 +17,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class NodeTemplate extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code>
+     */
+    private $accelerators;
+    /**
      * CPU overcommit.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;</code>
@@ -34,6 +38,10 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string description = 154502140;</code>
      */
     private $description = '';
+    /**
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code>
+     */
+    private $disks;
     /**
      * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      *
@@ -111,12 +119,14 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Google\Cloud\Compute\V1\AcceleratorConfig[]|\Google\Protobuf\Internal\RepeatedField $accelerators
      *     @type int $cpu_overcommit_type
      *           CPU overcommit.
      *     @type string $creation_timestamp
      *           [Output Only] Creation timestamp in RFC3339 text format.
      *     @type string $description
      *           An optional description of this resource. Provide this property when you create the resource.
+     *     @type \Google\Cloud\Compute\V1\LocalDisk[]|\Google\Protobuf\Internal\RepeatedField $disks
      *     @type string $id
      *           [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      *     @type string $kind
@@ -148,6 +158,28 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Google\Cloud\Compute\V1\Compute::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAccelerators()
+    {
+        return $this->accelerators;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code>
+     * @param \Google\Cloud\Compute\V1\AcceleratorConfig[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAccelerators($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\Compute\V1\AcceleratorConfig::class);
+        $this->accelerators = $arr;
+
+        return $this;
     }
 
     /**
@@ -224,6 +256,28 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getDisks()
+    {
+        return $this->disks;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code>
+     * @param \Google\Cloud\Compute\V1\LocalDisk[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setDisks($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\Compute\V1\LocalDisk::class);
+        $this->disks = $arr;
 
         return $this;
     }

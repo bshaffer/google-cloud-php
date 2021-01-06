@@ -69,9 +69,10 @@ use Google\Cloud\Compute\V1\ZoneSetPolicyRequest;
  * $nodeGroupsClient = new NodeGroupsClient();
  * try {
  *     $nodeGroup = '';
+ *     $nodeGroupsAddNodesRequestResource = new NodeGroupsAddNodesRequest();
  *     $project = '';
  *     $zone = '';
- *     $response = $nodeGroupsClient->addNodes($nodeGroup, $project, $zone);
+ *     $response = $nodeGroupsClient->addNodes($nodeGroup, $nodeGroupsAddNodesRequestResource, $project, $zone);
  * } finally {
  *     $nodeGroupsClient->close();
  * }
@@ -206,21 +207,22 @@ class NodeGroupsGapicClient
      * $nodeGroupsClient = new NodeGroupsClient();
      * try {
      *     $nodeGroup = '';
+     *     $nodeGroupsAddNodesRequestResource = new NodeGroupsAddNodesRequest();
      *     $project = '';
      *     $zone = '';
-     *     $response = $nodeGroupsClient->addNodes($nodeGroup, $project, $zone);
+     *     $response = $nodeGroupsClient->addNodes($nodeGroup, $nodeGroupsAddNodesRequestResource, $project, $zone);
      * } finally {
      *     $nodeGroupsClient->close();
      * }
      * ```
      *
-     * @param string $nodeGroup    Name of the NodeGroup resource.
-     * @param string $project      Project ID for this request.
-     * @param string $zone         The name of the zone for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                    $nodeGroup                         Name of the NodeGroup resource.
+     * @param NodeGroupsAddNodesRequest $nodeGroupsAddNodesRequestResource The body resource for this request
+     * @param string                    $project                           Project ID for this request.
+     * @param string                    $zone                              The name of the zone for this request.
+     * @param array                     $optionalArgs                      {
+     *                                                                     Optional.
      *
-     *     @type NodeGroupsAddNodesRequest $nodeGroupsAddNodesRequestResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -239,15 +241,13 @@ class NodeGroupsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function addNodes($nodeGroup, $project, $zone, array $optionalArgs = [])
+    public function addNodes($nodeGroup, $nodeGroupsAddNodesRequestResource, $project, $zone, array $optionalArgs = [])
     {
         $request = new AddNodesNodeGroupRequest();
         $request->setNodeGroup($nodeGroup);
+        $request->setNodeGroupsAddNodesRequestResource($nodeGroupsAddNodesRequestResource);
         $request->setProject($project);
         $request->setZone($zone);
-        if (isset($optionalArgs['nodeGroupsAddNodesRequestResource'])) {
-            $request->setNodeGroupsAddNodesRequestResource($optionalArgs['nodeGroupsAddNodesRequestResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -429,21 +429,22 @@ class NodeGroupsGapicClient
      * $nodeGroupsClient = new NodeGroupsClient();
      * try {
      *     $nodeGroup = '';
+     *     $nodeGroupsDeleteNodesRequestResource = new NodeGroupsDeleteNodesRequest();
      *     $project = '';
      *     $zone = '';
-     *     $response = $nodeGroupsClient->deleteNodes($nodeGroup, $project, $zone);
+     *     $response = $nodeGroupsClient->deleteNodes($nodeGroup, $nodeGroupsDeleteNodesRequestResource, $project, $zone);
      * } finally {
      *     $nodeGroupsClient->close();
      * }
      * ```
      *
-     * @param string $nodeGroup    Name of the NodeGroup resource whose nodes will be deleted.
-     * @param string $project      Project ID for this request.
-     * @param string $zone         The name of the zone for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                       $nodeGroup                            Name of the NodeGroup resource whose nodes will be deleted.
+     * @param NodeGroupsDeleteNodesRequest $nodeGroupsDeleteNodesRequestResource The body resource for this request
+     * @param string                       $project                              Project ID for this request.
+     * @param string                       $zone                                 The name of the zone for this request.
+     * @param array                        $optionalArgs                         {
+     *                                                                           Optional.
      *
-     *     @type NodeGroupsDeleteNodesRequest $nodeGroupsDeleteNodesRequestResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -462,15 +463,13 @@ class NodeGroupsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function deleteNodes($nodeGroup, $project, $zone, array $optionalArgs = [])
+    public function deleteNodes($nodeGroup, $nodeGroupsDeleteNodesRequestResource, $project, $zone, array $optionalArgs = [])
     {
         $request = new DeleteNodesNodeGroupRequest();
         $request->setNodeGroup($nodeGroup);
+        $request->setNodeGroupsDeleteNodesRequestResource($nodeGroupsDeleteNodesRequestResource);
         $request->setProject($project);
         $request->setZone($zone);
-        if (isset($optionalArgs['nodeGroupsDeleteNodesRequestResource'])) {
-            $request->setNodeGroupsDeleteNodesRequestResource($optionalArgs['nodeGroupsDeleteNodesRequestResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -594,21 +593,22 @@ class NodeGroupsGapicClient
      * $nodeGroupsClient = new NodeGroupsClient();
      * try {
      *     $initialNodeCount = 0;
+     *     $nodeGroupResource = new NodeGroup();
      *     $project = '';
      *     $zone = '';
-     *     $response = $nodeGroupsClient->insert($initialNodeCount, $project, $zone);
+     *     $response = $nodeGroupsClient->insert($initialNodeCount, $nodeGroupResource, $project, $zone);
      * } finally {
      *     $nodeGroupsClient->close();
      * }
      * ```
      *
-     * @param int    $initialNodeCount Initial count of nodes in the node group.
-     * @param string $project          Project ID for this request.
-     * @param string $zone             The name of the zone for this request.
-     * @param array  $optionalArgs     {
-     *                                 Optional.
+     * @param int       $initialNodeCount  Initial count of nodes in the node group.
+     * @param NodeGroup $nodeGroupResource The body resource for this request
+     * @param string    $project           Project ID for this request.
+     * @param string    $zone              The name of the zone for this request.
+     * @param array     $optionalArgs      {
+     *                                     Optional.
      *
-     *     @type NodeGroup $nodeGroupResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -627,15 +627,13 @@ class NodeGroupsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($initialNodeCount, $project, $zone, array $optionalArgs = [])
+    public function insert($initialNodeCount, $nodeGroupResource, $project, $zone, array $optionalArgs = [])
     {
         $request = new InsertNodeGroupRequest();
         $request->setInitialNodeCount($initialNodeCount);
+        $request->setNodeGroupResource($nodeGroupResource);
         $request->setProject($project);
         $request->setZone($zone);
-        if (isset($optionalArgs['nodeGroupResource'])) {
-            $request->setNodeGroupResource($optionalArgs['nodeGroupResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -861,21 +859,22 @@ class NodeGroupsGapicClient
      * $nodeGroupsClient = new NodeGroupsClient();
      * try {
      *     $nodeGroup = '';
+     *     $nodeGroupResource = new NodeGroup();
      *     $project = '';
      *     $zone = '';
-     *     $response = $nodeGroupsClient->patch($nodeGroup, $project, $zone);
+     *     $response = $nodeGroupsClient->patch($nodeGroup, $nodeGroupResource, $project, $zone);
      * } finally {
      *     $nodeGroupsClient->close();
      * }
      * ```
      *
-     * @param string $nodeGroup    Name of the NodeGroup resource to update.
-     * @param string $project      Project ID for this request.
-     * @param string $zone         The name of the zone for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string    $nodeGroup         Name of the NodeGroup resource to update.
+     * @param NodeGroup $nodeGroupResource The body resource for this request
+     * @param string    $project           Project ID for this request.
+     * @param string    $zone              The name of the zone for this request.
+     * @param array     $optionalArgs      {
+     *                                     Optional.
      *
-     *     @type NodeGroup $nodeGroupResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -894,15 +893,13 @@ class NodeGroupsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function patch($nodeGroup, $project, $zone, array $optionalArgs = [])
+    public function patch($nodeGroup, $nodeGroupResource, $project, $zone, array $optionalArgs = [])
     {
         $request = new PatchNodeGroupRequest();
         $request->setNodeGroup($nodeGroup);
+        $request->setNodeGroupResource($nodeGroupResource);
         $request->setProject($project);
         $request->setZone($zone);
-        if (isset($optionalArgs['nodeGroupResource'])) {
-            $request->setNodeGroupResource($optionalArgs['nodeGroupResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -925,19 +922,20 @@ class NodeGroupsGapicClient
      *     $project = '';
      *     $resource = '';
      *     $zone = '';
-     *     $response = $nodeGroupsClient->setIamPolicy($project, $resource, $zone);
+     *     $zoneSetPolicyRequestResource = new ZoneSetPolicyRequest();
+     *     $response = $nodeGroupsClient->setIamPolicy($project, $resource, $zone, $zoneSetPolicyRequestResource);
      * } finally {
      *     $nodeGroupsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $resource     Name or id of the resource for this request.
-     * @param string $zone         The name of the zone for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string               $project                      Project ID for this request.
+     * @param string               $resource                     Name or id of the resource for this request.
+     * @param string               $zone                         The name of the zone for this request.
+     * @param ZoneSetPolicyRequest $zoneSetPolicyRequestResource The body resource for this request
+     * @param array                $optionalArgs                 {
+     *                                                           Optional.
      *
-     *     @type ZoneSetPolicyRequest $zoneSetPolicyRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -950,15 +948,13 @@ class NodeGroupsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setIamPolicy($project, $resource, $zone, array $optionalArgs = [])
+    public function setIamPolicy($project, $resource, $zone, $zoneSetPolicyRequestResource, array $optionalArgs = [])
     {
         $request = new SetIamPolicyNodeGroupRequest();
         $request->setProject($project);
         $request->setResource($resource);
         $request->setZone($zone);
-        if (isset($optionalArgs['zoneSetPolicyRequestResource'])) {
-            $request->setZoneSetPolicyRequestResource($optionalArgs['zoneSetPolicyRequestResource']);
-        }
+        $request->setZoneSetPolicyRequestResource($zoneSetPolicyRequestResource);
 
         return $this->startCall(
             'SetIamPolicy',
@@ -976,21 +972,22 @@ class NodeGroupsGapicClient
      * $nodeGroupsClient = new NodeGroupsClient();
      * try {
      *     $nodeGroup = '';
+     *     $nodeGroupsSetNodeTemplateRequestResource = new NodeGroupsSetNodeTemplateRequest();
      *     $project = '';
      *     $zone = '';
-     *     $response = $nodeGroupsClient->setNodeTemplate($nodeGroup, $project, $zone);
+     *     $response = $nodeGroupsClient->setNodeTemplate($nodeGroup, $nodeGroupsSetNodeTemplateRequestResource, $project, $zone);
      * } finally {
      *     $nodeGroupsClient->close();
      * }
      * ```
      *
-     * @param string $nodeGroup    Name of the NodeGroup resource to update.
-     * @param string $project      Project ID for this request.
-     * @param string $zone         The name of the zone for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                           $nodeGroup                                Name of the NodeGroup resource to update.
+     * @param NodeGroupsSetNodeTemplateRequest $nodeGroupsSetNodeTemplateRequestResource The body resource for this request
+     * @param string                           $project                                  Project ID for this request.
+     * @param string                           $zone                                     The name of the zone for this request.
+     * @param array                            $optionalArgs                             {
+     *                                                                                   Optional.
      *
-     *     @type NodeGroupsSetNodeTemplateRequest $nodeGroupsSetNodeTemplateRequestResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -1009,15 +1006,13 @@ class NodeGroupsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setNodeTemplate($nodeGroup, $project, $zone, array $optionalArgs = [])
+    public function setNodeTemplate($nodeGroup, $nodeGroupsSetNodeTemplateRequestResource, $project, $zone, array $optionalArgs = [])
     {
         $request = new SetNodeTemplateNodeGroupRequest();
         $request->setNodeGroup($nodeGroup);
+        $request->setNodeGroupsSetNodeTemplateRequestResource($nodeGroupsSetNodeTemplateRequestResource);
         $request->setProject($project);
         $request->setZone($zone);
-        if (isset($optionalArgs['nodeGroupsSetNodeTemplateRequestResource'])) {
-            $request->setNodeGroupsSetNodeTemplateRequestResource($optionalArgs['nodeGroupsSetNodeTemplateRequestResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -1039,20 +1034,21 @@ class NodeGroupsGapicClient
      * try {
      *     $project = '';
      *     $resource = '';
+     *     $testPermissionsRequestResource = new TestPermissionsRequest();
      *     $zone = '';
-     *     $response = $nodeGroupsClient->testIamPermissions($project, $resource, $zone);
+     *     $response = $nodeGroupsClient->testIamPermissions($project, $resource, $testPermissionsRequestResource, $zone);
      * } finally {
      *     $nodeGroupsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $resource     Name or id of the resource for this request.
-     * @param string $zone         The name of the zone for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                 $project                        Project ID for this request.
+     * @param string                 $resource                       Name or id of the resource for this request.
+     * @param TestPermissionsRequest $testPermissionsRequestResource The body resource for this request
+     * @param string                 $zone                           The name of the zone for this request.
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type TestPermissionsRequest $testPermissionsRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -1065,15 +1061,13 @@ class NodeGroupsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function testIamPermissions($project, $resource, $zone, array $optionalArgs = [])
+    public function testIamPermissions($project, $resource, $testPermissionsRequestResource, $zone, array $optionalArgs = [])
     {
         $request = new TestIamPermissionsNodeGroupRequest();
         $request->setProject($project);
         $request->setResource($resource);
+        $request->setTestPermissionsRequestResource($testPermissionsRequestResource);
         $request->setZone($zone);
-        if (isset($optionalArgs['testPermissionsRequestResource'])) {
-            $request->setTestPermissionsRequestResource($optionalArgs['testPermissionsRequestResource']);
-        }
 
         return $this->startCall(
             'TestIamPermissions',

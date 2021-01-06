@@ -31,6 +31,7 @@ use Google\Cloud\Compute\V1\BackendService;
 use Google\Cloud\Compute\V1\BackendServiceGroupHealth;
 use Google\Cloud\Compute\V1\BackendServiceList;
 use Google\Cloud\Compute\V1\Operation;
+use Google\Cloud\Compute\V1\ResourceGroupReference;
 use Google\Protobuf\Any;
 use Google\Rpc\Code;
 use stdClass;
@@ -323,8 +324,9 @@ class RegionBackendServicesClientTest extends GeneratedTest
         $backendService = 'backendService306946058';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $resourceGroupReferenceResource = new ResourceGroupReference();
 
-        $response = $client->getHealth($backendService, $project, $region);
+        $response = $client->getHealth($backendService, $project, $region, $resourceGroupReferenceResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -341,6 +343,9 @@ class RegionBackendServicesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getResourceGroupReferenceResource();
+
+        $this->assertProtobufEquals($resourceGroupReferenceResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -371,9 +376,10 @@ class RegionBackendServicesClientTest extends GeneratedTest
         $backendService = 'backendService306946058';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $resourceGroupReferenceResource = new ResourceGroupReference();
 
         try {
-            $client->getHealth($backendService, $project, $region);
+            $client->getHealth($backendService, $project, $region, $resourceGroupReferenceResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -441,10 +447,11 @@ class RegionBackendServicesClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $backendServiceResource = new BackendService();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
-        $response = $client->insert($project, $region);
+        $response = $client->insert($backendServiceResource, $project, $region);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -452,6 +459,9 @@ class RegionBackendServicesClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.RegionBackendServices/Insert', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getBackendServiceResource();
+
+        $this->assertProtobufEquals($backendServiceResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -485,11 +495,12 @@ class RegionBackendServicesClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $backendServiceResource = new BackendService();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
         try {
-            $client->insert($project, $region);
+            $client->insert($backendServiceResource, $project, $region);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -648,10 +659,11 @@ class RegionBackendServicesClientTest extends GeneratedTest
 
         // Mock request
         $backendService = 'backendService306946058';
+        $backendServiceResource = new BackendService();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
-        $response = $client->patch($backendService, $project, $region);
+        $response = $client->patch($backendService, $backendServiceResource, $project, $region);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -662,6 +674,9 @@ class RegionBackendServicesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getBackendService();
 
         $this->assertProtobufEquals($backendService, $actualValue);
+        $actualValue = $actualRequestObject->getBackendServiceResource();
+
+        $this->assertProtobufEquals($backendServiceResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -696,11 +711,12 @@ class RegionBackendServicesClientTest extends GeneratedTest
 
         // Mock request
         $backendService = 'backendService306946058';
+        $backendServiceResource = new BackendService();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
         try {
-            $client->patch($backendService, $project, $region);
+            $client->patch($backendService, $backendServiceResource, $project, $region);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -769,10 +785,11 @@ class RegionBackendServicesClientTest extends GeneratedTest
 
         // Mock request
         $backendService = 'backendService306946058';
+        $backendServiceResource = new BackendService();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
-        $response = $client->update($backendService, $project, $region);
+        $response = $client->update($backendService, $backendServiceResource, $project, $region);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -783,6 +800,9 @@ class RegionBackendServicesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getBackendService();
 
         $this->assertProtobufEquals($backendService, $actualValue);
+        $actualValue = $actualRequestObject->getBackendServiceResource();
+
+        $this->assertProtobufEquals($backendServiceResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -817,11 +837,12 @@ class RegionBackendServicesClientTest extends GeneratedTest
 
         // Mock request
         $backendService = 'backendService306946058';
+        $backendServiceResource = new BackendService();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
         try {
-            $client->update($backendService, $project, $region);
+            $client->update($backendService, $backendServiceResource, $project, $region);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

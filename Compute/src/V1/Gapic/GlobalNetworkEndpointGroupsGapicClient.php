@@ -56,9 +56,10 @@ use Google\Cloud\Compute\V1\Operation;
  * ```
  * $globalNetworkEndpointGroupsClient = new GlobalNetworkEndpointGroupsClient();
  * try {
+ *     $globalNetworkEndpointGroupsAttachEndpointsRequestResource = new GlobalNetworkEndpointGroupsAttachEndpointsRequest();
  *     $networkEndpointGroup = '';
  *     $project = '';
- *     $response = $globalNetworkEndpointGroupsClient->attachNetworkEndpoints($networkEndpointGroup, $project);
+ *     $response = $globalNetworkEndpointGroupsClient->attachNetworkEndpoints($globalNetworkEndpointGroupsAttachEndpointsRequestResource, $networkEndpointGroup, $project);
  * } finally {
  *     $globalNetworkEndpointGroupsClient->close();
  * }
@@ -192,20 +193,21 @@ class GlobalNetworkEndpointGroupsGapicClient
      * ```
      * $globalNetworkEndpointGroupsClient = new GlobalNetworkEndpointGroupsClient();
      * try {
+     *     $globalNetworkEndpointGroupsAttachEndpointsRequestResource = new GlobalNetworkEndpointGroupsAttachEndpointsRequest();
      *     $networkEndpointGroup = '';
      *     $project = '';
-     *     $response = $globalNetworkEndpointGroupsClient->attachNetworkEndpoints($networkEndpointGroup, $project);
+     *     $response = $globalNetworkEndpointGroupsClient->attachNetworkEndpoints($globalNetworkEndpointGroupsAttachEndpointsRequestResource, $networkEndpointGroup, $project);
      * } finally {
      *     $globalNetworkEndpointGroupsClient->close();
      * }
      * ```
      *
-     * @param string $networkEndpointGroup The name of the network endpoint group where you are attaching network endpoints to. It should comply with RFC1035.
-     * @param string $project              Project ID for this request.
-     * @param array  $optionalArgs         {
-     *                                     Optional.
+     * @param GlobalNetworkEndpointGroupsAttachEndpointsRequest $globalNetworkEndpointGroupsAttachEndpointsRequestResource The body resource for this request
+     * @param string                                            $networkEndpointGroup                                      The name of the network endpoint group where you are attaching network endpoints to. It should comply with RFC1035.
+     * @param string                                            $project                                                   Project ID for this request.
+     * @param array                                             $optionalArgs                                              {
+     *                                                                                                                     Optional.
      *
-     *     @type GlobalNetworkEndpointGroupsAttachEndpointsRequest $globalNetworkEndpointGroupsAttachEndpointsRequestResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -224,14 +226,12 @@ class GlobalNetworkEndpointGroupsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function attachNetworkEndpoints($networkEndpointGroup, $project, array $optionalArgs = [])
+    public function attachNetworkEndpoints($globalNetworkEndpointGroupsAttachEndpointsRequestResource, $networkEndpointGroup, $project, array $optionalArgs = [])
     {
         $request = new AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest();
+        $request->setGlobalNetworkEndpointGroupsAttachEndpointsRequestResource($globalNetworkEndpointGroupsAttachEndpointsRequestResource);
         $request->setNetworkEndpointGroup($networkEndpointGroup);
         $request->setProject($project);
-        if (isset($optionalArgs['globalNetworkEndpointGroupsAttachEndpointsRequestResource'])) {
-            $request->setGlobalNetworkEndpointGroupsAttachEndpointsRequestResource($optionalArgs['globalNetworkEndpointGroupsAttachEndpointsRequestResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -306,20 +306,21 @@ class GlobalNetworkEndpointGroupsGapicClient
      * ```
      * $globalNetworkEndpointGroupsClient = new GlobalNetworkEndpointGroupsClient();
      * try {
+     *     $globalNetworkEndpointGroupsDetachEndpointsRequestResource = new GlobalNetworkEndpointGroupsDetachEndpointsRequest();
      *     $networkEndpointGroup = '';
      *     $project = '';
-     *     $response = $globalNetworkEndpointGroupsClient->detachNetworkEndpoints($networkEndpointGroup, $project);
+     *     $response = $globalNetworkEndpointGroupsClient->detachNetworkEndpoints($globalNetworkEndpointGroupsDetachEndpointsRequestResource, $networkEndpointGroup, $project);
      * } finally {
      *     $globalNetworkEndpointGroupsClient->close();
      * }
      * ```
      *
-     * @param string $networkEndpointGroup The name of the network endpoint group where you are removing network endpoints. It should comply with RFC1035.
-     * @param string $project              Project ID for this request.
-     * @param array  $optionalArgs         {
-     *                                     Optional.
+     * @param GlobalNetworkEndpointGroupsDetachEndpointsRequest $globalNetworkEndpointGroupsDetachEndpointsRequestResource The body resource for this request
+     * @param string                                            $networkEndpointGroup                                      The name of the network endpoint group where you are removing network endpoints. It should comply with RFC1035.
+     * @param string                                            $project                                                   Project ID for this request.
+     * @param array                                             $optionalArgs                                              {
+     *                                                                                                                     Optional.
      *
-     *     @type GlobalNetworkEndpointGroupsDetachEndpointsRequest $globalNetworkEndpointGroupsDetachEndpointsRequestResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -338,14 +339,12 @@ class GlobalNetworkEndpointGroupsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function detachNetworkEndpoints($networkEndpointGroup, $project, array $optionalArgs = [])
+    public function detachNetworkEndpoints($globalNetworkEndpointGroupsDetachEndpointsRequestResource, $networkEndpointGroup, $project, array $optionalArgs = [])
     {
         $request = new DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest();
+        $request->setGlobalNetworkEndpointGroupsDetachEndpointsRequestResource($globalNetworkEndpointGroupsDetachEndpointsRequestResource);
         $request->setNetworkEndpointGroup($networkEndpointGroup);
         $request->setProject($project);
-        if (isset($optionalArgs['globalNetworkEndpointGroupsDetachEndpointsRequestResource'])) {
-            $request->setGlobalNetworkEndpointGroupsDetachEndpointsRequestResource($optionalArgs['globalNetworkEndpointGroupsDetachEndpointsRequestResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -411,18 +410,19 @@ class GlobalNetworkEndpointGroupsGapicClient
      * ```
      * $globalNetworkEndpointGroupsClient = new GlobalNetworkEndpointGroupsClient();
      * try {
+     *     $networkEndpointGroupResource = new NetworkEndpointGroup();
      *     $project = '';
-     *     $response = $globalNetworkEndpointGroupsClient->insert($project);
+     *     $response = $globalNetworkEndpointGroupsClient->insert($networkEndpointGroupResource, $project);
      * } finally {
      *     $globalNetworkEndpointGroupsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param NetworkEndpointGroup $networkEndpointGroupResource The body resource for this request
+     * @param string               $project                      Project ID for this request.
+     * @param array                $optionalArgs                 {
+     *                                                           Optional.
      *
-     *     @type NetworkEndpointGroup $networkEndpointGroupResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -441,13 +441,11 @@ class GlobalNetworkEndpointGroupsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, array $optionalArgs = [])
+    public function insert($networkEndpointGroupResource, $project, array $optionalArgs = [])
     {
         $request = new InsertGlobalNetworkEndpointGroupRequest();
+        $request->setNetworkEndpointGroupResource($networkEndpointGroupResource);
         $request->setProject($project);
-        if (isset($optionalArgs['networkEndpointGroupResource'])) {
-            $request->setNetworkEndpointGroupResource($optionalArgs['networkEndpointGroupResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }

@@ -473,20 +473,21 @@ class NodeTemplatesGapicClient
      * ```
      * $nodeTemplatesClient = new NodeTemplatesClient();
      * try {
+     *     $nodeTemplateResource = new NodeTemplate();
      *     $project = '';
      *     $region = '';
-     *     $response = $nodeTemplatesClient->insert($project, $region);
+     *     $response = $nodeTemplatesClient->insert($nodeTemplateResource, $project, $region);
      * } finally {
      *     $nodeTemplatesClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       The name of the region for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param NodeTemplate $nodeTemplateResource The body resource for this request
+     * @param string       $project              Project ID for this request.
+     * @param string       $region               The name of the region for this request.
+     * @param array        $optionalArgs         {
+     *                                           Optional.
      *
-     *     @type NodeTemplate $nodeTemplateResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -505,14 +506,12 @@ class NodeTemplatesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, $region, array $optionalArgs = [])
+    public function insert($nodeTemplateResource, $project, $region, array $optionalArgs = [])
     {
         $request = new InsertNodeTemplateRequest();
+        $request->setNodeTemplateResource($nodeTemplateResource);
         $request->setProject($project);
         $request->setRegion($region);
-        if (isset($optionalArgs['nodeTemplateResource'])) {
-            $request->setNodeTemplateResource($optionalArgs['nodeTemplateResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -635,20 +634,21 @@ class NodeTemplatesGapicClient
      * try {
      *     $project = '';
      *     $region = '';
+     *     $regionSetPolicyRequestResource = new RegionSetPolicyRequest();
      *     $resource = '';
-     *     $response = $nodeTemplatesClient->setIamPolicy($project, $region, $resource);
+     *     $response = $nodeTemplatesClient->setIamPolicy($project, $region, $regionSetPolicyRequestResource, $resource);
      * } finally {
      *     $nodeTemplatesClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       The name of the region for this request.
-     * @param string $resource     Name or id of the resource for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                 $project                        Project ID for this request.
+     * @param string                 $region                         The name of the region for this request.
+     * @param RegionSetPolicyRequest $regionSetPolicyRequestResource The body resource for this request
+     * @param string                 $resource                       Name or id of the resource for this request.
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type RegionSetPolicyRequest $regionSetPolicyRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -661,15 +661,13 @@ class NodeTemplatesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setIamPolicy($project, $region, $resource, array $optionalArgs = [])
+    public function setIamPolicy($project, $region, $regionSetPolicyRequestResource, $resource, array $optionalArgs = [])
     {
         $request = new SetIamPolicyNodeTemplateRequest();
         $request->setProject($project);
         $request->setRegion($region);
+        $request->setRegionSetPolicyRequestResource($regionSetPolicyRequestResource);
         $request->setResource($resource);
-        if (isset($optionalArgs['regionSetPolicyRequestResource'])) {
-            $request->setRegionSetPolicyRequestResource($optionalArgs['regionSetPolicyRequestResource']);
-        }
 
         return $this->startCall(
             'SetIamPolicy',
@@ -689,19 +687,20 @@ class NodeTemplatesGapicClient
      *     $project = '';
      *     $region = '';
      *     $resource = '';
-     *     $response = $nodeTemplatesClient->testIamPermissions($project, $region, $resource);
+     *     $testPermissionsRequestResource = new TestPermissionsRequest();
+     *     $response = $nodeTemplatesClient->testIamPermissions($project, $region, $resource, $testPermissionsRequestResource);
      * } finally {
      *     $nodeTemplatesClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       The name of the region for this request.
-     * @param string $resource     Name or id of the resource for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                 $project                        Project ID for this request.
+     * @param string                 $region                         The name of the region for this request.
+     * @param string                 $resource                       Name or id of the resource for this request.
+     * @param TestPermissionsRequest $testPermissionsRequestResource The body resource for this request
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type TestPermissionsRequest $testPermissionsRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -714,15 +713,13 @@ class NodeTemplatesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function testIamPermissions($project, $region, $resource, array $optionalArgs = [])
+    public function testIamPermissions($project, $region, $resource, $testPermissionsRequestResource, array $optionalArgs = [])
     {
         $request = new TestIamPermissionsNodeTemplateRequest();
         $request->setProject($project);
         $request->setRegion($region);
         $request->setResource($resource);
-        if (isset($optionalArgs['testPermissionsRequestResource'])) {
-            $request->setTestPermissionsRequestResource($optionalArgs['testPermissionsRequestResource']);
-        }
+        $request->setTestPermissionsRequestResource($testPermissionsRequestResource);
 
         return $this->startCall(
             'TestIamPermissions',

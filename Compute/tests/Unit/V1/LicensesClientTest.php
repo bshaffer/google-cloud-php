@@ -27,10 +27,12 @@ use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
+use Google\Cloud\Compute\V1\GlobalSetPolicyRequest;
 use Google\Cloud\Compute\V1\License;
 use Google\Cloud\Compute\V1\LicensesListResponse;
 use Google\Cloud\Compute\V1\Operation;
 use Google\Cloud\Compute\V1\Policy;
+use Google\Cloud\Compute\V1\TestPermissionsRequest;
 use Google\Cloud\Compute\V1\TestPermissionsResponse;
 use Google\Protobuf\Any;
 use Google\Rpc\Code;
@@ -419,9 +421,10 @@ class LicensesClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $licenseResource = new License();
         $project = 'project-309310695';
 
-        $response = $client->insert($project);
+        $response = $client->insert($licenseResource, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -429,6 +432,9 @@ class LicensesClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.Licenses/Insert', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getLicenseResource();
+
+        $this->assertProtobufEquals($licenseResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -459,10 +465,11 @@ class LicensesClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $licenseResource = new License();
         $project = 'project-309310695';
 
         try {
-            $client->insert($project);
+            $client->insert($licenseResource, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -579,10 +586,11 @@ class LicensesClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $globalSetPolicyRequestResource = new GlobalSetPolicyRequest();
         $project = 'project-309310695';
         $resource = 'resource-341064690';
 
-        $response = $client->setIamPolicy($project, $resource);
+        $response = $client->setIamPolicy($globalSetPolicyRequestResource, $project, $resource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -590,6 +598,9 @@ class LicensesClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.Licenses/SetIamPolicy', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getGlobalSetPolicyRequestResource();
+
+        $this->assertProtobufEquals($globalSetPolicyRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -623,11 +634,12 @@ class LicensesClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $globalSetPolicyRequestResource = new GlobalSetPolicyRequest();
         $project = 'project-309310695';
         $resource = 'resource-341064690';
 
         try {
-            $client->setIamPolicy($project, $resource);
+            $client->setIamPolicy($globalSetPolicyRequestResource, $project, $resource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -657,8 +669,9 @@ class LicensesClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $resource = 'resource-341064690';
+        $testPermissionsRequestResource = new TestPermissionsRequest();
 
-        $response = $client->testIamPermissions($project, $resource);
+        $response = $client->testIamPermissions($project, $resource, $testPermissionsRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -672,6 +685,9 @@ class LicensesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getResource();
 
         $this->assertProtobufEquals($resource, $actualValue);
+        $actualValue = $actualRequestObject->getTestPermissionsRequestResource();
+
+        $this->assertProtobufEquals($testPermissionsRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -701,9 +717,10 @@ class LicensesClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $resource = 'resource-341064690';
+        $testPermissionsRequestResource = new TestPermissionsRequest();
 
         try {
-            $client->testIamPermissions($project, $resource);
+            $client->testIamPermissions($project, $resource, $testPermissionsRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

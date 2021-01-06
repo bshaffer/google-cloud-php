@@ -32,6 +32,7 @@ use Google\Cloud\Compute\V1\ForwardingRuleAggregatedList;
 use Google\Cloud\Compute\V1\ForwardingRuleList;
 use Google\Cloud\Compute\V1\ForwardingRulesScopedList;
 use Google\Cloud\Compute\V1\Operation;
+use Google\Cloud\Compute\V1\TargetReference;
 use Google\Protobuf\Any;
 use Google\Rpc\Code;
 use stdClass;
@@ -455,10 +456,11 @@ class ForwardingRulesClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $forwardingRuleResource = new ForwardingRule();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
-        $response = $client->insert($project, $region);
+        $response = $client->insert($forwardingRuleResource, $project, $region);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -466,6 +468,9 @@ class ForwardingRulesClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.ForwardingRules/Insert', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getForwardingRuleResource();
+
+        $this->assertProtobufEquals($forwardingRuleResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -499,11 +504,12 @@ class ForwardingRulesClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $forwardingRuleResource = new ForwardingRule();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
         try {
-            $client->insert($project, $region);
+            $client->insert($forwardingRuleResource, $project, $region);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -662,10 +668,11 @@ class ForwardingRulesClientTest extends GeneratedTest
 
         // Mock request
         $forwardingRule = 'forwardingRule-1340648706';
+        $forwardingRuleResource = new ForwardingRule();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
-        $response = $client->patch($forwardingRule, $project, $region);
+        $response = $client->patch($forwardingRule, $forwardingRuleResource, $project, $region);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -676,6 +683,9 @@ class ForwardingRulesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getForwardingRule();
 
         $this->assertProtobufEquals($forwardingRule, $actualValue);
+        $actualValue = $actualRequestObject->getForwardingRuleResource();
+
+        $this->assertProtobufEquals($forwardingRuleResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -710,11 +720,12 @@ class ForwardingRulesClientTest extends GeneratedTest
 
         // Mock request
         $forwardingRule = 'forwardingRule-1340648706';
+        $forwardingRuleResource = new ForwardingRule();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
         try {
-            $client->patch($forwardingRule, $project, $region);
+            $client->patch($forwardingRule, $forwardingRuleResource, $project, $region);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -785,8 +796,9 @@ class ForwardingRulesClientTest extends GeneratedTest
         $forwardingRule = 'forwardingRule-1340648706';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $targetReferenceResource = new TargetReference();
 
-        $response = $client->setTarget($forwardingRule, $project, $region);
+        $response = $client->setTarget($forwardingRule, $project, $region, $targetReferenceResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -803,6 +815,9 @@ class ForwardingRulesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getTargetReferenceResource();
+
+        $this->assertProtobufEquals($targetReferenceResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -833,9 +848,10 @@ class ForwardingRulesClientTest extends GeneratedTest
         $forwardingRule = 'forwardingRule-1340648706';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $targetReferenceResource = new TargetReference();
 
         try {
-            $client->setTarget($forwardingRule, $project, $region);
+            $client->setTarget($forwardingRule, $project, $region, $targetReferenceResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

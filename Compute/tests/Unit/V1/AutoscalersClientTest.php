@@ -437,10 +437,11 @@ class AutoscalersClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $autoscalerResource = new Autoscaler();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
-        $response = $client->insert($project, $zone);
+        $response = $client->insert($autoscalerResource, $project, $zone);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -448,6 +449,9 @@ class AutoscalersClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.Autoscalers/Insert', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getAutoscalerResource();
+
+        $this->assertProtobufEquals($autoscalerResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -481,11 +485,12 @@ class AutoscalersClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $autoscalerResource = new Autoscaler();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
         try {
-            $client->insert($project, $zone);
+            $client->insert($autoscalerResource, $project, $zone);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -643,10 +648,11 @@ class AutoscalersClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $autoscalerResource = new Autoscaler();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
-        $response = $client->patch($project, $zone);
+        $response = $client->patch($autoscalerResource, $project, $zone);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -654,6 +660,9 @@ class AutoscalersClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.Autoscalers/Patch', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getAutoscalerResource();
+
+        $this->assertProtobufEquals($autoscalerResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -687,11 +696,12 @@ class AutoscalersClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $autoscalerResource = new Autoscaler();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
         try {
-            $client->patch($project, $zone);
+            $client->patch($autoscalerResource, $project, $zone);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -759,10 +769,11 @@ class AutoscalersClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $autoscalerResource = new Autoscaler();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
-        $response = $client->update($project, $zone);
+        $response = $client->update($autoscalerResource, $project, $zone);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -770,6 +781,9 @@ class AutoscalersClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.Autoscalers/Update', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getAutoscalerResource();
+
+        $this->assertProtobufEquals($autoscalerResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -803,11 +817,12 @@ class AutoscalersClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $autoscalerResource = new Autoscaler();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
         try {
-            $client->update($project, $zone);
+            $client->update($autoscalerResource, $project, $zone);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

@@ -34,7 +34,9 @@ class CreateInstancesRegionInstanceGroupManagerRequest extends \Google\Protobuf\
      */
     private $region = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 90578824;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 90578824 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $region_instance_group_managers_create_instances_request_resource = null;
     /**
@@ -59,6 +61,7 @@ class CreateInstancesRegionInstanceGroupManagerRequest extends \Google\Protobuf\
      *     @type string $region
      *           The name of the region where the managed instance group is located. It should conform to RFC1035.
      *     @type \Google\Cloud\Compute\V1\RegionInstanceGroupManagersCreateInstancesRequest $region_instance_group_managers_create_instances_request_resource
+     *           The body resource for this request
      *     @type string $request_id
      *           An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *           For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request.
@@ -149,7 +152,9 @@ class CreateInstancesRegionInstanceGroupManagerRequest extends \Google\Protobuf\
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 90578824;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 90578824 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\RegionInstanceGroupManagersCreateInstancesRequest
      */
     public function getRegionInstanceGroupManagersCreateInstancesRequestResource()
@@ -168,7 +173,9 @@ class CreateInstancesRegionInstanceGroupManagerRequest extends \Google\Protobuf\
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 90578824;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 90578824 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\RegionInstanceGroupManagersCreateInstancesRequest $var
      * @return $this
      */

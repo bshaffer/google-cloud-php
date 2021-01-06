@@ -63,7 +63,9 @@ class ListInstancesRegionInstanceGroupsRequest extends \Google\Protobuf\Internal
      */
     private $region = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest region_instance_groups_list_instances_request_resource = 48239828;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest region_instance_groups_list_instances_request_resource = 48239828 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $region_instance_groups_list_instances_request_resource = null;
     /**
@@ -99,6 +101,7 @@ class ListInstancesRegionInstanceGroupsRequest extends \Google\Protobuf\Internal
      *     @type string $region
      *           Name of the region scoping this request.
      *     @type \Google\Cloud\Compute\V1\RegionInstanceGroupsListInstancesRequest $region_instance_groups_list_instances_request_resource
+     *           The body resource for this request
      *     @type bool $return_partial_success
      *           Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      * }
@@ -301,7 +304,9 @@ class ListInstancesRegionInstanceGroupsRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest region_instance_groups_list_instances_request_resource = 48239828;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest region_instance_groups_list_instances_request_resource = 48239828 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\RegionInstanceGroupsListInstancesRequest
      */
     public function getRegionInstanceGroupsListInstancesRequestResource()
@@ -320,7 +325,9 @@ class ListInstancesRegionInstanceGroupsRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest region_instance_groups_list_instances_request_resource = 48239828;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest region_instance_groups_list_instances_request_resource = 48239828 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\RegionInstanceGroupsListInstancesRequest $var
      * @return $this
      */

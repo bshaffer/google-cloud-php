@@ -22,7 +22,9 @@ class PatchInstanceGroupManagerRequest extends \Google\Protobuf\Internal\Message
      */
     private $instance_group_manager = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $instance_group_manager_resource = null;
     /**
@@ -55,6 +57,7 @@ class PatchInstanceGroupManagerRequest extends \Google\Protobuf\Internal\Message
      *     @type string $instance_group_manager
      *           The name of the instance group manager.
      *     @type \Google\Cloud\Compute\V1\InstanceGroupManager $instance_group_manager_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -97,7 +100,9 @@ class PatchInstanceGroupManagerRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\InstanceGroupManager
      */
     public function getInstanceGroupManagerResource()
@@ -116,7 +121,9 @@ class PatchInstanceGroupManagerRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\InstanceGroupManager $var
      * @return $this
      */

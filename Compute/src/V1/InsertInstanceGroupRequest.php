@@ -16,7 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class InsertInstanceGroupRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 18176696;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 18176696 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $instance_group_resource = null;
     /**
@@ -47,6 +49,7 @@ class InsertInstanceGroupRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Compute\V1\InstanceGroup $instance_group_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -63,7 +66,9 @@ class InsertInstanceGroupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 18176696;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 18176696 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\InstanceGroup
      */
     public function getInstanceGroupResource()
@@ -82,7 +87,9 @@ class InsertInstanceGroupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 18176696;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 18176696 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\InstanceGroup $var
      * @return $this
      */

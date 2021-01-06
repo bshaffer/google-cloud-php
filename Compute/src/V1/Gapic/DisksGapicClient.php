@@ -70,9 +70,10 @@ use Google\Cloud\Compute\V1\ZoneSetPolicyRequest;
  * $disksClient = new DisksClient();
  * try {
  *     $disk = '';
+ *     $disksAddResourcePoliciesRequestResource = new DisksAddResourcePoliciesRequest();
  *     $project = '';
  *     $zone = '';
- *     $response = $disksClient->addResourcePolicies($disk, $project, $zone);
+ *     $response = $disksClient->addResourcePolicies($disk, $disksAddResourcePoliciesRequestResource, $project, $zone);
  * } finally {
  *     $disksClient->close();
  * }
@@ -207,21 +208,22 @@ class DisksGapicClient
      * $disksClient = new DisksClient();
      * try {
      *     $disk = '';
+     *     $disksAddResourcePoliciesRequestResource = new DisksAddResourcePoliciesRequest();
      *     $project = '';
      *     $zone = '';
-     *     $response = $disksClient->addResourcePolicies($disk, $project, $zone);
+     *     $response = $disksClient->addResourcePolicies($disk, $disksAddResourcePoliciesRequestResource, $project, $zone);
      * } finally {
      *     $disksClient->close();
      * }
      * ```
      *
-     * @param string $disk         The disk name for this request.
-     * @param string $project      Project ID for this request.
-     * @param string $zone         The name of the zone for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                          $disk                                    The disk name for this request.
+     * @param DisksAddResourcePoliciesRequest $disksAddResourcePoliciesRequestResource The body resource for this request
+     * @param string                          $project                                 Project ID for this request.
+     * @param string                          $zone                                    The name of the zone for this request.
+     * @param array                           $optionalArgs                            {
+     *                                                                                 Optional.
      *
-     *     @type DisksAddResourcePoliciesRequest $disksAddResourcePoliciesRequestResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -240,15 +242,13 @@ class DisksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function addResourcePolicies($disk, $project, $zone, array $optionalArgs = [])
+    public function addResourcePolicies($disk, $disksAddResourcePoliciesRequestResource, $project, $zone, array $optionalArgs = [])
     {
         $request = new AddResourcePoliciesDiskRequest();
         $request->setDisk($disk);
+        $request->setDisksAddResourcePoliciesRequestResource($disksAddResourcePoliciesRequestResource);
         $request->setProject($project);
         $request->setZone($zone);
-        if (isset($optionalArgs['disksAddResourcePoliciesRequestResource'])) {
-            $request->setDisksAddResourcePoliciesRequestResource($optionalArgs['disksAddResourcePoliciesRequestResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -373,18 +373,20 @@ class DisksGapicClient
      * try {
      *     $disk = '';
      *     $project = '';
+     *     $snapshotResource = new Snapshot();
      *     $zone = '';
-     *     $response = $disksClient->createSnapshot($disk, $project, $zone);
+     *     $response = $disksClient->createSnapshot($disk, $project, $snapshotResource, $zone);
      * } finally {
      *     $disksClient->close();
      * }
      * ```
      *
-     * @param string $disk         Name of the persistent disk to snapshot.
-     * @param string $project      Project ID for this request.
-     * @param string $zone         The name of the zone for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string   $disk             Name of the persistent disk to snapshot.
+     * @param string   $project          Project ID for this request.
+     * @param Snapshot $snapshotResource The body resource for this request
+     * @param string   $zone             The name of the zone for this request.
+     * @param array    $optionalArgs     {
+     *                                   Optional.
      *
      *     @type bool $guestFlush
      *          [Input Only] Whether to attempt an application consistent snapshot by informing the OS to prepare for the snapshot process. Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS).
@@ -394,7 +396,6 @@ class DisksGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type Snapshot $snapshotResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -407,20 +408,18 @@ class DisksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function createSnapshot($disk, $project, $zone, array $optionalArgs = [])
+    public function createSnapshot($disk, $project, $snapshotResource, $zone, array $optionalArgs = [])
     {
         $request = new CreateSnapshotDiskRequest();
         $request->setDisk($disk);
         $request->setProject($project);
+        $request->setSnapshotResource($snapshotResource);
         $request->setZone($zone);
         if (isset($optionalArgs['guestFlush'])) {
             $request->setGuestFlush($optionalArgs['guestFlush']);
         }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['snapshotResource'])) {
-            $request->setSnapshotResource($optionalArgs['snapshotResource']);
         }
 
         return $this->startCall(
@@ -599,20 +598,21 @@ class DisksGapicClient
      * ```
      * $disksClient = new DisksClient();
      * try {
+     *     $diskResource = new Disk();
      *     $project = '';
      *     $zone = '';
-     *     $response = $disksClient->insert($project, $zone);
+     *     $response = $disksClient->insert($diskResource, $project, $zone);
      * } finally {
      *     $disksClient->close();
      * }
      * ```
      *
+     * @param Disk   $diskResource The body resource for this request
      * @param string $project      Project ID for this request.
      * @param string $zone         The name of the zone for this request.
      * @param array  $optionalArgs {
      *                             Optional.
      *
-     *     @type Disk $diskResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -633,14 +633,12 @@ class DisksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, $zone, array $optionalArgs = [])
+    public function insert($diskResource, $project, $zone, array $optionalArgs = [])
     {
         $request = new InsertDiskRequest();
+        $request->setDiskResource($diskResource);
         $request->setProject($project);
         $request->setZone($zone);
-        if (isset($optionalArgs['diskResource'])) {
-            $request->setDiskResource($optionalArgs['diskResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -765,21 +763,22 @@ class DisksGapicClient
      * $disksClient = new DisksClient();
      * try {
      *     $disk = '';
+     *     $disksRemoveResourcePoliciesRequestResource = new DisksRemoveResourcePoliciesRequest();
      *     $project = '';
      *     $zone = '';
-     *     $response = $disksClient->removeResourcePolicies($disk, $project, $zone);
+     *     $response = $disksClient->removeResourcePolicies($disk, $disksRemoveResourcePoliciesRequestResource, $project, $zone);
      * } finally {
      *     $disksClient->close();
      * }
      * ```
      *
-     * @param string $disk         The disk name for this request.
-     * @param string $project      Project ID for this request.
-     * @param string $zone         The name of the zone for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                             $disk                                       The disk name for this request.
+     * @param DisksRemoveResourcePoliciesRequest $disksRemoveResourcePoliciesRequestResource The body resource for this request
+     * @param string                             $project                                    Project ID for this request.
+     * @param string                             $zone                                       The name of the zone for this request.
+     * @param array                              $optionalArgs                               {
+     *                                                                                       Optional.
      *
-     *     @type DisksRemoveResourcePoliciesRequest $disksRemoveResourcePoliciesRequestResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -798,15 +797,13 @@ class DisksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function removeResourcePolicies($disk, $project, $zone, array $optionalArgs = [])
+    public function removeResourcePolicies($disk, $disksRemoveResourcePoliciesRequestResource, $project, $zone, array $optionalArgs = [])
     {
         $request = new RemoveResourcePoliciesDiskRequest();
         $request->setDisk($disk);
+        $request->setDisksRemoveResourcePoliciesRequestResource($disksRemoveResourcePoliciesRequestResource);
         $request->setProject($project);
         $request->setZone($zone);
-        if (isset($optionalArgs['disksRemoveResourcePoliciesRequestResource'])) {
-            $request->setDisksRemoveResourcePoliciesRequestResource($optionalArgs['disksRemoveResourcePoliciesRequestResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -827,21 +824,22 @@ class DisksGapicClient
      * $disksClient = new DisksClient();
      * try {
      *     $disk = '';
+     *     $disksResizeRequestResource = new DisksResizeRequest();
      *     $project = '';
      *     $zone = '';
-     *     $response = $disksClient->resize($disk, $project, $zone);
+     *     $response = $disksClient->resize($disk, $disksResizeRequestResource, $project, $zone);
      * } finally {
      *     $disksClient->close();
      * }
      * ```
      *
-     * @param string $disk         The name of the persistent disk.
-     * @param string $project      Project ID for this request.
-     * @param string $zone         The name of the zone for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string             $disk                       The name of the persistent disk.
+     * @param DisksResizeRequest $disksResizeRequestResource The body resource for this request
+     * @param string             $project                    Project ID for this request.
+     * @param string             $zone                       The name of the zone for this request.
+     * @param array              $optionalArgs               {
+     *                                                       Optional.
      *
-     *     @type DisksResizeRequest $disksResizeRequestResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -860,15 +858,13 @@ class DisksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function resize($disk, $project, $zone, array $optionalArgs = [])
+    public function resize($disk, $disksResizeRequestResource, $project, $zone, array $optionalArgs = [])
     {
         $request = new ResizeDiskRequest();
         $request->setDisk($disk);
+        $request->setDisksResizeRequestResource($disksResizeRequestResource);
         $request->setProject($project);
         $request->setZone($zone);
-        if (isset($optionalArgs['disksResizeRequestResource'])) {
-            $request->setDisksResizeRequestResource($optionalArgs['disksResizeRequestResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -891,19 +887,20 @@ class DisksGapicClient
      *     $project = '';
      *     $resource = '';
      *     $zone = '';
-     *     $response = $disksClient->setIamPolicy($project, $resource, $zone);
+     *     $zoneSetPolicyRequestResource = new ZoneSetPolicyRequest();
+     *     $response = $disksClient->setIamPolicy($project, $resource, $zone, $zoneSetPolicyRequestResource);
      * } finally {
      *     $disksClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $resource     Name or id of the resource for this request.
-     * @param string $zone         The name of the zone for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string               $project                      Project ID for this request.
+     * @param string               $resource                     Name or id of the resource for this request.
+     * @param string               $zone                         The name of the zone for this request.
+     * @param ZoneSetPolicyRequest $zoneSetPolicyRequestResource The body resource for this request
+     * @param array                $optionalArgs                 {
+     *                                                           Optional.
      *
-     *     @type ZoneSetPolicyRequest $zoneSetPolicyRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -916,15 +913,13 @@ class DisksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setIamPolicy($project, $resource, $zone, array $optionalArgs = [])
+    public function setIamPolicy($project, $resource, $zone, $zoneSetPolicyRequestResource, array $optionalArgs = [])
     {
         $request = new SetIamPolicyDiskRequest();
         $request->setProject($project);
         $request->setResource($resource);
         $request->setZone($zone);
-        if (isset($optionalArgs['zoneSetPolicyRequestResource'])) {
-            $request->setZoneSetPolicyRequestResource($optionalArgs['zoneSetPolicyRequestResource']);
-        }
+        $request->setZoneSetPolicyRequestResource($zoneSetPolicyRequestResource);
 
         return $this->startCall(
             'SetIamPolicy',
@@ -944,17 +939,19 @@ class DisksGapicClient
      *     $project = '';
      *     $resource = '';
      *     $zone = '';
-     *     $response = $disksClient->setLabels($project, $resource, $zone);
+     *     $zoneSetLabelsRequestResource = new ZoneSetLabelsRequest();
+     *     $response = $disksClient->setLabels($project, $resource, $zone, $zoneSetLabelsRequestResource);
      * } finally {
      *     $disksClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $resource     Name or id of the resource for this request.
-     * @param string $zone         The name of the zone for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string               $project                      Project ID for this request.
+     * @param string               $resource                     Name or id of the resource for this request.
+     * @param string               $zone                         The name of the zone for this request.
+     * @param ZoneSetLabelsRequest $zoneSetLabelsRequestResource The body resource for this request
+     * @param array                $optionalArgs                 {
+     *                                                           Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -962,7 +959,6 @@ class DisksGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type ZoneSetLabelsRequest $zoneSetLabelsRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -975,17 +971,15 @@ class DisksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setLabels($project, $resource, $zone, array $optionalArgs = [])
+    public function setLabels($project, $resource, $zone, $zoneSetLabelsRequestResource, array $optionalArgs = [])
     {
         $request = new SetLabelsDiskRequest();
         $request->setProject($project);
         $request->setResource($resource);
         $request->setZone($zone);
+        $request->setZoneSetLabelsRequestResource($zoneSetLabelsRequestResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['zoneSetLabelsRequestResource'])) {
-            $request->setZoneSetLabelsRequestResource($optionalArgs['zoneSetLabelsRequestResource']);
         }
 
         return $this->startCall(
@@ -1005,20 +999,21 @@ class DisksGapicClient
      * try {
      *     $project = '';
      *     $resource = '';
+     *     $testPermissionsRequestResource = new TestPermissionsRequest();
      *     $zone = '';
-     *     $response = $disksClient->testIamPermissions($project, $resource, $zone);
+     *     $response = $disksClient->testIamPermissions($project, $resource, $testPermissionsRequestResource, $zone);
      * } finally {
      *     $disksClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $resource     Name or id of the resource for this request.
-     * @param string $zone         The name of the zone for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                 $project                        Project ID for this request.
+     * @param string                 $resource                       Name or id of the resource for this request.
+     * @param TestPermissionsRequest $testPermissionsRequestResource The body resource for this request
+     * @param string                 $zone                           The name of the zone for this request.
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type TestPermissionsRequest $testPermissionsRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -1031,15 +1026,13 @@ class DisksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function testIamPermissions($project, $resource, $zone, array $optionalArgs = [])
+    public function testIamPermissions($project, $resource, $testPermissionsRequestResource, $zone, array $optionalArgs = [])
     {
         $request = new TestIamPermissionsDiskRequest();
         $request->setProject($project);
         $request->setResource($resource);
+        $request->setTestPermissionsRequestResource($testPermissionsRequestResource);
         $request->setZone($zone);
-        if (isset($optionalArgs['testPermissionsRequestResource'])) {
-            $request->setTestPermissionsRequestResource($optionalArgs['testPermissionsRequestResource']);
-        }
 
         return $this->startCall(
             'TestIamPermissions',

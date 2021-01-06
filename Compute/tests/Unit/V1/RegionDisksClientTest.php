@@ -31,6 +31,13 @@ use Google\Cloud\Compute\V1\Disk;
 use Google\Cloud\Compute\V1\DiskList;
 use Google\Cloud\Compute\V1\Operation;
 use Google\Cloud\Compute\V1\Policy;
+use Google\Cloud\Compute\V1\RegionDisksAddResourcePoliciesRequest;
+use Google\Cloud\Compute\V1\RegionDisksRemoveResourcePoliciesRequest;
+use Google\Cloud\Compute\V1\RegionDisksResizeRequest;
+use Google\Cloud\Compute\V1\RegionSetLabelsRequest;
+use Google\Cloud\Compute\V1\RegionSetPolicyRequest;
+use Google\Cloud\Compute\V1\Snapshot;
+use Google\Cloud\Compute\V1\TestPermissionsRequest;
 use Google\Cloud\Compute\V1\TestPermissionsResponse;
 use Google\Protobuf\Any;
 use Google\Rpc\Code;
@@ -130,8 +137,9 @@ class RegionDisksClientTest extends GeneratedTest
         $disk = 'disk3083677';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionDisksAddResourcePoliciesRequestResource = new RegionDisksAddResourcePoliciesRequest();
 
-        $response = $client->addResourcePolicies($disk, $project, $region);
+        $response = $client->addResourcePolicies($disk, $project, $region, $regionDisksAddResourcePoliciesRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -148,6 +156,9 @@ class RegionDisksClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getRegionDisksAddResourcePoliciesRequestResource();
+
+        $this->assertProtobufEquals($regionDisksAddResourcePoliciesRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -178,9 +189,10 @@ class RegionDisksClientTest extends GeneratedTest
         $disk = 'disk3083677';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionDisksAddResourcePoliciesRequestResource = new RegionDisksAddResourcePoliciesRequest();
 
         try {
-            $client->addResourcePolicies($disk, $project, $region);
+            $client->addResourcePolicies($disk, $project, $region, $regionDisksAddResourcePoliciesRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -251,8 +263,9 @@ class RegionDisksClientTest extends GeneratedTest
         $disk = 'disk3083677';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $snapshotResource = new Snapshot();
 
-        $response = $client->createSnapshot($disk, $project, $region);
+        $response = $client->createSnapshot($disk, $project, $region, $snapshotResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -269,6 +282,9 @@ class RegionDisksClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getSnapshotResource();
+
+        $this->assertProtobufEquals($snapshotResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -299,9 +315,10 @@ class RegionDisksClientTest extends GeneratedTest
         $disk = 'disk3083677';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $snapshotResource = new Snapshot();
 
         try {
-            $client->createSnapshot($disk, $project, $region);
+            $client->createSnapshot($disk, $project, $region, $snapshotResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -700,10 +717,11 @@ class RegionDisksClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $diskResource = new Disk();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
-        $response = $client->insert($project, $region);
+        $response = $client->insert($diskResource, $project, $region);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -711,6 +729,9 @@ class RegionDisksClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.RegionDisks/Insert', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getDiskResource();
+
+        $this->assertProtobufEquals($diskResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -744,11 +765,12 @@ class RegionDisksClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $diskResource = new Disk();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
         try {
-            $client->insert($project, $region);
+            $client->insert($diskResource, $project, $region);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -909,8 +931,9 @@ class RegionDisksClientTest extends GeneratedTest
         $disk = 'disk3083677';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionDisksRemoveResourcePoliciesRequestResource = new RegionDisksRemoveResourcePoliciesRequest();
 
-        $response = $client->removeResourcePolicies($disk, $project, $region);
+        $response = $client->removeResourcePolicies($disk, $project, $region, $regionDisksRemoveResourcePoliciesRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -927,6 +950,9 @@ class RegionDisksClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getRegionDisksRemoveResourcePoliciesRequestResource();
+
+        $this->assertProtobufEquals($regionDisksRemoveResourcePoliciesRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -957,9 +983,10 @@ class RegionDisksClientTest extends GeneratedTest
         $disk = 'disk3083677';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionDisksRemoveResourcePoliciesRequestResource = new RegionDisksRemoveResourcePoliciesRequest();
 
         try {
-            $client->removeResourcePolicies($disk, $project, $region);
+            $client->removeResourcePolicies($disk, $project, $region, $regionDisksRemoveResourcePoliciesRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1030,8 +1057,9 @@ class RegionDisksClientTest extends GeneratedTest
         $disk = 'disk3083677';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionDisksResizeRequestResource = new RegionDisksResizeRequest();
 
-        $response = $client->resize($disk, $project, $region);
+        $response = $client->resize($disk, $project, $region, $regionDisksResizeRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1048,6 +1076,9 @@ class RegionDisksClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getRegionDisksResizeRequestResource();
+
+        $this->assertProtobufEquals($regionDisksResizeRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -1078,9 +1109,10 @@ class RegionDisksClientTest extends GeneratedTest
         $disk = 'disk3083677';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionDisksResizeRequestResource = new RegionDisksResizeRequest();
 
         try {
-            $client->resize($disk, $project, $region);
+            $client->resize($disk, $project, $region, $regionDisksResizeRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1116,9 +1148,10 @@ class RegionDisksClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionSetPolicyRequestResource = new RegionSetPolicyRequest();
         $resource = 'resource-341064690';
 
-        $response = $client->setIamPolicy($project, $region, $resource);
+        $response = $client->setIamPolicy($project, $region, $regionSetPolicyRequestResource, $resource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1132,6 +1165,9 @@ class RegionDisksClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getRegionSetPolicyRequestResource();
+
+        $this->assertProtobufEquals($regionSetPolicyRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getResource();
 
         $this->assertProtobufEquals($resource, $actualValue);
@@ -1164,10 +1200,11 @@ class RegionDisksClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionSetPolicyRequestResource = new RegionSetPolicyRequest();
         $resource = 'resource-341064690';
 
         try {
-            $client->setIamPolicy($project, $region, $resource);
+            $client->setIamPolicy($project, $region, $regionSetPolicyRequestResource, $resource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1237,9 +1274,10 @@ class RegionDisksClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionSetLabelsRequestResource = new RegionSetLabelsRequest();
         $resource = 'resource-341064690';
 
-        $response = $client->setLabels($project, $region, $resource);
+        $response = $client->setLabels($project, $region, $regionSetLabelsRequestResource, $resource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1253,6 +1291,9 @@ class RegionDisksClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getRegionSetLabelsRequestResource();
+
+        $this->assertProtobufEquals($regionSetLabelsRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getResource();
 
         $this->assertProtobufEquals($resource, $actualValue);
@@ -1285,10 +1326,11 @@ class RegionDisksClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionSetLabelsRequestResource = new RegionSetLabelsRequest();
         $resource = 'resource-341064690';
 
         try {
-            $client->setLabels($project, $region, $resource);
+            $client->setLabels($project, $region, $regionSetLabelsRequestResource, $resource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1319,8 +1361,9 @@ class RegionDisksClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $resource = 'resource-341064690';
+        $testPermissionsRequestResource = new TestPermissionsRequest();
 
-        $response = $client->testIamPermissions($project, $region, $resource);
+        $response = $client->testIamPermissions($project, $region, $resource, $testPermissionsRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1337,6 +1380,9 @@ class RegionDisksClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getResource();
 
         $this->assertProtobufEquals($resource, $actualValue);
+        $actualValue = $actualRequestObject->getTestPermissionsRequestResource();
+
+        $this->assertProtobufEquals($testPermissionsRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -1367,9 +1413,10 @@ class RegionDisksClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $resource = 'resource-341064690';
+        $testPermissionsRequestResource = new TestPermissionsRequest();
 
         try {
-            $client->testIamPermissions($project, $region, $resource);
+            $client->testIamPermissions($project, $region, $resource, $testPermissionsRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

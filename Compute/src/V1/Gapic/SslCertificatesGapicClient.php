@@ -407,15 +407,17 @@ class SslCertificatesGapicClient
      * $sslCertificatesClient = new SslCertificatesClient();
      * try {
      *     $project = '';
-     *     $response = $sslCertificatesClient->insert($project);
+     *     $sslCertificateResource = new SslCertificate();
+     *     $response = $sslCertificatesClient->insert($project, $sslCertificateResource);
      * } finally {
      *     $sslCertificatesClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string         $project                Project ID for this request.
+     * @param SslCertificate $sslCertificateResource The body resource for this request
+     * @param array          $optionalArgs           {
+     *                                               Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -423,7 +425,6 @@ class SslCertificatesGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type SslCertificate $sslCertificateResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -436,15 +437,13 @@ class SslCertificatesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, array $optionalArgs = [])
+    public function insert($project, $sslCertificateResource, array $optionalArgs = [])
     {
         $request = new InsertSslCertificateRequest();
         $request->setProject($project);
+        $request->setSslCertificateResource($sslCertificateResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['sslCertificateResource'])) {
-            $request->setSslCertificateResource($optionalArgs['sslCertificateResource']);
         }
 
         return $this->startCall(

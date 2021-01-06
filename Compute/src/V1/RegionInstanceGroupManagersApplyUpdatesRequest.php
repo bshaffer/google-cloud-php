@@ -16,6 +16,12 @@ use Google\Protobuf\Internal\GPBUtil;
 class RegionInstanceGroupManagersApplyUpdatesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Flag to update all instances instead of specified list of ?instances?. If the flag is set to true then the instances may not be specified in the request.
+     *
+     * Generated from protobuf field <code>bool all_instances = 135241056;</code>
+     */
+    private $all_instances = false;
+    /**
      * The list of URLs of one or more instances for which you want to apply updates. Each URL can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
      *
      * Generated from protobuf field <code>repeated string instances = 29097598;</code>
@@ -48,6 +54,8 @@ class RegionInstanceGroupManagersApplyUpdatesRequest extends \Google\Protobuf\In
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type bool $all_instances
+     *           Flag to update all instances instead of specified list of ?instances?. If the flag is set to true then the instances may not be specified in the request.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $instances
      *           The list of URLs of one or more instances for which you want to apply updates. Each URL can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
      *     @type string $minimal_action
@@ -67,6 +75,32 @@ class RegionInstanceGroupManagersApplyUpdatesRequest extends \Google\Protobuf\In
     public function __construct($data = NULL) {
         \GPBMetadata\Google\Cloud\Compute\V1\Compute::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Flag to update all instances instead of specified list of ?instances?. If the flag is set to true then the instances may not be specified in the request.
+     *
+     * Generated from protobuf field <code>bool all_instances = 135241056;</code>
+     * @return bool
+     */
+    public function getAllInstances()
+    {
+        return $this->all_instances;
+    }
+
+    /**
+     * Flag to update all instances instead of specified list of ?instances?. If the flag is set to true then the instances may not be specified in the request.
+     *
+     * Generated from protobuf field <code>bool all_instances = 135241056;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAllInstances($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->all_instances = $var;
+
+        return $this;
     }
 
     /**

@@ -22,7 +22,9 @@ class UpdateBackendBucketRequest extends \Google\Protobuf\Internal\Message
      */
     private $backend_bucket = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 112322328;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 112322328 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $backend_bucket_resource = null;
     /**
@@ -49,6 +51,7 @@ class UpdateBackendBucketRequest extends \Google\Protobuf\Internal\Message
      *     @type string $backend_bucket
      *           Name of the BackendBucket resource to update.
      *     @type \Google\Cloud\Compute\V1\BackendBucket $backend_bucket_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -89,7 +92,9 @@ class UpdateBackendBucketRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 112322328;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 112322328 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\BackendBucket
      */
     public function getBackendBucketResource()
@@ -108,7 +113,9 @@ class UpdateBackendBucketRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 112322328;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 112322328 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\BackendBucket $var
      * @return $this
      */

@@ -30,6 +30,7 @@ use Google\ApiCore\Testing\MockTransport;
 use Google\Cloud\Compute\V1\BackendBucket;
 use Google\Cloud\Compute\V1\BackendBucketList;
 use Google\Cloud\Compute\V1\Operation;
+use Google\Cloud\Compute\V1\SignedUrlKey;
 use Google\Protobuf\Any;
 use Google\Rpc\Code;
 use stdClass;
@@ -127,8 +128,9 @@ class BackendBucketsClientTest extends GeneratedTest
         // Mock request
         $backendBucket = 'backendBucket91714037';
         $project = 'project-309310695';
+        $signedUrlKeyResource = new SignedUrlKey();
 
-        $response = $client->addSignedUrlKey($backendBucket, $project);
+        $response = $client->addSignedUrlKey($backendBucket, $project, $signedUrlKeyResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -142,6 +144,9 @@ class BackendBucketsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
+        $actualValue = $actualRequestObject->getSignedUrlKeyResource();
+
+        $this->assertProtobufEquals($signedUrlKeyResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -171,9 +176,10 @@ class BackendBucketsClientTest extends GeneratedTest
         // Mock request
         $backendBucket = 'backendBucket91714037';
         $project = 'project-309310695';
+        $signedUrlKeyResource = new SignedUrlKey();
 
         try {
-            $client->addSignedUrlKey($backendBucket, $project);
+            $client->addSignedUrlKey($backendBucket, $project, $signedUrlKeyResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -570,9 +576,10 @@ class BackendBucketsClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $backendBucketResource = new BackendBucket();
         $project = 'project-309310695';
 
-        $response = $client->insert($project);
+        $response = $client->insert($backendBucketResource, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -580,6 +587,9 @@ class BackendBucketsClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.BackendBuckets/Insert', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getBackendBucketResource();
+
+        $this->assertProtobufEquals($backendBucketResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -610,10 +620,11 @@ class BackendBucketsClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $backendBucketResource = new BackendBucket();
         $project = 'project-309310695';
 
         try {
-            $client->insert($project);
+            $client->insert($backendBucketResource, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -767,9 +778,10 @@ class BackendBucketsClientTest extends GeneratedTest
 
         // Mock request
         $backendBucket = 'backendBucket91714037';
+        $backendBucketResource = new BackendBucket();
         $project = 'project-309310695';
 
-        $response = $client->patch($backendBucket, $project);
+        $response = $client->patch($backendBucket, $backendBucketResource, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -780,6 +792,9 @@ class BackendBucketsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getBackendBucket();
 
         $this->assertProtobufEquals($backendBucket, $actualValue);
+        $actualValue = $actualRequestObject->getBackendBucketResource();
+
+        $this->assertProtobufEquals($backendBucketResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -811,10 +826,11 @@ class BackendBucketsClientTest extends GeneratedTest
 
         // Mock request
         $backendBucket = 'backendBucket91714037';
+        $backendBucketResource = new BackendBucket();
         $project = 'project-309310695';
 
         try {
-            $client->patch($backendBucket, $project);
+            $client->patch($backendBucket, $backendBucketResource, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -883,9 +899,10 @@ class BackendBucketsClientTest extends GeneratedTest
 
         // Mock request
         $backendBucket = 'backendBucket91714037';
+        $backendBucketResource = new BackendBucket();
         $project = 'project-309310695';
 
-        $response = $client->update($backendBucket, $project);
+        $response = $client->update($backendBucket, $backendBucketResource, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -896,6 +913,9 @@ class BackendBucketsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getBackendBucket();
 
         $this->assertProtobufEquals($backendBucket, $actualValue);
+        $actualValue = $actualRequestObject->getBackendBucketResource();
+
+        $this->assertProtobufEquals($backendBucketResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -927,10 +947,11 @@ class BackendBucketsClientTest extends GeneratedTest
 
         // Mock request
         $backendBucket = 'backendBucket91714037';
+        $backendBucketResource = new BackendBucket();
         $project = 'project-309310695';
 
         try {
-            $client->update($backendBucket, $project);
+            $client->update($backendBucket, $backendBucketResource, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

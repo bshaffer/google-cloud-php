@@ -345,18 +345,19 @@ class InstanceTemplatesGapicClient
      * ```
      * $instanceTemplatesClient = new InstanceTemplatesClient();
      * try {
+     *     $instanceTemplateResource = new InstanceTemplate();
      *     $project = '';
-     *     $response = $instanceTemplatesClient->insert($project);
+     *     $response = $instanceTemplatesClient->insert($instanceTemplateResource, $project);
      * } finally {
      *     $instanceTemplatesClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param InstanceTemplate $instanceTemplateResource The body resource for this request
+     * @param string           $project                  Project ID for this request.
+     * @param array            $optionalArgs             {
+     *                                                   Optional.
      *
-     *     @type InstanceTemplate $instanceTemplateResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -375,13 +376,11 @@ class InstanceTemplatesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, array $optionalArgs = [])
+    public function insert($instanceTemplateResource, $project, array $optionalArgs = [])
     {
         $request = new InsertInstanceTemplateRequest();
+        $request->setInstanceTemplateResource($instanceTemplateResource);
         $request->setProject($project);
-        if (isset($optionalArgs['instanceTemplateResource'])) {
-            $request->setInstanceTemplateResource($optionalArgs['instanceTemplateResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -499,20 +498,21 @@ class InstanceTemplatesGapicClient
      * ```
      * $instanceTemplatesClient = new InstanceTemplatesClient();
      * try {
+     *     $globalSetPolicyRequestResource = new GlobalSetPolicyRequest();
      *     $project = '';
      *     $resource = '';
-     *     $response = $instanceTemplatesClient->setIamPolicy($project, $resource);
+     *     $response = $instanceTemplatesClient->setIamPolicy($globalSetPolicyRequestResource, $project, $resource);
      * } finally {
      *     $instanceTemplatesClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $resource     Name or id of the resource for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param GlobalSetPolicyRequest $globalSetPolicyRequestResource The body resource for this request
+     * @param string                 $project                        Project ID for this request.
+     * @param string                 $resource                       Name or id of the resource for this request.
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type GlobalSetPolicyRequest $globalSetPolicyRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -525,14 +525,12 @@ class InstanceTemplatesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setIamPolicy($project, $resource, array $optionalArgs = [])
+    public function setIamPolicy($globalSetPolicyRequestResource, $project, $resource, array $optionalArgs = [])
     {
         $request = new SetIamPolicyInstanceTemplateRequest();
+        $request->setGlobalSetPolicyRequestResource($globalSetPolicyRequestResource);
         $request->setProject($project);
         $request->setResource($resource);
-        if (isset($optionalArgs['globalSetPolicyRequestResource'])) {
-            $request->setGlobalSetPolicyRequestResource($optionalArgs['globalSetPolicyRequestResource']);
-        }
 
         return $this->startCall(
             'SetIamPolicy',
@@ -551,18 +549,19 @@ class InstanceTemplatesGapicClient
      * try {
      *     $project = '';
      *     $resource = '';
-     *     $response = $instanceTemplatesClient->testIamPermissions($project, $resource);
+     *     $testPermissionsRequestResource = new TestPermissionsRequest();
+     *     $response = $instanceTemplatesClient->testIamPermissions($project, $resource, $testPermissionsRequestResource);
      * } finally {
      *     $instanceTemplatesClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $resource     Name or id of the resource for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                 $project                        Project ID for this request.
+     * @param string                 $resource                       Name or id of the resource for this request.
+     * @param TestPermissionsRequest $testPermissionsRequestResource The body resource for this request
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type TestPermissionsRequest $testPermissionsRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -575,14 +574,12 @@ class InstanceTemplatesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function testIamPermissions($project, $resource, array $optionalArgs = [])
+    public function testIamPermissions($project, $resource, $testPermissionsRequestResource, array $optionalArgs = [])
     {
         $request = new TestIamPermissionsInstanceTemplateRequest();
         $request->setProject($project);
         $request->setResource($resource);
-        if (isset($optionalArgs['testPermissionsRequestResource'])) {
-            $request->setTestPermissionsRequestResource($optionalArgs['testPermissionsRequestResource']);
-        }
+        $request->setTestPermissionsRequestResource($testPermissionsRequestResource);
 
         return $this->startCall(
             'TestIamPermissions',

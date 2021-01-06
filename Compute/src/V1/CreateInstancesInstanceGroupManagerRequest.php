@@ -22,7 +22,9 @@ class CreateInstancesInstanceGroupManagerRequest extends \Google\Protobuf\Intern
      */
     private $instance_group_manager = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $instance_group_managers_create_instances_request_resource = null;
     /**
@@ -55,6 +57,7 @@ class CreateInstancesInstanceGroupManagerRequest extends \Google\Protobuf\Intern
      *     @type string $instance_group_manager
      *           The name of the managed instance group. It should conform to RFC1035.
      *     @type \Google\Cloud\Compute\V1\InstanceGroupManagersCreateInstancesRequest $instance_group_managers_create_instances_request_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -97,7 +100,9 @@ class CreateInstancesInstanceGroupManagerRequest extends \Google\Protobuf\Intern
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\InstanceGroupManagersCreateInstancesRequest
      */
     public function getInstanceGroupManagersCreateInstancesRequestResource()
@@ -116,7 +121,9 @@ class CreateInstancesInstanceGroupManagerRequest extends \Google\Protobuf\Intern
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\InstanceGroupManagersCreateInstancesRequest $var
      * @return $this
      */

@@ -349,8 +349,9 @@ class RegionSslCertificatesClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $sslCertificateResource = new SslCertificate();
 
-        $response = $client->insert($project, $region);
+        $response = $client->insert($project, $region, $sslCertificateResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -364,6 +365,9 @@ class RegionSslCertificatesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getSslCertificateResource();
+
+        $this->assertProtobufEquals($sslCertificateResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -393,9 +397,10 @@ class RegionSslCertificatesClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $sslCertificateResource = new SslCertificate();
 
         try {
-            $client->insert($project, $region);
+            $client->insert($project, $region, $sslCertificateResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

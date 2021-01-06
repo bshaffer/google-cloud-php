@@ -338,8 +338,9 @@ class TargetGrpcProxiesClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $targetGrpcProxyResource = new TargetGrpcProxy();
 
-        $response = $client->insert($project);
+        $response = $client->insert($project, $targetGrpcProxyResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -350,6 +351,9 @@ class TargetGrpcProxiesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
+        $actualValue = $actualRequestObject->getTargetGrpcProxyResource();
+
+        $this->assertProtobufEquals($targetGrpcProxyResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -378,9 +382,10 @@ class TargetGrpcProxiesClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $targetGrpcProxyResource = new TargetGrpcProxy();
 
         try {
-            $client->insert($project);
+            $client->insert($project, $targetGrpcProxyResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -535,8 +540,9 @@ class TargetGrpcProxiesClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $targetGrpcProxy = 'targetGrpcProxy-1605592453';
+        $targetGrpcProxyResource = new TargetGrpcProxy();
 
-        $response = $client->patch($project, $targetGrpcProxy);
+        $response = $client->patch($project, $targetGrpcProxy, $targetGrpcProxyResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -550,6 +556,9 @@ class TargetGrpcProxiesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getTargetGrpcProxy();
 
         $this->assertProtobufEquals($targetGrpcProxy, $actualValue);
+        $actualValue = $actualRequestObject->getTargetGrpcProxyResource();
+
+        $this->assertProtobufEquals($targetGrpcProxyResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -579,9 +588,10 @@ class TargetGrpcProxiesClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $targetGrpcProxy = 'targetGrpcProxy-1605592453';
+        $targetGrpcProxyResource = new TargetGrpcProxy();
 
         try {
-            $client->patch($project, $targetGrpcProxy);
+            $client->patch($project, $targetGrpcProxy, $targetGrpcProxyResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

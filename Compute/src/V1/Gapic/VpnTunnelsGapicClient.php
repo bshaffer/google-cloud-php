@@ -414,16 +414,18 @@ class VpnTunnelsGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $vpnTunnelsClient->insert($project, $region);
+     *     $vpnTunnelResource = new VpnTunnel();
+     *     $response = $vpnTunnelsClient->insert($project, $region, $vpnTunnelResource);
      * } finally {
      *     $vpnTunnelsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string    $project           Project ID for this request.
+     * @param string    $region            Name of the region for this request.
+     * @param VpnTunnel $vpnTunnelResource The body resource for this request
+     * @param array     $optionalArgs      {
+     *                                     Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -431,7 +433,6 @@ class VpnTunnelsGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type VpnTunnel $vpnTunnelResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -444,16 +445,14 @@ class VpnTunnelsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, $region, array $optionalArgs = [])
+    public function insert($project, $region, $vpnTunnelResource, array $optionalArgs = [])
     {
         $request = new InsertVpnTunnelRequest();
         $request->setProject($project);
         $request->setRegion($region);
+        $request->setVpnTunnelResource($vpnTunnelResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['vpnTunnelResource'])) {
-            $request->setVpnTunnelResource($optionalArgs['vpnTunnelResource']);
         }
 
         return $this->startCall(

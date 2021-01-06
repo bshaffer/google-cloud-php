@@ -42,7 +42,9 @@ class UpdateRouterRequest extends \Google\Protobuf\Internal\Message
      */
     private $router = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Router router_resource = 155222084;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Router router_resource = 155222084 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $router_resource = null;
 
@@ -63,6 +65,7 @@ class UpdateRouterRequest extends \Google\Protobuf\Internal\Message
      *     @type string $router
      *           Name of the Router resource to update.
      *     @type \Google\Cloud\Compute\V1\Router $router_resource
+     *           The body resource for this request
      * }
      */
     public function __construct($data = NULL) {
@@ -179,7 +182,9 @@ class UpdateRouterRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Router router_resource = 155222084;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Router router_resource = 155222084 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\Router
      */
     public function getRouterResource()
@@ -198,7 +203,9 @@ class UpdateRouterRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Router router_resource = 155222084;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Router router_resource = 155222084 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\Router $var
      * @return $this
      */

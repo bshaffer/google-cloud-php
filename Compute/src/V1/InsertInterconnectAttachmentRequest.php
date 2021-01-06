@@ -16,7 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class InsertInterconnectAttachmentRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $interconnect_attachment_resource = null;
     /**
@@ -53,6 +55,7 @@ class InsertInterconnectAttachmentRequest extends \Google\Protobuf\Internal\Mess
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Compute\V1\InterconnectAttachment $interconnect_attachment_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $region
@@ -71,7 +74,9 @@ class InsertInterconnectAttachmentRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\InterconnectAttachment
      */
     public function getInterconnectAttachmentResource()
@@ -90,7 +95,9 @@ class InsertInterconnectAttachmentRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\InterconnectAttachment $var
      * @return $this
      */

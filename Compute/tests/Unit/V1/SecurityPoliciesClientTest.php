@@ -129,8 +129,9 @@ class SecurityPoliciesClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $securityPolicy = 'securityPolicy1781695249';
+        $securityPolicyRuleResource = new SecurityPolicyRule();
 
-        $response = $client->addRule($project, $securityPolicy);
+        $response = $client->addRule($project, $securityPolicy, $securityPolicyRuleResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -144,6 +145,9 @@ class SecurityPoliciesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getSecurityPolicy();
 
         $this->assertProtobufEquals($securityPolicy, $actualValue);
+        $actualValue = $actualRequestObject->getSecurityPolicyRuleResource();
+
+        $this->assertProtobufEquals($securityPolicyRuleResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -173,9 +177,10 @@ class SecurityPoliciesClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $securityPolicy = 'securityPolicy1781695249';
+        $securityPolicyRuleResource = new SecurityPolicyRule();
 
         try {
-            $client->addRule($project, $securityPolicy);
+            $client->addRule($project, $securityPolicy, $securityPolicyRuleResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -536,8 +541,9 @@ class SecurityPoliciesClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $securityPolicyResource = new SecurityPolicy();
 
-        $response = $client->insert($project);
+        $response = $client->insert($project, $securityPolicyResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -548,6 +554,9 @@ class SecurityPoliciesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
+        $actualValue = $actualRequestObject->getSecurityPolicyResource();
+
+        $this->assertProtobufEquals($securityPolicyResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -576,9 +585,10 @@ class SecurityPoliciesClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $securityPolicyResource = new SecurityPolicy();
 
         try {
-            $client->insert($project);
+            $client->insert($project, $securityPolicyResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -802,8 +812,9 @@ class SecurityPoliciesClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $securityPolicy = 'securityPolicy1781695249';
+        $securityPolicyResource = new SecurityPolicy();
 
-        $response = $client->patch($project, $securityPolicy);
+        $response = $client->patch($project, $securityPolicy, $securityPolicyResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -817,6 +828,9 @@ class SecurityPoliciesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getSecurityPolicy();
 
         $this->assertProtobufEquals($securityPolicy, $actualValue);
+        $actualValue = $actualRequestObject->getSecurityPolicyResource();
+
+        $this->assertProtobufEquals($securityPolicyResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -846,9 +860,10 @@ class SecurityPoliciesClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $securityPolicy = 'securityPolicy1781695249';
+        $securityPolicyResource = new SecurityPolicy();
 
         try {
-            $client->patch($project, $securityPolicy);
+            $client->patch($project, $securityPolicy, $securityPolicyResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -918,8 +933,9 @@ class SecurityPoliciesClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $securityPolicy = 'securityPolicy1781695249';
+        $securityPolicyRuleResource = new SecurityPolicyRule();
 
-        $response = $client->patchRule($project, $securityPolicy);
+        $response = $client->patchRule($project, $securityPolicy, $securityPolicyRuleResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -933,6 +949,9 @@ class SecurityPoliciesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getSecurityPolicy();
 
         $this->assertProtobufEquals($securityPolicy, $actualValue);
+        $actualValue = $actualRequestObject->getSecurityPolicyRuleResource();
+
+        $this->assertProtobufEquals($securityPolicyRuleResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -962,9 +981,10 @@ class SecurityPoliciesClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $securityPolicy = 'securityPolicy1781695249';
+        $securityPolicyRuleResource = new SecurityPolicyRule();
 
         try {
-            $client->patchRule($project, $securityPolicy);
+            $client->patchRule($project, $securityPolicy, $securityPolicyRuleResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

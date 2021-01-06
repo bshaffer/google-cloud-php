@@ -37,7 +37,9 @@ class ListNetworkEndpointsNetworkEndpointGroupsRequest extends \Google\Protobuf\
      */
     private $network_endpoint_group = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $network_endpoint_groups_list_endpoints_request_resource = null;
     /**
@@ -89,6 +91,7 @@ class ListNetworkEndpointsNetworkEndpointGroupsRequest extends \Google\Protobuf\
      *     @type string $network_endpoint_group
      *           The name of the network endpoint group from which you want to generate a list of included network endpoints. It should comply with RFC1035.
      *     @type \Google\Cloud\Compute\V1\NetworkEndpointGroupsListEndpointsRequest $network_endpoint_groups_list_endpoints_request_resource
+     *           The body resource for this request
      *     @type string $order_by
      *           Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.
      *           You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.
@@ -193,7 +196,9 @@ class ListNetworkEndpointsNetworkEndpointGroupsRequest extends \Google\Protobuf\
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\NetworkEndpointGroupsListEndpointsRequest
      */
     public function getNetworkEndpointGroupsListEndpointsRequestResource()
@@ -212,7 +217,9 @@ class ListNetworkEndpointsNetworkEndpointGroupsRequest extends \Google\Protobuf\
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\NetworkEndpointGroupsListEndpointsRequest $var
      * @return $this
      */

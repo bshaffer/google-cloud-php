@@ -16,7 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class InsertNetworkRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Network network_resource = 122105599;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Network network_resource = 122105599 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $network_resource = null;
     /**
@@ -41,6 +43,7 @@ class InsertNetworkRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Compute\V1\Network $network_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -55,7 +58,9 @@ class InsertNetworkRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Network network_resource = 122105599;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Network network_resource = 122105599 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\Network
      */
     public function getNetworkResource()
@@ -74,7 +79,9 @@ class InsertNetworkRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Network network_resource = 122105599;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Network network_resource = 122105599 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\Network $var
      * @return $this
      */

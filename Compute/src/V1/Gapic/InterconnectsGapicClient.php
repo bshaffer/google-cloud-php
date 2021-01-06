@@ -336,18 +336,19 @@ class InterconnectsGapicClient
      * ```
      * $interconnectsClient = new InterconnectsClient();
      * try {
+     *     $interconnectResource = new Interconnect();
      *     $project = '';
-     *     $response = $interconnectsClient->insert($project);
+     *     $response = $interconnectsClient->insert($interconnectResource, $project);
      * } finally {
      *     $interconnectsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param Interconnect $interconnectResource The body resource for this request
+     * @param string       $project              Project ID for this request.
+     * @param array        $optionalArgs         {
+     *                                           Optional.
      *
-     *     @type Interconnect $interconnectResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -366,13 +367,11 @@ class InterconnectsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, array $optionalArgs = [])
+    public function insert($interconnectResource, $project, array $optionalArgs = [])
     {
         $request = new InsertInterconnectRequest();
+        $request->setInterconnectResource($interconnectResource);
         $request->setProject($project);
-        if (isset($optionalArgs['interconnectResource'])) {
-            $request->setInterconnectResource($optionalArgs['interconnectResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -491,19 +490,20 @@ class InterconnectsGapicClient
      * $interconnectsClient = new InterconnectsClient();
      * try {
      *     $interconnect = '';
+     *     $interconnectResource = new Interconnect();
      *     $project = '';
-     *     $response = $interconnectsClient->patch($interconnect, $project);
+     *     $response = $interconnectsClient->patch($interconnect, $interconnectResource, $project);
      * } finally {
      *     $interconnectsClient->close();
      * }
      * ```
      *
-     * @param string $interconnect Name of the interconnect to update.
-     * @param string $project      Project ID for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string       $interconnect         Name of the interconnect to update.
+     * @param Interconnect $interconnectResource The body resource for this request
+     * @param string       $project              Project ID for this request.
+     * @param array        $optionalArgs         {
+     *                                           Optional.
      *
-     *     @type Interconnect $interconnectResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -522,14 +522,12 @@ class InterconnectsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function patch($interconnect, $project, array $optionalArgs = [])
+    public function patch($interconnect, $interconnectResource, $project, array $optionalArgs = [])
     {
         $request = new PatchInterconnectRequest();
         $request->setInterconnect($interconnect);
+        $request->setInterconnectResource($interconnectResource);
         $request->setProject($project);
-        if (isset($optionalArgs['interconnectResource'])) {
-            $request->setInterconnectResource($optionalArgs['interconnectResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }

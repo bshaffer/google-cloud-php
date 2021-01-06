@@ -22,7 +22,9 @@ class RemovePeeringNetworkRequest extends \Google\Protobuf\Internal\Message
      */
     private $network = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 152727038;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 152727038 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $networks_remove_peering_request_resource = null;
     /**
@@ -49,6 +51,7 @@ class RemovePeeringNetworkRequest extends \Google\Protobuf\Internal\Message
      *     @type string $network
      *           Name of the network resource to remove peering from.
      *     @type \Google\Cloud\Compute\V1\NetworksRemovePeeringRequest $networks_remove_peering_request_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -89,7 +92,9 @@ class RemovePeeringNetworkRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 152727038;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 152727038 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\NetworksRemovePeeringRequest
      */
     public function getNetworksRemovePeeringRequestResource()
@@ -108,7 +113,9 @@ class RemovePeeringNetworkRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 152727038;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 152727038 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\NetworksRemovePeeringRequest $var
      * @return $this
      */

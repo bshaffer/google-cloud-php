@@ -44,6 +44,14 @@ class HealthStatus extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 port = 3446913;</code>
      */
     private $port = 0;
+    /**
+     * Generated from protobuf field <code>string weight = 13714040;</code>
+     */
+    private $weight = '';
+    /**
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 254066049;</code>
+     */
+    private $weight_error = 0;
 
     /**
      * Constructor.
@@ -61,6 +69,8 @@ class HealthStatus extends \Google\Protobuf\Internal\Message
      *           A forwarding rule IP address assigned to this instance.
      *     @type int $port
      *           The named port of the instance group, not necessarily the port that is health-checked.
+     *     @type string $weight
+     *     @type int $weight_error
      * }
      */
     public function __construct($data = NULL) {
@@ -194,6 +204,50 @@ class HealthStatus extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->port = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string weight = 13714040;</code>
+     * @return string
+     */
+    public function getWeight()
+    {
+        return $this->weight;
+    }
+
+    /**
+     * Generated from protobuf field <code>string weight = 13714040;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setWeight($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->weight = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 254066049;</code>
+     * @return int
+     */
+    public function getWeightError()
+    {
+        return $this->weight_error;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 254066049;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setWeightError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\HealthStatus\WeightError::class);
+        $this->weight_error = $var;
 
         return $this;
     }

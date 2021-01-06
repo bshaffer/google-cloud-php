@@ -36,7 +36,9 @@ class PatchSslPolicyRequest extends \Google\Protobuf\Internal\Message
      */
     private $ssl_policy = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $ssl_policy_resource = null;
 
@@ -55,6 +57,7 @@ class PatchSslPolicyRequest extends \Google\Protobuf\Internal\Message
      *     @type string $ssl_policy
      *           Name of the SSL policy to update. The name must be 1-63 characters long, and comply with RFC1035.
      *     @type \Google\Cloud\Compute\V1\SslPolicy $ssl_policy_resource
+     *           The body resource for this request
      * }
      */
     public function __construct($data = NULL) {
@@ -145,7 +148,9 @@ class PatchSslPolicyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\SslPolicy
      */
     public function getSslPolicyResource()
@@ -164,7 +169,9 @@ class PatchSslPolicyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\SslPolicy $var
      * @return $this
      */

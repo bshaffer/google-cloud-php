@@ -22,7 +22,9 @@ class UpdateFirewallRequest extends \Google\Protobuf\Internal\Message
      */
     private $firewall = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $firewall_resource = null;
     /**
@@ -49,6 +51,7 @@ class UpdateFirewallRequest extends \Google\Protobuf\Internal\Message
      *     @type string $firewall
      *           Name of the firewall rule to update.
      *     @type \Google\Cloud\Compute\V1\Firewall $firewall_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -89,7 +92,9 @@ class UpdateFirewallRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\Firewall
      */
     public function getFirewallResource()
@@ -108,7 +113,9 @@ class UpdateFirewallRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\Firewall $var
      * @return $this
      */

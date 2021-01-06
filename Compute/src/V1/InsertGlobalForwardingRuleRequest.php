@@ -16,7 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class InsertGlobalForwardingRuleRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $forwarding_rule_resource = null;
     /**
@@ -41,6 +43,7 @@ class InsertGlobalForwardingRuleRequest extends \Google\Protobuf\Internal\Messag
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Compute\V1\ForwardingRule $forwarding_rule_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -55,7 +58,9 @@ class InsertGlobalForwardingRuleRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\ForwardingRule
      */
     public function getForwardingRuleResource()
@@ -74,7 +79,9 @@ class InsertGlobalForwardingRuleRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\ForwardingRule $var
      * @return $this
      */

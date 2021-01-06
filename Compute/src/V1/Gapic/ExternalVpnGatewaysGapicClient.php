@@ -292,18 +292,19 @@ class ExternalVpnGatewaysGapicClient
      * ```
      * $externalVpnGatewaysClient = new ExternalVpnGatewaysClient();
      * try {
+     *     $externalVpnGatewayResource = new ExternalVpnGateway();
      *     $project = '';
-     *     $response = $externalVpnGatewaysClient->insert($project);
+     *     $response = $externalVpnGatewaysClient->insert($externalVpnGatewayResource, $project);
      * } finally {
      *     $externalVpnGatewaysClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param ExternalVpnGateway $externalVpnGatewayResource The body resource for this request
+     * @param string             $project                    Project ID for this request.
+     * @param array              $optionalArgs               {
+     *                                                       Optional.
      *
-     *     @type ExternalVpnGateway $externalVpnGatewayResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -322,13 +323,11 @@ class ExternalVpnGatewaysGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, array $optionalArgs = [])
+    public function insert($externalVpnGatewayResource, $project, array $optionalArgs = [])
     {
         $request = new InsertExternalVpnGatewayRequest();
+        $request->setExternalVpnGatewayResource($externalVpnGatewayResource);
         $request->setProject($project);
-        if (isset($optionalArgs['externalVpnGatewayResource'])) {
-            $request->setExternalVpnGatewayResource($optionalArgs['externalVpnGatewayResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -446,20 +445,21 @@ class ExternalVpnGatewaysGapicClient
      * ```
      * $externalVpnGatewaysClient = new ExternalVpnGatewaysClient();
      * try {
+     *     $globalSetLabelsRequestResource = new GlobalSetLabelsRequest();
      *     $project = '';
      *     $resource = '';
-     *     $response = $externalVpnGatewaysClient->setLabels($project, $resource);
+     *     $response = $externalVpnGatewaysClient->setLabels($globalSetLabelsRequestResource, $project, $resource);
      * } finally {
      *     $externalVpnGatewaysClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $resource     Name or id of the resource for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param GlobalSetLabelsRequest $globalSetLabelsRequestResource The body resource for this request
+     * @param string                 $project                        Project ID for this request.
+     * @param string                 $resource                       Name or id of the resource for this request.
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type GlobalSetLabelsRequest $globalSetLabelsRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -472,14 +472,12 @@ class ExternalVpnGatewaysGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setLabels($project, $resource, array $optionalArgs = [])
+    public function setLabels($globalSetLabelsRequestResource, $project, $resource, array $optionalArgs = [])
     {
         $request = new SetLabelsExternalVpnGatewayRequest();
+        $request->setGlobalSetLabelsRequestResource($globalSetLabelsRequestResource);
         $request->setProject($project);
         $request->setResource($resource);
-        if (isset($optionalArgs['globalSetLabelsRequestResource'])) {
-            $request->setGlobalSetLabelsRequestResource($optionalArgs['globalSetLabelsRequestResource']);
-        }
 
         return $this->startCall(
             'SetLabels',
@@ -498,18 +496,19 @@ class ExternalVpnGatewaysGapicClient
      * try {
      *     $project = '';
      *     $resource = '';
-     *     $response = $externalVpnGatewaysClient->testIamPermissions($project, $resource);
+     *     $testPermissionsRequestResource = new TestPermissionsRequest();
+     *     $response = $externalVpnGatewaysClient->testIamPermissions($project, $resource, $testPermissionsRequestResource);
      * } finally {
      *     $externalVpnGatewaysClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $resource     Name or id of the resource for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                 $project                        Project ID for this request.
+     * @param string                 $resource                       Name or id of the resource for this request.
+     * @param TestPermissionsRequest $testPermissionsRequestResource The body resource for this request
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type TestPermissionsRequest $testPermissionsRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -522,14 +521,12 @@ class ExternalVpnGatewaysGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function testIamPermissions($project, $resource, array $optionalArgs = [])
+    public function testIamPermissions($project, $resource, $testPermissionsRequestResource, array $optionalArgs = [])
     {
         $request = new TestIamPermissionsExternalVpnGatewayRequest();
         $request->setProject($project);
         $request->setResource($resource);
-        if (isset($optionalArgs['testPermissionsRequestResource'])) {
-            $request->setTestPermissionsRequestResource($optionalArgs['testPermissionsRequestResource']);
-        }
+        $request->setTestPermissionsRequestResource($testPermissionsRequestResource);
 
         return $this->startCall(
             'TestIamPermissions',

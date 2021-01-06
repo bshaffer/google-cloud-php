@@ -429,9 +429,10 @@ class HealthChecksClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $healthCheckResource = new HealthCheck();
         $project = 'project-309310695';
 
-        $response = $client->insert($project);
+        $response = $client->insert($healthCheckResource, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -439,6 +440,9 @@ class HealthChecksClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.HealthChecks/Insert', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getHealthCheckResource();
+
+        $this->assertProtobufEquals($healthCheckResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -469,10 +473,11 @@ class HealthChecksClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $healthCheckResource = new HealthCheck();
         $project = 'project-309310695';
 
         try {
-            $client->insert($project);
+            $client->insert($healthCheckResource, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -626,9 +631,10 @@ class HealthChecksClientTest extends GeneratedTest
 
         // Mock request
         $healthCheck = 'healthCheck845747557';
+        $healthCheckResource = new HealthCheck();
         $project = 'project-309310695';
 
-        $response = $client->patch($healthCheck, $project);
+        $response = $client->patch($healthCheck, $healthCheckResource, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -639,6 +645,9 @@ class HealthChecksClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getHealthCheck();
 
         $this->assertProtobufEquals($healthCheck, $actualValue);
+        $actualValue = $actualRequestObject->getHealthCheckResource();
+
+        $this->assertProtobufEquals($healthCheckResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -670,10 +679,11 @@ class HealthChecksClientTest extends GeneratedTest
 
         // Mock request
         $healthCheck = 'healthCheck845747557';
+        $healthCheckResource = new HealthCheck();
         $project = 'project-309310695';
 
         try {
-            $client->patch($healthCheck, $project);
+            $client->patch($healthCheck, $healthCheckResource, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -742,9 +752,10 @@ class HealthChecksClientTest extends GeneratedTest
 
         // Mock request
         $healthCheck = 'healthCheck845747557';
+        $healthCheckResource = new HealthCheck();
         $project = 'project-309310695';
 
-        $response = $client->update($healthCheck, $project);
+        $response = $client->update($healthCheck, $healthCheckResource, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -755,6 +766,9 @@ class HealthChecksClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getHealthCheck();
 
         $this->assertProtobufEquals($healthCheck, $actualValue);
+        $actualValue = $actualRequestObject->getHealthCheckResource();
+
+        $this->assertProtobufEquals($healthCheckResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -786,10 +800,11 @@ class HealthChecksClientTest extends GeneratedTest
 
         // Mock request
         $healthCheck = 'healthCheck845747557';
+        $healthCheckResource = new HealthCheck();
         $project = 'project-309310695';
 
         try {
-            $client->update($healthCheck, $project);
+            $client->update($healthCheck, $healthCheckResource, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

@@ -32,7 +32,9 @@ class GetHealthRegionBackendServiceRequest extends \Google\Protobuf\Internal\Mes
      */
     private $region = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $resource_group_reference_resource = null;
 
@@ -48,6 +50,7 @@ class GetHealthRegionBackendServiceRequest extends \Google\Protobuf\Internal\Mes
      *     @type string $region
      *           Name of the region scoping this request.
      *     @type \Google\Cloud\Compute\V1\ResourceGroupReference $resource_group_reference_resource
+     *           The body resource for this request
      * }
      */
     public function __construct($data = NULL) {
@@ -130,7 +133,9 @@ class GetHealthRegionBackendServiceRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\ResourceGroupReference
      */
     public function getResourceGroupReferenceResource()
@@ -149,7 +154,9 @@ class GetHealthRegionBackendServiceRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\ResourceGroupReference $var
      * @return $this
      */

@@ -68,6 +68,12 @@ class NetworkInterface extends \Google\Protobuf\Internal\Message
      */
     private $network_i_p = '';
     /**
+     * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkInterface.NicType nic_type = 59810577;</code>
+     */
+    private $nic_type = 0;
+    /**
      * The URL of the Subnetwork resource for this instance. If the network resource is in legacy mode, do not specify this field. If the network is in auto subnet mode, specifying the subnetwork is optional. If the network is in custom subnet mode, specifying the subnetwork is required. If you specify this field, you can specify the subnetwork as a full or partial URL. For example, the following are all valid URLs:
      * - https://www.googleapis.com/compute/v1/projects/project/regions/region/subnetworks/subnetwork
      * - regions/region/subnetworks/subnetwork
@@ -102,6 +108,8 @@ class NetworkInterface extends \Google\Protobuf\Internal\Message
      *           - global/networks/default
      *     @type string $network_i_p
      *           An IPv4 internal IP address to assign to the instance for this network interface. If not specified by the user, an unused internal IP is assigned by the system.
+     *     @type int $nic_type
+     *           The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
      *     @type string $subnetwork
      *           The URL of the Subnetwork resource for this instance. If the network resource is in legacy mode, do not specify this field. If the network is in auto subnet mode, specifying the subnetwork is optional. If the network is in custom subnet mode, specifying the subnetwork is required. If you specify this field, you can specify the subnetwork as a full or partial URL. For example, the following are all valid URLs:
      *           - https://www.googleapis.com/compute/v1/projects/project/regions/region/subnetworks/subnetwork
@@ -325,6 +333,32 @@ class NetworkInterface extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->network_i_p = $var;
+
+        return $this;
+    }
+
+    /**
+     * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkInterface.NicType nic_type = 59810577;</code>
+     * @return int
+     */
+    public function getNicType()
+    {
+        return $this->nic_type;
+    }
+
+    /**
+     * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkInterface.NicType nic_type = 59810577;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setNicType($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\NetworkInterface\NicType::class);
+        $this->nic_type = $var;
 
         return $this;
     }

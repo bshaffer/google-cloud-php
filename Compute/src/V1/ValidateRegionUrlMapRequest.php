@@ -28,7 +28,9 @@ class ValidateRegionUrlMapRequest extends \Google\Protobuf\Internal\Message
      */
     private $region = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $region_url_maps_validate_request_resource = null;
     /**
@@ -49,6 +51,7 @@ class ValidateRegionUrlMapRequest extends \Google\Protobuf\Internal\Message
      *     @type string $region
      *           Name of the region scoping this request.
      *     @type \Google\Cloud\Compute\V1\RegionUrlMapsValidateRequest $region_url_maps_validate_request_resource
+     *           The body resource for this request
      *     @type string $url_map
      *           Name of the UrlMap resource to be validated as.
      * }
@@ -111,7 +114,9 @@ class ValidateRegionUrlMapRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\RegionUrlMapsValidateRequest
      */
     public function getRegionUrlMapsValidateRequestResource()
@@ -130,7 +135,9 @@ class ValidateRegionUrlMapRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\RegionUrlMapsValidateRequest $var
      * @return $this
      */

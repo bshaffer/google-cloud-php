@@ -289,18 +289,19 @@ class FirewallsGapicClient
      * ```
      * $firewallsClient = new FirewallsClient();
      * try {
+     *     $firewallResource = new Firewall();
      *     $project = '';
-     *     $response = $firewallsClient->insert($project);
+     *     $response = $firewallsClient->insert($firewallResource, $project);
      * } finally {
      *     $firewallsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param Firewall $firewallResource The body resource for this request
+     * @param string   $project          Project ID for this request.
+     * @param array    $optionalArgs     {
+     *                                   Optional.
      *
-     *     @type Firewall $firewallResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -319,13 +320,11 @@ class FirewallsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, array $optionalArgs = [])
+    public function insert($firewallResource, $project, array $optionalArgs = [])
     {
         $request = new InsertFirewallRequest();
+        $request->setFirewallResource($firewallResource);
         $request->setProject($project);
-        if (isset($optionalArgs['firewallResource'])) {
-            $request->setFirewallResource($optionalArgs['firewallResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -444,19 +443,20 @@ class FirewallsGapicClient
      * $firewallsClient = new FirewallsClient();
      * try {
      *     $firewall = '';
+     *     $firewallResource = new Firewall();
      *     $project = '';
-     *     $response = $firewallsClient->patch($firewall, $project);
+     *     $response = $firewallsClient->patch($firewall, $firewallResource, $project);
      * } finally {
      *     $firewallsClient->close();
      * }
      * ```
      *
-     * @param string $firewall     Name of the firewall rule to patch.
-     * @param string $project      Project ID for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string   $firewall         Name of the firewall rule to patch.
+     * @param Firewall $firewallResource The body resource for this request
+     * @param string   $project          Project ID for this request.
+     * @param array    $optionalArgs     {
+     *                                   Optional.
      *
-     *     @type Firewall $firewallResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -475,14 +475,12 @@ class FirewallsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function patch($firewall, $project, array $optionalArgs = [])
+    public function patch($firewall, $firewallResource, $project, array $optionalArgs = [])
     {
         $request = new PatchFirewallRequest();
         $request->setFirewall($firewall);
+        $request->setFirewallResource($firewallResource);
         $request->setProject($project);
-        if (isset($optionalArgs['firewallResource'])) {
-            $request->setFirewallResource($optionalArgs['firewallResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -503,19 +501,20 @@ class FirewallsGapicClient
      * $firewallsClient = new FirewallsClient();
      * try {
      *     $firewall = '';
+     *     $firewallResource = new Firewall();
      *     $project = '';
-     *     $response = $firewallsClient->update($firewall, $project);
+     *     $response = $firewallsClient->update($firewall, $firewallResource, $project);
      * } finally {
      *     $firewallsClient->close();
      * }
      * ```
      *
-     * @param string $firewall     Name of the firewall rule to update.
-     * @param string $project      Project ID for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string   $firewall         Name of the firewall rule to update.
+     * @param Firewall $firewallResource The body resource for this request
+     * @param string   $project          Project ID for this request.
+     * @param array    $optionalArgs     {
+     *                                   Optional.
      *
-     *     @type Firewall $firewallResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -534,14 +533,12 @@ class FirewallsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function update($firewall, $project, array $optionalArgs = [])
+    public function update($firewall, $firewallResource, $project, array $optionalArgs = [])
     {
         $request = new UpdateFirewallRequest();
         $request->setFirewall($firewall);
+        $request->setFirewallResource($firewallResource);
         $request->setProject($project);
-        if (isset($optionalArgs['firewallResource'])) {
-            $request->setFirewallResource($optionalArgs['firewallResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }

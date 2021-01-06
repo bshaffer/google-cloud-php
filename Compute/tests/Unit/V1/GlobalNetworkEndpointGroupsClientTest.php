@@ -27,6 +27,8 @@ use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
+use Google\Cloud\Compute\V1\GlobalNetworkEndpointGroupsAttachEndpointsRequest;
+use Google\Cloud\Compute\V1\GlobalNetworkEndpointGroupsDetachEndpointsRequest;
 use Google\Cloud\Compute\V1\NetworkEndpointGroup;
 use Google\Cloud\Compute\V1\NetworkEndpointGroupList;
 use Google\Cloud\Compute\V1\NetworkEndpointGroupsListNetworkEndpoints;
@@ -127,10 +129,11 @@ class GlobalNetworkEndpointGroupsClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $globalNetworkEndpointGroupsAttachEndpointsRequestResource = new GlobalNetworkEndpointGroupsAttachEndpointsRequest();
         $networkEndpointGroup = 'networkEndpointGroup-639834746';
         $project = 'project-309310695';
 
-        $response = $client->attachNetworkEndpoints($networkEndpointGroup, $project);
+        $response = $client->attachNetworkEndpoints($globalNetworkEndpointGroupsAttachEndpointsRequestResource, $networkEndpointGroup, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -138,6 +141,9 @@ class GlobalNetworkEndpointGroupsClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.GlobalNetworkEndpointGroups/AttachNetworkEndpoints', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getGlobalNetworkEndpointGroupsAttachEndpointsRequestResource();
+
+        $this->assertProtobufEquals($globalNetworkEndpointGroupsAttachEndpointsRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getNetworkEndpointGroup();
 
         $this->assertProtobufEquals($networkEndpointGroup, $actualValue);
@@ -171,11 +177,12 @@ class GlobalNetworkEndpointGroupsClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $globalNetworkEndpointGroupsAttachEndpointsRequestResource = new GlobalNetworkEndpointGroupsAttachEndpointsRequest();
         $networkEndpointGroup = 'networkEndpointGroup-639834746';
         $project = 'project-309310695';
 
         try {
-            $client->attachNetworkEndpoints($networkEndpointGroup, $project);
+            $client->attachNetworkEndpoints($globalNetworkEndpointGroupsAttachEndpointsRequestResource, $networkEndpointGroup, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -359,10 +366,11 @@ class GlobalNetworkEndpointGroupsClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $globalNetworkEndpointGroupsDetachEndpointsRequestResource = new GlobalNetworkEndpointGroupsDetachEndpointsRequest();
         $networkEndpointGroup = 'networkEndpointGroup-639834746';
         $project = 'project-309310695';
 
-        $response = $client->detachNetworkEndpoints($networkEndpointGroup, $project);
+        $response = $client->detachNetworkEndpoints($globalNetworkEndpointGroupsDetachEndpointsRequestResource, $networkEndpointGroup, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -370,6 +378,9 @@ class GlobalNetworkEndpointGroupsClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.GlobalNetworkEndpointGroups/DetachNetworkEndpoints', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getGlobalNetworkEndpointGroupsDetachEndpointsRequestResource();
+
+        $this->assertProtobufEquals($globalNetworkEndpointGroupsDetachEndpointsRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getNetworkEndpointGroup();
 
         $this->assertProtobufEquals($networkEndpointGroup, $actualValue);
@@ -403,11 +414,12 @@ class GlobalNetworkEndpointGroupsClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $globalNetworkEndpointGroupsDetachEndpointsRequestResource = new GlobalNetworkEndpointGroupsDetachEndpointsRequest();
         $networkEndpointGroup = 'networkEndpointGroup-639834746';
         $project = 'project-309310695';
 
         try {
-            $client->detachNetworkEndpoints($networkEndpointGroup, $project);
+            $client->detachNetworkEndpoints($globalNetworkEndpointGroupsDetachEndpointsRequestResource, $networkEndpointGroup, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -575,9 +587,10 @@ class GlobalNetworkEndpointGroupsClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $networkEndpointGroupResource = new NetworkEndpointGroup();
         $project = 'project-309310695';
 
-        $response = $client->insert($project);
+        $response = $client->insert($networkEndpointGroupResource, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -585,6 +598,9 @@ class GlobalNetworkEndpointGroupsClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.GlobalNetworkEndpointGroups/Insert', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getNetworkEndpointGroupResource();
+
+        $this->assertProtobufEquals($networkEndpointGroupResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -615,10 +631,11 @@ class GlobalNetworkEndpointGroupsClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $networkEndpointGroupResource = new NetworkEndpointGroup();
         $project = 'project-309310695';
 
         try {
-            $client->insert($project);
+            $client->insert($networkEndpointGroupResource, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

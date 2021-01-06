@@ -68,7 +68,8 @@ use Google\Cloud\Compute\V1\TargetReference;
  *     $project = '';
  *     $region = '';
  *     $targetPool = '';
- *     $response = $targetPoolsClient->addHealthCheck($project, $region, $targetPool);
+ *     $targetPoolsAddHealthCheckRequestResource = new TargetPoolsAddHealthCheckRequest();
+ *     $response = $targetPoolsClient->addHealthCheck($project, $region, $targetPool, $targetPoolsAddHealthCheckRequestResource);
  * } finally {
  *     $targetPoolsClient->close();
  * }
@@ -205,17 +206,19 @@ class TargetPoolsGapicClient
      *     $project = '';
      *     $region = '';
      *     $targetPool = '';
-     *     $response = $targetPoolsClient->addHealthCheck($project, $region, $targetPool);
+     *     $targetPoolsAddHealthCheckRequestResource = new TargetPoolsAddHealthCheckRequest();
+     *     $response = $targetPoolsClient->addHealthCheck($project, $region, $targetPool, $targetPoolsAddHealthCheckRequestResource);
      * } finally {
      *     $targetPoolsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region scoping this request.
-     * @param string $targetPool   Name of the target pool to add a health check to.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                           $project                                  Project ID for this request.
+     * @param string                           $region                                   Name of the region scoping this request.
+     * @param string                           $targetPool                               Name of the target pool to add a health check to.
+     * @param TargetPoolsAddHealthCheckRequest $targetPoolsAddHealthCheckRequestResource The body resource for this request
+     * @param array                            $optionalArgs                             {
+     *                                                                                   Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -223,7 +226,6 @@ class TargetPoolsGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type TargetPoolsAddHealthCheckRequest $targetPoolsAddHealthCheckRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -236,17 +238,15 @@ class TargetPoolsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function addHealthCheck($project, $region, $targetPool, array $optionalArgs = [])
+    public function addHealthCheck($project, $region, $targetPool, $targetPoolsAddHealthCheckRequestResource, array $optionalArgs = [])
     {
         $request = new AddHealthCheckTargetPoolRequest();
         $request->setProject($project);
         $request->setRegion($region);
         $request->setTargetPool($targetPool);
+        $request->setTargetPoolsAddHealthCheckRequestResource($targetPoolsAddHealthCheckRequestResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['targetPoolsAddHealthCheckRequestResource'])) {
-            $request->setTargetPoolsAddHealthCheckRequestResource($optionalArgs['targetPoolsAddHealthCheckRequestResource']);
         }
 
         return $this->startCall(
@@ -267,17 +267,19 @@ class TargetPoolsGapicClient
      *     $project = '';
      *     $region = '';
      *     $targetPool = '';
-     *     $response = $targetPoolsClient->addInstance($project, $region, $targetPool);
+     *     $targetPoolsAddInstanceRequestResource = new TargetPoolsAddInstanceRequest();
+     *     $response = $targetPoolsClient->addInstance($project, $region, $targetPool, $targetPoolsAddInstanceRequestResource);
      * } finally {
      *     $targetPoolsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region scoping this request.
-     * @param string $targetPool   Name of the TargetPool resource to add instances to.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                        $project                               Project ID for this request.
+     * @param string                        $region                                Name of the region scoping this request.
+     * @param string                        $targetPool                            Name of the TargetPool resource to add instances to.
+     * @param TargetPoolsAddInstanceRequest $targetPoolsAddInstanceRequestResource The body resource for this request
+     * @param array                         $optionalArgs                          {
+     *                                                                             Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -285,7 +287,6 @@ class TargetPoolsGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type TargetPoolsAddInstanceRequest $targetPoolsAddInstanceRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -298,17 +299,15 @@ class TargetPoolsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function addInstance($project, $region, $targetPool, array $optionalArgs = [])
+    public function addInstance($project, $region, $targetPool, $targetPoolsAddInstanceRequestResource, array $optionalArgs = [])
     {
         $request = new AddInstanceTargetPoolRequest();
         $request->setProject($project);
         $request->setRegion($region);
         $request->setTargetPool($targetPool);
+        $request->setTargetPoolsAddInstanceRequestResource($targetPoolsAddInstanceRequestResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['targetPoolsAddInstanceRequestResource'])) {
-            $request->setTargetPoolsAddInstanceRequestResource($optionalArgs['targetPoolsAddInstanceRequestResource']);
         }
 
         return $this->startCall(
@@ -536,22 +535,23 @@ class TargetPoolsGapicClient
      * ```
      * $targetPoolsClient = new TargetPoolsClient();
      * try {
+     *     $instanceReferenceResource = new InstanceReference();
      *     $project = '';
      *     $region = '';
      *     $targetPool = '';
-     *     $response = $targetPoolsClient->getHealth($project, $region, $targetPool);
+     *     $response = $targetPoolsClient->getHealth($instanceReferenceResource, $project, $region, $targetPool);
      * } finally {
      *     $targetPoolsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region scoping this request.
-     * @param string $targetPool   Name of the TargetPool resource to which the queried instance belongs.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param InstanceReference $instanceReferenceResource The body resource for this request
+     * @param string            $project                   Project ID for this request.
+     * @param string            $region                    Name of the region scoping this request.
+     * @param string            $targetPool                Name of the TargetPool resource to which the queried instance belongs.
+     * @param array             $optionalArgs              {
+     *                                                     Optional.
      *
-     *     @type InstanceReference $instanceReferenceResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -564,15 +564,13 @@ class TargetPoolsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function getHealth($project, $region, $targetPool, array $optionalArgs = [])
+    public function getHealth($instanceReferenceResource, $project, $region, $targetPool, array $optionalArgs = [])
     {
         $request = new GetHealthTargetPoolRequest();
+        $request->setInstanceReferenceResource($instanceReferenceResource);
         $request->setProject($project);
         $request->setRegion($region);
         $request->setTargetPool($targetPool);
-        if (isset($optionalArgs['instanceReferenceResource'])) {
-            $request->setInstanceReferenceResource($optionalArgs['instanceReferenceResource']);
-        }
 
         return $this->startCall(
             'GetHealth',
@@ -591,16 +589,18 @@ class TargetPoolsGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $targetPoolsClient->insert($project, $region);
+     *     $targetPoolResource = new TargetPool();
+     *     $response = $targetPoolsClient->insert($project, $region, $targetPoolResource);
      * } finally {
      *     $targetPoolsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region scoping this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string     $project            Project ID for this request.
+     * @param string     $region             Name of the region scoping this request.
+     * @param TargetPool $targetPoolResource The body resource for this request
+     * @param array      $optionalArgs       {
+     *                                       Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -608,7 +608,6 @@ class TargetPoolsGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type TargetPool $targetPoolResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -621,16 +620,14 @@ class TargetPoolsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, $region, array $optionalArgs = [])
+    public function insert($project, $region, $targetPoolResource, array $optionalArgs = [])
     {
         $request = new InsertTargetPoolRequest();
         $request->setProject($project);
         $request->setRegion($region);
+        $request->setTargetPoolResource($targetPoolResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['targetPoolResource'])) {
-            $request->setTargetPoolResource($optionalArgs['targetPoolResource']);
         }
 
         return $this->startCall(
@@ -752,17 +749,19 @@ class TargetPoolsGapicClient
      *     $project = '';
      *     $region = '';
      *     $targetPool = '';
-     *     $response = $targetPoolsClient->removeHealthCheck($project, $region, $targetPool);
+     *     $targetPoolsRemoveHealthCheckRequestResource = new TargetPoolsRemoveHealthCheckRequest();
+     *     $response = $targetPoolsClient->removeHealthCheck($project, $region, $targetPool, $targetPoolsRemoveHealthCheckRequestResource);
      * } finally {
      *     $targetPoolsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region for this request.
-     * @param string $targetPool   Name of the target pool to remove health checks from.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                              $project                                     Project ID for this request.
+     * @param string                              $region                                      Name of the region for this request.
+     * @param string                              $targetPool                                  Name of the target pool to remove health checks from.
+     * @param TargetPoolsRemoveHealthCheckRequest $targetPoolsRemoveHealthCheckRequestResource The body resource for this request
+     * @param array                               $optionalArgs                                {
+     *                                                                                         Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -770,7 +769,6 @@ class TargetPoolsGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type TargetPoolsRemoveHealthCheckRequest $targetPoolsRemoveHealthCheckRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -783,17 +781,15 @@ class TargetPoolsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function removeHealthCheck($project, $region, $targetPool, array $optionalArgs = [])
+    public function removeHealthCheck($project, $region, $targetPool, $targetPoolsRemoveHealthCheckRequestResource, array $optionalArgs = [])
     {
         $request = new RemoveHealthCheckTargetPoolRequest();
         $request->setProject($project);
         $request->setRegion($region);
         $request->setTargetPool($targetPool);
+        $request->setTargetPoolsRemoveHealthCheckRequestResource($targetPoolsRemoveHealthCheckRequestResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['targetPoolsRemoveHealthCheckRequestResource'])) {
-            $request->setTargetPoolsRemoveHealthCheckRequestResource($optionalArgs['targetPoolsRemoveHealthCheckRequestResource']);
         }
 
         return $this->startCall(
@@ -814,17 +810,19 @@ class TargetPoolsGapicClient
      *     $project = '';
      *     $region = '';
      *     $targetPool = '';
-     *     $response = $targetPoolsClient->removeInstance($project, $region, $targetPool);
+     *     $targetPoolsRemoveInstanceRequestResource = new TargetPoolsRemoveInstanceRequest();
+     *     $response = $targetPoolsClient->removeInstance($project, $region, $targetPool, $targetPoolsRemoveInstanceRequestResource);
      * } finally {
      *     $targetPoolsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region scoping this request.
-     * @param string $targetPool   Name of the TargetPool resource to remove instances from.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                           $project                                  Project ID for this request.
+     * @param string                           $region                                   Name of the region scoping this request.
+     * @param string                           $targetPool                               Name of the TargetPool resource to remove instances from.
+     * @param TargetPoolsRemoveInstanceRequest $targetPoolsRemoveInstanceRequestResource The body resource for this request
+     * @param array                            $optionalArgs                             {
+     *                                                                                   Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -832,7 +830,6 @@ class TargetPoolsGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type TargetPoolsRemoveInstanceRequest $targetPoolsRemoveInstanceRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -845,17 +842,15 @@ class TargetPoolsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function removeInstance($project, $region, $targetPool, array $optionalArgs = [])
+    public function removeInstance($project, $region, $targetPool, $targetPoolsRemoveInstanceRequestResource, array $optionalArgs = [])
     {
         $request = new RemoveInstanceTargetPoolRequest();
         $request->setProject($project);
         $request->setRegion($region);
         $request->setTargetPool($targetPool);
+        $request->setTargetPoolsRemoveInstanceRequestResource($targetPoolsRemoveInstanceRequestResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['targetPoolsRemoveInstanceRequestResource'])) {
-            $request->setTargetPoolsRemoveInstanceRequestResource($optionalArgs['targetPoolsRemoveInstanceRequestResource']);
         }
 
         return $this->startCall(
@@ -876,17 +871,19 @@ class TargetPoolsGapicClient
      *     $project = '';
      *     $region = '';
      *     $targetPool = '';
-     *     $response = $targetPoolsClient->setBackup($project, $region, $targetPool);
+     *     $targetReferenceResource = new TargetReference();
+     *     $response = $targetPoolsClient->setBackup($project, $region, $targetPool, $targetReferenceResource);
      * } finally {
      *     $targetPoolsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region scoping this request.
-     * @param string $targetPool   Name of the TargetPool resource to set a backup pool for.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string          $project                 Project ID for this request.
+     * @param string          $region                  Name of the region scoping this request.
+     * @param string          $targetPool              Name of the TargetPool resource to set a backup pool for.
+     * @param TargetReference $targetReferenceResource The body resource for this request
+     * @param array           $optionalArgs            {
+     *                                                 Optional.
      *
      *     @type float $failoverRatio
      *          New failoverRatio value for the target pool.
@@ -896,7 +893,6 @@ class TargetPoolsGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type TargetReference $targetReferenceResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -909,20 +905,18 @@ class TargetPoolsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setBackup($project, $region, $targetPool, array $optionalArgs = [])
+    public function setBackup($project, $region, $targetPool, $targetReferenceResource, array $optionalArgs = [])
     {
         $request = new SetBackupTargetPoolRequest();
         $request->setProject($project);
         $request->setRegion($region);
         $request->setTargetPool($targetPool);
+        $request->setTargetReferenceResource($targetReferenceResource);
         if (isset($optionalArgs['failoverRatio'])) {
             $request->setFailoverRatio($optionalArgs['failoverRatio']);
         }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['targetReferenceResource'])) {
-            $request->setTargetReferenceResource($optionalArgs['targetReferenceResource']);
         }
 
         return $this->startCall(

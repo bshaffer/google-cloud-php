@@ -32,8 +32,11 @@ use Google\Cloud\Compute\V1\Policy;
 use Google\Cloud\Compute\V1\Reservation;
 use Google\Cloud\Compute\V1\ReservationAggregatedList;
 use Google\Cloud\Compute\V1\ReservationList;
+use Google\Cloud\Compute\V1\ReservationsResizeRequest;
 use Google\Cloud\Compute\V1\ReservationsScopedList;
+use Google\Cloud\Compute\V1\TestPermissionsRequest;
 use Google\Cloud\Compute\V1\TestPermissionsResponse;
+use Google\Cloud\Compute\V1\ZoneSetPolicyRequest;
 use Google\Protobuf\Any;
 use Google\Rpc\Code;
 use stdClass;
@@ -525,9 +528,10 @@ class ReservationsClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $reservationResource = new Reservation();
         $zone = 'zone3744684';
 
-        $response = $client->insert($project, $zone);
+        $response = $client->insert($project, $reservationResource, $zone);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -538,6 +542,9 @@ class ReservationsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
+        $actualValue = $actualRequestObject->getReservationResource();
+
+        $this->assertProtobufEquals($reservationResource, $actualValue);
         $actualValue = $actualRequestObject->getZone();
 
         $this->assertProtobufEquals($zone, $actualValue);
@@ -569,10 +576,11 @@ class ReservationsClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $reservationResource = new Reservation();
         $zone = 'zone3744684';
 
         try {
-            $client->insert($project, $zone);
+            $client->insert($project, $reservationResource, $zone);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -732,9 +740,10 @@ class ReservationsClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $reservation = 'reservation-1563081780';
+        $reservationsResizeRequestResource = new ReservationsResizeRequest();
         $zone = 'zone3744684';
 
-        $response = $client->resize($project, $reservation, $zone);
+        $response = $client->resize($project, $reservation, $reservationsResizeRequestResource, $zone);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -748,6 +757,9 @@ class ReservationsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getReservation();
 
         $this->assertProtobufEquals($reservation, $actualValue);
+        $actualValue = $actualRequestObject->getReservationsResizeRequestResource();
+
+        $this->assertProtobufEquals($reservationsResizeRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getZone();
 
         $this->assertProtobufEquals($zone, $actualValue);
@@ -780,10 +792,11 @@ class ReservationsClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $reservation = 'reservation-1563081780';
+        $reservationsResizeRequestResource = new ReservationsResizeRequest();
         $zone = 'zone3744684';
 
         try {
-            $client->resize($project, $reservation, $zone);
+            $client->resize($project, $reservation, $reservationsResizeRequestResource, $zone);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -820,8 +833,9 @@ class ReservationsClientTest extends GeneratedTest
         $project = 'project-309310695';
         $resource = 'resource-341064690';
         $zone = 'zone3744684';
+        $zoneSetPolicyRequestResource = new ZoneSetPolicyRequest();
 
-        $response = $client->setIamPolicy($project, $resource, $zone);
+        $response = $client->setIamPolicy($project, $resource, $zone, $zoneSetPolicyRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -838,6 +852,9 @@ class ReservationsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getZone();
 
         $this->assertProtobufEquals($zone, $actualValue);
+        $actualValue = $actualRequestObject->getZoneSetPolicyRequestResource();
+
+        $this->assertProtobufEquals($zoneSetPolicyRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -868,9 +885,10 @@ class ReservationsClientTest extends GeneratedTest
         $project = 'project-309310695';
         $resource = 'resource-341064690';
         $zone = 'zone3744684';
+        $zoneSetPolicyRequestResource = new ZoneSetPolicyRequest();
 
         try {
-            $client->setIamPolicy($project, $resource, $zone);
+            $client->setIamPolicy($project, $resource, $zone, $zoneSetPolicyRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -900,9 +918,10 @@ class ReservationsClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $resource = 'resource-341064690';
+        $testPermissionsRequestResource = new TestPermissionsRequest();
         $zone = 'zone3744684';
 
-        $response = $client->testIamPermissions($project, $resource, $zone);
+        $response = $client->testIamPermissions($project, $resource, $testPermissionsRequestResource, $zone);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -916,6 +935,9 @@ class ReservationsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getResource();
 
         $this->assertProtobufEquals($resource, $actualValue);
+        $actualValue = $actualRequestObject->getTestPermissionsRequestResource();
+
+        $this->assertProtobufEquals($testPermissionsRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getZone();
 
         $this->assertProtobufEquals($zone, $actualValue);
@@ -948,10 +970,11 @@ class ReservationsClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $resource = 'resource-341064690';
+        $testPermissionsRequestResource = new TestPermissionsRequest();
         $zone = 'zone3744684';
 
         try {
-            $client->testIamPermissions($project, $resource, $zone);
+            $client->testIamPermissions($project, $resource, $testPermissionsRequestResource, $zone);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

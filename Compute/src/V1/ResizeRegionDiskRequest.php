@@ -34,7 +34,9 @@ class ResizeRegionDiskRequest extends \Google\Protobuf\Internal\Message
      */
     private $region = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 178197781;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 178197781 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $region_disks_resize_request_resource = null;
     /**
@@ -59,6 +61,7 @@ class ResizeRegionDiskRequest extends \Google\Protobuf\Internal\Message
      *     @type string $region
      *           Name of the region for this request.
      *     @type \Google\Cloud\Compute\V1\RegionDisksResizeRequest $region_disks_resize_request_resource
+     *           The body resource for this request
      *     @type string $request_id
      *           An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *           For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
@@ -149,7 +152,9 @@ class ResizeRegionDiskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 178197781;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 178197781 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\RegionDisksResizeRequest
      */
     public function getRegionDisksResizeRequestResource()
@@ -168,7 +173,9 @@ class ResizeRegionDiskRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 178197781;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 178197781 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\RegionDisksResizeRequest $var
      * @return $this
      */

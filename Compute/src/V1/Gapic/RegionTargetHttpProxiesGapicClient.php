@@ -298,16 +298,18 @@ class RegionTargetHttpProxiesGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $regionTargetHttpProxiesClient->insert($project, $region);
+     *     $targetHttpProxyResource = new TargetHttpProxy();
+     *     $response = $regionTargetHttpProxiesClient->insert($project, $region, $targetHttpProxyResource);
      * } finally {
      *     $regionTargetHttpProxiesClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region scoping this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string          $project                 Project ID for this request.
+     * @param string          $region                  Name of the region scoping this request.
+     * @param TargetHttpProxy $targetHttpProxyResource The body resource for this request
+     * @param array           $optionalArgs            {
+     *                                                 Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -315,7 +317,6 @@ class RegionTargetHttpProxiesGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type TargetHttpProxy $targetHttpProxyResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -328,16 +329,14 @@ class RegionTargetHttpProxiesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, $region, array $optionalArgs = [])
+    public function insert($project, $region, $targetHttpProxyResource, array $optionalArgs = [])
     {
         $request = new InsertRegionTargetHttpProxyRequest();
         $request->setProject($project);
         $request->setRegion($region);
+        $request->setTargetHttpProxyResource($targetHttpProxyResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['targetHttpProxyResource'])) {
-            $request->setTargetHttpProxyResource($optionalArgs['targetHttpProxyResource']);
         }
 
         return $this->startCall(
@@ -459,17 +458,19 @@ class RegionTargetHttpProxiesGapicClient
      *     $project = '';
      *     $region = '';
      *     $targetHttpProxy = '';
-     *     $response = $regionTargetHttpProxiesClient->setUrlMap($project, $region, $targetHttpProxy);
+     *     $urlMapReferenceResource = new UrlMapReference();
+     *     $response = $regionTargetHttpProxiesClient->setUrlMap($project, $region, $targetHttpProxy, $urlMapReferenceResource);
      * } finally {
      *     $regionTargetHttpProxiesClient->close();
      * }
      * ```
      *
-     * @param string $project         Project ID for this request.
-     * @param string $region          Name of the region scoping this request.
-     * @param string $targetHttpProxy Name of the TargetHttpProxy to set a URL map for.
-     * @param array  $optionalArgs    {
-     *                                Optional.
+     * @param string          $project                 Project ID for this request.
+     * @param string          $region                  Name of the region scoping this request.
+     * @param string          $targetHttpProxy         Name of the TargetHttpProxy to set a URL map for.
+     * @param UrlMapReference $urlMapReferenceResource The body resource for this request
+     * @param array           $optionalArgs            {
+     *                                                 Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -477,7 +478,6 @@ class RegionTargetHttpProxiesGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type UrlMapReference $urlMapReferenceResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -490,17 +490,15 @@ class RegionTargetHttpProxiesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setUrlMap($project, $region, $targetHttpProxy, array $optionalArgs = [])
+    public function setUrlMap($project, $region, $targetHttpProxy, $urlMapReferenceResource, array $optionalArgs = [])
     {
         $request = new SetUrlMapRegionTargetHttpProxyRequest();
         $request->setProject($project);
         $request->setRegion($region);
         $request->setTargetHttpProxy($targetHttpProxy);
+        $request->setUrlMapReferenceResource($urlMapReferenceResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['urlMapReferenceResource'])) {
-            $request->setUrlMapReferenceResource($optionalArgs['urlMapReferenceResource']);
         }
 
         return $this->startCall(

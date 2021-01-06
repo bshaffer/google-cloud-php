@@ -24,6 +24,10 @@ class Type
      */
     const FEATURE_TYPE_UNSPECIFIED = 263331803;
     /**
+     * Generated from protobuf enum <code>GVNIC = 68209305;</code>
+     */
+    const GVNIC = 68209305;
+    /**
      * Generated from protobuf enum <code>MULTI_IP_SUBNET = 151776719;</code>
      */
     const MULTI_IP_SUBNET = 151776719;
@@ -51,6 +55,7 @@ class Type
     private static $valueToName = [
         self::UNDEFINED_TYPE => 'UNDEFINED_TYPE',
         self::FEATURE_TYPE_UNSPECIFIED => 'FEATURE_TYPE_UNSPECIFIED',
+        self::GVNIC => 'GVNIC',
         self::MULTI_IP_SUBNET => 'MULTI_IP_SUBNET',
         self::SECURE_BOOT => 'SECURE_BOOT',
         self::SEV_CAPABLE => 'SEV_CAPABLE',

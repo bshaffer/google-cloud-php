@@ -32,10 +32,20 @@ use Google\Cloud\Compute\V1\InstanceManagedByIgmError;
 use Google\Cloud\Compute\V1\ManagedInstance;
 use Google\Cloud\Compute\V1\Operation;
 use Google\Cloud\Compute\V1\PerInstanceConfig;
+use Google\Cloud\Compute\V1\RegionInstanceGroupManagerDeleteInstanceConfigReq;
 use Google\Cloud\Compute\V1\RegionInstanceGroupManagerList;
+use Google\Cloud\Compute\V1\RegionInstanceGroupManagerPatchInstanceConfigReq;
+use Google\Cloud\Compute\V1\RegionInstanceGroupManagerUpdateInstanceConfigReq;
+use Google\Cloud\Compute\V1\RegionInstanceGroupManagersAbandonInstancesRequest;
+use Google\Cloud\Compute\V1\RegionInstanceGroupManagersApplyUpdatesRequest;
+use Google\Cloud\Compute\V1\RegionInstanceGroupManagersCreateInstancesRequest;
+use Google\Cloud\Compute\V1\RegionInstanceGroupManagersDeleteInstancesRequest;
 use Google\Cloud\Compute\V1\RegionInstanceGroupManagersListErrorsResponse;
 use Google\Cloud\Compute\V1\RegionInstanceGroupManagersListInstanceConfigsResp;
 use Google\Cloud\Compute\V1\RegionInstanceGroupManagersListInstancesResponse;
+use Google\Cloud\Compute\V1\RegionInstanceGroupManagersRecreateRequest;
+use Google\Cloud\Compute\V1\RegionInstanceGroupManagersSetTargetPoolsRequest;
+use Google\Cloud\Compute\V1\RegionInstanceGroupManagersSetTemplateRequest;
 use Google\Protobuf\Any;
 use Google\Rpc\Code;
 use stdClass;
@@ -134,8 +144,9 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $instanceGroupManager = 'instanceGroupManager-1361249341';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionInstanceGroupManagersAbandonInstancesRequestResource = new RegionInstanceGroupManagersAbandonInstancesRequest();
 
-        $response = $client->abandonInstances($instanceGroupManager, $project, $region);
+        $response = $client->abandonInstances($instanceGroupManager, $project, $region, $regionInstanceGroupManagersAbandonInstancesRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -152,6 +163,9 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getRegionInstanceGroupManagersAbandonInstancesRequestResource();
+
+        $this->assertProtobufEquals($regionInstanceGroupManagersAbandonInstancesRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -182,9 +196,10 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $instanceGroupManager = 'instanceGroupManager-1361249341';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionInstanceGroupManagersAbandonInstancesRequestResource = new RegionInstanceGroupManagersAbandonInstancesRequest();
 
         try {
-            $client->abandonInstances($instanceGroupManager, $project, $region);
+            $client->abandonInstances($instanceGroupManager, $project, $region, $regionInstanceGroupManagersAbandonInstancesRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -255,8 +270,9 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $instanceGroupManager = 'instanceGroupManager-1361249341';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionInstanceGroupManagersApplyUpdatesRequestResource = new RegionInstanceGroupManagersApplyUpdatesRequest();
 
-        $response = $client->applyUpdatesToInstances($instanceGroupManager, $project, $region);
+        $response = $client->applyUpdatesToInstances($instanceGroupManager, $project, $region, $regionInstanceGroupManagersApplyUpdatesRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -273,6 +289,9 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getRegionInstanceGroupManagersApplyUpdatesRequestResource();
+
+        $this->assertProtobufEquals($regionInstanceGroupManagersApplyUpdatesRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -303,9 +322,10 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $instanceGroupManager = 'instanceGroupManager-1361249341';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionInstanceGroupManagersApplyUpdatesRequestResource = new RegionInstanceGroupManagersApplyUpdatesRequest();
 
         try {
-            $client->applyUpdatesToInstances($instanceGroupManager, $project, $region);
+            $client->applyUpdatesToInstances($instanceGroupManager, $project, $region, $regionInstanceGroupManagersApplyUpdatesRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -376,8 +396,9 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $instanceGroupManager = 'instanceGroupManager-1361249341';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionInstanceGroupManagersCreateInstancesRequestResource = new RegionInstanceGroupManagersCreateInstancesRequest();
 
-        $response = $client->createInstances($instanceGroupManager, $project, $region);
+        $response = $client->createInstances($instanceGroupManager, $project, $region, $regionInstanceGroupManagersCreateInstancesRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -394,6 +415,9 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getRegionInstanceGroupManagersCreateInstancesRequestResource();
+
+        $this->assertProtobufEquals($regionInstanceGroupManagersCreateInstancesRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -424,9 +448,10 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $instanceGroupManager = 'instanceGroupManager-1361249341';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionInstanceGroupManagersCreateInstancesRequestResource = new RegionInstanceGroupManagersCreateInstancesRequest();
 
         try {
-            $client->createInstances($instanceGroupManager, $project, $region);
+            $client->createInstances($instanceGroupManager, $project, $region, $regionInstanceGroupManagersCreateInstancesRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -618,8 +643,9 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $instanceGroupManager = 'instanceGroupManager-1361249341';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionInstanceGroupManagersDeleteInstancesRequestResource = new RegionInstanceGroupManagersDeleteInstancesRequest();
 
-        $response = $client->deleteInstances($instanceGroupManager, $project, $region);
+        $response = $client->deleteInstances($instanceGroupManager, $project, $region, $regionInstanceGroupManagersDeleteInstancesRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -636,6 +662,9 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getRegionInstanceGroupManagersDeleteInstancesRequestResource();
+
+        $this->assertProtobufEquals($regionInstanceGroupManagersDeleteInstancesRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -666,9 +695,10 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $instanceGroupManager = 'instanceGroupManager-1361249341';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionInstanceGroupManagersDeleteInstancesRequestResource = new RegionInstanceGroupManagersDeleteInstancesRequest();
 
         try {
-            $client->deleteInstances($instanceGroupManager, $project, $region);
+            $client->deleteInstances($instanceGroupManager, $project, $region, $regionInstanceGroupManagersDeleteInstancesRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -739,8 +769,9 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $instanceGroupManager = 'instanceGroupManager-1361249341';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionInstanceGroupManagerDeleteInstanceConfigReqResource = new RegionInstanceGroupManagerDeleteInstanceConfigReq();
 
-        $response = $client->deletePerInstanceConfigs($instanceGroupManager, $project, $region);
+        $response = $client->deletePerInstanceConfigs($instanceGroupManager, $project, $region, $regionInstanceGroupManagerDeleteInstanceConfigReqResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -757,6 +788,9 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getRegionInstanceGroupManagerDeleteInstanceConfigReqResource();
+
+        $this->assertProtobufEquals($regionInstanceGroupManagerDeleteInstanceConfigReqResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -787,9 +821,10 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $instanceGroupManager = 'instanceGroupManager-1361249341';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionInstanceGroupManagerDeleteInstanceConfigReqResource = new RegionInstanceGroupManagerDeleteInstanceConfigReq();
 
         try {
-            $client->deletePerInstanceConfigs($instanceGroupManager, $project, $region);
+            $client->deletePerInstanceConfigs($instanceGroupManager, $project, $region, $regionInstanceGroupManagerDeleteInstanceConfigReqResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -964,10 +999,11 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $instanceGroupManagerResource = new InstanceGroupManager();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
-        $response = $client->insert($project, $region);
+        $response = $client->insert($instanceGroupManagerResource, $project, $region);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -975,6 +1011,9 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.RegionInstanceGroupManagers/Insert', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getInstanceGroupManagerResource();
+
+        $this->assertProtobufEquals($instanceGroupManagerResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -1008,11 +1047,12 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $instanceGroupManagerResource = new InstanceGroupManager();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
         try {
-            $client->insert($project, $region);
+            $client->insert($instanceGroupManagerResource, $project, $region);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1438,10 +1478,11 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
 
         // Mock request
         $instanceGroupManager = 'instanceGroupManager-1361249341';
+        $instanceGroupManagerResource = new InstanceGroupManager();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
-        $response = $client->patch($instanceGroupManager, $project, $region);
+        $response = $client->patch($instanceGroupManager, $instanceGroupManagerResource, $project, $region);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1452,6 +1493,9 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getInstanceGroupManager();
 
         $this->assertProtobufEquals($instanceGroupManager, $actualValue);
+        $actualValue = $actualRequestObject->getInstanceGroupManagerResource();
+
+        $this->assertProtobufEquals($instanceGroupManagerResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -1486,11 +1530,12 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
 
         // Mock request
         $instanceGroupManager = 'instanceGroupManager-1361249341';
+        $instanceGroupManagerResource = new InstanceGroupManager();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
         try {
-            $client->patch($instanceGroupManager, $project, $region);
+            $client->patch($instanceGroupManager, $instanceGroupManagerResource, $project, $region);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1561,8 +1606,9 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $instanceGroupManager = 'instanceGroupManager-1361249341';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionInstanceGroupManagerPatchInstanceConfigReqResource = new RegionInstanceGroupManagerPatchInstanceConfigReq();
 
-        $response = $client->patchPerInstanceConfigs($instanceGroupManager, $project, $region);
+        $response = $client->patchPerInstanceConfigs($instanceGroupManager, $project, $region, $regionInstanceGroupManagerPatchInstanceConfigReqResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1579,6 +1625,9 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getRegionInstanceGroupManagerPatchInstanceConfigReqResource();
+
+        $this->assertProtobufEquals($regionInstanceGroupManagerPatchInstanceConfigReqResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -1609,9 +1658,10 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $instanceGroupManager = 'instanceGroupManager-1361249341';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionInstanceGroupManagerPatchInstanceConfigReqResource = new RegionInstanceGroupManagerPatchInstanceConfigReq();
 
         try {
-            $client->patchPerInstanceConfigs($instanceGroupManager, $project, $region);
+            $client->patchPerInstanceConfigs($instanceGroupManager, $project, $region, $regionInstanceGroupManagerPatchInstanceConfigReqResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1682,8 +1732,9 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $instanceGroupManager = 'instanceGroupManager-1361249341';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionInstanceGroupManagersRecreateRequestResource = new RegionInstanceGroupManagersRecreateRequest();
 
-        $response = $client->recreateInstances($instanceGroupManager, $project, $region);
+        $response = $client->recreateInstances($instanceGroupManager, $project, $region, $regionInstanceGroupManagersRecreateRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1700,6 +1751,9 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getRegionInstanceGroupManagersRecreateRequestResource();
+
+        $this->assertProtobufEquals($regionInstanceGroupManagersRecreateRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -1730,9 +1784,10 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $instanceGroupManager = 'instanceGroupManager-1361249341';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionInstanceGroupManagersRecreateRequestResource = new RegionInstanceGroupManagersRecreateRequest();
 
         try {
-            $client->recreateInstances($instanceGroupManager, $project, $region);
+            $client->recreateInstances($instanceGroupManager, $project, $region, $regionInstanceGroupManagersRecreateRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1929,8 +1984,9 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $instanceGroupManager = 'instanceGroupManager-1361249341';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionInstanceGroupManagersSetTemplateRequestResource = new RegionInstanceGroupManagersSetTemplateRequest();
 
-        $response = $client->setInstanceTemplate($instanceGroupManager, $project, $region);
+        $response = $client->setInstanceTemplate($instanceGroupManager, $project, $region, $regionInstanceGroupManagersSetTemplateRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1947,6 +2003,9 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getRegionInstanceGroupManagersSetTemplateRequestResource();
+
+        $this->assertProtobufEquals($regionInstanceGroupManagersSetTemplateRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -1977,9 +2036,10 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $instanceGroupManager = 'instanceGroupManager-1361249341';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionInstanceGroupManagersSetTemplateRequestResource = new RegionInstanceGroupManagersSetTemplateRequest();
 
         try {
-            $client->setInstanceTemplate($instanceGroupManager, $project, $region);
+            $client->setInstanceTemplate($instanceGroupManager, $project, $region, $regionInstanceGroupManagersSetTemplateRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -2050,8 +2110,9 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $instanceGroupManager = 'instanceGroupManager-1361249341';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionInstanceGroupManagersSetTargetPoolsRequestResource = new RegionInstanceGroupManagersSetTargetPoolsRequest();
 
-        $response = $client->setTargetPools($instanceGroupManager, $project, $region);
+        $response = $client->setTargetPools($instanceGroupManager, $project, $region, $regionInstanceGroupManagersSetTargetPoolsRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -2068,6 +2129,9 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getRegionInstanceGroupManagersSetTargetPoolsRequestResource();
+
+        $this->assertProtobufEquals($regionInstanceGroupManagersSetTargetPoolsRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -2098,9 +2162,10 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $instanceGroupManager = 'instanceGroupManager-1361249341';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionInstanceGroupManagersSetTargetPoolsRequestResource = new RegionInstanceGroupManagersSetTargetPoolsRequest();
 
         try {
-            $client->setTargetPools($instanceGroupManager, $project, $region);
+            $client->setTargetPools($instanceGroupManager, $project, $region, $regionInstanceGroupManagersSetTargetPoolsRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -2171,8 +2236,9 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $instanceGroupManager = 'instanceGroupManager-1361249341';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionInstanceGroupManagerUpdateInstanceConfigReqResource = new RegionInstanceGroupManagerUpdateInstanceConfigReq();
 
-        $response = $client->updatePerInstanceConfigs($instanceGroupManager, $project, $region);
+        $response = $client->updatePerInstanceConfigs($instanceGroupManager, $project, $region, $regionInstanceGroupManagerUpdateInstanceConfigReqResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -2189,6 +2255,9 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getRegionInstanceGroupManagerUpdateInstanceConfigReqResource();
+
+        $this->assertProtobufEquals($regionInstanceGroupManagerUpdateInstanceConfigReqResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -2219,9 +2288,10 @@ class RegionInstanceGroupManagersClientTest extends GeneratedTest
         $instanceGroupManager = 'instanceGroupManager-1361249341';
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionInstanceGroupManagerUpdateInstanceConfigReqResource = new RegionInstanceGroupManagerUpdateInstanceConfigReq();
 
         try {
-            $client->updatePerInstanceConfigs($instanceGroupManager, $project, $region);
+            $client->updatePerInstanceConfigs($instanceGroupManager, $project, $region, $regionInstanceGroupManagerUpdateInstanceConfigReqResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

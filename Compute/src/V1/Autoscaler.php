@@ -11,7 +11,7 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * Represents an Autoscaler resource.
  * Google Compute Engine has two Autoscaler resources:
- * * [Global](/compute/docs/reference/rest/{$api_version}/autoscalers) * [Regional](https://cloud.google.com/compute/docs/reference/rest/{$api_version}/regionAutoscalers)
+ * * [Zonal](/compute/docs/reference/rest/{$api_version}/autoscalers) * [Regional](https://cloud.google.com/compute/docs/reference/rest/{$api_version}/regionAutoscalers)
  * Use autoscalers to automatically add or delete instances from a managed instance group according to your defined autoscaling policy. For more information, read Autoscaling Groups of Instances.
  * For zonal managed instance groups resource, use the autoscaler resource.
  * For regional managed instance groups, use the regionAutoscalers resource. (== resource_for {$api_version}.autoscalers ==) (== resource_for {$api_version}.regionAutoscalers ==)
@@ -58,7 +58,7 @@ class Autoscaler extends \Google\Protobuf\Internal\Message
      */
     private $name = '';
     /**
-     * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates recommended MIG size even when autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to the existing managed instance group or autoscaler did not generate its prediction.
+     * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction.
      *
      * Generated from protobuf field <code>int32 recommended_size = 257915749;</code>
      */
@@ -92,7 +92,7 @@ class Autoscaler extends \Google\Protobuf\Internal\Message
      */
     private $status_details;
     /**
-     * URL of the managed instance group that this autoscaler will scale.
+     * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
      *
      * Generated from protobuf field <code>string target = 192835985;</code>
      */
@@ -124,7 +124,7 @@ class Autoscaler extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *           Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      *     @type int $recommended_size
-     *           [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates recommended MIG size even when autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to the existing managed instance group or autoscaler did not generate its prediction.
+     *           [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction.
      *     @type string $region
      *           [Output Only] URL of the region where the instance group resides (for autoscalers living in regional scope).
      *     @type string $self_link
@@ -138,7 +138,7 @@ class Autoscaler extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Compute\V1\AutoscalerStatusDetails[]|\Google\Protobuf\Internal\RepeatedField $status_details
      *           [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      *     @type string $target
-     *           URL of the managed instance group that this autoscaler will scale.
+     *           URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
      *     @type string $zone
      *           [Output Only] URL of the zone where the instance group resides (for autoscalers living in zonal scope).
      * }
@@ -317,7 +317,7 @@ class Autoscaler extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates recommended MIG size even when autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to the existing managed instance group or autoscaler did not generate its prediction.
+     * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction.
      *
      * Generated from protobuf field <code>int32 recommended_size = 257915749;</code>
      * @return int
@@ -328,7 +328,7 @@ class Autoscaler extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates recommended MIG size even when autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to the existing managed instance group or autoscaler did not generate its prediction.
+     * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction.
      *
      * Generated from protobuf field <code>int32 recommended_size = 257915749;</code>
      * @param int $var
@@ -455,7 +455,7 @@ class Autoscaler extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * URL of the managed instance group that this autoscaler will scale.
+     * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
      *
      * Generated from protobuf field <code>string target = 192835985;</code>
      * @return string
@@ -466,7 +466,7 @@ class Autoscaler extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * URL of the managed instance group that this autoscaler will scale.
+     * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
      *
      * Generated from protobuf field <code>string target = 192835985;</code>
      * @param string $var

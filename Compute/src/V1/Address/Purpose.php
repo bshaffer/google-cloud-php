@@ -12,7 +12,7 @@ use UnexpectedValueException;
  * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
  * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
  * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
- * - `IPSEC_INTERCONNECT` for addresses created from a private IP range reserved for a VLAN attachment in an IPsec over Interconnect configuration. These addresses are regional resources.
+ * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
  *
  * Protobuf type <code>google.cloud.compute.v1.Address.Purpose</code>
  */

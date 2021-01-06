@@ -16,8 +16,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class Binding extends \Google\Protobuf\Internal\Message
 {
     /**
-     * A client-specified ID for this binding. Expected to be globally unique to support the internal bindings-by-ID API.
-     *
      * Generated from protobuf field <code>string binding_id = 172652821;</code>
      */
     private $binding_id = '';
@@ -59,7 +57,6 @@ class Binding extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $binding_id
-     *           A client-specified ID for this binding. Expected to be globally unique to support the internal bindings-by-ID API.
      *     @type \Google\Cloud\Compute\V1\Expr $condition
      *           The condition that is associated with this binding.
      *           If the condition evaluates to `true`, then this binding applies to the current request.
@@ -86,8 +83,6 @@ class Binding extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A client-specified ID for this binding. Expected to be globally unique to support the internal bindings-by-ID API.
-     *
      * Generated from protobuf field <code>string binding_id = 172652821;</code>
      * @return string
      */
@@ -97,8 +92,6 @@ class Binding extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A client-specified ID for this binding. Expected to be globally unique to support the internal bindings-by-ID API.
-     *
      * Generated from protobuf field <code>string binding_id = 172652821;</code>
      * @param string $var
      * @return $this

@@ -22,7 +22,9 @@ class PatchNetworkRequest extends \Google\Protobuf\Internal\Message
      */
     private $network = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Network network_resource = 122105599;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Network network_resource = 122105599 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $network_resource = null;
     /**
@@ -49,6 +51,7 @@ class PatchNetworkRequest extends \Google\Protobuf\Internal\Message
      *     @type string $network
      *           Name of the network to update.
      *     @type \Google\Cloud\Compute\V1\Network $network_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -89,7 +92,9 @@ class PatchNetworkRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Network network_resource = 122105599;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Network network_resource = 122105599 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\Network
      */
     public function getNetworkResource()
@@ -108,7 +113,9 @@ class PatchNetworkRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Network network_resource = 122105599;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Network network_resource = 122105599 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\Network $var
      * @return $this
      */

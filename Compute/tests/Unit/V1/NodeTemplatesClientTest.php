@@ -33,6 +33,8 @@ use Google\Cloud\Compute\V1\NodeTemplateList;
 use Google\Cloud\Compute\V1\NodeTemplatesScopedList;
 use Google\Cloud\Compute\V1\Operation;
 use Google\Cloud\Compute\V1\Policy;
+use Google\Cloud\Compute\V1\RegionSetPolicyRequest;
+use Google\Cloud\Compute\V1\TestPermissionsRequest;
 use Google\Cloud\Compute\V1\TestPermissionsResponse;
 use Google\Protobuf\Any;
 use Google\Rpc\Code;
@@ -524,10 +526,11 @@ class NodeTemplatesClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $nodeTemplateResource = new NodeTemplate();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
-        $response = $client->insert($project, $region);
+        $response = $client->insert($nodeTemplateResource, $project, $region);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -535,6 +538,9 @@ class NodeTemplatesClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.NodeTemplates/Insert', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getNodeTemplateResource();
+
+        $this->assertProtobufEquals($nodeTemplateResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -568,11 +574,12 @@ class NodeTemplatesClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $nodeTemplateResource = new NodeTemplate();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
         try {
-            $client->insert($project, $region);
+            $client->insert($nodeTemplateResource, $project, $region);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -698,9 +705,10 @@ class NodeTemplatesClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionSetPolicyRequestResource = new RegionSetPolicyRequest();
         $resource = 'resource-341064690';
 
-        $response = $client->setIamPolicy($project, $region, $resource);
+        $response = $client->setIamPolicy($project, $region, $regionSetPolicyRequestResource, $resource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -714,6 +722,9 @@ class NodeTemplatesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getRegionSetPolicyRequestResource();
+
+        $this->assertProtobufEquals($regionSetPolicyRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getResource();
 
         $this->assertProtobufEquals($resource, $actualValue);
@@ -746,10 +757,11 @@ class NodeTemplatesClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionSetPolicyRequestResource = new RegionSetPolicyRequest();
         $resource = 'resource-341064690';
 
         try {
-            $client->setIamPolicy($project, $region, $resource);
+            $client->setIamPolicy($project, $region, $regionSetPolicyRequestResource, $resource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -780,8 +792,9 @@ class NodeTemplatesClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $resource = 'resource-341064690';
+        $testPermissionsRequestResource = new TestPermissionsRequest();
 
-        $response = $client->testIamPermissions($project, $region, $resource);
+        $response = $client->testIamPermissions($project, $region, $resource, $testPermissionsRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -798,6 +811,9 @@ class NodeTemplatesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getResource();
 
         $this->assertProtobufEquals($resource, $actualValue);
+        $actualValue = $actualRequestObject->getTestPermissionsRequestResource();
+
+        $this->assertProtobufEquals($testPermissionsRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -828,9 +844,10 @@ class NodeTemplatesClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $resource = 'resource-341064690';
+        $testPermissionsRequestResource = new TestPermissionsRequest();
 
         try {
-            $client->testIamPermissions($project, $region, $resource);
+            $client->testIamPermissions($project, $region, $resource, $testPermissionsRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

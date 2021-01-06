@@ -36,7 +36,9 @@ class PatchTargetHttpProxyRequest extends \Google\Protobuf\Internal\Message
      */
     private $target_http_proxy = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $target_http_proxy_resource = null;
 
@@ -55,6 +57,7 @@ class PatchTargetHttpProxyRequest extends \Google\Protobuf\Internal\Message
      *     @type string $target_http_proxy
      *           Name of the TargetHttpProxy resource to patch.
      *     @type \Google\Cloud\Compute\V1\TargetHttpProxy $target_http_proxy_resource
+     *           The body resource for this request
      * }
      */
     public function __construct($data = NULL) {
@@ -145,7 +148,9 @@ class PatchTargetHttpProxyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\TargetHttpProxy
      */
     public function getTargetHttpProxyResource()
@@ -164,7 +169,9 @@ class PatchTargetHttpProxyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\TargetHttpProxy $var
      * @return $this
      */

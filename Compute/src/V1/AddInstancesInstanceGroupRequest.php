@@ -22,7 +22,9 @@ class AddInstancesInstanceGroupRequest extends \Google\Protobuf\Internal\Message
      */
     private $instance_group = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupsAddInstancesRequest instance_groups_add_instances_request_resource = 185277790;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupsAddInstancesRequest instance_groups_add_instances_request_resource = 185277790 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $instance_groups_add_instances_request_resource = null;
     /**
@@ -55,6 +57,7 @@ class AddInstancesInstanceGroupRequest extends \Google\Protobuf\Internal\Message
      *     @type string $instance_group
      *           The name of the instance group where you are adding instances.
      *     @type \Google\Cloud\Compute\V1\InstanceGroupsAddInstancesRequest $instance_groups_add_instances_request_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -97,7 +100,9 @@ class AddInstancesInstanceGroupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupsAddInstancesRequest instance_groups_add_instances_request_resource = 185277790;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupsAddInstancesRequest instance_groups_add_instances_request_resource = 185277790 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\InstanceGroupsAddInstancesRequest
      */
     public function getInstanceGroupsAddInstancesRequestResource()
@@ -116,7 +121,9 @@ class AddInstancesInstanceGroupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupsAddInstancesRequest instance_groups_add_instances_request_resource = 185277790;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupsAddInstancesRequest instance_groups_add_instances_request_resource = 185277790 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\InstanceGroupsAddInstancesRequest $var
      * @return $this
      */

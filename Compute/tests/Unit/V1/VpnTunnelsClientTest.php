@@ -457,8 +457,9 @@ class VpnTunnelsClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $vpnTunnelResource = new VpnTunnel();
 
-        $response = $client->insert($project, $region);
+        $response = $client->insert($project, $region, $vpnTunnelResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -472,6 +473,9 @@ class VpnTunnelsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getVpnTunnelResource();
+
+        $this->assertProtobufEquals($vpnTunnelResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -501,9 +505,10 @@ class VpnTunnelsClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $vpnTunnelResource = new VpnTunnel();
 
         try {
-            $client->insert($project, $region);
+            $client->insert($project, $region, $vpnTunnelResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

@@ -296,20 +296,21 @@ class RegionAutoscalersGapicClient
      * ```
      * $regionAutoscalersClient = new RegionAutoscalersClient();
      * try {
+     *     $autoscalerResource = new Autoscaler();
      *     $project = '';
      *     $region = '';
-     *     $response = $regionAutoscalersClient->insert($project, $region);
+     *     $response = $regionAutoscalersClient->insert($autoscalerResource, $project, $region);
      * } finally {
      *     $regionAutoscalersClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region scoping this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param Autoscaler $autoscalerResource The body resource for this request
+     * @param string     $project            Project ID for this request.
+     * @param string     $region             Name of the region scoping this request.
+     * @param array      $optionalArgs       {
+     *                                       Optional.
      *
-     *     @type Autoscaler $autoscalerResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -328,14 +329,12 @@ class RegionAutoscalersGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, $region, array $optionalArgs = [])
+    public function insert($autoscalerResource, $project, $region, array $optionalArgs = [])
     {
         $request = new InsertRegionAutoscalerRequest();
+        $request->setAutoscalerResource($autoscalerResource);
         $request->setProject($project);
         $request->setRegion($region);
-        if (isset($optionalArgs['autoscalerResource'])) {
-            $request->setAutoscalerResource($optionalArgs['autoscalerResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -456,22 +455,23 @@ class RegionAutoscalersGapicClient
      * ```
      * $regionAutoscalersClient = new RegionAutoscalersClient();
      * try {
+     *     $autoscalerResource = new Autoscaler();
      *     $project = '';
      *     $region = '';
-     *     $response = $regionAutoscalersClient->patch($project, $region);
+     *     $response = $regionAutoscalersClient->patch($autoscalerResource, $project, $region);
      * } finally {
      *     $regionAutoscalersClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region scoping this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param Autoscaler $autoscalerResource The body resource for this request
+     * @param string     $project            Project ID for this request.
+     * @param string     $region             Name of the region scoping this request.
+     * @param array      $optionalArgs       {
+     *                                       Optional.
      *
      *     @type string $autoscaler
      *          Name of the autoscaler to patch.
-     *     @type Autoscaler $autoscalerResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -490,16 +490,14 @@ class RegionAutoscalersGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function patch($project, $region, array $optionalArgs = [])
+    public function patch($autoscalerResource, $project, $region, array $optionalArgs = [])
     {
         $request = new PatchRegionAutoscalerRequest();
+        $request->setAutoscalerResource($autoscalerResource);
         $request->setProject($project);
         $request->setRegion($region);
         if (isset($optionalArgs['autoscaler'])) {
             $request->setAutoscaler($optionalArgs['autoscaler']);
-        }
-        if (isset($optionalArgs['autoscalerResource'])) {
-            $request->setAutoscalerResource($optionalArgs['autoscalerResource']);
         }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
@@ -520,22 +518,23 @@ class RegionAutoscalersGapicClient
      * ```
      * $regionAutoscalersClient = new RegionAutoscalersClient();
      * try {
+     *     $autoscalerResource = new Autoscaler();
      *     $project = '';
      *     $region = '';
-     *     $response = $regionAutoscalersClient->update($project, $region);
+     *     $response = $regionAutoscalersClient->update($autoscalerResource, $project, $region);
      * } finally {
      *     $regionAutoscalersClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region scoping this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param Autoscaler $autoscalerResource The body resource for this request
+     * @param string     $project            Project ID for this request.
+     * @param string     $region             Name of the region scoping this request.
+     * @param array      $optionalArgs       {
+     *                                       Optional.
      *
      *     @type string $autoscaler
      *          Name of the autoscaler to update.
-     *     @type Autoscaler $autoscalerResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -554,16 +553,14 @@ class RegionAutoscalersGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function update($project, $region, array $optionalArgs = [])
+    public function update($autoscalerResource, $project, $region, array $optionalArgs = [])
     {
         $request = new UpdateRegionAutoscalerRequest();
+        $request->setAutoscalerResource($autoscalerResource);
         $request->setProject($project);
         $request->setRegion($region);
         if (isset($optionalArgs['autoscaler'])) {
             $request->setAutoscaler($optionalArgs['autoscaler']);
-        }
-        if (isset($optionalArgs['autoscalerResource'])) {
-            $request->setAutoscalerResource($optionalArgs['autoscalerResource']);
         }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);

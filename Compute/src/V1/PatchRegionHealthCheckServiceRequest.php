@@ -22,7 +22,9 @@ class PatchRegionHealthCheckServiceRequest extends \Google\Protobuf\Internal\Mes
      */
     private $health_check_service = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $health_check_service_resource = null;
     /**
@@ -55,6 +57,7 @@ class PatchRegionHealthCheckServiceRequest extends \Google\Protobuf\Internal\Mes
      *     @type string $health_check_service
      *           Name of the HealthCheckService to update. The name must be 1-63 characters long, and comply with RFC1035.
      *     @type \Google\Cloud\Compute\V1\HealthCheckService $health_check_service_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $region
@@ -97,7 +100,9 @@ class PatchRegionHealthCheckServiceRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\HealthCheckService
      */
     public function getHealthCheckServiceResource()
@@ -116,7 +121,9 @@ class PatchRegionHealthCheckServiceRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\HealthCheckService $var
      * @return $this
      */

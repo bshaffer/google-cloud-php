@@ -29,10 +29,14 @@ use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
 use Google\Cloud\Compute\V1\Operation;
 use Google\Cloud\Compute\V1\Policy;
+use Google\Cloud\Compute\V1\RegionSetPolicyRequest;
 use Google\Cloud\Compute\V1\Subnetwork;
 use Google\Cloud\Compute\V1\SubnetworkAggregatedList;
 use Google\Cloud\Compute\V1\SubnetworkList;
+use Google\Cloud\Compute\V1\SubnetworksExpandIpCidrRangeRequest;
 use Google\Cloud\Compute\V1\SubnetworksScopedList;
+use Google\Cloud\Compute\V1\SubnetworksSetPrivateIpGoogleAccessRequest;
+use Google\Cloud\Compute\V1\TestPermissionsRequest;
 use Google\Cloud\Compute\V1\TestPermissionsResponse;
 use Google\Cloud\Compute\V1\UsableSubnetwork;
 use Google\Cloud\Compute\V1\UsableSubnetworksAggregatedList;
@@ -343,8 +347,9 @@ class SubnetworksClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $subnetwork = 'subnetwork-1302785042';
+        $subnetworksExpandIpCidrRangeRequestResource = new SubnetworksExpandIpCidrRangeRequest();
 
-        $response = $client->expandIpCidrRange($project, $region, $subnetwork);
+        $response = $client->expandIpCidrRange($project, $region, $subnetwork, $subnetworksExpandIpCidrRangeRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -361,6 +366,9 @@ class SubnetworksClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getSubnetwork();
 
         $this->assertProtobufEquals($subnetwork, $actualValue);
+        $actualValue = $actualRequestObject->getSubnetworksExpandIpCidrRangeRequestResource();
+
+        $this->assertProtobufEquals($subnetworksExpandIpCidrRangeRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -391,9 +399,10 @@ class SubnetworksClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $subnetwork = 'subnetwork-1302785042';
+        $subnetworksExpandIpCidrRangeRequestResource = new SubnetworksExpandIpCidrRangeRequest();
 
         try {
-            $client->expandIpCidrRange($project, $region, $subnetwork);
+            $client->expandIpCidrRange($project, $region, $subnetwork, $subnetworksExpandIpCidrRangeRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -659,8 +668,9 @@ class SubnetworksClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $subnetworkResource = new Subnetwork();
 
-        $response = $client->insert($project, $region);
+        $response = $client->insert($project, $region, $subnetworkResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -674,6 +684,9 @@ class SubnetworksClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getSubnetworkResource();
+
+        $this->assertProtobufEquals($subnetworkResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -703,9 +716,10 @@ class SubnetworksClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $subnetworkResource = new Subnetwork();
 
         try {
-            $client->insert($project, $region);
+            $client->insert($project, $region, $subnetworkResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -951,8 +965,9 @@ class SubnetworksClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $subnetwork = 'subnetwork-1302785042';
+        $subnetworkResource = new Subnetwork();
 
-        $response = $client->patch($project, $region, $subnetwork);
+        $response = $client->patch($project, $region, $subnetwork, $subnetworkResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -969,6 +984,9 @@ class SubnetworksClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getSubnetwork();
 
         $this->assertProtobufEquals($subnetwork, $actualValue);
+        $actualValue = $actualRequestObject->getSubnetworkResource();
+
+        $this->assertProtobufEquals($subnetworkResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -999,9 +1017,10 @@ class SubnetworksClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $subnetwork = 'subnetwork-1302785042';
+        $subnetworkResource = new Subnetwork();
 
         try {
-            $client->patch($project, $region, $subnetwork);
+            $client->patch($project, $region, $subnetwork, $subnetworkResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1037,9 +1056,10 @@ class SubnetworksClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionSetPolicyRequestResource = new RegionSetPolicyRequest();
         $resource = 'resource-341064690';
 
-        $response = $client->setIamPolicy($project, $region, $resource);
+        $response = $client->setIamPolicy($project, $region, $regionSetPolicyRequestResource, $resource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1053,6 +1073,9 @@ class SubnetworksClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getRegionSetPolicyRequestResource();
+
+        $this->assertProtobufEquals($regionSetPolicyRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getResource();
 
         $this->assertProtobufEquals($resource, $actualValue);
@@ -1085,10 +1108,11 @@ class SubnetworksClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionSetPolicyRequestResource = new RegionSetPolicyRequest();
         $resource = 'resource-341064690';
 
         try {
-            $client->setIamPolicy($project, $region, $resource);
+            $client->setIamPolicy($project, $region, $regionSetPolicyRequestResource, $resource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1159,8 +1183,9 @@ class SubnetworksClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $subnetwork = 'subnetwork-1302785042';
+        $subnetworksSetPrivateIpGoogleAccessRequestResource = new SubnetworksSetPrivateIpGoogleAccessRequest();
 
-        $response = $client->setPrivateIpGoogleAccess($project, $region, $subnetwork);
+        $response = $client->setPrivateIpGoogleAccess($project, $region, $subnetwork, $subnetworksSetPrivateIpGoogleAccessRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1177,6 +1202,9 @@ class SubnetworksClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getSubnetwork();
 
         $this->assertProtobufEquals($subnetwork, $actualValue);
+        $actualValue = $actualRequestObject->getSubnetworksSetPrivateIpGoogleAccessRequestResource();
+
+        $this->assertProtobufEquals($subnetworksSetPrivateIpGoogleAccessRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -1207,9 +1235,10 @@ class SubnetworksClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $subnetwork = 'subnetwork-1302785042';
+        $subnetworksSetPrivateIpGoogleAccessRequestResource = new SubnetworksSetPrivateIpGoogleAccessRequest();
 
         try {
-            $client->setPrivateIpGoogleAccess($project, $region, $subnetwork);
+            $client->setPrivateIpGoogleAccess($project, $region, $subnetwork, $subnetworksSetPrivateIpGoogleAccessRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1240,8 +1269,9 @@ class SubnetworksClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $resource = 'resource-341064690';
+        $testPermissionsRequestResource = new TestPermissionsRequest();
 
-        $response = $client->testIamPermissions($project, $region, $resource);
+        $response = $client->testIamPermissions($project, $region, $resource, $testPermissionsRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1258,6 +1288,9 @@ class SubnetworksClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getResource();
 
         $this->assertProtobufEquals($resource, $actualValue);
+        $actualValue = $actualRequestObject->getTestPermissionsRequestResource();
+
+        $this->assertProtobufEquals($testPermissionsRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -1288,9 +1321,10 @@ class SubnetworksClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $resource = 'resource-341064690';
+        $testPermissionsRequestResource = new TestPermissionsRequest();
 
         try {
-            $client->testIamPermissions($project, $region, $resource);
+            $client->testIamPermissions($project, $region, $resource, $testPermissionsRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

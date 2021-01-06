@@ -35,6 +35,12 @@ class BackendBucket extends \Google\Protobuf\Internal\Message
      */
     private $creation_timestamp = '';
     /**
+     * Headers that the HTTP/S load balancer should add to proxied responses.
+     *
+     * Generated from protobuf field <code>repeated string custom_response_headers = 119103638;</code>
+     */
+    private $custom_response_headers;
+    /**
      * An optional textual description of the resource; provided by the client when the resource is created.
      *
      * Generated from protobuf field <code>string description = 154502140;</code>
@@ -83,6 +89,8 @@ class BackendBucket extends \Google\Protobuf\Internal\Message
      *           Cloud CDN configuration for this BackendBucket.
      *     @type string $creation_timestamp
      *           [Output Only] Creation timestamp in RFC3339 text format.
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $custom_response_headers
+     *           Headers that the HTTP/S load balancer should add to proxied responses.
      *     @type string $description
      *           An optional textual description of the resource; provided by the client when the resource is created.
      *     @type bool $enable_cdn
@@ -186,6 +194,32 @@ class BackendBucket extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->creation_timestamp = $var;
+
+        return $this;
+    }
+
+    /**
+     * Headers that the HTTP/S load balancer should add to proxied responses.
+     *
+     * Generated from protobuf field <code>repeated string custom_response_headers = 119103638;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getCustomResponseHeaders()
+    {
+        return $this->custom_response_headers;
+    }
+
+    /**
+     * Headers that the HTTP/S load balancer should add to proxied responses.
+     *
+     * Generated from protobuf field <code>repeated string custom_response_headers = 119103638;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setCustomResponseHeaders($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->custom_response_headers = $arr;
 
         return $this;
     }

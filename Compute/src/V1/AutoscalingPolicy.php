@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The number of seconds that the autoscaler should wait before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
+     * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
      * Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
      *
      * Generated from protobuf field <code>int32 cool_down_period_sec = 107692954;</code>
@@ -41,13 +41,13 @@ class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
      */
     private $load_balancing_utilization = null;
     /**
-     * The maximum number of instances that the autoscaler can scale up to. This is required when creating or updating an autoscaler. The maximum number of replicas should not be lower than minimal number of replicas.
+     * The maximum number of instances that the autoscaler can scale out to. This is required when creating or updating an autoscaler. The maximum number of replicas must not be lower than minimal number of replicas.
      *
      * Generated from protobuf field <code>int32 max_num_replicas = 62327375;</code>
      */
     private $max_num_replicas = 0;
     /**
-     * The minimum number of replicas that the autoscaler can scale down to. This cannot be less than 0. If not provided, autoscaler will choose a default value depending on maximum number of instances allowed.
+     * The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
      *
      * Generated from protobuf field <code>int32 min_num_replicas = 266894369;</code>
      */
@@ -70,7 +70,7 @@ class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $cool_down_period_sec
-     *           The number of seconds that the autoscaler should wait before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
+     *           The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
      *           Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
      *     @type \Google\Cloud\Compute\V1\AutoscalingPolicyCpuUtilization $cpu_utilization
      *           Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
@@ -79,9 +79,9 @@ class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Compute\V1\AutoscalingPolicyLoadBalancingUtilization $load_balancing_utilization
      *           Configuration parameters of autoscaling based on load balancer.
      *     @type int $max_num_replicas
-     *           The maximum number of instances that the autoscaler can scale up to. This is required when creating or updating an autoscaler. The maximum number of replicas should not be lower than minimal number of replicas.
+     *           The maximum number of instances that the autoscaler can scale out to. This is required when creating or updating an autoscaler. The maximum number of replicas must not be lower than minimal number of replicas.
      *     @type int $min_num_replicas
-     *           The minimum number of replicas that the autoscaler can scale down to. This cannot be less than 0. If not provided, autoscaler will choose a default value depending on maximum number of instances allowed.
+     *           The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
      *     @type int $mode
      *           Defines operating mode for this policy.
      *     @type \Google\Cloud\Compute\V1\AutoscalingPolicyScaleInControl $scale_in_control
@@ -93,7 +93,7 @@ class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of seconds that the autoscaler should wait before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
+     * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
      * Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
      *
      * Generated from protobuf field <code>int32 cool_down_period_sec = 107692954;</code>
@@ -105,7 +105,7 @@ class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of seconds that the autoscaler should wait before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
+     * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
      * Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
      *
      * Generated from protobuf field <code>int32 cool_down_period_sec = 107692954;</code>
@@ -219,7 +219,7 @@ class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The maximum number of instances that the autoscaler can scale up to. This is required when creating or updating an autoscaler. The maximum number of replicas should not be lower than minimal number of replicas.
+     * The maximum number of instances that the autoscaler can scale out to. This is required when creating or updating an autoscaler. The maximum number of replicas must not be lower than minimal number of replicas.
      *
      * Generated from protobuf field <code>int32 max_num_replicas = 62327375;</code>
      * @return int
@@ -230,7 +230,7 @@ class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The maximum number of instances that the autoscaler can scale up to. This is required when creating or updating an autoscaler. The maximum number of replicas should not be lower than minimal number of replicas.
+     * The maximum number of instances that the autoscaler can scale out to. This is required when creating or updating an autoscaler. The maximum number of replicas must not be lower than minimal number of replicas.
      *
      * Generated from protobuf field <code>int32 max_num_replicas = 62327375;</code>
      * @param int $var
@@ -245,7 +245,7 @@ class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The minimum number of replicas that the autoscaler can scale down to. This cannot be less than 0. If not provided, autoscaler will choose a default value depending on maximum number of instances allowed.
+     * The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
      *
      * Generated from protobuf field <code>int32 min_num_replicas = 266894369;</code>
      * @return int
@@ -256,7 +256,7 @@ class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The minimum number of replicas that the autoscaler can scale down to. This cannot be less than 0. If not provided, autoscaler will choose a default value depending on maximum number of instances allowed.
+     * The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
      *
      * Generated from protobuf field <code>int32 min_num_replicas = 266894369;</code>
      * @param int $var

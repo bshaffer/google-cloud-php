@@ -296,11 +296,13 @@ class InterconnectAttachmentsClientTest extends GeneratedTest
         $cloudRouterIpAddress = 'cloudRouterIpAddress1361134600';
         $creationTimestamp = 'creationTimestamp567396278';
         $customerRouterIpAddress = 'customerRouterIpAddress-741266063';
+        $dataplaneVersion = 1645532811;
         $description = 'description-1724546052';
         $googleReferenceId = 'googleReferenceId534944469';
         $id = 'id3355';
         $interconnect = 'interconnect-849140594';
         $kind = 'kind3292052';
+        $mtu = 108462;
         $name = 'name3373707';
         $pairingKey = 'pairingKey976566376';
         $partnerAsn = 'partnerAsn975037061';
@@ -313,11 +315,13 @@ class InterconnectAttachmentsClientTest extends GeneratedTest
         $expectedResponse->setCloudRouterIpAddress($cloudRouterIpAddress);
         $expectedResponse->setCreationTimestamp($creationTimestamp);
         $expectedResponse->setCustomerRouterIpAddress($customerRouterIpAddress);
+        $expectedResponse->setDataplaneVersion($dataplaneVersion);
         $expectedResponse->setDescription($description);
         $expectedResponse->setGoogleReferenceId($googleReferenceId);
         $expectedResponse->setId($id);
         $expectedResponse->setInterconnect($interconnect);
         $expectedResponse->setKind($kind);
+        $expectedResponse->setMtu($mtu);
         $expectedResponse->setName($name);
         $expectedResponse->setPairingKey($pairingKey);
         $expectedResponse->setPartnerAsn($partnerAsn);
@@ -449,10 +453,11 @@ class InterconnectAttachmentsClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $interconnectAttachmentResource = new InterconnectAttachment();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
-        $response = $client->insert($project, $region);
+        $response = $client->insert($interconnectAttachmentResource, $project, $region);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -460,6 +465,9 @@ class InterconnectAttachmentsClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.InterconnectAttachments/Insert', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getInterconnectAttachmentResource();
+
+        $this->assertProtobufEquals($interconnectAttachmentResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -493,11 +501,12 @@ class InterconnectAttachmentsClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $interconnectAttachmentResource = new InterconnectAttachment();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
         try {
-            $client->insert($project, $region);
+            $client->insert($interconnectAttachmentResource, $project, $region);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -656,10 +665,11 @@ class InterconnectAttachmentsClientTest extends GeneratedTest
 
         // Mock request
         $interconnectAttachment = 'interconnectAttachment308135284';
+        $interconnectAttachmentResource = new InterconnectAttachment();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
-        $response = $client->patch($interconnectAttachment, $project, $region);
+        $response = $client->patch($interconnectAttachment, $interconnectAttachmentResource, $project, $region);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -670,6 +680,9 @@ class InterconnectAttachmentsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getInterconnectAttachment();
 
         $this->assertProtobufEquals($interconnectAttachment, $actualValue);
+        $actualValue = $actualRequestObject->getInterconnectAttachmentResource();
+
+        $this->assertProtobufEquals($interconnectAttachmentResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -704,11 +717,12 @@ class InterconnectAttachmentsClientTest extends GeneratedTest
 
         // Mock request
         $interconnectAttachment = 'interconnectAttachment308135284';
+        $interconnectAttachmentResource = new InterconnectAttachment();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
         try {
-            $client->patch($interconnectAttachment, $project, $region);
+            $client->patch($interconnectAttachment, $interconnectAttachmentResource, $project, $region);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

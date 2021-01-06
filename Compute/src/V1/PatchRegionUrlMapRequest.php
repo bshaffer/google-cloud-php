@@ -40,7 +40,9 @@ class PatchRegionUrlMapRequest extends \Google\Protobuf\Internal\Message
      */
     private $url_map = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.UrlMap url_map_resource = 168675425;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.UrlMap url_map_resource = 168675425 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $url_map_resource = null;
 
@@ -59,6 +61,7 @@ class PatchRegionUrlMapRequest extends \Google\Protobuf\Internal\Message
      *     @type string $url_map
      *           Name of the UrlMap resource to patch.
      *     @type \Google\Cloud\Compute\V1\UrlMap $url_map_resource
+     *           The body resource for this request
      * }
      */
     public function __construct($data = NULL) {
@@ -171,7 +174,9 @@ class PatchRegionUrlMapRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.UrlMap url_map_resource = 168675425;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.UrlMap url_map_resource = 168675425 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\UrlMap
      */
     public function getUrlMapResource()
@@ -190,7 +195,9 @@ class PatchRegionUrlMapRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.UrlMap url_map_resource = 168675425;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.UrlMap url_map_resource = 168675425 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\UrlMap $var
      * @return $this
      */

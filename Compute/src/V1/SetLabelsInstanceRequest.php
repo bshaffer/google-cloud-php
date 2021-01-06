@@ -22,7 +22,9 @@ class SetLabelsInstanceRequest extends \Google\Protobuf\Internal\Message
      */
     private $instance = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $instances_set_labels_request_resource = null;
     /**
@@ -55,6 +57,7 @@ class SetLabelsInstanceRequest extends \Google\Protobuf\Internal\Message
      *     @type string $instance
      *           Name of the instance scoping this request.
      *     @type \Google\Cloud\Compute\V1\InstancesSetLabelsRequest $instances_set_labels_request_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -97,7 +100,9 @@ class SetLabelsInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\InstancesSetLabelsRequest
      */
     public function getInstancesSetLabelsRequestResource()
@@ -116,7 +121,9 @@ class SetLabelsInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\InstancesSetLabelsRequest $var
      * @return $this
      */

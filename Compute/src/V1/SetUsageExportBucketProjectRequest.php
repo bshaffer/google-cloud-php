@@ -30,7 +30,9 @@ class SetUsageExportBucketProjectRequest extends \Google\Protobuf\Internal\Messa
      */
     private $request_id = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $usage_export_location_resource = null;
 
@@ -47,6 +49,7 @@ class SetUsageExportBucketProjectRequest extends \Google\Protobuf\Internal\Messa
      *           For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *           The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
      *     @type \Google\Cloud\Compute\V1\UsageExportLocation $usage_export_location_resource
+     *           The body resource for this request
      * }
      */
     public function __construct($data = NULL) {
@@ -111,7 +114,9 @@ class SetUsageExportBucketProjectRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\UsageExportLocation
      */
     public function getUsageExportLocationResource()
@@ -130,7 +135,9 @@ class SetUsageExportBucketProjectRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\UsageExportLocation $var
      * @return $this
      */

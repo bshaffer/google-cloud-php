@@ -35,7 +35,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
      */
     private $backends;
     /**
-     * Cloud CDN configuration for this BackendService.
+     * Cloud CDN configuration for this BackendService. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
      */
@@ -77,6 +77,12 @@ class BackendService extends \Google\Protobuf\Internal\Message
      */
     private $custom_request_headers;
     /**
+     * Headers that the HTTP/S load balancer should add to proxied responses.
+     *
+     * Generated from protobuf field <code>repeated string custom_response_headers = 119103638;</code>
+     */
+    private $custom_response_headers;
+    /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
      * Generated from protobuf field <code>string description = 154502140;</code>
@@ -89,7 +95,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
      */
     private $enable_c_d_n = false;
     /**
-     * Applicable only to Failover for Internal TCP/UDP Load Balancing. Requires at least one backend instance group to be defined as a backup (failover) backend.
+     * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. Requires at least one backend instance group to be defined as a backup (failover) backend.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;</code>
      */
@@ -108,7 +114,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
      */
     private $health_checks;
     /**
-     * The configurations for Identity-Aware Proxy on this resource.
+     * The configurations for Identity-Aware Proxy on this resource. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
      */
@@ -126,7 +132,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
      */
     private $kind = '';
     /**
-     * Specifies the load balancer type. Choose EXTERNAL for load balancers that receive traffic from external clients. Choose INTERNAL for Internal TCP/UDP Load Balancing. Choose INTERNAL_MANAGED for Internal HTTP(S) Load Balancing. Choose INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancing cannot be used with another. For more information, refer to Choosing a load balancer.
+     * Specifies the load balancer type. Choose EXTERNAL for external HTTP(S), SSL Proxy, TCP Proxy and Network Load Balancing. Choose  INTERNAL for Internal TCP/UDP Load Balancing. Choose  INTERNAL_MANAGED for Internal HTTP(S) Load Balancing.  INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 95454788;</code>
      */
@@ -161,7 +167,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
      */
     private $name = '';
     /**
-     * The URL of the network to which this backend service belongs. This field can only be spcified when the load balancing scheme is set to INTERNAL.
+     * The URL of the network to which this backend service belongs. This field can only be specified when the load balancing scheme is set to INTERNAL.
      *
      * Generated from protobuf field <code>string network = 232872494;</code>
      */
@@ -184,8 +190,8 @@ class BackendService extends \Google\Protobuf\Internal\Message
      */
     private $port = 0;
     /**
-     * A named port on a backend instance group representing the port for communication to the backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL, INTERNAL_MANAGED, or INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on each backend instance group. This parameter has no meaning if the backends are NEGs.
-     * Must be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
+     * A named port on a backend instance group representing the port for communication to the backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL (except Network Load Balancing), INTERNAL_MANAGED, or  INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on each backend instance group. This parameter has no meaning if the backends are NEGs.
+     * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port_name.
      *
      * Generated from protobuf field <code>string port_name = 41534345;</code>
      */
@@ -211,14 +217,22 @@ class BackendService extends \Google\Protobuf\Internal\Message
      */
     private $security_policy = '';
     /**
+     * This field specifies the security policy that applies to this backend service. This field is applicable to either:
+     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
+     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SecuritySettings security_settings = 210214466;</code>
+     */
+    private $security_settings = null;
+    /**
      * [Output Only] Server-defined URL for the resource.
      *
      * Generated from protobuf field <code>string self_link = 187779341;</code>
      */
     private $self_link = '';
     /**
-     * Type of session affinity to use. The default is NONE. Session affinity is not applicable if the --protocol is UDP.
-     * When the loadBalancingScheme is EXTERNAL, possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. You can use GENERATED_COOKIE if the protocol is HTTP or HTTPS.
+     * Type of session affinity to use. The default is NONE.
+     * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
      * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
      * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
@@ -246,7 +260,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Compute\V1\Backend[]|\Google\Protobuf\Internal\RepeatedField $backends
      *           The list of backends that serve this BackendService.
      *     @type \Google\Cloud\Compute\V1\BackendServiceCdnPolicy $cdn_policy
-     *           Cloud CDN configuration for this BackendService.
+     *           Cloud CDN configuration for this BackendService. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
      *     @type \Google\Cloud\Compute\V1\CircuitBreakers $circuit_breakers
      *           Settings controlling the volume of connections to a backend service. If not set, this feature is considered disabled.
      *           This field is applicable to either:
@@ -264,25 +278,27 @@ class BackendService extends \Google\Protobuf\Internal\Message
      *           [Output Only] Creation timestamp in RFC3339 text format.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $custom_request_headers
      *           Headers that the HTTP/S load balancer should add to proxied requests.
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $custom_response_headers
+     *           Headers that the HTTP/S load balancer should add to proxied responses.
      *     @type string $description
      *           An optional description of this resource. Provide this property when you create the resource.
      *     @type bool $enable_c_d_n
      *           If true, enables Cloud CDN for the backend service. Only applicable if the loadBalancingScheme is EXTERNAL and the protocol is HTTP or HTTPS.
      *     @type \Google\Cloud\Compute\V1\BackendServiceFailoverPolicy $failover_policy
-     *           Applicable only to Failover for Internal TCP/UDP Load Balancing. Requires at least one backend instance group to be defined as a backup (failover) backend.
+     *           Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. Requires at least one backend instance group to be defined as a backup (failover) backend.
      *     @type string $fingerprint
      *           Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet.
      *           To see the latest fingerprint, make a get() request to retrieve a BackendService.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $health_checks
      *           The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
      *     @type \Google\Cloud\Compute\V1\BackendServiceIAP $iap
-     *           The configurations for Identity-Aware Proxy on this resource.
+     *           The configurations for Identity-Aware Proxy on this resource. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
      *     @type string $id
      *           [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      *     @type string $kind
      *           [Output Only] Type of resource. Always compute#backendService for backend services.
      *     @type int $load_balancing_scheme
-     *           Specifies the load balancer type. Choose EXTERNAL for load balancers that receive traffic from external clients. Choose INTERNAL for Internal TCP/UDP Load Balancing. Choose INTERNAL_MANAGED for Internal HTTP(S) Load Balancing. Choose INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancing cannot be used with another. For more information, refer to Choosing a load balancer.
+     *           Specifies the load balancer type. Choose EXTERNAL for external HTTP(S), SSL Proxy, TCP Proxy and Network Load Balancing. Choose  INTERNAL for Internal TCP/UDP Load Balancing. Choose  INTERNAL_MANAGED for Internal HTTP(S) Load Balancing.  INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
      *     @type int $locality_lb_policy
      *           The load balancing algorithm used within the scope of the locality. The possible values are:
      *           - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default.
@@ -301,7 +317,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *           Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      *     @type string $network
-     *           The URL of the network to which this backend service belongs. This field can only be spcified when the load balancing scheme is set to INTERNAL.
+     *           The URL of the network to which this backend service belongs. This field can only be specified when the load balancing scheme is set to INTERNAL.
      *     @type \Google\Cloud\Compute\V1\OutlierDetection $outlier_detection
      *           Settings controlling the eviction of unhealthy hosts from the load balancing pool for the backend service. If not set, this feature is considered disabled.
      *           This field is applicable to either:
@@ -312,8 +328,8 @@ class BackendService extends \Google\Protobuf\Internal\Message
      *           Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.
      *           This cannot be used if the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
      *     @type string $port_name
-     *           A named port on a backend instance group representing the port for communication to the backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL, INTERNAL_MANAGED, or INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on each backend instance group. This parameter has no meaning if the backends are NEGs.
-     *           Must be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
+     *           A named port on a backend instance group representing the port for communication to the backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL (except Network Load Balancing), INTERNAL_MANAGED, or  INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on each backend instance group. This parameter has no meaning if the backends are NEGs.
+     *           Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port_name.
      *     @type int $protocol
      *           The protocol this BackendService uses to communicate with backends.
      *           Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
@@ -322,11 +338,15 @@ class BackendService extends \Google\Protobuf\Internal\Message
      *           [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      *     @type string $security_policy
      *           [Output Only] The resource URL for the security policy associated with this backend service.
+     *     @type \Google\Cloud\Compute\V1\SecuritySettings $security_settings
+     *           This field specifies the security policy that applies to this backend service. This field is applicable to either:
+     *           - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
+     *           - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
      *     @type string $self_link
      *           [Output Only] Server-defined URL for the resource.
      *     @type int $session_affinity
-     *           Type of session affinity to use. The default is NONE. Session affinity is not applicable if the --protocol is UDP.
-     *           When the loadBalancingScheme is EXTERNAL, possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. You can use GENERATED_COOKIE if the protocol is HTTP or HTTPS.
+     *           Type of session affinity to use. The default is NONE.
+     *           When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
      *           When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
      *           When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
      *           Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
@@ -396,7 +416,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Cloud CDN configuration for this BackendService.
+     * Cloud CDN configuration for this BackendService. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
      * @return \Google\Cloud\Compute\V1\BackendServiceCdnPolicy
@@ -417,7 +437,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Cloud CDN configuration for this BackendService.
+     * Cloud CDN configuration for this BackendService. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
      * @param \Google\Cloud\Compute\V1\BackendServiceCdnPolicy $var
@@ -604,6 +624,32 @@ class BackendService extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Headers that the HTTP/S load balancer should add to proxied responses.
+     *
+     * Generated from protobuf field <code>repeated string custom_response_headers = 119103638;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getCustomResponseHeaders()
+    {
+        return $this->custom_response_headers;
+    }
+
+    /**
+     * Headers that the HTTP/S load balancer should add to proxied responses.
+     *
+     * Generated from protobuf field <code>repeated string custom_response_headers = 119103638;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setCustomResponseHeaders($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->custom_response_headers = $arr;
+
+        return $this;
+    }
+
+    /**
      * An optional description of this resource. Provide this property when you create the resource.
      *
      * Generated from protobuf field <code>string description = 154502140;</code>
@@ -656,7 +702,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Applicable only to Failover for Internal TCP/UDP Load Balancing. Requires at least one backend instance group to be defined as a backup (failover) backend.
+     * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. Requires at least one backend instance group to be defined as a backup (failover) backend.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;</code>
      * @return \Google\Cloud\Compute\V1\BackendServiceFailoverPolicy
@@ -677,7 +723,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Applicable only to Failover for Internal TCP/UDP Load Balancing. Requires at least one backend instance group to be defined as a backup (failover) backend.
+     * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. Requires at least one backend instance group to be defined as a backup (failover) backend.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.BackendServiceFailoverPolicy failover_policy = 105658655;</code>
      * @param \Google\Cloud\Compute\V1\BackendServiceFailoverPolicy $var
@@ -746,7 +792,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The configurations for Identity-Aware Proxy on this resource.
+     * The configurations for Identity-Aware Proxy on this resource. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
      * @return \Google\Cloud\Compute\V1\BackendServiceIAP
@@ -767,7 +813,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The configurations for Identity-Aware Proxy on this resource.
+     * The configurations for Identity-Aware Proxy on this resource. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
      * @param \Google\Cloud\Compute\V1\BackendServiceIAP $var
@@ -834,7 +880,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specifies the load balancer type. Choose EXTERNAL for load balancers that receive traffic from external clients. Choose INTERNAL for Internal TCP/UDP Load Balancing. Choose INTERNAL_MANAGED for Internal HTTP(S) Load Balancing. Choose INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancing cannot be used with another. For more information, refer to Choosing a load balancer.
+     * Specifies the load balancer type. Choose EXTERNAL for external HTTP(S), SSL Proxy, TCP Proxy and Network Load Balancing. Choose  INTERNAL for Internal TCP/UDP Load Balancing. Choose  INTERNAL_MANAGED for Internal HTTP(S) Load Balancing.  INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 95454788;</code>
      * @return int
@@ -845,7 +891,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specifies the load balancer type. Choose EXTERNAL for load balancers that receive traffic from external clients. Choose INTERNAL for Internal TCP/UDP Load Balancing. Choose INTERNAL_MANAGED for Internal HTTP(S) Load Balancing. Choose INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancing cannot be used with another. For more information, refer to Choosing a load balancer.
+     * Specifies the load balancer type. Choose EXTERNAL for external HTTP(S), SSL Proxy, TCP Proxy and Network Load Balancing. Choose  INTERNAL for Internal TCP/UDP Load Balancing. Choose  INTERNAL_MANAGED for Internal HTTP(S) Load Balancing.  INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
      *
      * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 95454788;</code>
      * @param int $var
@@ -970,7 +1016,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The URL of the network to which this backend service belongs. This field can only be spcified when the load balancing scheme is set to INTERNAL.
+     * The URL of the network to which this backend service belongs. This field can only be specified when the load balancing scheme is set to INTERNAL.
      *
      * Generated from protobuf field <code>string network = 232872494;</code>
      * @return string
@@ -981,7 +1027,7 @@ class BackendService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The URL of the network to which this backend service belongs. This field can only be spcified when the load balancing scheme is set to INTERNAL.
+     * The URL of the network to which this backend service belongs. This field can only be specified when the load balancing scheme is set to INTERNAL.
      *
      * Generated from protobuf field <code>string network = 232872494;</code>
      * @param string $var
@@ -1068,8 +1114,8 @@ class BackendService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A named port on a backend instance group representing the port for communication to the backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL, INTERNAL_MANAGED, or INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on each backend instance group. This parameter has no meaning if the backends are NEGs.
-     * Must be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
+     * A named port on a backend instance group representing the port for communication to the backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL (except Network Load Balancing), INTERNAL_MANAGED, or  INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on each backend instance group. This parameter has no meaning if the backends are NEGs.
+     * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port_name.
      *
      * Generated from protobuf field <code>string port_name = 41534345;</code>
      * @return string
@@ -1080,8 +1126,8 @@ class BackendService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A named port on a backend instance group representing the port for communication to the backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL, INTERNAL_MANAGED, or INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on each backend instance group. This parameter has no meaning if the backends are NEGs.
-     * Must be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
+     * A named port on a backend instance group representing the port for communication to the backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL (except Network Load Balancing), INTERNAL_MANAGED, or  INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on each backend instance group. This parameter has no meaning if the backends are NEGs.
+     * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port_name.
      *
      * Generated from protobuf field <code>string port_name = 41534345;</code>
      * @param string $var
@@ -1178,6 +1224,46 @@ class BackendService extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * This field specifies the security policy that applies to this backend service. This field is applicable to either:
+     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
+     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SecuritySettings security_settings = 210214466;</code>
+     * @return \Google\Cloud\Compute\V1\SecuritySettings
+     */
+    public function getSecuritySettings()
+    {
+        return isset($this->security_settings) ? $this->security_settings : null;
+    }
+
+    public function hasSecuritySettings()
+    {
+        return isset($this->security_settings);
+    }
+
+    public function clearSecuritySettings()
+    {
+        unset($this->security_settings);
+    }
+
+    /**
+     * This field specifies the security policy that applies to this backend service. This field is applicable to either:
+     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
+     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SecuritySettings security_settings = 210214466;</code>
+     * @param \Google\Cloud\Compute\V1\SecuritySettings $var
+     * @return $this
+     */
+    public function setSecuritySettings($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Compute\V1\SecuritySettings::class);
+        $this->security_settings = $var;
+
+        return $this;
+    }
+
+    /**
      * [Output Only] Server-defined URL for the resource.
      *
      * Generated from protobuf field <code>string self_link = 187779341;</code>
@@ -1204,8 +1290,8 @@ class BackendService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Type of session affinity to use. The default is NONE. Session affinity is not applicable if the --protocol is UDP.
-     * When the loadBalancingScheme is EXTERNAL, possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. You can use GENERATED_COOKIE if the protocol is HTTP or HTTPS.
+     * Type of session affinity to use. The default is NONE.
+     * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
      * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
      * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
@@ -1219,8 +1305,8 @@ class BackendService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Type of session affinity to use. The default is NONE. Session affinity is not applicable if the --protocol is UDP.
-     * When the loadBalancingScheme is EXTERNAL, possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. You can use GENERATED_COOKIE if the protocol is HTTP or HTTPS.
+     * Type of session affinity to use. The default is NONE.
+     * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
      * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
      * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.

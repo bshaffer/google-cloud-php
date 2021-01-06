@@ -22,7 +22,9 @@ class AddResourcePoliciesInstanceRequest extends \Google\Protobuf\Internal\Messa
      */
     private $instance = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 220916507;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 220916507 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $instances_add_resource_policies_request_resource = null;
     /**
@@ -55,6 +57,7 @@ class AddResourcePoliciesInstanceRequest extends \Google\Protobuf\Internal\Messa
      *     @type string $instance
      *           The instance name for this request.
      *     @type \Google\Cloud\Compute\V1\InstancesAddResourcePoliciesRequest $instances_add_resource_policies_request_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -97,7 +100,9 @@ class AddResourcePoliciesInstanceRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 220916507;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 220916507 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\InstancesAddResourcePoliciesRequest
      */
     public function getInstancesAddResourcePoliciesRequestResource()
@@ -116,7 +121,9 @@ class AddResourcePoliciesInstanceRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 220916507;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 220916507 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\InstancesAddResourcePoliciesRequest $var
      * @return $this
      */

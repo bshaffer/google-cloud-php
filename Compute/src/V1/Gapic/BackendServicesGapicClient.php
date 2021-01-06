@@ -64,7 +64,8 @@ use Google\Cloud\Compute\V1\UpdateBackendServiceRequest;
  * try {
  *     $backendService = '';
  *     $project = '';
- *     $response = $backendServicesClient->addSignedUrlKey($backendService, $project);
+ *     $signedUrlKeyResource = new SignedUrlKey();
+ *     $response = $backendServicesClient->addSignedUrlKey($backendService, $project, $signedUrlKeyResource);
  * } finally {
  *     $backendServicesClient->close();
  * }
@@ -200,16 +201,18 @@ class BackendServicesGapicClient
      * try {
      *     $backendService = '';
      *     $project = '';
-     *     $response = $backendServicesClient->addSignedUrlKey($backendService, $project);
+     *     $signedUrlKeyResource = new SignedUrlKey();
+     *     $response = $backendServicesClient->addSignedUrlKey($backendService, $project, $signedUrlKeyResource);
      * } finally {
      *     $backendServicesClient->close();
      * }
      * ```
      *
-     * @param string $backendService Name of the BackendService resource to which the Signed URL Key should be added. The name should conform to RFC1035.
-     * @param string $project        Project ID for this request.
-     * @param array  $optionalArgs   {
-     *                               Optional.
+     * @param string       $backendService       Name of the BackendService resource to which the Signed URL Key should be added. The name should conform to RFC1035.
+     * @param string       $project              Project ID for this request.
+     * @param SignedUrlKey $signedUrlKeyResource The body resource for this request
+     * @param array        $optionalArgs         {
+     *                                           Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -217,7 +220,6 @@ class BackendServicesGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type SignedUrlKey $signedUrlKeyResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -230,16 +232,14 @@ class BackendServicesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function addSignedUrlKey($backendService, $project, array $optionalArgs = [])
+    public function addSignedUrlKey($backendService, $project, $signedUrlKeyResource, array $optionalArgs = [])
     {
         $request = new AddSignedUrlKeyBackendServiceRequest();
         $request->setBackendService($backendService);
         $request->setProject($project);
+        $request->setSignedUrlKeyResource($signedUrlKeyResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['signedUrlKeyResource'])) {
-            $request->setSignedUrlKeyResource($optionalArgs['signedUrlKeyResource']);
         }
 
         return $this->startCall(
@@ -525,18 +525,19 @@ class BackendServicesGapicClient
      * try {
      *     $backendService = '';
      *     $project = '';
-     *     $response = $backendServicesClient->getHealth($backendService, $project);
+     *     $resourceGroupReferenceResource = new ResourceGroupReference();
+     *     $response = $backendServicesClient->getHealth($backendService, $project, $resourceGroupReferenceResource);
      * } finally {
      *     $backendServicesClient->close();
      * }
      * ```
      *
-     * @param string $backendService Name of the BackendService resource to which the queried instance belongs.
-     * @param string $project
-     * @param array  $optionalArgs   {
-     *                               Optional.
+     * @param string                 $backendService                 Name of the BackendService resource to which the queried instance belongs.
+     * @param string                 $project
+     * @param ResourceGroupReference $resourceGroupReferenceResource The body resource for this request
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type ResourceGroupReference $resourceGroupReferenceResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -549,14 +550,12 @@ class BackendServicesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function getHealth($backendService, $project, array $optionalArgs = [])
+    public function getHealth($backendService, $project, $resourceGroupReferenceResource, array $optionalArgs = [])
     {
         $request = new GetHealthBackendServiceRequest();
         $request->setBackendService($backendService);
         $request->setProject($project);
-        if (isset($optionalArgs['resourceGroupReferenceResource'])) {
-            $request->setResourceGroupReferenceResource($optionalArgs['resourceGroupReferenceResource']);
-        }
+        $request->setResourceGroupReferenceResource($resourceGroupReferenceResource);
 
         return $this->startCall(
             'GetHealth',
@@ -573,18 +572,19 @@ class BackendServicesGapicClient
      * ```
      * $backendServicesClient = new BackendServicesClient();
      * try {
+     *     $backendServiceResource = new BackendService();
      *     $project = '';
-     *     $response = $backendServicesClient->insert($project);
+     *     $response = $backendServicesClient->insert($backendServiceResource, $project);
      * } finally {
      *     $backendServicesClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param BackendService $backendServiceResource The body resource for this request
+     * @param string         $project                Project ID for this request.
+     * @param array          $optionalArgs           {
+     *                                               Optional.
      *
-     *     @type BackendService $backendServiceResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -603,13 +603,11 @@ class BackendServicesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, array $optionalArgs = [])
+    public function insert($backendServiceResource, $project, array $optionalArgs = [])
     {
         $request = new InsertBackendServiceRequest();
+        $request->setBackendServiceResource($backendServiceResource);
         $request->setProject($project);
-        if (isset($optionalArgs['backendServiceResource'])) {
-            $request->setBackendServiceResource($optionalArgs['backendServiceResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -728,19 +726,20 @@ class BackendServicesGapicClient
      * $backendServicesClient = new BackendServicesClient();
      * try {
      *     $backendService = '';
+     *     $backendServiceResource = new BackendService();
      *     $project = '';
-     *     $response = $backendServicesClient->patch($backendService, $project);
+     *     $response = $backendServicesClient->patch($backendService, $backendServiceResource, $project);
      * } finally {
      *     $backendServicesClient->close();
      * }
      * ```
      *
-     * @param string $backendService Name of the BackendService resource to patch.
-     * @param string $project        Project ID for this request.
-     * @param array  $optionalArgs   {
-     *                               Optional.
+     * @param string         $backendService         Name of the BackendService resource to patch.
+     * @param BackendService $backendServiceResource The body resource for this request
+     * @param string         $project                Project ID for this request.
+     * @param array          $optionalArgs           {
+     *                                               Optional.
      *
-     *     @type BackendService $backendServiceResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -759,14 +758,12 @@ class BackendServicesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function patch($backendService, $project, array $optionalArgs = [])
+    public function patch($backendService, $backendServiceResource, $project, array $optionalArgs = [])
     {
         $request = new PatchBackendServiceRequest();
         $request->setBackendService($backendService);
+        $request->setBackendServiceResource($backendServiceResource);
         $request->setProject($project);
-        if (isset($optionalArgs['backendServiceResource'])) {
-            $request->setBackendServiceResource($optionalArgs['backendServiceResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -788,16 +785,18 @@ class BackendServicesGapicClient
      * try {
      *     $backendService = '';
      *     $project = '';
-     *     $response = $backendServicesClient->setSecurityPolicy($backendService, $project);
+     *     $securityPolicyReferenceResource = new SecurityPolicyReference();
+     *     $response = $backendServicesClient->setSecurityPolicy($backendService, $project, $securityPolicyReferenceResource);
      * } finally {
      *     $backendServicesClient->close();
      * }
      * ```
      *
-     * @param string $backendService Name of the BackendService resource to which the security policy should be set. The name should conform to RFC1035.
-     * @param string $project        Project ID for this request.
-     * @param array  $optionalArgs   {
-     *                               Optional.
+     * @param string                  $backendService                  Name of the BackendService resource to which the security policy should be set. The name should conform to RFC1035.
+     * @param string                  $project                         Project ID for this request.
+     * @param SecurityPolicyReference $securityPolicyReferenceResource The body resource for this request
+     * @param array                   $optionalArgs                    {
+     *                                                                 Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -805,7 +804,6 @@ class BackendServicesGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type SecurityPolicyReference $securityPolicyReferenceResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -818,16 +816,14 @@ class BackendServicesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setSecurityPolicy($backendService, $project, array $optionalArgs = [])
+    public function setSecurityPolicy($backendService, $project, $securityPolicyReferenceResource, array $optionalArgs = [])
     {
         $request = new SetSecurityPolicyBackendServiceRequest();
         $request->setBackendService($backendService);
         $request->setProject($project);
+        $request->setSecurityPolicyReferenceResource($securityPolicyReferenceResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['securityPolicyReferenceResource'])) {
-            $request->setSecurityPolicyReferenceResource($optionalArgs['securityPolicyReferenceResource']);
         }
 
         return $this->startCall(
@@ -846,19 +842,20 @@ class BackendServicesGapicClient
      * $backendServicesClient = new BackendServicesClient();
      * try {
      *     $backendService = '';
+     *     $backendServiceResource = new BackendService();
      *     $project = '';
-     *     $response = $backendServicesClient->update($backendService, $project);
+     *     $response = $backendServicesClient->update($backendService, $backendServiceResource, $project);
      * } finally {
      *     $backendServicesClient->close();
      * }
      * ```
      *
-     * @param string $backendService Name of the BackendService resource to update.
-     * @param string $project        Project ID for this request.
-     * @param array  $optionalArgs   {
-     *                               Optional.
+     * @param string         $backendService         Name of the BackendService resource to update.
+     * @param BackendService $backendServiceResource The body resource for this request
+     * @param string         $project                Project ID for this request.
+     * @param array          $optionalArgs           {
+     *                                               Optional.
      *
-     *     @type BackendService $backendServiceResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -877,14 +874,12 @@ class BackendServicesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function update($backendService, $project, array $optionalArgs = [])
+    public function update($backendService, $backendServiceResource, $project, array $optionalArgs = [])
     {
         $request = new UpdateBackendServiceRequest();
         $request->setBackendService($backendService);
+        $request->setBackendServiceResource($backendServiceResource);
         $request->setProject($project);
-        if (isset($optionalArgs['backendServiceResource'])) {
-            $request->setBackendServiceResource($optionalArgs['backendServiceResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }

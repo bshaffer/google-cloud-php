@@ -65,6 +65,12 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
      */
     private $customer_router_ip_address = '';
     /**
+     * [Output Only] Dataplane version for this InterconnectAttachment.
+     *
+     * Generated from protobuf field <code>int32 dataplane_version = 34920075;</code>
+     */
+    private $dataplane_version = 0;
+    /**
      * An optional description of this resource.
      *
      * Generated from protobuf field <code>string description = 154502140;</code>
@@ -103,6 +109,12 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string kind = 3292052;</code>
      */
     private $kind = '';
+    /**
+     * Maximum Transmission Unit (MTU), in bytes, of packets passing through this interconnect attachment. Only 1440 and 1500 are allowed. If not specified, the value will default to 1440.
+     *
+     * Generated from protobuf field <code>int32 mtu = 108462;</code>
+     */
+    private $mtu = 0;
     /**
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      *
@@ -217,6 +229,8 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
      *           [Output Only] Creation timestamp in RFC3339 text format.
      *     @type string $customer_router_ip_address
      *           [Output Only] IPv4 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
+     *     @type int $dataplane_version
+     *           [Output Only] Dataplane version for this InterconnectAttachment.
      *     @type string $description
      *           An optional description of this resource.
      *     @type int $edge_availability_domain
@@ -232,6 +246,8 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
      *           URL of the underlying Interconnect object that this attachment's traffic will traverse through.
      *     @type string $kind
      *           [Output Only] Type of the resource. Always compute#interconnectAttachment for interconnect attachments.
+     *     @type int $mtu
+     *           Maximum Transmission Unit (MTU), in bytes, of packets passing through this interconnect attachment. Only 1440 and 1500 are allowed. If not specified, the value will default to 1440.
      *     @type string $name
      *           Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      *     @type int $operational_status
@@ -455,6 +471,32 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * [Output Only] Dataplane version for this InterconnectAttachment.
+     *
+     * Generated from protobuf field <code>int32 dataplane_version = 34920075;</code>
+     * @return int
+     */
+    public function getDataplaneVersion()
+    {
+        return $this->dataplane_version;
+    }
+
+    /**
+     * [Output Only] Dataplane version for this InterconnectAttachment.
+     *
+     * Generated from protobuf field <code>int32 dataplane_version = 34920075;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDataplaneVersion($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->dataplane_version = $var;
+
+        return $this;
+    }
+
+    /**
      * An optional description of this resource.
      *
      * Generated from protobuf field <code>string description = 154502140;</code>
@@ -612,6 +654,32 @@ class InterconnectAttachment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->kind = $var;
+
+        return $this;
+    }
+
+    /**
+     * Maximum Transmission Unit (MTU), in bytes, of packets passing through this interconnect attachment. Only 1440 and 1500 are allowed. If not specified, the value will default to 1440.
+     *
+     * Generated from protobuf field <code>int32 mtu = 108462;</code>
+     * @return int
+     */
+    public function getMtu()
+    {
+        return $this->mtu;
+    }
+
+    /**
+     * Maximum Transmission Unit (MTU), in bytes, of packets passing through this interconnect attachment. Only 1440 and 1500 are allowed. If not specified, the value will default to 1440.
+     *
+     * Generated from protobuf field <code>int32 mtu = 108462;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMtu($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->mtu = $var;
 
         return $this;
     }

@@ -28,6 +28,8 @@ use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
 use Google\Cloud\Compute\V1\Operation;
+use Google\Cloud\Compute\V1\TargetTcpProxiesSetBackendServiceRequest;
+use Google\Cloud\Compute\V1\TargetTcpProxiesSetProxyHeaderRequest;
 use Google\Cloud\Compute\V1\TargetTcpProxy;
 use Google\Cloud\Compute\V1\TargetTcpProxyList;
 use Google\Protobuf\Any;
@@ -332,8 +334,9 @@ class TargetTcpProxiesClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $targetTcpProxyResource = new TargetTcpProxy();
 
-        $response = $client->insert($project);
+        $response = $client->insert($project, $targetTcpProxyResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -344,6 +347,9 @@ class TargetTcpProxiesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
+        $actualValue = $actualRequestObject->getTargetTcpProxyResource();
+
+        $this->assertProtobufEquals($targetTcpProxyResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -372,9 +378,10 @@ class TargetTcpProxiesClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $targetTcpProxyResource = new TargetTcpProxy();
 
         try {
-            $client->insert($project);
+            $client->insert($project, $targetTcpProxyResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -528,9 +535,10 @@ class TargetTcpProxiesClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $targetTcpProxiesSetBackendServiceRequestResource = new TargetTcpProxiesSetBackendServiceRequest();
         $targetTcpProxy = 'targetTcpProxy503065442';
 
-        $response = $client->setBackendService($project, $targetTcpProxy);
+        $response = $client->setBackendService($project, $targetTcpProxiesSetBackendServiceRequestResource, $targetTcpProxy);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -541,6 +549,9 @@ class TargetTcpProxiesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
+        $actualValue = $actualRequestObject->getTargetTcpProxiesSetBackendServiceRequestResource();
+
+        $this->assertProtobufEquals($targetTcpProxiesSetBackendServiceRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getTargetTcpProxy();
 
         $this->assertProtobufEquals($targetTcpProxy, $actualValue);
@@ -572,10 +583,11 @@ class TargetTcpProxiesClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $targetTcpProxiesSetBackendServiceRequestResource = new TargetTcpProxiesSetBackendServiceRequest();
         $targetTcpProxy = 'targetTcpProxy503065442';
 
         try {
-            $client->setBackendService($project, $targetTcpProxy);
+            $client->setBackendService($project, $targetTcpProxiesSetBackendServiceRequestResource, $targetTcpProxy);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -644,9 +656,10 @@ class TargetTcpProxiesClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $targetTcpProxiesSetProxyHeaderRequestResource = new TargetTcpProxiesSetProxyHeaderRequest();
         $targetTcpProxy = 'targetTcpProxy503065442';
 
-        $response = $client->setProxyHeader($project, $targetTcpProxy);
+        $response = $client->setProxyHeader($project, $targetTcpProxiesSetProxyHeaderRequestResource, $targetTcpProxy);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -657,6 +670,9 @@ class TargetTcpProxiesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
+        $actualValue = $actualRequestObject->getTargetTcpProxiesSetProxyHeaderRequestResource();
+
+        $this->assertProtobufEquals($targetTcpProxiesSetProxyHeaderRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getTargetTcpProxy();
 
         $this->assertProtobufEquals($targetTcpProxy, $actualValue);
@@ -688,10 +704,11 @@ class TargetTcpProxiesClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $targetTcpProxiesSetProxyHeaderRequestResource = new TargetTcpProxiesSetProxyHeaderRequest();
         $targetTcpProxy = 'targetTcpProxy503065442';
 
         try {
-            $client->setProxyHeader($project, $targetTcpProxy);
+            $client->setProxyHeader($project, $targetTcpProxiesSetProxyHeaderRequestResource, $targetTcpProxy);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

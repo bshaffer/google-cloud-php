@@ -414,15 +414,17 @@ class UrlMapsGapicClient
      * $urlMapsClient = new UrlMapsClient();
      * try {
      *     $project = '';
-     *     $response = $urlMapsClient->insert($project);
+     *     $urlMapResource = new UrlMap();
+     *     $response = $urlMapsClient->insert($project, $urlMapResource);
      * } finally {
      *     $urlMapsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string $project        Project ID for this request.
+     * @param UrlMap $urlMapResource The body resource for this request
+     * @param array  $optionalArgs   {
+     *                               Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -430,7 +432,6 @@ class UrlMapsGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type UrlMap $urlMapResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -443,15 +444,13 @@ class UrlMapsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, array $optionalArgs = [])
+    public function insert($project, $urlMapResource, array $optionalArgs = [])
     {
         $request = new InsertUrlMapRequest();
         $request->setProject($project);
+        $request->setUrlMapResource($urlMapResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['urlMapResource'])) {
-            $request->setUrlMapResource($optionalArgs['urlMapResource']);
         }
 
         return $this->startCall(
@@ -465,24 +464,27 @@ class UrlMapsGapicClient
     /**
      * Initiates a cache invalidation operation, invalidating the specified path, scoped to the specified UrlMap.
      *
+     * For more information, see [Invalidating cached content](https://cloud.google.com/cdn/docs/invalidating-cached-content).
+     *
      * Sample code:
      * ```
      * $urlMapsClient = new UrlMapsClient();
      * try {
+     *     $cacheInvalidationRuleResource = new CacheInvalidationRule();
      *     $project = '';
      *     $urlMap = '';
-     *     $response = $urlMapsClient->invalidateCache($project, $urlMap);
+     *     $response = $urlMapsClient->invalidateCache($cacheInvalidationRuleResource, $project, $urlMap);
      * } finally {
      *     $urlMapsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $urlMap       Name of the UrlMap scoping this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param CacheInvalidationRule $cacheInvalidationRuleResource The body resource for this request
+     * @param string                $project                       Project ID for this request.
+     * @param string                $urlMap                        Name of the UrlMap scoping this request.
+     * @param array                 $optionalArgs                  {
+     *                                                             Optional.
      *
-     *     @type CacheInvalidationRule $cacheInvalidationRuleResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -501,14 +503,12 @@ class UrlMapsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function invalidateCache($project, $urlMap, array $optionalArgs = [])
+    public function invalidateCache($cacheInvalidationRuleResource, $project, $urlMap, array $optionalArgs = [])
     {
         $request = new InvalidateCacheUrlMapRequest();
+        $request->setCacheInvalidationRuleResource($cacheInvalidationRuleResource);
         $request->setProject($project);
         $request->setUrlMap($urlMap);
-        if (isset($optionalArgs['cacheInvalidationRuleResource'])) {
-            $request->setCacheInvalidationRuleResource($optionalArgs['cacheInvalidationRuleResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -628,16 +628,18 @@ class UrlMapsGapicClient
      * try {
      *     $project = '';
      *     $urlMap = '';
-     *     $response = $urlMapsClient->patch($project, $urlMap);
+     *     $urlMapResource = new UrlMap();
+     *     $response = $urlMapsClient->patch($project, $urlMap, $urlMapResource);
      * } finally {
      *     $urlMapsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $urlMap       Name of the UrlMap resource to patch.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string $project        Project ID for this request.
+     * @param string $urlMap         Name of the UrlMap resource to patch.
+     * @param UrlMap $urlMapResource The body resource for this request
+     * @param array  $optionalArgs   {
+     *                               Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -645,7 +647,6 @@ class UrlMapsGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type UrlMap $urlMapResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -658,16 +659,14 @@ class UrlMapsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function patch($project, $urlMap, array $optionalArgs = [])
+    public function patch($project, $urlMap, $urlMapResource, array $optionalArgs = [])
     {
         $request = new PatchUrlMapRequest();
         $request->setProject($project);
         $request->setUrlMap($urlMap);
+        $request->setUrlMapResource($urlMapResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['urlMapResource'])) {
-            $request->setUrlMapResource($optionalArgs['urlMapResource']);
         }
 
         return $this->startCall(
@@ -687,16 +686,18 @@ class UrlMapsGapicClient
      * try {
      *     $project = '';
      *     $urlMap = '';
-     *     $response = $urlMapsClient->update($project, $urlMap);
+     *     $urlMapResource = new UrlMap();
+     *     $response = $urlMapsClient->update($project, $urlMap, $urlMapResource);
      * } finally {
      *     $urlMapsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $urlMap       Name of the UrlMap resource to update.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string $project        Project ID for this request.
+     * @param string $urlMap         Name of the UrlMap resource to update.
+     * @param UrlMap $urlMapResource The body resource for this request
+     * @param array  $optionalArgs   {
+     *                               Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -704,7 +705,6 @@ class UrlMapsGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type UrlMap $urlMapResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -717,16 +717,14 @@ class UrlMapsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function update($project, $urlMap, array $optionalArgs = [])
+    public function update($project, $urlMap, $urlMapResource, array $optionalArgs = [])
     {
         $request = new UpdateUrlMapRequest();
         $request->setProject($project);
         $request->setUrlMap($urlMap);
+        $request->setUrlMapResource($urlMapResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['urlMapResource'])) {
-            $request->setUrlMapResource($optionalArgs['urlMapResource']);
         }
 
         return $this->startCall(
@@ -746,18 +744,19 @@ class UrlMapsGapicClient
      * try {
      *     $project = '';
      *     $urlMap = '';
-     *     $response = $urlMapsClient->validate($project, $urlMap);
+     *     $urlMapsValidateRequestResource = new UrlMapsValidateRequest();
+     *     $response = $urlMapsClient->validate($project, $urlMap, $urlMapsValidateRequestResource);
      * } finally {
      *     $urlMapsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $urlMap       Name of the UrlMap resource to be validated as.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                 $project                        Project ID for this request.
+     * @param string                 $urlMap                         Name of the UrlMap resource to be validated as.
+     * @param UrlMapsValidateRequest $urlMapsValidateRequestResource The body resource for this request
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type UrlMapsValidateRequest $urlMapsValidateRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -770,14 +769,12 @@ class UrlMapsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function validate($project, $urlMap, array $optionalArgs = [])
+    public function validate($project, $urlMap, $urlMapsValidateRequestResource, array $optionalArgs = [])
     {
         $request = new ValidateUrlMapRequest();
         $request->setProject($project);
         $request->setUrlMap($urlMap);
-        if (isset($optionalArgs['urlMapsValidateRequestResource'])) {
-            $request->setUrlMapsValidateRequestResource($optionalArgs['urlMapsValidateRequestResource']);
-        }
+        $request->setUrlMapsValidateRequestResource($urlMapsValidateRequestResource);
 
         return $this->startCall(
             'Validate',

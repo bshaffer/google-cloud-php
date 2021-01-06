@@ -42,7 +42,9 @@ class RemoveInstanceTargetPoolRequest extends \Google\Protobuf\Internal\Message
      */
     private $target_pool = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPoolsRemoveInstanceRequest target_pools_remove_instance_request_resource = 29548547;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPoolsRemoveInstanceRequest target_pools_remove_instance_request_resource = 29548547 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $target_pools_remove_instance_request_resource = null;
 
@@ -63,6 +65,7 @@ class RemoveInstanceTargetPoolRequest extends \Google\Protobuf\Internal\Message
      *     @type string $target_pool
      *           Name of the TargetPool resource to remove instances from.
      *     @type \Google\Cloud\Compute\V1\TargetPoolsRemoveInstanceRequest $target_pools_remove_instance_request_resource
+     *           The body resource for this request
      * }
      */
     public function __construct($data = NULL) {
@@ -179,7 +182,9 @@ class RemoveInstanceTargetPoolRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPoolsRemoveInstanceRequest target_pools_remove_instance_request_resource = 29548547;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPoolsRemoveInstanceRequest target_pools_remove_instance_request_resource = 29548547 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\TargetPoolsRemoveInstanceRequest
      */
     public function getTargetPoolsRemoveInstanceRequestResource()
@@ -198,7 +203,9 @@ class RemoveInstanceTargetPoolRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPoolsRemoveInstanceRequest target_pools_remove_instance_request_resource = 29548547;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.TargetPoolsRemoveInstanceRequest target_pools_remove_instance_request_resource = 29548547 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\TargetPoolsRemoveInstanceRequest $var
      * @return $this
      */

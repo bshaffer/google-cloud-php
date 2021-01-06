@@ -30,8 +30,12 @@ use Google\ApiCore\Testing\MockTransport;
 use Google\Cloud\Compute\V1\InstanceGroup;
 use Google\Cloud\Compute\V1\InstanceGroupAggregatedList;
 use Google\Cloud\Compute\V1\InstanceGroupList;
+use Google\Cloud\Compute\V1\InstanceGroupsAddInstancesRequest;
 use Google\Cloud\Compute\V1\InstanceGroupsListInstances;
+use Google\Cloud\Compute\V1\InstanceGroupsListInstancesRequest;
+use Google\Cloud\Compute\V1\InstanceGroupsRemoveInstancesRequest;
 use Google\Cloud\Compute\V1\InstanceGroupsScopedList;
+use Google\Cloud\Compute\V1\InstanceGroupsSetNamedPortsRequest;
 use Google\Cloud\Compute\V1\InstanceWithNamedPorts;
 use Google\Cloud\Compute\V1\Operation;
 use Google\Protobuf\Any;
@@ -130,10 +134,11 @@ class InstanceGroupsClientTest extends GeneratedTest
 
         // Mock request
         $instanceGroup = 'instanceGroup81095253';
+        $instanceGroupsAddInstancesRequestResource = new InstanceGroupsAddInstancesRequest();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
-        $response = $client->addInstances($instanceGroup, $project, $zone);
+        $response = $client->addInstances($instanceGroup, $instanceGroupsAddInstancesRequestResource, $project, $zone);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -144,6 +149,9 @@ class InstanceGroupsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getInstanceGroup();
 
         $this->assertProtobufEquals($instanceGroup, $actualValue);
+        $actualValue = $actualRequestObject->getInstanceGroupsAddInstancesRequestResource();
+
+        $this->assertProtobufEquals($instanceGroupsAddInstancesRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -178,11 +186,12 @@ class InstanceGroupsClientTest extends GeneratedTest
 
         // Mock request
         $instanceGroup = 'instanceGroup81095253';
+        $instanceGroupsAddInstancesRequestResource = new InstanceGroupsAddInstancesRequest();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
         try {
-            $client->addInstances($instanceGroup, $project, $zone);
+            $client->addInstances($instanceGroup, $instanceGroupsAddInstancesRequestResource, $project, $zone);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -564,10 +573,11 @@ class InstanceGroupsClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $instanceGroupResource = new InstanceGroup();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
-        $response = $client->insert($project, $zone);
+        $response = $client->insert($instanceGroupResource, $project, $zone);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -575,6 +585,9 @@ class InstanceGroupsClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.InstanceGroups/Insert', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getInstanceGroupResource();
+
+        $this->assertProtobufEquals($instanceGroupResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -608,11 +621,12 @@ class InstanceGroupsClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $instanceGroupResource = new InstanceGroup();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
         try {
-            $client->insert($project, $zone);
+            $client->insert($instanceGroupResource, $project, $zone);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -742,10 +756,11 @@ class InstanceGroupsClientTest extends GeneratedTest
 
         // Mock request
         $instanceGroup = 'instanceGroup81095253';
+        $instanceGroupsListInstancesRequestResource = new InstanceGroupsListInstancesRequest();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
-        $response = $client->listInstances($instanceGroup, $project, $zone);
+        $response = $client->listInstances($instanceGroup, $instanceGroupsListInstancesRequestResource, $project, $zone);
         $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
         $resources = iterator_to_array($response->iterateAllElements());
         $this->assertSame(1, count($resources));
@@ -760,6 +775,9 @@ class InstanceGroupsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getInstanceGroup();
 
         $this->assertProtobufEquals($instanceGroup, $actualValue);
+        $actualValue = $actualRequestObject->getInstanceGroupsListInstancesRequestResource();
+
+        $this->assertProtobufEquals($instanceGroupsListInstancesRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -793,11 +811,12 @@ class InstanceGroupsClientTest extends GeneratedTest
 
         // Mock request
         $instanceGroup = 'instanceGroup81095253';
+        $instanceGroupsListInstancesRequestResource = new InstanceGroupsListInstancesRequest();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
         try {
-            $client->listInstances($instanceGroup, $project, $zone);
+            $client->listInstances($instanceGroup, $instanceGroupsListInstancesRequestResource, $project, $zone);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -866,10 +885,11 @@ class InstanceGroupsClientTest extends GeneratedTest
 
         // Mock request
         $instanceGroup = 'instanceGroup81095253';
+        $instanceGroupsRemoveInstancesRequestResource = new InstanceGroupsRemoveInstancesRequest();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
-        $response = $client->removeInstances($instanceGroup, $project, $zone);
+        $response = $client->removeInstances($instanceGroup, $instanceGroupsRemoveInstancesRequestResource, $project, $zone);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -880,6 +900,9 @@ class InstanceGroupsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getInstanceGroup();
 
         $this->assertProtobufEquals($instanceGroup, $actualValue);
+        $actualValue = $actualRequestObject->getInstanceGroupsRemoveInstancesRequestResource();
+
+        $this->assertProtobufEquals($instanceGroupsRemoveInstancesRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -914,11 +937,12 @@ class InstanceGroupsClientTest extends GeneratedTest
 
         // Mock request
         $instanceGroup = 'instanceGroup81095253';
+        $instanceGroupsRemoveInstancesRequestResource = new InstanceGroupsRemoveInstancesRequest();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
         try {
-            $client->removeInstances($instanceGroup, $project, $zone);
+            $client->removeInstances($instanceGroup, $instanceGroupsRemoveInstancesRequestResource, $project, $zone);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -987,10 +1011,11 @@ class InstanceGroupsClientTest extends GeneratedTest
 
         // Mock request
         $instanceGroup = 'instanceGroup81095253';
+        $instanceGroupsSetNamedPortsRequestResource = new InstanceGroupsSetNamedPortsRequest();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
-        $response = $client->setNamedPorts($instanceGroup, $project, $zone);
+        $response = $client->setNamedPorts($instanceGroup, $instanceGroupsSetNamedPortsRequestResource, $project, $zone);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1001,6 +1026,9 @@ class InstanceGroupsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getInstanceGroup();
 
         $this->assertProtobufEquals($instanceGroup, $actualValue);
+        $actualValue = $actualRequestObject->getInstanceGroupsSetNamedPortsRequestResource();
+
+        $this->assertProtobufEquals($instanceGroupsSetNamedPortsRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -1035,11 +1063,12 @@ class InstanceGroupsClientTest extends GeneratedTest
 
         // Mock request
         $instanceGroup = 'instanceGroup81095253';
+        $instanceGroupsSetNamedPortsRequestResource = new InstanceGroupsSetNamedPortsRequest();
         $project = 'project-309310695';
         $zone = 'zone3744684';
 
         try {
-            $client->setNamedPorts($instanceGroup, $project, $zone);
+            $client->setNamedPorts($instanceGroup, $instanceGroupsSetNamedPortsRequestResource, $project, $zone);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

@@ -415,15 +415,17 @@ class TargetHttpsProxiesGapicClient
      * $targetHttpsProxiesClient = new TargetHttpsProxiesClient();
      * try {
      *     $project = '';
-     *     $response = $targetHttpsProxiesClient->insert($project);
+     *     $targetHttpsProxyResource = new TargetHttpsProxy();
+     *     $response = $targetHttpsProxiesClient->insert($project, $targetHttpsProxyResource);
      * } finally {
      *     $targetHttpsProxiesClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string           $project                  Project ID for this request.
+     * @param TargetHttpsProxy $targetHttpsProxyResource The body resource for this request
+     * @param array            $optionalArgs             {
+     *                                                   Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -431,7 +433,6 @@ class TargetHttpsProxiesGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type TargetHttpsProxy $targetHttpsProxyResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -444,15 +445,13 @@ class TargetHttpsProxiesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, array $optionalArgs = [])
+    public function insert($project, $targetHttpsProxyResource, array $optionalArgs = [])
     {
         $request = new InsertTargetHttpsProxyRequest();
         $request->setProject($project);
+        $request->setTargetHttpsProxyResource($targetHttpsProxyResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['targetHttpsProxyResource'])) {
-            $request->setTargetHttpsProxyResource($optionalArgs['targetHttpsProxyResource']);
         }
 
         return $this->startCall(
@@ -569,17 +568,19 @@ class TargetHttpsProxiesGapicClient
      * $targetHttpsProxiesClient = new TargetHttpsProxiesClient();
      * try {
      *     $project = '';
+     *     $targetHttpsProxiesSetQuicOverrideRequestResource = new TargetHttpsProxiesSetQuicOverrideRequest();
      *     $targetHttpsProxy = '';
-     *     $response = $targetHttpsProxiesClient->setQuicOverride($project, $targetHttpsProxy);
+     *     $response = $targetHttpsProxiesClient->setQuicOverride($project, $targetHttpsProxiesSetQuicOverrideRequestResource, $targetHttpsProxy);
      * } finally {
      *     $targetHttpsProxiesClient->close();
      * }
      * ```
      *
-     * @param string $project          Project ID for this request.
-     * @param string $targetHttpsProxy Name of the TargetHttpsProxy resource to set the QUIC override policy for. The name should conform to RFC1035.
-     * @param array  $optionalArgs     {
-     *                                 Optional.
+     * @param string                                   $project                                          Project ID for this request.
+     * @param TargetHttpsProxiesSetQuicOverrideRequest $targetHttpsProxiesSetQuicOverrideRequestResource The body resource for this request
+     * @param string                                   $targetHttpsProxy                                 Name of the TargetHttpsProxy resource to set the QUIC override policy for. The name should conform to RFC1035.
+     * @param array                                    $optionalArgs                                     {
+     *                                                                                                   Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -587,7 +588,6 @@ class TargetHttpsProxiesGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type TargetHttpsProxiesSetQuicOverrideRequest $targetHttpsProxiesSetQuicOverrideRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -600,16 +600,14 @@ class TargetHttpsProxiesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setQuicOverride($project, $targetHttpsProxy, array $optionalArgs = [])
+    public function setQuicOverride($project, $targetHttpsProxiesSetQuicOverrideRequestResource, $targetHttpsProxy, array $optionalArgs = [])
     {
         $request = new SetQuicOverrideTargetHttpsProxyRequest();
         $request->setProject($project);
+        $request->setTargetHttpsProxiesSetQuicOverrideRequestResource($targetHttpsProxiesSetQuicOverrideRequestResource);
         $request->setTargetHttpsProxy($targetHttpsProxy);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['targetHttpsProxiesSetQuicOverrideRequestResource'])) {
-            $request->setTargetHttpsProxiesSetQuicOverrideRequestResource($optionalArgs['targetHttpsProxiesSetQuicOverrideRequestResource']);
         }
 
         return $this->startCall(
@@ -628,17 +626,19 @@ class TargetHttpsProxiesGapicClient
      * $targetHttpsProxiesClient = new TargetHttpsProxiesClient();
      * try {
      *     $project = '';
+     *     $targetHttpsProxiesSetSslCertificatesRequestResource = new TargetHttpsProxiesSetSslCertificatesRequest();
      *     $targetHttpsProxy = '';
-     *     $response = $targetHttpsProxiesClient->setSslCertificates($project, $targetHttpsProxy);
+     *     $response = $targetHttpsProxiesClient->setSslCertificates($project, $targetHttpsProxiesSetSslCertificatesRequestResource, $targetHttpsProxy);
      * } finally {
      *     $targetHttpsProxiesClient->close();
      * }
      * ```
      *
-     * @param string $project          Project ID for this request.
-     * @param string $targetHttpsProxy Name of the TargetHttpsProxy resource to set an SslCertificates resource for.
-     * @param array  $optionalArgs     {
-     *                                 Optional.
+     * @param string                                      $project                                             Project ID for this request.
+     * @param TargetHttpsProxiesSetSslCertificatesRequest $targetHttpsProxiesSetSslCertificatesRequestResource The body resource for this request
+     * @param string                                      $targetHttpsProxy                                    Name of the TargetHttpsProxy resource to set an SslCertificates resource for.
+     * @param array                                       $optionalArgs                                        {
+     *                                                                                                         Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -646,7 +646,6 @@ class TargetHttpsProxiesGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type TargetHttpsProxiesSetSslCertificatesRequest $targetHttpsProxiesSetSslCertificatesRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -659,16 +658,14 @@ class TargetHttpsProxiesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setSslCertificates($project, $targetHttpsProxy, array $optionalArgs = [])
+    public function setSslCertificates($project, $targetHttpsProxiesSetSslCertificatesRequestResource, $targetHttpsProxy, array $optionalArgs = [])
     {
         $request = new SetSslCertificatesTargetHttpsProxyRequest();
         $request->setProject($project);
+        $request->setTargetHttpsProxiesSetSslCertificatesRequestResource($targetHttpsProxiesSetSslCertificatesRequestResource);
         $request->setTargetHttpsProxy($targetHttpsProxy);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['targetHttpsProxiesSetSslCertificatesRequestResource'])) {
-            $request->setTargetHttpsProxiesSetSslCertificatesRequestResource($optionalArgs['targetHttpsProxiesSetSslCertificatesRequestResource']);
         }
 
         return $this->startCall(
@@ -687,17 +684,19 @@ class TargetHttpsProxiesGapicClient
      * $targetHttpsProxiesClient = new TargetHttpsProxiesClient();
      * try {
      *     $project = '';
+     *     $sslPolicyReferenceResource = new SslPolicyReference();
      *     $targetHttpsProxy = '';
-     *     $response = $targetHttpsProxiesClient->setSslPolicy($project, $targetHttpsProxy);
+     *     $response = $targetHttpsProxiesClient->setSslPolicy($project, $sslPolicyReferenceResource, $targetHttpsProxy);
      * } finally {
      *     $targetHttpsProxiesClient->close();
      * }
      * ```
      *
-     * @param string $project          Project ID for this request.
-     * @param string $targetHttpsProxy Name of the TargetHttpsProxy resource whose SSL policy is to be set. The name must be 1-63 characters long, and comply with RFC1035.
-     * @param array  $optionalArgs     {
-     *                                 Optional.
+     * @param string             $project                    Project ID for this request.
+     * @param SslPolicyReference $sslPolicyReferenceResource The body resource for this request
+     * @param string             $targetHttpsProxy           Name of the TargetHttpsProxy resource whose SSL policy is to be set. The name must be 1-63 characters long, and comply with RFC1035.
+     * @param array              $optionalArgs               {
+     *                                                       Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -705,7 +704,6 @@ class TargetHttpsProxiesGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type SslPolicyReference $sslPolicyReferenceResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -718,16 +716,14 @@ class TargetHttpsProxiesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setSslPolicy($project, $targetHttpsProxy, array $optionalArgs = [])
+    public function setSslPolicy($project, $sslPolicyReferenceResource, $targetHttpsProxy, array $optionalArgs = [])
     {
         $request = new SetSslPolicyTargetHttpsProxyRequest();
         $request->setProject($project);
+        $request->setSslPolicyReferenceResource($sslPolicyReferenceResource);
         $request->setTargetHttpsProxy($targetHttpsProxy);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['sslPolicyReferenceResource'])) {
-            $request->setSslPolicyReferenceResource($optionalArgs['sslPolicyReferenceResource']);
         }
 
         return $this->startCall(
@@ -747,16 +743,18 @@ class TargetHttpsProxiesGapicClient
      * try {
      *     $project = '';
      *     $targetHttpsProxy = '';
-     *     $response = $targetHttpsProxiesClient->setUrlMap($project, $targetHttpsProxy);
+     *     $urlMapReferenceResource = new UrlMapReference();
+     *     $response = $targetHttpsProxiesClient->setUrlMap($project, $targetHttpsProxy, $urlMapReferenceResource);
      * } finally {
      *     $targetHttpsProxiesClient->close();
      * }
      * ```
      *
-     * @param string $project          Project ID for this request.
-     * @param string $targetHttpsProxy Name of the TargetHttpsProxy resource whose URL map is to be set.
-     * @param array  $optionalArgs     {
-     *                                 Optional.
+     * @param string          $project                 Project ID for this request.
+     * @param string          $targetHttpsProxy        Name of the TargetHttpsProxy resource whose URL map is to be set.
+     * @param UrlMapReference $urlMapReferenceResource The body resource for this request
+     * @param array           $optionalArgs            {
+     *                                                 Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -764,7 +762,6 @@ class TargetHttpsProxiesGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type UrlMapReference $urlMapReferenceResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -777,16 +774,14 @@ class TargetHttpsProxiesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setUrlMap($project, $targetHttpsProxy, array $optionalArgs = [])
+    public function setUrlMap($project, $targetHttpsProxy, $urlMapReferenceResource, array $optionalArgs = [])
     {
         $request = new SetUrlMapTargetHttpsProxyRequest();
         $request->setProject($project);
         $request->setTargetHttpsProxy($targetHttpsProxy);
+        $request->setUrlMapReferenceResource($urlMapReferenceResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['urlMapReferenceResource'])) {
-            $request->setUrlMapReferenceResource($optionalArgs['urlMapReferenceResource']);
         }
 
         return $this->startCall(

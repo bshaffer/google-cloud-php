@@ -22,7 +22,9 @@ class SetMinCpuPlatformInstanceRequest extends \Google\Protobuf\Internal\Message
      */
     private $instance = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesSetMinCpuPlatformRequest instances_set_min_cpu_platform_request_resource = 148459368;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesSetMinCpuPlatformRequest instances_set_min_cpu_platform_request_resource = 148459368 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $instances_set_min_cpu_platform_request_resource = null;
     /**
@@ -55,6 +57,7 @@ class SetMinCpuPlatformInstanceRequest extends \Google\Protobuf\Internal\Message
      *     @type string $instance
      *           Name of the instance scoping this request.
      *     @type \Google\Cloud\Compute\V1\InstancesSetMinCpuPlatformRequest $instances_set_min_cpu_platform_request_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -97,7 +100,9 @@ class SetMinCpuPlatformInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesSetMinCpuPlatformRequest instances_set_min_cpu_platform_request_resource = 148459368;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesSetMinCpuPlatformRequest instances_set_min_cpu_platform_request_resource = 148459368 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\InstancesSetMinCpuPlatformRequest
      */
     public function getInstancesSetMinCpuPlatformRequestResource()
@@ -116,7 +121,9 @@ class SetMinCpuPlatformInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesSetMinCpuPlatformRequest instances_set_min_cpu_platform_request_resource = 148459368;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstancesSetMinCpuPlatformRequest instances_set_min_cpu_platform_request_resource = 148459368 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\InstancesSetMinCpuPlatformRequest $var
      * @return $this
      */

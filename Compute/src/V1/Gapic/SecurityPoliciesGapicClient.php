@@ -60,7 +60,8 @@ use Google\Cloud\Compute\V1\SecurityPolicyRule;
  * try {
  *     $project = '';
  *     $securityPolicy = '';
- *     $response = $securityPoliciesClient->addRule($project, $securityPolicy);
+ *     $securityPolicyRuleResource = new SecurityPolicyRule();
+ *     $response = $securityPoliciesClient->addRule($project, $securityPolicy, $securityPolicyRuleResource);
  * } finally {
  *     $securityPoliciesClient->close();
  * }
@@ -196,18 +197,19 @@ class SecurityPoliciesGapicClient
      * try {
      *     $project = '';
      *     $securityPolicy = '';
-     *     $response = $securityPoliciesClient->addRule($project, $securityPolicy);
+     *     $securityPolicyRuleResource = new SecurityPolicyRule();
+     *     $response = $securityPoliciesClient->addRule($project, $securityPolicy, $securityPolicyRuleResource);
      * } finally {
      *     $securityPoliciesClient->close();
      * }
      * ```
      *
-     * @param string $project        Project ID for this request.
-     * @param string $securityPolicy Name of the security policy to update.
-     * @param array  $optionalArgs   {
-     *                               Optional.
+     * @param string             $project                    Project ID for this request.
+     * @param string             $securityPolicy             Name of the security policy to update.
+     * @param SecurityPolicyRule $securityPolicyRuleResource The body resource for this request
+     * @param array              $optionalArgs               {
+     *                                                       Optional.
      *
-     *     @type SecurityPolicyRule $securityPolicyRuleResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -220,14 +222,12 @@ class SecurityPoliciesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function addRule($project, $securityPolicy, array $optionalArgs = [])
+    public function addRule($project, $securityPolicy, $securityPolicyRuleResource, array $optionalArgs = [])
     {
         $request = new AddRuleSecurityPolicyRequest();
         $request->setProject($project);
         $request->setSecurityPolicy($securityPolicy);
-        if (isset($optionalArgs['securityPolicyRuleResource'])) {
-            $request->setSecurityPolicyRuleResource($optionalArgs['securityPolicyRuleResource']);
-        }
+        $request->setSecurityPolicyRuleResource($securityPolicyRuleResource);
 
         return $this->startCall(
             'AddRule',
@@ -397,15 +397,17 @@ class SecurityPoliciesGapicClient
      * $securityPoliciesClient = new SecurityPoliciesClient();
      * try {
      *     $project = '';
-     *     $response = $securityPoliciesClient->insert($project);
+     *     $securityPolicyResource = new SecurityPolicy();
+     *     $response = $securityPoliciesClient->insert($project, $securityPolicyResource);
      * } finally {
      *     $securityPoliciesClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string         $project                Project ID for this request.
+     * @param SecurityPolicy $securityPolicyResource The body resource for this request
+     * @param array          $optionalArgs           {
+     *                                               Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -413,7 +415,6 @@ class SecurityPoliciesGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type SecurityPolicy $securityPolicyResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -426,15 +427,13 @@ class SecurityPoliciesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, array $optionalArgs = [])
+    public function insert($project, $securityPolicyResource, array $optionalArgs = [])
     {
         $request = new InsertSecurityPolicyRequest();
         $request->setProject($project);
+        $request->setSecurityPolicyResource($securityPolicyResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['securityPolicyResource'])) {
-            $request->setSecurityPolicyResource($optionalArgs['securityPolicyResource']);
         }
 
         return $this->startCall(
@@ -622,7 +621,7 @@ class SecurityPoliciesGapicClient
     }
 
     /**
-     * Patches the specified policy with the data included in the request.
+     * Patches the specified policy with the data included in the request. This cannot be used to be update the rules in the policy. Please use the per rule methods like addRule, patchRule, and removeRule instead.
      *
      * Sample code:
      * ```
@@ -630,16 +629,18 @@ class SecurityPoliciesGapicClient
      * try {
      *     $project = '';
      *     $securityPolicy = '';
-     *     $response = $securityPoliciesClient->patch($project, $securityPolicy);
+     *     $securityPolicyResource = new SecurityPolicy();
+     *     $response = $securityPoliciesClient->patch($project, $securityPolicy, $securityPolicyResource);
      * } finally {
      *     $securityPoliciesClient->close();
      * }
      * ```
      *
-     * @param string $project        Project ID for this request.
-     * @param string $securityPolicy Name of the security policy to update.
-     * @param array  $optionalArgs   {
-     *                               Optional.
+     * @param string         $project                Project ID for this request.
+     * @param string         $securityPolicy         Name of the security policy to update.
+     * @param SecurityPolicy $securityPolicyResource The body resource for this request
+     * @param array          $optionalArgs           {
+     *                                               Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -647,7 +648,6 @@ class SecurityPoliciesGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type SecurityPolicy $securityPolicyResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -660,16 +660,14 @@ class SecurityPoliciesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function patch($project, $securityPolicy, array $optionalArgs = [])
+    public function patch($project, $securityPolicy, $securityPolicyResource, array $optionalArgs = [])
     {
         $request = new PatchSecurityPolicyRequest();
         $request->setProject($project);
         $request->setSecurityPolicy($securityPolicy);
+        $request->setSecurityPolicyResource($securityPolicyResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['securityPolicyResource'])) {
-            $request->setSecurityPolicyResource($optionalArgs['securityPolicyResource']);
         }
 
         return $this->startCall(
@@ -689,20 +687,21 @@ class SecurityPoliciesGapicClient
      * try {
      *     $project = '';
      *     $securityPolicy = '';
-     *     $response = $securityPoliciesClient->patchRule($project, $securityPolicy);
+     *     $securityPolicyRuleResource = new SecurityPolicyRule();
+     *     $response = $securityPoliciesClient->patchRule($project, $securityPolicy, $securityPolicyRuleResource);
      * } finally {
      *     $securityPoliciesClient->close();
      * }
      * ```
      *
-     * @param string $project        Project ID for this request.
-     * @param string $securityPolicy Name of the security policy to update.
-     * @param array  $optionalArgs   {
-     *                               Optional.
+     * @param string             $project                    Project ID for this request.
+     * @param string             $securityPolicy             Name of the security policy to update.
+     * @param SecurityPolicyRule $securityPolicyRuleResource The body resource for this request
+     * @param array              $optionalArgs               {
+     *                                                       Optional.
      *
      *     @type int $priority
      *          The priority of the rule to patch.
-     *     @type SecurityPolicyRule $securityPolicyRuleResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -715,16 +714,14 @@ class SecurityPoliciesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function patchRule($project, $securityPolicy, array $optionalArgs = [])
+    public function patchRule($project, $securityPolicy, $securityPolicyRuleResource, array $optionalArgs = [])
     {
         $request = new PatchRuleSecurityPolicyRequest();
         $request->setProject($project);
         $request->setSecurityPolicy($securityPolicy);
+        $request->setSecurityPolicyRuleResource($securityPolicyRuleResource);
         if (isset($optionalArgs['priority'])) {
             $request->setPriority($optionalArgs['priority']);
-        }
-        if (isset($optionalArgs['securityPolicyRuleResource'])) {
-            $request->setSecurityPolicyRuleResource($optionalArgs['securityPolicyRuleResource']);
         }
 
         return $this->startCall(

@@ -57,7 +57,8 @@ use Google\Cloud\Compute\V1\UpdateBackendBucketRequest;
  * try {
  *     $backendBucket = '';
  *     $project = '';
- *     $response = $backendBucketsClient->addSignedUrlKey($backendBucket, $project);
+ *     $signedUrlKeyResource = new SignedUrlKey();
+ *     $response = $backendBucketsClient->addSignedUrlKey($backendBucket, $project, $signedUrlKeyResource);
  * } finally {
  *     $backendBucketsClient->close();
  * }
@@ -193,16 +194,18 @@ class BackendBucketsGapicClient
      * try {
      *     $backendBucket = '';
      *     $project = '';
-     *     $response = $backendBucketsClient->addSignedUrlKey($backendBucket, $project);
+     *     $signedUrlKeyResource = new SignedUrlKey();
+     *     $response = $backendBucketsClient->addSignedUrlKey($backendBucket, $project, $signedUrlKeyResource);
      * } finally {
      *     $backendBucketsClient->close();
      * }
      * ```
      *
-     * @param string $backendBucket Name of the BackendBucket resource to which the Signed URL Key should be added. The name should conform to RFC1035.
-     * @param string $project       Project ID for this request.
-     * @param array  $optionalArgs  {
-     *                              Optional.
+     * @param string       $backendBucket        Name of the BackendBucket resource to which the Signed URL Key should be added. The name should conform to RFC1035.
+     * @param string       $project              Project ID for this request.
+     * @param SignedUrlKey $signedUrlKeyResource The body resource for this request
+     * @param array        $optionalArgs         {
+     *                                           Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -210,7 +213,6 @@ class BackendBucketsGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type SignedUrlKey $signedUrlKeyResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -223,16 +225,14 @@ class BackendBucketsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function addSignedUrlKey($backendBucket, $project, array $optionalArgs = [])
+    public function addSignedUrlKey($backendBucket, $project, $signedUrlKeyResource, array $optionalArgs = [])
     {
         $request = new AddSignedUrlKeyBackendBucketRequest();
         $request->setBackendBucket($backendBucket);
         $request->setProject($project);
+        $request->setSignedUrlKeyResource($signedUrlKeyResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['signedUrlKeyResource'])) {
-            $request->setSignedUrlKeyResource($optionalArgs['signedUrlKeyResource']);
         }
 
         return $this->startCall(
@@ -409,18 +409,19 @@ class BackendBucketsGapicClient
      * ```
      * $backendBucketsClient = new BackendBucketsClient();
      * try {
+     *     $backendBucketResource = new BackendBucket();
      *     $project = '';
-     *     $response = $backendBucketsClient->insert($project);
+     *     $response = $backendBucketsClient->insert($backendBucketResource, $project);
      * } finally {
      *     $backendBucketsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param BackendBucket $backendBucketResource The body resource for this request
+     * @param string        $project               Project ID for this request.
+     * @param array         $optionalArgs          {
+     *                                             Optional.
      *
-     *     @type BackendBucket $backendBucketResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -439,13 +440,11 @@ class BackendBucketsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, array $optionalArgs = [])
+    public function insert($backendBucketResource, $project, array $optionalArgs = [])
     {
         $request = new InsertBackendBucketRequest();
+        $request->setBackendBucketResource($backendBucketResource);
         $request->setProject($project);
-        if (isset($optionalArgs['backendBucketResource'])) {
-            $request->setBackendBucketResource($optionalArgs['backendBucketResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -564,19 +563,20 @@ class BackendBucketsGapicClient
      * $backendBucketsClient = new BackendBucketsClient();
      * try {
      *     $backendBucket = '';
+     *     $backendBucketResource = new BackendBucket();
      *     $project = '';
-     *     $response = $backendBucketsClient->patch($backendBucket, $project);
+     *     $response = $backendBucketsClient->patch($backendBucket, $backendBucketResource, $project);
      * } finally {
      *     $backendBucketsClient->close();
      * }
      * ```
      *
-     * @param string $backendBucket Name of the BackendBucket resource to patch.
-     * @param string $project       Project ID for this request.
-     * @param array  $optionalArgs  {
-     *                              Optional.
+     * @param string        $backendBucket         Name of the BackendBucket resource to patch.
+     * @param BackendBucket $backendBucketResource The body resource for this request
+     * @param string        $project               Project ID for this request.
+     * @param array         $optionalArgs          {
+     *                                             Optional.
      *
-     *     @type BackendBucket $backendBucketResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -595,14 +595,12 @@ class BackendBucketsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function patch($backendBucket, $project, array $optionalArgs = [])
+    public function patch($backendBucket, $backendBucketResource, $project, array $optionalArgs = [])
     {
         $request = new PatchBackendBucketRequest();
         $request->setBackendBucket($backendBucket);
+        $request->setBackendBucketResource($backendBucketResource);
         $request->setProject($project);
-        if (isset($optionalArgs['backendBucketResource'])) {
-            $request->setBackendBucketResource($optionalArgs['backendBucketResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -623,19 +621,20 @@ class BackendBucketsGapicClient
      * $backendBucketsClient = new BackendBucketsClient();
      * try {
      *     $backendBucket = '';
+     *     $backendBucketResource = new BackendBucket();
      *     $project = '';
-     *     $response = $backendBucketsClient->update($backendBucket, $project);
+     *     $response = $backendBucketsClient->update($backendBucket, $backendBucketResource, $project);
      * } finally {
      *     $backendBucketsClient->close();
      * }
      * ```
      *
-     * @param string $backendBucket Name of the BackendBucket resource to update.
-     * @param string $project       Project ID for this request.
-     * @param array  $optionalArgs  {
-     *                              Optional.
+     * @param string        $backendBucket         Name of the BackendBucket resource to update.
+     * @param BackendBucket $backendBucketResource The body resource for this request
+     * @param string        $project               Project ID for this request.
+     * @param array         $optionalArgs          {
+     *                                             Optional.
      *
-     *     @type BackendBucket $backendBucketResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -654,14 +653,12 @@ class BackendBucketsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function update($backendBucket, $project, array $optionalArgs = [])
+    public function update($backendBucket, $backendBucketResource, $project, array $optionalArgs = [])
     {
         $request = new UpdateBackendBucketRequest();
         $request->setBackendBucket($backendBucket);
+        $request->setBackendBucketResource($backendBucketResource);
         $request->setProject($project);
-        if (isset($optionalArgs['backendBucketResource'])) {
-            $request->setBackendBucketResource($optionalArgs['backendBucketResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }

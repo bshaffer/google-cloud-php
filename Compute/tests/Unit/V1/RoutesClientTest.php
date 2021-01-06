@@ -350,8 +350,9 @@ class RoutesClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $routeResource = new Route();
 
-        $response = $client->insert($project);
+        $response = $client->insert($project, $routeResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -362,6 +363,9 @@ class RoutesClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
+        $actualValue = $actualRequestObject->getRouteResource();
+
+        $this->assertProtobufEquals($routeResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -390,9 +394,10 @@ class RoutesClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $routeResource = new Route();
 
         try {
-            $client->insert($project);
+            $client->insert($project, $routeResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

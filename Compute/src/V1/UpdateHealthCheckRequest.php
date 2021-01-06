@@ -22,7 +22,9 @@ class UpdateHealthCheckRequest extends \Google\Protobuf\Internal\Message
      */
     private $health_check = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheck health_check_resource = 201925032;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheck health_check_resource = 201925032 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $health_check_resource = null;
     /**
@@ -49,6 +51,7 @@ class UpdateHealthCheckRequest extends \Google\Protobuf\Internal\Message
      *     @type string $health_check
      *           Name of the HealthCheck resource to update.
      *     @type \Google\Cloud\Compute\V1\HealthCheck $health_check_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -89,7 +92,9 @@ class UpdateHealthCheckRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheck health_check_resource = 201925032;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheck health_check_resource = 201925032 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\HealthCheck
      */
     public function getHealthCheckResource()
@@ -108,7 +113,9 @@ class UpdateHealthCheckRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheck health_check_resource = 201925032;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheck health_check_resource = 201925032 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\HealthCheck $var
      * @return $this
      */

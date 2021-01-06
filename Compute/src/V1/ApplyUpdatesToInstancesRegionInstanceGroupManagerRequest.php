@@ -34,7 +34,9 @@ class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest extends \Google\P
      */
     private $region = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest region_instance_group_managers_apply_updates_request_resource = 76248318;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest region_instance_group_managers_apply_updates_request_resource = 76248318 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $region_instance_group_managers_apply_updates_request_resource = null;
 
@@ -51,6 +53,7 @@ class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest extends \Google\P
      *     @type string $region
      *           Name of the region scoping this request, should conform to RFC1035.
      *     @type \Google\Cloud\Compute\V1\RegionInstanceGroupManagersApplyUpdatesRequest $region_instance_group_managers_apply_updates_request_resource
+     *           The body resource for this request
      * }
      */
     public function __construct($data = NULL) {
@@ -137,7 +140,9 @@ class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest extends \Google\P
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest region_instance_group_managers_apply_updates_request_resource = 76248318;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest region_instance_group_managers_apply_updates_request_resource = 76248318 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\RegionInstanceGroupManagersApplyUpdatesRequest
      */
     public function getRegionInstanceGroupManagersApplyUpdatesRequestResource()
@@ -156,7 +161,9 @@ class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest extends \Google\P
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest region_instance_group_managers_apply_updates_request_resource = 76248318;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest region_instance_group_managers_apply_updates_request_resource = 76248318 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\RegionInstanceGroupManagersApplyUpdatesRequest $var
      * @return $this
      */

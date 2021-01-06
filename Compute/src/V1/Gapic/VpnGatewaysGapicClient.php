@@ -470,16 +470,18 @@ class VpnGatewaysGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $vpnGatewaysClient->insert($project, $region);
+     *     $vpnGatewayResource = new VpnGateway();
+     *     $response = $vpnGatewaysClient->insert($project, $region, $vpnGatewayResource);
      * } finally {
      *     $vpnGatewaysClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string     $project            Project ID for this request.
+     * @param string     $region             Name of the region for this request.
+     * @param VpnGateway $vpnGatewayResource The body resource for this request
+     * @param array      $optionalArgs       {
+     *                                       Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -487,7 +489,6 @@ class VpnGatewaysGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type VpnGateway $vpnGatewayResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -500,16 +501,14 @@ class VpnGatewaysGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, $region, array $optionalArgs = [])
+    public function insert($project, $region, $vpnGatewayResource, array $optionalArgs = [])
     {
         $request = new InsertVpnGatewayRequest();
         $request->setProject($project);
         $request->setRegion($region);
+        $request->setVpnGatewayResource($vpnGatewayResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['vpnGatewayResource'])) {
-            $request->setVpnGatewayResource($optionalArgs['vpnGatewayResource']);
         }
 
         return $this->startCall(
@@ -630,20 +629,21 @@ class VpnGatewaysGapicClient
      * try {
      *     $project = '';
      *     $region = '';
+     *     $regionSetLabelsRequestResource = new RegionSetLabelsRequest();
      *     $resource = '';
-     *     $response = $vpnGatewaysClient->setLabels($project, $region, $resource);
+     *     $response = $vpnGatewaysClient->setLabels($project, $region, $regionSetLabelsRequestResource, $resource);
      * } finally {
      *     $vpnGatewaysClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       The region for this request.
-     * @param string $resource     Name or id of the resource for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                 $project                        Project ID for this request.
+     * @param string                 $region                         The region for this request.
+     * @param RegionSetLabelsRequest $regionSetLabelsRequestResource The body resource for this request
+     * @param string                 $resource                       Name or id of the resource for this request.
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type RegionSetLabelsRequest $regionSetLabelsRequestResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -662,15 +662,13 @@ class VpnGatewaysGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setLabels($project, $region, $resource, array $optionalArgs = [])
+    public function setLabels($project, $region, $regionSetLabelsRequestResource, $resource, array $optionalArgs = [])
     {
         $request = new SetLabelsVpnGatewayRequest();
         $request->setProject($project);
         $request->setRegion($region);
+        $request->setRegionSetLabelsRequestResource($regionSetLabelsRequestResource);
         $request->setResource($resource);
-        if (isset($optionalArgs['regionSetLabelsRequestResource'])) {
-            $request->setRegionSetLabelsRequestResource($optionalArgs['regionSetLabelsRequestResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -693,19 +691,20 @@ class VpnGatewaysGapicClient
      *     $project = '';
      *     $region = '';
      *     $resource = '';
-     *     $response = $vpnGatewaysClient->testIamPermissions($project, $region, $resource);
+     *     $testPermissionsRequestResource = new TestPermissionsRequest();
+     *     $response = $vpnGatewaysClient->testIamPermissions($project, $region, $resource, $testPermissionsRequestResource);
      * } finally {
      *     $vpnGatewaysClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       The name of the region for this request.
-     * @param string $resource     Name or id of the resource for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                 $project                        Project ID for this request.
+     * @param string                 $region                         The name of the region for this request.
+     * @param string                 $resource                       Name or id of the resource for this request.
+     * @param TestPermissionsRequest $testPermissionsRequestResource The body resource for this request
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type TestPermissionsRequest $testPermissionsRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -718,15 +717,13 @@ class VpnGatewaysGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function testIamPermissions($project, $region, $resource, array $optionalArgs = [])
+    public function testIamPermissions($project, $region, $resource, $testPermissionsRequestResource, array $optionalArgs = [])
     {
         $request = new TestIamPermissionsVpnGatewayRequest();
         $request->setProject($project);
         $request->setRegion($region);
         $request->setResource($resource);
-        if (isset($optionalArgs['testPermissionsRequestResource'])) {
-            $request->setTestPermissionsRequestResource($optionalArgs['testPermissionsRequestResource']);
-        }
+        $request->setTestPermissionsRequestResource($testPermissionsRequestResource);
 
         return $this->startCall(
             'TestIamPermissions',

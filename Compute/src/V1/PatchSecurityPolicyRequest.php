@@ -36,7 +36,9 @@ class PatchSecurityPolicyRequest extends \Google\Protobuf\Internal\Message
      */
     private $security_policy = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $security_policy_resource = null;
 
@@ -55,6 +57,7 @@ class PatchSecurityPolicyRequest extends \Google\Protobuf\Internal\Message
      *     @type string $security_policy
      *           Name of the security policy to update.
      *     @type \Google\Cloud\Compute\V1\SecurityPolicy $security_policy_resource
+     *           The body resource for this request
      * }
      */
     public function __construct($data = NULL) {
@@ -145,7 +148,9 @@ class PatchSecurityPolicyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\SecurityPolicy
      */
     public function getSecurityPolicyResource()
@@ -164,7 +169,9 @@ class PatchSecurityPolicyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\SecurityPolicy $var
      * @return $this
      */

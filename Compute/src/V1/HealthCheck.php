@@ -76,6 +76,12 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
      */
     private $kind = '';
     /**
+     * Configure logging on this health check.
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheckLogConfig log_config = 82864285;</code>
+     */
+    private $log_config = null;
+    /**
      * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      *
      * Generated from protobuf field <code>string name = 3373707;</code>
@@ -142,6 +148,8 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
      *           [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      *     @type string $kind
      *           Type of the resource.
+     *     @type \Google\Cloud\Compute\V1\HealthCheckLogConfig $log_config
+     *           Configure logging on this health check.
      *     @type string $name
      *           Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      *     @type string $region
@@ -443,6 +451,42 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->kind = $var;
+
+        return $this;
+    }
+
+    /**
+     * Configure logging on this health check.
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheckLogConfig log_config = 82864285;</code>
+     * @return \Google\Cloud\Compute\V1\HealthCheckLogConfig
+     */
+    public function getLogConfig()
+    {
+        return isset($this->log_config) ? $this->log_config : null;
+    }
+
+    public function hasLogConfig()
+    {
+        return isset($this->log_config);
+    }
+
+    public function clearLogConfig()
+    {
+        unset($this->log_config);
+    }
+
+    /**
+     * Configure logging on this health check.
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.HealthCheckLogConfig log_config = 82864285;</code>
+     * @param \Google\Cloud\Compute\V1\HealthCheckLogConfig $var
+     * @return $this
+     */
+    public function setLogConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Compute\V1\HealthCheckLogConfig::class);
+        $this->log_config = $var;
 
         return $this;
     }

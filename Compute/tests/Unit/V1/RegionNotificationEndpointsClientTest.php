@@ -341,10 +341,11 @@ class RegionNotificationEndpointsClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $notificationEndpointResource = new NotificationEndpoint();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
-        $response = $client->insert($project, $region);
+        $response = $client->insert($notificationEndpointResource, $project, $region);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -352,6 +353,9 @@ class RegionNotificationEndpointsClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.RegionNotificationEndpoints/Insert', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getNotificationEndpointResource();
+
+        $this->assertProtobufEquals($notificationEndpointResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -385,11 +389,12 @@ class RegionNotificationEndpointsClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $notificationEndpointResource = new NotificationEndpoint();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
         try {
-            $client->insert($project, $region);
+            $client->insert($notificationEndpointResource, $project, $region);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

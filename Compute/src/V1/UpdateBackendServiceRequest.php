@@ -22,7 +22,9 @@ class UpdateBackendServiceRequest extends \Google\Protobuf\Internal\Message
      */
     private $backend_service = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService backend_service_resource = 79151267;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService backend_service_resource = 79151267 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $backend_service_resource = null;
     /**
@@ -49,6 +51,7 @@ class UpdateBackendServiceRequest extends \Google\Protobuf\Internal\Message
      *     @type string $backend_service
      *           Name of the BackendService resource to update.
      *     @type \Google\Cloud\Compute\V1\BackendService $backend_service_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -89,7 +92,9 @@ class UpdateBackendServiceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService backend_service_resource = 79151267;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService backend_service_resource = 79151267 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\BackendService
      */
     public function getBackendServiceResource()
@@ -108,7 +113,9 @@ class UpdateBackendServiceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService backend_service_resource = 79151267;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.BackendService backend_service_resource = 79151267 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\BackendService $var
      * @return $this
      */

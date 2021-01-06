@@ -36,7 +36,9 @@ class InsertRegionSslCertificateRequest extends \Google\Protobuf\Internal\Messag
      */
     private $request_id = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $ssl_certificate_resource = null;
 
@@ -55,6 +57,7 @@ class InsertRegionSslCertificateRequest extends \Google\Protobuf\Internal\Messag
      *           For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *           The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
      *     @type \Google\Cloud\Compute\V1\SslCertificate $ssl_certificate_resource
+     *           The body resource for this request
      * }
      */
     public function __construct($data = NULL) {
@@ -145,7 +148,9 @@ class InsertRegionSslCertificateRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\SslCertificate
      */
     public function getSslCertificateResource()
@@ -164,7 +169,9 @@ class InsertRegionSslCertificateRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\SslCertificate $var
      * @return $this
      */

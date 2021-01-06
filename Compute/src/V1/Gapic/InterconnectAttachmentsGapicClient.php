@@ -413,20 +413,21 @@ class InterconnectAttachmentsGapicClient
      * ```
      * $interconnectAttachmentsClient = new InterconnectAttachmentsClient();
      * try {
+     *     $interconnectAttachmentResource = new InterconnectAttachment();
      *     $project = '';
      *     $region = '';
-     *     $response = $interconnectAttachmentsClient->insert($project, $region);
+     *     $response = $interconnectAttachmentsClient->insert($interconnectAttachmentResource, $project, $region);
      * } finally {
      *     $interconnectAttachmentsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param InterconnectAttachment $interconnectAttachmentResource The body resource for this request
+     * @param string                 $project                        Project ID for this request.
+     * @param string                 $region                         Name of the region for this request.
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type InterconnectAttachment $interconnectAttachmentResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -447,14 +448,12 @@ class InterconnectAttachmentsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, $region, array $optionalArgs = [])
+    public function insert($interconnectAttachmentResource, $project, $region, array $optionalArgs = [])
     {
         $request = new InsertInterconnectAttachmentRequest();
+        $request->setInterconnectAttachmentResource($interconnectAttachmentResource);
         $request->setProject($project);
         $request->setRegion($region);
-        if (isset($optionalArgs['interconnectAttachmentResource'])) {
-            $request->setInterconnectAttachmentResource($optionalArgs['interconnectAttachmentResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -579,21 +578,22 @@ class InterconnectAttachmentsGapicClient
      * $interconnectAttachmentsClient = new InterconnectAttachmentsClient();
      * try {
      *     $interconnectAttachment = '';
+     *     $interconnectAttachmentResource = new InterconnectAttachment();
      *     $project = '';
      *     $region = '';
-     *     $response = $interconnectAttachmentsClient->patch($interconnectAttachment, $project, $region);
+     *     $response = $interconnectAttachmentsClient->patch($interconnectAttachment, $interconnectAttachmentResource, $project, $region);
      * } finally {
      *     $interconnectAttachmentsClient->close();
      * }
      * ```
      *
-     * @param string $interconnectAttachment Name of the interconnect attachment to patch.
-     * @param string $project                Project ID for this request.
-     * @param string $region                 Name of the region scoping this request.
-     * @param array  $optionalArgs           {
-     *                                       Optional.
+     * @param string                 $interconnectAttachment         Name of the interconnect attachment to patch.
+     * @param InterconnectAttachment $interconnectAttachmentResource The body resource for this request
+     * @param string                 $project                        Project ID for this request.
+     * @param string                 $region                         Name of the region scoping this request.
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type InterconnectAttachment $interconnectAttachmentResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -612,15 +612,13 @@ class InterconnectAttachmentsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function patch($interconnectAttachment, $project, $region, array $optionalArgs = [])
+    public function patch($interconnectAttachment, $interconnectAttachmentResource, $project, $region, array $optionalArgs = [])
     {
         $request = new PatchInterconnectAttachmentRequest();
         $request->setInterconnectAttachment($interconnectAttachment);
+        $request->setInterconnectAttachmentResource($interconnectAttachmentResource);
         $request->setProject($project);
         $request->setRegion($region);
-        if (isset($optionalArgs['interconnectAttachmentResource'])) {
-            $request->setInterconnectAttachmentResource($optionalArgs['interconnectAttachmentResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }

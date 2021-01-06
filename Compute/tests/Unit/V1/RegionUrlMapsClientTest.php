@@ -28,6 +28,7 @@ use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
 use Google\Cloud\Compute\V1\Operation;
+use Google\Cloud\Compute\V1\RegionUrlMapsValidateRequest;
 use Google\Cloud\Compute\V1\UrlMap;
 use Google\Cloud\Compute\V1\UrlMapList;
 use Google\Cloud\Compute\V1\UrlMapsValidateResponse;
@@ -348,8 +349,9 @@ class RegionUrlMapsClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $urlMapResource = new UrlMap();
 
-        $response = $client->insert($project, $region);
+        $response = $client->insert($project, $region, $urlMapResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -363,6 +365,9 @@ class RegionUrlMapsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getUrlMapResource();
+
+        $this->assertProtobufEquals($urlMapResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -392,9 +397,10 @@ class RegionUrlMapsClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $urlMapResource = new UrlMap();
 
         try {
-            $client->insert($project, $region);
+            $client->insert($project, $region, $urlMapResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -555,8 +561,9 @@ class RegionUrlMapsClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $urlMap = 'urlMap-169850228';
+        $urlMapResource = new UrlMap();
 
-        $response = $client->patch($project, $region, $urlMap);
+        $response = $client->patch($project, $region, $urlMap, $urlMapResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -573,6 +580,9 @@ class RegionUrlMapsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getUrlMap();
 
         $this->assertProtobufEquals($urlMap, $actualValue);
+        $actualValue = $actualRequestObject->getUrlMapResource();
+
+        $this->assertProtobufEquals($urlMapResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -603,9 +613,10 @@ class RegionUrlMapsClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $urlMap = 'urlMap-169850228';
+        $urlMapResource = new UrlMap();
 
         try {
-            $client->patch($project, $region, $urlMap);
+            $client->patch($project, $region, $urlMap, $urlMapResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -676,8 +687,9 @@ class RegionUrlMapsClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $urlMap = 'urlMap-169850228';
+        $urlMapResource = new UrlMap();
 
-        $response = $client->update($project, $region, $urlMap);
+        $response = $client->update($project, $region, $urlMap, $urlMapResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -694,6 +706,9 @@ class RegionUrlMapsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getUrlMap();
 
         $this->assertProtobufEquals($urlMap, $actualValue);
+        $actualValue = $actualRequestObject->getUrlMapResource();
+
+        $this->assertProtobufEquals($urlMapResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -724,9 +739,10 @@ class RegionUrlMapsClientTest extends GeneratedTest
         $project = 'project-309310695';
         $region = 'region-934795532';
         $urlMap = 'urlMap-169850228';
+        $urlMapResource = new UrlMap();
 
         try {
-            $client->update($project, $region, $urlMap);
+            $client->update($project, $region, $urlMap, $urlMapResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -756,9 +772,10 @@ class RegionUrlMapsClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionUrlMapsValidateRequestResource = new RegionUrlMapsValidateRequest();
         $urlMap = 'urlMap-169850228';
 
-        $response = $client->validate($project, $region, $urlMap);
+        $response = $client->validate($project, $region, $regionUrlMapsValidateRequestResource, $urlMap);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -772,6 +789,9 @@ class RegionUrlMapsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getRegion();
 
         $this->assertProtobufEquals($region, $actualValue);
+        $actualValue = $actualRequestObject->getRegionUrlMapsValidateRequestResource();
+
+        $this->assertProtobufEquals($regionUrlMapsValidateRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getUrlMap();
 
         $this->assertProtobufEquals($urlMap, $actualValue);
@@ -804,10 +824,11 @@ class RegionUrlMapsClientTest extends GeneratedTest
         // Mock request
         $project = 'project-309310695';
         $region = 'region-934795532';
+        $regionUrlMapsValidateRequestResource = new RegionUrlMapsValidateRequest();
         $urlMap = 'urlMap-169850228';
 
         try {
-            $client->validate($project, $region, $urlMap);
+            $client->validate($project, $region, $regionUrlMapsValidateRequestResource, $urlMap);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

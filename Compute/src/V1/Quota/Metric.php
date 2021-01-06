@@ -336,6 +336,10 @@ class Metric
      */
     const PREEMPTIBLE_NVIDIA_V100_GPUS = 230123813;
     /**
+     * Generated from protobuf enum <code>PSC_ILB_CONSUMER_FORWARDING_RULES_PER_PRODUCER_NETWORK = 231164291;</code>
+     */
+    const PSC_ILB_CONSUMER_FORWARDING_RULES_PER_PRODUCER_NETWORK = 231164291;
+    /**
      * Generated from protobuf enum <code>PUBLIC_ADVERTISED_PREFIXES = 202936524;</code>
      */
     const PUBLIC_ADVERTISED_PREFIXES = 202936524;
@@ -443,6 +447,10 @@ class Metric
      * Generated from protobuf enum <code>VPN_TUNNELS = 104327296;</code>
      */
     const VPN_TUNNELS = 104327296;
+    /**
+     * Generated from protobuf enum <code>XPN_SERVICE_PROJECTS = 95191981;</code>
+     */
+    const XPN_SERVICE_PROJECTS = 95191981;
 
     private static $valueToName = [
         self::UNDEFINED_METRIC => 'UNDEFINED_METRIC',
@@ -525,6 +533,7 @@ class Metric
         self::PREEMPTIBLE_NVIDIA_T4_GPUS => 'PREEMPTIBLE_NVIDIA_T4_GPUS',
         self::PREEMPTIBLE_NVIDIA_T4_VWS_GPUS => 'PREEMPTIBLE_NVIDIA_T4_VWS_GPUS',
         self::PREEMPTIBLE_NVIDIA_V100_GPUS => 'PREEMPTIBLE_NVIDIA_V100_GPUS',
+        self::PSC_ILB_CONSUMER_FORWARDING_RULES_PER_PRODUCER_NETWORK => 'PSC_ILB_CONSUMER_FORWARDING_RULES_PER_PRODUCER_NETWORK',
         self::PUBLIC_ADVERTISED_PREFIXES => 'PUBLIC_ADVERTISED_PREFIXES',
         self::PUBLIC_DELEGATED_PREFIXES => 'PUBLIC_DELEGATED_PREFIXES',
         self::REGIONAL_AUTOSCALERS => 'REGIONAL_AUTOSCALERS',
@@ -552,6 +561,7 @@ class Metric
         self::URL_MAPS => 'URL_MAPS',
         self::VPN_GATEWAYS => 'VPN_GATEWAYS',
         self::VPN_TUNNELS => 'VPN_TUNNELS',
+        self::XPN_SERVICE_PROJECTS => 'XPN_SERVICE_PROJECTS',
     ];
 
     public static function name($value)

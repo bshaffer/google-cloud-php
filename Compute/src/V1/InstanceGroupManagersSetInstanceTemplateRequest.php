@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class InstanceGroupManagersSetInstanceTemplateRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group.
+     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
      *
      * Generated from protobuf field <code>string instance_template = 40812772;</code>
      */
@@ -28,7 +28,7 @@ class InstanceGroupManagersSetInstanceTemplateRequest extends \Google\Protobuf\I
      *     Optional. Data for populating the Message object.
      *
      *     @type string $instance_template
-     *           The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group.
+     *           The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
      * }
      */
     public function __construct($data = NULL) {
@@ -37,7 +37,7 @@ class InstanceGroupManagersSetInstanceTemplateRequest extends \Google\Protobuf\I
     }
 
     /**
-     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group.
+     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
      *
      * Generated from protobuf field <code>string instance_template = 40812772;</code>
      * @return string
@@ -48,7 +48,7 @@ class InstanceGroupManagersSetInstanceTemplateRequest extends \Google\Protobuf\I
     }
 
     /**
-     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group.
+     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
      *
      * Generated from protobuf field <code>string instance_template = 40812772;</code>
      * @param string $var

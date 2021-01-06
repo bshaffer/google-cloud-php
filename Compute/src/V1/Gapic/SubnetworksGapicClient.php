@@ -380,17 +380,19 @@ class SubnetworksGapicClient
      *     $project = '';
      *     $region = '';
      *     $subnetwork = '';
-     *     $response = $subnetworksClient->expandIpCidrRange($project, $region, $subnetwork);
+     *     $subnetworksExpandIpCidrRangeRequestResource = new SubnetworksExpandIpCidrRangeRequest();
+     *     $response = $subnetworksClient->expandIpCidrRange($project, $region, $subnetwork, $subnetworksExpandIpCidrRangeRequestResource);
      * } finally {
      *     $subnetworksClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region scoping this request.
-     * @param string $subnetwork   Name of the Subnetwork resource to update.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                              $project                                     Project ID for this request.
+     * @param string                              $region                                      Name of the region scoping this request.
+     * @param string                              $subnetwork                                  Name of the Subnetwork resource to update.
+     * @param SubnetworksExpandIpCidrRangeRequest $subnetworksExpandIpCidrRangeRequestResource The body resource for this request
+     * @param array                               $optionalArgs                                {
+     *                                                                                         Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -398,7 +400,6 @@ class SubnetworksGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type SubnetworksExpandIpCidrRangeRequest $subnetworksExpandIpCidrRangeRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -411,17 +412,15 @@ class SubnetworksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function expandIpCidrRange($project, $region, $subnetwork, array $optionalArgs = [])
+    public function expandIpCidrRange($project, $region, $subnetwork, $subnetworksExpandIpCidrRangeRequestResource, array $optionalArgs = [])
     {
         $request = new ExpandIpCidrRangeSubnetworkRequest();
         $request->setProject($project);
         $request->setRegion($region);
         $request->setSubnetwork($subnetwork);
+        $request->setSubnetworksExpandIpCidrRangeRequestResource($subnetworksExpandIpCidrRangeRequestResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['subnetworksExpandIpCidrRangeRequestResource'])) {
-            $request->setSubnetworksExpandIpCidrRangeRequestResource($optionalArgs['subnetworksExpandIpCidrRangeRequestResource']);
         }
 
         return $this->startCall(
@@ -544,16 +543,18 @@ class SubnetworksGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $subnetworksClient->insert($project, $region);
+     *     $subnetworkResource = new Subnetwork();
+     *     $response = $subnetworksClient->insert($project, $region, $subnetworkResource);
      * } finally {
      *     $subnetworksClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region scoping this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string     $project            Project ID for this request.
+     * @param string     $region             Name of the region scoping this request.
+     * @param Subnetwork $subnetworkResource The body resource for this request
+     * @param array      $optionalArgs       {
+     *                                       Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -561,7 +562,6 @@ class SubnetworksGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type Subnetwork $subnetworkResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -574,16 +574,14 @@ class SubnetworksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, $region, array $optionalArgs = [])
+    public function insert($project, $region, $subnetworkResource, array $optionalArgs = [])
     {
         $request = new InsertSubnetworkRequest();
         $request->setProject($project);
         $request->setRegion($region);
+        $request->setSubnetworkResource($subnetworkResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['subnetworkResource'])) {
-            $request->setSubnetworkResource($optionalArgs['subnetworkResource']);
         }
 
         return $this->startCall(
@@ -794,7 +792,7 @@ class SubnetworksGapicClient
     }
 
     /**
-     * Patches the specified subnetwork with the data included in the request. Only certain fields can up updated with a patch request as indicated in the field descriptions. You must specify the current fingerprint of the subnetwork resource being patched.
+     * Patches the specified subnetwork with the data included in the request. Only certain fields can be updated with a patch request as indicated in the field descriptions. You must specify the current fingerprint of the subnetwork resource being patched.
      *
      * Sample code:
      * ```
@@ -803,17 +801,19 @@ class SubnetworksGapicClient
      *     $project = '';
      *     $region = '';
      *     $subnetwork = '';
-     *     $response = $subnetworksClient->patch($project, $region, $subnetwork);
+     *     $subnetworkResource = new Subnetwork();
+     *     $response = $subnetworksClient->patch($project, $region, $subnetwork, $subnetworkResource);
      * } finally {
      *     $subnetworksClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region scoping this request.
-     * @param string $subnetwork   Name of the Subnetwork resource to patch.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string     $project            Project ID for this request.
+     * @param string     $region             Name of the region scoping this request.
+     * @param string     $subnetwork         Name of the Subnetwork resource to patch.
+     * @param Subnetwork $subnetworkResource The body resource for this request
+     * @param array      $optionalArgs       {
+     *                                       Optional.
      *
      *     @type int $drainTimeoutSeconds
      *          The drain timeout specifies the upper bound in seconds on the amount of time allowed to drain connections from the current ACTIVE subnetwork to the current BACKUP subnetwork. The drain timeout is only applicable when the following conditions are true: - the subnetwork being patched has purpose = INTERNAL_HTTPS_LOAD_BALANCER - the subnetwork being patched has role = BACKUP - the patch request is setting the role to ACTIVE. Note that after this patch operation the roles of the ACTIVE and BACKUP subnetworks will be swapped.
@@ -823,7 +823,6 @@ class SubnetworksGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type Subnetwork $subnetworkResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -836,20 +835,18 @@ class SubnetworksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function patch($project, $region, $subnetwork, array $optionalArgs = [])
+    public function patch($project, $region, $subnetwork, $subnetworkResource, array $optionalArgs = [])
     {
         $request = new PatchSubnetworkRequest();
         $request->setProject($project);
         $request->setRegion($region);
         $request->setSubnetwork($subnetwork);
+        $request->setSubnetworkResource($subnetworkResource);
         if (isset($optionalArgs['drainTimeoutSeconds'])) {
             $request->setDrainTimeoutSeconds($optionalArgs['drainTimeoutSeconds']);
         }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['subnetworkResource'])) {
-            $request->setSubnetworkResource($optionalArgs['subnetworkResource']);
         }
 
         return $this->startCall(
@@ -869,20 +866,21 @@ class SubnetworksGapicClient
      * try {
      *     $project = '';
      *     $region = '';
+     *     $regionSetPolicyRequestResource = new RegionSetPolicyRequest();
      *     $resource = '';
-     *     $response = $subnetworksClient->setIamPolicy($project, $region, $resource);
+     *     $response = $subnetworksClient->setIamPolicy($project, $region, $regionSetPolicyRequestResource, $resource);
      * } finally {
      *     $subnetworksClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       The name of the region for this request.
-     * @param string $resource     Name or id of the resource for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                 $project                        Project ID for this request.
+     * @param string                 $region                         The name of the region for this request.
+     * @param RegionSetPolicyRequest $regionSetPolicyRequestResource The body resource for this request
+     * @param string                 $resource                       Name or id of the resource for this request.
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type RegionSetPolicyRequest $regionSetPolicyRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -895,15 +893,13 @@ class SubnetworksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setIamPolicy($project, $region, $resource, array $optionalArgs = [])
+    public function setIamPolicy($project, $region, $regionSetPolicyRequestResource, $resource, array $optionalArgs = [])
     {
         $request = new SetIamPolicySubnetworkRequest();
         $request->setProject($project);
         $request->setRegion($region);
+        $request->setRegionSetPolicyRequestResource($regionSetPolicyRequestResource);
         $request->setResource($resource);
-        if (isset($optionalArgs['regionSetPolicyRequestResource'])) {
-            $request->setRegionSetPolicyRequestResource($optionalArgs['regionSetPolicyRequestResource']);
-        }
 
         return $this->startCall(
             'SetIamPolicy',
@@ -923,17 +919,19 @@ class SubnetworksGapicClient
      *     $project = '';
      *     $region = '';
      *     $subnetwork = '';
-     *     $response = $subnetworksClient->setPrivateIpGoogleAccess($project, $region, $subnetwork);
+     *     $subnetworksSetPrivateIpGoogleAccessRequestResource = new SubnetworksSetPrivateIpGoogleAccessRequest();
+     *     $response = $subnetworksClient->setPrivateIpGoogleAccess($project, $region, $subnetwork, $subnetworksSetPrivateIpGoogleAccessRequestResource);
      * } finally {
      *     $subnetworksClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region scoping this request.
-     * @param string $subnetwork   Name of the Subnetwork resource.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                                     $project                                            Project ID for this request.
+     * @param string                                     $region                                             Name of the region scoping this request.
+     * @param string                                     $subnetwork                                         Name of the Subnetwork resource.
+     * @param SubnetworksSetPrivateIpGoogleAccessRequest $subnetworksSetPrivateIpGoogleAccessRequestResource The body resource for this request
+     * @param array                                      $optionalArgs                                       {
+     *                                                                                                       Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -941,7 +939,6 @@ class SubnetworksGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type SubnetworksSetPrivateIpGoogleAccessRequest $subnetworksSetPrivateIpGoogleAccessRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -954,17 +951,15 @@ class SubnetworksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setPrivateIpGoogleAccess($project, $region, $subnetwork, array $optionalArgs = [])
+    public function setPrivateIpGoogleAccess($project, $region, $subnetwork, $subnetworksSetPrivateIpGoogleAccessRequestResource, array $optionalArgs = [])
     {
         $request = new SetPrivateIpGoogleAccessSubnetworkRequest();
         $request->setProject($project);
         $request->setRegion($region);
         $request->setSubnetwork($subnetwork);
+        $request->setSubnetworksSetPrivateIpGoogleAccessRequestResource($subnetworksSetPrivateIpGoogleAccessRequestResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['subnetworksSetPrivateIpGoogleAccessRequestResource'])) {
-            $request->setSubnetworksSetPrivateIpGoogleAccessRequestResource($optionalArgs['subnetworksSetPrivateIpGoogleAccessRequestResource']);
         }
 
         return $this->startCall(
@@ -985,19 +980,20 @@ class SubnetworksGapicClient
      *     $project = '';
      *     $region = '';
      *     $resource = '';
-     *     $response = $subnetworksClient->testIamPermissions($project, $region, $resource);
+     *     $testPermissionsRequestResource = new TestPermissionsRequest();
+     *     $response = $subnetworksClient->testIamPermissions($project, $region, $resource, $testPermissionsRequestResource);
      * } finally {
      *     $subnetworksClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       The name of the region for this request.
-     * @param string $resource     Name or id of the resource for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                 $project                        Project ID for this request.
+     * @param string                 $region                         The name of the region for this request.
+     * @param string                 $resource                       Name or id of the resource for this request.
+     * @param TestPermissionsRequest $testPermissionsRequestResource The body resource for this request
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type TestPermissionsRequest $testPermissionsRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -1010,15 +1006,13 @@ class SubnetworksGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function testIamPermissions($project, $region, $resource, array $optionalArgs = [])
+    public function testIamPermissions($project, $region, $resource, $testPermissionsRequestResource, array $optionalArgs = [])
     {
         $request = new TestIamPermissionsSubnetworkRequest();
         $request->setProject($project);
         $request->setRegion($region);
         $request->setResource($resource);
-        if (isset($optionalArgs['testPermissionsRequestResource'])) {
-            $request->setTestPermissionsRequestResource($optionalArgs['testPermissionsRequestResource']);
-        }
+        $request->setTestPermissionsRequestResource($testPermissionsRequestResource);
 
         return $this->startCall(
             'TestIamPermissions',

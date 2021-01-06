@@ -22,7 +22,9 @@ class UpdateInstanceRequest extends \Google\Protobuf\Internal\Message
      */
     private $instance = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $instance_resource = null;
     /**
@@ -67,6 +69,7 @@ class UpdateInstanceRequest extends \Google\Protobuf\Internal\Message
      *     @type string $instance
      *           Name of the instance resource to update.
      *     @type \Google\Cloud\Compute\V1\Instance $instance_resource
+     *           The body resource for this request
      *     @type string $minimal_action
      *           Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
      *     @type string $most_disruptive_allowed_action
@@ -113,7 +116,9 @@ class UpdateInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\Instance
      */
     public function getInstanceResource()
@@ -132,7 +137,9 @@ class UpdateInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\Instance $var
      * @return $this
      */

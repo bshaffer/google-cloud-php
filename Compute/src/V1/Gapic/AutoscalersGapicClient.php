@@ -414,20 +414,21 @@ class AutoscalersGapicClient
      * ```
      * $autoscalersClient = new AutoscalersClient();
      * try {
+     *     $autoscalerResource = new Autoscaler();
      *     $project = '';
      *     $zone = '';
-     *     $response = $autoscalersClient->insert($project, $zone);
+     *     $response = $autoscalersClient->insert($autoscalerResource, $project, $zone);
      * } finally {
      *     $autoscalersClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $zone         Name of the zone for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param Autoscaler $autoscalerResource The body resource for this request
+     * @param string     $project            Project ID for this request.
+     * @param string     $zone               Name of the zone for this request.
+     * @param array      $optionalArgs       {
+     *                                       Optional.
      *
-     *     @type Autoscaler $autoscalerResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -446,14 +447,12 @@ class AutoscalersGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, $zone, array $optionalArgs = [])
+    public function insert($autoscalerResource, $project, $zone, array $optionalArgs = [])
     {
         $request = new InsertAutoscalerRequest();
+        $request->setAutoscalerResource($autoscalerResource);
         $request->setProject($project);
         $request->setZone($zone);
-        if (isset($optionalArgs['autoscalerResource'])) {
-            $request->setAutoscalerResource($optionalArgs['autoscalerResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }
@@ -574,22 +573,23 @@ class AutoscalersGapicClient
      * ```
      * $autoscalersClient = new AutoscalersClient();
      * try {
+     *     $autoscalerResource = new Autoscaler();
      *     $project = '';
      *     $zone = '';
-     *     $response = $autoscalersClient->patch($project, $zone);
+     *     $response = $autoscalersClient->patch($autoscalerResource, $project, $zone);
      * } finally {
      *     $autoscalersClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $zone         Name of the zone for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param Autoscaler $autoscalerResource The body resource for this request
+     * @param string     $project            Project ID for this request.
+     * @param string     $zone               Name of the zone for this request.
+     * @param array      $optionalArgs       {
+     *                                       Optional.
      *
      *     @type string $autoscaler
      *          Name of the autoscaler to patch.
-     *     @type Autoscaler $autoscalerResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -608,16 +608,14 @@ class AutoscalersGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function patch($project, $zone, array $optionalArgs = [])
+    public function patch($autoscalerResource, $project, $zone, array $optionalArgs = [])
     {
         $request = new PatchAutoscalerRequest();
+        $request->setAutoscalerResource($autoscalerResource);
         $request->setProject($project);
         $request->setZone($zone);
         if (isset($optionalArgs['autoscaler'])) {
             $request->setAutoscaler($optionalArgs['autoscaler']);
-        }
-        if (isset($optionalArgs['autoscalerResource'])) {
-            $request->setAutoscalerResource($optionalArgs['autoscalerResource']);
         }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
@@ -638,22 +636,23 @@ class AutoscalersGapicClient
      * ```
      * $autoscalersClient = new AutoscalersClient();
      * try {
+     *     $autoscalerResource = new Autoscaler();
      *     $project = '';
      *     $zone = '';
-     *     $response = $autoscalersClient->update($project, $zone);
+     *     $response = $autoscalersClient->update($autoscalerResource, $project, $zone);
      * } finally {
      *     $autoscalersClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $zone         Name of the zone for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param Autoscaler $autoscalerResource The body resource for this request
+     * @param string     $project            Project ID for this request.
+     * @param string     $zone               Name of the zone for this request.
+     * @param array      $optionalArgs       {
+     *                                       Optional.
      *
      *     @type string $autoscaler
      *          Name of the autoscaler to update.
-     *     @type Autoscaler $autoscalerResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -672,16 +671,14 @@ class AutoscalersGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function update($project, $zone, array $optionalArgs = [])
+    public function update($autoscalerResource, $project, $zone, array $optionalArgs = [])
     {
         $request = new UpdateAutoscalerRequest();
+        $request->setAutoscalerResource($autoscalerResource);
         $request->setProject($project);
         $request->setZone($zone);
         if (isset($optionalArgs['autoscaler'])) {
             $request->setAutoscaler($optionalArgs['autoscaler']);
-        }
-        if (isset($optionalArgs['autoscalerResource'])) {
-            $request->setAutoscalerResource($optionalArgs['autoscalerResource']);
         }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);

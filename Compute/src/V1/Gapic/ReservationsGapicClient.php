@@ -476,17 +476,19 @@ class ReservationsGapicClient
      * $reservationsClient = new ReservationsClient();
      * try {
      *     $project = '';
+     *     $reservationResource = new Reservation();
      *     $zone = '';
-     *     $response = $reservationsClient->insert($project, $zone);
+     *     $response = $reservationsClient->insert($project, $reservationResource, $zone);
      * } finally {
      *     $reservationsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $zone         Name of the zone for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string      $project             Project ID for this request.
+     * @param Reservation $reservationResource The body resource for this request
+     * @param string      $zone                Name of the zone for this request.
+     * @param array       $optionalArgs        {
+     *                                         Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -494,7 +496,6 @@ class ReservationsGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type Reservation $reservationResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -507,16 +508,14 @@ class ReservationsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, $zone, array $optionalArgs = [])
+    public function insert($project, $reservationResource, $zone, array $optionalArgs = [])
     {
         $request = new InsertReservationRequest();
         $request->setProject($project);
+        $request->setReservationResource($reservationResource);
         $request->setZone($zone);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['reservationResource'])) {
-            $request->setReservationResource($optionalArgs['reservationResource']);
         }
 
         return $this->startCall(
@@ -637,18 +636,20 @@ class ReservationsGapicClient
      * try {
      *     $project = '';
      *     $reservation = '';
+     *     $reservationsResizeRequestResource = new ReservationsResizeRequest();
      *     $zone = '';
-     *     $response = $reservationsClient->resize($project, $reservation, $zone);
+     *     $response = $reservationsClient->resize($project, $reservation, $reservationsResizeRequestResource, $zone);
      * } finally {
      *     $reservationsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $reservation  Name of the reservation to update.
-     * @param string $zone         Name of the zone for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                    $project                           Project ID for this request.
+     * @param string                    $reservation                       Name of the reservation to update.
+     * @param ReservationsResizeRequest $reservationsResizeRequestResource The body resource for this request
+     * @param string                    $zone                              Name of the zone for this request.
+     * @param array                     $optionalArgs                      {
+     *                                                                     Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -656,7 +657,6 @@ class ReservationsGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type ReservationsResizeRequest $reservationsResizeRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -669,17 +669,15 @@ class ReservationsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function resize($project, $reservation, $zone, array $optionalArgs = [])
+    public function resize($project, $reservation, $reservationsResizeRequestResource, $zone, array $optionalArgs = [])
     {
         $request = new ResizeReservationRequest();
         $request->setProject($project);
         $request->setReservation($reservation);
+        $request->setReservationsResizeRequestResource($reservationsResizeRequestResource);
         $request->setZone($zone);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['reservationsResizeRequestResource'])) {
-            $request->setReservationsResizeRequestResource($optionalArgs['reservationsResizeRequestResource']);
         }
 
         return $this->startCall(
@@ -700,19 +698,20 @@ class ReservationsGapicClient
      *     $project = '';
      *     $resource = '';
      *     $zone = '';
-     *     $response = $reservationsClient->setIamPolicy($project, $resource, $zone);
+     *     $zoneSetPolicyRequestResource = new ZoneSetPolicyRequest();
+     *     $response = $reservationsClient->setIamPolicy($project, $resource, $zone, $zoneSetPolicyRequestResource);
      * } finally {
      *     $reservationsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $resource     Name or id of the resource for this request.
-     * @param string $zone         The name of the zone for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string               $project                      Project ID for this request.
+     * @param string               $resource                     Name or id of the resource for this request.
+     * @param string               $zone                         The name of the zone for this request.
+     * @param ZoneSetPolicyRequest $zoneSetPolicyRequestResource The body resource for this request
+     * @param array                $optionalArgs                 {
+     *                                                           Optional.
      *
-     *     @type ZoneSetPolicyRequest $zoneSetPolicyRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -725,15 +724,13 @@ class ReservationsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setIamPolicy($project, $resource, $zone, array $optionalArgs = [])
+    public function setIamPolicy($project, $resource, $zone, $zoneSetPolicyRequestResource, array $optionalArgs = [])
     {
         $request = new SetIamPolicyReservationRequest();
         $request->setProject($project);
         $request->setResource($resource);
         $request->setZone($zone);
-        if (isset($optionalArgs['zoneSetPolicyRequestResource'])) {
-            $request->setZoneSetPolicyRequestResource($optionalArgs['zoneSetPolicyRequestResource']);
-        }
+        $request->setZoneSetPolicyRequestResource($zoneSetPolicyRequestResource);
 
         return $this->startCall(
             'SetIamPolicy',
@@ -752,20 +749,21 @@ class ReservationsGapicClient
      * try {
      *     $project = '';
      *     $resource = '';
+     *     $testPermissionsRequestResource = new TestPermissionsRequest();
      *     $zone = '';
-     *     $response = $reservationsClient->testIamPermissions($project, $resource, $zone);
+     *     $response = $reservationsClient->testIamPermissions($project, $resource, $testPermissionsRequestResource, $zone);
      * } finally {
      *     $reservationsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $resource     Name or id of the resource for this request.
-     * @param string $zone         The name of the zone for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                 $project                        Project ID for this request.
+     * @param string                 $resource                       Name or id of the resource for this request.
+     * @param TestPermissionsRequest $testPermissionsRequestResource The body resource for this request
+     * @param string                 $zone                           The name of the zone for this request.
+     * @param array                  $optionalArgs                   {
+     *                                                               Optional.
      *
-     *     @type TestPermissionsRequest $testPermissionsRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -778,15 +776,13 @@ class ReservationsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function testIamPermissions($project, $resource, $zone, array $optionalArgs = [])
+    public function testIamPermissions($project, $resource, $testPermissionsRequestResource, $zone, array $optionalArgs = [])
     {
         $request = new TestIamPermissionsReservationRequest();
         $request->setProject($project);
         $request->setResource($resource);
+        $request->setTestPermissionsRequestResource($testPermissionsRequestResource);
         $request->setZone($zone);
-        if (isset($optionalArgs['testPermissionsRequestResource'])) {
-            $request->setTestPermissionsRequestResource($optionalArgs['testPermissionsRequestResource']);
-        }
 
         return $this->startCall(
             'TestIamPermissions',

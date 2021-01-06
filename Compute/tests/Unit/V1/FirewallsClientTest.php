@@ -335,9 +335,10 @@ class FirewallsClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $firewallResource = new Firewall();
         $project = 'project-309310695';
 
-        $response = $client->insert($project);
+        $response = $client->insert($firewallResource, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -345,6 +346,9 @@ class FirewallsClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.Firewalls/Insert', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getFirewallResource();
+
+        $this->assertProtobufEquals($firewallResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -375,10 +379,11 @@ class FirewallsClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $firewallResource = new Firewall();
         $project = 'project-309310695';
 
         try {
-            $client->insert($project);
+            $client->insert($firewallResource, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -532,9 +537,10 @@ class FirewallsClientTest extends GeneratedTest
 
         // Mock request
         $firewall = 'firewall-562725632';
+        $firewallResource = new Firewall();
         $project = 'project-309310695';
 
-        $response = $client->patch($firewall, $project);
+        $response = $client->patch($firewall, $firewallResource, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -545,6 +551,9 @@ class FirewallsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getFirewall();
 
         $this->assertProtobufEquals($firewall, $actualValue);
+        $actualValue = $actualRequestObject->getFirewallResource();
+
+        $this->assertProtobufEquals($firewallResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -576,10 +585,11 @@ class FirewallsClientTest extends GeneratedTest
 
         // Mock request
         $firewall = 'firewall-562725632';
+        $firewallResource = new Firewall();
         $project = 'project-309310695';
 
         try {
-            $client->patch($firewall, $project);
+            $client->patch($firewall, $firewallResource, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -648,9 +658,10 @@ class FirewallsClientTest extends GeneratedTest
 
         // Mock request
         $firewall = 'firewall-562725632';
+        $firewallResource = new Firewall();
         $project = 'project-309310695';
 
-        $response = $client->update($firewall, $project);
+        $response = $client->update($firewall, $firewallResource, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -661,6 +672,9 @@ class FirewallsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getFirewall();
 
         $this->assertProtobufEquals($firewall, $actualValue);
+        $actualValue = $actualRequestObject->getFirewallResource();
+
+        $this->assertProtobufEquals($firewallResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -692,10 +706,11 @@ class FirewallsClientTest extends GeneratedTest
 
         // Mock request
         $firewall = 'firewall-562725632';
+        $firewallResource = new Firewall();
         $project = 'project-309310695';
 
         try {
-            $client->update($firewall, $project);
+            $client->update($firewall, $firewallResource, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

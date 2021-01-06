@@ -36,7 +36,9 @@ class SetShieldedInstanceIntegrityPolicyInstanceRequest extends \Google\Protobuf
      */
     private $request_id = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 140734006;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 140734006 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $shielded_instance_integrity_policy_resource = null;
     /**
@@ -61,6 +63,7 @@ class SetShieldedInstanceIntegrityPolicyInstanceRequest extends \Google\Protobuf
      *           For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *           The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
      *     @type \Google\Cloud\Compute\V1\ShieldedInstanceIntegrityPolicy $shielded_instance_integrity_policy_resource
+     *           The body resource for this request
      *     @type string $zone
      *           The name of the zone for this request.
      * }
@@ -153,7 +156,9 @@ class SetShieldedInstanceIntegrityPolicyInstanceRequest extends \Google\Protobuf
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 140734006;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 140734006 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\ShieldedInstanceIntegrityPolicy
      */
     public function getShieldedInstanceIntegrityPolicyResource()
@@ -172,7 +177,9 @@ class SetShieldedInstanceIntegrityPolicyInstanceRequest extends \Google\Protobuf
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 140734006;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 140734006 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\ShieldedInstanceIntegrityPolicy $var
      * @return $this
      */

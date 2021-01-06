@@ -41,7 +41,9 @@ require 'vendor/autoload.php';
 use Google\Cloud\Compute\V1\InstancesClient;
 
 $instances = new InstancesClient();
-foreach ($compute->list_)
+foreach ($instances->list_() as $instance) {
+    print($instance->getName());
+}
 ```
 
 ### Version

@@ -349,10 +349,11 @@ class RegionHealthChecksClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $healthCheckResource = new HealthCheck();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
-        $response = $client->insert($project, $region);
+        $response = $client->insert($healthCheckResource, $project, $region);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -360,6 +361,9 @@ class RegionHealthChecksClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.RegionHealthChecks/Insert', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getHealthCheckResource();
+
+        $this->assertProtobufEquals($healthCheckResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -393,11 +397,12 @@ class RegionHealthChecksClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $healthCheckResource = new HealthCheck();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
         try {
-            $client->insert($project, $region);
+            $client->insert($healthCheckResource, $project, $region);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -556,10 +561,11 @@ class RegionHealthChecksClientTest extends GeneratedTest
 
         // Mock request
         $healthCheck = 'healthCheck845747557';
+        $healthCheckResource = new HealthCheck();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
-        $response = $client->patch($healthCheck, $project, $region);
+        $response = $client->patch($healthCheck, $healthCheckResource, $project, $region);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -570,6 +576,9 @@ class RegionHealthChecksClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getHealthCheck();
 
         $this->assertProtobufEquals($healthCheck, $actualValue);
+        $actualValue = $actualRequestObject->getHealthCheckResource();
+
+        $this->assertProtobufEquals($healthCheckResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -604,11 +613,12 @@ class RegionHealthChecksClientTest extends GeneratedTest
 
         // Mock request
         $healthCheck = 'healthCheck845747557';
+        $healthCheckResource = new HealthCheck();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
         try {
-            $client->patch($healthCheck, $project, $region);
+            $client->patch($healthCheck, $healthCheckResource, $project, $region);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -677,10 +687,11 @@ class RegionHealthChecksClientTest extends GeneratedTest
 
         // Mock request
         $healthCheck = 'healthCheck845747557';
+        $healthCheckResource = new HealthCheck();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
-        $response = $client->update($healthCheck, $project, $region);
+        $response = $client->update($healthCheck, $healthCheckResource, $project, $region);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -691,6 +702,9 @@ class RegionHealthChecksClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getHealthCheck();
 
         $this->assertProtobufEquals($healthCheck, $actualValue);
+        $actualValue = $actualRequestObject->getHealthCheckResource();
+
+        $this->assertProtobufEquals($healthCheckResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -725,11 +739,12 @@ class RegionHealthChecksClientTest extends GeneratedTest
 
         // Mock request
         $healthCheck = 'healthCheck845747557';
+        $healthCheckResource = new HealthCheck();
         $project = 'project-309310695';
         $region = 'region-934795532';
 
         try {
-            $client->update($healthCheck, $project, $region);
+            $client->update($healthCheck, $healthCheckResource, $project, $region);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

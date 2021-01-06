@@ -296,15 +296,17 @@ class TargetSslProxiesGapicClient
      * $targetSslProxiesClient = new TargetSslProxiesClient();
      * try {
      *     $project = '';
-     *     $response = $targetSslProxiesClient->insert($project);
+     *     $targetSslProxyResource = new TargetSslProxy();
+     *     $response = $targetSslProxiesClient->insert($project, $targetSslProxyResource);
      * } finally {
      *     $targetSslProxiesClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string         $project                Project ID for this request.
+     * @param TargetSslProxy $targetSslProxyResource The body resource for this request
+     * @param array          $optionalArgs           {
+     *                                               Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -312,7 +314,6 @@ class TargetSslProxiesGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type TargetSslProxy $targetSslProxyResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -325,15 +326,13 @@ class TargetSslProxiesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, array $optionalArgs = [])
+    public function insert($project, $targetSslProxyResource, array $optionalArgs = [])
     {
         $request = new InsertTargetSslProxyRequest();
         $request->setProject($project);
+        $request->setTargetSslProxyResource($targetSslProxyResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['targetSslProxyResource'])) {
-            $request->setTargetSslProxyResource($optionalArgs['targetSslProxyResource']);
         }
 
         return $this->startCall(
@@ -450,17 +449,19 @@ class TargetSslProxiesGapicClient
      * $targetSslProxiesClient = new TargetSslProxiesClient();
      * try {
      *     $project = '';
+     *     $targetSslProxiesSetBackendServiceRequestResource = new TargetSslProxiesSetBackendServiceRequest();
      *     $targetSslProxy = '';
-     *     $response = $targetSslProxiesClient->setBackendService($project, $targetSslProxy);
+     *     $response = $targetSslProxiesClient->setBackendService($project, $targetSslProxiesSetBackendServiceRequestResource, $targetSslProxy);
      * } finally {
      *     $targetSslProxiesClient->close();
      * }
      * ```
      *
-     * @param string $project        Project ID for this request.
-     * @param string $targetSslProxy Name of the TargetSslProxy resource whose BackendService resource is to be set.
-     * @param array  $optionalArgs   {
-     *                               Optional.
+     * @param string                                   $project                                          Project ID for this request.
+     * @param TargetSslProxiesSetBackendServiceRequest $targetSslProxiesSetBackendServiceRequestResource The body resource for this request
+     * @param string                                   $targetSslProxy                                   Name of the TargetSslProxy resource whose BackendService resource is to be set.
+     * @param array                                    $optionalArgs                                     {
+     *                                                                                                   Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -468,7 +469,6 @@ class TargetSslProxiesGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type TargetSslProxiesSetBackendServiceRequest $targetSslProxiesSetBackendServiceRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -481,16 +481,14 @@ class TargetSslProxiesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setBackendService($project, $targetSslProxy, array $optionalArgs = [])
+    public function setBackendService($project, $targetSslProxiesSetBackendServiceRequestResource, $targetSslProxy, array $optionalArgs = [])
     {
         $request = new SetBackendServiceTargetSslProxyRequest();
         $request->setProject($project);
+        $request->setTargetSslProxiesSetBackendServiceRequestResource($targetSslProxiesSetBackendServiceRequestResource);
         $request->setTargetSslProxy($targetSslProxy);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['targetSslProxiesSetBackendServiceRequestResource'])) {
-            $request->setTargetSslProxiesSetBackendServiceRequestResource($optionalArgs['targetSslProxiesSetBackendServiceRequestResource']);
         }
 
         return $this->startCall(
@@ -509,17 +507,19 @@ class TargetSslProxiesGapicClient
      * $targetSslProxiesClient = new TargetSslProxiesClient();
      * try {
      *     $project = '';
+     *     $targetSslProxiesSetProxyHeaderRequestResource = new TargetSslProxiesSetProxyHeaderRequest();
      *     $targetSslProxy = '';
-     *     $response = $targetSslProxiesClient->setProxyHeader($project, $targetSslProxy);
+     *     $response = $targetSslProxiesClient->setProxyHeader($project, $targetSslProxiesSetProxyHeaderRequestResource, $targetSslProxy);
      * } finally {
      *     $targetSslProxiesClient->close();
      * }
      * ```
      *
-     * @param string $project        Project ID for this request.
-     * @param string $targetSslProxy Name of the TargetSslProxy resource whose ProxyHeader is to be set.
-     * @param array  $optionalArgs   {
-     *                               Optional.
+     * @param string                                $project                                       Project ID for this request.
+     * @param TargetSslProxiesSetProxyHeaderRequest $targetSslProxiesSetProxyHeaderRequestResource The body resource for this request
+     * @param string                                $targetSslProxy                                Name of the TargetSslProxy resource whose ProxyHeader is to be set.
+     * @param array                                 $optionalArgs                                  {
+     *                                                                                             Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -527,7 +527,6 @@ class TargetSslProxiesGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type TargetSslProxiesSetProxyHeaderRequest $targetSslProxiesSetProxyHeaderRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -540,16 +539,14 @@ class TargetSslProxiesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setProxyHeader($project, $targetSslProxy, array $optionalArgs = [])
+    public function setProxyHeader($project, $targetSslProxiesSetProxyHeaderRequestResource, $targetSslProxy, array $optionalArgs = [])
     {
         $request = new SetProxyHeaderTargetSslProxyRequest();
         $request->setProject($project);
+        $request->setTargetSslProxiesSetProxyHeaderRequestResource($targetSslProxiesSetProxyHeaderRequestResource);
         $request->setTargetSslProxy($targetSslProxy);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['targetSslProxiesSetProxyHeaderRequestResource'])) {
-            $request->setTargetSslProxiesSetProxyHeaderRequestResource($optionalArgs['targetSslProxiesSetProxyHeaderRequestResource']);
         }
 
         return $this->startCall(
@@ -568,17 +565,19 @@ class TargetSslProxiesGapicClient
      * $targetSslProxiesClient = new TargetSslProxiesClient();
      * try {
      *     $project = '';
+     *     $targetSslProxiesSetSslCertificatesRequestResource = new TargetSslProxiesSetSslCertificatesRequest();
      *     $targetSslProxy = '';
-     *     $response = $targetSslProxiesClient->setSslCertificates($project, $targetSslProxy);
+     *     $response = $targetSslProxiesClient->setSslCertificates($project, $targetSslProxiesSetSslCertificatesRequestResource, $targetSslProxy);
      * } finally {
      *     $targetSslProxiesClient->close();
      * }
      * ```
      *
-     * @param string $project        Project ID for this request.
-     * @param string $targetSslProxy Name of the TargetSslProxy resource whose SslCertificate resource is to be set.
-     * @param array  $optionalArgs   {
-     *                               Optional.
+     * @param string                                    $project                                           Project ID for this request.
+     * @param TargetSslProxiesSetSslCertificatesRequest $targetSslProxiesSetSslCertificatesRequestResource The body resource for this request
+     * @param string                                    $targetSslProxy                                    Name of the TargetSslProxy resource whose SslCertificate resource is to be set.
+     * @param array                                     $optionalArgs                                      {
+     *                                                                                                     Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -586,7 +585,6 @@ class TargetSslProxiesGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type TargetSslProxiesSetSslCertificatesRequest $targetSslProxiesSetSslCertificatesRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -599,16 +597,14 @@ class TargetSslProxiesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setSslCertificates($project, $targetSslProxy, array $optionalArgs = [])
+    public function setSslCertificates($project, $targetSslProxiesSetSslCertificatesRequestResource, $targetSslProxy, array $optionalArgs = [])
     {
         $request = new SetSslCertificatesTargetSslProxyRequest();
         $request->setProject($project);
+        $request->setTargetSslProxiesSetSslCertificatesRequestResource($targetSslProxiesSetSslCertificatesRequestResource);
         $request->setTargetSslProxy($targetSslProxy);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['targetSslProxiesSetSslCertificatesRequestResource'])) {
-            $request->setTargetSslProxiesSetSslCertificatesRequestResource($optionalArgs['targetSslProxiesSetSslCertificatesRequestResource']);
         }
 
         return $this->startCall(
@@ -627,17 +623,19 @@ class TargetSslProxiesGapicClient
      * $targetSslProxiesClient = new TargetSslProxiesClient();
      * try {
      *     $project = '';
+     *     $sslPolicyReferenceResource = new SslPolicyReference();
      *     $targetSslProxy = '';
-     *     $response = $targetSslProxiesClient->setSslPolicy($project, $targetSslProxy);
+     *     $response = $targetSslProxiesClient->setSslPolicy($project, $sslPolicyReferenceResource, $targetSslProxy);
      * } finally {
      *     $targetSslProxiesClient->close();
      * }
      * ```
      *
-     * @param string $project        Project ID for this request.
-     * @param string $targetSslProxy Name of the TargetSslProxy resource whose SSL policy is to be set. The name must be 1-63 characters long, and comply with RFC1035.
-     * @param array  $optionalArgs   {
-     *                               Optional.
+     * @param string             $project                    Project ID for this request.
+     * @param SslPolicyReference $sslPolicyReferenceResource The body resource for this request
+     * @param string             $targetSslProxy             Name of the TargetSslProxy resource whose SSL policy is to be set. The name must be 1-63 characters long, and comply with RFC1035.
+     * @param array              $optionalArgs               {
+     *                                                       Optional.
      *
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
@@ -645,7 +643,6 @@ class TargetSslProxiesGapicClient
      *          For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
      *
      *          The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-     *     @type SslPolicyReference $sslPolicyReferenceResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -658,16 +655,14 @@ class TargetSslProxiesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function setSslPolicy($project, $targetSslProxy, array $optionalArgs = [])
+    public function setSslPolicy($project, $sslPolicyReferenceResource, $targetSslProxy, array $optionalArgs = [])
     {
         $request = new SetSslPolicyTargetSslProxyRequest();
         $request->setProject($project);
+        $request->setSslPolicyReferenceResource($sslPolicyReferenceResource);
         $request->setTargetSslProxy($targetSslProxy);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['sslPolicyReferenceResource'])) {
-            $request->setSslPolicyReferenceResource($optionalArgs['sslPolicyReferenceResource']);
         }
 
         return $this->startCall(

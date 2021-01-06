@@ -34,7 +34,9 @@ class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest extends \Google\
      */
     private $region = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $region_instance_group_manager_delete_instance_config_req_resource = null;
 
@@ -51,6 +53,7 @@ class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest extends \Google\
      *     @type string $region
      *           Name of the region scoping this request, should conform to RFC1035.
      *     @type \Google\Cloud\Compute\V1\RegionInstanceGroupManagerDeleteInstanceConfigReq $region_instance_group_manager_delete_instance_config_req_resource
+     *           The body resource for this request
      * }
      */
     public function __construct($data = NULL) {
@@ -137,7 +140,9 @@ class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest extends \Google\
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\RegionInstanceGroupManagerDeleteInstanceConfigReq
      */
     public function getRegionInstanceGroupManagerDeleteInstanceConfigReqResource()
@@ -156,7 +161,9 @@ class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest extends \Google\
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\RegionInstanceGroupManagerDeleteInstanceConfigReq $var
      * @return $this
      */

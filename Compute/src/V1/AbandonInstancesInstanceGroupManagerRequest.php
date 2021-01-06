@@ -22,7 +22,9 @@ class AbandonInstancesInstanceGroupManagerRequest extends \Google\Protobuf\Inter
      */
     private $instance_group_manager = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 52493560;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 52493560 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $instance_group_managers_abandon_instances_request_resource = null;
     /**
@@ -55,6 +57,7 @@ class AbandonInstancesInstanceGroupManagerRequest extends \Google\Protobuf\Inter
      *     @type string $instance_group_manager
      *           The name of the managed instance group.
      *     @type \Google\Cloud\Compute\V1\InstanceGroupManagersAbandonInstancesRequest $instance_group_managers_abandon_instances_request_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -97,7 +100,9 @@ class AbandonInstancesInstanceGroupManagerRequest extends \Google\Protobuf\Inter
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 52493560;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 52493560 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\InstanceGroupManagersAbandonInstancesRequest
      */
     public function getInstanceGroupManagersAbandonInstancesRequestResource()
@@ -116,7 +121,9 @@ class AbandonInstancesInstanceGroupManagerRequest extends \Google\Protobuf\Inter
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 52493560;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 52493560 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\InstanceGroupManagersAbandonInstancesRequest $var
      * @return $this
      */

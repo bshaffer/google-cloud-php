@@ -16,6 +16,12 @@ use Google\Protobuf\Internal\GPBUtil;
 class ResourcePolicySnapshotSchedulePolicySnapshotProperties extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Chain name that the snapshot is created in.
+     *
+     * Generated from protobuf field <code>string chain_name = 68644169;</code>
+     */
+    private $chain_name = '';
+    /**
      * Indication to perform a 'guest aware' snapshot.
      *
      * Generated from protobuf field <code>bool guest_flush = 117115357;</code>
@@ -40,6 +46,8 @@ class ResourcePolicySnapshotSchedulePolicySnapshotProperties extends \Google\Pro
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $chain_name
+     *           Chain name that the snapshot is created in.
      *     @type bool $guest_flush
      *           Indication to perform a 'guest aware' snapshot.
      *     @type array|\Google\Protobuf\Internal\MapField $labels
@@ -51,6 +59,32 @@ class ResourcePolicySnapshotSchedulePolicySnapshotProperties extends \Google\Pro
     public function __construct($data = NULL) {
         \GPBMetadata\Google\Cloud\Compute\V1\Compute::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Chain name that the snapshot is created in.
+     *
+     * Generated from protobuf field <code>string chain_name = 68644169;</code>
+     * @return string
+     */
+    public function getChainName()
+    {
+        return $this->chain_name;
+    }
+
+    /**
+     * Chain name that the snapshot is created in.
+     *
+     * Generated from protobuf field <code>string chain_name = 68644169;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setChainName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->chain_name = $var;
+
+        return $this;
     }
 
     /**

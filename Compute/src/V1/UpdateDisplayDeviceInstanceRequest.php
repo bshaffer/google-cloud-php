@@ -16,7 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateDisplayDeviceInstanceRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 21250650;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 21250650 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $display_device_resource = null;
     /**
@@ -53,6 +55,7 @@ class UpdateDisplayDeviceInstanceRequest extends \Google\Protobuf\Internal\Messa
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Compute\V1\DisplayDevice $display_device_resource
+     *           The body resource for this request
      *     @type string $instance
      *           Name of the instance scoping this request.
      *     @type string $project
@@ -71,7 +74,9 @@ class UpdateDisplayDeviceInstanceRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 21250650;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 21250650 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\DisplayDevice
      */
     public function getDisplayDeviceResource()
@@ -90,7 +95,9 @@ class UpdateDisplayDeviceInstanceRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 21250650;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 21250650 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\DisplayDevice $var
      * @return $this
      */

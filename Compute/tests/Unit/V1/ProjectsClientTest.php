@@ -27,9 +27,17 @@ use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
+use Google\Cloud\Compute\V1\DiskMoveRequest;
+use Google\Cloud\Compute\V1\InstanceMoveRequest;
+use Google\Cloud\Compute\V1\Metadata;
 use Google\Cloud\Compute\V1\Operation;
 use Google\Cloud\Compute\V1\Project;
+use Google\Cloud\Compute\V1\ProjectsDisableXpnResourceRequest;
+use Google\Cloud\Compute\V1\ProjectsEnableXpnResourceRequest;
 use Google\Cloud\Compute\V1\ProjectsGetXpnResources;
+use Google\Cloud\Compute\V1\ProjectsListXpnHostsRequest;
+use Google\Cloud\Compute\V1\ProjectsSetDefaultNetworkTierRequest;
+use Google\Cloud\Compute\V1\UsageExportLocation;
 use Google\Cloud\Compute\V1\XpnHostList;
 use Google\Cloud\Compute\V1\XpnResourceId;
 use Google\Protobuf\Any;
@@ -239,8 +247,9 @@ class ProjectsClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $projectsDisableXpnResourceRequestResource = new ProjectsDisableXpnResourceRequest();
 
-        $response = $client->disableXpnResource($project);
+        $response = $client->disableXpnResource($project, $projectsDisableXpnResourceRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -251,6 +260,9 @@ class ProjectsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
+        $actualValue = $actualRequestObject->getProjectsDisableXpnResourceRequestResource();
+
+        $this->assertProtobufEquals($projectsDisableXpnResourceRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -279,9 +291,10 @@ class ProjectsClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $projectsDisableXpnResourceRequestResource = new ProjectsDisableXpnResourceRequest();
 
         try {
-            $client->disableXpnResource($project);
+            $client->disableXpnResource($project, $projectsDisableXpnResourceRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -461,8 +474,9 @@ class ProjectsClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $projectsEnableXpnResourceRequestResource = new ProjectsEnableXpnResourceRequest();
 
-        $response = $client->enableXpnResource($project);
+        $response = $client->enableXpnResource($project, $projectsEnableXpnResourceRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -473,6 +487,9 @@ class ProjectsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
+        $actualValue = $actualRequestObject->getProjectsEnableXpnResourceRequestResource();
+
+        $this->assertProtobufEquals($projectsEnableXpnResourceRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -501,9 +518,10 @@ class ProjectsClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $projectsEnableXpnResourceRequestResource = new ProjectsEnableXpnResourceRequest();
 
         try {
-            $client->enableXpnResource($project);
+            $client->enableXpnResource($project, $projectsEnableXpnResourceRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -794,8 +812,9 @@ class ProjectsClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $projectsListXpnHostsRequestResource = new ProjectsListXpnHostsRequest();
 
-        $response = $client->listXpnHosts($project);
+        $response = $client->listXpnHosts($project, $projectsListXpnHostsRequestResource);
         $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
         $resources = iterator_to_array($response->iterateAllElements());
         $this->assertSame(1, count($resources));
@@ -810,6 +829,9 @@ class ProjectsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
+        $actualValue = $actualRequestObject->getProjectsListXpnHostsRequestResource();
+
+        $this->assertProtobufEquals($projectsListXpnHostsRequestResource, $actualValue);
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -837,9 +859,10 @@ class ProjectsClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $projectsListXpnHostsRequestResource = new ProjectsListXpnHostsRequest();
 
         try {
-            $client->listXpnHosts($project);
+            $client->listXpnHosts($project, $projectsListXpnHostsRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -907,9 +930,10 @@ class ProjectsClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $diskMoveRequestResource = new DiskMoveRequest();
         $project = 'project-309310695';
 
-        $response = $client->moveDisk($project);
+        $response = $client->moveDisk($diskMoveRequestResource, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -917,6 +941,9 @@ class ProjectsClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.Projects/MoveDisk', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getDiskMoveRequestResource();
+
+        $this->assertProtobufEquals($diskMoveRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -947,10 +974,11 @@ class ProjectsClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $diskMoveRequestResource = new DiskMoveRequest();
         $project = 'project-309310695';
 
         try {
-            $client->moveDisk($project);
+            $client->moveDisk($diskMoveRequestResource, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1018,9 +1046,10 @@ class ProjectsClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $instanceMoveRequestResource = new InstanceMoveRequest();
         $project = 'project-309310695';
 
-        $response = $client->moveInstance($project);
+        $response = $client->moveInstance($instanceMoveRequestResource, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1028,6 +1057,9 @@ class ProjectsClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.Projects/MoveInstance', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getInstanceMoveRequestResource();
+
+        $this->assertProtobufEquals($instanceMoveRequestResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -1058,10 +1090,11 @@ class ProjectsClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $instanceMoveRequestResource = new InstanceMoveRequest();
         $project = 'project-309310695';
 
         try {
-            $client->moveInstance($project);
+            $client->moveInstance($instanceMoveRequestResource, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1129,9 +1162,10 @@ class ProjectsClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
+        $metadataResource = new Metadata();
         $project = 'project-309310695';
 
-        $response = $client->setCommonInstanceMetadata($project);
+        $response = $client->setCommonInstanceMetadata($metadataResource, $project);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1139,6 +1173,9 @@ class ProjectsClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.compute.v1.Projects/SetCommonInstanceMetadata', $actualFuncCall);
 
+        $actualValue = $actualRequestObject->getMetadataResource();
+
+        $this->assertProtobufEquals($metadataResource, $actualValue);
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
@@ -1169,10 +1206,11 @@ class ProjectsClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
+        $metadataResource = new Metadata();
         $project = 'project-309310695';
 
         try {
-            $client->setCommonInstanceMetadata($project);
+            $client->setCommonInstanceMetadata($metadataResource, $project);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1241,8 +1279,9 @@ class ProjectsClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $projectsSetDefaultNetworkTierRequestResource = new ProjectsSetDefaultNetworkTierRequest();
 
-        $response = $client->setDefaultNetworkTier($project);
+        $response = $client->setDefaultNetworkTier($project, $projectsSetDefaultNetworkTierRequestResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1253,6 +1292,9 @@ class ProjectsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
+        $actualValue = $actualRequestObject->getProjectsSetDefaultNetworkTierRequestResource();
+
+        $this->assertProtobufEquals($projectsSetDefaultNetworkTierRequestResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -1281,9 +1323,10 @@ class ProjectsClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $projectsSetDefaultNetworkTierRequestResource = new ProjectsSetDefaultNetworkTierRequest();
 
         try {
-            $client->setDefaultNetworkTier($project);
+            $client->setDefaultNetworkTier($project, $projectsSetDefaultNetworkTierRequestResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -1352,8 +1395,9 @@ class ProjectsClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $usageExportLocationResource = new UsageExportLocation();
 
-        $response = $client->setUsageExportBucket($project);
+        $response = $client->setUsageExportBucket($project, $usageExportLocationResource);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -1364,6 +1408,9 @@ class ProjectsClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getProject();
 
         $this->assertProtobufEquals($project, $actualValue);
+        $actualValue = $actualRequestObject->getUsageExportLocationResource();
+
+        $this->assertProtobufEquals($usageExportLocationResource, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -1392,9 +1439,10 @@ class ProjectsClientTest extends GeneratedTest
 
         // Mock request
         $project = 'project-309310695';
+        $usageExportLocationResource = new UsageExportLocation();
 
         try {
-            $client->setUsageExportBucket($project);
+            $client->setUsageExportBucket($project, $usageExportLocationResource);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

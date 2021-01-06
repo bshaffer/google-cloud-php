@@ -22,7 +22,9 @@ class AddPeeringNetworkRequest extends \Google\Protobuf\Internal\Message
      */
     private $network = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 120374965;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 120374965 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $networks_add_peering_request_resource = null;
     /**
@@ -49,6 +51,7 @@ class AddPeeringNetworkRequest extends \Google\Protobuf\Internal\Message
      *     @type string $network
      *           Name of the network resource to add peering to.
      *     @type \Google\Cloud\Compute\V1\NetworksAddPeeringRequest $networks_add_peering_request_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -89,7 +92,9 @@ class AddPeeringNetworkRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 120374965;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 120374965 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\NetworksAddPeeringRequest
      */
     public function getNetworksAddPeeringRequestResource()
@@ -108,7 +113,9 @@ class AddPeeringNetworkRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 120374965;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 120374965 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\NetworksAddPeeringRequest $var
      * @return $this
      */

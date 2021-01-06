@@ -23,6 +23,12 @@ class Scheduling extends \Google\Protobuf\Internal\Message
      */
     private $automatic_restart = false;
     /**
+     * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
+     *
+     * Generated from protobuf field <code>string location_hint = 82084049;</code>
+     */
+    private $location_hint = '';
+    /**
      * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
      *
      * Generated from protobuf field <code>int32 min_node_cpus = 48796219;</code>
@@ -56,6 +62,8 @@ class Scheduling extends \Google\Protobuf\Internal\Message
      *     @type bool $automatic_restart
      *           Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.
      *           By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+     *     @type string $location_hint
+     *           An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
      *     @type int $min_node_cpus
      *           The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
      *     @type \Google\Cloud\Compute\V1\SchedulingNodeAffinity[]|\Google\Protobuf\Internal\RepeatedField $node_affinities
@@ -95,6 +103,32 @@ class Scheduling extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->automatic_restart = $var;
+
+        return $this;
+    }
+
+    /**
+     * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
+     *
+     * Generated from protobuf field <code>string location_hint = 82084049;</code>
+     * @return string
+     */
+    public function getLocationHint()
+    {
+        return $this->location_hint;
+    }
+
+    /**
+     * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
+     *
+     * Generated from protobuf field <code>string location_hint = 82084049;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocationHint($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->location_hint = $var;
 
         return $this;
     }

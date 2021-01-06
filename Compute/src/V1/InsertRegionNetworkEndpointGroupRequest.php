@@ -16,7 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class InsertRegionNetworkEndpointGroupRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 257353383;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 257353383 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $network_endpoint_group_resource = null;
     /**
@@ -47,6 +49,7 @@ class InsertRegionNetworkEndpointGroupRequest extends \Google\Protobuf\Internal\
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Compute\V1\NetworkEndpointGroup $network_endpoint_group_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $region
@@ -63,7 +66,9 @@ class InsertRegionNetworkEndpointGroupRequest extends \Google\Protobuf\Internal\
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 257353383;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 257353383 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\NetworkEndpointGroup
      */
     public function getNetworkEndpointGroupResource()
@@ -82,7 +87,9 @@ class InsertRegionNetworkEndpointGroupRequest extends \Google\Protobuf\Internal\
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 257353383;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 257353383 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\NetworkEndpointGroup $var
      * @return $this
      */

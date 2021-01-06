@@ -22,7 +22,9 @@ class AttachNetworkEndpointsNetworkEndpointGroupRequest extends \Google\Protobuf
      */
     private $network_endpoint_group = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupsAttachEndpointsRequest network_endpoint_groups_attach_endpoints_request_resource = 531079;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupsAttachEndpointsRequest network_endpoint_groups_attach_endpoints_request_resource = 531079 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $network_endpoint_groups_attach_endpoints_request_resource = null;
     /**
@@ -55,6 +57,7 @@ class AttachNetworkEndpointsNetworkEndpointGroupRequest extends \Google\Protobuf
      *     @type string $network_endpoint_group
      *           The name of the network endpoint group where you are attaching network endpoints to. It should comply with RFC1035.
      *     @type \Google\Cloud\Compute\V1\NetworkEndpointGroupsAttachEndpointsRequest $network_endpoint_groups_attach_endpoints_request_resource
+     *           The body resource for this request
      *     @type string $project
      *           Project ID for this request.
      *     @type string $request_id
@@ -97,7 +100,9 @@ class AttachNetworkEndpointsNetworkEndpointGroupRequest extends \Google\Protobuf
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupsAttachEndpointsRequest network_endpoint_groups_attach_endpoints_request_resource = 531079;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupsAttachEndpointsRequest network_endpoint_groups_attach_endpoints_request_resource = 531079 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\NetworkEndpointGroupsAttachEndpointsRequest
      */
     public function getNetworkEndpointGroupsAttachEndpointsRequestResource()
@@ -116,7 +121,9 @@ class AttachNetworkEndpointsNetworkEndpointGroupRequest extends \Google\Protobuf
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupsAttachEndpointsRequest network_endpoint_groups_attach_endpoints_request_resource = 531079;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.NetworkEndpointGroupsAttachEndpointsRequest network_endpoint_groups_attach_endpoints_request_resource = 531079 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\NetworkEndpointGroupsAttachEndpointsRequest $var
      * @return $this
      */

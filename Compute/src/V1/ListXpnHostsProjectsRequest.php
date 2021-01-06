@@ -51,7 +51,9 @@ class ListXpnHostsProjectsRequest extends \Google\Protobuf\Internal\Message
      */
     private $project = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $projects_list_xpn_hosts_request_resource = null;
     /**
@@ -83,6 +85,7 @@ class ListXpnHostsProjectsRequest extends \Google\Protobuf\Internal\Message
      *     @type string $project
      *           Project ID for this request.
      *     @type \Google\Cloud\Compute\V1\ProjectsListXpnHostsRequest $projects_list_xpn_hosts_request_resource
+     *           The body resource for this request
      *     @type bool $return_partial_success
      *           Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      * }
@@ -233,7 +236,9 @@ class ListXpnHostsProjectsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\ProjectsListXpnHostsRequest
      */
     public function getProjectsListXpnHostsRequestResource()
@@ -252,7 +257,9 @@ class ListXpnHostsProjectsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\ProjectsListXpnHostsRequest $var
      * @return $this
      */

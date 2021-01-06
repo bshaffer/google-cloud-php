@@ -353,20 +353,21 @@ class RegionCommitmentsGapicClient
      * ```
      * $regionCommitmentsClient = new RegionCommitmentsClient();
      * try {
+     *     $commitmentResource = new Commitment();
      *     $project = '';
      *     $region = '';
-     *     $response = $regionCommitmentsClient->insert($project, $region);
+     *     $response = $regionCommitmentsClient->insert($commitmentResource, $project, $region);
      * } finally {
      *     $regionCommitmentsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param Commitment $commitmentResource The body resource for this request
+     * @param string     $project            Project ID for this request.
+     * @param string     $region             Name of the region for this request.
+     * @param array      $optionalArgs       {
+     *                                       Optional.
      *
-     *     @type Commitment $commitmentResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -385,14 +386,12 @@ class RegionCommitmentsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, $region, array $optionalArgs = [])
+    public function insert($commitmentResource, $project, $region, array $optionalArgs = [])
     {
         $request = new InsertRegionCommitmentRequest();
+        $request->setCommitmentResource($commitmentResource);
         $request->setProject($project);
         $request->setRegion($region);
-        if (isset($optionalArgs['commitmentResource'])) {
-            $request->setCommitmentResource($optionalArgs['commitmentResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }

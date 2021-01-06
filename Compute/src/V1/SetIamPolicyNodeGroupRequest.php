@@ -34,7 +34,9 @@ class SetIamPolicyNodeGroupRequest extends \Google\Protobuf\Internal\Message
      */
     private $zone = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 113646651;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 113646651 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $zone_set_policy_request_resource = null;
 
@@ -51,6 +53,7 @@ class SetIamPolicyNodeGroupRequest extends \Google\Protobuf\Internal\Message
      *     @type string $zone
      *           The name of the zone for this request.
      *     @type \Google\Cloud\Compute\V1\ZoneSetPolicyRequest $zone_set_policy_request_resource
+     *           The body resource for this request
      * }
      */
     public function __construct($data = NULL) {
@@ -137,7 +140,9 @@ class SetIamPolicyNodeGroupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 113646651;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 113646651 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\ZoneSetPolicyRequest
      */
     public function getZoneSetPolicyRequestResource()
@@ -156,7 +161,9 @@ class SetIamPolicyNodeGroupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 113646651;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 113646651 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\ZoneSetPolicyRequest $var
      * @return $this
      */

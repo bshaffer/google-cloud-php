@@ -287,18 +287,19 @@ class GlobalAddressesGapicClient
      * ```
      * $globalAddressesClient = new GlobalAddressesClient();
      * try {
+     *     $addressResource = new Address();
      *     $project = '';
-     *     $response = $globalAddressesClient->insert($project);
+     *     $response = $globalAddressesClient->insert($addressResource, $project);
      * } finally {
      *     $globalAddressesClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param Address $addressResource The body resource for this request
+     * @param string  $project         Project ID for this request.
+     * @param array   $optionalArgs    {
+     *                                 Optional.
      *
-     *     @type Address $addressResource
      *     @type string $requestId
      *          An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
      *
@@ -317,13 +318,11 @@ class GlobalAddressesGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, array $optionalArgs = [])
+    public function insert($addressResource, $project, array $optionalArgs = [])
     {
         $request = new InsertGlobalAddressRequest();
+        $request->setAddressResource($addressResource);
         $request->setProject($project);
-        if (isset($optionalArgs['addressResource'])) {
-            $request->setAddressResource($optionalArgs['addressResource']);
-        }
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
         }

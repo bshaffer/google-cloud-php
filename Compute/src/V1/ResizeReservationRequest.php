@@ -36,7 +36,9 @@ class ResizeReservationRequest extends \Google\Protobuf\Internal\Message
      */
     private $reservation = '';
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 120827345;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 120827345 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $reservations_resize_request_resource = null;
     /**
@@ -61,6 +63,7 @@ class ResizeReservationRequest extends \Google\Protobuf\Internal\Message
      *     @type string $reservation
      *           Name of the reservation to update.
      *     @type \Google\Cloud\Compute\V1\ReservationsResizeRequest $reservations_resize_request_resource
+     *           The body resource for this request
      *     @type string $zone
      *           Name of the zone for this request.
      * }
@@ -153,7 +156,9 @@ class ResizeReservationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 120827345;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 120827345 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Compute\V1\ReservationsResizeRequest
      */
     public function getReservationsResizeRequestResource()
@@ -172,7 +177,9 @@ class ResizeReservationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 120827345;</code>
+     * The body resource for this request
+     *
+     * Generated from protobuf field <code>.google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 120827345 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Compute\V1\ReservationsResizeRequest $var
      * @return $this
      */

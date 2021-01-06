@@ -297,20 +297,21 @@ class RegionUrlMapsGapicClient
      * try {
      *     $project = '';
      *     $region = '';
-     *     $response = $regionUrlMapsClient->insert($project, $region);
+     *     $urlMapResource = new UrlMap();
+     *     $response = $regionUrlMapsClient->insert($project, $region, $urlMapResource);
      * } finally {
      *     $regionUrlMapsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region scoping this request.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string $project        Project ID for this request.
+     * @param string $region         Name of the region scoping this request.
+     * @param UrlMap $urlMapResource The body resource for this request
+     * @param array  $optionalArgs   {
+     *                               Optional.
      *
      *     @type string $requestId
      *          begin_interface: MixerMutationRequestBuilder Request ID to support idempotency.
-     *     @type UrlMap $urlMapResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -323,16 +324,14 @@ class RegionUrlMapsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function insert($project, $region, array $optionalArgs = [])
+    public function insert($project, $region, $urlMapResource, array $optionalArgs = [])
     {
         $request = new InsertRegionUrlMapRequest();
         $request->setProject($project);
         $request->setRegion($region);
+        $request->setUrlMapResource($urlMapResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['urlMapResource'])) {
-            $request->setUrlMapResource($optionalArgs['urlMapResource']);
         }
 
         return $this->startCall(
@@ -454,21 +453,22 @@ class RegionUrlMapsGapicClient
      *     $project = '';
      *     $region = '';
      *     $urlMap = '';
-     *     $response = $regionUrlMapsClient->patch($project, $region, $urlMap);
+     *     $urlMapResource = new UrlMap();
+     *     $response = $regionUrlMapsClient->patch($project, $region, $urlMap, $urlMapResource);
      * } finally {
      *     $regionUrlMapsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region scoping this request.
-     * @param string $urlMap       Name of the UrlMap resource to patch.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string $project        Project ID for this request.
+     * @param string $region         Name of the region scoping this request.
+     * @param string $urlMap         Name of the UrlMap resource to patch.
+     * @param UrlMap $urlMapResource The body resource for this request
+     * @param array  $optionalArgs   {
+     *                               Optional.
      *
      *     @type string $requestId
      *          begin_interface: MixerMutationRequestBuilder Request ID to support idempotency.
-     *     @type UrlMap $urlMapResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -481,17 +481,15 @@ class RegionUrlMapsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function patch($project, $region, $urlMap, array $optionalArgs = [])
+    public function patch($project, $region, $urlMap, $urlMapResource, array $optionalArgs = [])
     {
         $request = new PatchRegionUrlMapRequest();
         $request->setProject($project);
         $request->setRegion($region);
         $request->setUrlMap($urlMap);
+        $request->setUrlMapResource($urlMapResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['urlMapResource'])) {
-            $request->setUrlMapResource($optionalArgs['urlMapResource']);
         }
 
         return $this->startCall(
@@ -512,21 +510,22 @@ class RegionUrlMapsGapicClient
      *     $project = '';
      *     $region = '';
      *     $urlMap = '';
-     *     $response = $regionUrlMapsClient->update($project, $region, $urlMap);
+     *     $urlMapResource = new UrlMap();
+     *     $response = $regionUrlMapsClient->update($project, $region, $urlMap, $urlMapResource);
      * } finally {
      *     $regionUrlMapsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region scoping this request.
-     * @param string $urlMap       Name of the UrlMap resource to update.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string $project        Project ID for this request.
+     * @param string $region         Name of the region scoping this request.
+     * @param string $urlMap         Name of the UrlMap resource to update.
+     * @param UrlMap $urlMapResource The body resource for this request
+     * @param array  $optionalArgs   {
+     *                               Optional.
      *
      *     @type string $requestId
      *          begin_interface: MixerMutationRequestBuilder Request ID to support idempotency.
-     *     @type UrlMap $urlMapResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -539,17 +538,15 @@ class RegionUrlMapsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function update($project, $region, $urlMap, array $optionalArgs = [])
+    public function update($project, $region, $urlMap, $urlMapResource, array $optionalArgs = [])
     {
         $request = new UpdateRegionUrlMapRequest();
         $request->setProject($project);
         $request->setRegion($region);
         $request->setUrlMap($urlMap);
+        $request->setUrlMapResource($urlMapResource);
         if (isset($optionalArgs['requestId'])) {
             $request->setRequestId($optionalArgs['requestId']);
-        }
-        if (isset($optionalArgs['urlMapResource'])) {
-            $request->setUrlMapResource($optionalArgs['urlMapResource']);
         }
 
         return $this->startCall(
@@ -569,20 +566,21 @@ class RegionUrlMapsGapicClient
      * try {
      *     $project = '';
      *     $region = '';
+     *     $regionUrlMapsValidateRequestResource = new RegionUrlMapsValidateRequest();
      *     $urlMap = '';
-     *     $response = $regionUrlMapsClient->validate($project, $region, $urlMap);
+     *     $response = $regionUrlMapsClient->validate($project, $region, $regionUrlMapsValidateRequestResource, $urlMap);
      * } finally {
      *     $regionUrlMapsClient->close();
      * }
      * ```
      *
-     * @param string $project      Project ID for this request.
-     * @param string $region       Name of the region scoping this request.
-     * @param string $urlMap       Name of the UrlMap resource to be validated as.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param string                       $project                              Project ID for this request.
+     * @param string                       $region                               Name of the region scoping this request.
+     * @param RegionUrlMapsValidateRequest $regionUrlMapsValidateRequestResource The body resource for this request
+     * @param string                       $urlMap                               Name of the UrlMap resource to be validated as.
+     * @param array                        $optionalArgs                         {
+     *                                                                           Optional.
      *
-     *     @type RegionUrlMapsValidateRequest $regionUrlMapsValidateRequestResource
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -595,15 +593,13 @@ class RegionUrlMapsGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function validate($project, $region, $urlMap, array $optionalArgs = [])
+    public function validate($project, $region, $regionUrlMapsValidateRequestResource, $urlMap, array $optionalArgs = [])
     {
         $request = new ValidateRegionUrlMapRequest();
         $request->setProject($project);
         $request->setRegion($region);
+        $request->setRegionUrlMapsValidateRequestResource($regionUrlMapsValidateRequestResource);
         $request->setUrlMap($urlMap);
-        if (isset($optionalArgs['regionUrlMapsValidateRequestResource'])) {
-            $request->setRegionUrlMapsValidateRequestResource($optionalArgs['regionUrlMapsValidateRequestResource']);
-        }
 
         return $this->startCall(
             'Validate',

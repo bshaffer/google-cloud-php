@@ -62,7 +62,7 @@ class ReflectorRegister
 
         if (!isset($this->fileReflectors[$fileName])) {
             if (!$this->projectFactory) {
-                $this->projectFactory = ProjectFactory::createInstance();    
+                $this->projectFactory = ProjectFactory::createInstance();
             }
             $project = $this->projectFactory->create('ReflectorRegister', [new LocalFile($fileName)]);
             $this->fileReflectors[$fileName] = array_shift($project->getFiles());

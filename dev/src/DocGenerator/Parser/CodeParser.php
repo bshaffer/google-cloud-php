@@ -23,6 +23,7 @@ use Google\Cloud\Dev\GetComponentsTrait;
 use phpDocumentor\Reflection\DocBlock;
 use phpDocumentor\Reflection\DocBlock\Description;
 use phpDocumentor\Reflection\Element;
+use phpDocumentor\Reflection\Fqsen;
 use phpDocumentor\Reflection\Php\Class_;
 use phpDocumentor\Reflection\Php\File;
 use phpDocumentor\Reflection\Php\Interface_;
@@ -67,7 +68,6 @@ class CodeParser implements ParserInterface
     ) {
         $this->file = $file;
         $this->register = $register;
-        $this->project = $this->register->getProject();
         $this->markdown = \Parsedown::instance();
         $this->projectRoot = $projectRoot;
         $this->externalTypes = include $this->projectRoot . '/docs/external-classes.php';
@@ -83,7 +83,7 @@ class CodeParser implements ParserInterface
         }
     }
 
-    public function parse()
+    public function parse(): ?array
     {
         if (!$element = $this->register->getElementFromFile($this->file)) {
             return null;
@@ -92,7 +92,7 @@ class CodeParser implements ParserInterface
         return $this->buildDocument($element);
     }
 
-    private function buildInfo(Element $element)
+    private function buildInfo(Element $element): array
     {
         $classInfo = [
             'methods' => [],
@@ -108,8 +108,10 @@ class CodeParser implements ParserInterface
         return $classInfo;
     }
 
-    private function buildClassInfoRecursive(Element $element, array &$classInfo)
-    {
+    private function buildClassInfoRecursive(
+        Element $element,
+        array &$classInfo
+    ): void {
         $fullName = (string) $element->getFqsen();
 
         // START proto nested arg missing description workaround
@@ -158,7 +160,7 @@ class CodeParser implements ParserInterface
         }
     }
 
-    private function buildInterfaceInfo(Interface_ $interface)
+    private function buildInterfaceInfo(Interface_ $interface): array
     {
         $classInfo = [
             'interfaces' => [],
@@ -170,7 +172,7 @@ class CodeParser implements ParserInterface
         return $classInfo;
     }
 
-    private function buildInterfaceInfoRecursive(Interface_ $interface, array &$classInfo)
+    private function buildInterfaceInfoRecursive(Interface_ $interface, array &$classInfo): void
     {
         $context = $interface->getDocBlock()->getContext();
         $fullName = (string) $interface->getFqsen();
@@ -189,7 +191,7 @@ class CodeParser implements ParserInterface
         }
     }
 
-    private function buildMethodInfo(Element $element)
+    private function buildMethodInfo(Element $element): array
     {
         $methods = [];
 
@@ -202,13 +204,13 @@ class CodeParser implements ParserInterface
             $methods[$name] = [
                 'method' => $method,
                 'source' => $file->getPath(),
-                'container' => $element->getName(),
+                'container' => (string) $element->getFqsen(),
             ];
         }
         return $methods;
     }
 
-    private function buildDocument(Element $element)
+    private function buildDocument(Element $element): array
     {
         $docBlock = $element->getDocBlock();
 
@@ -260,7 +262,7 @@ class CodeParser implements ParserInterface
         Description $description,
         $content = null,
         Element $element = null
-    ) {
+    ): string {
         return $this->markdown->parse(
             $this->buildDescriptionContent(
                 $description,
@@ -275,7 +277,7 @@ class CodeParser implements ParserInterface
         Description $description,
         $content = null,
         Element $element = null
-    ) {
+    ): string {
         $content = $this->buildDescriptionContent($description, $content, $element);
         $content .= $this->buildInheritDoc($classInfo);
         return $this->markdown->parse($content);
@@ -286,7 +288,7 @@ class CodeParser implements ParserInterface
         Description $description,
         string $content = null,
         Element $element = null
-    ) {
+    ): string {
         $content = $this->buildDescriptionContent($description, $content, $element);
         $content .= $this->buildInterfaceInheritDoc($classInfo);
         return $this->markdown->parse($content);
@@ -296,7 +298,7 @@ class CodeParser implements ParserInterface
         Description $description,
         string $content = null,
         Element $element = null
-    ) {
+    ): string {
         if ($content === null) {
             $content = $description->getBodyTemplate();
         }
@@ -307,8 +309,8 @@ class CodeParser implements ParserInterface
             // convert inline {@see} tag to custom type link
             foreach ($tags as $tag) {
                 if ($tag instanceof Tag\See) {
-                    $tag = $this->buildReference($tag);
-                } elseif (strtlower($tag->getName()) === 'inheritdoc') {
+                    $tag = $this->buildReference((string) $tag->getReference());
+                } elseif (strtolower($tag->getName()) === 'inheritdoc') {
                     if ($element === null) {
                         throw new \Exception(sprintf(
                             "Inherit Doc tag ({@inheritdoc}) is only supported when \$element is not null.\nContext:\n%s",
@@ -343,20 +345,21 @@ class CodeParser implements ParserInterface
         return $content;
     }
 
-    private function buildReference(Tag\See $tag)
+    private function buildReference(string $type): string
     {
-        if ($this->hasInternalType($tag)) {
-            return $this->buildInternalLink($tag);
+        $fqsen = rtrim($type, '[]');
+        if ($this->hasInternalType($fqsen)) {
+            return $this->buildInternalLink($type);
         }
 
-        if ($this->hasExternalType($tag)) {
-            return $this->buildExternalLink($tag);
+        if ($this->hasExternalType($fqsen)) {
+            return $this->buildExternalLink($type);
         }
 
-        return (string) $tag;
+        return $fqsen;
     }
 
-    private function buildInheritDoc($classInfo)
+    private function buildInheritDoc($classInfo): string
     {
         $content = '';
         if (count($classInfo['parents']) > 0) {
@@ -369,7 +372,7 @@ class CodeParser implements ParserInterface
         return $content;
     }
 
-    private function buildInterfaceInheritDoc(array $classInfo)
+    private function buildInterfaceInheritDoc(array $classInfo): string
     {
         $content = '';
         if (count($classInfo['interfaces']) > 0) {
@@ -379,13 +382,19 @@ class CodeParser implements ParserInterface
         return $content;
     }
 
-    private function implodeInheritDocLinks(string $glue, array $pieces, string $prefix)
-    {
+    private function implodeInheritDocLinks(
+        string $glue,
+        array $pieces,
+        string $prefix
+    ): string {
         return "\n\n$prefix " . implode($glue, array_map([$this, 'buildReference'], $pieces));
     }
 
-    private function buildMethods(array $methods, string $className, bool $isProto = false)
-    {
+    private function buildMethods(
+        array $methods,
+        string $className,
+        bool $isProto = false
+    ): array {
         $methodArray = [];
         foreach ($methods as $name => $methodInfo) {
             $method = $methodInfo['method'];
@@ -416,13 +425,18 @@ class CodeParser implements ParserInterface
         return $methodArray;
     }
 
-    private function buildMagicMethods(array $magicMethods, string $className)
-    {
+    private function buildMagicMethods(
+        array $magicMethods,
+        string $className
+    ): array {
         $methodArray = [];
         foreach ($magicMethods as $method) {
-            $description = $method->getDescription();
-            if (is_null($description)) {
-                throw new \Exception(sprintf('%s::%s (magic method) has no description', $className, $method->getMethodName()));
+            if (!$description = $method->getDescription()) {
+                throw new \Exception(sprintf(
+                    '%s::%s (magic method) has no description',
+                    $className,
+                    $method->getMethodName()
+                ));
             }
 
             $methodArray[] = $this->buildMagicMethod($method);
@@ -546,7 +560,7 @@ class CodeParser implements ParserInterface
         return $examplesArray;
     }
 
-    private function buildResources(array $resources)
+    private function buildResources(array $resources): array
     {
         if (count($resources) === 0) {
             return $resources;
@@ -568,7 +582,7 @@ class CodeParser implements ParserInterface
         array $params,
         string $methodDescription = null,
         bool $isProto = false
-    ) {
+    ): array {
         if (count($params) === 0) {
             return $params;
         }
@@ -610,7 +624,7 @@ class CodeParser implements ParserInterface
             $paramsArray[] = [
                 'name' => $varName,
                 'description' => $descriptionString,
-                'types' => $this->handleTypes([$param->getType()]),
+                'types' => $this->handleTypes(explode('|', $param->getType())),
                 'optional' => (strpos(trim(strtolower($description)), '[optional]') === 0),
                 'nullable' => null // @todo
             ];
@@ -629,7 +643,7 @@ class CodeParser implements ParserInterface
         array $nestedParams,
         Tag $origParam,
         bool $isProto = false
-    ) {
+    ): array {
         $paramsArray = [];
 
         foreach ($nestedParams as $param) {
@@ -649,7 +663,7 @@ class CodeParser implements ParserInterface
             $paramsArray[] = [
                 'name' => substr($origParam->getVariableName(), 1) . '.' . $name,
                 'description' => $this->buildDescription($description, $content),
-                'types' => $this->handleTypes([$type]),
+                'types' => $this->handleTypes(explode('|', $type)),
                 'optional' => null, // @todo
                 'nullable' => null //@todo
             ];
@@ -658,7 +672,7 @@ class CodeParser implements ParserInterface
         return $paramsArray;
     }
 
-    private function hasNestedParams(string $description)
+    private function hasNestedParams(string $description): bool
     {
         $description = trim(str_replace('[optional]', '', $description));
 
@@ -669,7 +683,7 @@ class CodeParser implements ParserInterface
         return $description[0] === '{';
     }
 
-    private function buildExceptions($exceptions)
+    private function buildExceptions(array $exceptions): array
     {
         if (count($exceptions) === 0) {
             return $exceptions;
@@ -687,7 +701,7 @@ class CodeParser implements ParserInterface
         return $exceptionsArray;
     }
 
-    private function buildReturns($returns, $className = null)
+    private function buildReturns(array $returns, string $className = null): array
     {
         if (count($returns) === 0) {
             return $returns;
@@ -709,8 +723,11 @@ class CodeParser implements ParserInterface
         return $returnsArray;
     }
 
-    private function handleTypes($types, $context = null, $className = null)
-    {
+    private function handleTypes(
+        array $types,
+        string $context = null,
+        string $className = null
+    ): array {
         $res = [];
         foreach ($types as $type) {
             $matches = [];
@@ -742,8 +759,11 @@ class CodeParser implements ParserInterface
         return $res;
     }
 
-    private function resolveTypeAlias($type, array $aliases, $namespace = null)
-    {
+    private function resolveTypeAlias(
+        string $type,
+        array $aliases,
+        string $namespace = null
+    ) {
         $pieces = explode('\\', $type);
         $basename = array_pop($pieces);
         if (array_key_exists($basename, $aliases)) {
@@ -757,15 +777,13 @@ class CodeParser implements ParserInterface
         return $type;
     }
 
-    private function hasInternalType($type)
+    private function hasInternalType(string $fqsen): bool
     {
-        $type = trim($type, '\\');
-
-        if (substr_compare($type, 'Google\\Cloud', 0, 12) === 0) {
-            $ref = $this->getClassReference($type);
+        if (substr_compare($fqsen, '\\Google\\Cloud', 0, 12) === 0) {
+            $file = $this->register->getFileFromFqsen(new Fqsen($fqsen));
 
             $vendorPath = $this->projectRoot . 'vendor';
-            if (substr($ref->getFileName(), 0, strlen($vendorPath)) === $vendorPath) {
+            if (substr($file->getPath(), 0, strlen($vendorPath)) === $vendorPath) {
                 return false;
             }
 
@@ -775,9 +793,9 @@ class CodeParser implements ParserInterface
         return false;
     }
 
-    private function hasExternalType($type)
+    private function hasExternalType(string $fqsen): bool
     {
-        $type = trim($type, '\\');
+        $type = trim($fqsen, '\\');
         $types = array_filter($this->externalTypes, function ($external) use ($type) {
             return (strpos($type, $external['name']) !== false);
         });
@@ -785,7 +803,7 @@ class CodeParser implements ParserInterface
         return count($types) !== 0;
     }
 
-    private function buildExternalLink($type)
+    private function buildExternalLink(string $type): string
     {
         $type = trim($type, '\\');
         $types = array_values(array_filter($this->externalTypes, function ($external) use ($type) {
@@ -830,7 +848,7 @@ class CodeParser implements ParserInterface
         );
     }
 
-    private function getExternalDepVersion($type, $external)
+    private function getExternalDepVersion(string $type, array $external): array
     {
         $depName = $external['depName'];
 
@@ -866,19 +884,19 @@ class CodeParser implements ParserInterface
         ];
     }
 
-    private function buildInternalLink($content)
+    private function buildInternalLink(string $type): string
     {
+        $fqsen = rtrim($type, '[]');
         $componentId = null;
-        $content = trim($content, '\\');
-        $ref = $this->getClassReference($content);
-        $fileName = $ref->getFileName();
+        $file = $this->register->getFileFromFqsen(new Fqsen($fqsen));
+        $fileName = $file->getPath();
 
         if ($this->isComponent) {
             $composer = $this->getComponentComposerFile($fileName);
             $componentId = $composer['extra']['component']['id'];
         }
 
-        $parts = explode('::', $content);
+        $parts = explode('::', $fqsen);
         $type = $this->fileNameToType($fileName);
 
         if ($componentId) {
@@ -898,10 +916,10 @@ class CodeParser implements ParserInterface
             $openTag .= '>';
         }
 
-        return "$openTag$content</a>";
+        return sprintf('%s%s</a>', $openTag, trim($type, '\\'));
     }
 
-    private function getComponentComposerFile($fileName)
+    private function getComponentComposerFile(string $fileName): array
     {
         $originalFileName = $fileName;
         $recurse = true;
@@ -934,7 +952,7 @@ class CodeParser implements ParserInterface
         ));
     }
 
-    private function fileNameToType($fileName)
+    private function fileNameToType(string $fileName): string
     {
         return str_replace('src/', '', substr(
             strtolower($fileName),
@@ -943,7 +961,7 @@ class CodeParser implements ParserInterface
         ));
     }
 
-    private function splitDescription(Description $description)
+    private function splitDescription(Description $description): array
     {
         $examples = null;
         $parts = [];
@@ -960,7 +978,7 @@ class CodeParser implements ParserInterface
         ];
     }
 
-    private function getSource($path)
+    private function getSource(string $path): string
     {
         $filePieces = explode('/', $path);
 
@@ -977,49 +995,5 @@ class CodeParser implements ParserInterface
         $base = $realSrcIndex - 1;
 
         return implode('/', array_slice($filePieces, $base));
-    }
-
-    private function getClassReference($type)
-    {
-        // Depending on the currently used PHP version, the following classes cannot
-        // reliably be reflected. PHP 5.x doesn't support return type hints, some
-        // third party dependencies require type hints and throw a Parse error
-        // when an implementation is not compatible with its parent class or
-        // interface.
-        $unreflectableMap = [
-            // Monolog 1.x/2.x related classes
-            'Google\Cloud\Core\Logger\AppEngineFlexFormatter' => 'Core/src/Logger/AppEngineFlexFormatter.php',
-            'Google\Cloud\Core\Logger\AppEngineFlexFormatterV2' => 'Core/src/Logger/AppEngineFlexFormatterV2.php',
-            'Google\Cloud\Core\Logger\AppEngineFlexHandler' => 'Core/src/Logger/AppEngineFlexHandler.php',
-            'Google\Cloud\Core\Logger\AppEngineFlexHandlerV2' => 'Core/src/Logger/AppEngineFlexHandlerV2.php',
-        ];
-        static $reflectedMap = [];
-
-        if (array_key_exists($type, $unreflectableMap)) {
-            return new ClassReference($type, $this->projectRoot . $unreflectableMap[$type]);
-        } elseif (array_key_exists($type, $reflectedMap)) {
-            return new ClassReference($type, $reflectedMap[$type]);
-        }
-
-        $reflectedMap[$type] = $this->getReflectionClass($type)
-            ->getFileName();
-
-        return new ClassReference($type, $reflectedMap[$type]);
-    }
-
-    private function getReflectionClass($type)
-    {
-        try {
-            $matches = [];
-            preg_match(self::CLASS_TYPE_REGEX, $type, $matches);
-            return new \ReflectionClass($matches[1]);
-        } catch (\ReflectionException $e) {
-            throw new \Exception(sprintf(
-                'Reflection Exception: %s in %s. Given class was %s',
-                $e->getMessage(),
-                realpath($this->path),
-                $type
-            ));
-        }
     }
 }

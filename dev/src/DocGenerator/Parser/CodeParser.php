@@ -24,6 +24,9 @@ use phpDocumentor\Reflection\DocBlock;
 use phpDocumentor\Reflection\DocBlock\Description;
 use phpDocumentor\Reflection\Element;
 use phpDocumentor\Reflection\Fqsen;
+use phpDocumentor\Reflection\Type;
+use phpDocumentor\Reflection\Types;
+use phpDocumentor\Reflection\TypeResolver;
 use phpDocumentor\Reflection\Php\Class_;
 use phpDocumentor\Reflection\Php\File;
 use phpDocumentor\Reflection\Php\Interface_;
@@ -347,16 +350,15 @@ class CodeParser implements ParserInterface
 
     private function buildReference(string $type): string
     {
-        $fqsen = rtrim($type, '[]');
-        if ($this->hasInternalType($fqsen)) {
+        if ($this->hasInternalType($type)) {
             return $this->buildInternalLink($type);
         }
 
-        if ($this->hasExternalType($fqsen)) {
+        if ($this->hasExternalType($type)) {
             return $this->buildExternalLink($type);
         }
 
-        return $fqsen;
+        return $type;
     }
 
     private function buildInheritDoc($classInfo): string
@@ -439,7 +441,7 @@ class CodeParser implements ParserInterface
                 ));
             }
 
-            $methodArray[] = $this->buildMagicMethod($method);
+            $methodArray[] = $this->buildMagicMethod($method, $className);
         }
 
         return $methodArray;
@@ -590,11 +592,8 @@ class CodeParser implements ParserInterface
         $paramsArray = [];
 
         foreach ($params as $param) {
-            // var_dump($param);exit;
             $description = $param->getDescription();
-            $descriptionString = $this->buildDescription(
-                $description
-            );
+            $descriptionString = $this->buildDescription($description);
 
             $nestedParamsArray = [];
 
@@ -617,14 +616,16 @@ class CodeParser implements ParserInterface
                 $descriptionString = $this->buildDescription($description);
             }
 
-            $varName = substr($param->getVariableName(), 1);
-            if (!$varName) {
-                throw new \Exception('invalid or missing parameter name in "'. $param->getDocBlock()->getShortDescription() .'"');
+            if (!$varName = $param->getVariableName()) {
+                throw new \Exception(sprintf(
+                    'invalid or missing parameter name in "%s"',
+                    $param->getDocBlock()->getShortDescription()
+                ));
             }
             $paramsArray[] = [
                 'name' => $varName,
                 'description' => $descriptionString,
-                'types' => $this->handleTypes(explode('|', $param->getType())),
+                'types' => $this->handleTypes([$param->getType()]),
                 'optional' => (strpos(trim(strtolower($description)), '[optional]') === 0),
                 'nullable' => null // @todo
             ];
@@ -645,6 +646,7 @@ class CodeParser implements ParserInterface
         bool $isProto = false
     ): array {
         $paramsArray = [];
+        $typeResolver = new TypeResolver();
 
         foreach ($nestedParams as $param) {
             $nestedParam = explode(' ', trim($param), 3);
@@ -663,7 +665,7 @@ class CodeParser implements ParserInterface
             $paramsArray[] = [
                 'name' => substr($origParam->getVariableName(), 1) . '.' . $name,
                 'description' => $this->buildDescription($description, $content),
-                'types' => $this->handleTypes(explode('|', $type)),
+                'types' => $this->handleTypes([$typeResolver->resolve($type)]),
                 'optional' => null, // @todo
                 'nullable' => null //@todo
             ];
@@ -712,11 +714,11 @@ class CodeParser implements ParserInterface
         foreach ($returns as $return) {
             $returnsArray[] = [
                 'types' => $this->handleTypes(
-                    [$return->getName()],
+                    [$return->getType()],
                     null,
                     $className
                 ),
-                'description' => $this->markdown->parse($return->getDescription())
+                'description' => $this->buildDescription($return->getDescription(), null)
             ];
         }
 
@@ -729,34 +731,47 @@ class CodeParser implements ParserInterface
         string $className = null
     ): array {
         $res = [];
+
         foreach ($types as $type) {
-            $matches = [];
-
-            if (preg_match('/\\\\?(.*?)\<(.*?)\>/', $type, $matches)) {
-                $aliases = $context
-                    ? $context->getNamespaceAliases()
-                    : [];
-                $namespace = $context
-                    ? $context->getNamespace()
-                    : null;
-                $matches[1] = $this->buildReference(
-                    $this->resolveTypeAlias($matches[1], $aliases, $namespace)
-                );
-                $matches[2] = $this->buildReference(
-                    $this->resolveTypeAlias($matches[2], $aliases, $namespace)
-                );
-
-                $type = sprintf(htmlentities('%s<%s>'), $matches[1], $matches[2]);
-            } elseif ($type === '$this') {
-                $type = $this->buildReference($className);
-            } else {
-                $type = $this->buildReference($type);
-            }
-
-            $res[] = $type;
+            $res[] = $this->handleType($type, $context, $className);
         }
 
         return $res;
+    }
+
+    private function handleType(Type $type, ?string $context, ?string $className): string
+    {
+        $matches = [];
+        if (preg_match('/\\\\?(.*?)\<(.*?)\>/', (string) $type, $matches)) {
+            $aliases = $context
+                ? $context->getNamespaceAliases()
+                : [];
+            $namespace = $context
+                ? $context->getNamespace()
+                : null;
+            $matches[1] = $this->buildReference(
+                $this->resolveTypeAlias($matches[1], $aliases, $namespace)
+            );
+            $matches[2] = $this->buildReference(
+                $this->resolveTypeAlias($matches[2], $aliases, $namespace)
+            );
+
+            return sprintf(htmlentities('%s<%s>'), $matches[1], $matches[2]);
+        }
+
+        if ($type instanceof Types\This) {
+            return $this->buildReference($className);
+        }
+
+        if ($type instanceof Types\AggregatedType) {
+            $typeRefs = [];
+            foreach ($type as $aggregatedType) {
+                $typeRefs[] = $this->buildReference((string) $aggregateType);
+            }
+            return implode('|', $typeRefs);
+        }
+
+        return $this->buildReference((string) $type);
     }
 
     private function resolveTypeAlias(

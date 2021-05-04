@@ -26,9 +26,11 @@ use phpDocumentor\Reflection\Element;
 use phpDocumentor\Reflection\Php\Class_;
 use phpDocumentor\Reflection\Php\File;
 use phpDocumentor\Reflection\Php\Interface_;
+use phpDocumentor\Reflection\Php\Method;
 use phpDocumentor\Reflection\Php\Project;
 use phpDocumentor\Reflection\Php\Trait_;
 use phpDocumentor\Reflection\Php\Visibility;
+use phpDocumentor\Reflection\DocBlock\Tag;
 use Rize\UriTemplate;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -106,7 +108,7 @@ class CodeParser implements ParserInterface
         return $classInfo;
     }
 
-    private function buildClassInfoRecursive(Element $element, &$classInfo)
+    private function buildClassInfoRecursive(Element $element, array &$classInfo)
     {
         $fullName = (string) $element->getFqsen();
 
@@ -168,7 +170,7 @@ class CodeParser implements ParserInterface
         return $classInfo;
     }
 
-    private function buildInterfaceInfoRecursive(Interface_ $interface, &$classInfo)
+    private function buildInterfaceInfoRecursive(Interface_ $interface, array &$classInfo)
     {
         $context = $interface->getDocBlock()->getContext();
         $fullName = (string) $interface->getFqsen();
@@ -227,17 +229,20 @@ class CodeParser implements ParserInterface
             $magic = $this->buildMagicMethods($magicMethods, $fullName);
         }
 
-        $split = $this->splitDescription($docBlock->getDescription());
+        $description = $docBlock->getDescription();
+        $split = $this->splitDescription($description);
 
         if ($element instanceof Interface_) {
             $classInfo = $this->buildInterfaceInfo($reflector);
-            $description = $this->buildInterfaceDescription($classInfo, $docBlock, $split['description'], $reflector);
+            $description = $this->buildInterfaceDescription($classInfo, $description, $split['description'], $element);
             $methods = $this->buildMethods($classInfo['interfaceMethods'], $fullName);
         } else {
             $classInfo = $this->buildInfo($element);
-            $description = $this->buildClassDescription($classInfo, $docBlock, $split['description'], $reflector);
+            $description = $this->buildClassDescription($classInfo, $description, $split['description'], $element);
             $methods = $this->buildMethods($classInfo['methods'], $fullName, $classInfo['isProto']);
         }
+
+        $examples = $split['examples'] ? $this->buildExamples($split['examples']) : null;
 
         return [
             'id' => $this->id,
@@ -245,78 +250,89 @@ class CodeParser implements ParserInterface
             'title' => $fullName,
             'name' => $name,
             'description' => $description,
-            'examples' => $this->buildExamples($split['examples']),
+            'examples' => $examples,
             'resources' => $this->buildResources($docBlock->getTagsByName('see')),
             'methods' => array_merge($methods, $magic)
         ];
     }
 
-    private function buildDescription(DocBlock $docBlock, $content = null, $reflector = null)
-    {
+    private function buildDescription(
+        Description $description,
+        $content = null,
+        Element $element = null
+    ) {
         return $this->markdown->parse(
             $this->buildDescriptionContent(
-                $docBlock,
+                $description,
                 $content,
-                $reflector
+                $element
             )
         );
     }
 
-    private function buildClassDescription($classInfo, DocBlock $docBlock, $content = null, $reflector = null)
-    {
-        $content = $this->buildDescriptionContent($docBlock, $content, $reflector);
+    private function buildClassDescription(
+        array $classInfo,
+        Description $description,
+        $content = null,
+        Element $element = null
+    ) {
+        $content = $this->buildDescriptionContent($description, $content, $element);
         $content .= $this->buildInheritDoc($classInfo);
         return $this->markdown->parse($content);
     }
 
-    private function buildInterfaceDescription($classInfo, DocBlock $docBlock, $content = null, $reflector = null)
-    {
-        $content = $this->buildDescriptionContent($docBlock, $content, $reflector);
+    private function buildInterfaceDescription(
+        $classInfo,
+        Description $description,
+        string $content = null,
+        Element $element = null
+    ) {
+        $content = $this->buildDescriptionContent($description, $content, $element);
         $content .= $this->buildInterfaceInheritDoc($classInfo);
         return $this->markdown->parse($content);
     }
 
-    private function buildDescriptionContent(DocBlock $docBlock, $content = null, $reflector = null)
-    {
-        $desc = $docBlock->getDescription();
+    private function buildDescriptionContent(
+        Description $description,
+        string $content = null,
+        Element $element = null
+    ) {
         if ($content === null) {
-            $content = $desc->getBodyTemplate();
+            $content = $description->getBodyTemplate();
         }
 
-        $tags = $desc->getTags();
+        $tags = $description->getTags();
 
         if (count($tags) > 1) {
             // convert inline {@see} tag to custom type link
             foreach ($tags as $tag) {
-                if ($tag->getName() === 'see') {
-                    $tag = $this->buildReference($tag->getDescription(), $tag);
-                } elseif ($this->isInheritDocTag($tag)) {
-                    if ($reflector === null) {
+                if ($tag instanceof Tag\See) {
+                    $tag = $this->buildReference($tag);
+                } elseif (strtlower($tag->getName()) === 'inheritdoc') {
+                    if ($element === null) {
                         throw new \Exception(sprintf(
-                            "Inherit Doc tag ({@inheritdoc}) is only supported when \$reflector is not null.\nContext:\n%s",
+                            "Inherit Doc tag ({@inheritdoc}) is only supported when \$element is not null.\nContext:\n%s",
                             $content));
                     }
 
-                    if (!($reflector instanceof ClassReflector)) {
+                    if (!($element instanceof Class_)) {
                         throw new \Exception(sprintf(
                             "Inherit Doc tag ({@inheritdoc}) is not supported for reflector type %s (found in: %s)."
-                            . "\nContext:\n%s", get_class($reflector), $reflector->getName(), $content));
+                            . "\nContext:\n%s", get_class($element), $element->getName(), $content));
                     }
 
-                    $parentClass = $reflector->getParentClass();
-                    if (empty($parentClass)) {
-                        throw new \Exception(sprintf('%s has {@inheritdoc} tag but no parent class', $reflector->getName()));
+                    if (!$parent = $element->getParent()) {
+                        throw new \Exception(sprintf('%s has {@inheritdoc} tag but no parent class', $element->getName()));
                     }
-                    $element = $this->register->getReflectors($parentClass);
+                    $parentElement = $this->register->getElementFromFqsen($parent);
 
-                    $parentDocBlock = $parentReflector->getDocBlock();
-                    $parentDocSplit = $this->splitDescription(
-                        $parentDocBlock->getDescription()
-                    );
+                    $parentDesc = $parentElement->getDocBlock()->getDescription();
+                    $parentDocSplit = $this->splitDescription($parentDesc);
                     $part = $this->buildDescriptionContent(
-                        $parentDocBlock,
+                        $parentDesc,
                         $parentDocSplit['description'],
-                        $parentReflector);
+                        $parentElement
+                    );
                 }
             }
 
@@ -327,20 +343,17 @@ class CodeParser implements ParserInterface
         return $content;
     }
 
-    private function isInheritDocTag($tag)
+    private function buildReference(Tag\See $tag)
     {
-        return $tag instanceof Tag && ($tag->getName() == 'inheritDoc' || $tag->getName() == 'inheritdoc');
-    }
-
-    private function buildReference($reference, $default = null)
-    {
-        if ($this->hasInternalType($reference)) {
-            return $this->buildInternalLink($reference);
-        } elseif ($this->hasExternalType($reference)) {
-            return $this->buildExternalLink($reference);
-        } else {
-            return isset($default) ? $default : $reference;
+        if ($this->hasInternalType($tag)) {
+            return $this->buildInternalLink($tag);
         }
+
+        if ($this->hasExternalType($tag)) {
+            return $this->buildExternalLink($tag);
+        }
+
+        return (string) $tag;
     }
 
     private function buildInheritDoc($classInfo)
@@ -356,7 +369,7 @@ class CodeParser implements ParserInterface
         return $content;
     }
 
-    private function buildInterfaceInheritDoc($classInfo)
+    private function buildInterfaceInheritDoc(array $classInfo)
     {
         $content = '';
         if (count($classInfo['interfaces']) > 0) {
@@ -366,12 +379,12 @@ class CodeParser implements ParserInterface
         return $content;
     }
 
-    private function implodeInheritDocLinks($glue, $pieces, $prefix)
+    private function implodeInheritDocLinks(string $glue, array $pieces, string $prefix)
     {
         return "\n\n$prefix " . implode($glue, array_map([$this, 'buildReference'], $pieces));
     }
 
-    private function buildMethods($methods, $className, $isProto = false)
+    private function buildMethods(array $methods, string $className, bool $isProto = false)
     {
         $methodArray = [];
         foreach ($methods as $name => $methodInfo) {
@@ -403,7 +416,7 @@ class CodeParser implements ParserInterface
         return $methodArray;
     }
 
-    private function buildMagicMethods($magicMethods, $className)
+    private function buildMagicMethods(array $magicMethods, string $className)
     {
         $methodArray = [];
         foreach ($magicMethods as $method) {
@@ -418,19 +431,24 @@ class CodeParser implements ParserInterface
         return $methodArray;
     }
 
-    private function buildMethod($method, $methodInfo, $className, $isProto = false)
-    {
+    private function buildMethod(
+        Method $method,
+        array $methodInfo,
+        string $className,
+        bool $isProto = false
+    ): array {
         $docBlock = $method->getDocBlock();
-        $fullDescription = $docBlock->getDescription();
+        $dscription = $docBlock->getDescription();
         $resources = $docBlock->getTagsByName('see');
         $params = $docBlock->getTagsByName('param');
         $exceptions = $docBlock->getTagsByName('throws');
         $returns = $docBlock->getTagsByName('return');
         $examples = null;
 
-        $split = $this->splitDescription($fullDescription);
+        $split = $this->splitDescription($dscription);
+        $examples = $split['examples'] ? $this->buildExamples($split['examples']) : [];
 
-        $description = $this->buildDescription($docBlock, $split['description'], $method);
+        $description = $this->buildDescription($dscription, $split['description'], $method);
         if ($methodInfo['container'] !== $className) {
             $description .= "\n\nImplemented in " . $this->buildReference($methodInfo['container']);
         }
@@ -441,7 +459,7 @@ class CodeParser implements ParserInterface
             'name' => $method->getName(),
             'source' => $this->getSource($methodInfo['source']) . '#L' . $method->getLocation()->getLineNumber(),
             'description' => $description,
-            'examples' => $this->buildExamples($split['examples']),
+            'examples' => $examples,
             'resources' => $this->buildResources($resources),
             'params' => $this->buildParams($params, $description, $isProto),
             'exceptions' => $this->buildExceptions($exceptions),
@@ -449,7 +467,7 @@ class CodeParser implements ParserInterface
         ];
     }
 
-    private function buildMagicMethod($magicMethod)
+    private function buildMagicMethod(Method $magicMethod): array
     {
         $docBlock = new DocBlockStripSpaces(substr($magicMethod->getDescription(), 1, -1));
         $fullDescription = $docBlock->getDescription();
@@ -481,7 +499,7 @@ class CodeParser implements ParserInterface
         ];
     }
 
-    private function buildExamples($examples)
+    private function buildExamples(array $examples): array
     {
         $examplesArray = [];
 
@@ -528,7 +546,7 @@ class CodeParser implements ParserInterface
         return $examplesArray;
     }
 
-    private function buildResources($resources)
+    private function buildResources(array $resources)
     {
         if (count($resources) === 0) {
             return $resources;
@@ -546,8 +564,11 @@ class CodeParser implements ParserInterface
         return $resourcesArray;
     }
 
-    private function buildParams($params, $methodDescription = null, $isProto = false)
-    {
+    private function buildParams(
+        array $params,
+        string $methodDescription = null,
+        bool $isProto = false
+    ) {
         if (count($params) === 0) {
             return $params;
         }
@@ -555,8 +576,11 @@ class CodeParser implements ParserInterface
         $paramsArray = [];
 
         foreach ($params as $param) {
+            // var_dump($param);exit;
             $description = $param->getDescription();
-            $descriptionString = $this->markdown->parse($description);
+            $descriptionString = $this->buildDescription(
+                $description
+            );
 
             $nestedParamsArray = [];
 
@@ -574,8 +598,9 @@ class CodeParser implements ParserInterface
                 $nestedParams = explode('@type', $nestedParamString);
                 $nestedParamString = trim(array_shift($nestedParams));
                 $nestedParamsArray = $this->buildNestedParams($nestedParams, $param, $isProto);
+                $description = $param->getDescription();
 
-                $descriptionString = $this->markdown->parse($param->getDescription());
+                $descriptionString = $this->buildDescription($description);
             }
 
             $varName = substr($param->getVariableName(), 1);
@@ -585,7 +610,7 @@ class CodeParser implements ParserInterface
             $paramsArray[] = [
                 'name' => $varName,
                 'description' => $descriptionString,
-                'types' => $this->handleTypes([$param->getName()]),
+                'types' => $this->handleTypes([$param->getType()]),
                 'optional' => (strpos(trim(strtolower($description)), '[optional]') === 0),
                 'nullable' => null // @todo
             ];
@@ -600,8 +625,11 @@ class CodeParser implements ParserInterface
      * PHPDoc has no support for nested params currently. this is a workaround
      * until it is implemented.
      */
-    private function buildNestedParams($nestedParams, $origParam, $isProto = false)
-    {
+    private function buildNestedParams(
+        array $nestedParams,
+        Tag $origParam,
+        bool $isProto = false
+    ) {
         $paramsArray = [];
 
         foreach ($nestedParams as $param) {
@@ -613,16 +641,15 @@ class CodeParser implements ParserInterface
             }
             // END proto nested arg missing description workaround
 
-            list($type, $name, $description) = $nestedParam;
+            list($type, $name, $content) = $nestedParam;
             $name = substr($name, 1);
-            $description = preg_replace('/\s+/', ' ', $description);
-
-            $types = array($type);
+            $content = preg_replace('/\s+/', ' ', $content);
+            $description = $origParam->getDescription();
 
             $paramsArray[] = [
                 'name' => substr($origParam->getVariableName(), 1) . '.' . $name,
-                'description' => $this->markdown->parse($origParam->getDescription()),
-                'types' => $this->handleTypes($types),
+                'description' => $this->buildDescription($description, $content),
+                'types' => $this->handleTypes([$type]),
                 'optional' => null, // @todo
                 'nullable' => null //@todo
             ];
@@ -631,7 +658,7 @@ class CodeParser implements ParserInterface
         return $paramsArray;
     }
 
-    private function hasNestedParams($description)
+    private function hasNestedParams(string $description)
     {
         $description = trim(str_replace('[optional]', '', $description));
 

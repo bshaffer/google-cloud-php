@@ -454,30 +454,48 @@ class CodeParser implements ParserInterface
         bool $isProto = false
     ): array {
         $docBlock = $method->getDocBlock();
-        $dscription = $docBlock->getDescription();
+        $summary = $docBlock->getSummary();
+        $description = $docBlock->getDescription();
         $resources = $docBlock->getTagsByName('see');
         $params = $docBlock->getTagsByName('param');
         $exceptions = $docBlock->getTagsByName('throws');
         $returns = $docBlock->getTagsByName('return');
         $examples = null;
 
-        $split = $this->splitDescription($dscription);
+        $split = $this->splitDescription($description);
         $examples = $split['examples'] ? $this->buildExamples($split['examples']) : [];
 
-        $description = $this->buildDescription($dscription, $split['description'], $method);
+        $descriptionString = sprintf("%s\n%s",
+            $this->markdown->parse($summary),
+            $this->buildDescription(
+                $description,
+                $split['description'],
+                $method
+            )
+        );
+
         if ($methodInfo['container'] !== $className) {
-            $description .= "\n\nImplemented in " . $this->buildReference($methodInfo['container']);
+            $descriptionString .= sprintf(
+                "\n\nImplemented in %s",
+                $this->buildReference($methodInfo['container'])
+            );
         }
+
+        $source = sprintf(
+            '%s#L%d',
+            $this->getSource($methodInfo['source']),
+            $method->getLocation()->getLineNumber()
+        );
 
         return [
             'id' => $method->getName(),
             'type' => $method->getName() === '__construct' ? 'constructor' : 'instance',
             'name' => $method->getName(),
-            'source' => $this->getSource($methodInfo['source']) . '#L' . $method->getLocation()->getLineNumber(),
-            'description' => $description,
+            'source' => $source,
+            'description' => $descriptionString,
             'examples' => $examples,
             'resources' => $this->buildResources($resources),
-            'params' => $this->buildParams($params, $description, $isProto),
+            'params' => $this->buildParams($params, $descriptionString, $isProto),
             'exceptions' => $this->buildExceptions($exceptions),
             'returns' => $this->buildReturns($returns, $className)
         ];
@@ -598,22 +616,35 @@ class CodeParser implements ParserInterface
             $nestedParamsArray = [];
 
             // To handle generated protobuf files
-            if ($descriptionString === '' && $methodDescription) {
+            if (empty($descriptionString) && $methodDescription) {
                 $pos = strpos($methodDescription, '<p>Generated from protobuf field');
                 if ($pos) {
                     $descriptionString = substr($methodDescription, 0, $pos);
                 }
             }
 
-            if (strpos($param->getType(), 'array') === 0 && $this->hasNestedParams($description)) {
+            if (
+                $param->getType() instanceof Types\Array_
+                && $this->hasNestedParams($description)
+            ) {
                 $nestedParamString = trim(str_replace('[optional]', '', $description));
                 $nestedParamString = substr($nestedParamString, 1, -1);
                 $nestedParams = explode('@type', $nestedParamString);
-                $nestedParamString = trim(array_shift($nestedParams));
-                $nestedParamsArray = $this->buildNestedParams($nestedParams, $param, $isProto);
-                $description = $param->getDescription();
 
-                $descriptionString = $this->buildDescription($description);
+                // Remove the first, since that's the wrapping array param,
+                // and use it for the wrapping param description
+                $paramContent = trim(array_shift($nestedParams));
+                $descriptionString = $this->buildDescription(
+                    $param->getDescription(),
+                    $paramContent
+                );
+
+                // Create an array containing the rest of the parameter options
+                $nestedParamsArray = $this->buildNestedParams(
+                    $nestedParams,
+                    $param,
+                    $isProto
+                );
             }
 
             if (!$varName = $param->getVariableName()) {
@@ -658,12 +689,12 @@ class CodeParser implements ParserInterface
             // END proto nested arg missing description workaround
 
             list($type, $name, $content) = $nestedParam;
-            $name = substr($name, 1);
+            $name = substr($name, 1); // remove "$" from parameter name
             $content = preg_replace('/\s+/', ' ', $content);
             $description = $origParam->getDescription();
 
             $paramsArray[] = [
-                'name' => substr($origParam->getVariableName(), 1) . '.' . $name,
+                'name' => $origParam->getVariableName() . '.' . $name,
                 'description' => $this->buildDescription($description, $content),
                 'types' => $this->handleTypes([$typeResolver->resolve($type)]),
                 'optional' => null, // @todo
@@ -899,11 +930,11 @@ class CodeParser implements ParserInterface
         ];
     }
 
-    private function buildInternalLink(string $type): string
+    private function buildInternalLink(string $typeName): string
     {
-        $fqsen = rtrim($type, '[]');
+        $fqsen = new Fqsen(rtrim($typeName, '[]'));
         $componentId = null;
-        $file = $this->register->getFileFromFqsen(new Fqsen($fqsen));
+        $file = $this->register->getFileFromFqsen($fqsen);
         $fileName = $file->getPath();
 
         if ($this->isComponent) {
@@ -931,7 +962,7 @@ class CodeParser implements ParserInterface
             $openTag .= '>';
         }
 
-        return sprintf('%s%s</a>', $openTag, trim($type, '\\'));
+        return sprintf('%s%s</a>', $openTag, trim($typeName, '\\'));
     }
 
     private function getComponentComposerFile(string $fileName): array

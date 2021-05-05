@@ -82,8 +82,8 @@ class DocGenerator
         foreach ($this->files as $fileName) {
             $localFiles[] = new LocalFile($fileName);
         }
-        $projectFactory = ProjectFactory::createInstance();
-        $project = $projectFactory->create($this->componentId, $localFiles);
+        $project = ProjectFactory::createInstance()
+            ->create($this->componentId, $localFiles);
         $fileRegister = new ReflectorRegister($project);
 
         $rootPath = $this->executionPath;

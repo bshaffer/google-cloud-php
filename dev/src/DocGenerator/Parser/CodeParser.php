@@ -95,26 +95,69 @@ class CodeParser implements ParserInterface
         return $this->buildDocument($element);
     }
 
-    private function buildInfo(Element $element): array
+    private function buildDocument(Element $element): array
     {
-        $classInfo = [
-            'methods' => [],
-            'traits' => [],
-            'parents' => [],
-            'interfaces' => [],
-            'interfaceMethods' => [],
-            'isProto' => false
+        if (!$docBlock = $element->getDocBlock()) {
+            throw new \LogicException(sprintf(
+                'No description (%s)', $this->file->getPath()
+            ));
+        }
+
+        $fullName = (string) $element->getFqsen();
+        $magic = $this->buildMagicMethods(
+            $docBlock->getTagsByName('method'),
+            $fullName
+        );
+
+        $description = $docBlock->getDescription();
+        $split = $this->splitDescription($description);
+
+        $classInfo = $element instanceof Interface_
+            ? $this->buildInterfaceInfo($element)
+            : $this->buildClassInfo($element);
+
+        $methods = $element instanceof Interface_
+            ? $this->buildMethods($classInfo['interfaceMethods'], $fullName)
+            : $this->buildMethods($classInfo['methods'], $fullName, $classInfo['isProto']);
+
+        $summary = $docBlock->getSummary()
+            ? $this->markdown->parse($docBlock->GetSummary())
+            : '';
+
+        $descriptionString = $element instanceof Interface_
+            ? $this->buildInterfaceDescription($classInfo, $description, $split['description'], $element)
+            : $this->buildClassDescription($classInfo, $description, $split['description'], $element);
+
+        $descriptionString = $descriptionString
+            ? sprintf("%s\n%s", $summary, $descriptionString)
+            : $summary;
+
+        return [
+            'id' => $this->id,
+            'type' => '', // For now
+            'title' => ltrim($fullName, '\\'),
+            'name' => $element->getName(),
+            'description' => $descriptionString,
+            'examples' => $this->buildExamples($split['examples']),
+            'resources' => $this->buildResources($docBlock->getTagsByName('see')),
+            'methods' => array_merge($methods, $magic)
         ];
-
-        $this->buildClassInfoRecursive($element, $classInfo);
-
-        return $classInfo;
     }
 
-    private function buildClassInfoRecursive(
+    private function buildClassInfo(
         Element $element,
-        array &$classInfo
-    ): void {
+        array $classInfo = null
+    ): array {
+        if (is_null($classInfo)) {
+            $classInfo = [
+                'methods' => [],
+                'traits' => [],
+                'parents' => [],
+                'interfaces' => [],
+                'interfaceMethods' => [],
+                'isProto' => false
+            ];
+        }
         $fullName = (string) $element->getFqsen();
 
         // START proto nested arg missing description workaround
@@ -143,40 +186,38 @@ class CodeParser implements ParserInterface
 
         foreach ($element->getUsedTraits() as $fqsen) {
             if ($trait = $this->register->getElementFromFqsen($fqsen)) {
-                $this->buildClassInfoRecursive($trait, $classInfo);
+                $classInfo = $this->buildClassInfo($trait, $classInfo);
             }
         }
 
-        foreach ($element->getInterfaces() as $fqsen) {
-            if ($interface = $this->register->getElementFromFqsen($fqsen)) {
-                $this->buildInterfaceInfoRecursive($interface, $classInfo);
+        if (!$element instanceof Trait_) {
+            foreach ($element->getInterfaces() as $fqsen) {
+                if ($interface = $this->register->getElementFromFqsen($fqsen)) {
+                    $classInfo = $this->buildInterfaceInfo($interface, $classInfo);
+                }
+            }
+
+            if ($fqsen = $element->getParent()) {
+                if ($parent = $this->register->getElementFromFqsen($fqsen)) {
+                    $classInfo = $this->buildClassInfo($parent, $classInfo);
+                    // Add $parent to array after calling getMethods so that
+                    // parents are correctly ordered
+                    $classInfo['parents'][] = $fqsen;
+                }
             }
         }
-
-        if ($fqsen = $element->getParent()) {
-            if ($parent = $this->register->getElementFromFqsen($fqsen)) {
-                $this->buildClassInfoRecursive($parent, $classInfo);
-                // Add $parent to array after calling getMethodsRecursive so that
-                // parents are correctly ordered
-                $classInfo['parents'][] = $fqsen;
-            }
-        }
-    }
-
-    private function buildInterfaceInfo(Interface_ $interface): array
-    {
-        $classInfo = [
-            'interfaces' => [],
-            'interfaceMethods' => [],
-        ];
-
-        $this->buildInterfaceInfoRecursive($interface, $classInfo);
 
         return $classInfo;
     }
 
-    private function buildInterfaceInfoRecursive(Interface_ $interface, array &$classInfo): void
+    private function buildInterfaceInfo(Interface_ $interface, array $classInfo = null)
     {
+        if (is_null($classInfo)) {
+            $classInfo = [
+                'interfaces' => [],
+                'interfaceMethods' => [],
+            ];
+        }
         $context = $interface->getDocBlock()->getContext();
         $fullName = (string) $interface->getFqsen();
         $isInternal = substr_compare($fullName, '\Google\Cloud', 0, 13) === 0;
@@ -184,14 +225,16 @@ class CodeParser implements ParserInterface
             $classInfo['interfaceMethods'] += $this->buildMethodInfo($interface);
         }
 
-        // Add parent interfaces to array before calling getMethodsRecursive to use PHP array
+        // Add parent interfaces to array before calling getMethods to use PHP array
         // ordering, so that parent interfaces are before more deeply nested interfaces
         $classInfo['interfaces'] += $interface->getParents();
         foreach ($reflector->getParents() as $parent) {
             if ($interface = $this->register->getElementFromFqsen($parent)) {
-                $this->buildInterfaceInfoRecursive($interface, $classInfo);
+               $classInfo = $this->buildInterfaceInfo($interface, $classInfo);
             }
         }
+
+        return $classInfo;
     }
 
     private function buildMethodInfo(Element $element): array
@@ -211,54 +254,6 @@ class CodeParser implements ParserInterface
             ];
         }
         return $methods;
-    }
-
-    private function buildDocument(Element $element): array
-    {
-        $docBlock = $element->getDocBlock();
-
-        if (is_null($docBlock)) {
-            throw new \LogicException(sprintf('No description (%s)', $this->file->getPath()));
-        }
-
-        $context = $docBlock->getContext();
-        $fullName = (string) $element->getFqsen();
-        $type = strtolower($element->getName()); // I have no clue what this is
-
-        $magic = [];
-        if ($docBlock && $docBlock->getTags()) {
-            $magicMethods = array_filter($docBlock->getTags(), function ($tag) {
-                return ($tag->getName() === 'method');
-            });
-
-            $magic = $this->buildMagicMethods($magicMethods, $fullName);
-        }
-
-        $description = $docBlock->getDescription();
-        $split = $this->splitDescription($description);
-
-        if ($element instanceof Interface_) {
-            $classInfo = $this->buildInterfaceInfo($reflector);
-            $description = $this->buildInterfaceDescription($classInfo, $description, $split['description'], $element);
-            $methods = $this->buildMethods($classInfo['interfaceMethods'], $fullName);
-        } else {
-            $classInfo = $this->buildInfo($element);
-            $description = $this->buildClassDescription($classInfo, $description, $split['description'], $element);
-            $methods = $this->buildMethods($classInfo['methods'], $fullName, $classInfo['isProto']);
-        }
-
-        $examples = $split['examples'] ? $this->buildExamples($split['examples']) : null;
-
-        return [
-            'id' => $this->id,
-            'type' => $type,
-            'title' => $fullName,
-            'name' => $name,
-            'description' => $description,
-            'examples' => $examples,
-            'resources' => $this->buildResources($docBlock->getTagsByName('see')),
-            'methods' => array_merge($methods, $magic)
-        ];
     }
 
     private function buildDescription(
@@ -454,25 +449,27 @@ class CodeParser implements ParserInterface
         bool $isProto = false
     ): array {
         $docBlock = $method->getDocBlock();
-        $summary = $docBlock->getSummary();
         $description = $docBlock->getDescription();
         $resources = $docBlock->getTagsByName('see');
         $params = $docBlock->getTagsByName('param');
         $exceptions = $docBlock->getTagsByName('throws');
         $returns = $docBlock->getTagsByName('return');
-        $examples = null;
 
         $split = $this->splitDescription($description);
-        $examples = $split['examples'] ? $this->buildExamples($split['examples']) : [];
 
-        $descriptionString = sprintf("%s\n%s",
-            $this->markdown->parse($summary),
-            $this->buildDescription(
-                $description,
-                $split['description'],
-                $method
-            )
+        $summary = $docBlock->getSummary()
+            ? $this->markdown->parse($docBlock->GetSummary())
+            : '';
+
+        $descriptionString = $this->buildDescription(
+            $description,
+            $split['description'],
+            $method
         );
+
+        $descriptionString = $descriptionString
+            ? sprintf("%s\n%s", $summary, $descriptionString)
+            : $summary;
 
         if ($methodInfo['container'] !== $className) {
             $descriptionString .= sprintf(
@@ -493,7 +490,7 @@ class CodeParser implements ParserInterface
             'name' => $method->getName(),
             'source' => $source,
             'description' => $descriptionString,
-            'examples' => $examples,
+            'examples' => $this->buildExamples($split['examples']),
             'resources' => $this->buildResources($resources),
             'params' => $this->buildParams($params, $descriptionString, $isProto),
             'exceptions' => $this->buildExceptions($exceptions),
@@ -509,7 +506,7 @@ class CodeParser implements ParserInterface
         $params = $docBlock->getTagsByName('param');
         $exceptions = $docBlock->getTagsByName('throws');
         $returns = $docBlock->getTagsByName('return');
-        $examples = null;
+        $examples = [];
 
         $parts = explode('Example:', $fullDescription);
 
@@ -1009,7 +1006,7 @@ class CodeParser implements ParserInterface
 
     private function splitDescription(Description $description): array
     {
-        $examples = null;
+        $examples = [];
         $parts = [];
         $body = $description->getBodyTemplate();
 

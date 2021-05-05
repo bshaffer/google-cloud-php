@@ -17,45 +17,24 @@
 
 namespace Google\Cloud\Dev\DocGenerator;
 
+use phpDocumentor\Reflection\Php\File;
 use phpDocumentor\Reflection\Fqsen;
 use phpDocumentor\Reflection\Element;
 use phpDocumentor\Reflection\File\LocalFile;
 use phpDocumentor\Reflection\Php\Project;
 use phpDocumentor\Reflection\Php\ProjectFactory;
-use phpDocumentor\Reflection\Php\File;
 use phpDocumentor\Reflection\Php\Interface_;
 use phpDocumentor\Reflection\Php\Trait_;
 
 class ReflectorRegister
 {
-    private $project;
     private $elementMap;
     private $fileMap;
-    private $skippedFqsen;
+    private $skippedFqsen = [];
 
     public function __construct(Project $project)
     {
-        $this->project = $project;
-        foreach ($this->project->getFiles() as $path => $file) {
-            foreach ($file->getClasses() as $fqsen => $class) {
-                $this->elementMap[$fqsen] = $class;
-                $this->fileMap[$fqsen] = $file;
-            }
-            foreach ($file->getInterfaces() as $fqsen => $interface) {
-                $this->elementMap[$fqsen] = $interface;
-                $this->fileMap[$fqsen] = $file;
-            }
-            foreach ($file->getTraits() as $fqsen => $trait) {
-                $this->elementMap[$fqsen] = $trait;
-                $this->fileMap[$fqsen] = $file;
-            }
-        }
-        $this->skippedFqsen = [];
-    }
-
-    public function getProject()
-    {
-        return $this->project;
+        $this->writeProjectToCache($project);
     }
 
     public function getElementFromFqsen(Fqsen $elementFqsen): ?Element
@@ -65,9 +44,26 @@ class ReflectorRegister
             return $this->elementMap[$fqsen];
         }
 
-        $this->skippedFqsen[$fqsen] = true;
+        if (!class_exists($fqsen) && !interface_exists($fqsen) && !trait_exists($fqsen)) {
+            echo "Could not find class, trait or interface for $fqsen\n";
+            return null;
+        }
 
-        return null;
+        $refClass = new \ReflectionClass($fqsen);
+        $fileName = $refClass->getFileName();
+
+        if (empty($fileName)) {
+            echo "Could not find file for $fqsen\n";
+            return null;
+        }
+
+        $project = ProjectFactory::createInstance()->create('', [
+            new LocalFile($fileName)
+        ]);
+
+        $this->writeProjectToCache($project);
+
+        return $this->elementMap[$fqsen];
     }
 
     public function getFileFromFqsen(Fqsen $elementFqsen): File
@@ -112,5 +108,23 @@ class ReflectorRegister
 
         // No classes, interfaces, or traits found in file
         return null;
+    }
+
+    private function writeProjectToCache(Project $project)
+    {
+        foreach ($project->getFiles() as $path => $file) {
+            foreach ($file->getClasses() as $fqsen => $class) {
+                $this->elementMap[$fqsen] = $class;
+                $this->fileMap[$fqsen] = $file;
+            }
+            foreach ($file->getInterfaces() as $fqsen => $interface) {
+                $this->elementMap[$fqsen] = $interface;
+                $this->fileMap[$fqsen] = $file;
+            }
+            foreach ($file->getTraits() as $fqsen => $trait) {
+                $this->elementMap[$fqsen] = $trait;
+                $this->fileMap[$fqsen] = $file;
+            }
+        }
     }
 }

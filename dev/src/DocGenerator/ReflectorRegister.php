@@ -54,6 +54,9 @@ class ReflectorRegister
     public function getFileFromFqsen(Fqsen $elementFqsen): File
     {
         $fqsen = (string) $elementFqsen;
+        if (false !== strpos($fqsen, '::')) {
+            $fqsen = explode('::', $fqsen)[0];
+        }
         if (isset($this->fileMap[$fqsen])) {
             return $this->fileMap[$fqsen];
         }
@@ -62,7 +65,7 @@ class ReflectorRegister
             return $this->fileMap[$fqsen];
         }
 
-        throw new \Exception('File not found for Fqsen ' . $fqsen);
+        throw new \LogicException('File not found for Fqsen ' . $fqsen);
     }
 
     public function getSkipped()

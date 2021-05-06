@@ -44,32 +44,21 @@ class ReflectorRegister
             return $this->elementMap[$fqsen];
         }
 
-        if (!class_exists($fqsen) && !interface_exists($fqsen) && !trait_exists($fqsen)) {
-            echo "Could not find class, trait or interface for $fqsen\n";
-            return null;
+        if ($this->writeFqsenToCache($fqsen)) {
+            return $this->elementMap[$fqsen];
         }
 
-        $refClass = new \ReflectionClass($fqsen);
-        $fileName = $refClass->getFileName();
-
-        if (empty($fileName)) {
-            echo "Could not find file for $fqsen\n";
-            return null;
-        }
-
-        $project = ProjectFactory::createInstance()->create('', [
-            new LocalFile($fileName)
-        ]);
-
-        $this->writeProjectToCache($project);
-
-        return $this->elementMap[$fqsen];
+        return null;
     }
 
     public function getFileFromFqsen(Fqsen $elementFqsen): File
     {
         $fqsen = (string) $elementFqsen;
         if (isset($this->fileMap[$fqsen])) {
+            return $this->fileMap[$fqsen];
+        }
+
+        if ($this->writeFqsenToCache($fqsen)) {
             return $this->fileMap[$fqsen];
         }
 
@@ -85,7 +74,7 @@ class ReflectorRegister
      * @param FileReflector $fileReflector
      * @return File|Trait_|Interface_|null
      */
-    public function getElementFromFile(File $file)
+    public function getElementFromFile(File $file): ?Element
     {
         if (is_null($file)) {
             throw new \LogicException('null file reflector');
@@ -110,7 +99,40 @@ class ReflectorRegister
         return null;
     }
 
-    private function writeProjectToCache(Project $project)
+    private function writeFqsenToCache(string $fqsen): bool
+    {
+        if (!class_exists($fqsen) && !interface_exists($fqsen) && !trait_exists($fqsen)) {
+            echo "Could not find class, trait or interface for $fqsen\n";
+            return false;
+        }
+
+        $refClass = new \ReflectionClass($fqsen);
+        $fileName = $refClass->getFileName();
+
+        if (empty($fileName)) {
+            echo "Could not find file for $fqsen\n";
+            return false;
+        }
+
+        if (!file_exists($fileName)) {
+            echo "File $fileName does not exist\n";
+            return false;
+        }
+
+        $project = ProjectFactory::createInstance()->create('', [
+            new LocalFile($fileName)
+        ]);
+
+        $this->writeProjectToCache($project);
+
+        if (!isset($this->fileMap[$fqsen])) {
+            throw new \LogicException("$fqsen not found in $fileName. Possibly an alias.");
+        }
+
+        return true;
+    }
+
+    private function writeProjectToCache(Project $project): void
     {
         foreach ($project->getFiles() as $path => $file) {
             foreach ($file->getClasses() as $fqsen => $class) {

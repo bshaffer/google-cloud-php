@@ -17,7 +17,6 @@
 
 namespace Google\Cloud\Dev\DocGenerator\Parser;
 
-use Google\Cloud\Core\Testing\DocBlockStripSpaces;
 use Google\Cloud\Dev\DocGenerator\ReflectorRegister;
 use Google\Cloud\Dev\GetComponentsTrait;
 use phpDocumentor\Reflection\DocBlock;
@@ -35,6 +34,8 @@ use phpDocumentor\Reflection\Php\Project;
 use phpDocumentor\Reflection\Php\Trait_;
 use phpDocumentor\Reflection\Php\Visibility;
 use phpDocumentor\Reflection\DocBlock\Tag;
+use phpDocumentor\Reflection\DocBlock\Tags;
+use phpDocumentor\Reflection\DocBlockFactory;
 use Rize\UriTemplate;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -120,17 +121,14 @@ class CodeParser implements ParserInterface
             ? $this->buildMethods($classInfo['interfaceMethods'], $fullName)
             : $this->buildMethods($classInfo['methods'], $fullName, $classInfo['isProto']);
 
-        $summary = $docBlock->getSummary()
-            ? $this->markdown->parse($docBlock->GetSummary())
-            : '';
-
         $descriptionString = $element instanceof Interface_
             ? $this->buildInterfaceDescription($classInfo, $description, $split['description'], $element)
             : $this->buildClassDescription($classInfo, $description, $split['description'], $element);
 
-        $descriptionString = $descriptionString
-            ? sprintf("%s\n%s", $summary, $descriptionString)
-            : $summary;
+        $descriptionString = $this->buildDescriptionWithSummary(
+            $docBlock->getSummary(),
+            $descriptionString
+        );
 
         return [
             'id' => $this->id,
@@ -228,7 +226,7 @@ class CodeParser implements ParserInterface
         // Add parent interfaces to array before calling getMethods to use PHP array
         // ordering, so that parent interfaces are before more deeply nested interfaces
         $classInfo['interfaces'] += $interface->getParents();
-        foreach ($reflector->getParents() as $parent) {
+        foreach ($interface->getParents() as $parent) {
             if ($interface = $this->register->getElementFromFqsen($parent)) {
                $classInfo = $this->buildInterfaceInfo($interface, $classInfo);
             }
@@ -343,6 +341,17 @@ class CodeParser implements ParserInterface
         return $content;
     }
 
+    private function buildDescriptionWithSummary(string $summary, string $description)
+    {
+        $summary = $summary
+            ? $this->markdown->parse($summary)
+            : '';
+
+        return $descriptionString
+            ? sprintf("%s\n%s", $summary, $descriptionString)
+            : $summary;
+    }
+
     private function buildReference(string $type): string
     {
         if ($this->hasInternalType($type)) {
@@ -411,32 +420,12 @@ class CodeParser implements ParserInterface
             $access = $docBlock->getTagsByName('access');
 
             if (!empty($access)) {
-                if ($access[0]->getContent() === 'private') {
+                if ((string) $access[0]->getDescription() === 'private') {
                     continue;
                 }
             }
 
             $methodArray[] = $this->buildMethod($method, $methodInfo, $className, $isProto);
-        }
-
-        return $methodArray;
-    }
-
-    private function buildMagicMethods(
-        array $magicMethods,
-        string $className
-    ): array {
-        $methodArray = [];
-        foreach ($magicMethods as $method) {
-            if (!$description = $method->getDescription()) {
-                throw new \Exception(sprintf(
-                    '%s::%s (magic method) has no description',
-                    $className,
-                    $method->getMethodName()
-                ));
-            }
-
-            $methodArray[] = $this->buildMagicMethod($method, $className);
         }
 
         return $methodArray;
@@ -457,19 +446,16 @@ class CodeParser implements ParserInterface
 
         $split = $this->splitDescription($description);
 
-        $summary = $docBlock->getSummary()
-            ? $this->markdown->parse($docBlock->GetSummary())
-            : '';
-
         $descriptionString = $this->buildDescription(
             $description,
             $split['description'],
             $method
         );
 
-        $descriptionString = $descriptionString
-            ? sprintf("%s\n%s", $summary, $descriptionString)
-            : $summary;
+        $descriptionString = $this->buildDescriptionWithSummary(
+            $docBlock->getSummary(),
+            $descriptionString
+        );
 
         if ($methodInfo['container'] !== $className) {
             $descriptionString .= sprintf(
@@ -498,17 +484,39 @@ class CodeParser implements ParserInterface
         ];
     }
 
-    private function buildMagicMethod(Method $magicMethod): array
+    private function buildMagicMethods(
+        array $magicMethods,
+        string $className
+    ): array {
+        $methodArray = [];
+        foreach ($magicMethods as $method) {
+            if (!$description = $method->getDescription()) {
+                throw new \Exception(sprintf(
+                    '%s::%s (magic method) has no description',
+                    $className,
+                    $method->getMethodName()
+                ));
+            }
+
+            $methodArray[] = $this->buildMagicMethod($method, $className);
+        }
+
+        return $methodArray;
+    }
+
+    private function buildMagicMethod(Tags\Method $magicMethod): array
     {
-        $docBlock = new DocBlockStripSpaces(substr($magicMethod->getDescription(), 1, -1));
-        $fullDescription = $docBlock->getDescription();
+        $docBlock = DocBlockFactory::createInstance()->create(
+            trim((string) $magicMethod->getDescription(), '{}')
+        );
+        $description = $docBlock->getDescription();
         $resources = $docBlock->getTagsByName('see');
         $params = $docBlock->getTagsByName('param');
         $exceptions = $docBlock->getTagsByName('throws');
         $returns = $docBlock->getTagsByName('return');
         $examples = [];
 
-        $parts = explode('Example:', $fullDescription);
+        $parts = explode('Example:', (string) $description);
 
         $docText = $parts[0];
 
@@ -520,8 +528,8 @@ class CodeParser implements ParserInterface
             'id' => $magicMethod->getMethodName(),
             'type' => $magicMethod->getMethodName() === '__construct' ? 'constructor' : 'instance',
             'name' => $magicMethod->getMethodName(),
-            'source' => $this->getSource($this->path),
-            'description' => $this->buildDescription($docBlock, $docText, $magicMethod),
+            'source' => $this->getSource($this->file->getPath()),
+            'description' => $this->buildDescription($description, $docText),
             'examples' => $this->buildExamples($examples),
             'resources' => $this->buildResources($resources),
             'params' => $this->buildParams($params),
@@ -653,7 +661,7 @@ class CodeParser implements ParserInterface
             $paramsArray[] = [
                 'name' => $varName,
                 'description' => $descriptionString,
-                'types' => $this->handleTypes([$param->getType()]),
+                'types' => $param->getType() ? $this->handleTypes([$param->getType()]) : [],
                 'optional' => (strpos(trim(strtolower($description)), '[optional]') === 0),
                 'nullable' => null // @todo
             ];
@@ -823,7 +831,7 @@ class CodeParser implements ParserInterface
     private function hasInternalType(string $fqsen): bool
     {
         if (substr_compare($fqsen, '\\Google\\Cloud', 0, 12) === 0) {
-            $file = $this->register->getFileFromFqsen(new Fqsen($fqsen));
+            $file = $this->register->getFileFromFqsen(new Fqsen(rtrim($fqsen, '[]')));
 
             $vendorPath = $this->projectRoot . 'vendor';
             if (substr($file->getPath(), 0, strlen($vendorPath)) === $vendorPath) {
@@ -1012,7 +1020,7 @@ class CodeParser implements ParserInterface
 
         if (strpos($body, 'Example:' . PHP_EOL . '```') !== false) {
             $parts = explode('Example:' . PHP_EOL, $body);
-            $examples = $parts[1];
+            $examples = [$parts[1]];
         }
 
         return [

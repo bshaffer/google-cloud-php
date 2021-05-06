@@ -1,0 +1,1 @@
+{"id":"compute\/v1\/targetinstance\/natpolicy","type":"","title":"Google\\Cloud\\Compute\\V1\\TargetInstance\\NatPolicy","name":"NatPolicy","description":"<p>NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.<\/p>","examples":[],"resources":[],"methods":[]}

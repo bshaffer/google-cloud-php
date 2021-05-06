@@ -1,0 +1,1 @@
+{"id":"tasks\/v2\/task\/view","type":"","title":"Google\\Cloud\\Tasks\\V2\\Task\\View","name":"View","description":"<p>The view specifies a subset of [Task][google.cloud.tasks.v2.Task] data.<\/p>","examples":[],"resources":[],"methods":[]}

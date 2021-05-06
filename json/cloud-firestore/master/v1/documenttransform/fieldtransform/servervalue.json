@@ -1,0 +1,1 @@
+{"id":"firestore\/v1\/documenttransform\/fieldtransform\/servervalue","type":"","title":"Google\\Cloud\\Firestore\\V1\\DocumentTransform\\FieldTransform\\ServerValue","name":"ServerValue","description":"<p>A value that is calculated by the server.<\/p>","examples":[],"resources":[],"methods":[]}

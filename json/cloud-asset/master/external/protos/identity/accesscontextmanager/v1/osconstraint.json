@@ -1,0 +1,1 @@
+{"id":"asset\/external\/protos\/identity\/accesscontextmanager\/v1\/osconstraint","type":"","title":"Google\\Identity\\AccessContextManager\\V1\\OsConstraint","name":"OsConstraint","description":"<p>A restriction on the OS type and version of devices making requests.<\/p>","examples":[],"resources":[],"methods":[]}

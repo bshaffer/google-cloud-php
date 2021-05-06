@@ -1,0 +1,1 @@
+{"id":"analyticsadmin\/v1alpha\/getdatasharingsettingsrequest","type":"","title":"Google\\Analytics\\Admin\\V1alpha\\GetDataSharingSettingsRequest","name":"GetDataSharingSettingsRequest","description":"<p>Request message for GetDataSharingSettings RPC.<\/p>","examples":[],"resources":[],"methods":[]}

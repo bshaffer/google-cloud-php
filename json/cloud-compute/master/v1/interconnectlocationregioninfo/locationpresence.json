@@ -1,0 +1,1 @@
+{"id":"compute\/v1\/interconnectlocationregioninfo\/locationpresence","type":"","title":"Google\\Cloud\\Compute\\V1\\InterconnectLocationRegionInfo\\LocationPresence","name":"LocationPresence","description":"<p>Identifies the network presence of this location.<\/p>","examples":[],"resources":[],"methods":[]}

@@ -1,0 +1,1 @@
+{"id":"trace\/attributes","type":"","title":"Google\\Cloud\\Trace\\Attributes","name":"Attributes","description":"<p>This plain PHP class represents a Link resource. A set of attributes, each in\nthe format [KEY]:[VALUE].<\/p>","examples":[],"resources":[{"title":{},"link":{}}],"methods":[]}

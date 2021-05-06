@@ -1,0 +1,1 @@
+{"id":"retail\/v2\/rejoinusereventsrequest\/usereventrejoinscope","type":"","title":"Google\\Cloud\\Retail\\V2\\RejoinUserEventsRequest\\UserEventRejoinScope","name":"UserEventRejoinScope","description":"<p>The scope of user events to be rejoined with the latest product catalog.<\/p>","examples":[],"resources":[],"methods":[]}

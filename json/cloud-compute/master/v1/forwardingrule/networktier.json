@@ -1,0 +1,1 @@
+{"id":"compute\/v1\/forwardingrule\/networktier","type":"","title":"Google\\Cloud\\Compute\\V1\\ForwardingRule\\NetworkTier","name":"NetworkTier","description":"<p>This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD.<\/p>","examples":[],"resources":[],"methods":[]}

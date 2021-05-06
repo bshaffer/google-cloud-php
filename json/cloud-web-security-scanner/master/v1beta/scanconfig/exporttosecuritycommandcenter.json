@@ -1,0 +1,1 @@
+{"id":"websecurityscanner\/v1beta\/scanconfig\/exporttosecuritycommandcenter","type":"","title":"Google\\Cloud\\WebSecurityScanner\\V1beta\\ScanConfig\\ExportToSecurityCommandCenter","name":"ExportToSecurityCommandCenter","description":"<p>Controls export of scan configurations and results to Cloud Security\nCommand Center.<\/p>","examples":[],"resources":[],"methods":[]}

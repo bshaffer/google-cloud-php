@@ -1,0 +1,1 @@
+{"id":"debugger\/bufferfullexception","type":"","title":"Google\\Cloud\\Debugger\\BufferFullException","name":"BufferFullException","description":"<p>Exception thrown when a Breakpoint has exhausted its allotted evaluation size.<\/p>","examples":[],"resources":[],"methods":[]}

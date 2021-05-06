@@ -1,0 +1,1 @@
+{"id":"securitycenter\/v1\/listfindingsresponse\/listfindingsresult\/statechange","type":"","title":"Google\\Cloud\\SecurityCenter\\V1\\ListFindingsResponse\\ListFindingsResult\\StateChange","name":"StateChange","description":"<p>The change in state of the finding.<\/p>","examples":[],"resources":[],"methods":[]}

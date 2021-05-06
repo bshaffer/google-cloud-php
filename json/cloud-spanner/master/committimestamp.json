@@ -1,0 +1,1 @@
+{"id":"spanner\/committimestamp","type":"","title":"Google\\Cloud\\Spanner\\CommitTimestamp","name":"CommitTimestamp","description":"<p>A special value which, when used, will set the field value to the value of\nthe commit timestamp.<\/p>","examples":[],"resources":[],"methods":[]}

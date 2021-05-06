@@ -1,0 +1,1 @@
+{"id":"kms\/v1\/keyoperationattestation\/attestationformat","type":"","title":"Google\\Cloud\\Kms\\V1\\KeyOperationAttestation\\AttestationFormat","name":"AttestationFormat","description":"<p>Attestation formats provided by the HSM.<\/p>","examples":[],"resources":[],"methods":[]}

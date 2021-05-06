@@ -1,0 +1,1 @@
+{"id":"workflows\/executions\/v1beta\/execution\/state","type":"","title":"Google\\Cloud\\Workflows\\Executions\\V1beta\\Execution\\State","name":"State","description":"<p>Describes the current state of the execution. More states may be added\nin the future.<\/p>","examples":[],"resources":[],"methods":[]}

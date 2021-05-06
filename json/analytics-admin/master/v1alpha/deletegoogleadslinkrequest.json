@@ -1,0 +1,1 @@
+{"id":"analyticsadmin\/v1alpha\/deletegoogleadslinkrequest","type":"","title":"Google\\Analytics\\Admin\\V1alpha\\DeleteGoogleAdsLinkRequest","name":"DeleteGoogleAdsLinkRequest","description":"<p>Request message for DeleteGoogleAdsLink RPC.<\/p>","examples":[],"resources":[],"methods":[]}

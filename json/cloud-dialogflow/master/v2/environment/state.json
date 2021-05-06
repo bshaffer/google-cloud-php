@@ -1,0 +1,1 @@
+{"id":"dialogflow\/v2\/environment\/state","type":"","title":"Google\\Cloud\\Dialogflow\\V2\\Environment\\State","name":"State","description":"<p>Represents an environment state. When an environment is pointed to a new\nagent version, the environment is temporarily set to the <code>LOADING<\/code> state.<\/p>","examples":[],"resources":[],"methods":[]}

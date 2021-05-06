@@ -1,0 +1,1 @@
+{"id":"compute\/v1\/forwardingrule\/ipprotocol","type":"","title":"Google\\Cloud\\Compute\\V1\\ForwardingRule\\IPProtocol","name":"IPProtocol","description":"<p>The IP protocol to which this rule applies.<\/p>","examples":[],"resources":[],"methods":[]}

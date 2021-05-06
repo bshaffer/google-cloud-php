@@ -1,0 +1,1 @@
+{"id":"compute\/v1\/sslcertificatemanagedsslcertificate\/status","type":"","title":"Google\\Cloud\\Compute\\V1\\SslCertificateManagedSslCertificate\\Status","name":"Status","description":"<p>[Output only] Status of the managed certificate resource.<\/p>","examples":[],"resources":[],"methods":[]}

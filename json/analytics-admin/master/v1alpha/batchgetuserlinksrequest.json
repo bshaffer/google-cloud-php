@@ -1,0 +1,1 @@
+{"id":"analyticsadmin\/v1alpha\/batchgetuserlinksrequest","type":"","title":"Google\\Analytics\\Admin\\V1alpha\\BatchGetUserLinksRequest","name":"BatchGetUserLinksRequest","description":"<p>Request message for BatchGetUserLinks RPC.<\/p>","examples":[],"resources":[],"methods":[]}

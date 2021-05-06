@@ -1,0 +1,1 @@
+{"id":"analyticsadmin\/v1alpha\/getiosappdatastreamrequest","type":"","title":"Google\\Analytics\\Admin\\V1alpha\\GetIosAppDataStreamRequest","name":"GetIosAppDataStreamRequest","description":"<p>Request message for GetIosAppDataStream RPC.<\/p>","examples":[],"resources":[],"methods":[]}

@@ -1,0 +1,1 @@
+{"id":"websecurityscanner\/v1beta\/scanconfig\/useragent","type":"","title":"Google\\Cloud\\WebSecurityScanner\\V1beta\\ScanConfig\\UserAgent","name":"UserAgent","description":"<p>Type of user agents used for scanning.<\/p>","examples":[],"resources":[],"methods":[]}

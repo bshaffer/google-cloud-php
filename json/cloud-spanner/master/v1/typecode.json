@@ -1,0 +1,1 @@
+{"id":"spanner\/v1\/typecode","type":"","title":"Google\\Cloud\\Spanner\\V1\\TypeCode","name":"TypeCode","description":"<p><code>TypeCode<\/code> is used as part of [Type][google.spanner.v1.Type] to\nindicate the type of a Cloud Spanner value.<\/p>","examples":[],"resources":[],"methods":[]}

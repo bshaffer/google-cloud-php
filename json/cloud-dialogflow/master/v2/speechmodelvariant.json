@@ -1,0 +1,1 @@
+{"id":"dialogflow\/v2\/speechmodelvariant","type":"","title":"Google\\Cloud\\Dialogflow\\V2\\SpeechModelVariant","name":"SpeechModelVariant","description":"<p>Variant of the specified [Speech model][google.cloud.dialogflow.v2.InputAudioConfig.model] to use.<\/p>","examples":[],"resources":[],"methods":[]}

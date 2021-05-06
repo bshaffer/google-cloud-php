@@ -1,0 +1,1 @@
+{"id":"monitoring\/v3\/groupresourcetype","type":"","title":"Google\\Cloud\\Monitoring\\V3\\GroupResourceType","name":"GroupResourceType","description":"<p>The supported resource types that can be used as values of\n<code>group_resource.resource_type<\/code>.<\/p>","examples":[],"resources":[],"methods":[]}

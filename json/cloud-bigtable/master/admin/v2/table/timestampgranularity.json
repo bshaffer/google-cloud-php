@@ -1,0 +1,1 @@
+{"id":"bigtable\/admin\/v2\/table\/timestampgranularity","type":"","title":"Google\\Cloud\\Bigtable\\Admin\\V2\\Table\\TimestampGranularity","name":"TimestampGranularity","description":"<p>Possible timestamp granularities to use when keeping multiple versions\nof data in a table.<\/p>","examples":[],"resources":[],"methods":[]}

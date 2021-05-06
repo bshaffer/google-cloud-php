@@ -1,0 +1,1 @@
+{"id":"compute\/v1\/targettcpproxiessetproxyheaderrequest\/proxyheader","type":"","title":"Google\\Cloud\\Compute\\V1\\TargetTcpProxiesSetProxyHeaderRequest\\ProxyHeader","name":"ProxyHeader","description":"<p>The new type of proxy header to append before sending data to the backend. NONE or PROXY_V1 are allowed.<\/p>","examples":[],"resources":[],"methods":[]}

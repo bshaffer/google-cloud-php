@@ -1,0 +1,1 @@
+{"id":"compute\/v1\/listpeeringroutesnetworksrequest\/direction","type":"","title":"Google\\Cloud\\Compute\\V1\\ListPeeringRoutesNetworksRequest\\Direction","name":"Direction","description":"<p>The direction of the exchanged routes.<\/p>","examples":[],"resources":[],"methods":[]}

@@ -1,0 +1,1 @@
+{"id":"analyticsadmin\/v1alpha\/globalsitetag","type":"","title":"Google\\Analytics\\Admin\\V1alpha\\GlobalSiteTag","name":"GlobalSiteTag","description":"<p>Read-only resource with the tag for sending data from a website to a\nWebDataStream.<\/p>","examples":[],"resources":[],"methods":[]}

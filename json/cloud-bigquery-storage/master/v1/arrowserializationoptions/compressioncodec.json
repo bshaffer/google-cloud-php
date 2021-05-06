@@ -1,0 +1,1 @@
+{"id":"bigquerystorage\/v1\/arrowserializationoptions\/compressioncodec","type":"","title":"Google\\Cloud\\BigQuery\\Storage\\V1\\ArrowSerializationOptions\\CompressionCodec","name":"CompressionCodec","description":"<p>Compression codec's supported by Arrow.<\/p>","examples":[],"resources":[],"methods":[]}

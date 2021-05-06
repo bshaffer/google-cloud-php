@@ -1,0 +1,1 @@
+{"id":"analyticsdata\/v1beta\/cohort","type":"","title":"Google\\Analytics\\Data\\V1beta\\Cohort","name":"Cohort","description":"<p>Defines a cohort selection criteria. A cohort is a group of users who share\na common characteristic. For example, users with the same <code>firstSessionDate<\/code>\nbelong to the same cohort.<\/p>","examples":[],"resources":[],"methods":[]}

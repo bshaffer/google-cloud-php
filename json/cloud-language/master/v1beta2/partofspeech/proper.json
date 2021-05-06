@@ -1,0 +1,1 @@
+{"id":"language\/v1beta2\/partofspeech\/proper","type":"","title":"Google\\Cloud\\Language\\V1beta2\\PartOfSpeech\\Proper","name":"Proper","description":"<p>This category shows if the token is part of a proper name.<\/p>","examples":[],"resources":[],"methods":[]}

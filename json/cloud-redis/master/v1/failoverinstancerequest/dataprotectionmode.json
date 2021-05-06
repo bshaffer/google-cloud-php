@@ -1,0 +1,1 @@
+{"id":"redis\/v1\/failoverinstancerequest\/dataprotectionmode","type":"","title":"Google\\Cloud\\Redis\\V1\\FailoverInstanceRequest\\DataProtectionMode","name":"DataProtectionMode","description":"<p>Specifies different modes of operation in relation to the data retention.<\/p>","examples":[],"resources":[],"methods":[]}

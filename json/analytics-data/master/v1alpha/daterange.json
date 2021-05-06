@@ -1,0 +1,1 @@
+{"id":"analyticsdata\/v1alpha\/daterange","type":"","title":"Google\\Analytics\\Data\\V1alpha\\DateRange","name":"DateRange","description":"<p>A contiguous set of days: startDate, startDate + 1, ..., endDate. Requests\nare allowed up to 4 date ranges.<\/p>","examples":[],"resources":[],"methods":[]}

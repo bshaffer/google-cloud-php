@@ -1,0 +1,1 @@
+{"id":"analyticsdata\/v1beta\/orderby\/pivotorderby\/pivotselection","type":"","title":"Google\\Analytics\\Data\\V1beta\\OrderBy\\PivotOrderBy\\PivotSelection","name":"PivotSelection","description":"<p>A pair of dimension names and values. Rows with this dimension pivot pair\nare ordered by the metric's value.<\/p>","examples":[],"resources":[],"methods":[]}

@@ -1,0 +1,1 @@
+{"id":"speech\/v1\/recognitionconfig\/audioencoding","type":"","title":"Google\\Cloud\\Speech\\V1\\RecognitionConfig\\AudioEncoding","name":"AudioEncoding","description":"<p>The encoding of the audio data sent in the request.<\/p>","examples":[],"resources":[],"methods":[]}

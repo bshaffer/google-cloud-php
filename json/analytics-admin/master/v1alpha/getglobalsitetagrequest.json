@@ -1,0 +1,1 @@
+{"id":"analyticsadmin\/v1alpha\/getglobalsitetagrequest","type":"","title":"Google\\Analytics\\Admin\\V1alpha\\GetGlobalSiteTagRequest","name":"GetGlobalSiteTagRequest","description":"<p>Request message for GetGlobalSiteTag RPC.<\/p>","examples":[],"resources":[],"methods":[]}

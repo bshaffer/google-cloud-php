@@ -1,0 +1,1 @@
+{"id":"compute\/v1\/managedinstanceinstancehealth\/detailedhealthstate","type":"","title":"Google\\Cloud\\Compute\\V1\\ManagedInstanceInstanceHealth\\DetailedHealthState","name":"DetailedHealthState","description":"<p>[Output Only] The current detailed instance health state.<\/p>","examples":[],"resources":[],"methods":[]}

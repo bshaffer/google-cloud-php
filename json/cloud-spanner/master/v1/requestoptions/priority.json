@@ -1,0 +1,1 @@
+{"id":"spanner\/v1\/requestoptions\/priority","type":"","title":"Google\\Cloud\\Spanner\\V1\\RequestOptions\\Priority","name":"Priority","description":"<p>The relative priority for requests. Note that priority is not applicable\nfor [BeginTransaction][google.spanner.v1.Spanner.BeginTransaction].<\/p>","examples":[],"resources":[],"methods":[]}

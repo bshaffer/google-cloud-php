@@ -1,0 +1,1 @@
+{"id":"compute\/v1\/routerbgppeer\/managementtype","type":"","title":"Google\\Cloud\\Compute\\V1\\RouterBgpPeer\\ManagementType","name":"ManagementType","description":"<p>[Output Only] The resource that configures and manages this BGP peer.<\/p>","examples":[],"resources":[],"methods":[]}

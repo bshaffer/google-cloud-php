@@ -1,0 +1,1 @@
+{"id":"debugger\/statusmessage","type":"","title":"Google\\Cloud\\Debugger\\StatusMessage","name":"StatusMessage","description":"<p>Represents a contextual status message. The message can indicate an error or\ninformational status, and refer to specific parts of the containing object.<\/p>","examples":[],"resources":[{"title":{},"link":{}}],"methods":[]}

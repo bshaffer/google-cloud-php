@@ -1,0 +1,1 @@
+{"id":"compute\/v1\/backendservice\/protocol","type":"","title":"Google\\Cloud\\Compute\\V1\\BackendService\\Protocol","name":"Protocol","description":"<p>The protocol this BackendService uses to communicate with backends.<\/p>","examples":[],"resources":[],"methods":[]}

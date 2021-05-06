@@ -1,0 +1,1 @@
+{"id":"compute\/v1\/vpntunnel\/status","type":"","title":"Google\\Cloud\\Compute\\V1\\VpnTunnel\\Status","name":"Status","description":"<p>[Output Only] The status of the VPN tunnel, which can be one of the following:<\/p>\n<ul>\n<li>PROVISIONING: Resource is being allocated for the VPN tunnel.<\/li>\n<\/ul>","examples":[],"resources":[],"methods":[]}

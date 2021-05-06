@@ -1,0 +1,1 @@
+{"id":"compute\/v1\/targetpool\/sessionaffinity","type":"","title":"Google\\Cloud\\Compute\\V1\\TargetPool\\SessionAffinity","name":"SessionAffinity","description":"<p>Session affinity option, must be one of the following values:\nNONE: Connections from the same client IP may go to any instance in the pool.<\/p>","examples":[],"resources":[],"methods":[]}

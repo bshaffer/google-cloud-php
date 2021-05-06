@@ -1,0 +1,1 @@
+{"id":"securitycenter\/v1\/listassetsresponse\/listassetsresult\/statechange","type":"","title":"Google\\Cloud\\SecurityCenter\\V1\\ListAssetsResponse\\ListAssetsResult\\StateChange","name":"StateChange","description":"<p>The change in state of the asset.<\/p>","examples":[],"resources":[],"methods":[]}

@@ -1,0 +1,1 @@
+{"id":"analyticsadmin\/v1alpha\/deleteiosappdatastreamrequest","type":"","title":"Google\\Analytics\\Admin\\V1alpha\\DeleteIosAppDataStreamRequest","name":"DeleteIosAppDataStreamRequest","description":"<p>Request message for DeleteIosAppDataStream RPC.<\/p>","examples":[],"resources":[],"methods":[]}

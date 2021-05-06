@@ -1,0 +1,1 @@
+{"id":"spanner\/admin\/database\/v1\/backup\/state","type":"","title":"Google\\Cloud\\Spanner\\Admin\\Database\\V1\\Backup\\State","name":"State","description":"<p>Indicates the current state of the backup.<\/p>","examples":[],"resources":[],"methods":[]}

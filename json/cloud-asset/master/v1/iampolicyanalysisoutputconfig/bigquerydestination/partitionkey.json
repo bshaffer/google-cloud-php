@@ -1,0 +1,1 @@
+{"id":"asset\/v1\/iampolicyanalysisoutputconfig\/bigquerydestination\/partitionkey","type":"","title":"Google\\Cloud\\Asset\\V1\\IamPolicyAnalysisOutputConfig\\BigQueryDestination\\PartitionKey","name":"PartitionKey","description":"<p>This enum determines the partition key column for the bigquery tables.<\/p>","examples":[],"resources":[],"methods":[]}

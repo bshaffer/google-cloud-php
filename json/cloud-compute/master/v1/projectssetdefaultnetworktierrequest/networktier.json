@@ -1,0 +1,1 @@
+{"id":"compute\/v1\/projectssetdefaultnetworktierrequest\/networktier","type":"","title":"Google\\Cloud\\Compute\\V1\\ProjectsSetDefaultNetworkTierRequest\\NetworkTier","name":"NetworkTier","description":"<p>Default network tier to be set.<\/p>","examples":[],"resources":[],"methods":[]}

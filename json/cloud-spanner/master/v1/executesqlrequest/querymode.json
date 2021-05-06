@@ -1,0 +1,1 @@
+{"id":"spanner\/v1\/executesqlrequest\/querymode","type":"","title":"Google\\Cloud\\Spanner\\V1\\ExecuteSqlRequest\\QueryMode","name":"QueryMode","description":"<p>Mode in which the statement must be processed.<\/p>","examples":[],"resources":[],"methods":[]}

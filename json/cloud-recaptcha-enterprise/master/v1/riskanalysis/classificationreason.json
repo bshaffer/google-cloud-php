@@ -1,0 +1,1 @@
+{"id":"recaptchaenterprise\/v1\/riskanalysis\/classificationreason","type":"","title":"Google\\Cloud\\RecaptchaEnterprise\\V1\\RiskAnalysis\\ClassificationReason","name":"ClassificationReason","description":"<p>LINT.IfChange(classification_reason)\nReasons contributing to the risk analysis verdict.<\/p>","examples":[],"resources":[],"methods":[]}

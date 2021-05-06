@@ -1,0 +1,1 @@
+{"id":"iot\/v1\/gatewayauthmethod","type":"","title":"Google\\Cloud\\Iot\\V1\\GatewayAuthMethod","name":"GatewayAuthMethod","description":"<p>The gateway authorization\/authentication method. This setting determines how\nCloud IoT Core authorizes\/authenticate devices to access the gateway.<\/p>","examples":[],"resources":[],"methods":[]}

@@ -114,7 +114,7 @@ class ReflectorRegister
     private function writeFqsenToCache(string $fqsen): bool
     {
         if (!class_exists($fqsen) && !interface_exists($fqsen) && !trait_exists($fqsen)) {
-            echo "Could not find class, trait or interface for $fqsen\n";
+            // echo "Could not find class, trait or interface for $fqsen\n";
             return false;
         }
 
@@ -122,12 +122,12 @@ class ReflectorRegister
         $fileName = $refClass->getFileName();
 
         if (empty($fileName)) {
-            echo "Could not find file for $fqsen\n";
+            // echo "Could not find file for $fqsen\n";
             return false;
         }
 
         if (!file_exists($fileName)) {
-            echo "File $fileName does not exist\n";
+            // echo "File $fileName does not exist\n";
             return false;
         }
 

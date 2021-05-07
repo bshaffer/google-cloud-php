@@ -378,26 +378,15 @@ class CodeParser implements ParserInterface
                     $tagContent[] = (string) $tag;
                 }
             }
-            $parsedContent = vsprintf($content, $tagContent);
 
-            // @TODO: Hack to fix the tokenization of "%"
-            // @see https://github.com/phpDocumentor/ReflectionDocBlock/issues/274
-            $content = str_replace('%%', '%', $parsedContent);
+            $content = vsprintf($content, $tagContent);
         }
+
+        // @TODO: Hack to fix the tokenization of "%"
+        // @see https://github.com/phpDocumentor/ReflectionDocBlock/issues/274
+        $content = str_replace('%%', '%', $content);
 
         return str_ireplace('[optional]', '', $content);
-    }
-
-    private function buildDescriptionWithSummary(string $summary, string $description)
-    {
-        if ($summary === '{@inheritdoc}') {
-            return $description;
-        }
-        $summary = $this->markdown->parse($summary);
-
-        return $description
-            ? sprintf("%s\n%s", $summary, $description)
-            : $summary;
     }
 
     private function buildMethods(
@@ -516,14 +505,13 @@ class CodeParser implements ParserInterface
         $exceptions = $docBlock->getTagsByName('throws');
         $returns = $docBlock->getTagsByName('return');
 
-        $split = $this->splitDescription($docBlock->getDescription());
-        $examples = $this->fixMagicMethodExamplesWhitespace($split['examples'], $desc);
-
-        // TODO: Find a cleaner way to do this
-        $split['description'] = $this->buildDescriptionWithSummary(
-            $docBlock->getSummary(),
-            $split['description']
+        // Combine summary and description so first line tags can be parsed.
+        $description = $this->descriptionFactory->create(
+            $docBlock->getSummary() . "\n\n" . $docBlock->getDescription(),
+            $docBlock->getContext()
         );
+        $split = $this->splitDescription($description);
+        $examples = $this->fixMagicMethodExamplesWhitespace($split['examples'], $desc);
 
         return [
             'id' => $magicMethod->getMethodName(),

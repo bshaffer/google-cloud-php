@@ -22,6 +22,14 @@ use Google\Cloud\Dev\DocGenerator\Parser\MarkdownParser;
 use Symfony\Component\Console\Output\OutputInterface;
 use phpDocumentor\Reflection\File\LocalFile;
 use phpDocumentor\Reflection\Php\ProjectFactory;
+use phpDocumentor\Reflection\Php\Factory;
+use phpDocumentor\Reflection\Php\NodesFactory;
+use phpDocumentor\Reflection\DocBlock\DescriptionFactory;
+use phpDocumentor\Reflection\DocBlock\StandardTagFactory;
+use phpDocumentor\Reflection\FqsenResolver;
+use phpDocumentor\Reflection\DocBlockFactory;
+use phpDocumentor\Reflection\TypeResolver;
+use PhpParser\PrettyPrinter\Standard as PrettyPrinter;
 
 /**
  * Parses given files and builds documentation for our common docs site.
@@ -82,7 +90,7 @@ class DocGenerator
         foreach ($this->files as $fileName) {
             $localFiles[] = new LocalFile($fileName);
         }
-        $project = ProjectFactory::createInstance()
+        $project = $this->createProjectFactory()
             ->create($this->componentId, $localFiles);
         $fileRegister = new ReflectorRegister($project);
 
@@ -139,5 +147,35 @@ class DocGenerator
                 ]);
             }
         }
+    }
+
+    private function createProjectFactory()
+    {
+        $fqsenResolver      = new FqsenResolver();
+        $tagFactory         = new StandardTagFactory($fqsenResolver);
+        $descriptionFactory = new DocBlock\DescriptionFactory($tagFactory);
+        // $descriptionFactory = new DescriptionFactory($tagFactory);
+
+        $tagFactory->addService($descriptionFactory, DescriptionFactory::class);
+        $tagFactory->addService(new TypeResolver($fqsenResolver));
+
+        $docBlockFactory = new DocBlockFactory($descriptionFactory, $tagFactory);
+
+        return new ProjectFactory(
+            [
+                new Factory\Argument(new PrettyPrinter()),
+                new Factory\Class_(),
+                new Factory\Define(new PrettyPrinter()),
+                new Factory\GlobalConstant(new PrettyPrinter()),
+                new Factory\ClassConstant(new PrettyPrinter()),
+                new Factory\DocBlock($docBlockFactory),
+                new Factory\File(NodesFactory::createInstance()),
+                new Factory\Function_(),
+                new Factory\Interface_(),
+                new Factory\Method(),
+                new Factory\Property(new PrettyPrinter()),
+                new Factory\Trait_(),
+            ]
+        );
     }
 }

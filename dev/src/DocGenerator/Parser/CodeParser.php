@@ -143,7 +143,7 @@ class CodeParser implements ParserInterface
             'title' => ltrim($fullName, '\\'),
             'name' => $element->getName(),
             'description' => $descriptionString,
-            'examples' => $this->buildExamples($split['examples']),
+            'examples' => $this->buildExamples($split['examples'], $description, $element),
             'resources' => $this->buildResources($docBlock->getTagsByName('see')),
             'methods' => array_merge($methods, $magic)
         ];
@@ -247,12 +247,14 @@ class CodeParser implements ParserInterface
         $methods = [];
 
         $file = $this->register->getFileFromFqsen($element->getFqsen());
-        foreach ($element->getMethods() as $name => $method) {
+        foreach ($element->getMethods() as $fqsen => $method) {
             if ((string) $method->getVisibility() !== Visibility::PUBLIC_) {
                 continue;
             }
 
-            $methods[$name] = [
+            list($className, $methodName) = explode('::', $fqsen);
+
+            $methods[$methodName] = [
                 'method' => $method,
                 'source' => $file->getPath(),
                 'container' => (string) $element->getFqsen(),
@@ -468,7 +470,7 @@ class CodeParser implements ParserInterface
             'name' => $method->getName(),
             'source' => $source,
             'description' => $descriptionString,
-            'examples' => $this->buildExamples($split['examples']),
+            'examples' => $this->buildExamples($split['examples'], $description, $method),
             'resources' => $this->buildResources($resources),
             'params' => $this->buildParams($params, $descriptionString, $isProto, $method),
             'exceptions' => $this->buildExceptions($exceptions),
@@ -519,7 +521,7 @@ class CodeParser implements ParserInterface
             'name' => $magicMethod->getMethodName(),
             'source' => $this->getSource($this->file->getPath()),
             'description' => $this->buildDescription($docBlock->getDescription(), $split['description']),
-            'examples' => $this->buildExamples($examples),
+            'examples' => $this->buildExamples($examples, $description),
             'resources' => $this->buildResources($resources),
             'params' => $this->buildParams($params),
             'exceptions' => $this->buildExceptions($exceptions),
@@ -555,7 +557,7 @@ class CodeParser implements ParserInterface
         );
     }
 
-    private function buildExamples(string $examples): array
+    private function buildExamples(string $examples, Description $description = null, Element $element = null): array
     {
         $examplesArray = [];
         $exampleParts = explode('```', $examples);
@@ -588,7 +590,7 @@ class CodeParser implements ParserInterface
             $caption = $this->markdown->parse(implode(' ', $captionLines));
 
             $examplesArray[] = [
-                'caption' => $caption,
+                'caption' => $this->buildDescriptionContent($description, $caption, $element),
                 'code' => trim(implode(PHP_EOL, $lines))
             ];
         }
@@ -743,7 +745,7 @@ class CodeParser implements ParserInterface
         foreach ($exceptions as $exception) {
             $exceptionsArray[] = [
                 'type' => (string) $exception->getType(),
-                'description' => (string) $exception->getDescription()
+                'description' => $this->buildDescriptionContent($exception->getDescription())
             ];
         }
 

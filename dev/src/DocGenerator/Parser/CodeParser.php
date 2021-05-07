@@ -205,10 +205,10 @@ class CodeParser implements ParserInterface
             if ($fqsen = $element->getParent()) {
                 if ($parent = $this->register->getElementFromFqsen($fqsen)) {
                     $classInfo = $this->buildClassInfo($parent, $classInfo);
-                    // Add $parent to array after calling getMethods so that
-                    // parents are correctly ordered
-                    $classInfo['parents'][] = $fqsen;
                 }
+                // Add $parent to array after calling getMethods so that
+                // parents are correctly ordered
+                $classInfo['parents'][] = $fqsen;
             }
         }
 
@@ -788,10 +788,10 @@ class CodeParser implements ParserInterface
         string $className = null
     ): array {
 
-        if ($type instanceof Types\AbstractList) {
+        if ($type instanceof Types\Collection) {
             $typeRef = sprintf(
                 htmlentities('%s<%s>'),
-                $this->buildReference((string) $type->getKeyType()),
+                $this->buildReference((string) $type->getFqsen()),
                 $this->buildReference((string) $type->getValueType())
             );
             return [$typeRef];

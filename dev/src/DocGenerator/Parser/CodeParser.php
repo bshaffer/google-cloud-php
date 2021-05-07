@@ -257,20 +257,6 @@ class CodeParser implements ParserInterface
         return $methods;
     }
 
-    private function buildDescription(
-        Description $description,
-        string $content = null,
-        Element $element = null
-    ): string {
-        return $this->markdown->parse(
-            $this->buildDescriptionContent(
-                $description,
-                $content,
-                $element
-            )
-        );
-    }
-
     private function buildClassDescription(
         array $classInfo,
         Description $description,
@@ -293,13 +279,27 @@ class CodeParser implements ParserInterface
         return $this->markdown->parse($content);
     }
 
+    private function buildDescription(
+        Description $description,
+        string $content = null,
+        Element $element = null
+    ): string {
+        return $this->markdown->parse(
+            $this->buildDescriptionContent(
+                $description,
+                $content,
+                $element
+            )
+        );
+    }
+
     private function buildDescriptionContent(
         Description $description,
         string $content = null,
         Element $element = null
     ): string {
         if (is_null($content)) {
-            $content = (string) $description;
+            $content = (string) $description->getBodyTemplate();
         }
 
         // Replace references with links in the tag contents
@@ -325,14 +325,12 @@ class CodeParser implements ParserInterface
                             $namespace = (string) array_shift($this->file->getNamespaces());
                         }
                         if (0 !== strpos($reference, $namespace)) {
-                            var_dump($reference, $namespace);
                             throw $e;
                         }
                         $reference = substr($reference, strlen($namespace));
                         $tagContent[] = $this->buildReference($reference);
                         printf('Manual fix applied (%s). Please fix the reference' . PHP_EOL, $reference);
                     }
-                    $tagContent[] = $this->buildReference($reference);
                 } elseif (strtolower($tag->getName()) === 'inheritdoc') {
                     if ($element === null) {
                         throw new \Exception(sprintf(
@@ -371,9 +369,7 @@ class CodeParser implements ParserInterface
 
     private function buildDescriptionWithSummary(string $summary, string $description)
     {
-        $summary = $summary
-            ? $this->markdown->parse($summary)
-            : '';
+        $summary = $this->markdown->parse($summary);
 
         return $description
             ? sprintf("%s\n%s", $summary, $description)
@@ -498,10 +494,13 @@ class CodeParser implements ParserInterface
         $returns = $docBlock->getTagsByName('return');
 
         $split = $this->splitDescription($docBlock->getDescription());
-        $examples = $this->fixExamplesWhitespace($split['examples'], $desc);
+        $examples = $this->fixMagicMethodExamplesWhitespace($split['examples'], $desc);
 
         // TODO: Find a cleaner way to do this
-        $split['description'] = (string) $docBlock->getSummary() . $split['description'];
+        $split['description'] = $this->buildDescriptionWithSummary(
+            $docBlock->getSummary(),
+            $split['description']
+        );
 
         return [
             'id' => $magicMethod->getMethodName(),
@@ -518,10 +517,10 @@ class CodeParser implements ParserInterface
     }
 
     /**
-     * Function to fix whitespace in the code samples, which gets trimmed from
-     * the snippets by phpdocumentor.
+     * Function to fix whitespace in the code samples for magic methods, which
+     * gets trimmed from the snippets by phpdocumentor.
      */
-    private function fixExamplesWhitespace(string $examples, string $rawDesc)
+    private function fixMagicMethodExamplesWhitespace(string $examples, string $rawDesc)
     {
         $rawDescTrimmed = join("\n", array_map(function(string $s) {
             if (0 === strpos($s, '    ')) {
@@ -724,16 +723,11 @@ class CodeParser implements ParserInterface
 
     private function buildExceptions(array $exceptions): array
     {
-        if (count($exceptions) === 0) {
-            return $exceptions;
-        }
-
         $exceptionsArray = [];
-
         foreach ($exceptions as $exception) {
             $exceptionsArray[] = [
-                'type' => $exception->getType(),
-                'description' => $exception->getDescription()
+                'type' => (string) $exception->getType(),
+                'description' => (string) $exception->getDescription()
             ];
         }
 
@@ -833,7 +827,6 @@ class CodeParser implements ParserInterface
             $componentId = $composer['extra']['component']['id'];
         }
 
-        $parts = explode('::', $fqsen);
         $type = $this->fileNameToType($fileName);
 
         if ($componentId) {
@@ -846,6 +839,7 @@ class CodeParser implements ParserInterface
 
         $openTag = "<a data-custom-type=\"$type\"";
 
+        $parts = explode('::', $typeName);
         if (isset($parts[1])) {
             $method = str_replace('()', '', $parts[1]);
             $openTag .= " data-method=\"$method\">";
@@ -1022,7 +1016,7 @@ class CodeParser implements ParserInterface
 
     private function splitDescription(Description $description): array
     {
-        $body = (string) $description;
+        $body = (string) $description->getBodyTemplate();
 
         if (strpos($body, 'Example:' . PHP_EOL . '```') !== false) {
             $parts = explode('Example:' . PHP_EOL, $body);

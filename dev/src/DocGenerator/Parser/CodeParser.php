@@ -103,7 +103,8 @@ class CodeParser implements ParserInterface
     {
         if (!$docBlock = $element->getDocBlock()) {
             throw new \LogicException(sprintf(
-                'No description (%s)', $this->file->getPath()
+                'No description (%s)',
+                $this->file->getPath()
             ));
         }
 
@@ -231,7 +232,7 @@ class CodeParser implements ParserInterface
         $classInfo['interfaces'] += $interface->getParents();
         foreach ($interface->getParents() as $parent) {
             if ($interface = $this->register->getElementFromFqsen($parent)) {
-               $classInfo = $this->buildInterfaceInfo($interface, $classInfo);
+                $classInfo = $this->buildInterfaceInfo($interface, $classInfo);
             }
         }
 
@@ -334,18 +335,27 @@ class CodeParser implements ParserInterface
                 } elseif (strtolower($tag->getName()) === 'inheritdoc') {
                     if ($element === null) {
                         throw new \Exception(sprintf(
-                            "Inherit Doc tag ({@inheritdoc}) is only supported when \$element is not null.\nContext:\n%s",
-                            $content));
+                            "Inherit Doc tag ({@inheritdoc}) is only supported when \$element is not null." .
+                            "\nContext:\n%s",
+                            $content
+                        ));
                     }
 
                     if (!($element instanceof Class_)) {
                         throw new \Exception(sprintf(
-                            "Inherit Doc tag ({@inheritdoc}) is not supported for reflector type %s (found in: %s)."
-                            . "\nContext:\n%s", get_class($element), $element->getName(), $content));
+                            "Inherit Doc tag ({@inheritdoc}) is not supported for reflector type %s (found in: %s)." .
+                            "\nContext:\n%s",
+                            get_class($element),
+                            $element->getName(),
+                            $content
+                        ));
                     }
 
                     if (!$parent = $element->getParent()) {
-                        throw new \Exception(sprintf('%s has {@inheritdoc} tag but no parent class', $element->getName()));
+                        throw new \Exception(sprintf(
+                            '%s has {@inheritdoc} tag but no parent class',
+                            $element->getName()
+                        ));
                     }
                     $parentElement = $this->register->getElementFromFqsen($parent);
 
@@ -512,7 +522,7 @@ class CodeParser implements ParserInterface
             'resources' => $this->buildResources($resources),
             'params' => $this->buildParams($params),
             'exceptions' => $this->buildExceptions($exceptions),
-            'returns' => $this->buildReturns($returns)
+            'returns' => $this->buildReturns($returns),
         ];
     }
 
@@ -522,14 +532,14 @@ class CodeParser implements ParserInterface
      */
     private function fixMagicMethodExamplesWhitespace(string $examples, string $rawDesc)
     {
-        $rawDescTrimmed = join("\n", array_map(function(string $s) {
+        $rawDescTrimmed = join("\n", array_map(function (string $s) {
             if (0 === strpos($s, '    ')) {
                 return substr($s, 4);
             }
             return ltrim('    ', $s);
         }, explode("\n", $rawDesc)));
 
-        $codeSnipFunc = function($description) {
+        $codeSnipFunc = function ($description) {
             if ($false === $start = strpos($description, '```')) {
                 throw new \LogicException('No snippet found');
             }
@@ -624,8 +634,7 @@ class CodeParser implements ParserInterface
                 }
             }
 
-            if (
-                $param->getType() instanceof Types\Array_
+            if ($param->getType() instanceof Types\Array_
                 && $this->hasNestedParams($description)
             ) {
                 $nestedParamString = trim(str_replace('[optional]', '', $description));
@@ -997,7 +1006,7 @@ class CodeParser implements ParserInterface
             } else {
                 $fileName = dirname($fileName);
             }
-        } while($recurse);
+        } while ($recurse);
 
         throw new \Exception(sprintf(
             'Unable to find composer file for %s',

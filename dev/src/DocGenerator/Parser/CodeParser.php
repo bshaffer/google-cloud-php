@@ -384,6 +384,9 @@ class CodeParser implements ParserInterface
         }
 
         $content = str_ireplace('[optional]', '', $content);
+        // @TODO: Hack to fix the tokenization of "%"
+        // @see https://github.com/phpDocumentor/ReflectionDocBlock/issues/274
+        $content = str_replace('%%', '%', $content);
         return $content;
     }
 

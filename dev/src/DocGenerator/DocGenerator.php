@@ -154,7 +154,6 @@ class DocGenerator
         $fqsenResolver      = new FqsenResolver();
         $tagFactory         = new StandardTagFactory($fqsenResolver);
         $descriptionFactory = new DocBlock\DescriptionFactory($tagFactory);
-        // $descriptionFactory = new DescriptionFactory($tagFactory);
 
         $tagFactory->addService($descriptionFactory, DescriptionFactory::class);
         $tagFactory->addService(new TypeResolver($fqsenResolver));

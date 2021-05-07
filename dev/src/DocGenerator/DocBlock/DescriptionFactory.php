@@ -79,6 +79,8 @@ class DescriptionFactory extends BaseDescriptionFactory
         //"%" is escaped to "%%" because of vsprintf.
         //See unit tests for examples.
         for ($i = 0; $i < $count; $i += 2) {
+            // @TODO: Modified the following line so that "{}" is not replaced
+            // with "}". So far we have not seen any adverse effects
             // $tokens[$i] = str_replace(['{@}', '{}', '%'], ['@', '}', '%%'], $tokens[$i]);
             $tokens[$i] = str_replace(['{@}', '%'], ['@', '%%'], $tokens[$i]);
         }

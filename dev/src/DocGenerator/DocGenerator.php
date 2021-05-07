@@ -90,8 +90,8 @@ class DocGenerator
         foreach ($this->files as $fileName) {
             $localFiles[] = new LocalFile($fileName);
         }
-        $project = $this->createProjectFactory()
-            ->create($this->componentId, $localFiles);
+        list($projectFactory, $descriptionFactory) = $this->createFactories();
+        $project = $projectFactory->create($this->componentId, $localFiles);
         $fileRegister = new ReflectorRegister($project);
 
         $rootPath = $this->executionPath;
@@ -122,6 +122,7 @@ class DocGenerator
                 $parser = new CodeParser(
                     $file,
                     $fileRegister,
+                    $descriptionFactory,
                     $rootPath,
                     $this->componentId,
                     $this->manifestPath,
@@ -149,10 +150,11 @@ class DocGenerator
         }
     }
 
-    private function createProjectFactory()
+    private function createFactories()
     {
         $fqsenResolver      = new FqsenResolver();
         $tagFactory         = new StandardTagFactory($fqsenResolver);
+
         $descriptionFactory = new DocBlock\DescriptionFactory($tagFactory);
 
         $tagFactory->addService($descriptionFactory, DescriptionFactory::class);
@@ -160,7 +162,7 @@ class DocGenerator
 
         $docBlockFactory = new DocBlockFactory($descriptionFactory, $tagFactory);
 
-        return new ProjectFactory(
+        $projectFactory = new ProjectFactory(
             [
                 new Factory\Argument(new PrettyPrinter()),
                 new Factory\Class_(),
@@ -176,5 +178,7 @@ class DocGenerator
                 new Factory\Trait_(),
             ]
         );
+
+        return [$projectFactory, $descriptionFactory];
     }
 }

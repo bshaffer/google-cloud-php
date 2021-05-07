@@ -18,6 +18,7 @@
 namespace Google\Cloud\Dev\DocGenerator;
 
 use phpDocumentor\Reflection\Php\File;
+use phpDocumentor\Reflection\Types\Context;
 use phpDocumentor\Reflection\Fqsen;
 use phpDocumentor\Reflection\Element;
 use phpDocumentor\Reflection\File\LocalFile;
@@ -100,6 +101,14 @@ class ReflectorRegister
 
         // No classes, interfaces, or traits found in file
         return null;
+    }
+
+    public function getContextFromFqsen(Fqsen $fqsen): ?Context
+    {
+        $file = $this->getFileFromFqsen($fqsen);
+        $fileElement = $this->getElementFromFile($file);
+
+        return $fileElement->getDocBlock()->getContext();
     }
 
     private function writeFqsenToCache(string $fqsen): bool

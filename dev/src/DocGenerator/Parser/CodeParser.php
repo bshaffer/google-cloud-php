@@ -127,7 +127,7 @@ class CodeParser implements ParserInterface
 
         $descriptionString = $element instanceof Interface_
             ? $this->buildInterfaceDescription($classInfo, $description, $split['description'], $element)
-            : $this->buildClassDescription($classInfo, $description, $split['description'], $element);
+            : $this->buildClassDescription($classInfo, $docBlock, $split['description'], $element);
 
         $descriptionString = $this->buildDescriptionWithSummary(
             $docBlock->getSummary(),
@@ -260,10 +260,20 @@ class CodeParser implements ParserInterface
 
     private function buildClassDescription(
         array $classInfo,
-        Description $description,
+        DocBlock $docBlock,
         string $content = null,
         Element $element = null
     ): string {
+        $description = $docBlock->getDescription();
+        // @TODO: When the docblock is only "{@inheritdoc}", phpdocumentor is not parsing as expected.
+        // This seems like strange behavior from phpdocumentor, so there is probably a better way to
+        // handle it.
+        if ($docBlock->getSummary() === '{@inheritdoc}') {
+            $description = new Description('%1$s', [
+                new Tags\Generic('inheritdoc')
+            ]);
+            $content = null;
+        }
         $content = $this->buildDescriptionContent($description, $content, $element);
         $content .= $this->buildInheritDoc($classInfo);
         return $this->markdown->parse($content);
@@ -359,11 +369,11 @@ class CodeParser implements ParserInterface
                     }
                     $parentElement = $this->register->getElementFromFqsen($parent);
 
-                    $parentDesc = $parentElement->getDocBlock()->getDescription();
-                    $parentDocSplit = $this->splitDescription($parentDesc);
+                    $parentDoc =  $parentElement->getDocBlock();
+                    $parentDocSplit = $this->splitDescription($parentDoc->getDescription());
                     $tagContent[] = $this->buildDescriptionContent(
-                        $parentDesc,
-                        $parentDocSplit['description'],
+                        $parentDoc->getDescription(),
+                        $this->buildDescriptionWithSummary($parentDoc->getSummary(), $parentDocSplit['description']),
                         $parentElement
                     );
                 } else {
@@ -379,6 +389,9 @@ class CodeParser implements ParserInterface
 
     private function buildDescriptionWithSummary(string $summary, string $description)
     {
+        if ($summary === '{@inheritdoc}') {
+            return $description;
+        }
         $summary = $this->markdown->parse($summary);
 
         return $description
@@ -637,7 +650,7 @@ class CodeParser implements ParserInterface
             if ($param->getType() instanceof Types\Array_
                 && $this->hasNestedParams($description)
             ) {
-                $nestedParamString = trim(str_replace('[optional]', '', $description));
+                $nestedParamString = trim(str_replace('[optional]', '', $description->getBodyTemplate()));
                 $nestedParamString = substr($nestedParamString, 1, -1);
                 $nestedParams = explode('@type', $nestedParamString);
 
@@ -707,10 +720,21 @@ class CodeParser implements ParserInterface
             $content = preg_replace('/\s+/', ' ', $content);
             $description = $origParam->getDescription();
 
+            // @TODO: Types are lost in some cases where the parameter names for
+            // nested params are not fully-qualified. This code tries to manually
+            // regain the context to resolve the type names
+            $context = null;
+            if ($element) {
+                $className = explode('::', $element->getFqsen())[0];
+                $file = $this->register->getFileFromFqsen(new Fqsen($className));
+                $fileElement = $this->register->getElementFromFile($file);
+                $context = $fileElement->getDocBlock()->getContext();
+            }
+
             $paramsArray[] = [
                 'name' => $origParam->getVariableName() . '.' . $name,
                 'description' => $this->buildDescription($description, $content, $element),
-                'types' => $this->handleTypes($typeResolver->resolve($type)),
+                'types' => $this->handleTypes($typeResolver->resolve($type, $context)),
                 'optional' => null, // @todo
                 'nullable' => null //@todo
             ];
@@ -792,6 +816,7 @@ class CodeParser implements ParserInterface
         }
 
         $typeRef = $this->buildReference((string) $type);
+
         return [$typeRef];
     }
 

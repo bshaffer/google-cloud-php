@@ -39,18 +39,18 @@ class DocFX extends Command
         $component = $input->getArgument('component');
         $out = $input->getOption('out');
 
-        $componentPath = sprintf(__DIR__ . '/../../../../%s', $component);
+        $componentPath = realpath(sprintf(__DIR__ . '/../../../../%s', $component));
         if (!is_dir($componentPath)) {
             throw new \RuntimeException(sprintf('component "%s" not found', $component));
         }
-        $phpdocPath = shell_exec('which phpdoc');
+        $phpdocPath = trim(shell_exec('which phpdoc'));
         if (empty($phpdocPath)) {
             throw new \RuntimeException('phpdoc not found');
         }
 
         $output->writeln(sprintf('Writing documentation for %s', $component));
 
-        $templatePath = __DIR__ . '/../../../dev/templates/docfx';
+        $templatePath = realpath(__DIR__ . '/../../../templates/docfx');
 
         $cmd = sprintf(
             '%s --directory=%s --template=%s',
@@ -62,9 +62,7 @@ class DocFX extends Command
         if (!empty($out)) {
             $cmd .= '  --target=' . $out;
         }
-        exit($cmd);
-        // $output = exec($cmd);
 
-        // $output->write($output);
+        passthru($cmd);
     }
 }

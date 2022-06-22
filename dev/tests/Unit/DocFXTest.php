@@ -28,10 +28,11 @@ class DocFXTest extends TestCase
 {
     public function testDocFX()
     {
-        $tmpDir = sys_get_temp_dir();
-        $cmd = sprintf(__DIR__ . '/../../google-cloud docfx vision --out=%s', $tmpDir);
+        $tmpDir = sys_get_temp_dir() . '/.phpdoc';
+        $cmd = sprintf(__DIR__ . '/../../google-cloud docfx Vision --out=%s', $tmpDir);
+        exec($cmd);
 
-        foreach (['index.yml'] as $file) {
+        foreach (['index.yml', 'structure.xml'] as $file) {
             $this->assertEquals(
                 file_get_contents(__DIR__ . '/../fixtures/docfx/' . $file),
                 file_get_contents($tmpDir . '/' . $file)

@@ -34,4 +34,37 @@ class MethodNode
     {
         return $this->xmlNode->name;
     }
+
+    public function isInherited(): bool
+    {
+        if ($this->xmlNode->inherited_from) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function getParameters(): array
+    {
+        $parameters = [];
+        foreach ($this->xmlNode->argument as $parameterNode) {
+            $description = '';
+            if ($this->xmlNode->docblock) {
+                foreach ($this->xmlNode->docblock->tag as $tag) {
+                    if ($tag['name'] == 'param') {
+                        if ((string) $tag['variable'] === (string) $parameterNode->name) {
+                            $description = $tag['description'];
+                        }
+                    }
+                }
+            }
+
+            $parameters[] = [
+                'name' => $parameterNode->name,
+                'type' => $parameterNode->type,
+                'description' => $description,
+            ];
+        }
+        return $parameters;
+    }
 }

@@ -26,24 +26,59 @@ use PHPUnit\Framework\TestCase;
  */
 class DocFXTest extends TestCase
 {
-    public function testDocFX()
+    private static $fixturesDir;
+    private static $tmpDir;
+
+    public function testGenerateDocFxFiles()
     {
+        $fixturesFiles = array_diff(scandir(self::$fixturesDir), ['..', '.']);
+        $generatedFiles = array_diff(scandir(self::$tmpDir), ['..', '.']);
+        $filesToGenerate = [
+            'Annotation.FeatureInterface.yml',
+            'Annotation.LikelihoodTrait.yml',
+            'Connection.ConnectionInterface.yml',
+            'VisionHelpersTrait.yml',
+            'toc.yml',
+        ];
+        $generatedFilesTemp = array_merge($generatedFiles, $filesToGenerate);
+
+        $this->assertEquals([], array_diff($fixturesFiles, $generatedFilesTemp));
+
+    }
+
+    /**
+     * @depends testGenerateDocFxFiles
+     * @dataProvider provideDoxFxFiles
+     */
+    public function testDocFxFiles(string $file)
+    {
+        $this->assertTrue(file_exists(self::$fixturesDir . '/' . $file));
+        $this->assertEquals(
+            file_get_contents(self::$fixturesDir . '/' . $file),
+            file_get_contents(self::$tmpDir . '/' . $file)
+        );
+    }
+
+    public function provideDoxFxFiles()
+    {
+        $structureXml = __DIR__ . '/../fixtures/phpdoc/structure.xml';
         $tmpDir = sys_get_temp_dir() . '/.phpdoc';
-        $cmd = sprintf(__DIR__ . '/../../google-cloud docfx Vision --out=%s', $tmpDir);
-        exec($cmd);
+        $cmd = sprintf(
+            __DIR__ . '/../../google-cloud docfx Vision %s --out=%s',
+            $structureXml,
+            $tmpDir
+        );
+        passthru($cmd);
 
-        $fixturesDir = __DIR__ . '/../fixtures/docfx';
-        $fixturesFiles = array_diff(scandir($fixturesDir), ['..', '.']);
+        $filesAsArguments = [];
         $generatedFiles = array_diff(scandir($tmpDir), ['..', '.']);
-
-        $this->assertEquals([], array_diff($fixturesFiles, $generatedFiles));
-
-        foreach ($fixturesFiles as $file) {
-            $this->assertTrue(file_exists($fixturesDir . $file));
-            $this->assertEquals(
-                file_get_contents($fixturesDir . $file),
-                file_get_contents($tmpDir . '/' . $file)
-            );
+        foreach ($generatedFiles as $file) {
+            $filesAsArguments[] = [$file];
         }
+
+        self::$tmpDir = $tmpDir;
+        self::$fixturesDir = __DIR__ . '/../fixtures/docfx';
+
+        return $filesAsArguments;
     }
 }

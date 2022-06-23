@@ -37,11 +37,11 @@ class ClassNode
 
     public function getStatus(): string
     {
-        if (empty($this->xmlNode->docblock)) {
+        if (!$this->xmlNode->docblock) {
             return '';
         }
-        $docblock = new DocblockNode($this->xmlNode->docblock);
-        foreach ($docblock->getTags() as $tag) {
+
+        foreach ($this->xmlNode->docblock->tag as $tag) {
             if ((string) $tag['name'] === 'deprecated') {
                 return 'deprecated';
             }
@@ -60,14 +60,37 @@ class ClassNode
     {
         $methods = [];
         foreach ($this->xmlNode->method as $methodNode) {
-            $methods[] = new MethodNode($methodNode);
+            $method = new MethodNode($methodNode);
+            if (!$method->isInherited()) {
+                $methods[] = $method;
+            }
         }
+
         return $methods;
     }
 
     public function getImplements(): array
     {
         return (array) $this->xmlNode->implements;
+    }
+
+    /** TODO: remove this */
+    public function getInheritedMembers(): array
+    {
+        $inheritedMembers = [];
+
+        foreach ($this->xmlNode->property as $propertyNode) {
+            if (isset($propertyNode->inherited_from)) {
+                $inheritedMembers[] = $propertyNode->full_name;
+            }
+        }
+        foreach ($this->xmlNode->method as $methodNode) {
+            if ($methodNode->inherited_from) {
+                $inheritedMembers[] = $methodNode->full_name;
+            }
+        }
+
+        return $inheritedMembers;
     }
 
     /** TODO: remove this */
@@ -78,18 +101,23 @@ class ClassNode
         if ($nodeProperties instanceof SimpleXMLElement) {
             $nodeProperties = [$nodeProperties];
         }
-        foreach ($nodeProperties as $property) {
+        foreach ($nodeProperties as $propertyNode) {
+            if (isset($propertyNode->inherited_from)) {
+                // Skip inherited properties
+                continue;
+            }
             $type = '';
-            $docblock = new DocblockNode($property->docblock);
-            // var_dump($docblock->getTags());exit;
-            foreach ($docblock->getTags() as $tag) {
-                if ($tag['name'] == 'var') {
-                    $type = $tag['type'];
-                    break;
+            if ($propertyNode->docblock) {
+                foreach ($propertyNode->docblock->tag as $tag) {
+                    if ($tag['name'] == 'var') {
+                        $type = $tag['type'];
+                        break;
+                    }
                 }
             }
+
             $properties[] = [
-                'name' => $property->name,
+                'name' => $propertyNode->name,
                 'type' => $type,
             ];
         }
@@ -106,6 +134,7 @@ class ClassNode
             'implements' => $this->getImplements(),
             'methods' => $this->getMethods(),
             'properties' => $this->getProperties(),
+            'inheritedMembers' => $this->getInheritedMembers(),
         ];
     }
 }

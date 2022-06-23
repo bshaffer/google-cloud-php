@@ -24,18 +24,8 @@ trait NodeTrait
         if (empty($this->xmlNode->docblock)) {
             return '';
         }
-        $docblock = $this->xmlNode->docblock;
-        $summary = $docblock->description;
-        if (!empty($docblock->{'long-description'})) {
-            if ($summary) {
-                $summary .= "\n\n";
-            }
-            $summary .= (string) $docblock->{'long-description'};
+        $docblock = new DocblockNode($this->xmlNode->docblock);
 
-            $summary = "|-\n" . $summary;
-            $summary = implode("\n    ", explode("\n", $summary));
-        }
-
-        return $summary;
+        return $docblock->getFullDescription();
     }
 }

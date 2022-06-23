@@ -14,6 +14,12 @@ items:
 {% if status %}
   status: {{ status }}
 {% endif %}
+{% if inheritedMembers|length > 0 %}
+  inheritedMembers:
+{% for inheritedMember in inheritedMembers %}
+  - {{inheritedMember}}
+{% endfor %}
+{% endif %}
 {% if implements|length > 0 %}
   implements:
 {% for interface in implements %}
@@ -31,9 +37,21 @@ items:
 - uid: {{fullname}}::{{method.name}}()
   name: {{method.name}}
   id: {{method.name}}
+{% if method.summary %}
   summary: {{method.summary}}
+{% endif %}
   parent: {{fullname}}
   type: method
   langs:
   - php
+{% if method.parameters|length > 0 %}
+  parameters:
+{% for parameter in method.parameters %}
+  - type: {{parameter.type}}
+    name: {{parameter.name}}
+{% if parameter.description %}
+    description: {{parameter.description}}
+{% endif %}
+{% endfor %}
+{% endif %}
 {% endfor %}

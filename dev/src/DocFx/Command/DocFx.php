@@ -38,7 +38,7 @@ class DocFx extends Command
             ->addArgument('structure_xml', InputArgument::REQUIRED, 'Path to phpdoc structure.xml')
             ->addArgument('version', InputArgument::OPTIONAL, 'The version of the docs to generate.')
             ->addArgument('namespace', InputArgument::OPTIONAL, 'Root namespace the docs are for. Will be the root of the TOC.')
-            ->addOption('out', '', InputOption::VALUE_REQUIRED, 'Path where to store the generated output.', realpath(__DIR__ . '/../../../out'))
+            ->addOption('out', '', InputOption::VALUE_REQUIRED, 'Path where to store the generated output.', realpath(__DIR__ . '/../../../') . '/out')
         ;
     }
 
@@ -60,6 +60,13 @@ class DocFx extends Command
         $classTemplate = $twig->load('class.yml.twig');
 
         $structure = new SimpleXMLElement(file_get_contents($xml));
+
+        if (!is_dir($out)) {
+            if (!mkdir($out)) {
+                throw new RuntimeException('out directory doesn\'t exist and cannot be created');
+            }
+        }
+
         foreach ($structure->file as $file) {
             // Skip metadata files
             if (0 === strpos($file['path'], 'metadata/')) {
@@ -79,16 +86,12 @@ class DocFx extends Command
             $classNode = new ClassNode($file->class[0]);
 
             $yaml = $classTemplate->render($classNode->toArray());
-            var_dump($yaml);exit;
 
-            $outFile = sprintf('%s/%s.yml', $out, str_replace('\\', '.', $class->getFullname()));
+            $filename = str_replace(['src/', '.php'], '', $file['path']);
+
+            $outFile = sprintf('%s/%s.yml', $out, str_replace('/', '.', $filename));
             file_put_contents($outFile, $yaml);
         }
-
-        // if (!is_dir($out)) {
-        //     mkdir($out);
-        // }
-
     }
 
     private function getReleaseLevel(string $component): string

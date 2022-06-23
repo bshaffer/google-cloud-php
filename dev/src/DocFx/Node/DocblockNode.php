@@ -26,16 +26,22 @@ class DocblockNode
         $this->xmlNode = $docblockNode;
     }
 
-    public function getTags()
+    public function getFullDescription(): string
     {
-        if (!$this->xmlNode->tag) {
-            return [];
+        $summary = $this->xmlNode->description;
+        if (!empty($this->xmlNode->{'long-description'})) {
+            if ($summary) {
+                $summary .= "\n\n";
+            }
+            $summary .= (string) $this->xmlNode->{'long-description'};
+
+            $summary = "|-\n" . $summary;
+            $summary = implode("\n    ", explode("\n", $summary));
+
+            // remove whitespace from empty newlines
+            $summary = str_replace("    \n", "\n", $summary);
         }
 
-        if ($this->xmlNode->tag instanceof SimpleXMLElement) {
-            return [$this->xmlNode->tag];
-        }
-
-        return $this->xmlNode->tag;
+        return trim($summary);
     }
 }

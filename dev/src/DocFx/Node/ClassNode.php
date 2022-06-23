@@ -1,0 +1,111 @@
+<?php
+/**
+ * Copyright 2022 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+namespace Google\Cloud\Dev\DocFx\Node;
+
+use SimpleXMLElement;
+
+class ClassNode
+{
+    use NodeTrait;
+
+    private $xmlNode;
+
+    public function __construct(SimpleXMLElement $classNode)
+    {
+        $this->xmlNode = $classNode;
+    }
+
+    public function getName()
+    {
+        return $this->xmlNode->name;
+    }
+
+    public function getStatus(): string
+    {
+        if (empty($this->xmlNode->docblock)) {
+            return '';
+        }
+        $docblock = new DocblockNode($this->xmlNode->docblock);
+        foreach ($docblock->getTags() as $tag) {
+            if ((string) $tag['name'] === 'deprecated') {
+                return 'deprecated';
+            }
+        }
+
+        return '';
+    }
+
+    public function getFullname(): string
+    {
+        // return ltrim($this->xmlNode->full_name, '\\');
+        return $this->xmlNode->full_name;
+    }
+
+    public function getMethods(): array
+    {
+        $methods = [];
+        foreach ($this->xmlNode->method as $methodNode) {
+            $methods[] = new MethodNode($methodNode);
+        }
+        return $methods;
+    }
+
+    public function getImplements(): array
+    {
+        return (array) $this->xmlNode->implements;
+    }
+
+    /** TODO: remove this */
+    public function getProperties(): array
+    {
+        $properties = [];
+        $nodeProperties = $this->xmlNode->property;
+        if ($nodeProperties instanceof SimpleXMLElement) {
+            $nodeProperties = [$nodeProperties];
+        }
+        foreach ($nodeProperties as $property) {
+            $type = '';
+            $docblock = new DocblockNode($property->docblock);
+            // var_dump($docblock->getTags());exit;
+            foreach ($docblock->getTags() as $tag) {
+                if ($tag['name'] == 'var') {
+                    $type = $tag['type'];
+                    break;
+                }
+            }
+            $properties[] = [
+                'name' => $property->name,
+                'type' => $type,
+            ];
+        }
+        return $properties;
+    }
+
+    public function toArray()
+    {
+        return [
+            'name' => $this->getName(),
+            'summary' => $this->getSummary(),
+            'fullname' => $this->getFullname(),
+            'status' => $this->getStatus(),
+            'implements' => $this->getImplements(),
+            'methods' => $this->getMethods(),
+            'properties' => $this->getProperties(),
+        ];
+    }
+}

@@ -1,0 +1,39 @@
+### YamlMime:UniversalReference
+items:
+- uid: {{fullname}}
+  name: {{name}}
+  id: {{name}}
+  summary: {{summary}}
+  type: class
+  langs:
+  - php
+  children:
+{% for method in methods %}
+  - {{fullname}}::{{method.name}}()
+{% endfor %}
+{% if status %}
+  status: {{ status }}
+{% endif %}
+{% if implements|length > 0 %}
+  implements:
+{% for interface in implements %}
+  - {{interface}}
+{% endfor %}
+{% endif %}
+{% if properties|length > 0 %}
+  properties:
+{% for property in properties %}
+  - type: {{property.type}}
+    name: {{property.name}}
+{% endfor %}
+{% endif %}
+{% for method in methods %}
+- uid: {{fullname}}::{{method.name}}()
+  name: {{method.name}}
+  id: {{method.name}}
+  summary: {{method.summary}}
+  parent: {{fullname}}
+  type: method
+  langs:
+  - php
+{% endfor %}

@@ -32,9 +32,16 @@ class DocFXTest extends TestCase
         $cmd = sprintf(__DIR__ . '/../../google-cloud docfx Vision --out=%s', $tmpDir);
         exec($cmd);
 
-        foreach (['index.yml', 'structure.xml'] as $file) {
+        $fixturesDir = __DIR__ . '/../fixtures/docfx';
+        $fixturesFiles = array_diff(scandir($fixturesDir), ['..', '.']);
+        $generatedFiles = array_diff(scandir($tmpDir), ['..', '.']);
+
+        $this->assertEquals([], array_diff($fixturesFiles, $generatedFiles));
+
+        foreach ($fixturesFiles as $file) {
+            $this->assertTrue(file_exists($fixturesDir . $file));
             $this->assertEquals(
-                file_get_contents(__DIR__ . '/../fixtures/docfx/' . $file),
+                file_get_contents($fixturesDir . $file),
                 file_get_contents($tmpDir . '/' . $file)
             );
         }

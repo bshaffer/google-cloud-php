@@ -22,8 +22,9 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use Twig\Loader\FilesystemLoader;
-use Twig\Environment;
+use Symfony\Component\Yaml\Yaml;
+// use Twig\Loader\FilesystemLoader;
+// use Twig\Environment;
 use SimpleXMLElement;
 use RuntimeException;
 use Google\Cloud\Dev\DocFx\Node\ClassNode;
@@ -55,9 +56,9 @@ class DocFx extends Command
 
         $releaseLevel = $this->getReleaseLevel($component);
 
-        $loader = new FilesystemLoader(__DIR__ . '/../templates');
-        $twig = new Environment($loader, ['autoescape' => false]);
-        $classTemplate = $twig->load('class.yml.twig');
+        // $loader = new FilesystemLoader(__DIR__ . '/../templates');
+        // $twig = new Environment($loader, ['autoescape' => false]);
+        // $classTemplate = $twig->load('class.yml.twig');
 
         $structure = new SimpleXMLElement(file_get_contents($xml));
 
@@ -84,8 +85,12 @@ class DocFx extends Command
             }
 
             $classNode = new ClassNode($file->class[0]);
+            $docFxArray = $this->getDocFxArray($classNode);
 
-            $yaml = $classTemplate->render($classNode->toArray());
+            $inline = 4; // The level where you switch to inline YAML
+            $indent = 2; // The amount of spaces to use for indentation of nested nodes
+            $flags = Yaml::DUMP_MULTI_LINE_LITERAL_BLOCK;
+            $yaml = Yaml::dump($docFxArray, $inline, $indent, $flags);
 
             $filename = str_replace(['src/', '.php'], '', $file['path']);
 
@@ -114,5 +119,43 @@ class DocFx extends Command
         }
 
         return $repoMetadataJson['release_level'];
+    }
+
+    public function getDocFxArray(ClassNode $class)
+    {
+        $children = [];
+        foreach ($class->getMethods() as $method) {
+            $children[] = sprintf('%s::%s()', $class->getFullname(), $method->getName());
+        }
+        $classItem = array_filter([
+            'uid' => $class->getFullname(),
+            'name' => $class->getName(),
+            'id' => $class->getName(),
+            'summary' => $class->getSummary(),
+            'status' => $class->getStatus(),
+            'type' => 'class',
+            'langs' => ['php'],
+            'children' => $children,
+            'implements' => $class->getImplements(),
+            'properties' => $class->getProperties(),
+        ]);
+
+        $items = [$classItem];
+
+        foreach ($class->getMethods() as $method) {
+            $methodItem = array_filter([
+                'uid' => sprintf('%s::%s()', $class->getFullname(), $method->getName()),
+                'name' => $method->getName(),
+                'id' => $method->getName(),
+                'summary' => $method->getSummary(),
+                'parent'  => $class->getFullname(),
+                'type' => 'method',
+                'langs' => ['php'],
+                'parameters' => $method->getParameters(),
+            ]);
+            $items[] = $methodItem;
+        }
+
+        return ['items' => $items];
     }
 }

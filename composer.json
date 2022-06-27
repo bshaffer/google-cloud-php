@@ -69,7 +69,7 @@
         "opis/closure": "^3.0",
         "swaggest/json-schema": "^0.12.0",
         "wikimedia/avro": "^1.9",
-        "twig/twig": "^3.4"
+        "symfony/yaml": "^3.3"
     },
     "replace": {
         "google/access-context-manager": "0.2.5",

@@ -30,9 +30,9 @@ class MethodNode
         $this->xmlNode = $methodNode;
     }
 
-    public function getName()
+    public function getName(): string
     {
-        return $this->xmlNode->name;
+        return (string) $this->xmlNode->name;
     }
 
     public function isInherited(): bool
@@ -59,11 +59,16 @@ class MethodNode
                 }
             }
 
-            $parameters[] = [
+            $parameter = [
                 'name' => $parameterNode->name,
                 'type' => $parameterNode->type,
-                'description' => $description,
             ];
+
+            if ($description) {
+                $parameter['description'] = $description;
+            }
+
+            $parameters[] = $parameter;
         }
         return $parameters;
     }

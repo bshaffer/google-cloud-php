@@ -20,6 +20,7 @@ namespace Google\Cloud\Dev\Tests\Unit;
 use Google\Cloud\Core\Testing\TestHelpers;
 use Google\Cloud\Dev\ComponentManager;
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\Yaml\Yaml;
 
 /**
  * @group dev
@@ -54,8 +55,8 @@ class DocFXTest extends TestCase
     {
         $this->assertTrue(file_exists(self::$fixturesDir . '/' . $file));
         $this->assertEquals(
-            file_get_contents(self::$fixturesDir . '/' . $file),
-            file_get_contents(self::$tmpDir . '/' . $file)
+            Yaml::parse(file_get_contents(self::$fixturesDir . '/' . $file)),
+            Yaml::parse(file_get_contents(self::$tmpDir . '/' . $file))
         );
     }
 

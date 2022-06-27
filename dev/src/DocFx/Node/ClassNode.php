@@ -30,9 +30,9 @@ class ClassNode
         $this->xmlNode = $classNode;
     }
 
-    public function getName()
+    public function getName(): string
     {
-        return $this->xmlNode->name;
+        return (string) $this->xmlNode->name;
     }
 
     public function getStatus(): string
@@ -52,7 +52,6 @@ class ClassNode
 
     public function getFullname(): string
     {
-        // return ltrim($this->xmlNode->full_name, '\\');
         return $this->xmlNode->full_name;
     }
 
@@ -97,11 +96,7 @@ class ClassNode
     public function getProperties(): array
     {
         $properties = [];
-        $nodeProperties = $this->xmlNode->property;
-        if ($nodeProperties instanceof SimpleXMLElement) {
-            $nodeProperties = [$nodeProperties];
-        }
-        foreach ($nodeProperties as $propertyNode) {
+        foreach ($this->xmlNode->property as $propertyNode) {
             if (isset($propertyNode->inherited_from)) {
                 // Skip inherited properties
                 continue;
@@ -110,31 +105,17 @@ class ClassNode
             if ($propertyNode->docblock) {
                 foreach ($propertyNode->docblock->tag as $tag) {
                     if ($tag['name'] == 'var') {
-                        $type = $tag['type'];
+                        $type = (string) $tag['type'];
                         break;
                     }
                 }
             }
 
             $properties[] = [
-                'name' => $propertyNode->name,
+                'name' => (string) $propertyNode->name,
                 'type' => $type,
             ];
         }
         return $properties;
-    }
-
-    public function toArray()
-    {
-        return [
-            'name' => $this->getName(),
-            'summary' => $this->getSummary(),
-            'fullname' => $this->getFullname(),
-            'status' => $this->getStatus(),
-            'implements' => $this->getImplements(),
-            'methods' => $this->getMethods(),
-            'properties' => $this->getProperties(),
-            'inheritedMembers' => $this->getInheritedMembers(),
-        ];
     }
 }

@@ -34,12 +34,6 @@ class DocblockNode
                 $summary .= "\n\n";
             }
             $summary .= (string) $this->xmlNode->{'long-description'};
-
-            $summary = "|-\n" . $summary;
-            $summary = implode("\n    ", explode("\n", $summary));
-
-            // remove whitespace from empty newlines
-            $summary = str_replace("    \n", "\n", $summary);
         }
 
         return trim($summary);

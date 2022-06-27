@@ -34,16 +34,8 @@ class DocFXTest extends TestCase
     {
         $fixturesFiles = array_diff(scandir(self::$fixturesDir), ['..', '.']);
         $generatedFiles = array_diff(scandir(self::$tmpDir), ['..', '.']);
-        $filesToGenerate = [
-            'Annotation.FeatureInterface.yml',
-            'Annotation.LikelihoodTrait.yml',
-            'Connection.ConnectionInterface.yml',
-            'VisionHelpersTrait.yml',
-            'toc.yml',
-        ];
-        $generatedFilesTemp = array_merge($generatedFiles, $filesToGenerate);
 
-        $this->assertEquals([], array_diff($fixturesFiles, $generatedFilesTemp));
+        $this->assertEquals([], array_diff($fixturesFiles, $generatedFiles));
 
     }
 

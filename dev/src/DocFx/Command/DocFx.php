@@ -37,9 +37,10 @@ class DocFx extends Command
             ->setDescription('Generate DocFX yaml from a phpdoc strucutre.xml')
             ->addArgument('component', InputArgument::REQUIRED, 'Generate docs only for a single component.')
             ->addArgument('structure_xml', InputArgument::REQUIRED, 'Path to phpdoc structure.xml')
-            ->addArgument('version', InputArgument::OPTIONAL, 'The version of the docs to generate.')
-            ->addArgument('namespace', InputArgument::OPTIONAL, 'Root namespace the docs are for. Will be the root of the TOC.')
-            ->addOption('out', '', InputOption::VALUE_REQUIRED, 'Path where to store the generated output.', realpath(__DIR__ . '/../../../') . '/out')
+            // ->addArgument('version', InputArgument::OPTIONAL, 'The version of the docs to generate.')
+            // ->addArgument('namespace', InputArgument::OPTIONAL, 'Root namespace the docs are for. Will be the root of the TOC.')
+            ->addOption('outdir', '', InputOption::VALUE_REQUIRED, 'Path where to store the generated output.', 'out')
+            ->addOption('outzip', '', InputOption::VALUE_REQUIRED, 'Path where to store a compressed zip of the output.')
         ;
     }
 
@@ -47,8 +48,13 @@ class DocFx extends Command
     {
         $component = $input->getArgument('component');
         $xml = $input->getArgument('structure_xml');
-        $version = $input->getArgument('version');
-        $out = $input->getOption('out');
+        $outDir = $input->getOption('outdir');
+        if ($outZip = $input->getOption('outzip')) {
+            if ($outDir == 'out') {
+                // Use a temporary directory by default if we're exporting to ZIP
+                $outDir = sys_get_temp_dir() . '/.docfx';
+            }
+        }
 
         if (!file_exists($xml)) {
             throw new RuntimeException('provided path to structure.xml does not exist');
@@ -62,11 +68,24 @@ class DocFx extends Command
 
         $structure = new SimpleXMLElement(file_get_contents($xml));
 
-        if (!is_dir($out)) {
-            if (!mkdir($out)) {
+        if (!is_dir($outDir)) {
+            if (!mkdir($outDir)) {
                 throw new RuntimeException('out directory doesn\'t exist and cannot be created');
             }
         }
+
+        $tocArray = [
+            'name' => $this->getNamespace($component),
+            'items' => [],
+        ];
+
+        // List of pages, to sort alphabetically by key
+        $pages = [];
+
+        // YAML dump configuration
+        $inline = 4; // The level where you switch to inline YAML
+        $indent = 2; // The amount of spaces to use for indentation of nested nodes
+        $flags = Yaml::DUMP_MULTI_LINE_LITERAL_BLOCK;
 
         foreach ($structure->file as $file) {
             // Skip metadata files
@@ -84,28 +103,60 @@ class DocFx extends Command
                 continue;
             }
 
-            $classNode = new ClassNode($file->class[0]);
-            $docFxArray = $this->getDocFxArray($classNode);
+            $classNode = new ClassNode($file);
 
-            $inline = 4; // The level where you switch to inline YAML
-            $indent = 2; // The amount of spaces to use for indentation of nested nodes
-            $flags = Yaml::DUMP_MULTI_LINE_LITERAL_BLOCK;
+            // Skip the protobuf classes with underscores, they're all deprecated
+            if (false !== strpos($classNode->getName(), '_')) {
+                continue;
+            }
+
+            $pages[$classNode->getFullname()] = $classNode;
+        }
+
+        // Sort pages alphabetically by full class name
+        ksort($pages);
+
+        foreach ($pages as $classNode) {
+            $docFxArray = $this->getDocFxClassArray($classNode);
+
+            // Add the class to the TOC
+            $tocArray['items'][] = array_filter([
+                'uid' => $classNode->getFullname(),
+                'name' => $classNode->getName(),
+                'status' => $classNode->getStatus(),
+            ]);
+
+            // Dump the YAML for the class node
             $yaml = Yaml::dump($docFxArray, $inline, $indent, $flags);
 
-            $filename = str_replace(['src/', '.php'], '', $file['path']);
-
-            $outFile = sprintf('%s/%s.yml', $out, str_replace('/', '.', $filename));
+            // Write the YAML to a file
+            $outFile = sprintf('%s/%s.yml', $outDir, $classNode->getFilename());
             file_put_contents($outFile, $yaml);
+
         }
+
+        // Write the TOC to a file
+        $tocYaml = Yaml::dump([$tocArray], $inline, $indent, $flags);
+        $outFile = sprintf('%s/toc.yml', $outDir);
+        file_put_contents($outFile, $tocYaml);
+
+        // Todo: create index.yml
     }
 
-    private function getReleaseLevel(string $component): string
+    private function getComponentPath(string $component): string
     {
         $componentPath = realpath(sprintf(__DIR__ . '/../../../../%s', $component));
 
         if (!is_dir($componentPath)) {
             throw new RuntimeException(sprintf('component "%s" not found', $component));
         }
+
+        return $componentPath;
+    }
+
+    private function getReleaseLevel(string $component): string
+    {
+        $componentPath = $this->getComponentPath($component);
         $repoMetadataPath = $componentPath . '/.repo-metadata.json';
         if (!file_exists($repoMetadataPath)) {
             throw new RuntimeException(sprintf('repo metadata not found for component "%s"', $component));
@@ -121,7 +172,34 @@ class DocFx extends Command
         return $repoMetadataJson['release_level'];
     }
 
-    public function getDocFxArray(ClassNode $class)
+    private function getNamespace(string $component): string
+    {
+        $componentPath = $this->getComponentPath($component);
+        $composerPath = $componentPath . '/composer.json';
+        if (!file_exists($composerPath)) {
+            throw new RuntimeException(sprintf('composer.json not found for component "%s"', $component));
+        }
+        $composerJson = json_decode(file_get_contents($composerPath), true);
+        if (empty($composerJson['autoload']['psr-4'])) {
+            throw new RuntimeException(sprintf(
+                'composer does not contain autoload.psr-4 for component "%s"',
+                $component
+            ));
+        }
+
+        foreach ($composerJson['autoload']['psr-4'] as $namespace => $dir) {
+            if ($dir == 'src') {
+                return rtrim($namespace, '\\');
+            }
+        }
+
+        throw new RuntimeException(sprintf(
+            'composer autoload.psr-4 does not contain a namespace for component "%s"',
+            $component
+        ));
+    }
+
+    private function getDocFxClassArray(ClassNode $class)
     {
         $children = [];
         foreach ($class->getMethods() as $method) {

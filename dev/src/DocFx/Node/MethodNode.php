@@ -53,15 +53,15 @@ class MethodNode
                 foreach ($this->xmlNode->docblock->tag as $tag) {
                     if ($tag['name'] == 'param') {
                         if ((string) $tag['variable'] === (string) $parameterNode->name) {
-                            $description = $tag['description'];
+                            $description = (string) $tag['description'];
                         }
                     }
                 }
             }
 
             $parameter = [
-                'name' => $parameterNode->name,
-                'type' => $parameterNode->type,
+                'name' => (string) $parameterNode->name,
+                'type' => (string) $parameterNode->type,
             ];
 
             if ($description) {

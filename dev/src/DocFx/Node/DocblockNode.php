@@ -36,6 +36,6 @@ class DocblockNode
             $summary .= (string) $this->xmlNode->{'long-description'};
         }
 
-        return trim($summary);
+        return $summary;
     }
 }

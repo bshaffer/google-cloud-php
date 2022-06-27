@@ -24,15 +24,28 @@ class ClassNode
     use NodeTrait;
 
     private $xmlNode;
+    private $filePath;
 
-    public function __construct(SimpleXMLElement $classNode)
+    public function __construct(SimpleXMLElement $fileNode)
     {
-        $this->xmlNode = $classNode;
+        $this->filePath = $fileNode['path'];
+        $this->xmlNode = $fileNode->class[0];
     }
 
     public function getName(): string
     {
         return (string) $this->xmlNode->name;
+    }
+
+    public function getFullname(): string
+    {
+        return $this->xmlNode->full_name;
+    }
+
+    public function getFilename(): string
+    {
+        $filename = str_replace(['src/', '.php'], '', $this->filePath);
+        return str_replace('/', '.', $filename);
     }
 
     public function getStatus(): string
@@ -48,11 +61,6 @@ class ClassNode
         }
 
         return '';
-    }
-
-    public function getFullname(): string
-    {
-        return $this->xmlNode->full_name;
     }
 
     public function getMethods(): array

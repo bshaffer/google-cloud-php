@@ -251,7 +251,16 @@ items:
     langs:
       - php
     parameters:
-      - { name: options, type: array, description: '{     Optional. Options for configuring the service API wrapper.      @type string $serviceAddress           **Deprecated**. This option will be removed in a future major release. Please           utilize the `$apiEndpoint` option instead.     @type string $apiEndpoint           The address of the API remote host. May optionally include the port, formatted           as "<uri>:<port>". Default ''vision.googleapis.com:443''.     @type string|array|FetchAuthTokenInterface|CredentialsWrapper $credentials           The credentials to be used by the client to authorize API calls. This option           accepts either a path to a credentials file, or a decoded credentials file as a           PHP array.           *Advanced usage*: In addition, this option can also accept a pre-constructed           {@see} object or           {@see} object. Note that when one of these           objects are provided, any settings in $credentialsConfig will be ignored.     @type array $credentialsConfig           Options used to configure credentials, including auth token caching, for the           client. For a full list of supporting configuration options, see           {@see} .     @type bool $disableRetries           Determines whether or not retries defined by the client configuration should be           disabled. Defaults to `false`.     @type string|array $clientConfig           Client method configuration, including retry settings. This option can be either           a path to a JSON file, or a PHP array containing the decoded JSON data. By           default this settings points to the default client config file, which is           provided in the resources folder.     @type string|TransportInterface $transport           The transport used for executing network requests. May be either the string           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.           *Advanced usage*: Additionally, it is possible to pass in an already           instantiated {@see} object. Note           that when this object is provided, any settings in $transportConfig, and any           $serviceAddress setting, will be ignored.     @type array $transportConfig           Configuration options that will be used to construct the transport. Options for           each supported transport type should be passed in a key for that transport. For           example:           $transportConfig = [               ''grpc'' => [...],               ''rest'' => [...],           ];           See the {@see} and           {@see} methods for the           supported options.     @type callable $clientCertSource           A callable which returns the client cert as a string. This can be used to           provide a certificate and private key to the transport layer for mTLS. }' }
+      - { name: options, type: array, description: 'Optional. Options for configuring the service API wrapper.' }
+      - { name: '↳ serviceAddress', type: string, description: '**Deprecated**. This option will be removed in a future major release. Please utilize the `$apiEndpoint` option instead.' }
+      - { name: '↳ apiEndpoint', type: string, description: 'The address of the API remote host. May optionally include the port, formatted as "<uri>:<port>". Default ''vision.googleapis.com:443''.' }
+      - { name: '↳ credentials', type: string|array|FetchAuthTokenInterface|CredentialsWrapper, description: 'The credentials to be used by the client to authorize API calls. This option accepts either a path to a credentials file, or a decoded credentials file as a PHP array. *Advanced usage*: In addition, this option can also accept a pre-constructed {@see} object or {@see} object. Note that when one of these objects are provided, any settings in $credentialsConfig will be ignored.' }
+      - { name: '↳ credentialsConfig', type: array, description: 'Options used to configure credentials, including auth token caching, for the client. For a full list of supporting configuration options, see {@see} .' }
+      - { name: '↳ disableRetries', type: bool, description: 'Determines whether or not retries defined by the client configuration should be disabled. Defaults to `false`.' }
+      - { name: '↳ clientConfig', type: string|array, description: 'Client method configuration, including retry settings. This option can be either a path to a JSON file, or a PHP array containing the decoded JSON data. By default this settings points to the default client config file, which is provided in the resources folder.' }
+      - { name: '↳ transport', type: string|TransportInterface, description: 'The transport used for executing network requests. May be either the string `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system. *Advanced usage*: Additionally, it is possible to pass in an already instantiated {@see} object. Note that when this object is provided, any settings in $transportConfig, and any $serviceAddress setting, will be ignored.' }
+      - { name: '↳ transportConfig', type: array, description: 'Configuration options that will be used to construct the transport. Options for each supported transport type should be passed in a key for that transport. For example: $transportConfig = [ ''grpc'' => [...], ''rest'' => [...], ]; See the {@see} and {@see} methods for the supported options.' }
+      - { name: '↳ clientCertSource', type: callable, description: 'A callable which returns the client cert as a string. This can be used to provide a certificate and private key to the transport layer for mTLS.' }
   -
     uid: '\Google\Cloud\Vision\V1\Gapic\ProductSearchGapicClient::addProductToProductSet()'
     name: addProductToProductSet
@@ -284,7 +293,8 @@ items:
     parameters:
       - { name: name, type: string, description: 'Required. The resource name for the ProductSet to modify.  Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`' }
       - { name: product, type: string, description: 'Required. The resource name for the Product to be added to this ProductSet.  Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`' }
-      - { name: optionalArgs, type: array, description: '{     Optional.      @type RetrySettings|array $retrySettings           Retry settings to use for this call. Can be a           {@see} object, or an associative array of retry           settings parameters. See the documentation on           {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: Optional. }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\Gapic\ProductSearchGapicClient::createProduct()'
     name: createProduct
@@ -317,7 +327,9 @@ items:
     parameters:
       - { name: parent, type: string, description: 'Required. The project in which the Product should be created.  Format is `projects/PROJECT_ID/locations/LOC_ID`.' }
       - { name: product, type: \Google\Cloud\Vision\V1\Product, description: 'Required. The product to create.' }
-      - { name: optionalArgs, type: array, description: '{     Optional.      @type string $productId           A user-supplied resource id for this Product. If set, the server will           attempt to use this value as the resource id. If it is already in use, an           error is returned with code ALREADY_EXISTS. Must be at most 128 characters           long. It cannot contain the character `/`.     @type RetrySettings|array $retrySettings           Retry settings to use for this call. Can be a           {@see} object, or an associative array of retry           settings parameters. See the documentation on           {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: Optional. }
+      - { name: '↳ productId', type: string, description: 'A user-supplied resource id for this Product. If set, the server will attempt to use this value as the resource id. If it is already in use, an error is returned with code ALREADY_EXISTS. Must be at most 128 characters long. It cannot contain the character `/`.' }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\Gapic\ProductSearchGapicClient::createProductSet()'
     name: createProductSet
@@ -348,7 +360,9 @@ items:
     parameters:
       - { name: parent, type: string, description: 'Required. The project in which the ProductSet should be created.  Format is `projects/PROJECT_ID/locations/LOC_ID`.' }
       - { name: productSet, type: \Google\Cloud\Vision\V1\ProductSet, description: 'Required. The ProductSet to create.' }
-      - { name: optionalArgs, type: array, description: '{     Optional.      @type string $productSetId           A user-supplied resource id for this ProductSet. If set, the server will           attempt to use this value as the resource id. If it is already in use, an           error is returned with code ALREADY_EXISTS. Must be at most 128 characters           long. It cannot contain the character `/`.     @type RetrySettings|array $retrySettings           Retry settings to use for this call. Can be a           {@see} object, or an associative array of retry           settings parameters. See the documentation on           {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: Optional. }
+      - { name: '↳ productSetId', type: string, description: 'A user-supplied resource id for this ProductSet. If set, the server will attempt to use this value as the resource id. If it is already in use, an error is returned with code ALREADY_EXISTS. Must be at most 128 characters long. It cannot contain the character `/`.' }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\Gapic\ProductSearchGapicClient::createReferenceImage()'
     name: createReferenceImage
@@ -392,7 +406,9 @@ items:
     parameters:
       - { name: parent, type: string, description: 'Required. Resource name of the product in which to create the reference image.  Format is `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.' }
       - { name: referenceImage, type: \Google\Cloud\Vision\V1\ReferenceImage, description: 'Required. The reference image to create. If an image ID is specified, it is ignored.' }
-      - { name: optionalArgs, type: array, description: '{     Optional.      @type string $referenceImageId           A user-supplied resource id for the ReferenceImage to be added. If set,           the server will attempt to use this value as the resource id. If it is           already in use, an error is returned with code ALREADY_EXISTS. Must be at           most 128 characters long. It cannot contain the character `/`.     @type RetrySettings|array $retrySettings           Retry settings to use for this call. Can be a           {@see} object, or an associative array of retry           settings parameters. See the documentation on           {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: Optional. }
+      - { name: '↳ referenceImageId', type: string, description: 'A user-supplied resource id for the ReferenceImage to be added. If set, the server will attempt to use this value as the resource id. If it is already in use, an error is returned with code ALREADY_EXISTS. Must be at most 128 characters long. It cannot contain the character `/`.' }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\Gapic\ProductSearchGapicClient::deleteProduct()'
     name: deleteProduct
@@ -420,7 +436,8 @@ items:
       - php
     parameters:
       - { name: name, type: string, description: 'Required. Resource name of product to delete.  Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`' }
-      - { name: optionalArgs, type: array, description: '{     Optional.      @type RetrySettings|array $retrySettings           Retry settings to use for this call. Can be a           {@see} object, or an associative array of retry           settings parameters. See the documentation on           {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: Optional. }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\Gapic\ProductSearchGapicClient::deleteProductSet()'
     name: deleteProductSet
@@ -447,7 +464,8 @@ items:
       - php
     parameters:
       - { name: name, type: string, description: 'Required. Resource name of the ProductSet to delete.  Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`' }
-      - { name: optionalArgs, type: array, description: '{     Optional.      @type RetrySettings|array $retrySettings           Retry settings to use for this call. Can be a           {@see} object, or an associative array of retry           settings parameters. See the documentation on           {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: Optional. }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\Gapic\ProductSearchGapicClient::deleteReferenceImage()'
     name: deleteReferenceImage
@@ -477,7 +495,8 @@ items:
       - php
     parameters:
       - { name: name, type: string, description: 'Required. The resource name of the reference image to delete.  Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`' }
-      - { name: optionalArgs, type: array, description: '{     Optional.      @type RetrySettings|array $retrySettings           Retry settings to use for this call. Can be a           {@see} object, or an associative array of retry           settings parameters. See the documentation on           {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: Optional. }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\Gapic\ProductSearchGapicClient::getProduct()'
     name: getProduct
@@ -505,7 +524,8 @@ items:
       - php
     parameters:
       - { name: name, type: string, description: 'Required. Resource name of the Product to get.  Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`' }
-      - { name: optionalArgs, type: array, description: '{     Optional.      @type RetrySettings|array $retrySettings           Retry settings to use for this call. Can be a           {@see} object, or an associative array of retry           settings parameters. See the documentation on           {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: Optional. }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\Gapic\ProductSearchGapicClient::getProductSet()'
     name: getProductSet
@@ -533,7 +553,8 @@ items:
       - php
     parameters:
       - { name: name, type: string, description: 'Required. Resource name of the ProductSet to get.  Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`' }
-      - { name: optionalArgs, type: array, description: '{     Optional.      @type RetrySettings|array $retrySettings           Retry settings to use for this call. Can be a           {@see} object, or an associative array of retry           settings parameters. See the documentation on           {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: Optional. }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\Gapic\ProductSearchGapicClient::getReferenceImage()'
     name: getReferenceImage
@@ -561,7 +582,8 @@ items:
       - php
     parameters:
       - { name: name, type: string, description: 'Required. The resource name of the ReferenceImage to get.  Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.' }
-      - { name: optionalArgs, type: array, description: '{     Optional.      @type RetrySettings|array $retrySettings           Retry settings to use for this call. Can be a           {@see} object, or an associative array of retry           settings parameters. See the documentation on           {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: Optional. }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\Gapic\ProductSearchGapicClient::importProductSets()'
     name: importProductSets
@@ -622,7 +644,8 @@ items:
     parameters:
       - { name: parent, type: string, description: 'Required. The project in which the ProductSets should be imported.  Format is `projects/PROJECT_ID/locations/LOC_ID`.' }
       - { name: inputConfig, type: \Google\Cloud\Vision\V1\ImportProductSetsInputConfig, description: 'Required. The input content for the list of requests.' }
-      - { name: optionalArgs, type: array, description: '{     Optional.      @type RetrySettings|array $retrySettings           Retry settings to use for this call. Can be a           {@see} object, or an associative array of retry           settings parameters. See the documentation on           {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: Optional. }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\Gapic\ProductSearchGapicClient::listProductSets()'
     name: listProductSets
@@ -663,7 +686,10 @@ items:
       - php
     parameters:
       - { name: parent, type: string, description: 'Required. The project from which ProductSets should be listed.  Format is `projects/PROJECT_ID/locations/LOC_ID`.' }
-      - { name: optionalArgs, type: array, description: '{     Optional.      @type int $pageSize           The maximum number of resources contained in the underlying API           response. The API may return fewer values in a page, even if           there are additional values to be retrieved.     @type string $pageToken           A page token is used to specify a page of values to be returned.           If no page token is specified (the default), the first page           of values will be returned. Any page token used here must have           been generated by a previous call to the API.     @type RetrySettings|array $retrySettings           Retry settings to use for this call. Can be a           {@see} object, or an associative array of retry           settings parameters. See the documentation on           {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: Optional. }
+      - { name: '↳ pageSize', type: int, description: 'The maximum number of resources contained in the underlying API response. The API may return fewer values in a page, even if there are additional values to be retrieved.' }
+      - { name: '↳ pageToken', type: string, description: 'A page token is used to specify a page of values to be returned. If no page token is specified (the default), the first page of values will be returned. Any page token used here must have been generated by a previous call to the API.' }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\Gapic\ProductSearchGapicClient::listProducts()'
     name: listProducts
@@ -703,7 +729,10 @@ items:
       - php
     parameters:
       - { name: parent, type: string, description: 'Required. The project OR ProductSet from which Products should be listed.  Format: `projects/PROJECT_ID/locations/LOC_ID`' }
-      - { name: optionalArgs, type: array, description: '{     Optional.      @type int $pageSize           The maximum number of resources contained in the underlying API           response. The API may return fewer values in a page, even if           there are additional values to be retrieved.     @type string $pageToken           A page token is used to specify a page of values to be returned.           If no page token is specified (the default), the first page           of values will be returned. Any page token used here must have           been generated by a previous call to the API.     @type RetrySettings|array $retrySettings           Retry settings to use for this call. Can be a           {@see} object, or an associative array of retry           settings parameters. See the documentation on           {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: Optional. }
+      - { name: '↳ pageSize', type: int, description: 'The maximum number of resources contained in the underlying API response. The API may return fewer values in a page, even if there are additional values to be retrieved.' }
+      - { name: '↳ pageToken', type: string, description: 'A page token is used to specify a page of values to be returned. If no page token is specified (the default), the first page of values will be returned. Any page token used here must have been generated by a previous call to the API.' }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\Gapic\ProductSearchGapicClient::listProductsInProductSet()'
     name: listProductsInProductSet
@@ -745,7 +774,10 @@ items:
       - php
     parameters:
       - { name: name, type: string, description: 'Required. The ProductSet resource for which to retrieve Products.  Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`' }
-      - { name: optionalArgs, type: array, description: '{     Optional.      @type int $pageSize           The maximum number of resources contained in the underlying API           response. The API may return fewer values in a page, even if           there are additional values to be retrieved.     @type string $pageToken           A page token is used to specify a page of values to be returned.           If no page token is specified (the default), the first page           of values will be returned. Any page token used here must have           been generated by a previous call to the API.     @type RetrySettings|array $retrySettings           Retry settings to use for this call. Can be a           {@see} object, or an associative array of retry           settings parameters. See the documentation on           {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: Optional. }
+      - { name: '↳ pageSize', type: int, description: 'The maximum number of resources contained in the underlying API response. The API may return fewer values in a page, even if there are additional values to be retrieved.' }
+      - { name: '↳ pageToken', type: string, description: 'A page token is used to specify a page of values to be returned. If no page token is specified (the default), the first page of values will be returned. Any page token used here must have been generated by a previous call to the API.' }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\Gapic\ProductSearchGapicClient::listReferenceImages()'
     name: listReferenceImages
@@ -787,7 +819,10 @@ items:
       - php
     parameters:
       - { name: parent, type: string, description: 'Required. Resource name of the product containing the reference images.  Format is `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.' }
-      - { name: optionalArgs, type: array, description: '{     Optional.      @type int $pageSize           The maximum number of resources contained in the underlying API           response. The API may return fewer values in a page, even if           there are additional values to be retrieved.     @type string $pageToken           A page token is used to specify a page of values to be returned.           If no page token is specified (the default), the first page           of values will be returned. Any page token used here must have           been generated by a previous call to the API.     @type RetrySettings|array $retrySettings           Retry settings to use for this call. Can be a           {@see} object, or an associative array of retry           settings parameters. See the documentation on           {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: Optional. }
+      - { name: '↳ pageSize', type: int, description: 'The maximum number of resources contained in the underlying API response. The API may return fewer values in a page, even if there are additional values to be retrieved.' }
+      - { name: '↳ pageToken', type: string, description: 'A page token is used to specify a page of values to be returned. If no page token is specified (the default), the first page of values will be returned. Any page token used here must have been generated by a previous call to the API.' }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\Gapic\ProductSearchGapicClient::purgeProducts()'
     name: purgeProducts
@@ -857,7 +892,11 @@ items:
       - php
     parameters:
       - { name: parent, type: string, description: 'Required. The project and location in which the Products should be deleted.  Format is `projects/PROJECT_ID/locations/LOC_ID`.' }
-      - { name: optionalArgs, type: array, description: '{     Optional.      @type ProductSetPurgeConfig $productSetPurgeConfig           Specify which ProductSet contains the Products to be deleted.     @type bool $deleteOrphanProducts           If delete_orphan_products is true, all Products that are not in any           ProductSet will be deleted.     @type bool $force           The default value is false. Override this value to true to actually perform           the purge.     @type RetrySettings|array $retrySettings           Retry settings to use for this call. Can be a           {@see} object, or an associative array of retry           settings parameters. See the documentation on           {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: Optional. }
+      - { name: '↳ productSetPurgeConfig', type: ProductSetPurgeConfig, description: 'Specify which ProductSet contains the Products to be deleted.' }
+      - { name: '↳ deleteOrphanProducts', type: bool, description: 'If delete_orphan_products is true, all Products that are not in any ProductSet will be deleted.' }
+      - { name: '↳ force', type: bool, description: 'The default value is false. Override this value to true to actually perform the purge.' }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\Gapic\ProductSearchGapicClient::removeProductFromProductSet()'
     name: removeProductFromProductSet
@@ -883,7 +922,8 @@ items:
     parameters:
       - { name: name, type: string, description: 'Required. The resource name for the ProductSet to modify.  Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`' }
       - { name: product, type: string, description: 'Required. The resource name for the Product to be removed from this ProductSet.  Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`' }
-      - { name: optionalArgs, type: array, description: '{     Optional.      @type RetrySettings|array $retrySettings           Retry settings to use for this call. Can be a           {@see} object, or an associative array of retry           settings parameters. See the documentation on           {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: Optional. }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\Gapic\ProductSearchGapicClient::updateProduct()'
     name: updateProduct
@@ -922,7 +962,9 @@ items:
       - php
     parameters:
       - { name: product, type: \Google\Cloud\Vision\V1\Product, description: 'Required. The Product resource which replaces the one on the server. product.name is immutable.' }
-      - { name: optionalArgs, type: array, description: '{     Optional.      @type FieldMask $updateMask           The [FieldMask][google.protobuf.FieldMask] that specifies which fields           to update.           If update_mask isn''t specified, all mutable fields are to be updated.           Valid mask paths include `product_labels`, `display_name`, and           `description`.     @type RetrySettings|array $retrySettings           Retry settings to use for this call. Can be a           {@see} object, or an associative array of retry           settings parameters. See the documentation on           {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: Optional. }
+      - { name: '↳ updateMask', type: FieldMask, description: 'The [FieldMask][google.protobuf.FieldMask] that specifies which fields to update. If update_mask isn''t specified, all mutable fields are to be updated. Valid mask paths include `product_labels`, `display_name`, and `description`.' }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\Gapic\ProductSearchGapicClient::updateProductSet()'
     name: updateProductSet
@@ -954,4 +996,6 @@ items:
       - php
     parameters:
       - { name: productSet, type: \Google\Cloud\Vision\V1\ProductSet, description: 'Required. The ProductSet resource which replaces the one on the server.' }
-      - { name: optionalArgs, type: array, description: '{     Optional.      @type FieldMask $updateMask           The [FieldMask][google.protobuf.FieldMask] that specifies which fields to           update.           If update_mask isn''t specified, all mutable fields are to be updated.           Valid mask path is `display_name`.     @type RetrySettings|array $retrySettings           Retry settings to use for this call. Can be a           {@see} object, or an associative array of retry           settings parameters. See the documentation on           {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: Optional. }
+      - { name: '↳ updateMask', type: FieldMask, description: 'The [FieldMask][google.protobuf.FieldMask] that specifies which fields to update. If update_mask isn''t specified, all mutable fields are to be updated. Valid mask path is `display_name`.' }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }

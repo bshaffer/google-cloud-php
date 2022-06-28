@@ -28,7 +28,8 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type \Google\Type\LatLng $lat_lng           lat/long location coordinates. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ lat_lng', type: \Google\Type\LatLng, description: 'lat/long location coordinates.' }
   -
     uid: '\Google\Cloud\Vision\V1\LocationInfo::getLatLng()'
     name: getLatLng

@@ -26,7 +26,8 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type string $product_set_id           The ProductSet that contains the Products to delete. If a Product is a           member of product_set_id in addition to other ProductSets, the Product will           still be deleted. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ product_set_id', type: string, description: 'The ProductSet that contains the Products to delete. If a Product is a member of product_set_id in addition to other ProductSets, the Product will still be deleted.' }
   -
     uid: '\Google\Cloud\Vision\V1\ProductSetPurgeConfig::getProductSetId()'
     name: getProductSetId

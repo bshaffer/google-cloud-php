@@ -26,7 +26,8 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type \Google\Cloud\Vision\V1\ColorInfo[]|\Google\Protobuf\Internal\RepeatedField $colors           RGB color values with their score and pixel fraction. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ colors', type: '\Google\Cloud\Vision\V1\ColorInfo[]|\Google\Protobuf\Internal\RepeatedField', description: 'RGB color values with their score and pixel fraction.' }
   -
     uid: '\Google\Cloud\Vision\V1\DominantColorsAnnotation::getColors()'
     name: getColors

@@ -29,7 +29,9 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type string $url           The result image URL.     @type float $score           (Deprecated) Overall relevancy score for the image. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ url', type: string, description: 'The result image URL.' }
+      - { name: '↳ score', type: float, description: '(Deprecated) Overall relevancy score for the image.' }
   -
     uid: '\Google\Cloud\Vision\V1\WebDetection\WebImage::getUrl()'
     name: getUrl

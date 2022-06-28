@@ -26,7 +26,8 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type \Google\Cloud\Vision\V1\AnnotateFileResponse[]|\Google\Protobuf\Internal\RepeatedField $responses           The list of file annotation responses, each response corresponding to each           AnnotateFileRequest in BatchAnnotateFilesRequest. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ responses', type: '\Google\Cloud\Vision\V1\AnnotateFileResponse[]|\Google\Protobuf\Internal\RepeatedField', description: 'The list of file annotation responses, each response corresponding to each AnnotateFileRequest in BatchAnnotateFilesRequest.' }
   -
     uid: '\Google\Cloud\Vision\V1\BatchAnnotateFilesResponse::getResponses()'
     name: getResponses

@@ -32,7 +32,10 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type string $parent           Required. Resource name of the product containing the reference images.           Format is           `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.     @type int $page_size           The maximum number of items to return. Default 10, maximum 100.     @type string $page_token           A token identifying a page of results to be returned. This is the value           of `nextPageToken` returned in a previous reference image list request.           Defaults to the first page if not specified. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ parent', type: string, description: 'Required. Resource name of the product containing the reference images. Format is `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.' }
+      - { name: '↳ page_size', type: int, description: 'The maximum number of items to return. Default 10, maximum 100.' }
+      - { name: '↳ page_token', type: string, description: 'A token identifying a page of results to be returned. This is the value of `nextPageToken` returned in a previous reference image list request. Defaults to the first page if not specified.' }
   -
     uid: '\Google\Cloud\Vision\V1\ListReferenceImagesRequest::getParent()'
     name: getParent

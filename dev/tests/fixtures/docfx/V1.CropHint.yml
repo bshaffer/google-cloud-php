@@ -34,7 +34,10 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type \Google\Cloud\Vision\V1\BoundingPoly $bounding_poly           The bounding polygon for the crop region. The coordinates of the bounding           box are in the original image''s scale.     @type float $confidence           Confidence of this being a salient region.  Range [0, 1].     @type float $importance_fraction           Fraction of importance of this salient region with respect to the original           image. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ bounding_poly', type: \Google\Cloud\Vision\V1\BoundingPoly, description: 'The bounding polygon for the crop region. The coordinates of the bounding box are in the original image''s scale.' }
+      - { name: '↳ confidence', type: float, description: 'Confidence of this being a salient region. Range [0, 1].' }
+      - { name: '↳ importance_fraction', type: float, description: 'Fraction of importance of this salient region with respect to the original image.' }
   -
     uid: '\Google\Cloud\Vision\V1\CropHint::getBoundingPoly()'
     name: getBoundingPoly

@@ -37,7 +37,11 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type \Google\Cloud\Vision\V1\ProductSetPurgeConfig $product_set_purge_config           Specify which ProductSet contains the Products to be deleted.     @type bool $delete_orphan_products           If delete_orphan_products is true, all Products that are not in any           ProductSet will be deleted.     @type string $parent           Required. The project and location in which the Products should be deleted.           Format is `projects/PROJECT_ID/locations/LOC_ID`.     @type bool $force           The default value is false. Override this value to true to actually perform           the purge. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ product_set_purge_config', type: \Google\Cloud\Vision\V1\ProductSetPurgeConfig, description: 'Specify which ProductSet contains the Products to be deleted.' }
+      - { name: '↳ delete_orphan_products', type: bool, description: 'If delete_orphan_products is true, all Products that are not in any ProductSet will be deleted.' }
+      - { name: '↳ parent', type: string, description: 'Required. The project and location in which the Products should be deleted. Format is `projects/PROJECT_ID/locations/LOC_ID`.' }
+      - { name: '↳ force', type: bool, description: 'The default value is false. Override this value to true to actually perform the purge.' }
   -
     uid: '\Google\Cloud\Vision\V1\PurgeProductsRequest::getProductSetPurgeConfig()'
     name: getProductSetPurgeConfig

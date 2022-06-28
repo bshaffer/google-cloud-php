@@ -30,7 +30,9 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type string $uri           The URI of the file used to produce the image.     @type int $page_number           If the file was a PDF or TIFF, this field gives the page number within           the file used to produce the image. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ uri', type: string, description: 'The URI of the file used to produce the image.' }
+      - { name: '↳ page_number', type: int, description: 'If the file was a PDF or TIFF, this field gives the page number within the file used to produce the image.' }
   -
     uid: '\Google\Cloud\Vision\V1\ImageAnnotationContext::getUri()'
     name: getUri

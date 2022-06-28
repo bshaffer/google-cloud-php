@@ -29,7 +29,9 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type int $type           Detected break type.     @type bool $is_prefix           True if break prepends the element. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ type', type: int, description: 'Detected break type.' }
+      - { name: '↳ is_prefix', type: bool, description: 'True if break prepends the element.' }
   -
     uid: '\Google\Cloud\Vision\V1\TextAnnotation\DetectedBreak::getType()'
     name: getType

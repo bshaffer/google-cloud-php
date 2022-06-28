@@ -32,7 +32,10 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type string $entity_id           Opaque entity ID.     @type float $score           Overall relevancy score for the entity.           Not normalized and not comparable across different image queries.     @type string $description           Canonical description of the entity, in English. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ entity_id', type: string, description: 'Opaque entity ID.' }
+      - { name: '↳ score', type: float, description: 'Overall relevancy score for the entity. Not normalized and not comparable across different image queries.' }
+      - { name: '↳ description', type: string, description: 'Canonical description of the entity, in English.' }
   -
     uid: '\Google\Cloud\Vision\V1\WebDetection\WebEntity::getEntityId()'
     name: getEntityId

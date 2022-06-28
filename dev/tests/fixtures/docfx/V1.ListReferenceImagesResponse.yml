@@ -32,7 +32,10 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type \Google\Cloud\Vision\V1\ReferenceImage[]|\Google\Protobuf\Internal\RepeatedField $reference_images           The list of reference images.     @type int $page_size           The maximum number of items to return. Default 10, maximum 100.     @type string $next_page_token           The next_page_token returned from a previous List request, if any. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ reference_images', type: '\Google\Cloud\Vision\V1\ReferenceImage[]|\Google\Protobuf\Internal\RepeatedField', description: 'The list of reference images.' }
+      - { name: '↳ page_size', type: int, description: 'The maximum number of items to return. Default 10, maximum 100.' }
+      - { name: '↳ next_page_token', type: string, description: 'The next_page_token returned from a previous List request, if any.' }
   -
     uid: '\Google\Cloud\Vision\V1\ListReferenceImagesResponse::getReferenceImages()'
     name: getReferenceImages

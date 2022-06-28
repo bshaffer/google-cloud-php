@@ -35,7 +35,10 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type float $x           X coordinate.     @type float $y           Y coordinate.     @type float $z           Z coordinate (or depth). }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ x', type: float, description: 'X coordinate.' }
+      - { name: '↳ y', type: float, description: 'Y coordinate.' }
+      - { name: '↳ z', type: float, description: 'Z coordinate (or depth).' }
   -
     uid: '\Google\Cloud\Vision\V1\Position::getX()'
     name: getX

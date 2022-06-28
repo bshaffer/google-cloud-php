@@ -31,7 +31,9 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type string $parent           Required. The project in which the ProductSets should be imported.           Format is `projects/PROJECT_ID/locations/LOC_ID`.     @type \Google\Cloud\Vision\V1\ImportProductSetsInputConfig $input_config           Required. The input content for the list of requests. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ parent', type: string, description: 'Required. The project in which the ProductSets should be imported. Format is `projects/PROJECT_ID/locations/LOC_ID`.' }
+      - { name: '↳ input_config', type: \Google\Cloud\Vision\V1\ImportProductSetsInputConfig, description: 'Required. The input content for the list of requests.' }
   -
     uid: '\Google\Cloud\Vision\V1\ImportProductSetsRequest::getParent()'
     name: getParent

@@ -29,7 +29,9 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type \Google\Cloud\Vision\V1\AnnotateFileRequest[]|\Google\Protobuf\Internal\RepeatedField $requests           Required. The list of file annotation requests. Right now we support only           one AnnotateFileRequest in BatchAnnotateFilesRequest.     @type string $parent           Optional. Target project and location to make a call.           Format: `projects/{project-id}/locations/{location-id}`.           If no parent is specified, a region will be chosen automatically.           Supported location-ids:               `us`: USA country only,               `asia`: East asia areas, like Japan, Taiwan,               `eu`: The European Union.           Example: `projects/project-A/locations/eu`. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ requests', type: '\Google\Cloud\Vision\V1\AnnotateFileRequest[]|\Google\Protobuf\Internal\RepeatedField', description: 'Required. The list of file annotation requests. Right now we support only one AnnotateFileRequest in BatchAnnotateFilesRequest.' }
+      - { name: '↳ parent', type: string, description: 'Optional. Target project and location to make a call. Format: `projects/{project-id}/locations/{location-id}`. If no parent is specified, a region will be chosen automatically. Supported location-ids: `us`: USA country only, `asia`: East asia areas, like Japan, Taiwan, `eu`: The European Union. Example: `projects/project-A/locations/eu`.' }
   -
     uid: '\Google\Cloud\Vision\V1\BatchAnnotateFilesRequest::getRequests()'
     name: getRequests

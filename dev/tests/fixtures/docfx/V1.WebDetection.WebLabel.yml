@@ -29,7 +29,9 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type string $label           Label for extra metadata.     @type string $language_code           The BCP-47 language code for `label`, such as "en-US" or "sr-Latn".           For more information, see           http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ label', type: string, description: 'Label for extra metadata.' }
+      - { name: '↳ language_code', type: string, description: 'The BCP-47 language code for `label`, such as "en-US" or "sr-Latn". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.' }
   -
     uid: '\Google\Cloud\Vision\V1\WebDetection\WebLabel::getLabel()'
     name: getLabel

@@ -39,7 +39,11 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type \Google\Cloud\Vision\V1\InputConfig $input_config           Required. Information about the input file.     @type \Google\Cloud\Vision\V1\Feature[]|\Google\Protobuf\Internal\RepeatedField $features           Required. Requested features.     @type \Google\Cloud\Vision\V1\ImageContext $image_context           Additional context that may accompany the image(s) in the file.     @type int[]|\Google\Protobuf\Internal\RepeatedField $pages           Pages of the file to perform image annotation.           Pages starts from 1, we assume the first page of the file is page 1.           At most 5 pages are supported per request. Pages can be negative.           Page 1 means the first page.           Page 2 means the second page.           Page -1 means the last page.           Page -2 means the second to the last page.           If the file is GIF instead of PDF or TIFF, page refers to GIF frames.           If this field is empty, by default the service performs image annotation           for the first 5 pages of the file. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ input_config', type: \Google\Cloud\Vision\V1\InputConfig, description: 'Required. Information about the input file.' }
+      - { name: '↳ features', type: '\Google\Cloud\Vision\V1\Feature[]|\Google\Protobuf\Internal\RepeatedField', description: 'Required. Requested features.' }
+      - { name: '↳ image_context', type: \Google\Cloud\Vision\V1\ImageContext, description: 'Additional context that may accompany the image(s) in the file.' }
+      - { name: '↳ pages', type: 'int[]|\Google\Protobuf\Internal\RepeatedField', description: 'Pages of the file to perform image annotation. Pages starts from 1, we assume the first page of the file is page 1. At most 5 pages are supported per request. Pages can be negative. Page 1 means the first page. Page 2 means the second page. Page -1 means the last page. Page -2 means the second to the last page. If the file is GIF instead of PDF or TIFF, page refers to GIF frames. If this field is empty, by default the service performs image annotation for the first 5 pages of the file.' }
   -
     uid: '\Google\Cloud\Vision\V1\AnnotateFileRequest::getInputConfig()'
     name: getInputConfig

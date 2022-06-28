@@ -26,7 +26,8 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type \Google\Cloud\Vision\V1\AnnotateImageResponse[]|\Google\Protobuf\Internal\RepeatedField $responses           Individual responses to image annotation requests within the batch. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ responses', type: '\Google\Cloud\Vision\V1\AnnotateImageResponse[]|\Google\Protobuf\Internal\RepeatedField', description: 'Individual responses to image annotation requests within the batch.' }
   -
     uid: '\Google\Cloud\Vision\V1\BatchAnnotateImagesResponse::getResponses()'
     name: getResponses

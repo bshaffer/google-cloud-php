@@ -36,7 +36,10 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type int $state           Current state of the batch operation.     @type \Google\Protobuf\Timestamp $create_time           The time when the batch request was received.     @type \Google\Protobuf\Timestamp $update_time           The time when the operation result was last updated. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ state', type: int, description: 'Current state of the batch operation.' }
+      - { name: '↳ create_time', type: \Google\Protobuf\Timestamp, description: 'The time when the batch request was received.' }
+      - { name: '↳ update_time', type: \Google\Protobuf\Timestamp, description: 'The time when the operation result was last updated.' }
   -
     uid: '\Google\Cloud\Vision\V1\OperationMetadata::getState()'
     name: getState

@@ -27,7 +27,8 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type bool $enable_text_detection_confidence_score           By default, Cloud Vision API only includes confidence score for           DOCUMENT_TEXT_DETECTION result. Set the flag to true to include confidence           score for TEXT_DETECTION as well. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ enable_text_detection_confidence_score', type: bool, description: 'By default, Cloud Vision API only includes confidence score for DOCUMENT_TEXT_DETECTION result. Set the flag to true to include confidence score for TEXT_DETECTION as well.' }
   -
     uid: '\Google\Cloud\Vision\V1\TextDetectionParams::getEnableTextDetectionConfidenceScore()'
     name: getEnableTextDetectionConfidenceScore

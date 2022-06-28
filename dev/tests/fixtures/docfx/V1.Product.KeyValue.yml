@@ -29,7 +29,9 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type string $key           The key of the label attached to the product. Cannot be empty and cannot           exceed 128 bytes.     @type string $value           The value of the label attached to the product. Cannot be empty and           cannot exceed 128 bytes. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ key', type: string, description: 'The key of the label attached to the product. Cannot be empty and cannot exceed 128 bytes.' }
+      - { name: '↳ value', type: string, description: 'The value of the label attached to the product. Cannot be empty and cannot exceed 128 bytes.' }
   -
     uid: '\Google\Cloud\Vision\V1\Product\KeyValue::getKey()'
     name: getKey

@@ -31,7 +31,9 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type \Google\Cloud\Vision\V1\TextAnnotation\DetectedLanguage[]|\Google\Protobuf\Internal\RepeatedField $detected_languages           A list of detected languages together with confidence.     @type \Google\Cloud\Vision\V1\TextAnnotation\DetectedBreak $detected_break           Detected start or end of a text segment. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ detected_languages', type: '\Google\Cloud\Vision\V1\TextAnnotation\DetectedLanguage[]|\Google\Protobuf\Internal\RepeatedField', description: 'A list of detected languages together with confidence.' }
+      - { name: '↳ detected_break', type: \Google\Cloud\Vision\V1\TextAnnotation\DetectedBreak, description: 'Detected start or end of a text segment.' }
   -
     uid: '\Google\Cloud\Vision\V1\TextAnnotation\TextProperty::getDetectedLanguages()'
     name: getDetectedLanguages

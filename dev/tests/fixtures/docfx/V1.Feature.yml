@@ -34,7 +34,10 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type int $type           The feature type.     @type int $max_results           Maximum number of results of this type. Does not apply to           `TEXT_DETECTION`, `DOCUMENT_TEXT_DETECTION`, or `CROP_HINTS`.     @type string $model           Model to use for the feature.           Supported values: "builtin/stable" (the default if unset) and           "builtin/latest". }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ type', type: int, description: 'The feature type.' }
+      - { name: '↳ max_results', type: int, description: 'Maximum number of results of this type. Does not apply to `TEXT_DETECTION`, `DOCUMENT_TEXT_DETECTION`, or `CROP_HINTS`.' }
+      - { name: '↳ model', type: string, description: 'Model to use for the feature. Supported values: "builtin/stable" (the default if unset) and "builtin/latest".' }
   -
     uid: '\Google\Cloud\Vision\V1\Feature::getType()'
     name: getType

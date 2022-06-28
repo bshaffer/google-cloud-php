@@ -33,7 +33,9 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type \Google\Type\LatLng $min_lat_lng           Min lat/long pair.     @type \Google\Type\LatLng $max_lat_lng           Max lat/long pair. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ min_lat_lng', type: \Google\Type\LatLng, description: 'Min lat/long pair.' }
+      - { name: '↳ max_lat_lng', type: \Google\Type\LatLng, description: 'Max lat/long pair.' }
   -
     uid: '\Google\Cloud\Vision\V1\LatLongRect::getMinLatLng()'
     name: getMinLatLng

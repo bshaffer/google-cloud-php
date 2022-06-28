@@ -26,7 +26,8 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type bool $include_geo_results           Whether to include results derived from the geo information in the image. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ include_geo_results', type: bool, description: 'Whether to include results derived from the geo information in the image.' }
   -
     uid: '\Google\Cloud\Vision\V1\WebDetectionParams::getIncludeGeoResults()'
     name: getIncludeGeoResults

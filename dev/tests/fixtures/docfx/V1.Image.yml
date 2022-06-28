@@ -31,7 +31,9 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type string $content           Image content, represented as a stream of bytes.           Note: As with all `bytes` fields, protobuffers use a pure binary           representation, whereas JSON representations use base64.           Currently, this field only works for BatchAnnotateImages requests. It does           not work for AsyncBatchAnnotateImages requests.     @type \Google\Cloud\Vision\V1\ImageSource $source           Google Cloud Storage image location, or publicly-accessible image           URL. If both `content` and `source` are provided for an image, `content`           takes precedence and is used to perform the image annotation request. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ content', type: string, description: 'Image content, represented as a stream of bytes. Note: As with all `bytes` fields, protobuffers use a pure binary representation, whereas JSON representations use base64. Currently, this field only works for BatchAnnotateImages requests. It does not work for AsyncBatchAnnotateImages requests.' }
+      - { name: '↳ source', type: \Google\Cloud\Vision\V1\ImageSource, description: 'Google Cloud Storage image location, or publicly-accessible image URL. If both `content` and `source` are provided for an image, `content` takes precedence and is used to perform the image annotation request.' }
   -
     uid: '\Google\Cloud\Vision\V1\Image::getContent()'
     name: getContent

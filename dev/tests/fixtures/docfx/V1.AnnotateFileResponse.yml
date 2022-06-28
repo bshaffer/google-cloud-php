@@ -40,7 +40,11 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type \Google\Cloud\Vision\V1\InputConfig $input_config           Information about the file for which this response is generated.     @type \Google\Cloud\Vision\V1\AnnotateImageResponse[]|\Google\Protobuf\Internal\RepeatedField $responses           Individual responses to images found within the file. This field will be           empty if the `error` field is set.     @type int $total_pages           This field gives the total number of pages in the file.     @type \Google\Rpc\Status $error           If set, represents the error message for the failed request. The           `responses` field will not be set in this case. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ input_config', type: \Google\Cloud\Vision\V1\InputConfig, description: 'Information about the file for which this response is generated.' }
+      - { name: '↳ responses', type: '\Google\Cloud\Vision\V1\AnnotateImageResponse[]|\Google\Protobuf\Internal\RepeatedField', description: 'Individual responses to images found within the file. This field will be empty if the `error` field is set.' }
+      - { name: '↳ total_pages', type: int, description: 'This field gives the total number of pages in the file.' }
+      - { name: '↳ error', type: \Google\Rpc\Status, description: 'If set, represents the error message for the failed request. The `responses` field will not be set in this case.' }
   -
     uid: '\Google\Cloud\Vision\V1\AnnotateFileResponse::getInputConfig()'
     name: getInputConfig

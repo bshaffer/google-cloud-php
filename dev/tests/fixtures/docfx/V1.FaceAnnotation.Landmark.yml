@@ -31,7 +31,9 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type int $type           Face landmark type.     @type \Google\Cloud\Vision\V1\Position $position           Face landmark position. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ type', type: int, description: 'Face landmark type.' }
+      - { name: '↳ position', type: \Google\Cloud\Vision\V1\Position, description: 'Face landmark position.' }
   -
     uid: '\Google\Cloud\Vision\V1\FaceAnnotation\Landmark::getType()'
     name: getType

@@ -29,7 +29,9 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type \Google\Cloud\Vision\V1\Product[]|\Google\Protobuf\Internal\RepeatedField $products           List of products.     @type string $next_page_token           Token to retrieve the next page of results, or empty if there are no more           results in the list. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ products', type: '\Google\Cloud\Vision\V1\Product[]|\Google\Protobuf\Internal\RepeatedField', description: 'List of products.' }
+      - { name: '↳ next_page_token', type: string, description: 'Token to retrieve the next page of results, or empty if there are no more results in the list.' }
   -
     uid: '\Google\Cloud\Vision\V1\ListProductsResponse::getProducts()'
     name: getProducts

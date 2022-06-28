@@ -83,7 +83,9 @@ items:
     parameters:
       - { name: image, type: resource|string|\Google\Cloud\Vision\V1\Image, description: 'The image to be processed.' }
       - { name: features, type: '\Google\Cloud\Vision\V1\Feature[]|int[]', description: 'Requested features.' }
-      - { name: optionalArgs, type: array, description: '{     Configuration Options.      @type ImageContext        $imageContext  Additional context that may accompany the image.     @type RetrySettings|array $retrySettings          Retry settings to use for this call. Can be a          {@see} object, or an associative array          of retry settings parameters. See the documentation on          {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: 'Configuration Options.' }
+      - { name: '↳ ', type: ImageContext, description: '$imageContext Additional context that may accompany the image.' }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\ImageAnnotatorClient::faceDetection()'
     name: faceDetection
@@ -102,7 +104,9 @@ items:
       - php
     parameters:
       - { name: image, type: resource|string|\Google\Cloud\Vision\V1\Image, description: 'The image to be processed.' }
-      - { name: optionalArgs, type: array, description: '{     Configuration Options.      @type ImageContext        $imageContext  Additional context that may accompany the image.     @type RetrySettings|array $retrySettings          Retry settings to use for this call. Can be a          {@see} object, or an associative array          of retry settings parameters. See the documentation on          {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: 'Configuration Options.' }
+      - { name: '↳ ', type: ImageContext, description: '$imageContext Additional context that may accompany the image.' }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\ImageAnnotatorClient::landmarkDetection()'
     name: landmarkDetection
@@ -121,7 +125,9 @@ items:
       - php
     parameters:
       - { name: image, type: resource|string|\Google\Cloud\Vision\V1\Image, description: 'The image to be processed.' }
-      - { name: optionalArgs, type: array, description: '{     Configuration Options.      @type ImageContext        $imageContext  Additional context that may accompany the image.     @type RetrySettings|array $retrySettings          Retry settings to use for this call. Can be a          {@see} object, or an associative array          of retry settings parameters. See the documentation on          {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: 'Configuration Options.' }
+      - { name: '↳ ', type: ImageContext, description: '$imageContext Additional context that may accompany the image.' }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\ImageAnnotatorClient::logoDetection()'
     name: logoDetection
@@ -140,7 +146,9 @@ items:
       - php
     parameters:
       - { name: image, type: resource|string|\Google\Cloud\Vision\V1\Image, description: 'The image to be processed.' }
-      - { name: optionalArgs, type: array, description: '{     Configuration Options.      @type ImageContext        $imageContext  Additional context that may accompany the image.     @type RetrySettings|array $retrySettings          Retry settings to use for this call. Can be a          {@see} object, or an associative array          of retry settings parameters. See the documentation on          {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: 'Configuration Options.' }
+      - { name: '↳ ', type: ImageContext, description: '$imageContext Additional context that may accompany the image.' }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\ImageAnnotatorClient::labelDetection()'
     name: labelDetection
@@ -159,7 +167,9 @@ items:
       - php
     parameters:
       - { name: image, type: resource|string|\Google\Cloud\Vision\V1\Image, description: 'The image to be processed.' }
-      - { name: optionalArgs, type: array, description: '{     Configuration Options.      @type ImageContext        $imageContext  Additional context that may accompany the image.     @type RetrySettings|array $retrySettings          Retry settings to use for this call. Can be a          {@see} object, or an associative array          of retry settings parameters. See the documentation on          {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: 'Configuration Options.' }
+      - { name: '↳ ', type: ImageContext, description: '$imageContext Additional context that may accompany the image.' }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\ImageAnnotatorClient::textDetection()'
     name: textDetection
@@ -178,7 +188,9 @@ items:
       - php
     parameters:
       - { name: image, type: resource|string|\Google\Cloud\Vision\V1\Image, description: 'The image to be processed.' }
-      - { name: optionalArgs, type: array, description: '{     Configuration Options.      @type ImageContext        $imageContext  Additional context that may accompany the image.     @type RetrySettings|array $retrySettings          Retry settings to use for this call. Can be a          {@see} object, or an associative array          of retry settings parameters. See the documentation on          {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: 'Configuration Options.' }
+      - { name: '↳ ', type: ImageContext, description: '$imageContext Additional context that may accompany the image.' }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\ImageAnnotatorClient::documentTextDetection()'
     name: documentTextDetection
@@ -197,7 +209,9 @@ items:
       - php
     parameters:
       - { name: image, type: resource|string|\Google\Cloud\Vision\V1\Image, description: 'The image to be processed.' }
-      - { name: optionalArgs, type: array, description: '{     Configuration Options.      @type ImageContext        $imageContext  Additional context that may accompany the image.     @type RetrySettings|array $retrySettings          Retry settings to use for this call. Can be a          {@see} object, or an associative array          of retry settings parameters. See the documentation on          {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: 'Configuration Options.' }
+      - { name: '↳ ', type: ImageContext, description: '$imageContext Additional context that may accompany the image.' }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\ImageAnnotatorClient::safeSearchDetection()'
     name: safeSearchDetection
@@ -216,7 +230,9 @@ items:
       - php
     parameters:
       - { name: image, type: resource|string|\Google\Cloud\Vision\V1\Image, description: 'The image to be processed.' }
-      - { name: optionalArgs, type: array, description: '{     Configuration Options.      @type ImageContext        $imageContext  Additional context that may accompany the image.     @type RetrySettings|array $retrySettings          Retry settings to use for this call. Can be a          {@see} object, or an associative array          of retry settings parameters. See the documentation on          {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: 'Configuration Options.' }
+      - { name: '↳ ', type: ImageContext, description: '$imageContext Additional context that may accompany the image.' }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\ImageAnnotatorClient::imagePropertiesDetection()'
     name: imagePropertiesDetection
@@ -235,7 +251,9 @@ items:
       - php
     parameters:
       - { name: image, type: resource|string|\Google\Cloud\Vision\V1\Image, description: 'The image to be processed.' }
-      - { name: optionalArgs, type: array, description: '{     Configuration Options.      @type ImageContext        $imageContext  Additional context that may accompany the image.     @type RetrySettings|array $retrySettings          Retry settings to use for this call. Can be a          {@see} object, or an associative array          of retry settings parameters. See the documentation on          {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: 'Configuration Options.' }
+      - { name: '↳ ', type: ImageContext, description: '$imageContext Additional context that may accompany the image.' }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\ImageAnnotatorClient::cropHintsDetection()'
     name: cropHintsDetection
@@ -254,7 +272,9 @@ items:
       - php
     parameters:
       - { name: image, type: resource|string|\Google\Cloud\Vision\V1\Image, description: 'The image to be processed.' }
-      - { name: optionalArgs, type: array, description: '{     Configuration Options.      @type ImageContext        $imageContext  Additional context that may accompany the image.     @type RetrySettings|array $retrySettings          Retry settings to use for this call. Can be a          {@see} object, or an associative array          of retry settings parameters. See the documentation on          {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: 'Configuration Options.' }
+      - { name: '↳ ', type: ImageContext, description: '$imageContext Additional context that may accompany the image.' }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\ImageAnnotatorClient::webDetection()'
     name: webDetection
@@ -273,7 +293,9 @@ items:
       - php
     parameters:
       - { name: image, type: resource|string|\Google\Cloud\Vision\V1\Image, description: 'The image to be processed.' }
-      - { name: optionalArgs, type: array, description: '{     Configuration Options.      @type ImageContext        $imageContext  Additional context that may accompany the image.     @type RetrySettings|array $retrySettings          Retry settings to use for this call. Can be a          {@see} object, or an associative array          of retry settings parameters. See the documentation on          {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: 'Configuration Options.' }
+      - { name: '↳ ', type: ImageContext, description: '$imageContext Additional context that may accompany the image.' }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\ImageAnnotatorClient::objectLocalization()'
     name: objectLocalization
@@ -292,7 +314,9 @@ items:
       - php
     parameters:
       - { name: image, type: resource|string|\Google\Cloud\Vision\V1\Image, description: 'The image to be processed.' }
-      - { name: optionalArgs, type: array, description: '{     Configuration Options.      @type ImageContext        $imageContext  Additional context that may accompany the image.     @type RetrySettings|array $retrySettings          Retry settings to use for this call. Can be a          {@see} object, or an associative array          of retry settings parameters. See the documentation on          {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: 'Configuration Options.' }
+      - { name: '↳ ', type: ImageContext, description: '$imageContext Additional context that may accompany the image.' }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\ImageAnnotatorClient::productSearch()'
     name: productSearch
@@ -321,7 +345,9 @@ items:
     parameters:
       - { name: image, type: resource|string|\Google\Cloud\Vision\V1\Image, description: 'The image to be processed.' }
       - { name: productSearchParams, type: \Google\Cloud\Vision\V1\ProductSearchParams, description: 'Parameters for a product search request. Please note, this value will override the {@see} in the {@see} instance if provided.' }
-      - { name: optionalArgs, type: array, description: '{     Configuration Options.      @type ImageContext        $imageContext  Additional context that may accompany the image.     @type RetrySettings|array $retrySettings          Retry settings to use for this call. Can be a          {@see} object, or an associative array          of retry settings parameters. See the documentation on          {@see} for example usage. }' }
+      - { name: optionalArgs, type: array, description: 'Configuration Options.' }
+      - { name: '↳ ', type: ImageContext, description: '$imageContext Additional context that may accompany the image.' }
+      - { name: '↳ retrySettings', type: RetrySettings|array, description: 'Retry settings to use for this call. Can be a {@see} object, or an associative array of retry settings parameters. See the documentation on {@see} for example usage.' }
   -
     uid: '\Google\Cloud\Vision\V1\ImageAnnotatorClient::annotateSingleFeature()'
     name: annotateSingleFeature

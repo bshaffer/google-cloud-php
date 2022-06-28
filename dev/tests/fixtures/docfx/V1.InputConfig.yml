@@ -34,7 +34,10 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type \Google\Cloud\Vision\V1\GcsSource $gcs_source           The Google Cloud Storage location to read the input from.     @type string $content           File content, represented as a stream of bytes.           Note: As with all `bytes` fields, protobuffers use a pure binary           representation, whereas JSON representations use base64.           Currently, this field only works for BatchAnnotateFiles requests. It does           not work for AsyncBatchAnnotateFiles requests.     @type string $mime_type           The type of the file. Currently only "application/pdf", "image/tiff" and           "image/gif" are supported. Wildcards are not supported. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ gcs_source', type: \Google\Cloud\Vision\V1\GcsSource, description: 'The Google Cloud Storage location to read the input from.' }
+      - { name: '↳ content', type: string, description: 'File content, represented as a stream of bytes. Note: As with all `bytes` fields, protobuffers use a pure binary representation, whereas JSON representations use base64. Currently, this field only works for BatchAnnotateFiles requests. It does not work for AsyncBatchAnnotateFiles requests.' }
+      - { name: '↳ mime_type', type: string, description: 'The type of the file. Currently only "application/pdf", "image/tiff" and "image/gif" are supported. Wildcards are not supported.' }
   -
     uid: '\Google\Cloud\Vision\V1\InputConfig::getGcsSource()'
     name: getGcsSource

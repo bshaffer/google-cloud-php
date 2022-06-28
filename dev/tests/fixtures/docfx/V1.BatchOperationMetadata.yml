@@ -39,7 +39,10 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type int $state           The current state of the batch operation.     @type \Google\Protobuf\Timestamp $submit_time           The time when the batch request was submitted to the server.     @type \Google\Protobuf\Timestamp $end_time           The time when the batch request is finished and           [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ state', type: int, description: 'The current state of the batch operation.' }
+      - { name: '↳ submit_time', type: \Google\Protobuf\Timestamp, description: 'The time when the batch request was submitted to the server.' }
+      - { name: '↳ end_time', type: \Google\Protobuf\Timestamp, description: 'The time when the batch request is finished and [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.' }
   -
     uid: '\Google\Cloud\Vision\V1\BatchOperationMetadata::getState()'
     name: getState

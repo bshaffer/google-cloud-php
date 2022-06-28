@@ -34,7 +34,10 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type \Google\Protobuf\Timestamp $index_time           Timestamp of the index which provided these results. Products added to the           product set and products removed from the product set after this time are           not reflected in the current results.     @type \Google\Cloud\Vision\V1\ProductSearchResults\Result[]|\Google\Protobuf\Internal\RepeatedField $results           List of results, one for each product match.     @type \Google\Cloud\Vision\V1\ProductSearchResults\GroupedResult[]|\Google\Protobuf\Internal\RepeatedField $product_grouped_results           List of results grouped by products detected in the query image. Each entry           corresponds to one bounding polygon in the query image, and contains the           matching products specific to that region. There may be duplicate product           matches in the union of all the per-product results. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ index_time', type: \Google\Protobuf\Timestamp, description: 'Timestamp of the index which provided these results. Products added to the product set and products removed from the product set after this time are not reflected in the current results.' }
+      - { name: '↳ results', type: '\Google\Cloud\Vision\V1\ProductSearchResults\Result[]|\Google\Protobuf\Internal\RepeatedField', description: 'List of results, one for each product match.' }
+      - { name: '↳ product_grouped_results', type: '\Google\Cloud\Vision\V1\ProductSearchResults\GroupedResult[]|\Google\Protobuf\Internal\RepeatedField', description: 'List of results grouped by products detected in the query image. Each entry corresponds to one bounding polygon in the query image, and contains the matching products specific to that region. There may be duplicate product matches in the union of all the per-product results.' }
   -
     uid: '\Google\Cloud\Vision\V1\ProductSearchResults::getIndexTime()'
     name: getIndexTime

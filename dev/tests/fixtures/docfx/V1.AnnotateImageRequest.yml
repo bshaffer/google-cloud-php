@@ -37,7 +37,10 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type \Google\Cloud\Vision\V1\Image $image           The image to be processed.     @type \Google\Cloud\Vision\V1\Feature[]|\Google\Protobuf\Internal\RepeatedField $features           Requested features.     @type \Google\Cloud\Vision\V1\ImageContext $image_context           Additional context that may accompany the image. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ image', type: \Google\Cloud\Vision\V1\Image, description: 'The image to be processed.' }
+      - { name: '↳ features', type: '\Google\Cloud\Vision\V1\Feature[]|\Google\Protobuf\Internal\RepeatedField', description: 'Requested features.' }
+      - { name: '↳ image_context', type: \Google\Cloud\Vision\V1\ImageContext, description: 'Additional context that may accompany the image.' }
   -
     uid: '\Google\Cloud\Vision\V1\AnnotateImageRequest::getImage()'
     name: getImage

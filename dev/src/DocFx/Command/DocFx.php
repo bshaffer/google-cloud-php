@@ -35,7 +35,7 @@ class DocFx extends Command
             ->setDescription('Generate DocFX yaml from a phpdoc strucutre.xml')
             ->addArgument('component', InputArgument::REQUIRED, 'Generate docs only for a single component.')
             ->addArgument('structure_xml', InputArgument::REQUIRED, 'Path to phpdoc structure.xml')
-            ->addOption('outdir', '', InputOption::VALUE_REQUIRED, 'Path where to store the generated output.', 'out')
+            ->addOption('out', '', InputOption::VALUE_REQUIRED, 'Path where to store the generated output.', 'out')
         ;
     }
 
@@ -43,7 +43,7 @@ class DocFx extends Command
     {
         $component = $input->getArgument('component');
         $xml = $input->getArgument('structure_xml');
-        $outDir = $input->getOption('outdir');
+        $outDir = $input->getOption('out');
 
         if (!file_exists($xml)) {
             throw new RuntimeException('provided path to structure.xml does not exist');

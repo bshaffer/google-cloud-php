@@ -35,7 +35,10 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type \Google\Cloud\Vision\V1\BoundingPoly $bounding_poly           The bounding polygon around the product detected in the query image.     @type \Google\Cloud\Vision\V1\ProductSearchResults\Result[]|\Google\Protobuf\Internal\RepeatedField $results           List of results, one for each product match.     @type \Google\Cloud\Vision\V1\ProductSearchResults\ObjectAnnotation[]|\Google\Protobuf\Internal\RepeatedField $object_annotations           List of generic predictions for the object in the bounding box. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ bounding_poly', type: \Google\Cloud\Vision\V1\BoundingPoly, description: 'The bounding polygon around the product detected in the query image.' }
+      - { name: '↳ results', type: '\Google\Cloud\Vision\V1\ProductSearchResults\Result[]|\Google\Protobuf\Internal\RepeatedField', description: 'List of results, one for each product match.' }
+      - { name: '↳ object_annotations', type: '\Google\Cloud\Vision\V1\ProductSearchResults\ObjectAnnotation[]|\Google\Protobuf\Internal\RepeatedField', description: 'List of generic predictions for the object in the bounding box.' }
   -
     uid: '\Google\Cloud\Vision\V1\ProductSearchResults\GroupedResult::getBoundingPoly()'
     name: getBoundingPoly

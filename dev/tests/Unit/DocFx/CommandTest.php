@@ -57,7 +57,7 @@ class CommandTest extends TestCase
         $structureXml = __DIR__ . '/../../fixtures/phpdoc/structure.xml';
         $tmpDir = sys_get_temp_dir() . '/' . rand();
         $cmd = sprintf(
-            __DIR__ . '/../../../google-cloud docfx Vision %s --outdir=%s',
+            __DIR__ . '/../../../google-cloud docfx Vision %s --out=%s',
             $structureXml,
             $tmpDir
         );

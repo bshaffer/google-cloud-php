@@ -35,7 +35,10 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type \Google\Type\Color $color           RGB components of the color.     @type float $score           Image-specific score for this color. Value in range [0, 1].     @type float $pixel_fraction           The fraction of pixels the color occupies in the image.           Value in range [0, 1]. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ color', type: \Google\Type\Color, description: 'RGB components of the color.' }
+      - { name: '↳ score', type: float, description: 'Image-specific score for this color. Value in range [0, 1].' }
+      - { name: '↳ pixel_fraction', type: float, description: 'The fraction of pixels the color occupies in the image. Value in range [0, 1].' }
   -
     uid: '\Google\Cloud\Vision\V1\ColorInfo::getColor()'
     name: getColor

@@ -29,7 +29,9 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type \Google\Cloud\Vision\V1\Vertex[]|\Google\Protobuf\Internal\RepeatedField $vertices           The bounding polygon vertices.     @type \Google\Cloud\Vision\V1\NormalizedVertex[]|\Google\Protobuf\Internal\RepeatedField $normalized_vertices           The bounding polygon normalized vertices. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ vertices', type: '\Google\Cloud\Vision\V1\Vertex[]|\Google\Protobuf\Internal\RepeatedField', description: 'The bounding polygon vertices.' }
+      - { name: '↳ normalized_vertices', type: '\Google\Cloud\Vision\V1\NormalizedVertex[]|\Google\Protobuf\Internal\RepeatedField', description: 'The bounding polygon normalized vertices.' }
   -
     uid: '\Google\Cloud\Vision\V1\BoundingPoly::getVertices()'
     name: getVertices

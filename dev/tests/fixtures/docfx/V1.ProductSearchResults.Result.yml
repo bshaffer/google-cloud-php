@@ -34,7 +34,10 @@ items:
     langs:
       - php
     parameters:
-      - { name: data, type: array, description: '{     Optional. Data for populating the Message object.      @type \Google\Cloud\Vision\V1\Product $product           The Product.     @type float $score           A confidence level on the match, ranging from 0 (no confidence) to           1 (full confidence).     @type string $image           The resource name of the image from the product that is the closest match           to the query. }' }
+      - { name: data, type: array, description: 'Optional. Data for populating the Message object.' }
+      - { name: '↳ product', type: \Google\Cloud\Vision\V1\Product, description: 'The Product.' }
+      - { name: '↳ score', type: float, description: 'A confidence level on the match, ranging from 0 (no confidence) to 1 (full confidence).' }
+      - { name: '↳ image', type: string, description: 'The resource name of the image from the product that is the closest match to the query.' }
   -
     uid: '\Google\Cloud\Vision\V1\ProductSearchResults\Result::getProduct()'
     name: getProduct

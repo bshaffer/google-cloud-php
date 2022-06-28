@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-namespace Google\Cloud\Dev\Tests\Unit;
+namespace Google\Cloud\Dev\Tests\Unit\DocFx;
 
 use Google\Cloud\Core\Testing\TestHelpers;
 use Google\Cloud\Dev\ComponentManager;
@@ -25,7 +25,7 @@ use Symfony\Component\Yaml\Yaml;
 /**
  * @group dev
  */
-class DocFXTest extends TestCase
+class CommandTest extends TestCase
 {
     private static $fixturesDir;
     private static $tmpDir;
@@ -45,7 +45,7 @@ class DocFXTest extends TestCase
      */
     public function testDocFxFiles(string $file)
     {
-        $this->assertTrue(file_exists(self::$fixturesDir . '/' . $file));
+        $this->assertTrue(file_exists(self::$fixturesDir . '/' . $file), $file);
         $this->assertEquals(
             Yaml::parse(file_get_contents(self::$fixturesDir . '/' . $file)),
             Yaml::parse(file_get_contents(self::$tmpDir . '/' . $file))
@@ -54,10 +54,10 @@ class DocFXTest extends TestCase
 
     public function provideDoxFxFiles()
     {
-        $structureXml = __DIR__ . '/../fixtures/phpdoc/structure.xml';
-        $tmpDir = sys_get_temp_dir() . '/.phpdoc';
+        $structureXml = __DIR__ . '/../../fixtures/phpdoc/structure.xml';
+        $tmpDir = sys_get_temp_dir() . '/' . rand();
         $cmd = sprintf(
-            __DIR__ . '/../../google-cloud docfx Vision %s --out=%s',
+            __DIR__ . '/../../../google-cloud docfx Vision %s --outdir=%s',
             $structureXml,
             $tmpDir
         );
@@ -70,7 +70,7 @@ class DocFXTest extends TestCase
         }
 
         self::$tmpDir = $tmpDir;
-        self::$fixturesDir = __DIR__ . '/../fixtures/docfx';
+        self::$fixturesDir = __DIR__ . '/../../fixtures/docfx';
 
         return $filesAsArguments;
     }

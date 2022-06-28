@@ -34,7 +34,6 @@ class DocFx extends Command
         $this->setName('docfx')
             ->setDescription('Generate DocFX yaml from a phpdoc strucutre.xml')
             ->addArgument('component', InputArgument::REQUIRED, 'Generate docs only for a single component.')
-            ->addArgument('version', InputArgument::REQUIRED, 'The version of the docs to generate.')
             ->addArgument('structure_xml', InputArgument::REQUIRED, 'Path to phpdoc structure.xml')
             ->addOption('outdir', '', InputOption::VALUE_REQUIRED, 'Path where to store the generated output.', 'out')
         ;
@@ -43,7 +42,6 @@ class DocFx extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $component = $input->getArgument('component');
-        $version = $input->getArgument('version');
         $xml = $input->getArgument('structure_xml');
         $outDir = $input->getOption('outdir');
 
@@ -76,16 +74,6 @@ class DocFx extends Command
         $flags = Yaml::DUMP_MULTI_LINE_LITERAL_BLOCK;
 
         foreach ($structure->file as $file) {
-            // Skip metadata files
-            if (0 === strpos($file['path'], 'metadata/')) {
-                continue;
-            }
-
-            // Skip test files
-            if (0 === strpos($file['path'], 'tests/')) {
-                continue;
-            }
-
             // only document classes for now
             if (!isset($file->class[0])) {
                 continue;
@@ -127,11 +115,6 @@ class DocFx extends Command
         $tocYaml = Yaml::dump([$tocArray], $inline, $indent, $flags);
         $outFile = sprintf('%s/toc.yml', $outDir);
         file_put_contents($outFile, $tocYaml);
-
-        // Write the docs.metadata file
-        $docsMetadata = $this->getDocsMetadataContent($namespace, $version);
-        $outFile = sprintf('%s/docs.metadata', $outDir);
-        file_put_contents($outFile, $docsMetadata);
 
         // Todo: create index.yml
     }
@@ -190,26 +173,6 @@ class DocFx extends Command
             'composer autoload.psr-4 does not contain a namespace for component "%s"',
             $component
         ));
-    }
-
-    private function getDocsMetadataContent(string $namespace, string $version)
-    {
-        list($nanos, $seconds) = explode(' ', microtime());
-        $nanos = str_replace('0.', '', $nanos) . '0';
-
-        $docsMetadata = <<<EOF
-update_time {
-    seconds: %s
-    nanos: %s
-}
-name: "%s"
-version: "%s"
-language: "php"
-
-EOF;
-
-        $name = str_replace('\\', '.', $namespace);
-        return sprintf($docsMetadata, $seconds, $nanos, $name, $version);
     }
 
     private function getDocFxClassArray(ClassNode $class)

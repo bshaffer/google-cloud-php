@@ -48,6 +48,12 @@ class MethodNode
     {
         $parameters = [];
         foreach ($this->xmlNode->argument as $parameterNode) {
+            $parameter = [
+                'name' => (string) $parameterNode->name,
+                'type' => (string) $parameterNode->type,
+            ];
+
+            // Determine the description of the parameter
             $description = '';
             if ($this->xmlNode->docblock) {
                 foreach ($this->xmlNode->docblock->tag as $tag) {
@@ -59,10 +65,20 @@ class MethodNode
                 }
             }
 
-            $parameter = [
-                'name' => (string) $parameterNode->name,
-                'type' => (string) $parameterNode->type,
-            ];
+            // For option arrays with nested parameters.
+            // Example:
+            // @param $options {
+            //    @type string $key
+            //         Some description of the "key" option
+            // }
+            if ($this->hasNestedParams($description)) {
+                $parameters = array_merge(
+                    $parameters,
+                    $this->getNestedParams($parameter, $description)
+                );
+
+                continue;
+            }
 
             if ($description) {
                 $parameter['description'] = $description;
@@ -71,5 +87,57 @@ class MethodNode
             $parameters[] = $parameter;
         }
         return $parameters;
+    }
+
+
+    /**
+     * PHPDoc has no support for nested params. This is a workaround to parse
+     * our custom format.
+     */
+    private function getNestedParams(array $parentParameter, string $description): array
+    {
+        // Remove "optional" prefix (in handwritten clients).
+        $parameterString = trim(str_replace('[optional]', '', $description));
+
+        // Remove wrapping "{}".
+        $parameterString = substr($parameterString, 1, -1);
+
+        // Create an array item for each parameter.
+        $nestedParameters = explode('@type', $parameterString);
+
+        // Remove the first, since that's the wrapping array param,
+        // and use it for the wrapping param description
+        if ($parentDescription = trim(array_shift($nestedParameters))) {
+            $parentParameter['description'] = $parentDescription;
+        }
+        $parameters[] = $parentParameter;
+        foreach ($nestedParameters as $param) {
+            // Parse "@type string $key" syntax
+            list($type, $name, $description) = explode(' ', trim($param), 3);
+
+            // remove "$" prefix from parameter name and add "↳ " for UX to indicate it's nested.
+            $name = '↳ ' . ltrim($name, '$');
+            // Trim newline whitespace
+            $description = preg_replace('/\s+/', ' ', $description);
+
+            $parameters[] = [
+                'name' => $name,
+                'type' => $type,
+                'description' => trim($description),
+            ];
+        }
+
+        return $parameters;
+    }
+
+    private function hasNestedParams(string $description): bool
+    {
+        $description = trim(str_replace('[optional]', '', $description));
+
+        if (strlen($description) === 0) {
+            return false;
+        }
+
+        return $description[0] === '{';
     }
 }

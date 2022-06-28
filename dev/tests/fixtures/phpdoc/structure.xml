@@ -429,7 +429,7 @@ $info = $imageProperties-&gt;info();
             
             <parse_markers></parse_markers>
         </file>
-            <file path="src/Annotation/Entity.php" hash="2ecdd8dc0ec59c53a65ab913f52a7ca1">
+            <file path="src/Annotation/Entity.php" hash="e4fa4a86c0faa5f772edde9dfdbf0558">
             <docblock line="0">
     <description>Copyright 2016 Google Inc. All Rights Reserved.</description>
     <long-description>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
@@ -690,15 +690,15 @@ release."
 
         <docblock line="196">
     <description>Create an entity annotation result.</description>
-    <long-description>This class is created internally by {@see} and is used to represent various
+    <long-description>This class is created internally by {@see \Google\Cloud\Vision\Annotation\Annotation} and is used to represent various
 annotation feature results.
 
 This class should not be instantiated externally.
 
-Entities are returned by {@see},
-{@see},
-{@see} and
-{@see}.</long-description>
+Entities are returned by {@see \Google\Cloud\Vision\Annotation\Annotation::landmarks()},
+{@see \Google\Cloud\Vision\Annotation\Annotation::logos()},
+{@see \Google\Cloud\Vision\Annotation\Annotation::labels()} and
+{@see \Google\Cloud\Vision\Annotation\Annotation::text()}.</long-description>
                     <tag
                 name="param"
                 description="The entity annotation result"
@@ -1341,7 +1341,7 @@ $info = $imageProperties-&gt;info();
             
             <parse_markers></parse_markers>
         </file>
-            <file path="src/Annotation/Face.php" hash="15e04b91d24ba5ed0f15ba2c07b665e4">
+            <file path="src/Annotation/Face.php" hash="b4182b24873753e587fec8ad195043ee">
             <docblock line="0">
     <description>Copyright 2016 Google Inc. All Rights Reserved.</description>
     <long-description>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
@@ -1681,8 +1681,8 @@ release."
 
         <docblock line="232">
     <description>Create an Face result.</description>
-    <long-description>This class is created internally by {@see}.
-See {@see} for full usage details.
+    <long-description>This class is created internally by {@see \Google\Cloud\Vision\Annotation\Annotation}.
+See {@see \Google\Cloud\Vision\Annotation\Annotation::faces()} for full usage details.
 This class should not be instantiated outside the externally.</long-description>
                     <tag
                 name="param"
@@ -2103,7 +2103,7 @@ release."
             
             <parse_markers></parse_markers>
         </file>
-            <file path="src/Annotation/ImageProperties.php" hash="e83dfc00b7d3972e57dcd5fd790434bd">
+            <file path="src/Annotation/ImageProperties.php" hash="04f5e3ef2be4a1fbf8ab247a4f4876f2">
             <docblock line="0">
     <description>Copyright 2016 Google Inc. All Rights Reserved.</description>
     <long-description>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
@@ -2207,8 +2207,8 @@ release."
 
         <docblock line="62">
     <description>Create an ImageProperties result.</description>
-    <long-description>This class is created internally by {@see}.
-See {@see} for full usage details.
+    <long-description>This class is created internally by {@see \Google\Cloud\Vision\Annotation\Annotation}.
+See {@see \Google\Cloud\Vision\Annotation\Annotation::imageProperties()} for full usage details.
 This class should not be instantiated outside the externally.</long-description>
                     <tag
                 name="param"
@@ -2370,7 +2370,7 @@ release."
             
             <parse_markers></parse_markers>
         </file>
-            <file path="src/Annotation/SafeSearch.php" hash="92010af2498681d3f5a7ba147600e46c">
+            <file path="src/Annotation/SafeSearch.php" hash="f6ff4fa6d85b8675e6d9aae52affca2d">
             <docblock line="0">
     <description>Copyright 2016 Google Inc. All Rights Reserved.</description>
     <long-description>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
@@ -2557,7 +2557,7 @@ release."
     <description>Create a SafeSearch annotation result</description>
     <long-description>This class is instantiated internally and is used to represent the result of Cloud Vision&#039;s SafeSearch annotation
 feature. It should not be instantiated directly. For complete usage instructions, please refer to
-{@see}.</long-description>
+{@see \Google\Cloud\Vision\Annotation\Annotation::safeSearch()}.</long-description>
                     <tag
                 name="param"
                 description="The SafeSearch annotation result"
@@ -4282,7 +4282,7 @@ release."
             
             <parse_markers></parse_markers>
         </file>
-            <file path="src/Image.php" hash="636e6648e5718f41405b590e838053f2">
+            <file path="src/Image.php" hash="a99c8ac4aa0ecc1f44df055361e34a64">
             <docblock line="0">
     <description>Copyright 2016 Google Inc. All Rights Reserved.</description>
     <long-description>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
@@ -4604,7 +4604,7 @@ release."
                 description="An image to configure with
 the given settings. This parameter will accept a resource, a
 string of bytes, the URI of an image in a publicly-accessible
-web location, or an instance of {@see}."
+web location, or an instance of {@see \Google\Cloud\Vision\Google\Cloud\Storage\StorageObject}."
                                                                  variable="image"                                 type="resource|string|\Google\Cloud\Storage\StorageObject"/>
                 <tag
                 name="param"
@@ -4654,7 +4654,7 @@ the names offered by the cloud vision service. These names are
 
         <docblock line="289">
     <description>Return a formatted annotate image request.</description>
-    <long-description>This method is used internally by {@see}
+    <long-description>This method is used internally by {@see \Google\Cloud\Vision\VisionClient}
 and is not generally intended for use outside of that context.
 
 Example:
@@ -15272,13 +15272,13 @@ OperationResponse object will not deserialize the final response.</description>
           accepts either a path to a credentials file, or a decoded credentials file as a
           PHP array.
           *Advanced usage*: In addition, this option can also accept a pre-constructed
-          {@see} object or
-          {@see} object. Note that when one of these
+          {@see \Google\Auth\FetchAuthTokenInterface} object or
+          {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
           objects are provided, any settings in $credentialsConfig will be ignored.
     @type array $credentialsConfig
           Options used to configure credentials, including auth token caching, for the
           client. For a full list of supporting configuration options, see
-          {@see} .
+          {@see \Google\ApiCore\CredentialsWrapper::build()} .
     @type bool $disableRetries
           Determines whether or not retries defined by the client configuration should be
           disabled. Defaults to `false`.
@@ -15291,7 +15291,7 @@ OperationResponse object will not deserialize the final response.</description>
           The transport used for executing network requests. May be either the string
           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
           *Advanced usage*: Additionally, it is possible to pass in an already
-          instantiated {@see} object. Note
+          instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
           that when this object is provided, any settings in $transportConfig, and any
           $serviceAddress setting, will be ignored.
     @type array $transportConfig
@@ -15302,8 +15302,8 @@ OperationResponse object will not deserialize the final response.</description>
               &#039;grpc&#039; =&gt; [...],
               &#039;rest&#039; =&gt; [...],
           ];
-          See the {@see} and
-          {@see} methods for the
+          See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
+          {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
           supported options.
     @type callable $clientCertSource
           A callable which returns the client cert as a string. This can be used to
@@ -15401,9 +15401,9 @@ try {
           Example: `projects/project-A/locations/eu`.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -15514,9 +15514,9 @@ try {
           Example: `projects/project-A/locations/eu`.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -15591,9 +15591,9 @@ one AnnotateFileRequest in BatchAnnotateFilesRequest."
           Example: `projects/project-A/locations/eu`.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -15660,9 +15660,9 @@ try {
           Example: `projects/project-A/locations/eu`.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -16250,13 +16250,13 @@ OperationResponse object will not deserialize the final response.</description>
           accepts either a path to a credentials file, or a decoded credentials file as a
           PHP array.
           *Advanced usage*: In addition, this option can also accept a pre-constructed
-          {@see} object or
-          {@see} object. Note that when one of these
+          {@see \Google\Auth\FetchAuthTokenInterface} object or
+          {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
           objects are provided, any settings in $credentialsConfig will be ignored.
     @type array $credentialsConfig
           Options used to configure credentials, including auth token caching, for the
           client. For a full list of supporting configuration options, see
-          {@see} .
+          {@see \Google\ApiCore\CredentialsWrapper::build()} .
     @type bool $disableRetries
           Determines whether or not retries defined by the client configuration should be
           disabled. Defaults to `false`.
@@ -16269,7 +16269,7 @@ OperationResponse object will not deserialize the final response.</description>
           The transport used for executing network requests. May be either the string
           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
           *Advanced usage*: Additionally, it is possible to pass in an already
-          instantiated {@see} object. Note
+          instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
           that when this object is provided, any settings in $transportConfig, and any
           $serviceAddress setting, will be ignored.
     @type array $transportConfig
@@ -16280,8 +16280,8 @@ OperationResponse object will not deserialize the final response.</description>
               &#039;grpc&#039; =&gt; [...],
               &#039;rest&#039; =&gt; [...],
           ];
-          See the {@see} and
-          {@see} methods for the
+          See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
+          {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
           supported options.
     @type callable $clientCertSource
           A callable which returns the client cert as a string. This can be used to
@@ -16359,9 +16359,9 @@ Format is:
 
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -16437,9 +16437,9 @@ Format is
           long. It cannot contain the character `/`.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -16516,9 +16516,9 @@ Format is `projects/PROJECT_ID/locations/LOC_ID`."
           long. It cannot contain the character `/`.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -16610,9 +16610,9 @@ If an image ID is specified, it is ignored."
           most 128 characters long. It cannot contain the character `/`.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -16673,9 +16673,9 @@ Format is:
 
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -16731,9 +16731,9 @@ Format is:
 
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -16792,9 +16792,9 @@ Format is:
 
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -16851,9 +16851,9 @@ Format is:
 
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -16914,9 +16914,9 @@ Format is:
 
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -16977,9 +16977,9 @@ Format is:
 
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -17081,9 +17081,9 @@ Format is `projects/PROJECT_ID/locations/LOC_ID`."
 
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -17165,9 +17165,9 @@ Format is `projects/PROJECT_ID/locations/LOC_ID`."
           been generated by a previous call to the API.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -17249,9 +17249,9 @@ Format:
           been generated by a previous call to the API.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -17335,9 +17335,9 @@ Format is:
           been generated by a previous call to the API.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -17421,9 +17421,9 @@ Format is
           been generated by a previous call to the API.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -17533,9 +17533,9 @@ Format is `projects/PROJECT_ID/locations/LOC_ID`."
           the purge.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -17606,9 +17606,9 @@ Format is:
 
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -17680,9 +17680,9 @@ product.name is immutable."
           `description`.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -17749,9 +17749,9 @@ try {
           Valid mask path is `display_name`.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -19077,9 +19077,9 @@ $response = $imageAnnotatorClient-&gt;annotateImage($imageResource, $features);
     @type ImageContext        $imageContext  Additional context that may accompany the image.
     @type RetrySettings|array $retrySettings
          Retry settings to use for this call. Can be a
-         {@see} object, or an associative array
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} object, or an associative array
          of retry settings parameters. See the documentation on
-         {@see} for example usage.
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -19129,9 +19129,9 @@ $response = $imageAnnotatorClient-&gt;faceDetection($imageContent);
     @type ImageContext        $imageContext  Additional context that may accompany the image.
     @type RetrySettings|array $retrySettings
          Retry settings to use for this call. Can be a
-         {@see} object, or an associative array
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} object, or an associative array
          of retry settings parameters. See the documentation on
-         {@see} for example usage.
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -19181,9 +19181,9 @@ $response = $imageAnnotatorClient-&gt;landmarkDetection($imageContent);
     @type ImageContext        $imageContext  Additional context that may accompany the image.
     @type RetrySettings|array $retrySettings
          Retry settings to use for this call. Can be a
-         {@see} object, or an associative array
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} object, or an associative array
          of retry settings parameters. See the documentation on
-         {@see} for example usage.
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -19233,9 +19233,9 @@ $response = $imageAnnotatorClient-&gt;logoDetection($imageContent);
     @type ImageContext        $imageContext  Additional context that may accompany the image.
     @type RetrySettings|array $retrySettings
          Retry settings to use for this call. Can be a
-         {@see} object, or an associative array
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} object, or an associative array
          of retry settings parameters. See the documentation on
-         {@see} for example usage.
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -19285,9 +19285,9 @@ $response = $imageAnnotatorClient-&gt;labelDetection($imageContent);
     @type ImageContext        $imageContext  Additional context that may accompany the image.
     @type RetrySettings|array $retrySettings
          Retry settings to use for this call. Can be a
-         {@see} object, or an associative array
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} object, or an associative array
          of retry settings parameters. See the documentation on
-         {@see} for example usage.
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -19337,9 +19337,9 @@ $response = $imageAnnotatorClient-&gt;textDetection($imageContent);
     @type ImageContext        $imageContext  Additional context that may accompany the image.
     @type RetrySettings|array $retrySettings
          Retry settings to use for this call. Can be a
-         {@see} object, or an associative array
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} object, or an associative array
          of retry settings parameters. See the documentation on
-         {@see} for example usage.
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -19389,9 +19389,9 @@ $response = $imageAnnotatorClient-&gt;documentTextDetection($imageContent);
     @type ImageContext        $imageContext  Additional context that may accompany the image.
     @type RetrySettings|array $retrySettings
          Retry settings to use for this call. Can be a
-         {@see} object, or an associative array
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} object, or an associative array
          of retry settings parameters. See the documentation on
-         {@see} for example usage.
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -19441,9 +19441,9 @@ $response = $imageAnnotatorClient-&gt;safeSearchDetection($imageContent);
     @type ImageContext        $imageContext  Additional context that may accompany the image.
     @type RetrySettings|array $retrySettings
          Retry settings to use for this call. Can be a
-         {@see} object, or an associative array
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} object, or an associative array
          of retry settings parameters. See the documentation on
-         {@see} for example usage.
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -19493,9 +19493,9 @@ $response = $imageAnnotatorClient-&gt;imagePropertiesDetection($imageContent);
     @type ImageContext        $imageContext  Additional context that may accompany the image.
     @type RetrySettings|array $retrySettings
          Retry settings to use for this call. Can be a
-         {@see} object, or an associative array
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} object, or an associative array
          of retry settings parameters. See the documentation on
-         {@see} for example usage.
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -19545,9 +19545,9 @@ $response = $imageAnnotatorClient-&gt;cropHintsDetection($imageContent);
     @type ImageContext        $imageContext  Additional context that may accompany the image.
     @type RetrySettings|array $retrySettings
          Retry settings to use for this call. Can be a
-         {@see} object, or an associative array
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} object, or an associative array
          of retry settings parameters. See the documentation on
-         {@see} for example usage.
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -19597,9 +19597,9 @@ $response = $imageAnnotatorClient-&gt;webDetection($imageContent);
     @type ImageContext        $imageContext  Additional context that may accompany the image.
     @type RetrySettings|array $retrySettings
          Retry settings to use for this call. Can be a
-         {@see} object, or an associative array
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} object, or an associative array
          of retry settings parameters. See the documentation on
-         {@see} for example usage.
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -19649,9 +19649,9 @@ $response = $imageAnnotatorClient-&gt;objectLocalization($imageContent);
     @type ImageContext        $imageContext  Additional context that may accompany the image.
     @type RetrySettings|array $retrySettings
          Retry settings to use for this call. Can be a
-         {@see} object, or an associative array
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} object, or an associative array
          of retry settings parameters. See the documentation on
-         {@see} for example usage.
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -19711,8 +19711,8 @@ $response = $imageAnnotatorClient-&gt;productSearch(
                 <tag
                 name="param"
                 description="Parameters for a product search request. Please note, this
-value will override the {@see} in the
-{@see} instance if provided."
+value will override the {@see \Google\Cloud\Vision\V1\Google\Cloud\Vision\V1\ProductSearchParams} in the
+{@see \Google\Cloud\Vision\V1\Google\Cloud\Vision\V1\ImageContext} instance if provided."
                                                                  variable="productSearchParams"                                 type="\Google\Cloud\Vision\V1\ProductSearchParams"/>
                 <tag
                 name="param"
@@ -19722,9 +19722,9 @@ value will override the {@see} in the
     @type ImageContext        $imageContext  Additional context that may accompany the image.
     @type RetrySettings|array $retrySettings
          Retry settings to use for this call. Can be a
-         {@see} object, or an associative array
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} object, or an associative array
          of retry settings parameters. See the documentation on
-         {@see} for example usage.
+         {@see \Google\Cloud\Vision\V1\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -20022,13 +20022,13 @@ OperationResponse object will not deserialize the final response.</description>
           accepts either a path to a credentials file, or a decoded credentials file as a
           PHP array.
           *Advanced usage*: In addition, this option can also accept a pre-constructed
-          {@see} object or
-          {@see} object. Note that when one of these
+          {@see \Google\Auth\FetchAuthTokenInterface} object or
+          {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
           objects are provided, any settings in $credentialsConfig will be ignored.
     @type array $credentialsConfig
           Options used to configure credentials, including auth token caching, for the
           client. For a full list of supporting configuration options, see
-          {@see} .
+          {@see \Google\ApiCore\CredentialsWrapper::build()} .
     @type bool $disableRetries
           Determines whether or not retries defined by the client configuration should be
           disabled. Defaults to `false`.
@@ -20041,7 +20041,7 @@ OperationResponse object will not deserialize the final response.</description>
           The transport used for executing network requests. May be either the string
           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
           *Advanced usage*: Additionally, it is possible to pass in an already
-          instantiated {@see} object. Note
+          instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
           that when this object is provided, any settings in $transportConfig, and any
           $serviceAddress setting, will be ignored.
     @type array $transportConfig
@@ -20052,8 +20052,8 @@ OperationResponse object will not deserialize the final response.</description>
               &#039;grpc&#039; =&gt; [...],
               &#039;rest&#039; =&gt; [...],
           ];
-          See the {@see} and
-          {@see} methods for the
+          See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
+          {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
           supported options.
     @type callable $clientCertSource
           A callable which returns the client cert as a string. This can be used to
@@ -20151,9 +20151,9 @@ try {
           Example: `projects/project-A/locations/eu`.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -20264,9 +20264,9 @@ try {
           Example: `projects/project-A/locations/eu`.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -20341,9 +20341,9 @@ one AnnotateFileRequest in BatchAnnotateFilesRequest."
           Example: `projects/project-A/locations/eu`.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -20410,9 +20410,9 @@ try {
           Example: `projects/project-A/locations/eu`.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -28252,13 +28252,13 @@ OperationResponse object will not deserialize the final response.</description>
           accepts either a path to a credentials file, or a decoded credentials file as a
           PHP array.
           *Advanced usage*: In addition, this option can also accept a pre-constructed
-          {@see} object or
-          {@see} object. Note that when one of these
+          {@see \Google\Auth\FetchAuthTokenInterface} object or
+          {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
           objects are provided, any settings in $credentialsConfig will be ignored.
     @type array $credentialsConfig
           Options used to configure credentials, including auth token caching, for the
           client. For a full list of supporting configuration options, see
-          {@see} .
+          {@see \Google\ApiCore\CredentialsWrapper::build()} .
     @type bool $disableRetries
           Determines whether or not retries defined by the client configuration should be
           disabled. Defaults to `false`.
@@ -28271,7 +28271,7 @@ OperationResponse object will not deserialize the final response.</description>
           The transport used for executing network requests. May be either the string
           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
           *Advanced usage*: Additionally, it is possible to pass in an already
-          instantiated {@see} object. Note
+          instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
           that when this object is provided, any settings in $transportConfig, and any
           $serviceAddress setting, will be ignored.
     @type array $transportConfig
@@ -28282,8 +28282,8 @@ OperationResponse object will not deserialize the final response.</description>
               &#039;grpc&#039; =&gt; [...],
               &#039;rest&#039; =&gt; [...],
           ];
-          See the {@see} and
-          {@see} methods for the
+          See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
+          {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
           supported options.
     @type callable $clientCertSource
           A callable which returns the client cert as a string. This can be used to
@@ -28361,9 +28361,9 @@ Format is:
 
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -28439,9 +28439,9 @@ Format is
           long. It cannot contain the character `/`.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -28518,9 +28518,9 @@ Format is `projects/PROJECT_ID/locations/LOC_ID`."
           long. It cannot contain the character `/`.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -28612,9 +28612,9 @@ If an image ID is specified, it is ignored."
           most 128 characters long. It cannot contain the character `/`.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -28675,9 +28675,9 @@ Format is:
 
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -28733,9 +28733,9 @@ Format is:
 
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -28794,9 +28794,9 @@ Format is:
 
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -28853,9 +28853,9 @@ Format is:
 
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -28916,9 +28916,9 @@ Format is:
 
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -28979,9 +28979,9 @@ Format is:
 
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -29083,9 +29083,9 @@ Format is `projects/PROJECT_ID/locations/LOC_ID`."
 
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -29167,9 +29167,9 @@ Format is `projects/PROJECT_ID/locations/LOC_ID`."
           been generated by a previous call to the API.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -29251,9 +29251,9 @@ Format:
           been generated by a previous call to the API.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -29337,9 +29337,9 @@ Format is:
           been generated by a previous call to the API.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -29423,9 +29423,9 @@ Format is
           been generated by a previous call to the API.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -29535,9 +29535,9 @@ Format is `projects/PROJECT_ID/locations/LOC_ID`."
           the purge.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -29608,9 +29608,9 @@ Format is:
 
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -29682,9 +29682,9 @@ product.name is immutable."
           `description`.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -29751,9 +29751,9 @@ try {
           Valid mask path is `display_name`.
     @type RetrySettings|array $retrySettings
           Retry settings to use for this call. Can be a
-          {@see} object, or an associative array of retry
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} object, or an associative array of retry
           settings parameters. See the documentation on
-          {@see} for example usage.
+          {@see \Google\Cloud\Vision\V1\Gapic\Google\ApiCore\RetrySettings} for example usage.
 }"
                                                                  variable="optionalArgs"                                 type="array"/>
                             <tag
@@ -38941,7 +38941,7 @@ Generated from protobuf field &lt;code&gt;repeated .google.cloud.vision.v1.Symbo
             
             <parse_markers></parse_markers>
         </file>
-            <file path="src/VisionClient.php" hash="77e75314fb5e8b6aca272765767ab86b">
+            <file path="src/VisionClient.php" hash="47d84eb125d23d9ffd7dd9e5a1be6adc">
             <docblock line="0">
     <description>Copyright 2016 Google Inc. All Rights Reserved.</description>
     <long-description>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
@@ -38979,7 +38979,7 @@ more information at the
 [Google Cloud Vision docs](https://cloud.google.com/vision/docs/).</description>
     <long-description>Please note this client will be deprecated in our next release. In order
 to receive the latest features and updates, please take
-the time to familiarize yourself with {@see}.
+the time to familiarize yourself with {@see \Google\Cloud\Vision\Google\Cloud\Vision\V1\ImageAnnotatorClient}.
 
 Example:
 ```
@@ -39088,7 +39088,7 @@ must provide credentials with access to the project.</long-description>
                             <tag
                 name="throws"
                 description=""
-                                                                                                 type="\Google\Cloud\Vision\Google\Cloud\Core\Exception\GoogleException"/>
+                                                                                                 type="\Google\Cloud\Core\Exception\GoogleException"/>
             </docblock>
 
 </method>
@@ -39116,19 +39116,19 @@ must provide credentials with access to the project.</long-description>
 </argument>
 
         <docblock line="163">
-    <description>Create an instance of {@see Google\Cloud\Vision\Image} with required features and options.</description>
+    <description>Create an instance of {@see \Google\Cloud\Vision\Image} with required features and options.</description>
     <long-description>This method should be used to configure a single image, or when a set of
 images requires different settings for each member of the set. If you
 have a set of images which all will use the same settings,
-{@see} may be quicker and
+{@see \Google\Cloud\Vision\VisionClient::images()} may be quicker and
 simpler to use.
 
 This method will not perform any service requests, and is meant to be
 used to configure a request prior to calling
-{@see}.
+{@see \Google\Cloud\Vision\VisionClient::annotate()}.
 
 For more information, including best practices and examples detailing
-other usage such as `$imageContext`, see {@see}.
+other usage such as `$imageContext`, see {@see \Google\Cloud\Vision\Image::__construct()}.
 
 Example:
 ```
@@ -39157,7 +39157,7 @@ $image = $vision-&gt;image($imageResource, [
                 description="An image to configure with
 the given settings. This parameter will accept a resource, a
 string of bytes, the URI of an image in a publicly-accessible
-web location, or an instance of {@see}."
+web location, or an instance of {@see \Google\Cloud\Vision\Google\Cloud\Storage\StorageObject}."
                                                                  variable="image"                                 type="resource|string|\Google\Cloud\Storage\StorageObject"/>
                 <tag
                 name="param"
@@ -39167,7 +39167,7 @@ to apply to the image."
                                                                  variable="features"                                 type="array"/>
                 <tag
                 name="param"
-                description="See {@see} for
+                description="See {@see \Google\Cloud\Vision\Google\Cloud\Vision\Image::__construct()} for
 configuration details."
                                                                  variable="options"                                 type="array"/>
                             <tag
@@ -39210,14 +39210,14 @@ each member of the set.</description>
     <long-description>This method is useful for quickly configuring every member of a set of
 images with the same features and options. Should you need to provide
 different features or options for one or more members of the set,
-{@see} is a better choice.
+{@see \Google\Cloud\Vision\Google\Cloud\Vision\VisionClient::image()} is a better choice.
 
 This method will not perform any service requests, and is meant to be
 used to configure a request prior to calling
-{@see}.
+{@see \Google\Cloud\Vision\Google\Cloud\Vision\VisionClient::annotateBatch()}.
 
 For more information, including best practices and examples detailing
-other usage such as `$imageContext`, see {@see}.
+other usage such as `$imageContext`, see {@see \Google\Cloud\Vision\Google\Cloud\Vision\Image::__construct()}.
 
 Example:
 ```
@@ -39241,7 +39241,7 @@ $images = $vision-&gt;images([$familyPhotoResource, $weddingPhotoResource], [
 to configure with the given settings. Each member of the set can
 be a resource, a string of bytes, the URI of an image in a
 publicly-accessible web location, or an instance of
-{@see}."
+{@see \Google\Cloud\Vision\Google\Cloud\Storage\StorageObject}."
                                                                  variable="images"                                 type="resource[]|string[]|\Google\Cloud\Storage\StorageObject[]"/>
                 <tag
                 name="param"
@@ -39249,7 +39249,7 @@ publicly-accessible web location, or an instance of
                                                                  variable="features"                                 type="array"/>
                 <tag
                 name="param"
-                description="See {@see} for
+                description="See {@see \Google\Cloud\Vision\Google\Cloud\Vision\Image::__construct()} for
 configuration details."
                                                                  variable="options"                                 type="array"/>
                             <tag
@@ -39354,7 +39354,7 @@ $result = $vision-&gt;annotateBatch($images);
                             <tag
                 name="param"
                 description="An array consisting of instances of
-{@see}."
+{@see \Google\Cloud\Vision\Google\Cloud\Vision\Image}."
                                                                  variable="images"                                 type="\Google\Cloud\Vision\Image[]"/>
                 <tag
                 name="param"

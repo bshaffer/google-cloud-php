@@ -64,7 +64,7 @@ items:
     name: image
     id: image
     summary: |
-      Create an instance of {@see Google\Cloud\Vision\Image} with required features and options.
+      Create an instance of {@see \Google\Cloud\Vision\Image} with required features and options.
       
       This method should be used to configure a single image, or when a set of
       images requires different settings for each member of the set. If you

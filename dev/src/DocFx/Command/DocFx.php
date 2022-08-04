@@ -214,7 +214,6 @@ class DocFx extends Command
             'langs' => ['php'],
             'children' => $children,
             'implements' => $class->getImplements(),
-            'properties' => $class->getProperties(),
         ]);
 
         $items = [$classItem];

@@ -86,7 +86,7 @@ class MethodNode
             }
 
             if ($description) {
-                $parameter['description'] = $description;
+                $parameter['description'] = $this->replaceXref($description);
             }
 
             $parameters[] = $parameter;
@@ -135,7 +135,7 @@ class MethodNode
             $parameters[] = [
                 'name' => $name,
                 'type' => $type,
-                'description' => trim($description),
+                'description' => $this->replaceXref(trim($description)),
             ];
         }
 

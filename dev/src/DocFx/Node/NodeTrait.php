@@ -28,4 +28,12 @@ trait NodeTrait
 
         return $docblock->getFullDescription();
     }
+
+    private function replaceXref(string $description): string
+    {
+        $regex = '/{@see ([^ ]*)}/';
+        $replace = '<xref uid="$1">$1</xref>';
+
+        return preg_replace($regex, $replace, $description);
+    }
 }

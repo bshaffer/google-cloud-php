@@ -21,6 +21,8 @@ use SimpleXMLElement;
 
 class DocblockNode
 {
+    use NodeTrait;
+
     public function __construct($docblockNode)
     {
         $this->xmlNode = $docblockNode;
@@ -36,6 +38,6 @@ class DocblockNode
             $summary .= (string) $this->xmlNode->{'long-description'};
         }
 
-        return $summary;
+        return $this->replaceXref($summary);
     }
 }

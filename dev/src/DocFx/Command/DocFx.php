@@ -33,16 +33,25 @@ class DocFx extends Command
     {
         $this->setName('docfx')
             ->setDescription('Generate DocFX yaml from a phpdoc strucutre.xml')
-            ->addArgument('component', InputArgument::REQUIRED, 'Generate docs only for a single component.')
-            ->addArgument('structure_xml', InputArgument::REQUIRED, 'Path to phpdoc structure.xml')
+            ->addOption('xml', '', InputOption::VALUE_REQUIRED, 'Path to phpdoc structure.xml', '.phpdoc/build/structure.xml')
+            ->addOption('component', 'c', InputOption::VALUE_REQUIRED, 'Generate docs only for a single component.', '')
             ->addOption('out', '', InputOption::VALUE_REQUIRED, 'Path where to store the generated output.', 'out')
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $component = $input->getArgument('component');
-        $xml = $input->getArgument('structure_xml');
+        $component = $input->getOption('component') ?: basename(getcwd());
+        if (!$this->checkComponent($component)) {
+            throw new \Exception($input->getOption('component') ? 'Invalid component provided'
+                : 'You are not in a component directory. Run this command from a valid component'
+                  . ' directory or provide a valid component using the "component" option.');
+        }
+        $xml = $input->getOption('xml');
+        if (!file_exists($xml)) {
+            throw new \Exception($input->getOption('xml') ? 'Unable to load provided structure.xml'
+                : sprintf('Default structure.xml file "%s" not found.', $xml));
+        }
         $outDir = $input->getOption('out');
 
         if (!file_exists($xml)) {
@@ -91,16 +100,29 @@ class DocFx extends Command
 
         // Sort pages alphabetically by full class name
         ksort($pages);
+        $classNodes = [];
+
+        // Combine GAPIC classes
+        foreach ($pages as $className => $classNode) {
+            if ('Client' == substr($className, -6) && 'GapicClient' != substr($className, -11)) {
+                // Find Gapic Classname
+                $parts = explode('\\', $className);
+                $clientName = substr(array_pop($parts), 0, -6) . 'GapicClient';
+                $parts[] = 'Gapic';
+                $parts[] = $clientName;
+                $gapicClientName = implode('\\', $parts);
+                if (isset($pages[$gapicClientName])) {
+                    $classNode->setChildNode($pages[$gapicClientName]);
+                    unset($pages[$gapicClientName]);
+                }
+            }
+        }
 
         foreach ($pages as $classNode) {
             $docFxArray = $this->getDocFxClassArray($classNode);
 
             // Add the class to the TOC
-            $tocArray['items'][] = array_filter([
-                'uid' => $classNode->getFullname(),
-                'name' => $classNode->getName(),
-                'status' => $classNode->getStatus(),
-            ]);
+            $tocArray['items'][] = $classNode->toToc();
 
             // Dump the YAML for the class node
             $yaml = Yaml::dump($docFxArray, $inline, $indent, $flags);
@@ -108,13 +130,14 @@ class DocFx extends Command
             // Write the YAML to a file
             $outFile = sprintf('%s/%s.yml', $outDir, $classNode->getFilename());
             file_put_contents($outFile, $yaml);
-
         }
 
         // Write the TOC to a file
         $tocYaml = Yaml::dump([$tocArray], $inline, $indent, $flags);
         $outFile = sprintf('%s/toc.yml', $outDir);
         file_put_contents($outFile, $tocYaml);
+
+        $output->writeln(sprintf('Output written to "%s"', $outDir));
 
         // Todo: create index.yml
     }
@@ -211,5 +234,18 @@ class DocFx extends Command
         }
 
         return ['items' => $items];
+    }
+
+    private function checkComponent(string $component): string
+    {
+        $rootDir = __DIR__ . '/../../../../';
+
+        $components = scandir($rootDir);
+        foreach ($components as $i => $c) {
+            if (!is_dir($rootDir . $c) || !preg_match('/^[A-Z]/', $c)) {
+                unset($components[$i]);
+            }
+        }
+        return in_array($component, $components);
     }
 }

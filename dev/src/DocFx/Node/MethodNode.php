@@ -44,6 +44,11 @@ class MethodNode
         return false;
     }
 
+    public function isPublic(): bool
+    {
+        return 'public' === (string) $this->xmlNode['visibility'];
+    }
+
     public function getParameters(): array
     {
         $parameters = [];
@@ -113,7 +118,14 @@ class MethodNode
         $parameters[] = $parentParameter;
         foreach ($nestedParameters as $param) {
             // Parse "@type string $key" syntax
-            list($type, $name, $description) = explode(' ', trim($param), 3);
+            $paramInfo = explode(' ', trim($param), 3);
+            if (count($paramInfo) < 3) {
+                // No parameter description
+                list($type, $name) = $paramInfo;
+                $description = '';
+            } else {
+                list($type, $name, $description) = $paramInfo;
+            }
 
             // remove "$" prefix from parameter name and add "↳ " for UX to indicate it's nested.
             $name = '↳ ' . ltrim($name, '$');

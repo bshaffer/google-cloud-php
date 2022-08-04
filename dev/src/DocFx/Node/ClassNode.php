@@ -25,6 +25,7 @@ class ClassNode
 
     private $xmlNode;
     private $filePath;
+    private $childNode;
 
     public function __construct(SimpleXMLElement $fileNode)
     {
@@ -63,14 +64,27 @@ class ClassNode
         return '';
     }
 
+    public function toToc()
+    {
+        return array_filter([
+            'uid' => $this->getFullname(),
+            'name' => $this->getName(),
+            'status' => $this->getStatus(),
+        ]);
+    }
+
     public function getMethods(): array
     {
         $methods = [];
         foreach ($this->xmlNode->method as $methodNode) {
             $method = new MethodNode($methodNode);
-            if (!$method->isInherited()) {
+            if ($method->isPublic() && !$method->isInherited()) {
                 $methods[] = $method;
             }
+        }
+
+        if ($this->childNode) {
+            $methods = array_merge($methods, $this->childNode->getMethods());
         }
 
         return $methods;
@@ -79,25 +93,6 @@ class ClassNode
     public function getImplements(): array
     {
         return (array) $this->xmlNode->implements;
-    }
-
-    /** TODO: remove this */
-    public function getInheritedMembers(): array
-    {
-        $inheritedMembers = [];
-
-        foreach ($this->xmlNode->property as $propertyNode) {
-            if (isset($propertyNode->inherited_from)) {
-                $inheritedMembers[] = $propertyNode->full_name;
-            }
-        }
-        foreach ($this->xmlNode->method as $methodNode) {
-            if ($methodNode->inherited_from) {
-                $inheritedMembers[] = $methodNode->full_name;
-            }
-        }
-
-        return $inheritedMembers;
     }
 
     /** TODO: remove this */
@@ -124,6 +119,15 @@ class ClassNode
                 'type' => $type,
             ];
         }
+
+        if ($this->childNode) {
+            $properties = array_merge($properties, $this->childNode->getProperties());
+        }
         return $properties;
+    }
+
+    public function setChildNode(ClassNode $childNode)
+    {
+        $this->childNode = $childNode;
     }
 }

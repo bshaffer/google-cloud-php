@@ -52,7 +52,7 @@ trait NodeTrait
                 // Create external link
                 if ($extLinkRoot) {
                     $path = str_replace(['::', '\\', '()'], ['#method_', '/'], $name);
-                    return sprintf('<a href="%s">%s</xref>', $extLinkRoot . $path, $name);
+                    return sprintf('<a href="%s">%s</a>', $extLinkRoot . $path, $name);
                 }
 
                 return sprintf('<xref uid="%s">%s</xref>', $uid, $name);

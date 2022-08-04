@@ -31,9 +31,33 @@ trait NodeTrait
 
     private function replaceXref(string $description): string
     {
-        $regex = '/{@see ([^ ]*)}/';
-        $replace = '<xref uid="$1">$1</xref>';
+        return preg_replace_callback(
+            '/{@see ([^ ]*)}/',
+            function ($matches) {
+                $uid = $matches[1];
+                $name = substr($matches[1], 1);
 
-        return preg_replace($regex, $replace, $description);
+                // Check for external package namespaces
+                switch (true) {
+                    case 0 === strpos($uid, '\Google\ApiCore\\'):
+                        $extLinkRoot = 'https://googleapis.github.io/gax-php#';
+                        break;
+                    case 0 === strpos($uid, '\Google\Auth\\'):
+                        $extLinkRoot = 'https://googleapis.github.io/google-auth-library-php/main/';
+                        break;
+                    default:
+                        $extLinkRoot = '';
+                }
+
+                // Create external link
+                if ($extLinkRoot) {
+                    $path = str_replace(['::', '\\', '()'], ['#method_', '/'], $name);
+                    return sprintf('<a href="%s">%s</xref>', $extLinkRoot . $path, $name);
+                }
+
+                return sprintf('<xref uid="%s">%s</xref>', $uid, $name);
+            },
+            $description
+        );
     }
 }

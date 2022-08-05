@@ -205,7 +205,7 @@ class DocFx extends Command
             'uid' => $class->getFullname(),
             'name' => $class->getName(),
             'id' => $class->getName(),
-            'summary' => $class->getSummary(),
+            'summary' => $class->getContent(),
             'status' => $class->getStatus(),
             'type' => 'class',
             'langs' => ['php'],
@@ -224,8 +224,17 @@ class DocFx extends Command
                 'parent'  => $class->getFullname(),
                 'type' => 'method',
                 'langs' => ['php'],
-                'parameters' => $method->getParameters(),
+                'syntax' => [
+                    'content' => $method->getContent(),
+                    'parameters' => $method->getParameters(),
+                ],
             ]);
+            if ($returnType = $method->getReturnType()) {
+                $methodItem['syntax']['return'] = array_filter([
+                    'type' => [$method->getReturnType()],
+                    'description' => $method->getReturnDescription(),
+                ]);
+            }
             $items[] = $methodItem;
         }
 

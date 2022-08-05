@@ -19,7 +19,7 @@ namespace Google\Cloud\Dev\DocFx\Node;
 
 trait NodeTrait
 {
-    public function getSummary(): string
+    public function getContent(): string
     {
         if (empty($this->xmlNode->docblock)) {
             return '';

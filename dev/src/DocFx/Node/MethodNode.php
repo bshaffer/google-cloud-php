@@ -49,13 +49,48 @@ class MethodNode
         return 'public' === (string) $this->xmlNode['visibility'];
     }
 
+    public function getReturnType(): string
+    {
+        if ($this->xmlNode->docblock) {
+            foreach ($this->xmlNode->docblock->tag as $tag) {
+                if ($tag['name'] == 'return') {
+                    if ((string) $tag['type']) {
+                        return (string) $tag['type'];
+                    }
+                    break;
+                }
+            }
+        }
+        return '';
+    }
+
+    public function getReturnDescription(): string
+    {
+        if ($this->xmlNode->docblock) {
+            foreach ($this->xmlNode->docblock->tag as $tag) {
+                if ($tag['name'] == 'return') {
+                    if ((string) $tag['description']) {
+                        return (string) $tag['description'];
+                    }
+                    break;
+                }
+            }
+        }
+        return '';
+    }
+
+    public function getSummary(): string
+    {
+        return (string) $this->xmlNode->description;
+    }
+
     public function getParameters(): array
     {
         $parameters = [];
         foreach ($this->xmlNode->argument as $parameterNode) {
             $parameter = [
                 'name' => (string) $parameterNode->name,
-                'type' => (string) $parameterNode->type,
+                'type' => [(string) $parameterNode->type],
             ];
 
             // Determine the description of the parameter
@@ -134,7 +169,7 @@ class MethodNode
 
             $parameters[] = [
                 'name' => $name,
-                'type' => $type,
+                'type' => [$type],
                 'description' => $this->replaceXref(trim($description)),
             ];
         }

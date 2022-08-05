@@ -64,15 +64,6 @@ class ClassNode
         return '';
     }
 
-    public function toToc()
-    {
-        return array_filter([
-            'uid' => $this->getFullname(),
-            'name' => $this->getName(),
-            'status' => $this->getStatus(),
-        ]);
-    }
-
     public function getMethods(): array
     {
         $methods = [];

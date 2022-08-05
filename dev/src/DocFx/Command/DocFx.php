@@ -26,6 +26,7 @@ use Symfony\Component\Yaml\Yaml;
 use SimpleXMLElement;
 use RuntimeException;
 use Google\Cloud\Dev\DocFx\Node\ClassNode;
+use Google\Cloud\Dev\DocFx\Toc\NamespaceToc;
 
 class DocFx extends Command
 {
@@ -69,16 +70,13 @@ class DocFx extends Command
             }
         }
 
-        $tocArray = [
-            'name' => $namespace,
-            'items' => [],
-        ];
+        $toc = new NamespaceToc($namespace, $namespace);
 
         // List of pages, to sort alphabetically by key
         $pages = [];
 
         // YAML dump configuration
-        $inline = 4; // The level where you switch to inline YAML
+        $inline = 9; // The level where you switch to inline YAML
         $indent = 2; // The amount of spaces to use for indentation of nested nodes
         $flags = Yaml::DUMP_MULTI_LINE_LITERAL_BLOCK;
 
@@ -100,7 +98,6 @@ class DocFx extends Command
 
         // Sort pages alphabetically by full class name
         ksort($pages);
-        $classNodes = [];
 
         // Combine GAPIC classes
         foreach ($pages as $className => $classNode) {
@@ -122,7 +119,7 @@ class DocFx extends Command
             $docFxArray = $this->getDocFxClassArray($classNode);
 
             // Add the class to the TOC
-            $tocArray['items'][] = $classNode->toToc();
+            $toc->addNode($classNode);
 
             // Dump the YAML for the class node
             $yaml = Yaml::dump($docFxArray, $inline, $indent, $flags);
@@ -133,7 +130,7 @@ class DocFx extends Command
         }
 
         // Write the TOC to a file
-        $tocYaml = Yaml::dump([$tocArray], $inline, $indent, $flags);
+        $tocYaml = Yaml::dump([$toc->toToc()], $inline, $indent, $flags);
         $outFile = sprintf('%s/toc.yml', $outDir);
         file_put_contents($outFile, $tocYaml);
 

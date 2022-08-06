@@ -24,7 +24,7 @@ use Google\Cloud\Dev\DocFx\Node\ClassNode;
  */
 class NamespaceToc
 {
-    private array $items = [];
+    protected array $items = [];
 
     public function __construct(private string $namespace, private string $name)
     {
@@ -33,13 +33,15 @@ class NamespaceToc
     public function addNode(ClassNode $classNode): void
     {
         $uid = $classNode->getFullname();
-        $parts = explode('\\', ltrim($uid, '\\'. $this->namespace));
+        $namespace = $this->namespace . '\\';
+        $parts = explode('\\', str_replace('\\' . $namespace, '', $uid));
         if (count($parts) > 1) {
-            $nsUid = $this->namespace . '\\' . $parts[0];
-            if (!isset($this->items[$nsUid])) {
-                $this->items[$nsUid] = new NamespaceToc($nsUid, $parts[0]);
+            $nestedNs = $this->namespace . '\\' . $parts[0];
+            $nestedUid = 'ns:' . $nestedNs;
+            if (!isset($this->items[$nestedUid])) {
+                $this->items[$nestedUid] = new NamespaceToc($nestedNs, $parts[0]);
             }
-            $this->items[$nsUid]->addNode($classNode);
+            $this->items[$nestedUid]->addNode($classNode);
         } else {
             $this->items[$uid] = new ClassToc($classNode);
         }
@@ -49,10 +51,9 @@ class NamespaceToc
     {
         $tocArray = [
             'name' => $this->name,
+            'uid'  => 'ns:' . $this->namespace,
             'items' => [],
         ];
-
-        $classes = [];
 
         foreach ($this->items as $item) {
             $tocArray['items'][] = $item->toToc();

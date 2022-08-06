@@ -88,22 +88,23 @@ class MethodNode
     {
         $parameters = [];
         foreach ($this->xmlNode->argument as $parameterNode) {
-            $parameter = [
-                'name' => (string) $parameterNode->name,
-                'type' => [(string) $parameterNode->type],
-            ];
+            $parameter = new ParameterNode(
+                (string) $parameterNode->name,
+                (string) $parameterNode->type
+            );
 
             // Determine the description of the parameter
             $description = '';
             if ($this->xmlNode->docblock) {
                 foreach ($this->xmlNode->docblock->tag as $tag) {
                     if ($tag['name'] == 'param') {
-                        if ((string) $tag['variable'] === (string) $parameterNode->name) {
+                        if ((string) $tag['variable'] === $parameter->getName()) {
                             $description = (string) $tag['description'];
                         }
                     }
                 }
             }
+            $parameter->setDescription($description);
 
             // For option arrays with nested parameters.
             // Example:
@@ -111,80 +112,19 @@ class MethodNode
             //    @type string $key
             //         Some description of the "key" option
             // }
-            if ($this->hasNestedParams($description)) {
+            if ($parameter->hasNestedParams()) {
+                $parameters[] = $parameter;
                 $parameters = array_merge(
                     $parameters,
-                    $this->getNestedParams($parameter, $description)
+                    $parameter->getNestedParams()
                 );
 
                 continue;
             }
 
-            if ($description) {
-                $parameter['description'] = $this->replaceXref($description);
-            }
-
             $parameters[] = $parameter;
         }
-        return $parameters;
-    }
-
-
-    /**
-     * PHPDoc has no support for nested params. This is a workaround to parse
-     * our custom format.
-     */
-    private function getNestedParams(array $parentParameter, string $description): array
-    {
-        // Remove "optional" prefix (in handwritten clients).
-        $parameterString = trim(str_replace('[optional]', '', $description));
-
-        // Remove wrapping "{}".
-        $parameterString = substr($parameterString, 1, -1);
-
-        // Create an array item for each parameter.
-        $nestedParameters = explode('@type', $parameterString);
-
-        // Remove the first, since that's the wrapping array param,
-        // and use it for the wrapping param description
-        if ($parentDescription = trim(array_shift($nestedParameters))) {
-            $parentParameter['description'] = $parentDescription;
-        }
-        $parameters[] = $parentParameter;
-        foreach ($nestedParameters as $param) {
-            // Parse "@type string $key" syntax
-            $paramInfo = explode(' ', trim($param), 3);
-            if (count($paramInfo) < 3) {
-                // No parameter description
-                list($type, $name) = $paramInfo;
-                $description = '';
-            } else {
-                list($type, $name, $description) = $paramInfo;
-            }
-
-            // remove "$" prefix from parameter name and add "↳ " for UX to indicate it's nested.
-            $name = '↳ ' . ltrim($name, '$');
-            // Trim newline whitespace
-            $description = preg_replace('/\s+/', ' ', $description);
-
-            $parameters[] = [
-                'name' => $name,
-                'type' => [$type],
-                'description' => $this->replaceXref(trim($description)),
-            ];
-        }
 
         return $parameters;
-    }
-
-    private function hasNestedParams(string $description): bool
-    {
-        $description = trim(str_replace('[optional]', '', $description));
-
-        if (strlen($description) === 0) {
-            return false;
-        }
-
-        return $description[0] === '{';
     }
 }

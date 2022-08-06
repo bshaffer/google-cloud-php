@@ -122,7 +122,8 @@ class DocFx extends Command
             $toc->addNode($classNode);
 
             // Dump the YAML for the class node
-            $yaml = Yaml::dump($docFxArray, $inline, $indent, $flags);
+            $yaml = '### YamlMime:UniversalReference' . PHP_EOL;
+            $yaml .= Yaml::dump($docFxArray, $inline, $indent, $flags);
 
             // Write the YAML to a file
             $outFile = sprintf('%s/%s.yml', $outDir, $classNode->getFilename());
@@ -130,7 +131,7 @@ class DocFx extends Command
         }
 
         // Write the TOC to a file
-        $tocYaml = Yaml::dump([$toc->toToc()], $inline, $indent, $flags);
+        $tocYaml = Yaml::dump($toc->toToc()['items'], $inline, $indent, $flags);
         $outFile = sprintf('%s/toc.yml', $outDir);
         file_put_contents($outFile, $tocYaml);
 
@@ -224,14 +225,23 @@ class DocFx extends Command
                 'parent'  => $class->getFullname(),
                 'type' => 'method',
                 'langs' => ['php'],
-                'syntax' => [
+                'syntax' => array_filter([
                     'content' => $method->getContent(),
-                    'parameters' => $method->getParameters(),
-                ],
+                ]),
             ]);
+            if ($parameters = $method->getParameters()) {
+                $methodItem['syntax']['parameters'] = [];
+                foreach ($parameters as $parameter) {
+                    $methodItem['syntax']['parameters'][] = [
+                        'id' => $parameter->getName(),
+                        'var_type' => $parameter->getType(),
+                        'description' => $parameter->getDescription(),
+                    ];
+                }
+            }
             if ($returnType = $method->getReturnType()) {
                 $methodItem['syntax']['return'] = array_filter([
-                    'type' => [$method->getReturnType()],
+                    'type' => [$returnType],
                     'description' => $method->getReturnDescription(),
                 ]);
             }

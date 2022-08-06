@@ -186,7 +186,7 @@ class Entity extends AbstractFeature
      *
      * This class should not be instantiated externally.
      *
-     * Entities are returned by {@see Annotation::landmarks()},
+     * Entities are returned by {@see \Google\Cloud\Vision\Annotation::landmarks()},
      * {@see \Google\Cloud\Vision\Annotation::logos()},
      * {@see \Google\Cloud\Vision\Annotation::labels()} and
      * {@see \Google\Cloud\Vision\Annotation::text()}.

@@ -29,35 +29,43 @@ trait NodeTrait
         return $docblock->getFullDescription();
     }
 
-    private function replaceXref(string $description): string
+    private function replaceSeeTag(string $description): string
     {
         return preg_replace_callback(
             '/{@see ([^ ]*)}/',
             function ($matches) {
-                $uid = $matches[1];
-                $name = substr($matches[1], 1);
-
-                // Check for external package namespaces
-                switch (true) {
-                    case 0 === strpos($uid, '\Google\ApiCore\\'):
-                        $extLinkRoot = 'https://googleapis.github.io/gax-php#';
-                        break;
-                    case 0 === strpos($uid, '\Google\Auth\\'):
-                        $extLinkRoot = 'https://googleapis.github.io/google-auth-library-php/main/';
-                        break;
-                    default:
-                        $extLinkRoot = '';
-                }
-
-                // Create external link
-                if ($extLinkRoot) {
-                    $path = str_replace(['::', '\\', '()'], ['#method_', '/'], $name);
-                    return sprintf('<a href="%s">%s</a>', $extLinkRoot . $path, $name);
-                }
-
-                return sprintf('<xref uid="%s">%s</xref>', $uid, $name);
+                return $this->replaceUidWithLink($matches[1]);
             },
             $description
         );
+    }
+
+    private function replaceUidWithLink(string $uid): string
+    {
+        // Remove proceeding "\" from namespace
+        $name = substr($uid, 1);
+
+        // Check for external package namespaces
+        switch (true) {
+            case 0 === strpos($uid, '\Google\ApiCore\\'):
+                $extLinkRoot = 'https://googleapis.github.io/gax-php#';
+                break;
+            case 0 === strpos($uid, '\Google\Auth\\'):
+                $extLinkRoot = 'https://googleapis.github.io/google-auth-library-php/main/';
+                break;
+            case 0 === strpos($uid, '\Google\Protobuf\\'):
+                // @TODO: link to reference docs for Protobuf
+                return $name;
+            default:
+                $extLinkRoot = '';
+        }
+
+        // Create external link
+        if ($extLinkRoot) {
+            $path = str_replace(['::', '\\', '()'], ['#method_', '/'], $name);
+            return sprintf('<a href="%s">%s</a>', $extLinkRoot . $path, $name);
+        }
+
+        return sprintf('<xref uid="%s">%s</xref>', $uid, $name);
     }
 }

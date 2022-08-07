@@ -36,4 +36,30 @@ class ClassToc
             'status' => $this->classNode->getStatus(),
         ]);
     }
+
+    public function isServiceClass(): bool
+    {
+        // returns true if the class extends a generated GAPIC client
+        if ($extends = $this->classNode->getExtends()) {
+            return 'GapicClient' === substr($extends, -11);
+        }
+        return false;
+    }
+
+    public function isProtobufMessageClass(): bool
+    {
+        // returns true if the class extends \Google\Protobuf\Internal\Message
+        return '\Google\Protobuf\Internal\Message' === $this->classNode->getExtends();
+    }
+
+    public function isProtobufEnumClass(): bool
+    {
+        if (!$this->classNode->getExtends()) {
+            // check that last line of long-description starts with "Protobuf type..."
+            $longDescriptionParts = explode("\n", $this->classNode->getLongDescription());
+            $lastDescriptionLine = array_pop($longDescriptionParts);
+            return 0 === strpos($lastDescriptionLine, 'Protobuf type');
+        }
+        return false;
+    }
 }

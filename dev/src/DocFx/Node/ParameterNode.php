@@ -36,7 +36,22 @@ class ParameterNode
 
     public function getType(): string
     {
-        return $this->type;
+        $types = explode('|', $this->type);
+        foreach ($types as $i => $type) {
+            if (0 === strpos($type, '\\')) {
+                $types[$i] = $this->replaceUidWithLink($type);
+            } elseif (0 === strpos($type, 'array<')) {
+                $types[$i] = preg_replace_callback(
+                    '/^array<([^ ]*)>$/',
+                    function ($matches) {
+                        return sprintf('array<%s>', $this->replaceUidWithLink($matches[1]));
+                    },
+                    $type
+                );
+            }
+        }
+
+        return implode('|', $types);
     }
 
     public function getDescription(): string
@@ -90,7 +105,7 @@ class ParameterNode
             $parameters[] = new ParameterNode(
                 $name,
                 $type,
-                $this->replaceXref(trim($description))
+                $this->replaceSeeTag(trim($description))
             );
         }
 

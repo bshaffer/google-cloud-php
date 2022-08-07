@@ -38,6 +38,6 @@ class DocblockNode
             $summary .= (string) $this->xmlNode->{'long-description'};
         }
 
-        return $this->replaceXref($summary);
+        return $this->replaceSeeTag($summary);
     }
 }

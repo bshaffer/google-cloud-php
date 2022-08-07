@@ -25,6 +25,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Yaml\Yaml;
 use SimpleXMLElement;
 use RuntimeException;
+use Google\Cloud\Dev\DocFx\Dumper;
 use Google\Cloud\Dev\DocFx\Node\ClassNode;
 use Google\Cloud\Dev\DocFx\Toc\NamespaceToc;
 
@@ -70,6 +71,7 @@ class DocFx extends Command
             }
         }
 
+        $dumper = new Dumper();
         $toc = new NamespaceToc($namespace, $namespace);
 
         // List of pages, to sort alphabetically by key
@@ -93,30 +95,33 @@ class DocFx extends Command
                 continue;
             }
 
-            $pages[$classNode->getFullname()] = $classNode;
+            // Skip deprecated classes
+            if ('deprecated' === $classNode->getStatus()) {
+                continue;
+            }
+
+            // Skip internal classes
+            if ($classNode->isInternal()) {
+                continue;
+            }
+
+            $fullName = $classNode->getFullname();
+            // Skip internal classes
+            if ('GrpcClient' === substr($fullName, -10)) {
+                continue;
+            }
+
+            $pages[$fullName] = $classNode;
         }
 
         // Sort pages alphabetically by full class name
         ksort($pages);
 
-        // Combine GAPIC classes
-        foreach ($pages as $className => $classNode) {
-            if ('Client' == substr($className, -6) && 'GapicClient' != substr($className, -11)) {
-                // Find Gapic Classname
-                $parts = explode('\\', $className);
-                $clientName = substr(array_pop($parts), 0, -6) . 'GapicClient';
-                $parts[] = 'Gapic';
-                $parts[] = $clientName;
-                $gapicClientName = implode('\\', $parts);
-                if (isset($pages[$gapicClientName])) {
-                    $classNode->setChildNode($pages[$gapicClientName]);
-                    unset($pages[$gapicClientName]);
-                }
-            }
-        }
+        // Combine Client with internal Gapic\Client
+        $pages = $dumper->combineGapicClients($pages);
 
         foreach ($pages as $classNode) {
-            $docFxArray = $this->getDocFxClassArray($classNode);
+            $docFxArray = ['items' => $dumper->getClassItems($classNode)];
 
             // Add the class to the TOC
             $toc->addNode($classNode);
@@ -194,61 +199,6 @@ class DocFx extends Command
             'composer autoload.psr-4 does not contain a namespace for component "%s"',
             $component
         ));
-    }
-
-    private function getDocFxClassArray(ClassNode $class)
-    {
-        $children = [];
-        foreach ($class->getMethods() as $method) {
-            $children[] = sprintf('%s::%s()', $class->getFullname(), $method->getName());
-        }
-        $classItem = array_filter([
-            'uid' => $class->getFullname(),
-            'name' => $class->getName(),
-            'id' => $class->getName(),
-            'summary' => $class->getContent(),
-            'status' => $class->getStatus(),
-            'type' => 'class',
-            'langs' => ['php'],
-            'children' => $children,
-            'implements' => $class->getImplements(),
-        ]);
-
-        $items = [$classItem];
-
-        foreach ($class->getMethods() as $method) {
-            $methodItem = array_filter([
-                'uid' => sprintf('%s::%s()', $class->getFullname(), $method->getName()),
-                'name' => $method->getName(),
-                'id' => $method->getName(),
-                'summary' => $method->getSummary(),
-                'parent'  => $class->getFullname(),
-                'type' => 'method',
-                'langs' => ['php'],
-                'syntax' => array_filter([
-                    'content' => $method->getContent(),
-                ]),
-            ]);
-            if ($parameters = $method->getParameters()) {
-                $methodItem['syntax']['parameters'] = [];
-                foreach ($parameters as $parameter) {
-                    $methodItem['syntax']['parameters'][] = [
-                        'id' => $parameter->getName(),
-                        'var_type' => $parameter->getType(),
-                        'description' => $parameter->getDescription(),
-                    ];
-                }
-            }
-            if ($returnType = $method->getReturnType()) {
-                $methodItem['syntax']['return'] = array_filter([
-                    'type' => [$returnType],
-                    'description' => $method->getReturnDescription(),
-                ]);
-            }
-            $items[] = $methodItem;
-        }
-
-        return ['items' => $items];
     }
 
     private function checkComponent(string $component): string

@@ -46,7 +46,22 @@ class ClassNode
     public function getFilename(): string
     {
         $filename = str_replace(['src/', '.php'], '', $this->filePath);
+
         return str_replace('/', '.', $filename);
+    }
+
+    public function getLongDescription(): string
+    {
+        if (empty($this->xmlNode->docblock)) {
+            return '';
+        }
+
+        if (empty($this->xmlNode->docblock->{'long-description'})) {
+            return '';
+
+        }
+
+        return (string) $this->xmlNode->docblock->{'long-description'};
     }
 
     public function getStatus(): string
@@ -62,6 +77,26 @@ class ClassNode
         }
 
         return '';
+    }
+
+    public function getExtends(): string
+    {
+        return (string) $this->xmlNode->extends;
+    }
+
+    public function isInternal(): bool
+    {
+        if (!$this->xmlNode->docblock) {
+            return '';
+        }
+
+        foreach ($this->xmlNode->docblock->tag as $tag) {
+            if ((string) $tag['name'] === 'internal') {
+                return 'true';
+            }
+        }
+
+        return false;
     }
 
     public function getMethods(): array

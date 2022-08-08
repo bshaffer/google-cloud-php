@@ -23,4 +23,13 @@ trait VisibilityTrait
     {
         return 'public' === (string) $this->xmlNode['visibility'];
     }
+
+    public function isInherited(): bool
+    {
+        if ($this->xmlNode->inherited_from) {
+            return true;
+        }
+
+        return false;
+    }
 }

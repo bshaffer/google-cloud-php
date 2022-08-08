@@ -36,33 +36,7 @@ class ParameterNode
 
     public function getType(): string
     {
-        $types = explode('|', $this->type);
-
-        // Remove redundant "RepeatedField" type for protobuf parameters
-        if (count($types) == 2 && '\Google\Protobuf\Internal\RepeatedField' === $types[1]) {
-            unset($types[1]);
-        }
-
-        foreach ($types as $i => $type) {
-            if (0 === strpos($type, '\\')) {
-                if ('[]' === substr($type, -2)) {
-                    $type = substr($type, 0, -2);
-                    $types[$i] = sprintf('array<%s>', $this->replaceUidWithLink($type));
-                } else {
-                    $types[$i] = $this->replaceUidWithLink($type);
-                }
-            } elseif (0 === strpos($type, 'array<\\')) {
-                $types[$i] = preg_replace_callback(
-                    '/^array<([^ ]*)>$/',
-                    function ($matches) {
-                        return sprintf('array<%s>', $this->replaceUidWithLink($matches[1]));
-                    },
-                    $type
-                );
-            }
-        }
-
-        return implode('|', $types);
+        return $this->normalizeTypedVariables($this->type);
     }
 
     public function getDescription(): string
@@ -80,7 +54,7 @@ class ParameterNode
      * }
      * ```
      */
-    public function hasNestedParams(): bool
+    public function hasNestedParameters(): bool
     {
         $description = trim(str_replace('[optional]', '', $this->description));
 
@@ -92,10 +66,10 @@ class ParameterNode
     }
 
     /**
-     * PHPDoc has no support for nested params. This is a workaround to parse
+     * PHPDoc has no support for nested parameters. This is a workaround to parse
      * our custom format.
      */
-    public function getNestedParams(): array
+    public function getNestedParameters(): array
     {
         $parameters = [];
 

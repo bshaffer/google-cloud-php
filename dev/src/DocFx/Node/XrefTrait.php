@@ -19,6 +19,46 @@ namespace Google\Cloud\Dev\DocFx\Node;
 
 trait XrefTrait
 {
+    private function normalizeTypedVariables(
+        string $type, bool $replaceWithLink = true
+    ): string {
+        $types = explode('|', $type);
+
+        // Remove redundant "RepeatedField" type for protobuf parameters
+        if (count($types) == 2 && '\Google\Protobuf\Internal\RepeatedField' === $types[1]) {
+            array_pop($types);
+        }
+
+        foreach ($types as $i => $type) {
+            if (0 === strpos($type, '\\')) {
+                if ('[]' === substr($type, -2)) {
+                    $type = substr($type, 0, -2);
+                    $types[$i] = $this->normalizeArrayType($type, $replaceWithLink);
+                } elseif ($replaceWithLink) {
+                    $types[$i] = $this->replaceUidWithLink($type);
+                }
+            } elseif (0 === strpos($type, 'array<\\')) {
+                $types[$i] = preg_replace_callback(
+                    '/^array<([^ ]*)>$/',
+                    function ($matches) use ($replaceWithLink) {
+                        return $this->normalizeArrayType($matches[1], $replaceWithLink);
+                    },
+                    $type
+                );
+            }
+        }
+
+        return implode('|', $types);
+    }
+
+    private function normalizeArrayType(string $type, bool $replaceWithLink): string
+    {
+        return sprintf(
+            htmlentities('array<%s>'),
+            $replaceWithLink ? $this->replaceUidWithLink($type) : $type
+        );
+    }
+
     private function replaceSeeTag(string $description): string
     {
         return preg_replace_callback(

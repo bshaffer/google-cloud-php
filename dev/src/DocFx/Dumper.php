@@ -46,10 +46,6 @@ class Dumper
 
     public function getClassItems(ClassNode $class): array
     {
-        $children = [];
-        foreach ($class->getMethods() as $method) {
-            $children[] = sprintf('%s::%s()', $class->getFullname(), $method->getName());
-        }
         $classItem = array_filter([
             'uid' => $class->getFullname(),
             'name' => $class->getName(),
@@ -58,12 +54,10 @@ class Dumper
             'status' => $class->getStatus(),
             'type' => 'class',
             'langs' => ['php'],
-            'children' => $children,
             'implements' => $class->getImplements(),
         ]);
 
-        $items = [$classItem];
-
+        $methods = [];
         foreach ($class->getMethods() as $method) {
             $methodItem = array_filter([
                 'uid' => $method->getFullname(),
@@ -73,9 +67,9 @@ class Dumper
                 'parent'  => $class->getFullname(),
                 'type' => 'method',
                 'langs' => ['php'],
-                'syntax' => array_filter([
-                    // 'content' => $method->getContent(),
-                ]),
+                // 'syntax' => array_filter([
+                //     'content' => $method->getContent(),
+                // ]),
             ]);
             if ($parameters = $method->getParameters()) {
                 $methodItem['syntax']['parameters'] = [];
@@ -93,9 +87,11 @@ class Dumper
                     'description' => $method->getReturnDescription(),
                 ]);
             }
-            $items[] = $methodItem;
+
+            $methods[$methodItem['uid']] = $methodItem;
         }
 
+        $constants = [];
         foreach ($class->getConstants() as $constant) {
             $constantItem = array_filter([
                 'uid' => $constant->getFullname(),
@@ -105,14 +101,16 @@ class Dumper
                 'parent'  => $class->getFullname(),
                 'type' => 'const',
                 'langs' => ['php'],
-                'syntax' => array_filter([
-                    'content' => '<b>value: </b>' . $constant->getValue(),
-                ]),
+                'syntax' => [
+                    'content' => 'Value: ' . $constant->getValue(),
+                ],
             ]);
 
-            $items[] = $constantItem;
+            $constants[$constantItem['uid']] = $constantItem;
         }
 
-        return ['items' => $items];
+        $classItem['children'] = array_merge(array_keys($methods), array_keys($constants));
+
+        return array_merge([$classItem], array_values($methods), array_values($constants));
     }
 }

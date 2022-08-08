@@ -22,33 +22,25 @@ use SimpleXMLElement;
 class MethodNode
 {
     use DocblockTrait;
-    use NameTrait;
+    use ParentNodeTrait;
     use VisibilityTrait;
+    use XrefTrait;
 
     public function __construct(private SimpleXMLElement $xmlNode)
     {
     }
 
-    public function isInherited(): bool
-    {
-        if ($this->xmlNode->inherited_from) {
-            return true;
-        }
-
-        return false;
-    }
-
     public function getReturnType(): string
     {
-        if ($this->xmlNode->docblock) {
-            foreach ($this->xmlNode->docblock->tag as $tag) {
-                if ($tag['name'] == 'return') {
-                    if ((string) $tag['type']) {
-                        return (string) $tag['type'];
-                    }
-                    break;
-                }
+        if ($returnType = $this->getReturnTypeTag()) {
+            $types = explode('|', $returnType);
+            // Remove "|null" type from return types because this breaks DocFX linkage
+            // and adding manual tags (e.g. "<xref>") is HTML-escaped.
+            // (we will mark these as "nullable" in the return description.)
+            if (2 === count($types) && $types[1] == 'null') {
+                array_pop($types);
             }
+            return $this->normalizeTypedVariables(implode('|', $types), false);
         }
         return '';
     }
@@ -62,6 +54,25 @@ class MethodNode
                         return (string) $tag['description'];
                     }
                     break;
+                }
+            }
+        }
+
+        if ($returnType = $this->getReturnTypeTag()) {
+            $types = explode('|', $returnType);
+            if (2 === count($types) && $types[1] == 'null') {
+                return 'Nullable';
+            }
+        }
+        return '';
+    }
+
+    private function getReturnTypeTag(): string
+    {
+        if ($this->xmlNode->docblock) {
+            foreach ($this->xmlNode->docblock->tag as $tag) {
+                if ($tag['name'] == 'return' && (string) $tag['type']) {
+                    return $tag['type'];
                 }
             }
         }
@@ -90,23 +101,19 @@ class MethodNode
                 $description
             );
 
-            // For option arrays with nested parameters.
-            // Example:
-            // @param $options {
+            $parameters[] = $parameter;
+
+            // For option arrays with nested parameters. Example:
+            // @param array $options {
             //    @type string $key
             //         Some description of the "key" option
             // }
-            if ($parameter->hasNestedParams()) {
-                $parameters[] = $parameter;
+            if ($parameter->hasNestedParameters()) {
                 $parameters = array_merge(
                     $parameters,
-                    $parameter->getNestedParams()
+                    $parameter->getNestedParameters()
                 );
-
-                continue;
             }
-
-            $parameters[] = $parameter;
         }
 
         return $parameters;

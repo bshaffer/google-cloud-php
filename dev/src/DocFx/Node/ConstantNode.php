@@ -22,7 +22,7 @@ use SimpleXMLElement;
 class ConstantNode
 {
     use DocblockTrait;
-    use NameTrait;
+    use ParentNodeTrait;
     use VisibilityTrait;
 
     public function __construct(private SimpleXMLElement $xmlNode)

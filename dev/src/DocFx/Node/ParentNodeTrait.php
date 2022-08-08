@@ -17,15 +17,24 @@
 
 namespace Google\Cloud\Dev\DocFx\Node;
 
-trait NameTrait
+trait ParentNodeTrait
 {
-    public function getName(): string
+    use NameTrait;
+
+    private ?ClassNode $parentNode;
+
+    public function setParentNode(ClassNode $parentNode): void
     {
-        return $this->xmlNode->name;
+        $this->parentNode = $parentNode;
     }
 
     public function getFullname(): string
     {
-        return $this->xmlNode->full_name;
+        $fullName = (string) $this->xmlNode->full_name;
+        if (isset($this->parentNode)) {
+            [$_, $nodeName] = explode('::', $fullName);
+            return sprintf('%s::%s', $this->parentNode->getFullName(), $nodeName);
+        }
+        return $fullName;
     }
 }

@@ -101,7 +101,10 @@ class ClassNode
         }
 
         if ($this->childNode) {
-            $methods = array_merge($methods, $this->childNode->getMethods());
+            foreach ($this->childNode->getMethods() as $childMethod) {
+                $childMethod->setParentNode($this);
+                $methods[] = $childMethod;
+            }
         }
 
         return $methods;
@@ -111,15 +114,17 @@ class ClassNode
     {
         $constants = [];
         foreach ($this->xmlNode->constant as $constantNode) {
-            // exit('here');
             $constant = new ConstantNode($constantNode);
-            if ($constant->isPublic()) {
+            if ($constant->isPublic() && !$constant->isInherited()) {
                 $constants[] = $constant;
             }
         }
 
         if ($this->childNode) {
-            $constants = array_merge($constants, $this->childNode->getConstants());
+            foreach ($this->childNode->getConstants() as $childConstant) {
+                $childConstant->setParentNode($this);
+                $constants[] = $childConstant;
+            }
         }
 
         return $constants;
@@ -130,7 +135,9 @@ class ClassNode
         return (array) $this->xmlNode->implements;
     }
 
-    /** TODO: remove this */
+    /**
+     * TODO: remove this, or add it in case we ever use public properties. Right now this is unused.
+     */
     public function getProperties(): array
     {
         $properties = [];

@@ -66,10 +66,9 @@ class Dumper
 
         foreach ($class->getMethods() as $method) {
             $methodItem = array_filter([
-                'uid' => sprintf('%s::%s()', $class->getFullname(), $method->getName()),
+                'uid' => $method->getFullname(),
                 'name' => $method->getName(),
                 'id' => $method->getName(),
-                // 'summary' => $method->getSummary(),
                 'summary' => $method->getContent(),
                 'parent'  => $class->getFullname(),
                 'type' => 'method',
@@ -95,6 +94,23 @@ class Dumper
                 ]);
             }
             $items[] = $methodItem;
+        }
+
+        foreach ($class->getConstants() as $constant) {
+            $constantItem = array_filter([
+                'uid' => $constant->getFullname(),
+                'name' => $constant->getName(),
+                'id' => $constant->getName(),
+                'summary' => $constant->getContent(),
+                'parent'  => $class->getFullname(),
+                'type' => 'const',
+                'langs' => ['php'],
+                'syntax' => array_filter([
+                    'content' => '<b>value: </b>' . $constant->getValue(),
+                ]),
+            ]);
+
+            $items[] = $constantItem;
         }
 
         return ['items' => $items];

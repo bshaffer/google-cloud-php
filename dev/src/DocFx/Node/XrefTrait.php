@@ -17,18 +17,8 @@
 
 namespace Google\Cloud\Dev\DocFx\Node;
 
-trait NodeTrait
+trait XrefTrait
 {
-    public function getContent(): string
-    {
-        if (empty($this->xmlNode->docblock)) {
-            return '';
-        }
-        $docblock = new DocblockNode($this->xmlNode->docblock);
-
-        return $docblock->getFullDescription();
-    }
-
     private function replaceSeeTag(string $description): string
     {
         return preg_replace_callback(

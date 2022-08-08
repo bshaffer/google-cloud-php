@@ -21,7 +21,7 @@ use SimpleXMLElement;
 
 class ParameterNode
 {
-    use NodeTrait;
+    use XrefTrait;
 
     public function __construct(
         private string $name,
@@ -37,10 +37,21 @@ class ParameterNode
     public function getType(): string
     {
         $types = explode('|', $this->type);
+
+        // Remove redundant "RepeatedField" type for protobuf parameters
+        if (count($types) == 2 && '\Google\Protobuf\Internal\RepeatedField' === $types[1]) {
+            unset($types[1]);
+        }
+
         foreach ($types as $i => $type) {
             if (0 === strpos($type, '\\')) {
-                $types[$i] = $this->replaceUidWithLink($type);
-            } elseif (0 === strpos($type, 'array<')) {
+                if ('[]' === substr($type, -2)) {
+                    $type = substr($type, 0, -2);
+                    $types[$i] = sprintf('array<%s>', $this->replaceUidWithLink($type));
+                } else {
+                    $types[$i] = $this->replaceUidWithLink($type);
+                }
+            } elseif (0 === strpos($type, 'array<\\')) {
                 $types[$i] = preg_replace_callback(
                     '/^array<([^ ]*)>$/',
                     function ($matches) {
@@ -59,10 +70,27 @@ class ParameterNode
         return $this->description;
     }
 
-    public function setDescription(string $description): void
+    /**
+     * For option arrays with nested parameters.
+     * Example:
+     * ```
+     * param $options {
+     *    @type string $key
+     *         Some description of the "key" option
+     * }
+     * ```
+     */
+    public function hasNestedParams(): bool
     {
-        $this->description = $description;
+        $description = trim(str_replace('[optional]', '', $this->description));
+
+        if (strlen($description) === 0) {
+            return false;
+        }
+
+        return $description[0] === '{';
     }
+
     /**
      * PHPDoc has no support for nested params. This is a workaround to parse
      * our custom format.
@@ -110,16 +138,5 @@ class ParameterNode
         }
 
         return $parameters;
-    }
-
-    public function hasNestedParams(): bool
-    {
-        $description = trim(str_replace('[optional]', '', $this->description));
-
-        if (strlen($description) === 0) {
-            return false;
-        }
-
-        return $description[0] === '{';
     }
 }

@@ -21,7 +21,8 @@ use SimpleXMLElement;
 
 class ClassNode
 {
-    use NodeTrait;
+    use DocblockTrait;
+    use NameTrait;
 
     private $xmlNode;
     private $filePath;
@@ -31,16 +32,6 @@ class ClassNode
     {
         $this->filePath = $fileNode['path'];
         $this->xmlNode = $fileNode->class[0];
-    }
-
-    public function getName(): string
-    {
-        return (string) $this->xmlNode->name;
-    }
-
-    public function getFullname(): string
-    {
-        return $this->xmlNode->full_name;
     }
 
     public function getFilename(): string
@@ -114,6 +105,24 @@ class ClassNode
         }
 
         return $methods;
+    }
+
+    public function getConstants(): array
+    {
+        $constants = [];
+        foreach ($this->xmlNode->constant as $constantNode) {
+            // exit('here');
+            $constant = new ConstantNode($constantNode);
+            if ($constant->isPublic()) {
+                $constants[] = $constant;
+            }
+        }
+
+        if ($this->childNode) {
+            $constants = array_merge($constants, $this->childNode->getConstants());
+        }
+
+        return $constants;
     }
 
     public function getImplements(): array

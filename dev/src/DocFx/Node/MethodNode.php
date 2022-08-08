@@ -21,18 +21,12 @@ use SimpleXMLElement;
 
 class MethodNode
 {
-    use NodeTrait;
+    use DocblockTrait;
+    use NameTrait;
+    use VisibilityTrait;
 
-    private $xmlNode;
-
-    public function __construct(SimpleXMLElement $methodNode)
+    public function __construct(private SimpleXMLElement $xmlNode)
     {
-        $this->xmlNode = $methodNode;
-    }
-
-    public function getName(): string
-    {
-        return (string) $this->xmlNode->name;
     }
 
     public function isInherited(): bool
@@ -42,11 +36,6 @@ class MethodNode
         }
 
         return false;
-    }
-
-    public function isPublic(): bool
-    {
-        return 'public' === (string) $this->xmlNode['visibility'];
     }
 
     public function getReturnType(): string
@@ -79,32 +68,27 @@ class MethodNode
         return '';
     }
 
-    public function getSummary(): string
-    {
-        return (string) $this->xmlNode->description;
-    }
-
     public function getParameters(): array
     {
         $parameters = [];
         foreach ($this->xmlNode->argument as $parameterNode) {
-            $parameter = new ParameterNode(
-                (string) $parameterNode->name,
-                (string) $parameterNode->type
-            );
-
             // Determine the description of the parameter
+            $parameterName = (string) $parameterNode->name;
             $description = '';
             if ($this->xmlNode->docblock) {
                 foreach ($this->xmlNode->docblock->tag as $tag) {
                     if ($tag['name'] == 'param') {
-                        if ((string) $tag['variable'] === $parameter->getName()) {
+                        if ((string) $tag['variable'] === $parameterName) {
                             $description = (string) $tag['description'];
                         }
                     }
                 }
             }
-            $parameter->setDescription($description);
+            $parameter = new ParameterNode(
+                $parameterName,
+                (string) $parameterNode->type,
+                $description
+            );
 
             // For option arrays with nested parameters.
             // Example:

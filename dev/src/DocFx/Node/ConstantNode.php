@@ -19,25 +19,18 @@ namespace Google\Cloud\Dev\DocFx\Node;
 
 use SimpleXMLElement;
 
-class DocblockNode
+class ConstantNode
 {
-    use NodeTrait;
+    use DocblockTrait;
+    use NameTrait;
+    use VisibilityTrait;
 
-    public function __construct($docblockNode)
+    public function __construct(private SimpleXMLElement $xmlNode)
     {
-        $this->xmlNode = $docblockNode;
     }
 
-    public function getFullDescription(): string
+    public function getValue(): string
     {
-        $summary = $this->xmlNode->description;
-        if (!empty($this->xmlNode->{'long-description'})) {
-            if ($summary) {
-                $summary .= "\n\n";
-            }
-            $summary .= (string) $this->xmlNode->{'long-description'};
-        }
-
-        return $this->replaceSeeTag($summary);
+        return $this->xmlNode->value;
     }
 }

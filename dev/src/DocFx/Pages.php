@@ -52,6 +52,7 @@ class Pages
             $classNode = new ClassNode($file->class[0]);
 
             // Skip the protobuf classes with underscores, they're all deprecated
+            // @TODO: Do not generate them in V2
             if (false !== strpos($classNode->getName(), '_')) {
                 continue;
             }
@@ -66,12 +67,18 @@ class Pages
                 continue;
             }
 
-            /** @TODO: Remove this in favor of deprecating these classes */
+            // Manually skip protobuf enums in favor of Gapic enums.
+            // @TODO: Do not generate them in V2, eventually mark them as deprecated
             $isDiregapic = $isDiregapic || $classNode->isGapicEnumClass();
 
             $fullName = $classNode->getFullname();
-            // Skip internal classes
-            if ('GrpcClient' === substr($fullName, -10)) {
+
+            // Manually skip Grpc classes
+            // @TODO: Do not generate Grpc classes in V2, eventually mark these as deprecated
+            if (
+                'GrpcClient' === substr($fullName, -10)
+                && '\Grpc\BaseStub' === $classNode->getExtends()
+            ) {
                 continue;
             }
 
@@ -80,7 +87,7 @@ class Pages
 
         /**
          * Remove protobuf enums in favor of Gapic enums.
-         * @TODO: Remove this in favor of deprecating these classes
+         * @TODO: Do not generate them in V2, eventually mark them as deprecated
          */
         if ($isDiregapic) {
             foreach ($pages as $className => $page) {
@@ -94,6 +101,7 @@ class Pages
         // Sort pages alphabetically by full class name
         ksort($pages);
 
+        // Combine Client classes with internal Gapic\Client
         $this->pages = array_values($this->combineGapicClients($pages));
 
         return $this->pages;

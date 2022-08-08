@@ -28,4 +28,9 @@ trait NameTrait
     {
         return $this->xmlNode->full_name;
     }
+
+    public function getNamespace(): string
+    {
+        return $this->xmlNode['namespace'];
+    }
 }

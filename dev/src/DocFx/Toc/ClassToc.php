@@ -54,12 +54,6 @@ class ClassToc
 
     public function isProtobufEnumClass(): bool
     {
-        if (!$this->classNode->getExtends()) {
-            // check that last line of long-description starts with "Protobuf type..."
-            $longDescriptionParts = explode("\n", $this->classNode->getLongDescription());
-            $lastDescriptionLine = array_pop($longDescriptionParts);
-            return 0 === strpos($lastDescriptionLine, 'Protobuf type');
-        }
-        return false;
+        return $this->classNode->isProtobufEnumClass();
     }
 }

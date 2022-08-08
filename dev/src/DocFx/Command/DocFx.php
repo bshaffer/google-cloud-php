@@ -22,12 +22,10 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Process\Process;
 use Symfony\Component\Yaml\Yaml;
-use SimpleXMLElement;
 use RuntimeException;
-use Google\Cloud\Dev\DocFx\Dumper;
-use Google\Cloud\Dev\DocFx\Node\ClassNode;
-use Google\Cloud\Dev\DocFx\Toc\NamespaceToc;
+use Google\Cloud\Dev\DocFx\Pages;
 
 class DocFx extends Command
 {
@@ -35,21 +33,33 @@ class DocFx extends Command
     {
         $this->setName('docfx')
             ->setDescription('Generate DocFX yaml from a phpdoc strucutre.xml')
-            ->addOption('xml', '', InputOption::VALUE_REQUIRED, 'Path to phpdoc structure.xml', '.phpdoc/build/structure.xml')
+            ->addOption('xml', '', InputOption::VALUE_REQUIRED, 'Path to phpdoc structure.xml')
             ->addOption('component', 'c', InputOption::VALUE_REQUIRED, 'Generate docs only for a single component.', '')
             ->addOption('out', '', InputOption::VALUE_REQUIRED, 'Path where to store the generated output.', 'out')
+            ->addOption('metadata-version', '', InputOption::VALUE_REQUIRED, 'version to write to docs.metadata using docuploader')
+            ->addOption('staging-bucket', '', InputOption::VALUE_REQUIRED, 'Upload to the specified staging bucket using docuploader.')
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $component = $input->getOption('component') ?: basename(getcwd());
-        if (!$this->checkComponent($component)) {
-            throw new \Exception($input->getOption('component') ? 'Invalid component provided'
-                : 'You are not in a component directory. Run this command from a valid component'
-                  . ' directory or provide a valid component using the "component" option.');
-        }
+        $componentPath = $this->checkComponent($component);
         $xml = $input->getOption('xml');
+        if (empty($xml)) {
+            $output->write('Running "phpdoc" to generate structure.xml... ');
+            // Run "phpdoc"
+            $process = new Process([
+                'phpdoc',
+                '-d',
+                sprintf('%s/src', $componentPath),
+                '--template',
+                'xml'
+            ]);
+            $process->mustRun();
+            $output->writeln('Done.');
+            $xml = '.phpdoc/build/structure.xml';
+        }
         if (!file_exists($xml)) {
             throw new \Exception($input->getOption('xml') ? 'Unable to load provided structure.xml'
                 : sprintf('Default structure.xml file "%s" not found.', $xml));
@@ -60,10 +70,8 @@ class DocFx extends Command
             throw new RuntimeException('provided path to structure.xml does not exist');
         }
 
-        $releaseLevel = $this->getReleaseLevel($component);
-        $namespace = $this->getNamespace($component);
-
-        $structure = new SimpleXMLElement(file_get_contents($xml));
+        $releaseLevel = $this->getReleaseLevel($componentPath);
+        $namespace = $this->getNamespace($componentPath);
 
         if (!is_dir($outDir)) {
             if (!mkdir($outDir)) {
@@ -71,94 +79,79 @@ class DocFx extends Command
             }
         }
 
-        $dumper = new Dumper();
-        $toc = new NamespaceToc($namespace, $namespace);
-
-        // List of pages, to sort alphabetically by key
-        $pages = [];
+        $output->write(sprintf('Writing output to "%s"... ', $outDir));
 
         // YAML dump configuration
         $inline = 9; // The level where you switch to inline YAML
         $indent = 2; // The amount of spaces to use for indentation of nested nodes
         $flags = Yaml::DUMP_MULTI_LINE_LITERAL_BLOCK;
 
-        foreach ($structure->file as $file) {
-            // only document classes for now
-            if (!isset($file->class[0])) {
-                continue;
-            }
+        $pages = new Pages($xml, $namespace);
 
-            $classNode = new ClassNode($file);
-
-            // Skip the protobuf classes with underscores, they're all deprecated
-            if (false !== strpos($classNode->getName(), '_')) {
-                continue;
-            }
-
-            // Skip deprecated classes
-            if ('deprecated' === $classNode->getStatus()) {
-                continue;
-            }
-
-            // Skip internal classes
-            if ($classNode->isInternal()) {
-                continue;
-            }
-
-            $fullName = $classNode->getFullname();
-            // Skip internal classes
-            if ('GrpcClient' === substr($fullName, -10)) {
-                continue;
-            }
-
-            $pages[$fullName] = $classNode;
-        }
-
-        // Sort pages alphabetically by full class name
-        ksort($pages);
-
-        // Combine Client with internal Gapic\Client
-        $pages = $dumper->combineGapicClients($pages);
-
-        foreach ($pages as $classNode) {
-            $docFxArray = ['items' => $dumper->getClassItems($classNode)];
-
-            // Add the class to the TOC
-            $toc->addNode($classNode);
+        foreach ($pages->getPages() as $page) {
+            $docFxArray = ['items' => $page->getItems()];
 
             // Dump the YAML for the class node
             $yaml = '### YamlMime:UniversalReference' . PHP_EOL;
             $yaml .= Yaml::dump($docFxArray, $inline, $indent, $flags);
 
             // Write the YAML to a file
-            $outFile = sprintf('%s/%s.yml', $outDir, $classNode->getFilename());
+            $outFile = sprintf('%s/%s.yml', $outDir, $page->getFilename());
             file_put_contents($outFile, $yaml);
         }
 
+        $tocItems = $pages->getTocItems();
+
+        // Add an "overview" file if it exists
+        $overviewFile = sprintf('%s/README.md', $componentPath);
+        if (file_exists($overviewFile)) {
+            $outFile = sprintf('%s/index.md', $outDir);
+            file_put_contents($outFile, file_get_contents($overviewFile));
+            // Add "overview" as the first item on the TOC
+            array_unshift($tocItems, ['name' => 'Overview', 'href' => 'index.md']);
+        }
+
         // Write the TOC to a file
-        $tocYaml = Yaml::dump($toc->toToc()['items'], $inline, $indent, $flags);
+        $tocYaml = Yaml::dump($tocItems, $inline, $indent, $flags);
         $outFile = sprintf('%s/toc.yml', $outDir);
         file_put_contents($outFile, $tocYaml);
 
-        $output->writeln(sprintf('Output written to "%s"', $outDir));
+        $output->writeln('Done.');
 
-        // Todo: create index.yml
-    }
-
-    private function getComponentPath(string $component): string
-    {
-        $componentPath = realpath(sprintf(__DIR__ . '/../../../../%s', $component));
-
-        if (!is_dir($componentPath)) {
-            throw new RuntimeException(sprintf('component "%s" not found', $component));
+        if ($metadataVersion = $input->getOption('metadata-version')) {
+            $output->write(sprintf('Writing docs.metadata with version "%s"... ', $metadataVersion));
+            $process = new Process([
+                'docuploader',
+                'create-metadata',
+                '--language',
+                'php',
+                '--name',
+                strtolower($component),
+                '--version',
+                $metadataVersion
+            ]);
+            $process->mustRun();
+            $output->writeln('Done.');
         }
 
-        return $componentPath;
+        if ($stagingBucket = $input->getOption('staging-bucket')) {
+            $output->write(sprintf('Running "docuploader" to upload to staging bucket "%s"... ', $stagingBucket));
+            $process = new Process([
+                'docuploader',
+                'upload',
+                $outDir,
+                '--staging-bucket',
+                $stagingBucket,
+                '--destination-prefix',
+                'docfx-'
+            ]);
+            $process->mustRun();
+            $output->writeln('Done.');
+        }
     }
 
-    private function getReleaseLevel(string $component): string
+    private function getReleaseLevel(string $componentPath): string
     {
-        $componentPath = $this->getComponentPath($component);
         $repoMetadataPath = $componentPath . '/.repo-metadata.json';
         if (!file_exists($repoMetadataPath)) {
             throw new RuntimeException(sprintf('repo metadata not found for component "%s"', $component));
@@ -174,9 +167,8 @@ class DocFx extends Command
         return $repoMetadataJson['release_level'];
     }
 
-    private function getNamespace(string $component): string
+    private function getNamespace(string $componentPath): string
     {
-        $componentPath = $this->getComponentPath($component);
         $composerPath = $componentPath . '/composer.json';
         if (!file_exists($composerPath)) {
             throw new RuntimeException(sprintf('composer.json not found for component "%s"', $component));
@@ -211,6 +203,18 @@ class DocFx extends Command
                 unset($components[$i]);
             }
         }
-        return in_array($component, $components);
+        if (!in_array($component, $components)) {
+            throw new \Exception($input->getOption('component') ? 'Invalid component provided'
+                : 'You are not in a component directory. Run this command from a valid component'
+                  . ' directory or provide a valid component using the "component" option.');
+        }
+
+        $componentPath = realpath(sprintf(__DIR__ . '/../../../../%s', $component));
+
+        if (!is_dir($componentPath)) {
+            throw new RuntimeException(sprintf('component "%s" not found', $component));
+        }
+
+        return $componentPath;
     }
 }

@@ -20,51 +20,66 @@ namespace Google\Cloud\Dev\DocFx;
 use Google\Cloud\Dev\DocFx\Node\ClassNode;
 
 /**
- * Class to output the DocFX Table of Contents
+ * Class to output the DocFX array before exporting to YAML.
  */
-class Dumper
+class Page
 {
-    public function combineGapicClients(array $pages)
+    public function __construct(private ClassNode $classNode, private string $filePath)
     {
-        // Combine GAPIC client classes
-        foreach ($pages as $className => $classNode) {
-            if ('Client' == substr($className, -6) && 'GapicClient' != substr($className, -11)) {
-                // Find Gapic Classname
-                $parts = explode('\\', $className);
-                $clientName = substr(array_pop($parts), 0, -6) . 'GapicClient';
-                $parts[] = 'Gapic';
-                $parts[] = $clientName;
-                $gapicClientName = implode('\\', $parts);
-                if (isset($pages[$gapicClientName])) {
-                    $classNode->setChildNode($pages[$gapicClientName]);
-                    unset($pages[$gapicClientName]);
-                }
-            }
-        }
-        return $pages;
     }
 
-    public function getClassItems(ClassNode $class): array
+    public function getClassNode(): ClassNode
     {
-        $classItem = array_filter([
-            'uid' => $class->getFullname(),
-            'name' => $class->getName(),
-            'id' => $class->getName(),
-            'summary' => $class->getContent(),
-            'status' => $class->getStatus(),
+        return $this->classNode;
+    }
+
+    public function getFilename(): string
+    {
+        $filename = str_replace(['src/', '.php'], '', $this->filePath);
+
+        return str_replace('/', '.', $filename);
+    }
+
+    public function getItems(): array
+    {
+        $methods = $this->getMethodItems();
+        $constants = $this->getConstantItems();
+
+        $classItem = $this->getClassItem();
+        $classItem['children'] = array_merge(array_keys($methods), array_keys($constants));
+
+        return array_merge(
+            [$classItem],
+            array_values($methods),
+            array_values($constants)
+        );
+    }
+
+    private function getClassItem(): array
+    {
+        return array_filter([
+            'uid' => $this->classNode->getFullname(),
+            'name' => $this->classNode->getName(),
+            'id' => $this->classNode->getName(),
+            'summary' => $this->classNode->getContent(),
+            'status' => $this->classNode->getStatus(),
             'type' => 'class',
             'langs' => ['php'],
-            'implements' => $class->getImplements(),
+            'implements' => $this->classNode->getImplements(),
         ]);
+    }
 
+    private function getMethodItems(): array
+    {
         $methods = [];
-        foreach ($class->getMethods() as $method) {
+
+        foreach ($this->classNode->getMethods() as $method) {
             $methodItem = array_filter([
                 'uid' => $method->getFullname(),
                 'name' => $method->getName(),
                 'id' => $method->getName(),
                 'summary' => $method->getContent(),
-                'parent'  => $class->getFullname(),
+                'parent'  => $this->classNode->getFullname(),
                 'type' => 'method',
                 'langs' => ['php'],
                 // 'syntax' => array_filter([
@@ -91,14 +106,20 @@ class Dumper
             $methods[$methodItem['uid']] = $methodItem;
         }
 
+        return $methods;
+    }
+
+    private function getConstantItems(): array
+    {
         $constants = [];
-        foreach ($class->getConstants() as $constant) {
+
+        foreach ($this->classNode->getConstants() as $constant) {
             $constantItem = array_filter([
                 'uid' => $constant->getFullname(),
                 'name' => $constant->getName(),
                 'id' => $constant->getName(),
                 'summary' => $constant->getContent(),
-                'parent'  => $class->getFullname(),
+                'parent'  => $this->classNode->getFullname(),
                 'type' => 'const',
                 'langs' => ['php'],
                 'syntax' => [
@@ -109,8 +130,6 @@ class Dumper
             $constants[$constantItem['uid']] = $constantItem;
         }
 
-        $classItem['children'] = array_merge(array_keys($methods), array_keys($constants));
-
-        return array_merge([$classItem], array_values($methods), array_values($constants));
+        return $constants;
     }
 }

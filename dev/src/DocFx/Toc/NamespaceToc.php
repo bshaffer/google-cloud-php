@@ -63,6 +63,7 @@ class NamespaceToc
         // Organize into "Services", "Types", and "Enums" for version namespaces
         // e.g. "\Google\Cloud\Vision\V1"
         if ($this->isVersionNamespace) {
+            $tocArray['name'] = $this->namespace;
             if ($services = $this->getServicesToc()) {
                 $tocArray['items'][] = [
                     'name' => 'Services',
@@ -173,7 +174,7 @@ class NamespaceToc
 
     protected function getOthersToc(): array
     {
-        // Get a list of all other classes which are not gapic clients or protobuf messages / enums
+        // Get a list of all other classes which are not gapic clients / enums or protobuf messages / enums
         $others = [];
         foreach ($this->items as $item) {
             if (

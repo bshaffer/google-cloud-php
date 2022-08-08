@@ -24,35 +24,41 @@ class ClassNode
     use DocblockTrait;
     use NameTrait;
 
-    private $xmlNode;
-    private $filePath;
     private $childNode;
 
-    public function __construct(SimpleXMLElement $fileNode)
+    public function __construct(private SimpleXMLElement $xmlNode)
     {
-        $this->filePath = $fileNode['path'];
-        $this->xmlNode = $fileNode->class[0];
     }
 
-    public function getFilename(): string
+    public function isProtobufEnumClass(): bool
     {
-        $filename = str_replace(['src/', '.php'], '', $this->filePath);
+        if ($this->getExtends()) {
+            return false;
+        }
 
-        return str_replace('/', '.', $filename);
-    }
-
-    public function getLongDescription(): string
-    {
         if (empty($this->xmlNode->docblock)) {
-            return '';
+            return false;
         }
 
         if (empty($this->xmlNode->docblock->{'long-description'})) {
-            return '';
-
+            if (empty($this->xmlNode->docblock->{'description'})) {
+                return false;
+            }
+            $description = $this->xmlNode->docblock->{'description'};
+        } else {
+            $description = (string) $this->xmlNode->docblock->{'long-description'};
         }
 
-        return (string) $this->xmlNode->docblock->{'long-description'};
+        // check that last line of long-description starts with "Protobuf type..."
+        $descriptionParts = explode("\n", $description);
+        $lastDescriptionLine = array_pop($descriptionParts);
+        return 0 === strpos($lastDescriptionLine, 'Protobuf type');
+    }
+
+    public function isGapicEnumClass(): bool
+    {
+        // returns true if the class extends \Google\Protobuf\Internal\Message
+        return false !== strpos($this->getNamespace(), '\Enums\\');
     }
 
     public function getStatus(): string

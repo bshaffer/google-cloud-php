@@ -86,6 +86,15 @@ trait XrefTrait
             case 0 === strpos($uid, '\Google\Protobuf\\'):
                 // @TODO: link to reference docs for Protobuf
                 return $name;
+            case 0 === strpos($uid, '\Google\Api\\'):
+            case 0 === strpos($uid, '\Google\Cloud\\Iam\\'):
+            case 0 === strpos($uid, '\Google\Cloud\\Location\\'):
+            case 0 === strpos($uid, '\Google\Cloud\\Logging\\'):
+            case 0 === strpos($uid, '\Google\Iam\\'):
+            case 0 === strpos($uid, '\Google\Rpc\\'):
+            case 0 === strpos($uid, '\Google\Type\\'):
+                // @TODO: link to reference docs for common protos
+                return $name;
             default:
                 $extLinkRoot = '';
         }

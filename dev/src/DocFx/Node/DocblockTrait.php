@@ -28,14 +28,40 @@ trait DocblockTrait
         }
         $docblockNode = $this->xmlNode->docblock;
 
-        $summary = $docblockNode->description;
-        if (!empty($docblockNode->{'long-description'})) {
-            if ($summary) {
-                $summary .= "\n\n";
+        $content = $this->getDescription();
+        if ($longDescription = $this->getLongDescription()) {
+            if ($content) {
+                $content .= "\n\n";
             }
-            $summary .= (string) $docblockNode->{'long-description'};
+            $content .= $longDescription;
         }
 
-        return $this->replaceSeeTag($summary);
+        return $this->replaceSeeTag($content);
+    }
+
+    public function getLongDescription(): string
+    {
+        if (!empty($this->xmlNode->docblock)) {
+            $docblockNode = $this->xmlNode->docblock;
+            if (!empty($docblockNode->{'long-description'})) {
+                return $docblockNode->{'long-description'};;
+            }
+        }
+
+        if (isset($this->childNode)) {
+            return $this->childNode->getLongDescription();
+        }
+
+        return '';
+    }
+
+    public function getDescription(): string
+    {
+        if (empty($this->xmlNode->docblock)) {
+            return '';
+        }
+        $docblockNode = $this->xmlNode->docblock;
+
+        return $docblockNode->description;
     }
 }

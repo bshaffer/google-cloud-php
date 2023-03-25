@@ -15,10 +15,11 @@
  * limitations under the License.
  */
 
-namespace Google\Cloud\Storage\Connection\Middleware;
+namespace Google\Cloud\Core\HttpHandler;
 
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
+use Ramsey\Uuid\Uuid;
 
 /**
  * RetryMiddleware is a Guzzle Middleware that allows for retrying certain error
@@ -26,10 +27,8 @@ use Psr\Http\Message\ResponseInterface;
  *
  * Requests are accessed using the Simple API access developer key.
  */
-class RetryHeadersMiddleware
+class RetryHttpHandler
 {
-    const HEADER_API_CLIENT_IDENTIFICATION = 'x-goog-api-client';
-
     private $currentAttempt = 0;
 
     /**
@@ -82,16 +81,15 @@ class RetryHeadersMiddleware
         array $options
     ): RequestInterface {
         $requestHash = Uuid::uuid4()->toString();
-        $request = $request->withHeader(
-            self::HEADER_API_CLIENT_IDENTIFICATION,
-            sprintf("gccl-invocation-id/%s", $requestHash)
-        );
 
-        $request = $request->withHeader(
-            self::HEADER_API_CLIENT_IDENTIFICATION,
-            sprintf("gccl-attempt-count/%s", self::$currentAttempt)
-        );
-
-        return $request;
+        return $request
+            ->addHeader(
+                AgentHeader::AGENT_HEADER_KEY,
+                sprintf("gccl-invocation-id/%s", $requestHash)
+            )
+            ->addHeader(
+                AgentHeader::AGENT_HEADER_KEY,
+                sprintf("gccl-attempt-count/%s", self::$currentAttempt)
+            );
     }
 }

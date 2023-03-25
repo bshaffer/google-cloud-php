@@ -27,6 +27,7 @@ use Google\Cloud\Core\Upload\ResumableUploader;
 use Google\Cloud\Core\Upload\StreamableUploader;
 use Google\Cloud\Core\UriTrait;
 use Google\Cloud\Storage\Connection\ConnectionInterface;
+use Google\Cloud\Core\RetryInterface;
 use Google\Cloud\Storage\StorageClient;
 use Google\CRC32\Builtin;
 use Google\CRC32\CRC32;
@@ -41,7 +42,7 @@ use Ramsey\Uuid\Uuid;
  * Implementation of the
  * [Google Cloud Storage JSON API](https://cloud.google.com/storage/docs/json_api/).
  */
-class Rest implements ConnectionInterface
+class Rest implements ConnectionInterface, RetryInterface
 {
     use RestTrait;
     use RetryTrait;
@@ -85,6 +86,51 @@ class Rest implements ConnectionInterface
     private $restRetryFunction;
 
     /**
+     * The operations which can be retried without any conditions
+     * (Idempotent) are mapped to a boolean (true).
+     *
+     * The operations which can be retried with specific conditions
+     * (Conditionally idempotent) are mapped to an array of methods.
+     * @var array
+     */
+    private static $retryMethods = [
+        'bucketAccessControls.get' => true,
+        'bucketAccessControls.list' => true,
+        'buckets.delete' => true,
+        'buckets.get' => true,
+        'buckets.getIamPolicy' => true,
+        'buckets.insert' => true,
+        'buckets.list' => true,
+        'buckets.lockRetentionPolicy' => true,
+        'buckets.testIamPermissions' => true,
+        'defaultObjectAccessControls.get' => true,
+        'defaultObjectAccessControls.list' => true,
+        'projects.resources.hmacKeys.delete' => true,
+        'projects.resources.hmacKeys.get' => true,
+        'projects.resources.hmacKeys.list' => true,
+        'notifications.delete' => true,
+        'notifications.get' => true,
+        'notifications.list' => true,
+        'objectAccessControls.get' => true,
+        'objectAccessControls.list' => true,
+        'objects.get' => true,
+        'objects.list' => true,
+        'projects.resources.serviceAccount.get' => true,
+        // NOTE: Currently etag is not supported, so that preCondition never available
+        'buckets.patch' => ['ifMetagenerationMatch', 'etag'],
+        'buckets.setIamPolicy' => ['etag'],
+        'buckets.update' => ['ifMetagenerationMatch', 'etag'],
+        'projects.resources.hmacKeys.update' => ['etag'],
+        'objects.compose' => ['ifGenerationMatch'],
+        'objects.copy' => ['ifGenerationMatch'],
+        'objects.delete' => ['ifGenerationMatch'],
+        'objects.insert' => ['ifGenerationMatch', 'ifGenerationNotMatch'],
+        'objects.patch' => ['ifMetagenerationMatch', 'etag'],
+        'objects.rewrite' => ['ifGenerationMatch'],
+        'objects.update' => ['ifMetagenerationMatch']
+    ];
+
+    /**
      * @param array $config
      */
     public function __construct(array $config = [])
@@ -123,7 +169,7 @@ class Rest implements ConnectionInterface
      */
     public function deleteAcl(array $args = [])
     {
-        return $this->sendWithRetry($args['type'], 'delete', $args);
+        return $this->send($args['type'], 'delete', $args);
     }
 
     /**
@@ -131,7 +177,7 @@ class Rest implements ConnectionInterface
      */
     public function getAcl(array $args = [])
     {
-        return $this->sendWithRetry($args['type'], 'get', $args);
+        return $this->send($args['type'], 'get', $args);
     }
 
     /**
@@ -139,7 +185,7 @@ class Rest implements ConnectionInterface
      */
     public function listAcl(array $args = [])
     {
-        return $this->sendWithRetry($args['type'], 'list', $args);
+        return $this->send($args['type'], 'list', $args);
     }
 
     /**
@@ -147,7 +193,7 @@ class Rest implements ConnectionInterface
      */
     public function insertAcl(array $args = [])
     {
-        return $this->sendWithRetry($args['type'], 'insert', $args);
+        return $this->send($args['type'], 'insert', $args);
     }
 
     /**
@@ -155,7 +201,7 @@ class Rest implements ConnectionInterface
      */
     public function patchAcl(array $args = [])
     {
-        return $this->sendWithRetry($args['type'], 'patch', $args);
+        return $this->send($args['type'], 'patch', $args);
     }
 
     /**
@@ -163,7 +209,7 @@ class Rest implements ConnectionInterface
      */
     public function deleteBucket(array $args = [])
     {
-        return $this->sendWithRetry('buckets', 'delete', $args);
+        return $this->send('buckets', 'delete', $args);
     }
 
     /**
@@ -171,7 +217,7 @@ class Rest implements ConnectionInterface
      */
     public function getBucket(array $args = [])
     {
-        return $this->sendWithRetry('buckets', 'get', $args);
+        return $this->send('buckets', 'get', $args);
     }
 
     /**
@@ -179,7 +225,7 @@ class Rest implements ConnectionInterface
      */
     public function listBuckets(array $args = [])
     {
-        return $this->sendWithRetry('buckets', 'list', $args);
+        return $this->send('buckets', 'list', $args);
     }
 
     /**
@@ -187,7 +233,7 @@ class Rest implements ConnectionInterface
      */
     public function insertBucket(array $args = [])
     {
-        return $this->sendWithRetry('buckets', 'insert', $args);
+        return $this->send('buckets', 'insert', $args);
     }
 
     /**
@@ -195,7 +241,7 @@ class Rest implements ConnectionInterface
      */
     public function patchBucket(array $args = [])
     {
-        return $this->sendWithRetry('buckets', 'patch', $args);
+        return $this->send('buckets', 'patch', $args);
     }
 
     /**
@@ -203,7 +249,7 @@ class Rest implements ConnectionInterface
      */
     public function deleteObject(array $args = [])
     {
-        return $this->sendWithRetry('objects', 'delete', $args);
+        return $this->send('objects', 'delete', $args);
     }
 
     /**
@@ -211,7 +257,7 @@ class Rest implements ConnectionInterface
      */
     public function copyObject(array $args = [])
     {
-        return $this->sendWithRetry('objects', 'copy', $args);
+        return $this->send('objects', 'copy', $args);
     }
 
     /**
@@ -219,7 +265,7 @@ class Rest implements ConnectionInterface
      */
     public function rewriteObject(array $args = [])
     {
-        return $this->sendWithRetry('objects', 'rewrite', $args);
+        return $this->send('objects', 'rewrite', $args);
     }
 
     /**
@@ -227,7 +273,7 @@ class Rest implements ConnectionInterface
      */
     public function composeObject(array $args = [])
     {
-        return $this->sendWithRetry('objects', 'compose', $args);
+        return $this->send('objects', 'compose', $args);
     }
 
     /**
@@ -235,7 +281,7 @@ class Rest implements ConnectionInterface
      */
     public function getObject(array $args = [])
     {
-        return $this->sendWithRetry('objects', 'get', $args);
+        return $this->send('objects', 'get', $args);
     }
 
     /**
@@ -243,7 +289,7 @@ class Rest implements ConnectionInterface
      */
     public function listObjects(array $args = [])
     {
-        return $this->sendWithRetry('objects', 'list', $args);
+        return $this->send('objects', 'list', $args);
     }
 
     /**
@@ -251,7 +297,7 @@ class Rest implements ConnectionInterface
      */
     public function patchObject(array $args = [])
     {
-        return $this->sendWithRetry('objects', 'patch', $args);
+        return $this->send('objects', 'patch', $args);
     }
 
     /**
@@ -405,7 +451,7 @@ class Rest implements ConnectionInterface
      */
     public function getBucketIamPolicy(array $args)
     {
-        return $this->sendWithRetry('buckets', 'getIamPolicy', $args);
+        return $this->send('buckets', 'getIamPolicy', $args);
     }
 
     /**
@@ -413,7 +459,7 @@ class Rest implements ConnectionInterface
      */
     public function setBucketIamPolicy(array $args)
     {
-        return $this->sendWithRetry('buckets', 'setIamPolicy', $args);
+        return $this->send('buckets', 'setIamPolicy', $args);
     }
 
     /**
@@ -421,7 +467,7 @@ class Rest implements ConnectionInterface
      */
     public function testBucketIamPermissions(array $args)
     {
-        return $this->sendWithRetry('buckets', 'testIamPermissions', $args);
+        return $this->send('buckets', 'testIamPermissions', $args);
     }
 
     /**
@@ -429,7 +475,7 @@ class Rest implements ConnectionInterface
      */
     public function getNotification(array $args = [])
     {
-        return $this->sendWithRetry('notifications', 'get', $args);
+        return $this->send('notifications', 'get', $args);
     }
 
     /**
@@ -437,7 +483,7 @@ class Rest implements ConnectionInterface
      */
     public function deleteNotification(array $args = [])
     {
-        return $this->sendWithRetry('notifications', 'delete', $args);
+        return $this->send('notifications', 'delete', $args);
     }
 
     /**
@@ -445,7 +491,7 @@ class Rest implements ConnectionInterface
      */
     public function insertNotification(array $args = [])
     {
-        return $this->sendWithRetry('notifications', 'insert', $args);
+        return $this->send('notifications', 'insert', $args);
     }
 
     /**
@@ -453,7 +499,7 @@ class Rest implements ConnectionInterface
      */
     public function listNotifications(array $args = [])
     {
-        return $this->sendWithRetry('notifications', 'list', $args);
+        return $this->send('notifications', 'list', $args);
     }
 
     /**
@@ -461,7 +507,7 @@ class Rest implements ConnectionInterface
      */
     public function getServiceAccount(array $args = [])
     {
-        return $this->sendWithRetry('projects.resources.serviceAccount', 'get', $args);
+        return $this->send('projects.resources.serviceAccount', 'get', $args);
     }
 
     /**
@@ -469,7 +515,7 @@ class Rest implements ConnectionInterface
      */
     public function lockRetentionPolicy(array $args = [])
     {
-        return $this->sendWithRetry('buckets', 'lockRetentionPolicy', $args);
+        return $this->send('buckets', 'lockRetentionPolicy', $args);
     }
 
     /**
@@ -477,7 +523,7 @@ class Rest implements ConnectionInterface
      */
     public function createHmacKey(array $args = [])
     {
-        return $this->sendWithRetry('projects.resources.hmacKeys', 'create', $args);
+        return $this->send('projects.resources.hmacKeys', 'create', $args);
     }
 
     /**
@@ -485,7 +531,7 @@ class Rest implements ConnectionInterface
      */
     public function deleteHmacKey(array $args = [])
     {
-        return $this->sendWithRetry('projects.resources.hmacKeys', 'delete', $args);
+        return $this->send('projects.resources.hmacKeys', 'delete', $args);
     }
 
     /**
@@ -493,7 +539,7 @@ class Rest implements ConnectionInterface
      */
     public function getHmacKey(array $args = [])
     {
-        return $this->sendWithRetry('projects.resources.hmacKeys', 'get', $args);
+        return $this->send('projects.resources.hmacKeys', 'get', $args);
     }
 
     /**
@@ -501,7 +547,7 @@ class Rest implements ConnectionInterface
      */
     public function updateHmacKey(array $args = [])
     {
-        return $this->sendWithRetry('projects.resources.hmacKeys', 'update', $args);
+        return $this->send('projects.resources.hmacKeys', 'update', $args);
     }
 
     /**
@@ -509,7 +555,7 @@ class Rest implements ConnectionInterface
      */
     public function listHmacKeys(array $args = [])
     {
-        return $this->sendWithRetry('projects.resources.hmacKeys', 'list', $args);
+        return $this->send('projects.resources.hmacKeys', 'list', $args);
     }
 
     /**
@@ -644,14 +690,11 @@ class Rest implements ConnectionInterface
      * @param string $method method name, eg: get
      * @param array $args
      */
-    private function sendWithRetry($resource, $method, array $args)
+    private function send($resource, $method, array $args)
     {
         $retryMap = [
             'projects.resources.serviceAccount' => 'serviceaccount',
             'projects.resources.hmacKeys' => 'hmacKey',
-            'bucketAccessControls' => 'bucket_acl',
-            'defaultObjectAccessControls' => 'default_object_acl',
-            'objectAccessControls' => 'object_acl'
         ];
         $retryResource = isset($retryMap[$resource]) ? $retryMap[$resource] : $resource;
         $args['restRetryFunction'] = $this->getRestRetryFunction(
@@ -663,6 +706,6 @@ class Rest implements ConnectionInterface
 
         $args = $this->addRetryHeaderCallbacks($args);
 
-        return $this->send($resource, $method, $args);
+        return $this->traitSend($resource, $method, $args);
     }
 }

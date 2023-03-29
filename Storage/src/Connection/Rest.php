@@ -130,6 +130,11 @@ class Rest implements ConnectionInterface, RetryInterface
         'objects.update' => ['ifMetagenerationMatch']
     ];
 
+    public function getRetryMethods()
+    {
+        return self::$retryMethods;
+    }
+
     /**
      * @param array $config
      */

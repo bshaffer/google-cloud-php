@@ -175,16 +175,11 @@ class RequestWrapper
      *     @type callable $restRetryFunction Sets the conditions for whether or
      *           not a request should attempt to retry. Function signature should
      *           match: `function (\Exception $ex) : bool`.
-     *     @type callable $restOnRetryExceptionFunction Runs before the restRetryFunction.
-     *           This miight be used to simply consume the exception b/w retries.
-     *           The $arguments parameter is passed by reference so that they may be
-     *           modified on demand, for ex: changing the headers in b/w retries.
-     *     @type callable $restOnExecutionStartFunction Runs before the $request is sent.
-     *           This might be used as an alternative to sending options for the
-     *           purpose of setting args/headers for a request.
      *     @type callable $restDelayFunction Executes a delay, defaults to
      *           utilizing `usleep`. Function signature should match:
      *           `function (int $delay) : void`.
+     *     @type string $httpMiddleware creates the middleware class with the
+     *           configured HttpHandler.
      *     @type callable $restCalcDelayFunction Sets the conditions for
      *           determining how long to wait between attempts to retry. Function
      *           signature should match: `function (int $attempt) : int`.
@@ -193,7 +188,7 @@ class RequestWrapper
      * @return ResponseInterface
      * @throws ServiceException
      */
-    public function send(RequestInterface $request, array $options = [])
+    public function send(RequestInterface $request, array $options = [], bool $retry = false)
     {
         $retryOptions = $this->getRetryOptions($options);
         $backoff = new ExponentialBackoff(
@@ -209,13 +204,14 @@ class RequestWrapper
             $backoff->setCalcDelayFunction($retryOptions['calcDelayFunction']);
         }
 
-        $httpHandler = $this->httpHandler;
-        if ($this instanceof RetryInterface) {
-            $httpHandler = new RetryHttpHandler($this->httpHandler);
+        $handler = $this->httpHandler;
+        if (isset($options['httpMiddleware'])) {
+            $handerClass = $options['httpMiddleware'];
+            $handler = new $handlerClass($this->httpHandler);
         }
 
         try {
-            return $backoff->execute($httpHandler, [
+            return $backoff->execute($handler, [
                 $this->applyHeaders($request),
                 $this->getRequestOptions($options)
             ]);

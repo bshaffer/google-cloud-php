@@ -28,6 +28,7 @@ trait RestTrait
     use ArrayTrait;
     use JsonTrait;
     use WhitelistTrait;
+    use RetryTrait;
 
     /**
      * @var RequestBuilder Builds PSR7 requests from a service definition.
@@ -92,15 +93,14 @@ trait RestTrait
             'retries',
             'requestTimeout',
             'restRetryFunction',
-            'restOnRetryExceptionFunction',
-            'restOnExecutionStartFunction'
         ], $options);
 
         try {
             return json_decode(
                 $this->requestWrapper->send(
                     $this->requestBuilder->build($resource, $method, $options),
-                    $requestOptions
+                    $requestOptions,
+                    $this instanceof RetryInterface
                 )->getBody(),
                 true
             );

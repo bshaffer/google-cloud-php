@@ -17,6 +17,7 @@
 
 namespace Google\Cloud\Storage\Connection\Middleware;
 
+use Google\Cloud\Core\HttpMiddleware\RetryHeadersHttpMiddleware;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Ramsey\Uuid\Uuid;
@@ -27,7 +28,7 @@ use Ramsey\Uuid\Uuid;
  *
  * Requests are accessed using the Simple API access developer key.
  */
-class ConditionalRetry
+class RetryTrait
 {
     /** @var array<int> */
     private $httpRetryCodes = [
@@ -143,4 +144,11 @@ class ConditionalRetry
         return false;
     }
 
+    private function setRetryOptions(array $options): array
+    {
+        $options['restRetryFunction'] = $this->getRetryFunction($resource, $method, $options);
+        $options['httpMiddleware'] = RetryHeadersHttpMiddleware::class;
+
+        return $options;
+    }
 }

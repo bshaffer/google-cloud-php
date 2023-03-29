@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-namespace Google\Cloud\Core\HttpHandler;
+namespace Google\Cloud\Core\HttpMiddleware;
 
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -27,7 +27,7 @@ use Ramsey\Uuid\Uuid;
  *
  * Requests are accessed using the Simple API access developer key.
  */
-class RetryHttpHandler
+class RetryHeadersHttpMiddleware
 {
     private $currentAttempt = 0;
 
@@ -62,8 +62,9 @@ class RetryHttpHandler
     public function __invoke(callable $handler)
     {
         return function (RequestInterface $request, array $options) use ($handler) {
+            self::$currentAttempt++;
             // Add initial retry header
-            $request = $this->addRetryHeaderCallbacks($request, $options);
+            $request = $this->addRetryHeaders($request, $options);
             // Call the next middleware
             return $handler($request, $options);
         };
@@ -76,7 +77,7 @@ class RetryHttpHandler
      *
      * @return array
      */
-    private function addRetryHeaderCallbacks(
+    private function addRetryHeaders(
         RequestInterface $request,
         array $options
     ): RequestInterface {

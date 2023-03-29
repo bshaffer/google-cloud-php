@@ -95,12 +95,15 @@ trait RestTrait
             'restRetryFunction',
         ], $options);
 
+        // To pass to RequestWrapper (this is used in ConditionalRetryRequestWrapper)
+        $requestOptions['resource'] = $resource;
+        $requestOptions['method'] = $method;
+
         try {
             return json_decode(
                 $this->requestWrapper->send(
                     $this->requestBuilder->build($resource, $method, $options),
-                    $requestOptions,
-                    $this instanceof RetryInterface
+                    $requestOptions
                 )->getBody(),
                 true
             );

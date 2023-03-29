@@ -18,7 +18,7 @@
 namespace Google\Cloud\Storage\Connection;
 
 use Google\Cloud\Core\RequestBuilder;
-use Google\Cloud\Core\RequestWrapper;
+use Google\Cloud\Core\ConditionalRetryRequestWrapper;
 use Google\Cloud\Core\RestTrait;
 use Google\Cloud\Storage\Connection\RetryTrait;
 use Google\Cloud\Core\Upload\AbstractUploader;
@@ -147,11 +147,12 @@ class Rest implements ConnectionInterface, RetryInterface
             // Cloud Storage needs to provide a default scope because the Storage
             // API does not accept JWTs with "audience"
             'scopes' => StorageClient::FULL_CONTROL_SCOPE,
+            'retryMethods' => self::$retryMethods,
         ];
 
         $this->apiEndpoint = $this->getApiEndpoint(self::DEFAULT_API_ENDPOINT, $config);
 
-        $this->setRequestWrapper(new RequestWrapper($config));
+        $this->setRequestWrapper(new ConditionalRetryRequestWrapper($config));
         $this->setRequestBuilder(new RequestBuilder(
             $config['serviceDefinitionPath'],
             $this->apiEndpoint
@@ -436,18 +437,6 @@ class Rest implements ConnectionInterface, RetryInterface
         $args['uploaderOptions'] = array_intersect_key($args, array_flip($uploaderOptionKeys));
         $args = array_diff_key($args, array_flip($uploaderOptionKeys));
 
-        // Passing on custom retry function to $args['uploaderOptions']
-        $retryFunc = $this->getRestRetryFunction(
-            'objects',
-            'insert',
-            $args
-        );
-        $args['uploaderOptions']['restRetryFunction'] = $retryFunc;
-
-        $args['uploaderOptions'] = $this->addRetryHeaderCallbacks(
-            $args['uploaderOptions']
-        );
-
         return $args;
     }
 
@@ -686,31 +675,5 @@ class Rest implements ConnectionInterface, RetryInterface
     protected function supportsBuiltinCrc32c()
     {
         return Builtin::supports(CRC32::CASTAGNOLI);
-    }
-
-    /**
-     * Add the required retry function and send the request.
-     *
-     * @param string $resource resource name, eg: buckets.
-     * @param string $method method name, eg: get
-     * @param array $args
-     */
-    private function send($resource, $method, array $args)
-    {
-        $retryMap = [
-            'projects.resources.serviceAccount' => 'serviceaccount',
-            'projects.resources.hmacKeys' => 'hmacKey',
-        ];
-        $retryResource = isset($retryMap[$resource]) ? $retryMap[$resource] : $resource;
-        $args['restRetryFunction'] = $this->getRestRetryFunction(
-            $retryResource,
-            $method,
-            $args,
-            $this->restRetryFunction
-        );
-
-        $args = $this->addRetryHeaderCallbacks($args);
-
-        return $this->traitSend($resource, $method, $args);
     }
 }

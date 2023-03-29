@@ -188,7 +188,7 @@ class RequestWrapper
      * @return ResponseInterface
      * @throws ServiceException
      */
-    public function send(RequestInterface $request, array $options = [], bool $retry = false)
+    public function send(RequestInterface $request, array $options = [])
     {
         $retryOptions = $this->getRetryOptions($options);
         $backoff = new ExponentialBackoff(
@@ -204,14 +204,8 @@ class RequestWrapper
             $backoff->setCalcDelayFunction($retryOptions['calcDelayFunction']);
         }
 
-        $handler = $this->httpHandler;
-        if (isset($options['httpMiddleware'])) {
-            $handerClass = $options['httpMiddleware'];
-            $handler = new $handlerClass($this->httpHandler);
-        }
-
         try {
-            return $backoff->execute($handler, [
+            return $backoff->execute($this->httpHandler, [
                 $this->applyHeaders($request),
                 $this->getRequestOptions($options)
             ]);

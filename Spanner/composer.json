@@ -4,7 +4,6 @@
     "license": "Apache-2.0",
     "minimum-stability": "stable",
     "require": {
-        "ext-grpc": "*",
         "google/cloud-core": "^1.43",
         "google/gax": "^1.1"
     },

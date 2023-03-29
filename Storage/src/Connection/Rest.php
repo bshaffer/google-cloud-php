@@ -42,10 +42,9 @@ use Ramsey\Uuid\Uuid;
  * Implementation of the
  * [Google Cloud Storage JSON API](https://cloud.google.com/storage/docs/json_api/).
  */
-class Rest implements ConnectionInterface, RetryInterface
+class Rest implements ConnectionInterface
 {
     use RestTrait;
-    use RetryTrait;
     use UriTrait;
 
     /**
@@ -368,7 +367,7 @@ class Rest implements ConnectionInterface, RetryInterface
 
         // Passing the preconditions we want to extract out of arguments
         // into our query params.
-        $preconditions = RetryTrait::$condIdempotentOps['objects.insert'];
+        // $preconditions = RetryTrait::$condIdempotentOps['objects.insert'];
         foreach ($preconditions as $precondition) {
             if (isset($args[$precondition])) {
                 $uriParams['query'][$precondition] = $args[$precondition];

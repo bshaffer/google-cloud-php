@@ -36,6 +36,9 @@ class ConditionalRetryRequestWrapper extends RequestWrapper
     /** @var int */
     private $retryMethods;
 
+    /** @var CurrentAttempt */
+    private $currentAttempt;
+
     /** @var int */
     private static $RETRY_STRATEGY_ALWAYS = 'always';
 
@@ -69,8 +72,9 @@ class ConditionalRetryRequestWrapper extends RequestWrapper
         }
 
         // Wrap handler in Retry middleware
+        $this->currentAttempt = new CurrentAttempt();
         $handler = $config['httpHandler'] ?: HttpHandlerFactory::build();
-        $config['httpHandler'] = new RetryHeadersHttpMiddleware($handler);
+        $config['httpHandler'] = new RetryHeadersHttpMiddleware($this->currentAttempt);
 
         parent::__construct($config);
     }
@@ -87,6 +91,9 @@ class ConditionalRetryRequestWrapper extends RequestWrapper
     {
         $methodName = $resource . '.' . $method;
         return function(\Exception $exception, $currentAttempt) use ($methodName, $callOptions) {
+            // Update the current attempt used in the header middleware
+            $this->currentAttempt->count = $currentAttempt;
+
             // No retry if the strategy is set to NEVER
             if ($retryStrategy === self::$RETRY_STRATEGY_NEVER) {
                 return false;

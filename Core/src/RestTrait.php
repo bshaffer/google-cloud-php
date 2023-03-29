@@ -28,7 +28,6 @@ trait RestTrait
     use ArrayTrait;
     use JsonTrait;
     use WhitelistTrait;
-    use RetryTrait;
 
     /**
      * @var RequestBuilder Builds PSR7 requests from a service definition.

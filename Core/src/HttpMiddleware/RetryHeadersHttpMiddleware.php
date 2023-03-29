@@ -17,6 +17,7 @@
 
 namespace Google\Cloud\Core\HttpMiddleware;
 
+use Google\ApiCore\AgentHeader;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Ramsey\Uuid\Uuid;
@@ -29,7 +30,13 @@ use Ramsey\Uuid\Uuid;
  */
 class RetryHeadersHttpMiddleware
 {
-    private $currentAttempt = 0;
+    private $currentAttempt;
+
+    public function __construct(CurrentAttempt $currentAttempt)
+    {
+        // The current attempt is incremented elsewhere
+        $this->currentAttempt = $currentAttempt;
+    }
 
     /**
      * Retry the response if it has retryable error codes.
@@ -62,7 +69,6 @@ class RetryHeadersHttpMiddleware
     public function __invoke(callable $handler)
     {
         return function (RequestInterface $request, array $options) use ($handler) {
-            self::$currentAttempt++;
             // Add initial retry header
             $request = $this->addRetryHeaders($request, $options);
             // Call the next middleware
@@ -90,7 +96,7 @@ class RetryHeadersHttpMiddleware
             )
             ->addHeader(
                 AgentHeader::AGENT_HEADER_KEY,
-                sprintf("gccl-attempt-count/%s", self::$currentAttempt)
+                sprintf("gccl-attempt-count/%s", $this->currentAttempt->count)
             );
     }
 }

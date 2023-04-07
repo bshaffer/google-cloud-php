@@ -17,6 +17,7 @@
 
 namespace Google\Cloud\Storage\Connection;
 
+use Google\ApiCore\AgentHeader;
 use Google\Cloud\Core\RequestBuilder;
 use Google\Cloud\Core\ConditionalRetryRequestWrapper;
 use Google\Cloud\Core\RestTrait;
@@ -45,6 +46,9 @@ use Ramsey\Uuid\Uuid;
 class Rest implements ConnectionInterface
 {
     use RestTrait;
+    use RetryTrait {
+        getRestRetryFunction as public;
+    }
     use UriTrait;
 
     /**
@@ -367,7 +371,7 @@ class Rest implements ConnectionInterface
 
         // Passing the preconditions we want to extract out of arguments
         // into our query params.
-        // $preconditions = RetryTrait::$condIdempotentOps['objects.insert'];
+        $preconditions = self::$condIdempotentOps['objects.insert'];
         foreach ($preconditions as $precondition) {
             if (isset($args[$precondition])) {
                 $uriParams['query'][$precondition] = $args[$precondition];
@@ -675,4 +679,34 @@ class Rest implements ConnectionInterface
     {
         return Builtin::supports(CRC32::CASTAGNOLI);
     }
+
+    /**
+     * Add the required retry function and send the request.
+     *
+     * @param string $resource resource name, eg: buckets.
+     * @param string $method method name, eg: get
+     * @param array $args
+     */
+    private function sendWithRetry($resource, $method, array $args)
+    {
+        $retryMap = [
+            'projects.resources.serviceAccount' => 'serviceaccount',
+            'projects.resources.hmacKeys' => 'hmacKey',
+            'bucketAccessControls' => 'bucket_acl',
+            'defaultObjectAccessControls' => 'default_object_acl',
+            'objectAccessControls' => 'object_acl'
+        ];
+        $retryResource = isset($retryMap[$resource]) ? $retryMap[$resource] : $resource;
+        $args['restRetryFunction'] = $this->getRestRetryFunction(
+            $retryResource,
+            $method,
+            $args,
+            $this->restRetryFunction
+        );
+
+        $args = $this->addRetryHeaderCallbacks($args);
+
+        return $this->send($resource, $method, $args);
+    }
 }
+

@@ -679,10 +679,8 @@ class StorageObject
      */
     public function downloadAsStream(array $options = [])
     {
-        // This makes sure we honour the range headers specified by the user
-        $requestedBytes = $this->getRequestedBytes($options);
-        $resultStream = Utils::streamFor(null);
         $transcodedObj = false;
+        $resultStream = Utils::streamFor(null);
 
         // We try to deduce if the object is a transcoded object when we receive the headers.
         $options['restOptions']['on_headers'] = function ($response) use (&$transcodedObj) {
@@ -692,33 +690,8 @@ class StorageObject
             }
         };
 
-        $options += [
-            'restOnRetryExceptionFunction' => function (
-                \Exception $e,
-                $attempt,
-                &$arguments
-            ) use (
-                $resultStream,
-                $requestedBytes
-            ) {
-                    // if the exception has a response for us to use
-                if ($e instanceof RequestException && $e->hasResponse()) {
-                    $msg = (string) $e->getResponse()->getBody();
-
-                    $fetchedStream = Utils::streamFor($msg);
-
-                    // add the partial response to our stream that we will return
-                    Utils::copyToStream($fetchedStream, $resultStream);
-
-                    // Start from the byte that was last fetched
-                    $startByte = intval($requestedBytes['startByte']) + $resultStream->getSize();
-                    $endByte = $requestedBytes['endByte'];
-
-                    // modify the range headers to fetch the remaining data
-                    $arguments[1]['headers']['Range'] = sprintf('bytes=%s-%s', $startByte, $endByte);
-                }
-            }
-        ];
+        // Pass in the result stream for the middleware (it will be updated in the event of retries)
+        $options['resultStream'] = $resultStream;
 
         $fetchedStream = $this->connection->downloadObject(
             $this->formatEncryptionHeaders(
@@ -1334,30 +1307,5 @@ class StorageObject
             'sourceGeneration' => $this->identity['generation'],
             'userProject' => $this->identity['userProject'],
         ]) + $this->formatEncryptionHeaders($options + $this->encryptionData);
-    }
-
-    /**
-     * Util function to compute the bytes requested for a download request.
-     *
-     * @param array $options Request options
-     * @return array
-     */
-    private function getRequestedBytes(array $options)
-    {
-        $startByte = 0;
-        $endByte = '';
-
-        if (isset($options['restOptions']) && isset($options['restOptions']['headers'])) {
-            $headers = $options['restOptions']['headers'];
-            if (isset($headers['Range']) || isset($headers['range'])) {
-                $header = isset($headers['Range']) ? $headers['Range'] : $headers['range'];
-                $range = explode('=', $header);
-                $bytes = explode('-', $range[1]);
-                $startByte = $bytes[0];
-                $endByte = $bytes[1];
-            }
-        }
-
-        return compact('startByte', 'endByte');
     }
 }

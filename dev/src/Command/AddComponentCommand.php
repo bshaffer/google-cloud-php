@@ -36,6 +36,7 @@ use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 use RuntimeException;
 use Exception;
+use Closure;
 
 /**
  * Add a Component
@@ -65,15 +66,19 @@ class AddComponentCommand extends Command
     private $output;
     private $rootPath;
     private $httpClient;
+    private Closure $createProcess;
 
     /**
      * @param string $rootPath The path to the repository root directory.
      * @param Client $httpClient specify the HTTP client, useful for tests.
      */
-    public function __construct($rootPath, $httpClient = null)
+    public function __construct($rootPath, $httpClient = null, callable $createProcess = null)
     {
         $this->rootPath = realpath($rootPath);
         $this->httpClient = $httpClient ?: new Client();
+        $this->createProcess = Closure::fromCallable($createProcess ?: function($command, $cwd) {
+            return new Process($command, $cwd);
+        });
         parent::__construct();
     }
 
@@ -295,7 +300,7 @@ class AddComponentCommand extends Command
         // not ending with :(proto|grpc|gapic)-.*-php
         $components = array_filter(
             explode("\n", $output),
-            fn ($line) => preg_match('/^\/\/google\/(?!:(proto|grpc|gapic)-.*-php$)/', $line) &&
+            fn ($line) => !preg_match('/^\/\/google\/(?!:(proto|grpc|gapic)-.*-php$)/', $line) &&
                 !empty($line)
         );
         if (count($components) !== 1) {
@@ -378,16 +383,9 @@ class AddComponentCommand extends Command
 
     private function runCommand(
         array $command,
-        ?string $workDir = null,
-        ?string $input = null
+        ?string $workDir = null
     ): string {
-        $process = new Process($command);
-        if (!is_null($workDir)) {
-            $process->setWorkingDirectory($workDir);
-        }
-        if (!is_null($input)) {
-            $process->setInput($input);
-        }
+        $process = ($this->createProcess)($command, $workDir);
         // `mustRun` will throw a ProcessFailedException if the process
         // couldn't be executed successfully.
         $process->mustRun();

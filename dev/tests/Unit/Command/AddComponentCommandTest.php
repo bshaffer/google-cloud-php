@@ -22,6 +22,7 @@ use Google\Cloud\Dev\Composer;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 
 /**
@@ -29,6 +30,8 @@ use Symfony\Component\Console\Tester\CommandTester;
  */
 class AddComponentCommandTest extends TestCase
 {
+    use ProphecyTrait;
+
     private static $expectedFiles = [
         '.OwlBot.yaml' => '.OwlBot.yaml.test', // so OwlBot doesn't read the test file
         '.gitattributes' => null,
@@ -149,6 +152,109 @@ class AddComponentCommandTest extends TestCase
         }
 
         $this->assertComposerJson('CustomInput');
+    }
+
+    public function testGoogleapisGenPath()
+    {
+        $expectedOwlbotCopyCodeCmd = sprintf(
+            'docker run --rm --user %s::%s -v %s:/repo -v :/googleapis-gen -w /repo '
+            . '--env HOME=/tmp gcr.io/cloud-devrel-public-resources/owlbot-cli:latest copy-code '
+            . '--config-file=SecretManager/.OwlBot.yaml --source-repo=/googleapis-gen',
+            posix_getuid(),
+            posix_getgid(),
+            self::$tmpDir
+        );
+        $expectedOwlbotPostProcessCmd = sprintf(
+            'docker run --rm --user %s::%s -v %s:/repo -w /repo '
+            . 'gcr.io/cloud-devrel-public-resources/owlbot-php:latest',
+            posix_getuid(),
+            posix_getgid(),
+            self::$tmpDir
+        );
+        $expectedCommands = [
+            ['which docker', '/path/to/docker'],
+            [$expectedOwlbotCopyCodeCmd, ''],
+            [$expectedOwlbotPostProcessCmd, ''],
+
+        ];
+        $createProcess = function ($command) use (&$expectedCommands) {
+            $expectedCommand = array_shift($expectedCommands);
+            $this->assertEquals($expectedCommand[0], implode(' ', $command));
+            $p = $this->prophesize(\Symfony\Component\Process\Process::class);
+            $p->mustRun()->willReturn($p->reveal());
+            $p->getOutput()->willReturn($expectedCommand[1]);
+            $p->getErrorOutput()->willReturn('');
+            return $p->reveal();
+        };
+
+        $application = new Application();
+        $application->add(new AddComponentCommand(self::$tmpDir, null, $createProcess));
+
+        $commandTester = new CommandTester($application->get('add-component'));
+        $commandTester->setInputs([
+            'Y',                                                            // Does this information look correct? [Y/n]
+            'https://cloud.google.com/secret-manager/docs/reference/rest/', // What is the product documentation URL?
+            'https://cloud.google.com/secret-manager',                     // What is the product homepage?
+        ]);
+
+        $commandTester->execute([
+            'proto' => 'google/cloud/secretmanager/v1/service.proto',
+            '--googleapis-gen-path' => 'path/to/bazel',
+        ]);
+    }
+
+    public function testBazelPath()
+    {
+        $expectedOwlbotCopyBazelBinCmd = sprintf(
+            'docker run --rm --user %s::%s -v %s:/repo -v /bazel-bin:/bazel-bin '
+            . 'gcr.io/cloud-devrel-public-resources/owlbot-cli:latest copy-bazel-bin '
+            . '--config-file=SecretManager/.OwlBot.yaml --source-dir /bazel-bin --dest /repo',
+            posix_getuid(),
+            posix_getgid(),
+            self::$tmpDir
+        );
+        $expectedOwlbotPostProcessCmd = sprintf(
+            'docker run --rm --user %s::%s -v %s:/repo -w /repo '
+            . 'gcr.io/cloud-devrel-public-resources/owlbot-php:latest',
+            posix_getuid(),
+            posix_getgid(),
+            self::$tmpDir
+        );
+        $expectedCommands = [
+            ['bazel --version', 'bazel 6.0.0'],
+            [
+                'bazel query filter("-(php)$", kind("rule", //google/cloud/secretmanager/v1/...:*))',
+                'google-cloud-secretmananger-v1-php'
+            ],
+            ['bazel build google-cloud-secretmananger-v1-php', ''],
+            [$expectedOwlbotCopyBazelBinCmd, ''],
+            [$expectedOwlbotPostProcessCmd, ''],
+
+        ];
+        $createProcess = function ($command) use (&$expectedCommands) {
+            $expectedCommand = array_shift($expectedCommands);
+            $this->assertEquals($expectedCommand[0], implode(' ', $command));
+            $p = $this->prophesize(\Symfony\Component\Process\Process::class);
+            $p->mustRun()->willReturn($p->reveal());
+            $p->getOutput()->willReturn($expectedCommand[1]);
+            $p->getErrorOutput()->willReturn('');
+            return $p->reveal();
+        };
+
+        $application = new Application();
+        $application->add(new AddComponentCommand(self::$tmpDir, null, $createProcess));
+
+        $commandTester = new CommandTester($application->get('add-component'));
+        $commandTester->setInputs([
+            'Y',                                                            // Does this information look correct? [Y/n]
+            'https://cloud.google.com/secret-manager/docs/reference/rest/', // What is the product documentation URL?
+            'https://cloud.google.com/secret-manager',                     // What is the product homepage?
+        ]);
+
+        $commandTester->execute([
+            'proto' => 'google/cloud/secretmanager/v1/service.proto',
+            '--bazel-path' => 'path/to/bazel',
+        ]);
     }
 
     private function assertComposerJson(string $componentName)

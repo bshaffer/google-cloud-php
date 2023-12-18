@@ -20,6 +20,7 @@ namespace Google\Cloud\Dev\Command;
 use Google\Cloud\Dev\Composer;
 use Google\Cloud\Dev\Component;
 use Google\Cloud\Dev\NewComponent;
+use Google\Cloud\Dev\RunProcess;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputInterface;
@@ -65,15 +66,17 @@ class AddComponentCommand extends Command
     private $output;
     private $rootPath;
     private $httpClient;
+    private RunProcess $runProcess;
 
     /**
      * @param string $rootPath The path to the repository root directory.
      * @param Client $httpClient specify the HTTP client, useful for tests.
      */
-    public function __construct($rootPath, $httpClient = null)
+    public function __construct($rootPath, $httpClient = null, RunProcess $runProcess = null)
     {
         $this->rootPath = realpath($rootPath);
         $this->httpClient = $httpClient ?: new Client();
+        $this->runProcess = $runProcess ?: new RunProcess();
         parent::__construct();
     }
 
@@ -277,7 +280,7 @@ class AddComponentCommand extends Command
     private function bazelQueryAndBuildLibrary(string $protoPath, string $googleApisDir): string
     {
         $command = ['bazel', '--version'];
-        $output = $this->runCommand($command);
+        $output = $this->runProcess->execute($command);
         // Extract the version number from the output
         $match = preg_match('/bazel\s+(?P<version>\d+\.\d+\.\d+)/', $output, $matches);
         if (!$match || $matches['version'] !== self::BAZEL_VERSION) {
@@ -290,12 +293,12 @@ class AddComponentCommand extends Command
             'query',
             'filter("-(php)$", kind("rule", //' . $componentPath .'/...:*))'
         ];
-        $output = $this->runCommand($command, $googleApisDir);
+        $output = $this->runProcess->execute($command, $googleApisDir);
         // Get componenets starting with //google/ and
         // not ending with :(proto|grpc|gapic)-.*-php
         $components = array_filter(
             explode("\n", $output),
-            fn ($line) => preg_match('/^\/\/google\/(?!:(proto|grpc|gapic)-.*-php$)/', $line) &&
+            fn ($line) => !preg_match('/^\/\/google\/(?!:(proto|grpc|gapic)-.*-php$)/', $line) &&
                 !empty($line)
         );
         if (count($components) !== 1) {
@@ -306,7 +309,7 @@ class AddComponentCommand extends Command
         }
 
         $command = ['bazel', 'build', $components[0]];
-        return $this->runCommand($command, $googleApisDir);
+        return $this->runProcess->execute($command, $googleApisDir);
     }
 
     private function owlbotCopyCode(string $componentName, string $googleApisGenDir): string
@@ -331,7 +334,7 @@ class AddComponentCommand extends Command
             sprintf('--config-file=%s/.OwlBot.yaml', $componentName),
             '--source-repo=/googleapis-gen'
         ];
-        return $this->runCommand($command);
+        return $this->runProcess->execute($command);
     }
 
     private function owlbotCopyBazelBin(string $componentName, string $googleApisDir): string
@@ -355,7 +358,7 @@ class AddComponentCommand extends Command
             '--dest',
             '/repo'
         ];
-        return $this->runCommand($command);
+        return $this->runProcess->execute($command);
     }
 
     private function owlbotPostProcessor(): string
@@ -373,25 +376,7 @@ class AddComponentCommand extends Command
             '/repo',
             self::OWLBOT_PHP_IMAGE
         ];
-        return $this->runCommand($command);
-    }
-
-    private function runCommand(
-        array $command,
-        ?string $workDir = null,
-        ?string $input = null
-    ): string {
-        $process = new Process($command);
-        if (!is_null($workDir)) {
-            $process->setWorkingDirectory($workDir);
-        }
-        if (!is_null($input)) {
-            $process->setInput($input);
-        }
-        // `mustRun` will throw a ProcessFailedException if the process
-        // couldn't be executed successfully.
-        $process->mustRun();
-        return $process->getOutput() . $process->getErrorOutput();
+        return $this->runProcess->execute($command);
     }
 
     private function getHomePageFromDocsUrl(?string $url): ?string
@@ -404,7 +389,7 @@ class AddComponentCommand extends Command
     private function checkDockerAvailable(): void
     {
         $command = ['which', 'docker'];
-        $output = $this->runCommand($command);
+        $output = $this->runProcess->execute($command);
         if (strlen($output) == 0) {
             throw new RuntimeException(
                 'Error: Docker is not available.'

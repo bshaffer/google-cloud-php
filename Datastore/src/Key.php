@@ -114,7 +114,7 @@ class Key implements JsonSerializable
      *     @type array $path The initial Key path.
      * }
      */
-    public function __construct($projectId, array $options = [])
+    public function __construct(string $projectId, array $options = [])
     {
         $this->projectId = $projectId;
         $this->options = $options + [
@@ -165,7 +165,7 @@ class Key implements JsonSerializable
      * @return Key
      * @throws \InvalidArgumentException
      */
-    public function pathElement($kind, $identifier = null, array $options = [])
+    public function pathElement(string $kind, $identifier = null, array $options = []): Key
     {
         $options += [
             'identifierType' => null
@@ -214,7 +214,7 @@ class Key implements JsonSerializable
      * }
      * @return Key
      */
-    public function ancestor($kind, $identifier, array $options = [])
+    public function ancestor(string $kind, $identifier, array $options = []): Key
     {
         $options += [
             'identifierType' => null
@@ -242,7 +242,7 @@ class Key implements JsonSerializable
      * @return Key
      * @throws \InvalidArgumentException
      */
-    public function ancestorKey(Key $key)
+    public function ancestorKey(Key $key): Key
     {
         if ($key->state() !== self::STATE_NAMED) {
             throw new InvalidArgumentException('Cannot use an incomplete key as an ancestor');
@@ -283,7 +283,7 @@ class Key implements JsonSerializable
      *
      * @return string
      */
-    public function state()
+    public function state(): string
     {
         $end = $this->pathEnd();
         return (isset($end['id']) || isset($end['name']))
@@ -308,7 +308,7 @@ class Key implements JsonSerializable
      * @return void
      * @access private
      */
-    public function setLastElementIdentifier($value, $type = Key::TYPE_ID)
+    public function setLastElementIdentifier(string $value, string $type = Key::TYPE_ID): void
     {
         $end = $this->pathEnd();
         $end[$type] = (string) $value;
@@ -329,7 +329,7 @@ class Key implements JsonSerializable
      *
      * @return array
      */
-    public function path()
+    public function path(): array
     {
         return $this->path;
     }
@@ -344,7 +344,7 @@ class Key implements JsonSerializable
      *
      * @return array
      */
-    public function pathEnd()
+    public function pathEnd(): array
     {
         $path = $this->path;
         $end = end($path);
@@ -364,7 +364,7 @@ class Key implements JsonSerializable
      *
      * @return string|int|null
      */
-    public function pathEndIdentifier()
+    public function pathEndIdentifier(): string|int|null
     {
         $end = $this->pathEnd();
 
@@ -391,7 +391,7 @@ class Key implements JsonSerializable
      *
      * @return string|null
      */
-    public function pathEndIdentifierType()
+    public function pathEndIdentifierType(): ?string
     {
         $end = $this->pathEnd();
 
@@ -412,7 +412,7 @@ class Key implements JsonSerializable
      * @access private
      * @return array
      */
-    public function keyObject()
+    public function keyObject(): array
     {
         return [
             'partitionId' => $this->partitionId(
@@ -427,8 +427,7 @@ class Key implements JsonSerializable
     /**
      * @access private
      */
-    #[\ReturnTypeWillChange]
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return $this->keyObject();
     }
@@ -441,7 +440,7 @@ class Key implements JsonSerializable
      * @param string $identifierType Either `id` or `name`.
      * @return array
      */
-    private function normalizeElement($kind, $identifier, $identifierType)
+    private function normalizeElement(string $kind, $identifier, ?string $identifierType): array
     {
         $identifierType = $this->determineIdentifierType($identifier, $identifierType);
 
@@ -464,7 +463,7 @@ class Key implements JsonSerializable
      * @return string
      * @throws \InvalidArgumentException
      */
-    private function determineIdentifierType($identifier, $identifierType)
+    private function determineIdentifierType($identifier, ?string $identifierType): string
     {
         $allowedTypes = [self::TYPE_ID, self::TYPE_NAME];
 
@@ -526,7 +525,7 @@ class Key implements JsonSerializable
      *
      * @access private
      */
-    public function __toString()
+    public function __toString(): string
     {
         $el = [];
         foreach ($this->path as $element) {

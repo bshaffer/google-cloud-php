@@ -69,7 +69,7 @@ class Filter
      * @param mixed $value Value for operation on property
      * @return array Returns array representation of a property filter.
      */
-    public static function where($property, $operator, $value)
+    public static function where(string $property, string $operator, $value): array
     {
         return self::propertyFilter($property, $operator, $value);
     }
@@ -81,7 +81,7 @@ class Filter
      *        upon.
      * @return array Returns array representation of AND composite filter.
      */
-    public static function and(array $filters)
+    public static function and(array $filters): array
     {
         return self::compositeFilter(Operator::PBAND, $filters);
     }
@@ -93,12 +93,12 @@ class Filter
      *        upon.
      * @return array Returns array representation of OR composite filter.
      */
-    public static function or(array $filters)
+    public static function or(array $filters): array
     {
         return self::compositeFilter(Operator::PBOR, $filters);
     }
 
-    private static function propertyFilter($property, $operator, $value)
+    private static function propertyFilter(string $property, string $operator, $value): array
     {
         $filter = [
             'propertyFilter' => [
@@ -115,7 +115,7 @@ class Filter
      *        There values are checked in `Query::filter()` method.
      * @param array $filters Filter array to operator on.
      */
-    private static function compositeFilter($type, $filters)
+    private static function compositeFilter(int $type, array $filters): array
     {
         $filter = [
             'compositeFilter' => [

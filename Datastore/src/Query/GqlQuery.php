@@ -136,7 +136,7 @@ class GqlQuery implements QueryInterface
      *           Applications with no need for multitenancy should not set this value.
      * }
      */
-    public function __construct(EntityMapper $entityMapper, $query, array $options = [])
+    public function __construct(EntityMapper $entityMapper, string $query, array $options = [])
     {
         $this->entityMapper = $entityMapper;
         $this->query = $query;
@@ -152,7 +152,7 @@ class GqlQuery implements QueryInterface
      *
      * @return array
      */
-    public function queryObject()
+    public function queryObject(): array
     {
         $bindingType = $this->options['bindingType'];
 
@@ -174,12 +174,12 @@ class GqlQuery implements QueryInterface
      * @return string
      * @access private
      */
-    public function queryKey()
+    public function queryKey(): string
     {
         return 'gqlQuery';
     }
 
-    public function aggregation()
+    public function aggregation(): AggregationQuery
     {
         $aggregationQuery = new AggregationQuery($this);
 
@@ -192,7 +192,7 @@ class GqlQuery implements QueryInterface
      * @access private
      * @return bool
      */
-    public function canPaginate()
+    public function canPaginate(): bool
     {
         return true;
     }
@@ -205,7 +205,7 @@ class GqlQuery implements QueryInterface
      * @access private
      * @codeCoverageIgnore
      */
-    public function start($cursor)
+    public function start(string $cursor): static
     //@codingStandardsIgnoreStart
     {
     }
@@ -217,8 +217,7 @@ class GqlQuery implements QueryInterface
      * @access private
      * @return array
      */
-    #[\ReturnTypeWillChange]
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return $this->queryObject();
     }
@@ -230,7 +229,7 @@ class GqlQuery implements QueryInterface
      * @param array $bindings The bindings to map
      * @return array
      */
-    private function mapBindings($bindingType, array $bindings)
+    private function mapBindings(string $bindingType, array $bindings): array
     {
         $res = [];
         foreach ($bindings as $key => $binding) {

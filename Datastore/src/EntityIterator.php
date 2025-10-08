@@ -41,7 +41,7 @@ class EntityIterator implements \Iterator
      *
      * @return string|null
      */
-    public function moreResultsType()
+    public function moreResultsType(): ?string
     {
         return method_exists($this->pageIterator, 'moreResultsType')
             ? $this->pageIterator->moreResultsType()

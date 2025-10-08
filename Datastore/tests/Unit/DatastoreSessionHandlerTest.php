@@ -21,6 +21,8 @@ use Exception;
 use Google\Cloud\Datastore\DatastoreClient;
 use Google\Cloud\Datastore\DatastoreSessionHandler;
 use Google\Cloud\Datastore\Entity;
+use Google\Cloud\Datastore\EntityIterator;
+use Google\Cloud\Datastore\EntityPageIterator;
 use Google\Cloud\Datastore\Key;
 use Google\Cloud\Datastore\Query\Query;
 use Google\Cloud\Datastore\Transaction;
@@ -579,7 +581,10 @@ class DatastoreSessionHandlerTest extends TestCase
                     ['namespaceId' => self::NAMESPACE_ID],
                     $args[1]
                 );
-                return [$entity1, $entity2];
+                return new EntityIterator(new EntityPageIterator(function () use ($entity1, $entity2) {
+                    yield $entity1;
+                    yield $entity2;
+                }, fn () => null, []));
             });
 
         $this->datastore->deleteBatch([$key1, $key2])

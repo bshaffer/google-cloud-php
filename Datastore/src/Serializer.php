@@ -43,52 +43,57 @@ class Serializer extends ApiCoreSerializer
 
     public function __construct()
     {
-        parent::__construct(
-            [
-                'end_cursor' => function ($v) {
-                    return base64_encode($v);
-                },
-                'start_cursor' => function ($v) {
-                    return base64_encode($v);
-                },
-                'cursor' => function ($v) {
-                    return base64_encode($v);
-                },
-            ],
-            [
-                'google.protobuf.Duration' => function ($v) {
-                    return $this->formatDurationFromApi($v);
+        $fieldTransformers = [
+            'end_cursor' => function ($v) {
+                return base64_encode($v);
+            },
+            'start_cursor' => function ($v) {
+                return base64_encode($v);
+            },
+            'cursor' => function ($v) {
+                return base64_encode($v);
+            },
+        ];
+        $messageTypeTransformers = [
+            'google.protobuf.Duration' => function ($v) {
+                return $this->formatDurationFromApi($v);
+            }
+        ];
+        $decodeFieldTransformers = [
+            'transaction' => function ($v) {
+                return base64_decode($v);
+            },
+            'previous_transaction' => function ($v) {
+                return base64_decode($v);
+            },
+            'end_cursor' => function ($v) {
+                return base64_decode($v);
+            },
+            'start_cursor' => function ($v) {
+                return base64_decode($v);
+            },
+            'cursor' => function ($v) {
+                return base64_decode($v);
+            },
+            'timestamp_value' => function ($v) {
+                return $this->formatTimestampForApi($v);
+            },
+        ];
+        $decodeMessageTypeTransformers = [
+            'google.protobuf.Timestamp' => function ($v) {
+                if ($v instanceof Timestamp) {
+                    return $v->formatForApi();
                 }
-            ],
-            [
-                'transaction' => function ($v) {
-                    return base64_decode($v);
-                },
-                'previous_transaction' => function ($v) {
-                    return base64_decode($v);
-                },
-                'end_cursor' => function ($v) {
-                    return base64_decode($v);
-                },
-                'start_cursor' => function ($v) {
-                    return base64_decode($v);
-                },
-                'cursor' => function ($v) {
-                    return base64_decode($v);
-                },
-                'timestamp_value' => function ($v) {
-                    return $this->formatTimestampForApi($v);
-                },
-            ],
-            [
-                'google.protobuf.Timestamp' => function ($v) {
-                    if ($v instanceof Timestamp) {
-                        return $v->formatForApi();
-                    }
 
-                    return $v;
-                }
-            ]
+                return $v;
+            }
+        ];
+
+        parent::__construct(
+            $fieldTransformers,
+            $messageTypeTransformers,
+            $decodeFieldTransformers,
+            $decodeMessageTypeTransformers
         );
     }
 
@@ -98,7 +103,7 @@ class Serializer extends ApiCoreSerializer
      * @param array $value
      * @return string
      */
-    private function formatDurationFromApi($value): string
+    private function formatDurationFromApi(array $value): string
     {
         $seconds = $value['seconds'];
         $nanos = str_pad($value['nanos'], 9, 0, STR_PAD_LEFT);

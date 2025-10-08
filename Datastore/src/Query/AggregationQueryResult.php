@@ -88,7 +88,7 @@ class AggregationQueryResult
      * @param EntityMapper $mapper [Optional] Entity mapper to map datastore values
      *        to their equivalent php values incase of `null`, `NAN`, `INF` and `-INF`
      */
-    public function __construct($result = [], $mapper = null)
+    public function __construct(array $result = [], ?EntityMapper $mapper = null)
     {
         // When executing an Agggregation query nested with GqlQuery, the server will return
         // the parsed query with the first response batch.
@@ -140,7 +140,7 @@ class AggregationQueryResult
      * @return mixed
      * @throws InvalidArgumentException If provided alias does not exist in result.
      */
-    public function get($alias)
+    public function get(string $alias)
     {
         if (!isset($this->aggregationResults[0]['aggregateProperties'][$alias])) {
             throw new InvalidArgumentException('alias does not exist');
@@ -158,7 +158,7 @@ class AggregationQueryResult
      *
      * @return AggregationQuery
      */
-    public function getQuery()
+    public function getQuery(): AggregationQuery
     {
         return $this->query;
     }
@@ -168,7 +168,7 @@ class AggregationQueryResult
      *
      * @return string|null
      */
-    public function getTransaction()
+    public function getTransaction(): ?string
     {
         return $this->transaction;
     }
@@ -178,7 +178,7 @@ class AggregationQueryResult
      *
      * @return Timestamp
      */
-    public function getReadTime()
+    public function getReadTime(): Timestamp
     {
         return $this->readTime;
     }

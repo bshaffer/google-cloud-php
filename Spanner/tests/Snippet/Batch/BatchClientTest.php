@@ -149,17 +149,16 @@ class BatchClientTest extends SnippetTestCase
             ]));
 
         $this->spannerClient->executeStreamingSql(
-            Argument::that(function ($request) use ($partition1) {
-                $message = $this->serializer->encodeMessage($request);
+            Argument::that(function (ExecuteSqlRequest $request) use ($partition1) {
                 $this->assertEquals(
-                    $message['partitionToken'],
+                    $request->getPartitionToken(),
                     $partition1->token()
                 );
                 $this->assertEquals(
-                    $message['transaction']['id'],
+                    $request->getTransaction()->getId(),
                     self::TRANSACTION
                 );
-                $this->assertEquals($message['session'], self::SESSION);
+                $this->assertEquals($request->getSession(), self::SESSION);
                 return true;
             }),
             Argument::type('array')

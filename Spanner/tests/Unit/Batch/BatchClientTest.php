@@ -20,10 +20,13 @@ namespace Google\Cloud\Spanner\Tests\Unit\Batch;
 use Google\Cloud\Core\ApiHelperTrait;
 use Google\Cloud\Core\Timestamp;
 use Google\Cloud\Core\TimeTrait;
+use Google\Cloud\Spanner\Admin\Database\V1\Client\DatabaseAdminClient;
+use Google\Cloud\Spanner\Admin\Instance\V1\Client\InstanceAdminClient;
 use Google\Cloud\Spanner\Batch\BatchClient;
 use Google\Cloud\Spanner\Batch\BatchSnapshot;
 use Google\Cloud\Spanner\Batch\QueryPartition;
 use Google\Cloud\Spanner\Batch\ReadPartition;
+use Google\Cloud\Spanner\Instance;
 use Google\Cloud\Spanner\KeySet;
 use Google\Cloud\Spanner\Operation;
 use Google\Cloud\Spanner\Serializer;
@@ -52,15 +55,31 @@ class BatchClientTest extends TestCase
     const DATABASE = 'projects/my-awesome-project/instances/my-instance/databases/my-database';
     const SESSION = 'projects/my-awesome-project/instances/my-instance/databases/my-database/sessions/session-id';
     const TRANSACTION = 'transaction-id';
+    const PROJECT = 'my-project';
+    const INSTANCE = 'my-instance';
 
     private $spannerClient;
+    private $databaseAdminClient;
+    private $instanceAdminClient;
     private $serializer;
     private $batchClient;
+    private $database;
+    private $instance;
 
     public function setUp(): void
     {
         $this->serializer = new Serializer();
         $this->spannerClient = $this->prophesize(GapicSpannerClient::class);
+        $this->databaseAdminClient = $this->prophesize(DatabaseAdminClient::class);
+        $this->instanceAdminClient = $this->prophesize(InstanceAdminClient::class);
+        $this->instance = new Instance(
+            $this->spannerClient->reveal(),
+            $this->instanceAdminClient->reveal(),
+            $this->databaseAdminClient->reveal(),
+            new Serializer(),
+            self::PROJECT,
+            self::INSTANCE
+        );
         $this->batchClient = new BatchClient(
             new Operation($this->spannerClient->reveal(), $this->serializer),
             self::DATABASE
@@ -144,7 +163,6 @@ class BatchClientTest extends TestCase
         $options = ['hello' => 'world'];
 
         $partition = new ReadPartition($token, $table, $keyset, $columns, $options);
-        $string = (string) $partition;
 
         $res = $this->batchClient->partitionFromString($partition);
         $this->assertEquals($token, $res->token());
@@ -187,7 +205,7 @@ class BatchClientTest extends TestCase
         $this->spannerClient->beginTransaction(
             Argument::that(function (BeginTransactionRequest $request) {
                 $this->assertEquals(
-                    $this->serializer->encodeMessage($request)['options']['readOnly'],
+                    $this->serializer->encodeMessage($request->getOptions()->getReadOnly()),
                     ['returnReadTimestamp' => true]
                 );
                 return true;
@@ -197,15 +215,9 @@ class BatchClientTest extends TestCase
             ->shouldBeCalledOnce()
             ->willReturn(new Transaction([
                 'id' => self::TRANSACTION,
-                'read_timestamp' => new TimestampProto(['seconds' => $time])
+                'read_timestamp' => new TimestampProto(['seconds' => $time]),
             ]));
 
-        $batchClient = new BatchClient(
-            new Operation($this->spannerClient->reveal(), $this->serializer),
-            self::DATABASE,
-            ['databaseRole' => 'Reader']
-        );
-
-        $snapshot = $batchClient->snapshot();
+        $this->batchClient->snapshot();
     }
 }

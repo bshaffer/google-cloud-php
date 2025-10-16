@@ -30,10 +30,9 @@ use Google\Cloud\Spanner\Instance;
 use Google\Cloud\Spanner\KeySet;
 use Google\Cloud\Spanner\Operation;
 use Google\Cloud\Spanner\Serializer;
+use Google\Cloud\Spanner\Session\SessionCache;
 use Google\Cloud\Spanner\V1\BeginTransactionRequest;
 use Google\Cloud\Spanner\V1\Client\SpannerClient as GapicSpannerClient;
-use Google\Cloud\Spanner\V1\CreateSessionRequest;
-use Google\Cloud\Spanner\V1\Session;
 use Google\Cloud\Spanner\V1\Transaction;
 use Google\Protobuf\Timestamp as TimestampProto;
 use InvalidArgumentException;
@@ -80,26 +79,17 @@ class BatchClientTest extends TestCase
             self::PROJECT,
             self::INSTANCE
         );
+        $session = $this->prophesize(SessionCache::class);
+        $session->name()->willReturn(self::SESSION);
         $this->batchClient = new BatchClient(
             new Operation($this->spannerClient->reveal(), $this->serializer),
-            self::DATABASE
+            $session->reveal(),
         );
     }
 
     public function testSnapshot()
     {
         $time = time();
-        $this->spannerClient->createSession(
-            Argument::that(function (CreateSessionRequest $request) {
-                $this->assertEquals(
-                    $request->getDatabase(),
-                    self::DATABASE
-                );
-                return true;
-            }),
-            Argument::type('array')
-        )->shouldBeCalledOnce()->willReturn(new Session(['name' => self::SESSION]));
-
         $this->spannerClient->beginTransaction(
             Argument::that(function (BeginTransactionRequest $request) {
                 $this->assertEquals(
@@ -193,15 +183,6 @@ class BatchClientTest extends TestCase
     public function testSnapshotDatabaseRole()
     {
         $time = time();
-        $this->spannerClient->createSession(
-            Argument::that(function (CreateSessionRequest $request) {
-                return $this->serializer->encodeMessage($request)['session']['creatorRole'] == 'Reader';
-            }),
-            Argument::type('array')
-        )
-            ->shouldBeCalledOnce()
-            ->willReturn(new Session(['name' => self::SESSION]));
-
         $this->spannerClient->beginTransaction(
             Argument::that(function (BeginTransactionRequest $request) {
                 $this->assertEquals(

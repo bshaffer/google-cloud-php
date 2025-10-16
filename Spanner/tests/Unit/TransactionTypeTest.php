@@ -26,7 +26,7 @@ use Google\Cloud\Spanner\Database;
 use Google\Cloud\Spanner\Instance;
 use Google\Cloud\Spanner\KeySet;
 use Google\Cloud\Spanner\Serializer;
-use Google\Cloud\Spanner\Session\SessionPoolInterface;
+use Google\Cloud\Spanner\Session\SessionCache;
 use Google\Cloud\Spanner\Snapshot;
 use Google\Cloud\Spanner\Tests\ResultGeneratorTrait;
 use Google\Cloud\Spanner\Timestamp;
@@ -35,13 +35,10 @@ use Google\Cloud\Spanner\V1\BeginTransactionRequest;
 use Google\Cloud\Spanner\V1\Client\SpannerClient;
 use Google\Cloud\Spanner\V1\CommitRequest;
 use Google\Cloud\Spanner\V1\CommitResponse;
-use Google\Cloud\Spanner\V1\CreateSessionRequest;
-use Google\Cloud\Spanner\V1\DeleteSessionRequest;
 use Google\Cloud\Spanner\V1\ExecuteSqlRequest;
 use Google\Cloud\Spanner\V1\PartialResultSet;
 use Google\Cloud\Spanner\V1\ReadRequest;
 use Google\Cloud\Spanner\V1\RollbackRequest;
-use Google\Cloud\Spanner\V1\Session;
 use Google\Cloud\Spanner\V1\Transaction as TransactionProto;
 use Google\Cloud\Spanner\V1\TransactionOptions;
 use Google\Cloud\Spanner\V1\TransactionOptions\PBReadOnly;
@@ -74,6 +71,7 @@ class TransactionTypeTest extends TestCase
     private $timestamp;
     private $protoTimestamp;
     private $database;
+    private $session;
 
     public function setUp(): void
     {
@@ -90,17 +88,9 @@ class TransactionTypeTest extends TestCase
         $instance->name()->willReturn(InstanceAdminClient::instanceName(self::PROJECT, self::INSTANCE));
         $instance->directedReadOptions()->willReturn([]);
 
-        $this->spannerClient->createSession(
-            Argument::that(function (CreateSessionRequest $request) {
-                $this->assertEquals(
-                    $request->getDatabase(),
-                    SpannerClient::databaseName(self::PROJECT, self::INSTANCE, self::DATABASE)
-                );
-                return true;
-            }),
-            Argument::type('array')
-        )
-            ->willReturn(new Session(['name' => $this->getFullyQualifiedSessionName()]));
+        $this->session = $this->prophesize(SessionCache::class);
+        $sessionName = SpannerClient::sessionName(self::PROJECT, self::INSTANCE, self::DATABASE, self::SESSION);
+        $this->session->name()->willReturn($sessionName);
 
         $this->database = new Database(
             $this->spannerClient->reveal(),
@@ -109,6 +99,7 @@ class TransactionTypeTest extends TestCase
             $instance->reveal(),
             self::PROJECT,
             self::DATABASE,
+            $this->session->reveal(),
         );
     }
 
@@ -116,7 +107,7 @@ class TransactionTypeTest extends TestCase
     {
         $this->spannerClient->beginTransaction(
             Argument::that(function (BeginTransactionRequest $request) {
-                $this->assertEquals($request->getSession(), $this->getFullyQualifiedSessionName());
+                $this->assertEquals($this->getFullyQualifiedSessionName(), $request->getSession());
                 return true;
             }),
             Argument::type('array')
@@ -652,10 +643,10 @@ class TransactionTypeTest extends TestCase
             ->willReturn($this->resultGeneratorStream($chunks));
 
         $serializer = $this->serializerForStreamingSql($chunks, $transaction);
-        $database = $this->database($this->spannerClient->reveal(), $serializer);
+        $database = $this->database($serializer);
         $database->execute('SELECT * FROM Table', [
             'begin' => true,
-            'transactionType' => SessionPoolInterface::CONTEXT_READWRITE
+            'transactionType' => Database::CONTEXT_READWRITE
         ])->rows()->current();
     }
 
@@ -734,7 +725,7 @@ class TransactionTypeTest extends TestCase
         $database = $this->database($serializer);
         $database->read('Table', new KeySet(), [], [
             'begin' => true,
-            'transactionType' => SessionPoolInterface::CONTEXT_READWRITE
+            'transactionType' => Database::CONTEXT_READWRITE
         ])->rows()->current();
     }
 

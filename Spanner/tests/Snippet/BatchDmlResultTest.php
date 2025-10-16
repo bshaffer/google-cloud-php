@@ -25,8 +25,7 @@ use Google\Cloud\Spanner\BatchDmlResult;
 use Google\Cloud\Spanner\Database;
 use Google\Cloud\Spanner\Instance;
 use Google\Cloud\Spanner\Serializer;
-use Google\Cloud\Spanner\Session\Session;
-use Google\Cloud\Spanner\Session\SessionPoolInterface;
+use Google\Cloud\Spanner\Session\SessionCache;
 use Google\Cloud\Spanner\V1\BeginTransactionRequest;
 use Google\Cloud\Spanner\V1\Client\SpannerClient;
 use Google\Cloud\Spanner\V1\CommitRequest;
@@ -42,6 +41,8 @@ use Prophecy\PhpUnit\ProphecyTrait;
  */
 class BatchDmlResultTest extends SnippetTestCase
 {
+    const SESSION = 'projects/my-awesome-project/instances/my-instance/databases/my-database/sessions/session-id';
+
     use GrpcTestTrait;
     use ProphecyTrait;
     use TimeTrait;
@@ -92,32 +93,15 @@ class BatchDmlResultTest extends SnippetTestCase
         $this->spannerClient->commit(
             Argument::type(CommitRequest::class),
             Argument::type('array')
-        )->willReturn(new CommitResponse([
-                'commit_timestamp' => new TimestampProto(['seconds' => time()])
-            ]));
-
-        $session = $this->prophesize(Session::class);
-        $session->name()->willReturn(
-            'projects/test-project/instances/my-instance/databases/my-database/sessions/foo'
-        );
-        $session->info()->willReturn([
-            'databaseName' => 'projects/test-project/instances/my-instance/databases/my-database'
-        ]);
-        $session->setExpiration(Argument::any());
-
-        $sessionPool = $this->prophesize(SessionPoolInterface::class);
-        $sessionPool->acquire(Argument::any())
-            ->willReturn($session->reveal());
-        $sessionPool->setDatabase(Argument::any())
-            ->willReturn(null);
-        $sessionPool->clear()->willReturn(null);
+        )->willReturn(new CommitResponse());
 
         $instance = $this->prophesize(Instance::class);
         $instance->name()->willReturn('projects/test-project/instances/my-instance');
         $instance->directedReadOptions()->willReturn([]);
+        $session = $this->prophesize(SessionCache::class);
+        $session->name()->willReturn(self::SESSION);
 
         $databaseAdminClient = $this->prophesize(DatabaseAdminClient::class);
-
         $database = new Database(
             $this->spannerClient->reveal(),
             $databaseAdminClient->reveal(),
@@ -125,7 +109,7 @@ class BatchDmlResultTest extends SnippetTestCase
             $instance->reveal(),
             'test-project',
             'projects/test-project/instances/my-instance/databases/my-database',
-            ['sessionPool' => $sessionPool->reveal()],
+            $session->reveal(),
         );
 
         $snippet = $this->snippetFromClass(BatchDmlResult::class);

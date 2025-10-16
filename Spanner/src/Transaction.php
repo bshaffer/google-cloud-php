@@ -19,8 +19,9 @@ namespace Google\Cloud\Spanner;
 
 use Google\ApiCore\ValidationException;
 use Google\Cloud\Core\Exception\AbortedException;
-use Google\Cloud\Spanner\Session\Session;
-use Google\Cloud\Spanner\Session\SessionPoolInterface;
+use Google\Cloud\Spanner\Session\SessionCache;
+use Google\Cloud\Spanner\V1\CommitResponse\CommitStats;
+use Google\Cloud\Spanner\V1\MultiplexedSessionPrecommitToken;
 use Google\Cloud\Spanner\V1\RequestOptions;
 use Google\Cloud\Spanner\V1\TransactionOptions;
 use Google\Protobuf\Duration;
@@ -75,10 +76,11 @@ class Transaction implements TransactionalReadInterface
     private array $mutations = [];
     private bool $isRetry;
     private array|RequestOptions $requestOptions;
+    private MultiplexedSessionPrecommitToken|null $precommitToken = null;
 
     /**
      * @param Operation $operation The Operation instance.
-     * @param Session $session The session to use for spanner interactions.
+     * @param SessionCache $session The session to use for spanner interactions.
      * @param string $transactionId The Transaction ID. If no ID is provided, the Transaction will
      *        be a Single-Use Transaction.
      * @param array $options {
@@ -98,7 +100,7 @@ class Transaction implements TransactionalReadInterface
      */
     public function __construct(
         private Operation $operation,
-        private Session $session,
+        private SessionCache $session,
         private string|null $transactionId = null,
         array $options = [],
         private ValueMapper|null $mapper = null,
@@ -113,7 +115,7 @@ class Transaction implements TransactionalReadInterface
             );
         }
 
-        $this->context = SessionPoolInterface::CONTEXT_READWRITE;
+        $this->context = Database::CONTEXT_READWRITE;
         $this->tag = $options['tag'] ?? null;
         $this->isRetry = $options['isRetry'] ?? false;
         $this->transactionSelector = array_intersect_key(
@@ -453,6 +455,11 @@ class Transaction implements TransactionalReadInterface
                 'transactionOptions' => $this->transactionOptions,
                 'singleUse' => $this->transactionSelector['singleUse'] ?? null,
             ]);
+            if (!empty($options['mutations'])) {
+                // Set the mutation key if we have mutations but do not have a precommit token
+                $mutationKey = $options['mutations'][array_rand($options['mutations'])];
+                $operationTransactionOptions['mutationKey'] = $mutationKey;
+            }
             // Execute the beginTransaction RPC.
             $transaction = $this->operation->transaction($this->session, $operationTransactionOptions);
             // Set the transaction ID of the current transaction.
@@ -533,6 +540,16 @@ class Transaction implements TransactionalReadInterface
         return $this->isRetry;
     }
 
+    public function setPrecommitToken(MultiplexedSessionPrecommitToken $precommitToken): void
+    {
+        if (isset($this->precommitToken)
+            && $this->precommitToken->getSeqNum() > $precommitToken->getSeqNum()
+        ) {
+            return;
+        }
+        $this->precommitToken = $precommitToken;
+    }
+
     /**
      * Build the update options.
      *
@@ -566,5 +583,19 @@ class Transaction implements TransactionalReadInterface
         $options['headers']['spanner-route-to-leader'] = ['true'];
 
         return $options;
+    }
+
+    public function updateFromResult(?Transaction $transaction = null): void
+    {
+        if (is_null($transaction)) {
+            return;
+        }
+
+        if (empty($this->transactionId)) {
+            $this->transactionId = $transaction->id();
+        }
+        if (isset($transaction->precommitToken)) {
+            $this->setPrecommitToken($transaction->precommitToken);
+        }
     }
 }

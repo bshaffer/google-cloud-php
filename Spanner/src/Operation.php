@@ -19,6 +19,7 @@ namespace Google\Cloud\Spanner;
 
 use DateTimeImmutable;
 use Generator;
+use Google\ApiCore\ApiException;
 use Google\ApiCore\Options\CallOptions;
 use Google\ApiCore\ServerStream;
 use Google\Cloud\Core\ApiHelperTrait;
@@ -27,11 +28,11 @@ use Google\Cloud\Core\OptionsValidator;
 use Google\Cloud\Core\RequestProcessorTrait;
 use Google\Cloud\Spanner\Batch\QueryPartition;
 use Google\Cloud\Spanner\Batch\ReadPartition;
-use Google\Cloud\Spanner\Session\Session;
+use Google\Cloud\Spanner\Session\SessionCache;
 use Google\Cloud\Spanner\V1\BeginTransactionRequest;
 use Google\Cloud\Spanner\V1\Client\SpannerClient;
 use Google\Cloud\Spanner\V1\CommitRequest;
-use Google\Cloud\Spanner\V1\CreateSessionRequest;
+use Google\Cloud\Spanner\V1\CommitResponse;
 use Google\Cloud\Spanner\V1\ExecuteBatchDmlRequest;
 use Google\Cloud\Spanner\V1\ExecuteSqlRequest;
 use Google\Cloud\Spanner\V1\Partition;
@@ -41,6 +42,7 @@ use Google\Cloud\Spanner\V1\PartitionReadRequest;
 use Google\Cloud\Spanner\V1\ReadRequest;
 use Google\Cloud\Spanner\V1\RequestOptions;
 use Google\Cloud\Spanner\V1\RollbackRequest;
+use Google\Cloud\Spanner\V1\Transaction as TransactionProto;
 use Google\Cloud\Spanner\V1\TransactionOptions;
 use Google\Cloud\Spanner\V1\TransactionOptions\ReadWrite;
 use Google\Cloud\Spanner\V1\TransactionSelector;
@@ -108,40 +110,12 @@ class Operation
     }
 
     /**
-     * Commit all enqueued mutations.
-     *
-     * @codingStandardsIgnoreStart
-     * @param Session $session The session ID to use for the commit.
-     * @param array $mutations A list of mutations to apply.
-     * @param array $options [optional] {
-     *     Configuration options.
-     *
-     *     @type string $transactionId The ID of the transaction.
-     *     @type bool $returnCommitStats If true, return the full response.
-     *           **Defaults to** `false`.
-     *     @type Duration $maxCommitDelay The amount of latency this request
-     *           is willing to incur in order to improve throughput.
-     *           **Defaults to** null.
-     *     @type array $requestOptions Request options.
-     *         For more information on available options, please see
-     *         [the upstream documentation](https://cloud.google.com/spanner/docs/reference/rest/v1/RequestOptions).
-     *         Please note, if using the `priority` setting you may utilize the constants available
-     *         on {@see \Google\Cloud\Spanner\V1\RequestOptions\Priority} to set a value.
-     * }
-     * @return Timestamp The commit Timestamp.
-     */
-    public function commit(Session $session, array $mutations, array $options = []): Timestamp
-    {
-        return $this->commitWithResponse($session, $mutations, $options)[0];
-    }
-
-    /**
      * @internal
      *
      * Commit all enqueued mutations.
      *
      * @codingStandardsIgnoreStart
-     * @param Session $session The session ID to use for the commit.
+     * @param SessionCache $session The session ID to use for the commit.
      * @param array $mutations A list of mutations to apply.
      * @param array $options [optional] {
      *     Configuration options.
@@ -157,11 +131,12 @@ class Operation
      *         [the upstream documentation](https://cloud.google.com/spanner/docs/reference/rest/v1/RequestOptions).
      *         Please note, if using the `priority` setting you may utilize the constants available
      *         on {@see \Google\Cloud\Spanner\V1\RequestOptions\Priority} to set a value.
+     *     @type MultiplexedSessionPrecommitToken $precommitToken the precommit token with the
+     *         highest sequence number received in this transaction attempt.
      * }
-     * @return array An array containing {@see \Google\Cloud\Spanner\Timestamp}
-     *               at index 0 and the commit response as an array at index 1.
+     * @return CommitResponse
      */
-    public function commitWithResponse(Session $session, array $mutations, array $options = []): array
+    public function commit(SessionCache $session, array $mutations, array $options = []): CommitResponse
     {
         $options += [
             'session' => $session->name(),
@@ -189,25 +164,33 @@ class Operation
             );
         }
 
-        $response = $this->spannerClient->commit($commitRequest, $callOptions + [
-            'resource-prefix' => $this->getDatabaseNameFromSession($session),
-            'route-to-leader' => $this->routeToLeader
-        ]);
-        $timestamp = $response->getCommitTimestamp();
+        /**
+         * Retry once if a precommit token exists in the response
+         */
+        $retryAttempt = 0;
+        $maxRetries = 1;
+        do {
+            $precommitToken = null;
+            $response = $this->spannerClient->commit($commitRequest, $callOptions + [
+                'resource-prefix' => $this->getDatabaseNameFromSession($session),
+                'route-to-leader' => $this->routeToLeader
+            ]);
+            if ($precommitToken = $response->getPrecommitToken()) {
+                $commitRequest->setPrecommitToken($precommitToken);
+            }
+        } while ($precommitToken && $retryAttempt++ < $maxRetries);
 
-        return [
-            new Timestamp(
-                $this->createDateTimeFromSeconds($timestamp->getSeconds()),
-                $timestamp->getNanos()
-            ),
-            $this->handleResponse($response)
-        ];
+        if ($response->hasPrecommitToken()) {
+            throw new ApiException('Commit has not submitted', Code::INTERNAL);
+        }
+
+        return $response;
     }
 
     /**
      * Rollback a Transaction.
      *
-     * @param Session $session The session to use for the rollback.
+     * @param SessionCache $session The session to use for the rollback.
      *        Note that the session MUST be the same one in which the
      *        transaction was created.
      * @param string $transactionId The transaction to roll back.
@@ -216,7 +199,7 @@ class Operation
      * @throws InvalidArgumentException If the transaction is not yet initialized.
      */
     public function rollback(
-        Session $session,
+        SessionCache $session,
         string|null $transactionId,
         array $options = []
     ): void {
@@ -247,7 +230,7 @@ class Operation
     /**
      * Run a query.
      *
-     * @param Session $session The session to use to execute the SQL.
+     * @param SessionCache $session The session to use to execute the SQL.
      * @param string $sql The query string.
      * @param array $options [optional] {
      *     Configuration options.
@@ -267,7 +250,7 @@ class Operation
      * }
      * @return Result
      */
-    public function execute(Session $session, string $sql, array $options = []): Result
+    public function execute(SessionCache $session, string $sql, array $options = []): Result
     {
         $options += $this->mapper->formatParamsForExecuteSql(
             $options['parameters'] ?? [],
@@ -329,7 +312,7 @@ class Operation
     /**
      * Execute a DML statement and return an affected row count.
      *
-     * @param Session $session The session in which the update operation should be executed.
+     * @param SessionCache $session The session in which the update operation should be executed.
      * @param Transaction $transaction The transaction in which the operation should be executed.
      * @param string $sql The SQL string to execute.
      * @param array $options [optional] {
@@ -348,7 +331,7 @@ class Operation
      * @throws InvalidArgumentException If the SQL string isn't an update operation.
      */
     public function executeUpdate(
-        Session $session,
+        SessionCache $session,
         Transaction $transaction,
         string $sql,
         array $options = []
@@ -382,7 +365,7 @@ class Operation
      * For detailed usage instructions, see
      * {@see \Google\Cloud\Spanner\Transaction::executeUpdateBatch()}.
      *
-     * @param Session $session The session in which the update operation should
+     * @param SessionCache $session The session in which the update operation should
      *        be executed.
      * @param Transaction $transaction The transaction in which the operation
      *        should be executed.
@@ -418,7 +401,7 @@ class Operation
      * @throws InvalidArgumentException If any statement is missing the `sql` key.
      */
     public function executeUpdateBatch(
-        Session $session,
+        SessionCache $session,
         Transaction $transaction,
         array $statements,
         array $options = []
@@ -443,28 +426,31 @@ class Operation
             'resource-prefix' => $this->getDatabaseNameFromSession($session),
             'route-to-leader' => $this->routeToLeader
         ]);
-        $res = $this->handleResponse($response);
-
-        if (empty($transaction->id())) {
+        $resultCount = count($response->getResultSets());
+        if ($precommitToken = $response->getPrecommitToken()) {
+            // Set the precommitToken from {@see ExecuteBatchDmlResponse::getPrecommitToken}
+            $transaction->setPrecommitToken($precommitToken);
+        }
+        if (empty($transaction->id()) && $resultCount > 0) {
             // Get the transaction from array of ResultSets.
             // ResultSet contains transaction in the metadata.
             // @see https://cloud.google.com/spanner/docs/reference/rest/v1/ResultSet
-            $transaction->setId($res['resultSets'][0]['metadata']['transaction']['id'] ?? null);
+            $transaction->setId($response->getResultSets()[0]->getMetadata()->getTransaction()->getId());
         }
 
         $errorStatement = null;
-        if (isset($res['status']) && $res['status']['code'] !== Code::OK) {
-            $errIndex = count($res['resultSets']);
-            $errorStatement = $statements[$errIndex];
+        if ($response->getStatus() && $response->getStatus()->getCode() !== Code::OK) {
+            $errorStatement = $statements[$resultCount];
         }
 
-        return new BatchDmlResult($res, $errorStatement);
+        $responseData = $this->handleResponse($response);
+        return new BatchDmlResult($responseData, $errorStatement);
     }
 
     /**
      * Lookup rows in a database.
      *
-     * @param Session $session The session in which to read data.
+     * @param SessionCache $session The session in which to read data.
      * @param string $table The table name.
      * @param KeySet $keySet The KeySet to select rows.
      * @param array $columns A list of column names to return.
@@ -490,7 +476,7 @@ class Operation
      * @return Result
      */
     public function read(
-        Session $session,
+        SessionCache $session,
         $table,
         KeySet $keySet,
         array $columns,
@@ -555,7 +541,7 @@ class Operation
      *
      * @see https://cloud.google.com/spanner/reference/rpc/google.spanner.v1#google.spanner.v1.BeginTransactionRequest BeginTransactionRequest
      *
-     * @param Session $session The session to start the transaction in.
+     * @param SessionCache $session The session to start the transaction in.
      * @param array $options [optional] {
      *     Configuration Options.
      *
@@ -571,10 +557,14 @@ class Operation
      *     @type array $requestOptions
      *     @type array $transactionOptions
      *     @type string $tag
+     *     @type Mutation $mutationKey Required for read-write transactions on a multiplexed session
+     *           that commit mutations but do not perform any reads or queries. If not supplied,
+     *           one of the mutations from the mutation set will be selected and sent as a part of
+     *           this request.
      * }
      * @return Transaction
      */
-    public function transaction(Session $session, array $options = []): Transaction
+    public function transaction(SessionCache $session, array $options = []): Transaction
     {
         if (isset($options['transactionOptions'])) {
             $options['options'] = $options['transactionOptions'];
@@ -637,6 +627,13 @@ class Operation
             $options,
             $this->mapper
         );
+
+        if ($precommitToken) {
+            // Set the precommitToken from {@see Transaction::getPrecommitToken}
+            $transaction->setPrecommitToken($precommitToken);
+        }
+
+        return $transaction;
     }
 
     /**
@@ -644,7 +641,7 @@ class Operation
      *
      * @see https://cloud.google.com/spanner/reference/rpc/google.spanner.v1#google.spanner.v1.BeginTransactionRequest BeginTransactionRequest
      *
-     * @param Session $session The session to start the snapshot in.
+     * @param SessionCache $session The session to start the snapshot in.
      * @param array $options [optional] {
      *     Configuration Options.
      *
@@ -659,7 +656,7 @@ class Operation
      * }
      * @return TransactionalReadInterface
      */
-    public function snapshot(Session $session, array $options = []): TransactionalReadInterface
+    public function snapshot(SessionCache $session, array $options = []): TransactionalReadInterface
     {
         // We allow the setting of "options" under the keyword "transactionOptions"
         // @TODO: get rid of this? This seems like a poor naming choice.
@@ -707,40 +704,12 @@ class Operation
             'directedReadOptions' => $options['directedReadOptions'] ?? null,
             'transactionOptions' => $beginTransaction->getOptions(),
         ]);
-        $res = $this->handleResponse($response);
-
-        return $this->session($res['name']);
-    }
-
-    /**
-     * Lazily instantiates a session. There are no network requests made at this
-     * point. To see the operations that can be performed on a session please
-     * see {@see \Google\Cloud\Spanner\Session\Session}.
-     *
-     * Sessions are handled behind the scenes and this method does not need to
-     * be called directly.
-     *
-     * @param string $sessionName The session's name.
-     * @return Session
-     */
-    public function session(string $sessionName): Session
-    {
-        $sessionNameComponents = SpannerClient::parseName($sessionName);
-        return new Session(
-            $this->spannerClient,
-            $this->serializer,
-            $sessionNameComponents['project'],
-            $sessionNameComponents['instance'],
-            $sessionNameComponents['database'],
-            $sessionNameComponents['session'],
-            ['routeToLeader' => $this->routeToLeader]
-        );
     }
 
     /**
      * Begin a partitioned SQL query.
      *
-     * @param Session $session The session to run in.
+     * @param SessionCache $session The session to run in.
      * @param string $transactionId The transaction to run in.
      * @param string $sql The query string to execute.
      * @param array $options {
@@ -775,7 +744,7 @@ class Operation
      * @return QueryPartition[]
      */
     public function partitionQuery(
-        Session $session,
+        SessionCache $session,
         string $transactionId,
         string $sql,
         array $options = []
@@ -831,7 +800,7 @@ class Operation
     /**
      * Begin a partitioned read.
      *
-     * @param Session $session The session to run in.
+     * @param SessionCache $session The session to run in.
      * @param string $transactionId The transaction to run in.
      * @param string $table The table name.
      * @param KeySet $keySet The KeySet to select rows.
@@ -853,7 +822,7 @@ class Operation
      * @return ReadPartition[]
      */
     public function partitionRead(
-        Session $session,
+        SessionCache $session,
         string $transactionId,
         string $table,
         KeySet $keySet,
@@ -913,13 +882,13 @@ class Operation
      *
      * @see https://cloud.google.com/spanner/reference/rpc/google.spanner.v1#google.spanner.v1.BeginTransactionRequest BeginTransactionRequest
      *
-     * @param Session $session The session to start the snapshot in.
+     * @param SessionCache $session The session to start the snapshot in.
      * @param BeginTransactionRequest $beginTransaction
      * @param array $callOptions
      *
-     * @return array
+     * @return TransactionProto
      */
-    private function beginTransaction(Session $session, BeginTransactionRequest $beginTransaction, array $callOptions): array
+    private function beginTransaction(SessionCache $session, BeginTransactionRequest $beginTransaction, array $callOptions): TransactionProto
     {
         $routeToLeader = $this->routeToLeader && (
             $beginTransaction->getOptions()?->hasReadWrite()
